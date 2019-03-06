@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\nhtml, body {\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0; }\n.fixed-table .column {\n  height: 100%;\n  vertical-align: top; }\n.fixed-table .scrolling-outer-container {\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: relative; }\n.fixed-table .scrolling-inner-container {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  overflow-y: auto; }\n.fixed-table .slim {\n  width: 30%; }\n.fixed-table .slimmer {\n  width: 20%; }\n.fixed-table .border-right {\n  border-right: 1px solid lightgray; }\n.fixed-table .padding-left {\n  padding-left: 20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jOlxcVXNlcnNcXGFuYmFsb2doXFxEb2N1bWVudHNcXGdpdHN3YXJtXFxpeG5ldHdvcmtfcHl0aG9uX2NsaWVudFxcc3JjXFxkb2MtYnJvd3Nlci9zcmNcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUFBO0FBOENBO0VBQ0MsWUFBWTtFQUNaLFdBQVc7RUFDWCxVQUFVO0VBQ1YsU0FBUyxFQUFBO0FBR1Y7RUFHRSxZQUFZO0VBQ1osbUJBQW1CLEVBQUE7QUFKckI7RUFPRSxxQkFBcUI7RUFDckIsV0FBVTtFQUNWLFlBQVc7RUFDWCxrQkFBaUIsRUFBQTtBQVZuQjtFQWFFLGtCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWTtFQUNaLGdCQUFnQixFQUFBO0FBaEJsQjtFQW1CRSxVQUFVLEVBQUE7QUFuQlo7RUFzQkUsVUFBVSxFQUFBO0FBdEJaO0VBeUJFLGlDQUFpQyxFQUFBO0FBekJuQztFQTRCRSxrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBZb3UgY2FuIGFkZCBnbG9iYWwgc3R5bGVzIHRvIHRoaXMgZmlsZSwgYW5kIGFsc28gaW1wb3J0IG90aGVyIHN0eWxlIGZpbGVzICovXG4kYXBwLWJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuJGFwcC1iYWNrZ3JvdW5kLWNvbG9yMTogd2hpdGU7XG4vLyAkYXBwLWhlYWRlci1iYWNrZ3JvdW5kOiB3aGl0ZTtcbiRhcHAtaGVhZGVyLWJhY2tncm91bmQ6IHJnYig0Myw0Myw0Myk7XG4vLyAkYXBwLWhlYWRlci1iYWNrZ3JvdW5kOiAjOTE5MTkxO1xuXG4kYXBwLWhlYWRlci1jb2xvcjogd2hpdGVzbW9rZTtcblxuJHdpZGdldC1jb250YWluZXItYmFja2dyb3VuZDogd2hpdGU7XG4kd2lkZ2V0LWJvcmRlci1jb2xvcjogbGlnaHRncmF5O1xuJGZseW91dC1wYW5lbC1jb2xvcjogcmdiKDI0NSwyNDgsMjQ4KTtcblxuJG9rLWJrLWNvbG9yOiBncmVlbjtcbiRlcnJvci1iay1jb2xvcjogcmVkO1xuJHdhcm5pbmctYmstY29sb3I6IHllbGxvdztcblxuJGRvY3VtZW50LWJrLWNvbG9yOiB3aGl0ZTtcbiRzZWNvbmRhcnktYmstY29sb3I6IGJsYWNrO1xuJHNlY29uZGFyeS1jb2xvcjogZ3JheTtcbiRzZWNvbmRhcnktaGlnaGxpZ2h0LWNvbG9yOiBkYXJrZ3JheTtcblxuJGFwcC10ZXh0LWNvbG9yOiByZ2IoNzQsNzQsNzQpO1xuJGRhcmtlci1hcHAtdGV4dC1jb2xvcjogbGlnaHRncmF5O1xuJGxhcmdlLWZvbnQ6IGJvbGQgMzVweCBjb25zb2xhcztcbiRtZWRpdW0tZm9udDogbm9ybWFsIDI4cHggYXJpYWw7XG4kcHJvcGVydHktZm9udDogbm9ybWFsIDIwcHggYXJpYWw7XG4kc21hbGwtZm9udDogbm9ybWFsIDE4cHggYXJpYWw7XG4kc21hbGwtZm9udC1ib2xkOiBib2xkIDE4cHggY29uc29sYXM7XG4kc21hbGxlci1mb250OiBub3JtYWwgMTZweCBhcmlhbDtcbiR0aW55LWZvbnQ6IG5vcm1hbCAxNHB4IGFyaWFsO1xuJHRpbnktZm9udC1pdGFsaWM6IGl0YWxpYyAxNHB4IGNvbnNvbGFzO1xuJHRpbnktZm9udC1ib2xkOiBib2xkIDE0cHggY29uc29sYXM7XG4kdmVyeS10aW55LWZvbnQ6IG5vcm1hbCAxMnB4IGNvbnNvbGFzO1xuJGhlYWRlci1mb250OiAyNHB4IGNvbnNvbGFzO1xuXG4kc21hbGwtZm9udC1maXhlZDogbm9ybWFsIDE2cHggJ0NvdXJpZXIgTmV3JyBtb25vc3BhY2U7XG4kZm9udC10aXRsZTogbm9ybWFsIDEuNWVtIFwib3Blbl9zYW5zcmVndWxhclwiO1x0XG5cblxuJGRhcmtlci1iYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjcsMjcsMjcpOztcbiRkYXJrZXItaGlnaGxpZ2h0LWJhY2tncm91bmQtY29sb3I6IHJnYig0MiwgNDEsIDQxKTtcbiRkYXJrZXItdGV4dC1jb2xvcjogcmdiKDg1LCA4NSwgODUpO1xuJGxpbmstY29sb3I6IHJnYigwLCA5MCwgMjMwKTtcbiRhdHRyaWJ1dGUtbmFtZTogYmxhY2s7XG5cbmh0bWwsIGJvZHkge1xuXHRoZWlnaHQ6IDEwMCU7XG5cdHdpZHRoOiAxMDAlO1xuXHRwYWRkaW5nOiAwO1xuXHRtYXJnaW46IDA7XG59XG5cbi5maXhlZC10YWJsZSB7XG5cblx0LmNvbHVtbiB7XG5cdFx0aGVpZ2h0OiAxMDAlOyBcblx0XHR2ZXJ0aWNhbC1hbGlnbjogdG9wO1xuXHR9XG5cdC5zY3JvbGxpbmctb3V0ZXItY29udGFpbmVyIHtcblx0XHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdFx0d2lkdGg6MTAwJTtcblx0XHRoZWlnaHQ6MTAwJTtcblx0XHRwb3NpdGlvbjpyZWxhdGl2ZTtcblx0fVxuXHQuc2Nyb2xsaW5nLWlubmVyLWNvbnRhaW5lciB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7IFxuXHRcdHdpZHRoOiAxMDAlOyBcblx0XHRoZWlnaHQ6IDEwMCU7XG5cdFx0b3ZlcmZsb3cteTogYXV0bztcblx0fVxuXHQuc2xpbSB7XG5cdFx0d2lkdGg6IDMwJTtcblx0fVxuXHQuc2xpbW1lciB7XG5cdFx0d2lkdGg6IDIwJTtcblx0fVxuXHQuYm9yZGVyLXJpZ2h0IHtcblx0XHRib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBsaWdodGdyYXk7XG5cdH1cblx0LnBhZGRpbmctbGVmdCB7XG5cdFx0cGFkZGluZy1sZWZ0OiAyMHB4O1xuXHR9XG59Il19 */", '', '']]
+module.exports = "/* You can add global styles to this file, and also import other style files */\nhtml, body {\n  height: 100%;\n  width: 100%;\n  padding: 0;\n  margin: 0; }\n.fixed-table .column {\n  height: 100%;\n  vertical-align: top; }\n.fixed-table .scrolling-outer-container {\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  position: relative; }\n.fixed-table .scrolling-inner-container {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  overflow-y: auto; }\n.fixed-table .slim {\n  width: 30%; }\n.fixed-table .slimmer {\n  width: 20%; }\n.fixed-table .border-right {\n  border-right: 1px solid lightgray; }\n.fixed-table .padding-left {\n  padding-left: 20px; }\n"
 
 /***/ }),
 
@@ -43,17 +43,14 @@ var isOldIE = memoize(function () {
 	return window && document && document.all && !window.atob;
 });
 
-var getTarget = function (target, parent) {
-  if (parent){
-    return parent.querySelector(target);
-  }
+var getTarget = function (target) {
   return document.querySelector(target);
 };
 
 var getElement = (function (fn) {
 	var memo = {};
 
-	return function(target, parent) {
+	return function(target) {
                 // If passing function in options, then use it for resolve "head" element.
                 // Useful for Shadow Root style i.e
                 // {
@@ -63,7 +60,7 @@ var getElement = (function (fn) {
                         return target();
                 }
                 if (typeof memo[target] === "undefined") {
-			var styleTarget = getTarget.call(this, target, parent);
+			var styleTarget = getTarget.call(this, target);
 			// Special case to return head of iframe instead of iframe itself
 			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
 				try {
@@ -204,7 +201,7 @@ function insertStyleElement (options, style) {
 	} else if (options.insertAt === "bottom") {
 		target.appendChild(style);
 	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
-		var nextSibling = getElement(options.insertAt.before, target);
+		var nextSibling = getElement(options.insertInto + " " + options.insertAt.before);
 		target.insertBefore(style, nextSibling);
 	} else {
 		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
@@ -226,13 +223,6 @@ function createStyleElement (options) {
 
 	if(options.attrs.type === undefined) {
 		options.attrs.type = "text/css";
-	}
-
-	if(options.attrs.nonce === undefined) {
-		var nonce = getNonce();
-		if (nonce) {
-			options.attrs.nonce = nonce;
-		}
 	}
 
 	addAttrs(style, options.attrs);
@@ -261,20 +251,12 @@ function addAttrs (el, attrs) {
 	});
 }
 
-function getNonce() {
-	if (false) {}
-
-	return __webpack_require__.nc;
-}
-
 function addStyle (obj, options) {
 	var style, update, remove, result;
 
 	// If a transform function was defined, run it on the css
 	if (options.transform && obj.css) {
-	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
-		 : options.transform.default(obj.css);
+	    result = options.transform(obj.css);
 
 	    if (result) {
 	    	// If transform returns a value, use that instead of the original css.
@@ -528,7 +510,7 @@ module.exports = function (css) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!../node_modules/postcss-loader/src??embedded!../node_modules/sass-loader/lib/loader.js??ref--14-3!./styles.scss */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/plugins/raw-css-loader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/styles.scss");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!../node_modules/sass-loader/lib/loader.js??ref--14-3!./styles.scss */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -557,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! c:\Users\anbalogh\Documents\gitswarm\ixnetwork_python_client\src\doc-browser\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! e:\ixnetwork_python_client\main\src\doc-browser\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })
