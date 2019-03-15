@@ -51,7 +51,8 @@ class StatViewAssistant(object):
         self._Statistics.CsvSnapshot.SnapshotViewContents = 'allPages'
         self._Statistics.CsvSnapshot.SnapshotViewCsvGenerationMode = 'overwriteCSVFile'
         self._Statistics.CsvSnapshot.CsvLocation = self._root_directory
-        self._Statistics.CsvSnapshot.CsvName = 'ixnetwork.restpy.%s' % (self._View.Caption.replace(' ', ''))
+        csv_name = re.sub("[^A-Za-z0-9]+", "-", self._View.Caption)
+        self._Statistics.CsvSnapshot.CsvName = 'ixnetwork.restpy.%s' % csv_name
         self._Statistics.CsvSnapshot.Views = self._View
         self._Statistics.CsvSnapshot.TakeCsvSnapshot()
         return self._IxNetwork._connection._get_file(self._IxNetwork.href, '%s.csv' % self._Statistics.CsvSnapshot.CsvName)
@@ -101,10 +102,13 @@ class StatViewAssistant(object):
                                     match = False
                                     break
                             else:
-                                expression = '%s %s %s' % (row[column_index], comparator, filter_value)
-                                if eval(expression) is False:
-                                    match = False
-                                    break
+                                try:
+                                    expression = '%s %s %s' % (row[column_index], comparator, filter_value)
+                                    if eval(expression) is False:
+                                        match = False
+                                        break
+                                except Exception as e:
+                                    self._IxNetwork.debug('%s Rows eval of %s failed: %s' % (__file__, expression, e))
                 if match is True:
                     rows.append(row)
         os.remove(local_filename)
