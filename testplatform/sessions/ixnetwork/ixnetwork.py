@@ -90,6 +90,20 @@ class Ixnetwork(Base):
 		return Lag(self)
 
 	@property
+	def QuickTest(self):
+		"""An instance of the QuickTest class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest.QuickTest)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import QuickTest
+		return QuickTest(self)._select()
+
+	@property
 	def ResourceManager(self):
 		"""An instance of the ResourceManager class.
 
