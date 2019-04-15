@@ -130,15 +130,6 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('active')
 
 	@property
-	def AdvIPv6Prefix(self):
-		"""Advertise IPv6 Prefix
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('advIPv6Prefix')
-
-	@property
 	def Algorithm(self):
 		"""Algorithm
 
@@ -166,15 +157,6 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('count')
 
 	@property
-	def DBitInsideSRv6SidTLV(self):
-		"""When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('dBitInsideSRv6SidTLV')
-
-	@property
 	def DescriptiveName(self):
 		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
@@ -193,22 +175,16 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('eFlag')
 
 	@property
-	def Funcflags(self):
-		"""This is the function flags
+	def IncludeBIERInfo(self):
+		"""Include BIER Info
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			bool
 		"""
-		return self._get_attribute('funcflags')
-
-	@property
-	def Function(self):
-		"""This specifies endpoint function codes
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('function')
+		return self._get_attribute('includeBIERInfo')
+	@IncludeBIERInfo.setter
+	def IncludeBIERInfo(self, value):
+		self._set_attribute('includeBIERInfo', value)
 
 	@property
 	def IncludeBSLObject(self):
@@ -218,15 +194,6 @@ class IsisL3RouteProperty(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('includeBSLObject')
-
-	@property
-	def Ipv6SID(self):
-		"""This refers to the IPv6 SID that is being used to reach the advertised IPv6 Prefix
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ipv6SID')
 
 	@property
 	def Ipv6Srh(self):
@@ -331,15 +298,6 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('redistribution')
 
 	@property
-	def ReservedInsideFlagsOfSRv6SidTLV(self):
-		"""This is the reserved field (part of Flags field of SRv6 SID TLV)
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('reservedInsideFlagsOfSRv6SidTLV')
-
-	@property
 	def RouteOrigin(self):
 		"""Route Origin
 
@@ -375,7 +333,7 @@ class IsisL3RouteProperty(Base):
 		"""
 		return self._get_attribute('vFlag')
 
-	def find(self, Count=None, DescriptiveName=None, LocalSystemID=None, Name=None):
+	def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, LocalSystemID=None, Name=None):
 		"""Finds and retrieves isisL3RouteProperty data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve isisL3RouteProperty data from the server.
@@ -384,6 +342,7 @@ class IsisL3RouteProperty(Base):
 		Args:
 			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			IncludeBIERInfo (bool): Include BIER Info
 			LocalSystemID (list(str)): System ID
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
@@ -410,7 +369,7 @@ class IsisL3RouteProperty(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, AdvIPv6Prefix=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBitInsideSRv6SidTLV=None, EFlag=None, Funcflags=None, Function=None, IncludeBSLObject=None, Ipv6SID=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, ReservedInsideFlagsOfSRv6SidTLV=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
+	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, IncludeBSLObject=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
 		"""Base class infrastructure that gets a list of isisL3RouteProperty device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -423,15 +382,10 @@ class IsisL3RouteProperty(Base):
 			BIERBitStringLength (str): optional regex of BIERBitStringLength
 			IPA (str): optional regex of IPA
 			Active (str): optional regex of active
-			AdvIPv6Prefix (str): optional regex of advIPv6Prefix
 			Algorithm (str): optional regex of algorithm
 			ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
-			DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
 			EFlag (str): optional regex of eFlag
-			Funcflags (str): optional regex of funcflags
-			Function (str): optional regex of function
 			IncludeBSLObject (str): optional regex of includeBSLObject
-			Ipv6SID (str): optional regex of ipv6SID
 			Ipv6Srh (str): optional regex of ipv6Srh
 			LFlag (str): optional regex of lFlag
 			LabelRangeSize (str): optional regex of labelRangeSize
@@ -441,7 +395,6 @@ class IsisL3RouteProperty(Base):
 			PFlag (str): optional regex of pFlag
 			RFlag (str): optional regex of rFlag
 			Redistribution (str): optional regex of redistribution
-			ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
 			RouteOrigin (str): optional regex of routeOrigin
 			SIDIndexLabel (str): optional regex of sIDIndexLabel
 			SubDomainId (str): optional regex of subDomainId

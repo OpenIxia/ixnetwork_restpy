@@ -76,6 +76,20 @@ class Pppoxclient(Base):
 		return StopRate(self)._select()
 
 	@property
+	def TlvEditor(self):
+		"""An instance of the TlvEditor class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
+		return TlvEditor(self)
+
+	@property
 	def Count(self):
 		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 

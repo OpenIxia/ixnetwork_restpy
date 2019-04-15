@@ -77,7 +77,7 @@ class Ospfv2Router(Base):
 
 	@property
 	def BIERPrefix(self):
-		"""Prefix
+		"""A BFR's BFR-Prefix is an IP address (either IPv4 or IPv6) of the BFR, and MUST be unique and routable within the BIER domain.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -113,7 +113,7 @@ class Ospfv2Router(Base):
 
 	@property
 	def BierAFlag(self):
-		"""Attach Flag
+		"""Attach Flag: If set an Area Border Router (ABR) will generate an Extended Prefix TLV for inter-area prefix that is locally connected or attached in other connected area
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -122,7 +122,7 @@ class Ospfv2Router(Base):
 
 	@property
 	def BierNFlag(self):
-		"""Node Flag
+		"""Node Flag: Set when the prefix identifies the advertising router i.e., the prefix is a host prefix advertising a globally reachable address typically associated with a loopback address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

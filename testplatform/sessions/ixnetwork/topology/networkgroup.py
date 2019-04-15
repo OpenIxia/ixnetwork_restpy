@@ -189,6 +189,34 @@ class NetworkGroup(Base):
 		return DslPools(self)
 
 	@property
+	def EcpriChannelsRe(self):
+		"""An instance of the EcpriChannelsRe class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre.EcpriChannelsRe)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre import EcpriChannelsRe
+		return EcpriChannelsRe(self)
+
+	@property
+	def EcpriChannelsRec(self):
+		"""An instance of the EcpriChannelsRec class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec.EcpriChannelsRec)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec import EcpriChannelsRec
+		return EcpriChannelsRec(self)
+
+	@property
 	def EvpnIPv4PrefixRange(self):
 		"""An instance of the EvpnIPv4PrefixRange class.
 

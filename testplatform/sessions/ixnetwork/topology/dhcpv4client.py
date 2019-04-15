@@ -63,6 +63,34 @@ class Dhcpv4client(Base):
 		return BgpIpv4Peer(self)
 
 	@property
+	def EcpriRec(self):
+		"""An instance of the EcpriRec class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.EcpriRec)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import EcpriRec
+		return EcpriRec(self)
+
+	@property
+	def Ere(self):
+		"""An instance of the Ere class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere.Ere)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere import Ere
+		return Ere(self)
+
+	@property
 	def Geneve(self):
 		"""An instance of the Geneve class.
 

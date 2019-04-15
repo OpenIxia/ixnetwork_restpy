@@ -126,6 +126,18 @@ class Dhcpv4server(Base):
 		self._set_attribute('name', value)
 
 	@property
+	def PoolCount(self):
+		"""number of DHCP pools a single server has
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('poolCount')
+	@PoolCount.setter
+	def PoolCount(self, value):
+		self._set_attribute('poolCount', value)
+
+	@property
 	def SessionStatus(self):
 		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
@@ -191,13 +203,14 @@ class Dhcpv4server(Base):
 		"""
 		return self._get_attribute('useRapidCommit')
 
-	def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+	def add(self, ConnectedVia=None, Multiplier=None, Name=None, PoolCount=None, StackedLayers=None):
 		"""Adds a new dhcpv4server node on the server and retrieves it in this instance.
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PoolCount (number): number of DHCP pools a single server has
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 
 		Returns:
@@ -217,7 +230,7 @@ class Dhcpv4server(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, PoolCount=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves dhcpv4server data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve dhcpv4server data from the server.
@@ -230,6 +243,7 @@ class Dhcpv4server(Base):
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PoolCount (number): number of DHCP pools a single server has
 			SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 			StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up

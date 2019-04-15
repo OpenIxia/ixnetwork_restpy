@@ -61,6 +61,15 @@ class Iptv(Base):
 		return self._get_attribute('enableGeneralQueryResponse')
 
 	@property
+	def EnableGroupSpecificQueryResponse(self):
+		"""If enabled, Group Specific Response is sent
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableGroupSpecificQueryResponse')
+
+	@property
 	def JoinLatencyThreshold(self):
 		"""The maximum time that is allowed for a multicast stream to arrive for channel for which a Join has been sent.
 
@@ -180,7 +189,7 @@ class Iptv(Base):
 		"""
 		return self._get_attribute('zapIntervalType')
 
-	def get_device_ids(self, PortNames=None, EnableGeneralQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+	def get_device_ids(self, PortNames=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
 		"""Base class infrastructure that gets a list of iptv device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -188,6 +197,7 @@ class Iptv(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			EnableGeneralQueryResponse (str): optional regex of enableGeneralQueryResponse
+			EnableGroupSpecificQueryResponse (str): optional regex of enableGroupSpecificQueryResponse
 			JoinLatencyThreshold (str): optional regex of joinLatencyThreshold
 			LeaveLatencyThreshold (str): optional regex of leaveLatencyThreshold
 			LogAllTimestamps (str): optional regex of logAllTimestamps

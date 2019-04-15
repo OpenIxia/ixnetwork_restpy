@@ -119,6 +119,20 @@ class BgpV6IPRouteProperty(Base):
 		return BgpExtendedCommunitiesList(self)
 
 	@property
+	def BgpNonVPNRRLargeCommunitiesList(self):
+		"""An instance of the BgpNonVPNRRLargeCommunitiesList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist.BgpNonVPNRRLargeCommunitiesList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist import BgpNonVPNRRLargeCommunitiesList
+		return BgpNonVPNRRLargeCommunitiesList(self)
+
+	@property
 	def CMacProperties(self):
 		"""An instance of the CMacProperties class.
 
@@ -482,6 +496,15 @@ class BgpV6IPRouteProperty(Base):
 		return self._get_attribute('enableFlapping')
 
 	@property
+	def EnableLargeCommunities(self):
+		"""Enable Large Communities Attribute
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableLargeCommunities')
+
+	@property
 	def EnableLocalPreference(self):
 		"""Enable Local Preference
 
@@ -779,6 +802,18 @@ class BgpV6IPRouteProperty(Base):
 		self._set_attribute('noOfLabels', value)
 
 	@property
+	def NoOfLargeCommunities(self):
+		"""Number of Large Communities (Should be in the range 1-32)
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('noOfLargeCommunities')
+	@NoOfLargeCommunities.setter
+	def NoOfLargeCommunities(self, value):
+		self._set_attribute('noOfLargeCommunities', value)
+
+	@property
 	def NoOfTlvs(self):
 		"""Number of TLVs
 
@@ -907,7 +942,7 @@ class BgpV6IPRouteProperty(Base):
 		"""
 		return self._get_attribute('weight')
 
-	def add(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfTlvs=None):
+	def add(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfLargeCommunities=None, NoOfTlvs=None):
 		"""Adds a new bgpV6IPRouteProperty node on the server and retrieves it in this instance.
 
 		Args:
@@ -920,6 +955,7 @@ class BgpV6IPRouteProperty(Base):
 			NoOfCommunities (number): Number of Communities
 			NoOfExternalCommunities (number): Number of Extended Communities
 			NoOfLabels (number): Number of Labels
+			NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
 			NoOfTlvs (number): Number of TLVs
 
 		Returns:
@@ -939,7 +975,7 @@ class BgpV6IPRouteProperty(Base):
 		"""
 		self._delete()
 
-	def find(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, AsPathASString=None, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfTlvs=None):
+	def find(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, AsPathASString=None, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfLargeCommunities=None, NoOfTlvs=None):
 		"""Finds and retrieves bgpV6IPRouteProperty data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve bgpV6IPRouteProperty data from the server.
@@ -958,6 +994,7 @@ class BgpV6IPRouteProperty(Base):
 			NoOfCommunities (number): Number of Communities
 			NoOfExternalCommunities (number): Number of Extended Communities
 			NoOfLabels (number): Number of Labels
+			NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
 			NoOfTlvs (number): Number of TLVs
 
 		Returns:
@@ -983,7 +1020,7 @@ class BgpV6IPRouteProperty(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, OverridePeerAsSetMode=None, Active=None, AddPathId=None, AdvertiseAsBGPLSPrefix=None, AdvertiseNexthopAsV4=None, AggregatorAs=None, AggregatorId=None, AggregatorIdMode=None, AsNumSuffixRange=None, AsPathPerRoute=None, AsRandomSeed=None, AsSegDist=None, AsSetMode=None, Delay=None, Downtime=None, EnableAddPath=None, EnableAggregatorId=None, EnableAigp=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableFlapping=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRandomAsPath=None, EnableSRGB=None, EnableWeight=None, FlapFromRouteIndex=None, FlapToRouteIndex=None, IncrementMode=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelEnd=None, LabelStart=None, LabelStep=None, LocalPreference=None, MaxASNumPerSegment=None, MaxNoOfASPathSegmentsPerRouteRange=None, MinASNumPerSegment=None, MinNoOfASPathSegmentsPerRouteRange=None, MultiExitDiscriminator=None, NextHopIPType=None, NextHopIncrementMode=None, NextHopType=None, Origin=None, OriginatorId=None, PackingFrom=None, PackingTo=None, PartialFlap=None, RouteOrigin=None, SegmentId=None, SendMulticastWithProperSAFI=None, SkipMulticast=None, SpecialLabel=None, Uptime=None, UseTraditionalNlri=None, Weight=None):
+	def get_device_ids(self, PortNames=None, OverridePeerAsSetMode=None, Active=None, AddPathId=None, AdvertiseAsBGPLSPrefix=None, AdvertiseNexthopAsV4=None, AggregatorAs=None, AggregatorId=None, AggregatorIdMode=None, AsNumSuffixRange=None, AsPathPerRoute=None, AsRandomSeed=None, AsSegDist=None, AsSetMode=None, Delay=None, Downtime=None, EnableAddPath=None, EnableAggregatorId=None, EnableAigp=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableFlapping=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRandomAsPath=None, EnableSRGB=None, EnableWeight=None, FlapFromRouteIndex=None, FlapToRouteIndex=None, IncrementMode=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelEnd=None, LabelStart=None, LabelStep=None, LocalPreference=None, MaxASNumPerSegment=None, MaxNoOfASPathSegmentsPerRouteRange=None, MinASNumPerSegment=None, MinNoOfASPathSegmentsPerRouteRange=None, MultiExitDiscriminator=None, NextHopIPType=None, NextHopIncrementMode=None, NextHopType=None, Origin=None, OriginatorId=None, PackingFrom=None, PackingTo=None, PartialFlap=None, RouteOrigin=None, SegmentId=None, SendMulticastWithProperSAFI=None, SkipMulticast=None, SpecialLabel=None, Uptime=None, UseTraditionalNlri=None, Weight=None):
 		"""Base class infrastructure that gets a list of bgpV6IPRouteProperty device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1014,6 +1051,7 @@ class BgpV6IPRouteProperty(Base):
 			EnableCommunity (str): optional regex of enableCommunity
 			EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
 			EnableFlapping (str): optional regex of enableFlapping
+			EnableLargeCommunities (str): optional regex of enableLargeCommunities
 			EnableLocalPreference (str): optional regex of enableLocalPreference
 			EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
 			EnableNextHop (str): optional regex of enableNextHop

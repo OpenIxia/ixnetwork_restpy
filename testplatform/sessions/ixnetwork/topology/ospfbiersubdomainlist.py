@@ -49,7 +49,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def BFRId(self):
-		"""BFR Id
+		"""A BFR Identifier (BFR-id) is a number within a given sub-domain. Every BFR that may need to function as a BFIR or BFER MUST have a single BFR-id, which identifies it uniquely within that sub-domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -58,7 +58,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def Bar(self):
-		"""BIER Algorithm
+		"""It is a single octet BIER specific algorithm used to calculate underlay paths to reach other BFRs
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -94,7 +94,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def Ipa(self):
-		"""IPA
+		"""It is a single octet IGP algorithm to either modify, enhance or replace the calculation of underlay paths to reach other BFRs as defined by the BAR value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -103,7 +103,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def MtId(self):
-		"""Multi-Topology ID
+		"""Multi-Topology ID - It identifies the topology that is associated with the BIER sub-domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -124,7 +124,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def NumberOfBSLen(self):
-		"""Number of Supported BS Len
+		"""Number of Supported Bit String Length
 
 		Returns:
 			number
@@ -136,7 +136,7 @@ class OspfBierSubDomainList(Base):
 
 	@property
 	def SubDomainId(self):
-		"""Sub Domain Id
+		"""It is a unique value which identifies the BIER sub-domain within the BIER domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

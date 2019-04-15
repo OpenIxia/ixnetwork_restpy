@@ -243,6 +243,15 @@ class BgpIPv6EvpnVXLAN(Base):
 		return self._get_attribute('asSetMode')
 
 	@property
+	def AutoConfigOriginatingRouterIp(self):
+		"""If set to true, this field enables option to configure Originating router IP address automatically from BGP Router's local IP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('autoConfigOriginatingRouterIp')
+
+	@property
 	def AutoConfigPMSITunnelId(self):
 		"""Auto Configure PMSI Tunnel ID
 
@@ -690,6 +699,24 @@ class BgpIPv6EvpnVXLAN(Base):
 		return self._get_attribute('origin')
 
 	@property
+	def OriginatingRouterIpv4(self):
+		"""Configures Originating Router IP address in IPv4 Address format
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('originatingRouterIpv4')
+
+	@property
+	def OriginatingRouterIpv6(self):
+		"""Configures Originating Router IP address in IPv6 Address format
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('originatingRouterIpv6')
+
+	@property
 	def OriginatorId(self):
 		"""Originator ID
 
@@ -917,7 +944,7 @@ class BgpIPv6EvpnVXLAN(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvertiseL3vniSeparately=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, MulticastTunnelTypeVxlan=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdEvi=None, RdIpAddress=None, SetNextHop=None, SetNextHopIpType=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
+	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvertiseL3vniSeparately=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigOriginatingRouterIp=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, MulticastTunnelTypeVxlan=None, Origin=None, OriginatingRouterIpv4=None, OriginatingRouterIpv6=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdEvi=None, RdIpAddress=None, SetNextHop=None, SetNextHopIpType=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
 		"""Base class infrastructure that gets a list of bgpIPv6EvpnVXLAN device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -930,6 +957,7 @@ class BgpIPv6EvpnVXLAN(Base):
 			AggregatorAs (str): optional regex of aggregatorAs
 			AggregatorId (str): optional regex of aggregatorId
 			AsSetMode (str): optional regex of asSetMode
+			AutoConfigOriginatingRouterIp (str): optional regex of autoConfigOriginatingRouterIp
 			AutoConfigPMSITunnelId (str): optional regex of autoConfigPMSITunnelId
 			AutoConfigureRdIpAddress (str): optional regex of autoConfigureRdIpAddress
 			BMacFirstLabel (str): optional regex of bMacFirstLabel
@@ -957,6 +985,8 @@ class BgpIPv6EvpnVXLAN(Base):
 			MulticastTunnelType (str): optional regex of multicastTunnelType
 			MulticastTunnelTypeVxlan (str): optional regex of multicastTunnelTypeVxlan
 			Origin (str): optional regex of origin
+			OriginatingRouterIpv4 (str): optional regex of originatingRouterIpv4
+			OriginatingRouterIpv6 (str): optional regex of originatingRouterIpv6
 			OriginatorId (str): optional regex of originatorId
 			OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
 			PmsiTunnelIDv4 (str): optional regex of pmsiTunnelIDv4

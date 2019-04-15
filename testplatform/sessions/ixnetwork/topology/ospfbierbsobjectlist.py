@@ -35,7 +35,7 @@ class OspfBierBSObjectList(Base):
 
 	@property
 	def BIERBitStringLength(self):
-		"""Bit String Length
+		"""This is a 4 bits field encoding the supported BitString length associated with this BFR-prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -71,7 +71,7 @@ class OspfBierBSObjectList(Base):
 
 	@property
 	def MaxSI(self):
-		"""Max SI
+		"""It is a 1 octet field encoding the maximum Set Identifier used in the encapsulation for this BIER sub-domain for this bitstring length.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

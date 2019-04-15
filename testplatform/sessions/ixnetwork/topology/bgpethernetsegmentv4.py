@@ -422,6 +422,24 @@ class BgpEthernetSegmentV4(Base):
 		return self._get_attribute('ipv6NextHop')
 
 	@property
+	def IrbIPv4Address(self):
+		"""IRB IP Address
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('irbIPv4Address')
+
+	@property
+	def IrbInterfaceLabel(self):
+		"""Label to be used for Route Type 2 carrying IRB MAC and/or IRB IP in Route Type 2
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('irbInterfaceLabel')
+
+	@property
 	def LocalPreference(self):
 		"""Local Preference
 
@@ -539,6 +557,15 @@ class BgpEthernetSegmentV4(Base):
 		return self._get_attribute('overridePeerAsSetMode')
 
 	@property
+	def RouterMacAddress(self):
+		"""Router's MAC Address
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('routerMacAddress')
+
+	@property
 	def SetNextHop(self):
 		"""Set Next Hop
 
@@ -595,7 +622,16 @@ class BgpEthernetSegmentV4(Base):
 		"""
 		return self._get_attribute('useSameSequenceNumber')
 
-	def get_device_ids(self, PortNames=None, AdvertiseAliasingBeforeAdPerEsRoute=None, AdvertiseInclusiveMulticastRoute=None, AliasingRouteGranularity=None, Active=None, AdvertiseAliasingAutomatically=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionTimer=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSingleActive=None, EnableStickyStaticFlag=None, EsImport=None, EsiLabel=None, EsiType=None, EsiValue=None, IncludeMacMobilityExtendedCommunity=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, SetNextHop=None, SetNextHopIpType=None, SupportFastConvergence=None, SupportMultihomedEsAutoDiscovery=None, UseSameSequenceNumber=None):
+	@property
+	def VtepIpv4Address(self):
+		"""VTEP IP Address
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('vtepIpv4Address')
+
+	def get_device_ids(self, PortNames=None, AdvertiseAliasingBeforeAdPerEsRoute=None, AdvertiseInclusiveMulticastRoute=None, AliasingRouteGranularity=None, Active=None, AdvertiseAliasingAutomatically=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionTimer=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSingleActive=None, EnableStickyStaticFlag=None, EsImport=None, EsiLabel=None, EsiType=None, EsiValue=None, IncludeMacMobilityExtendedCommunity=None, Ipv4NextHop=None, Ipv6NextHop=None, IrbIPv4Address=None, IrbInterfaceLabel=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, RouterMacAddress=None, SetNextHop=None, SetNextHopIpType=None, SupportFastConvergence=None, SupportMultihomedEsAutoDiscovery=None, UseSameSequenceNumber=None, VtepIpv4Address=None):
 		"""Base class infrastructure that gets a list of bgpEthernetSegmentV4 device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -634,16 +670,20 @@ class BgpEthernetSegmentV4(Base):
 			IncludeMacMobilityExtendedCommunity (str): optional regex of includeMacMobilityExtendedCommunity
 			Ipv4NextHop (str): optional regex of ipv4NextHop
 			Ipv6NextHop (str): optional regex of ipv6NextHop
+			IrbIPv4Address (str): optional regex of irbIPv4Address
+			IrbInterfaceLabel (str): optional regex of irbInterfaceLabel
 			LocalPreference (str): optional regex of localPreference
 			MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
 			Origin (str): optional regex of origin
 			OriginatorId (str): optional regex of originatorId
 			OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
+			RouterMacAddress (str): optional regex of routerMacAddress
 			SetNextHop (str): optional regex of setNextHop
 			SetNextHopIpType (str): optional regex of setNextHopIpType
 			SupportFastConvergence (str): optional regex of supportFastConvergence
 			SupportMultihomedEsAutoDiscovery (str): optional regex of supportMultihomedEsAutoDiscovery
 			UseSameSequenceNumber (str): optional regex of useSameSequenceNumber
+			VtepIpv4Address (str): optional regex of vtepIpv4Address
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters

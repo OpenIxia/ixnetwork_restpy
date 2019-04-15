@@ -71,6 +71,24 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 		return self._get_attribute('bandwidth')
 
 	@property
+	def BindingType(self):
+		"""Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label. Default value is 20bit MPLS Label.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bindingType')
+
+	@property
+	def Bos(self):
+		"""This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bos')
+
+	@property
 	def ConfigureBandwidth(self):
 		"""Configure Bandwidth
 
@@ -170,6 +188,15 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 		return self._get_attribute('includeSymbolicPathName')
 
 	@property
+	def IncludeTEPathBindingTLV(self):
+		"""Indicates if TE-PATH-BINDING TLV is to be included in PCUpate trigger message.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeTEPathBindingTLV')
+
+	@property
 	def LocalProtection(self):
 		"""Local Protection
 
@@ -177,6 +204,15 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('localProtection')
+
+	@property
+	def MplsLabel(self):
+		"""This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mplsLabel')
 
 	@property
 	def NumberOfEroSubObjects(self):
@@ -221,6 +257,15 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 		return self._get_attribute('pceTriggersChoiceList')
 
 	@property
+	def SendEmptyTLV(self):
+		"""If enabled all fields after Binding Type will be grayed out.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sendEmptyTLV')
+
+	@property
 	def SetupPriority(self):
 		"""Setup Priority
 
@@ -237,6 +282,24 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('srpId')
+
+	@property
+	def Tc(self):
+		"""This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('tc')
+
+	@property
+	def Ttl(self):
+		"""This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ttl')
 
 	def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None):
 		"""Finds and retrieves pceDetailedRsvpSyncLspUpdateParams data from the server.
@@ -271,7 +334,7 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Bandwidth=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeSrp=None, IncludeSymbolicPathName=None, LocalProtection=None, OverrideSrpId=None, PceTriggersChoiceList=None, SetupPriority=None, SrpId=None):
+	def get_device_ids(self, PortNames=None, Bandwidth=None, BindingType=None, Bos=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeSrp=None, IncludeSymbolicPathName=None, IncludeTEPathBindingTLV=None, LocalProtection=None, MplsLabel=None, OverrideSrpId=None, PceTriggersChoiceList=None, SendEmptyTLV=None, SetupPriority=None, SrpId=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of pceDetailedRsvpSyncLspUpdateParams device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -279,6 +342,8 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			Bandwidth (str): optional regex of bandwidth
+			BindingType (str): optional regex of bindingType
+			Bos (str): optional regex of bos
 			ConfigureBandwidth (str): optional regex of configureBandwidth
 			ConfigureEro (str): optional regex of configureEro
 			ConfigureLsp (str): optional regex of configureLsp
@@ -290,11 +355,16 @@ class PceDetailedRsvpSyncLspUpdateParams(Base):
 			IncludeAny (str): optional regex of includeAny
 			IncludeSrp (str): optional regex of includeSrp
 			IncludeSymbolicPathName (str): optional regex of includeSymbolicPathName
+			IncludeTEPathBindingTLV (str): optional regex of includeTEPathBindingTLV
 			LocalProtection (str): optional regex of localProtection
+			MplsLabel (str): optional regex of mplsLabel
 			OverrideSrpId (str): optional regex of overrideSrpId
 			PceTriggersChoiceList (str): optional regex of pceTriggersChoiceList
+			SendEmptyTLV (str): optional regex of sendEmptyTLV
 			SetupPriority (str): optional regex of setupPriority
 			SrpId (str): optional regex of srpId
+			Tc (str): optional regex of tc
+			Ttl (str): optional regex of ttl
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters

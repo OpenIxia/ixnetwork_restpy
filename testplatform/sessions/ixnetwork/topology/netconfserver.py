@@ -182,6 +182,15 @@ class NetconfServer(Base):
 		return self._get_attribute('count')
 
 	@property
+	def DecryptedCapture(self):
+		"""This specifies whether SSH packets for this session will be captured and stored on client in decrypted form. Note that this is not linked to IxNetwork control or data capture which will capture the packets in encrypted format only. The Decrypted Capture can be viewed by either doing right-click on a client where this option is enabled and doing Get Decrypted Capture ( allowed on 5 servers at a time ; each of the captures will be opened in a new Wireshark pop-up) OR by stopping the server and then directly opening it from the configured Output Directory from inside the current run folder/capture. This option can be enabled even when a session is already up in which case the capture will be started from that point of time.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('decryptedCapture')
+
+	@property
 	def DescriptiveName(self):
 		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
@@ -191,6 +200,51 @@ class NetconfServer(Base):
 		return self._get_attribute('descriptiveName')
 
 	@property
+	def ErrorInfo(self):
+		"""Contains protocol or data-model-specific error content.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('errorInfo')
+
+	@property
+	def ErrorPercentage(self):
+		"""The percentage of requests whose response will be errors
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('errorPercentage')
+
+	@property
+	def ErrorSeverity(self):
+		"""Contains a string identifying the error severity, as determined by the device.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('errorSeverity')
+
+	@property
+	def ErrorTag(self):
+		"""Contains a string identifying the error condition.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('errorTag')
+
+	@property
+	def ErrorType(self):
+		"""Defines the conceptual layer that the error occurred.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('errorType')
+
+	@property
 	def Errors(self):
 		"""A list of errors that have occurred
 
@@ -198,6 +252,24 @@ class NetconfServer(Base):
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
 		"""
 		return self._get_attribute('errors')
+
+	@property
+	def GetConfigReplyXML(self):
+		"""File containing the response to a <get-config> request.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('getConfigReplyXML')
+
+	@property
+	def IncludeErrorInfo(self):
+		"""This specifies whether 'error-info' element should be included in rpc error messages.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeErrorInfo')
 
 	@property
 	def Multiplier(self):
@@ -224,6 +296,24 @@ class NetconfServer(Base):
 		self._set_attribute('name', value)
 
 	@property
+	def NetconfSessionState(self):
+		"""Shows the current state of the Netconf SSH Session. None - Not started. Authenticated - The SSH session has been authenticated by the server using user/password or Key-based authentication. Channel Opened- SSH session is established and SSH Channel has been opened on which data will be sent. Subsystem Requested- Netconf Subsystem has been requested on top of SSH channel. Ready - The SSH session is in Ready state and waiting for Netconf data to be exchanged. Note that this does not mean that NETCONF is in Up state. That is reached only after Netconf Capabilities are negotiated and there is at least one matching Netconf version (1.0 or 1.1) supported on both client and server. Multiple connections - The server has multiple connections
+
+		Returns:
+			list(str[authenticated|channelOpened|multipleConnections|none|ready|subsystemRequested])
+		"""
+		return self._get_attribute('netconfSessionState')
+
+	@property
+	def OutputDirectory(self):
+		"""Location of Directory in Client where the decrypted capture(if enabled) will be stored.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('outputDirectory')
+
+	@property
 	def Password(self):
 		"""Password for Username/Password mode.
 
@@ -231,6 +321,15 @@ class NetconfServer(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('password')
+
+	@property
+	def PortNumber(self):
+		"""The TCP Port Number the Netconf Server is listening on to which to connect.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('portNumber')
 
 	@property
 	def PublicKeyDirectory(self):
@@ -249,6 +348,24 @@ class NetconfServer(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('publicKeyFileName')
+
+	@property
+	def ResponseXMLDirectory(self):
+		"""Directory where Reply XMLs for <get-config> operations are present
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('responseXMLDirectory')
+
+	@property
+	def SendOkResponse(self):
+		"""This specifies whether <ok> element should be sent in <rpc-reply> in response to <get-config> requests. If this is unchecked, custom reply based on <get-config> response xml will be sent out
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sendOkResponse')
 
 	@property
 	def SessionStatus(self):
@@ -333,7 +450,7 @@ class NetconfServer(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NetconfSessionState=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves netconfServer data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve netconfServer data from the server.
@@ -346,6 +463,7 @@ class NetconfServer(Base):
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NetconfSessionState (list(str[authenticated|channelOpened|multipleConnections|none|ready|subsystemRequested])): Shows the current state of the Netconf SSH Session. None - Not started. Authenticated - The SSH session has been authenticated by the server using user/password or Key-based authentication. Channel Opened- SSH session is established and SSH Channel has been opened on which data will be sent. Subsystem Requested- Netconf Subsystem has been requested on top of SSH channel. Ready - The SSH session is in Ready state and waiting for Netconf data to be exchanged. Note that this does not mean that NETCONF is in Up state. That is reached only after Netconf Capabilities are negotiated and there is at least one matching Netconf version (1.0 or 1.1) supported on both client and server. Multiple connections - The server has multiple connections
 			SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 			StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
@@ -374,7 +492,7 @@ class NetconfServer(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, ClientIpv4Address=None, Password=None, PublicKeyDirectory=None, PublicKeyFileName=None, SshAuthenticationMechanism=None, UserName=None):
+	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, ClientIpv4Address=None, DecryptedCapture=None, ErrorInfo=None, ErrorPercentage=None, ErrorSeverity=None, ErrorTag=None, ErrorType=None, GetConfigReplyXML=None, IncludeErrorInfo=None, OutputDirectory=None, Password=None, PortNumber=None, PublicKeyDirectory=None, PublicKeyFileName=None, ResponseXMLDirectory=None, SendOkResponse=None, SshAuthenticationMechanism=None, UserName=None):
 		"""Base class infrastructure that gets a list of netconfServer device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -395,9 +513,21 @@ class NetconfServer(Base):
 			CapabilitiesWritableRunning (str): optional regex of capabilitiesWritableRunning
 			CapabilitiesXpath (str): optional regex of capabilitiesXpath
 			ClientIpv4Address (str): optional regex of clientIpv4Address
+			DecryptedCapture (str): optional regex of decryptedCapture
+			ErrorInfo (str): optional regex of errorInfo
+			ErrorPercentage (str): optional regex of errorPercentage
+			ErrorSeverity (str): optional regex of errorSeverity
+			ErrorTag (str): optional regex of errorTag
+			ErrorType (str): optional regex of errorType
+			GetConfigReplyXML (str): optional regex of getConfigReplyXML
+			IncludeErrorInfo (str): optional regex of includeErrorInfo
+			OutputDirectory (str): optional regex of outputDirectory
 			Password (str): optional regex of password
+			PortNumber (str): optional regex of portNumber
 			PublicKeyDirectory (str): optional regex of publicKeyDirectory
 			PublicKeyFileName (str): optional regex of publicKeyFileName
+			ResponseXMLDirectory (str): optional regex of responseXMLDirectory
+			SendOkResponse (str): optional regex of sendOkResponse
 			SshAuthenticationMechanism (str): optional regex of sshAuthenticationMechanism
 			UserName (str): optional regex of userName
 

@@ -58,7 +58,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def BBit(self):
-		"""B-Flag
+		"""B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -103,7 +103,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def EnablePeerAdjSid(self):
-		"""
+		"""Enable Peer-Adj-SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -112,7 +112,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def LBit(self):
-		"""Local Flag
+		"""L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -186,17 +186,8 @@ class BgpEpePeerLinkList(Base):
 		self._set_attribute('name', value)
 
 	@property
-	def OtherBits(self):
-		"""
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('otherBits')
-
-	@property
 	def PBit(self):
-		"""P-Flag
+		"""P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +223,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def Reserved(self):
-		"""
+		"""Reserved
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,8 +231,17 @@ class BgpEpePeerLinkList(Base):
 		return self._get_attribute('reserved')
 
 	@property
+	def RsvdBits(self):
+		"""Reserved for future use and MUST be zero when originated and ignored when received
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('rsvdBits')
+
+	@property
 	def SidIndex(self):
-		"""SID/Index
+		"""Local Label for Peer-Adj
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +250,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def SidIndexValue(self):
-		"""SID or Index Value
+		"""If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -259,7 +259,7 @@ class BgpEpePeerLinkList(Base):
 
 	@property
 	def VBit(self):
-		"""Value Flag
+		"""V-Flag: Value flag. If set, then the SID carries a label value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -275,7 +275,7 @@ class BgpEpePeerLinkList(Base):
 		"""
 		return self._get_attribute('weight')
 
-	def get_device_ids(self, PortNames=None, Active=None, BBit=None, EnableLinkAddress=None, EnableLinkIdentifier=None, EnablePeerAdjSid=None, LBit=None, LinkAddressType=None, LinkLocalIdentifier=None, LinkNumber=None, LinkRemoteIdentifier=None, LocalIpv4LinkAddress=None, LocalIpv6LinkAddress=None, OtherBits=None, PBit=None, RemoteIpv4LinkAddress=None, RemoteIpv6LinkAddress=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+	def get_device_ids(self, PortNames=None, Active=None, BBit=None, EnableLinkAddress=None, EnableLinkIdentifier=None, EnablePeerAdjSid=None, LBit=None, LinkAddressType=None, LinkLocalIdentifier=None, LinkNumber=None, LinkRemoteIdentifier=None, LocalIpv4LinkAddress=None, LocalIpv6LinkAddress=None, PBit=None, RemoteIpv4LinkAddress=None, RemoteIpv6LinkAddress=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
 		"""Base class infrastructure that gets a list of bgpEpePeerLinkList device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -294,11 +294,11 @@ class BgpEpePeerLinkList(Base):
 			LinkRemoteIdentifier (str): optional regex of linkRemoteIdentifier
 			LocalIpv4LinkAddress (str): optional regex of localIpv4LinkAddress
 			LocalIpv6LinkAddress (str): optional regex of localIpv6LinkAddress
-			OtherBits (str): optional regex of otherBits
 			PBit (str): optional regex of pBit
 			RemoteIpv4LinkAddress (str): optional regex of remoteIpv4LinkAddress
 			RemoteIpv6LinkAddress (str): optional regex of remoteIpv6LinkAddress
 			Reserved (str): optional regex of reserved
+			RsvdBits (str): optional regex of rsvdBits
 			SidIndex (str): optional regex of sidIndex
 			SidIndexValue (str): optional regex of sidIndexValue
 			VBit (str): optional regex of vBit

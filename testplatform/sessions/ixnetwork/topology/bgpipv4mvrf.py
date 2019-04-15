@@ -289,6 +289,18 @@ class BgpIpv4MVrf(Base):
 		return self._get_attribute('dutIpv4')
 
 	@property
+	def EnableTRM(self):
+		"""Enable TRM
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('enableTRM')
+	@EnableTRM.setter
+	def EnableTRM(self, value):
+		self._set_attribute('enableTRM', value)
+
+	@property
 	def Entropy(self):
 		"""Entropy
 
@@ -305,6 +317,15 @@ class BgpIpv4MVrf(Base):
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
 		"""
 		return self._get_attribute('errors')
+
+	@property
+	def GroupAddress(self):
+		"""Group Address
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('groupAddress')
 
 	@property
 	def ImportRtListSameAsExportRtList(self):
@@ -568,6 +589,15 @@ class BgpIpv4MVrf(Base):
 		self._set_attribute('sameAsImportRT', value)
 
 	@property
+	def SenderAddressPRootNodeAddress(self):
+		"""Sender Address/P-Root Node Address
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('senderAddressPRootNodeAddress')
+
+	@property
 	def SessionStatus(self):
 		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
@@ -687,11 +717,12 @@ class BgpIpv4MVrf(Base):
 		"""
 		return self._get_attribute('version')
 
-	def add(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+	def add(self, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
 		"""Adds a new bgpIpv4MVrf node on the server and retrieves it in this instance.
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableTRM (bool): Enable TRM
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -720,7 +751,7 @@ class BgpIpv4MVrf(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv4=None, Errors=None, ImportRtListSameAsExportRtList=None, LocalIpv4=None, LocalRouterID=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv4=None, EnableTRM=None, Errors=None, ImportRtListSameAsExportRtList=None, LocalIpv4=None, LocalRouterID=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves bgpIpv4MVrf data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve bgpIpv4MVrf data from the server.
@@ -731,6 +762,7 @@ class BgpIpv4MVrf(Base):
 			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 			DutIpv4 (list(str)): DUT IP
+			EnableTRM (bool): Enable TRM
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
 			LocalIpv4 (list(str)): Local IP
@@ -771,7 +803,7 @@ class BgpIpv4MVrf(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, BFRId=None, BFRIpv4Prefix=None, BFRIpv6Prefix=None, BFRPrefixType=None, BIERSubDomainId=None, BslMismatchHandlingOption=None, LeafInfoRequiredBit=None, LeafInfoRequiredPerFlow=None, Active=None, AutoConstructBitString=None, BierBitStringLength=None, BitString=None, Dscp=None, Entropy=None, IncludeBierPTAinLeafAD=None, IncludePmsiTunnelAttribute=None, MulticastDistinguisherAs4Number=None, MulticastDistinguisherAsNumber=None, MulticastDistinguisherAssignedNumber=None, MulticastDistinguisherIpAddress=None, MulticastDistinguisherType=None, MulticastTunnelType=None, NextProtocol=None, Oam=None, RootAddress=None, Rsv=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SiCount=None, SrLabelStart=None, SrLabelStep=None, SupportLeafADRoutesSending=None, TrafficBfrId=None, UpOrDownStreamAssignedLabel=None, UseSameBfrIdInTraffic=None, UseUpOrDownStreamAssigneLabel=None, Version=None):
+	def get_device_ids(self, PortNames=None, BFRId=None, BFRIpv4Prefix=None, BFRIpv6Prefix=None, BFRPrefixType=None, BIERSubDomainId=None, BslMismatchHandlingOption=None, LeafInfoRequiredBit=None, LeafInfoRequiredPerFlow=None, Active=None, AutoConstructBitString=None, BierBitStringLength=None, BitString=None, Dscp=None, Entropy=None, GroupAddress=None, IncludeBierPTAinLeafAD=None, IncludePmsiTunnelAttribute=None, MulticastDistinguisherAs4Number=None, MulticastDistinguisherAsNumber=None, MulticastDistinguisherAssignedNumber=None, MulticastDistinguisherIpAddress=None, MulticastDistinguisherType=None, MulticastTunnelType=None, NextProtocol=None, Oam=None, RootAddress=None, Rsv=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None, SiCount=None, SrLabelStart=None, SrLabelStep=None, SupportLeafADRoutesSending=None, TrafficBfrId=None, UpOrDownStreamAssignedLabel=None, UseSameBfrIdInTraffic=None, UseUpOrDownStreamAssigneLabel=None, Version=None):
 		"""Base class infrastructure that gets a list of bgpIpv4MVrf device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -792,6 +824,7 @@ class BgpIpv4MVrf(Base):
 			BitString (str): optional regex of bitString
 			Dscp (str): optional regex of dscp
 			Entropy (str): optional regex of entropy
+			GroupAddress (str): optional regex of groupAddress
 			IncludeBierPTAinLeafAD (str): optional regex of includeBierPTAinLeafAD
 			IncludePmsiTunnelAttribute (str): optional regex of includePmsiTunnelAttribute
 			MulticastDistinguisherAs4Number (str): optional regex of multicastDistinguisherAs4Number
@@ -807,6 +840,7 @@ class BgpIpv4MVrf(Base):
 			RsvpP2mpId (str): optional regex of rsvpP2mpId
 			RsvpP2mpIdAsNumber (str): optional regex of rsvpP2mpIdAsNumber
 			RsvpTunnelId (str): optional regex of rsvpTunnelId
+			SenderAddressPRootNodeAddress (str): optional regex of senderAddressPRootNodeAddress
 			SiCount (str): optional regex of siCount
 			SrLabelStart (str): optional regex of srLabelStart
 			SrLabelStep (str): optional regex of srLabelStep

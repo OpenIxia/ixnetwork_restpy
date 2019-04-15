@@ -22,10 +22,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpEpePeerSetList(Base):
-	"""The BgpEpePeerSetList class encapsulates a required bgpEpePeerSetList node in the ixnetwork hierarchy.
+	"""The BgpEpePeerSetList class encapsulates a system managed bgpEpePeerSetList node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the BgpEpePeerSetList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
 	"""
 
 	_SDM_NAME = 'bgpEpePeerSetList'
@@ -34,22 +34,16 @@ class BgpEpePeerSetList(Base):
 		super(BgpEpePeerSetList, self).__init__(parent)
 
 	@property
-	def Active(self):
-		"""Activate/Deactivate Configuration
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('active')
-
-	@property
 	def BBit(self):
-		"""B-Flag
+		"""B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			bool
 		"""
 		return self._get_attribute('bBit')
+	@BBit.setter
+	def BBit(self, value):
+		self._set_attribute('bBit', value)
 
 	@property
 	def Count(self):
@@ -70,22 +64,16 @@ class BgpEpePeerSetList(Base):
 		return self._get_attribute('descriptiveName')
 
 	@property
-	def EnablePeerSetSid(self):
-		"""
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('enablePeerSetSid')
-
-	@property
 	def LBit(self):
-		"""Local Flag
+		"""L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			bool
 		"""
 		return self._get_attribute('lBit')
+	@LBit.setter
+	def LBit(self, value):
+		self._set_attribute('lBit', value)
 
 	@property
 	def Name(self):
@@ -100,96 +88,136 @@ class BgpEpePeerSetList(Base):
 		self._set_attribute('name', value)
 
 	@property
-	def OtherBits(self):
-		"""
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('otherBits')
-
-	@property
 	def PBit(self):
-		"""P-Flag
+		"""P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			bool
 		"""
 		return self._get_attribute('pBit')
-
-	@property
-	def PeerSetGroup(self):
-		"""Peer Set Group Name For Reference
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('peerSetGroup')
+	@PBit.setter
+	def PBit(self, value):
+		self._set_attribute('pBit', value)
 
 	@property
 	def Reserved(self):
+		"""Reserved
+
+		Returns:
+			number
 		"""
+		return self._get_attribute('reserved')
+	@Reserved.setter
+	def Reserved(self, value):
+		self._set_attribute('reserved', value)
+
+	@property
+	def RsvdBits(self):
+		"""Reserved for future use and MUST be zero when originated and ignored when received
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
-		return self._get_attribute('reserved')
+		return self._get_attribute('rsvdBits')
 
 	@property
 	def SidIndex(self):
-		"""SID/Index
+		"""Local Label for Peer-Set
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			str(index|sid)
 		"""
 		return self._get_attribute('sidIndex')
+	@SidIndex.setter
+	def SidIndex(self, value):
+		self._set_attribute('sidIndex', value)
 
 	@property
 	def SidIndexValue(self):
-		"""SID or Index Value
+		"""If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			number
 		"""
 		return self._get_attribute('sidIndexValue')
+	@SidIndexValue.setter
+	def SidIndexValue(self, value):
+		self._set_attribute('sidIndexValue', value)
 
 	@property
 	def VBit(self):
-		"""Value Flag
+		"""V-Flag: Value flag. If set, then the SID carries a label value.
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			bool
 		"""
 		return self._get_attribute('vBit')
+	@VBit.setter
+	def VBit(self, value):
+		self._set_attribute('vBit', value)
 
 	@property
 	def Weight(self):
 		"""Weight of SID for the purpose of load balancing
 
 		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
+			number
 		"""
 		return self._get_attribute('weight')
+	@Weight.setter
+	def Weight(self, value):
+		self._set_attribute('weight', value)
 
-	def get_device_ids(self, PortNames=None, Active=None, BBit=None, EnablePeerSetSid=None, LBit=None, OtherBits=None, PBit=None, PeerSetGroup=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+	def find(self, BBit=None, Count=None, DescriptiveName=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+		"""Finds and retrieves bgpEpePeerSetList data from the server.
+
+		All named parameters support regex and can be used to selectively retrieve bgpEpePeerSetList data from the server.
+		By default the find method takes no parameters and will retrieve all bgpEpePeerSetList data from the server.
+
+		Args:
+			BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
+			Reserved (number): Reserved
+			SidIndex (str(index|sid)): Local Label for Peer-Set
+			SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
+			VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
+			Weight (number): Weight of SID for the purpose of load balancing
+
+		Returns:
+			self: This instance with matching bgpEpePeerSetList data retrieved from the server available through an iterator or index
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		return self._select(locals())
+
+	def read(self, href):
+		"""Retrieves a single instance of bgpEpePeerSetList data from the server.
+
+		Args:
+			href (str): An href to the instance to be retrieved
+
+		Returns:
+			self: This instance with the bgpEpePeerSetList data from the server available through an iterator or index
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		return self._read(href)
+
+	def get_device_ids(self, PortNames=None, RsvdBits=None):
 		"""Base class infrastructure that gets a list of bgpEpePeerSetList device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
 		Args:
 			PortNames (str): optional regex of port names
-			Active (str): optional regex of active
-			BBit (str): optional regex of bBit
-			EnablePeerSetSid (str): optional regex of enablePeerSetSid
-			LBit (str): optional regex of lBit
-			OtherBits (str): optional regex of otherBits
-			PBit (str): optional regex of pBit
-			PeerSetGroup (str): optional regex of peerSetGroup
-			Reserved (str): optional regex of reserved
-			SidIndex (str): optional regex of sidIndex
-			SidIndexValue (str): optional regex of sidIndexValue
-			VBit (str): optional regex of vBit
-			Weight (str): optional regex of weight
+			RsvdBits (str): optional regex of rsvdBits
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters

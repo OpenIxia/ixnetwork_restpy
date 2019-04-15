@@ -49,6 +49,20 @@ class NetconfClient(Base):
 		return CommandSnippetsData(self)._select()
 
 	@property
+	def LearnedInfo(self):
+		"""An instance of the LearnedInfo class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo.LearnedInfo)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo import LearnedInfo
+		return LearnedInfo(self)
+
+	@property
 	def Active(self):
 		"""Activate/Deactivate Configuration
 
@@ -59,7 +73,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesBase1Dot0(self):
-		"""Whether base1.0 support should be advertised in Capabilities.
+		"""This specifies whether base1.0 support should be advertised in Capabilities.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -68,7 +82,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesBase1Dot1(self):
-		"""Whether base1.1 support should be advertised in Capabilities.
+		"""This specifies whether base1.1 support should be advertised in Capabilities.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -77,7 +91,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesCandidate(self):
-		"""Whether supports capability candidate to make changes into an intermediate candidate database. Normally this is preferred over writable-running.
+		"""This specifies whether Netconf Client supports capability candidate to make changes into an intermediate candidate database. Normally this is preferred over writable-running.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -86,7 +100,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesConfirmedCommit(self):
-		"""Whether supports capability confirmed-commit to specify ability to commit a group of commands or none as a batch.
+		"""This specifies whether Netconf Client supports capability confirmed-commit to specify ability to commit a group of commands or none as a batch.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -95,7 +109,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesInterleave(self):
-		"""Whether supports capability interleave to interleave notifications and responses.
+		"""This specifies whether Netconf Client supports capability interleave to interleave notifications and responses.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -104,7 +118,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesNotification(self):
-		"""Whether supports capability notification to aynchronously handle notifications from Netconf server device connected to.
+		"""This specifies whether Netconf Client supports capability notification to aynchronously handle notifications from Netconf server device connected to.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -113,7 +127,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesRollbackOnError(self):
-		"""Whether supports capability rollback to rollback partial changes make changes on detection of error during validate or commit.
+		"""This specifies whether Netconf Client supports capability rollback to rollback partial changes make changes on detection of error during validate or commit.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -122,7 +136,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesStartup(self):
-		"""Whether supports capability startup to make changes in config persistent on device restart.
+		"""This specifies whether Netconf Client supports capability startup to make changes in config persistent on device restart.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -131,7 +145,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesUrl(self):
-		"""Whether supports capability url to specify netconf commands using url.
+		"""This specifies whether Netconf Client supports capability url to specify netconf commands using url.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -140,7 +154,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesValidate(self):
-		"""Whether supports capability validate to specify ability to validate a netconf command prior to commit.
+		"""This specifies whether Netconf Client supports capability validate to specify ability to validate a netconf command prior to commit.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -149,7 +163,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesWritableRunning(self):
-		"""Whether supports capability writable-running to directly modify running config.
+		"""This specifies whether Netconf Client supports capability writable-running to directly modify running config.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -158,7 +172,7 @@ class NetconfClient(Base):
 
 	@property
 	def CapabilitiesXpath(self):
-		"""Whether supports capability xpath to specify netconf commands and filters using xpath extensions.
+		"""This specifies whether Netconf Client supports capability xpath to specify netconf commands and filters using xpath extensions.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -188,7 +202,7 @@ class NetconfClient(Base):
 
 	@property
 	def DecryptedCapture(self):
-		"""Whether SSH packets for this session will be captured and stored on client in decrypted form.Note that this is not linked to IxNetwork control or data capture which will capture the packets in encrypted format only.Also note that this option should be avoided if Continuous Tranmission mode is enabled for any of the Command Snippets which can leadto huge capture files being generated which could in turn affect Stop time since during Stop, the captures are transferred to the client.The Decrypted Capture can be viewed by either doing right-click on a client where this option is enabled and doing Get Decrypted Capture( allowed on 5 clients at a time ; each of the captures will be opened in a new Wireshark pop-up) OR by stopping the client and then directly opening it from the configured Output Directory from inside the current run folder/capture.This option can be enabled even when a session is already up in which case the capture will be started from that point of time.
+		"""This specifies whether SSH packets for this session will be captured and stored on client in decrypted form.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -221,6 +235,39 @@ class NetconfClient(Base):
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
 		"""
 		return self._get_attribute('errors')
+
+	@property
+	def FetchSchemaInfo(self):
+		"""This specifies whether a get-schema operation will be performed after capability exchange
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('fetchSchemaInfo')
+
+	@property
+	def LogCleanUpOption(self):
+		"""Debug Log Clean Up
+
+		Returns:
+			str(clean|notClean)
+		"""
+		return self._get_attribute('logCleanUpOption')
+	@LogCleanUpOption.setter
+	def LogCleanUpOption(self, value):
+		self._set_attribute('logCleanUpOption', value)
+
+	@property
+	def LogFileAge(self):
+		"""This field determines how old logs to be deleted.
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('logFileAge')
+	@LogFileAge.setter
+	def LogFileAge(self, value):
+		self._set_attribute('logFileAge', value)
 
 	@property
 	def Multiplier(self):
@@ -331,6 +378,24 @@ class NetconfClient(Base):
 		return self._get_attribute('saveReplyXML')
 
 	@property
+	def SchemaOutputDirectory(self):
+		"""Location of Directory in Client where the retrieved modules will be stored.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('schemaOutputDirectory')
+
+	@property
+	def SendCloseOnStop(self):
+		"""This specifies whether a <close-session> message will be sent on stopping this client
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sendCloseOnStop')
+
+	@property
 	def ServerIpv4Address(self):
 		"""Specify the IPv4 address of the DUT to which the Netconf Server should connect.
 
@@ -396,11 +461,13 @@ class NetconfClient(Base):
 		"""
 		return self._get_attribute('userName')
 
-	def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfCommandSnippetsPerClient=None, StackedLayers=None):
+	def add(self, ConnectedVia=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOfCommandSnippetsPerClient=None, StackedLayers=None):
 		"""Adds a new netconfClient node on the server and retrieves it in this instance.
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOfCommandSnippetsPerClient (number): Number of Command Snippets per client.Maximum 100 are allowed per client.
@@ -423,7 +490,7 @@ class NetconfClient(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NetconfSessionState=None, NumberOfCommandSnippetsPerClient=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NetconfSessionState=None, NumberOfCommandSnippetsPerClient=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves netconfClient data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve netconfClient data from the server.
@@ -434,6 +501,8 @@ class NetconfClient(Base):
 			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
+			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NetconfSessionState (list(str[authenticating|connecting|initialized|none|openingChannel|ready|reconnecting|requestingSubsystem])): Shows the current state of the Netconf SSH Session. None - Not started. Initialized - Configuration has reached the port and TCP connect is on-going. Connecting - SSH Connect is in process. Authenticating - The SSH session is authenticating with the DUT using user/password or Key-based authentication. Open Channel - SSH session is established and SSH Channel is being opened on which data will be sent. Requesting Subsystem - Netconf Subsystem is being requested on top of SSH channel. Ready - The SSH session is in Ready state and waiting for Netconf data to be exchanged. Note that this does not mean that NETCONF is in Up state. That is reached only after Netconf Capabilities are negotiated and there is at least one matching Netconf version (1.0 or 1.1) supported on both client and server. Reconnecting - The TCP connection is broken with DUT and the client is trying to reconnect via TCP with the server.
@@ -466,7 +535,7 @@ class NetconfClient(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, DecryptedCapture=None, EnablePassphrase=None, OutputDirectory=None, Passphrase=None, Password=None, PortNumber=None, PrivateKeyDirectory=None, PrivateKeyFileName=None, SaveReplyXML=None, ServerIpv4Address=None, SshAuthenticationMechanism=None, UserName=None):
+	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, DecryptedCapture=None, EnablePassphrase=None, FetchSchemaInfo=None, OutputDirectory=None, Passphrase=None, Password=None, PortNumber=None, PrivateKeyDirectory=None, PrivateKeyFileName=None, SaveReplyXML=None, SchemaOutputDirectory=None, SendCloseOnStop=None, ServerIpv4Address=None, SshAuthenticationMechanism=None, UserName=None):
 		"""Base class infrastructure that gets a list of netconfClient device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -488,6 +557,7 @@ class NetconfClient(Base):
 			CapabilitiesXpath (str): optional regex of capabilitiesXpath
 			DecryptedCapture (str): optional regex of decryptedCapture
 			EnablePassphrase (str): optional regex of enablePassphrase
+			FetchSchemaInfo (str): optional regex of fetchSchemaInfo
 			OutputDirectory (str): optional regex of outputDirectory
 			Passphrase (str): optional regex of passphrase
 			Password (str): optional regex of password
@@ -495,6 +565,8 @@ class NetconfClient(Base):
 			PrivateKeyDirectory (str): optional regex of privateKeyDirectory
 			PrivateKeyFileName (str): optional regex of privateKeyFileName
 			SaveReplyXML (str): optional regex of saveReplyXML
+			SchemaOutputDirectory (str): optional regex of schemaOutputDirectory
+			SendCloseOnStop (str): optional regex of sendCloseOnStop
 			ServerIpv4Address (str): optional regex of serverIpv4Address
 			SshAuthenticationMechanism (str): optional regex of sshAuthenticationMechanism
 			UserName (str): optional regex of userName

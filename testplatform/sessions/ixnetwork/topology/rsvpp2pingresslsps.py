@@ -215,6 +215,15 @@ class RsvpP2PIngressLsps(Base):
 		return self._get_attribute('backupLspPrependDutToEro')
 
 	@property
+	def BackupLspSessionId(self):
+		"""Backup LSP Session Id
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('backupLspSessionId')
+
+	@property
 	def BackupLspTokenBucketRate(self):
 		"""Token Bucket Rate
 
@@ -336,6 +345,15 @@ class RsvpP2PIngressLsps(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('enableLspPing')
+
+	@property
+	def EnableLspSelfPing(self):
+		"""If selected, LSP Self Ping is enabled for learned LSPs.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableLspSelfPing')
 
 	@property
 	def EnablePathReOptimization(self):
@@ -503,6 +521,24 @@ class RsvpP2PIngressLsps(Base):
 		return self._get_attribute('insertIPv6ExplicitNull')
 
 	@property
+	def IpDSCPofLspSelfPing(self):
+		"""IP DSCP of LSP Self Ping.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ipDSCPofLspSelfPing')
+
+	@property
+	def IpTTLofLspSelfPing(self):
+		"""IP TTL of LSP Self Ping.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ipTTLofLspSelfPing')
+
+	@property
 	def LabelRecordingDesired(self):
 		"""Label Recording Desired
 
@@ -564,6 +600,42 @@ class RsvpP2PIngressLsps(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('lspOperativeMode')
+
+	@property
+	def LspSelfPingRetryCount(self):
+		"""LSP Self Ping Retry Count.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspSelfPingRetryCount')
+
+	@property
+	def LspSelfPingRetryInterval(self):
+		"""LSP Self Ping Retry Interval (ms).
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspSelfPingRetryInterval')
+
+	@property
+	def LspSelfPingSessionId(self):
+		"""LSP Self Ping Session Id.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspSelfPingSessionId')
+
+	@property
+	def LspSelfPingStatus(self):
+		"""Logs additional information about the LSP Self Ping Status(Success/Timed Out)
+
+		Returns:
+			list(str[none|success|timedOut])
+		"""
+		return self._get_attribute('lspSelfPingStatus')
 
 	@property
 	def LspSwitchOverDelayTime(self):
@@ -916,7 +988,7 @@ class RsvpP2PIngressLsps(Base):
 		"""
 		return self._get_attribute('usingHeadendIp')
 
-	def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, AutoGenerateSessionName=None, AutorouteTraffic=None, BackupLspEnableEro=None, BackupLspId=None, BackupLspMaximumPacketSize=None, BackupLspMinimumPolicedUnit=None, BackupLspPeakDataRate=None, BackupLspPrefixLength=None, BackupLspPrependDutToEro=None, BackupLspTokenBucketRate=None, BackupLspTokenBucketSize=None, Bandwidth=None, BandwidthProtectionDesired=None, ConfigureSyncLspObject=None, EnableBfdMpls=None, EnableEro=None, EnableFastReroute=None, EnableLspPing=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, InitialDelegation=None, InsertIPv6ExplicitNull=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspCount=None, LspId=None, LspOperativeMode=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, PeakDataRate=None, PpagTLVType=None, PrefixLength=None, PrependDutToEro=None, ProtectionLsp=None, ReEvaluationRequestInterval=None, RedelegationTimeoutInterval=None, RefreshInterval=None, RemoteIp=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIp=None, SourceIpv6=None, StandbyMode=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
+	def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, AutoGenerateSessionName=None, AutorouteTraffic=None, BackupLspEnableEro=None, BackupLspId=None, BackupLspMaximumPacketSize=None, BackupLspMinimumPolicedUnit=None, BackupLspPeakDataRate=None, BackupLspPrefixLength=None, BackupLspPrependDutToEro=None, BackupLspSessionId=None, BackupLspTokenBucketRate=None, BackupLspTokenBucketSize=None, Bandwidth=None, BandwidthProtectionDesired=None, ConfigureSyncLspObject=None, EnableBfdMpls=None, EnableEro=None, EnableFastReroute=None, EnableLspPing=None, EnableLspSelfPing=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, InitialDelegation=None, InsertIPv6ExplicitNull=None, IpDSCPofLspSelfPing=None, IpTTLofLspSelfPing=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspCount=None, LspId=None, LspOperativeMode=None, LspSelfPingRetryCount=None, LspSelfPingRetryInterval=None, LspSelfPingSessionId=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, PeakDataRate=None, PpagTLVType=None, PrefixLength=None, PrependDutToEro=None, ProtectionLsp=None, ReEvaluationRequestInterval=None, RedelegationTimeoutInterval=None, RefreshInterval=None, RemoteIp=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIp=None, SourceIpv6=None, StandbyMode=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
 		"""Base class infrastructure that gets a list of rsvpP2PIngressLsps device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -934,6 +1006,7 @@ class RsvpP2PIngressLsps(Base):
 			BackupLspPeakDataRate (str): optional regex of backupLspPeakDataRate
 			BackupLspPrefixLength (str): optional regex of backupLspPrefixLength
 			BackupLspPrependDutToEro (str): optional regex of backupLspPrependDutToEro
+			BackupLspSessionId (str): optional regex of backupLspSessionId
 			BackupLspTokenBucketRate (str): optional regex of backupLspTokenBucketRate
 			BackupLspTokenBucketSize (str): optional regex of backupLspTokenBucketSize
 			Bandwidth (str): optional regex of bandwidth
@@ -943,6 +1016,7 @@ class RsvpP2PIngressLsps(Base):
 			EnableEro (str): optional regex of enableEro
 			EnableFastReroute (str): optional regex of enableFastReroute
 			EnableLspPing (str): optional regex of enableLspPing
+			EnableLspSelfPing (str): optional regex of enableLspSelfPing
 			EnablePathReOptimization (str): optional regex of enablePathReOptimization
 			EnablePeriodicReEvaluationRequest (str): optional regex of enablePeriodicReEvaluationRequest
 			ExcludeAny (str): optional regex of excludeAny
@@ -960,11 +1034,16 @@ class RsvpP2PIngressLsps(Base):
 			IncludeAssociation (str): optional regex of includeAssociation
 			InitialDelegation (str): optional regex of initialDelegation
 			InsertIPv6ExplicitNull (str): optional regex of insertIPv6ExplicitNull
+			IpDSCPofLspSelfPing (str): optional regex of ipDSCPofLspSelfPing
+			IpTTLofLspSelfPing (str): optional regex of ipTTLofLspSelfPing
 			LabelRecordingDesired (str): optional regex of labelRecordingDesired
 			LocalProtectionDesired (str): optional regex of localProtectionDesired
 			LspCount (str): optional regex of lspCount
 			LspId (str): optional regex of lspId
 			LspOperativeMode (str): optional regex of lspOperativeMode
+			LspSelfPingRetryCount (str): optional regex of lspSelfPingRetryCount
+			LspSelfPingRetryInterval (str): optional regex of lspSelfPingRetryInterval
+			LspSelfPingSessionId (str): optional regex of lspSelfPingSessionId
 			MaximumPacketSize (str): optional regex of maximumPacketSize
 			MinimumPolicedUnit (str): optional regex of minimumPolicedUnit
 			NodeProtectionDesired (str): optional regex of nodeProtectionDesired

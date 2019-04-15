@@ -103,6 +103,24 @@ class PcReplyLspParameters(Base):
 		return self._get_attribute('biDirectional')
 
 	@property
+	def BindingType(self):
+		"""Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label. Default value is 20bit MPLS Label.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bindingType')
+
+	@property
+	def Bos(self):
+		"""This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bos')
+
+	@property
 	def Count(self):
 		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
@@ -256,6 +274,15 @@ class PcReplyLspParameters(Base):
 		return self._get_attribute('includeSymbolicPathNameTlv')
 
 	@property
+	def IncludeTEPathBindingTLV(self):
+		"""Indicates if TE-PATH-BINDING TLV is to be included in PCInitiate message.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeTEPathBindingTLV')
+
+	@property
 	def LocalProtection(self):
 		"""Local Protection
 
@@ -263,6 +290,15 @@ class PcReplyLspParameters(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('localProtection')
+
+	@property
+	def MplsLabel(self):
+		"""This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mplsLabel')
 
 	@property
 	def Name(self):
@@ -421,6 +457,15 @@ class PcReplyLspParameters(Base):
 		return self._get_attribute('responsePathType')
 
 	@property
+	def SendEmptyTLV(self):
+		"""If enabled all fields after Binding Type will be grayed out.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sendEmptyTLV')
+
+	@property
 	def SessionInfo(self):
 		"""Logs additional information about the LSP state
 
@@ -447,7 +492,25 @@ class PcReplyLspParameters(Base):
 		"""
 		return self._get_attribute('symbolicPathName')
 
-	def get_device_ids(self, PortNames=None, Active=None, Bandwidth=None, BiDirectional=None, EnableCFlag=None, EnableEro=None, EnableLoose=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, LocalProtection=None, NatureOfIssue=None, PlspId=None, PriorityValue=None, ProcessType=None, ReflectLSP=None, ReflectRP=None, ReflectedObjectNoPath=None, RequestId=None, ResponseOptions=None, ResponsePathType=None, SetupPriority=None, SymbolicPathName=None):
+	@property
+	def Tc(self):
+		"""This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('tc')
+
+	@property
+	def Ttl(self):
+		"""This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ttl')
+
+	def get_device_ids(self, PortNames=None, Active=None, Bandwidth=None, BiDirectional=None, BindingType=None, Bos=None, EnableCFlag=None, EnableEro=None, EnableLoose=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, LocalProtection=None, MplsLabel=None, NatureOfIssue=None, PlspId=None, PriorityValue=None, ProcessType=None, ReflectLSP=None, ReflectRP=None, ReflectedObjectNoPath=None, RequestId=None, ResponseOptions=None, ResponsePathType=None, SendEmptyTLV=None, SetupPriority=None, SymbolicPathName=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of pcReplyLspParameters device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -457,6 +520,8 @@ class PcReplyLspParameters(Base):
 			Active (str): optional regex of active
 			Bandwidth (str): optional regex of bandwidth
 			BiDirectional (str): optional regex of biDirectional
+			BindingType (str): optional regex of bindingType
+			Bos (str): optional regex of bos
 			EnableCFlag (str): optional regex of enableCFlag
 			EnableEro (str): optional regex of enableEro
 			EnableLoose (str): optional regex of enableLoose
@@ -472,7 +537,9 @@ class PcReplyLspParameters(Base):
 			IncludeMetric (str): optional regex of includeMetric
 			IncludeRp (str): optional regex of includeRp
 			IncludeSymbolicPathNameTlv (str): optional regex of includeSymbolicPathNameTlv
+			IncludeTEPathBindingTLV (str): optional regex of includeTEPathBindingTLV
 			LocalProtection (str): optional regex of localProtection
+			MplsLabel (str): optional regex of mplsLabel
 			NatureOfIssue (str): optional regex of natureOfIssue
 			PlspId (str): optional regex of plspId
 			PriorityValue (str): optional regex of priorityValue
@@ -483,8 +550,11 @@ class PcReplyLspParameters(Base):
 			RequestId (str): optional regex of requestId
 			ResponseOptions (str): optional regex of responseOptions
 			ResponsePathType (str): optional regex of responsePathType
+			SendEmptyTLV (str): optional regex of sendEmptyTLV
 			SetupPriority (str): optional regex of setupPriority
 			SymbolicPathName (str): optional regex of symbolicPathName
+			Tc (str): optional regex of tc
+			Ttl (str): optional regex of ttl
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters

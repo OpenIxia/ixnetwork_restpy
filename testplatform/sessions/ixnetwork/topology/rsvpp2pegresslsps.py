@@ -116,6 +116,33 @@ class RsvpP2PEgressLsps(Base):
 		return self._get_attribute('endPointIpv6')
 
 	@property
+	def ForwardLspSelfPing(self):
+		"""Forward LSP Self Ping
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('forwardLspSelfPing')
+
+	@property
+	def InitialLspSelfPingDropCount(self):
+		"""Initial LSP Self Ping Drop Count.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('initialLspSelfPingDropCount')
+
+	@property
+	def IpTTLDecrementCount(self):
+		"""IP TTL Decrement Count.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ipTTLDecrementCount')
+
+	@property
 	def LabelValue(self):
 		"""Label Value
 
@@ -132,6 +159,15 @@ class RsvpP2PEgressLsps(Base):
 			list(str)
 		"""
 		return self._get_attribute('localIp')
+
+	@property
+	def LspSelfPingIPDSCP(self):
+		"""LSP Self Ping IP DSCP.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspSelfPingIPDSCP')
 
 	@property
 	def Name(self):
@@ -185,6 +221,15 @@ class RsvpP2PEgressLsps(Base):
 		return self._get_attribute('reservationStyle')
 
 	@property
+	def RetainLspSelfPingDSCP(self):
+		"""Retain LSP Self Ping DSCP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('retainLspSelfPingDSCP')
+
+	@property
 	def SendReservationConfirmation(self):
 		"""Send Reservation Confirmation
 
@@ -211,7 +256,7 @@ class RsvpP2PEgressLsps(Base):
 		"""
 		return self._get_attribute('timeoutMultiplier')
 
-	def get_device_ids(self, PortNames=None, Active=None, EnableFixedLabelForReservations=None, EnableReplyingLspPing=None, EndPointIpv6=None, LabelValue=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, SendReservationConfirmation=None, TimeoutMultiplier=None):
+	def get_device_ids(self, PortNames=None, Active=None, EnableFixedLabelForReservations=None, EnableReplyingLspPing=None, EndPointIpv6=None, ForwardLspSelfPing=None, InitialLspSelfPingDropCount=None, IpTTLDecrementCount=None, LabelValue=None, LspSelfPingIPDSCP=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, RetainLspSelfPingDSCP=None, SendReservationConfirmation=None, TimeoutMultiplier=None):
 		"""Base class infrastructure that gets a list of rsvpP2PEgressLsps device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -222,10 +267,15 @@ class RsvpP2PEgressLsps(Base):
 			EnableFixedLabelForReservations (str): optional regex of enableFixedLabelForReservations
 			EnableReplyingLspPing (str): optional regex of enableReplyingLspPing
 			EndPointIpv6 (str): optional regex of endPointIpv6
+			ForwardLspSelfPing (str): optional regex of forwardLspSelfPing
+			InitialLspSelfPingDropCount (str): optional regex of initialLspSelfPingDropCount
+			IpTTLDecrementCount (str): optional regex of ipTTLDecrementCount
 			LabelValue (str): optional regex of labelValue
+			LspSelfPingIPDSCP (str): optional regex of lspSelfPingIPDSCP
 			ReflectRro (str): optional regex of reflectRro
 			RefreshInterval (str): optional regex of refreshInterval
 			ReservationStyle (str): optional regex of reservationStyle
+			RetainLspSelfPingDSCP (str): optional regex of retainLspSelfPingDSCP
 			SendReservationConfirmation (str): optional regex of sendReservationConfirmation
 			TimeoutMultiplier (str): optional regex of timeoutMultiplier
 

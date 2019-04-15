@@ -216,6 +216,34 @@ class Topology(Base):
 		return DotOneX(self)._select()
 
 	@property
+	def EcpriRec(self):
+		"""An instance of the EcpriRec class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec.EcpriRec)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec import EcpriRec
+		return EcpriRec(self)._select()
+
+	@property
+	def Ere(self):
+		"""An instance of the Ere class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ere.ere.Ere)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ere.ere import Ere
+		return Ere(self)._select()
+
+	@property
 	def Ethernet(self):
 		"""An instance of the Ethernet class.
 

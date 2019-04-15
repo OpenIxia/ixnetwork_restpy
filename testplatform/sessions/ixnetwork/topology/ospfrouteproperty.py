@@ -77,7 +77,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def BAR(self):
-		"""BIER Algorithm
+		"""It is a single octet BIER specific algorithm used to calculate underlay paths to reach other BFRs
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -86,7 +86,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def BFRId(self):
-		"""BFR Id
+		"""A BFR Identifier (BFR-id) is a number within a given sub-domain. Every BFR that may need to function as a BFIR or BFER MUST have a single BFR-id, which identifies it uniquely within that sub-domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -104,7 +104,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def BIERBitStringLength(self):
-		"""Bit String Length
+		"""This is a 4 bits field encoding the supported BitString length associated with this BFR-prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -140,7 +140,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def BierAFlag(self):
-		"""Attach Flag
+		"""Attach Flag: If set an Area Border Router (ABR) will generate an Extended Prefix TLV for inter-area prefix that is locally connected or attached in other connected area
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -149,7 +149,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def BierNFlag(self):
-		"""Node Flag
+		"""Node Flag: Set when the prefix identifies the advertising router i.e., the prefix is a host prefix advertising a globally reachable address typically associated with a loopback address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -193,6 +193,18 @@ class OspfRouteProperty(Base):
 		return self._get_attribute('eFlag')
 
 	@property
+	def IncludeBIERInfo(self):
+		"""Include BIER Info
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('includeBIERInfo')
+	@IncludeBIERInfo.setter
+	def IncludeBIERInfo(self, value):
+		self._set_attribute('includeBIERInfo', value)
+
+	@property
 	def IncludeBSLObject(self):
 		"""If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
 
@@ -203,7 +215,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def Ipa(self):
-		"""IPA
+		"""It is a single octet IGP algorithm to either modify, enhance or replace the calculation of underlay paths to reach other BFRs as defined by the BAR value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -239,7 +251,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def MaxSI(self):
-		"""Max SI
+		"""It is a 1 octet field encoding the maximum Set Identifier used in the encapsulation for this BIER sub-domain for this bitstring length.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -257,7 +269,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def MtId(self):
-		"""Multi-Topology ID
+		"""Multi-Topology ID: It identifies the topology that is associated with the BIER sub-domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -305,7 +317,7 @@ class OspfRouteProperty(Base):
 
 	@property
 	def SubDomainId(self):
-		"""Sub Domain Id
+		"""It is a unique value which identifies the BIER sub-domain within the BIER domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -321,7 +333,7 @@ class OspfRouteProperty(Base):
 		"""
 		return self._get_attribute('vFlag')
 
-	def find(self, Count=None, DescriptiveName=None, Name=None):
+	def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, Name=None):
 		"""Finds and retrieves ospfRouteProperty data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve ospfRouteProperty data from the server.
@@ -330,6 +342,7 @@ class OspfRouteProperty(Base):
 		Args:
 			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			IncludeBIERInfo (bool): Include BIER Info
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:

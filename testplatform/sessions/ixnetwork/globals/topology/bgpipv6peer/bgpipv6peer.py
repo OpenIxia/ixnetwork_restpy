@@ -439,6 +439,18 @@ class BgpIpv6Peer(Base):
 		return self._get_attribute('srtePolicyType')
 
 	@property
+	def Srv6DraftNum(self):
+		"""L3VPN SRv6 Draft Version Number
+
+		Returns:
+			str(version03|version04)
+		"""
+		return self._get_attribute('srv6DraftNum')
+	@Srv6DraftNum.setter
+	def Srv6DraftNum(self, value):
+		self._set_attribute('srv6DraftNum', value)
+
+	@property
 	def TriggerVplsPwInitiation(self):
 		"""Trigger VPLS PW Initiation
 

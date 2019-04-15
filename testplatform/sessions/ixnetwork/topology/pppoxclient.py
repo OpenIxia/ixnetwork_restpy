@@ -119,6 +119,34 @@ class Pppoxclient(Base):
 		return Dhcpv6client(self)
 
 	@property
+	def EcpriRec(self):
+		"""An instance of the EcpriRec class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.EcpriRec)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import EcpriRec
+		return EcpriRec(self)
+
+	@property
+	def Ere(self):
+		"""An instance of the Ere class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere.Ere)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere import Ere
+		return Ere(self)
+
+	@property
 	def Geneve(self):
 		"""An instance of the Geneve class.
 
@@ -327,6 +355,20 @@ class Pppoxclient(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag import Tag
 		return Tag(self)
+
+	@property
+	def TlvProfile(self):
+		"""An instance of the TlvProfile class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile.TlvProfile)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile import TlvProfile
+		return TlvProfile(self)
 
 	@property
 	def Vxlan(self):
@@ -814,6 +856,24 @@ class Pppoxclient(Base):
 		return self._get_attribute('encaps2')
 
 	@property
+	def EndpointDiscNegotiation(self):
+		"""Enable Endpoint Discriminator Negotiation
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('endpointDiscNegotiation')
+
+	@property
+	def EndpointDiscriminatorClass(self):
+		"""Endpoint Discriminator for PPP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('endpointDiscriminatorClass')
+
+	@property
 	def Errors(self):
 		"""A list of errors that have occurred
 
@@ -911,6 +971,42 @@ class Pppoxclient(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('maxPayload')
+
+	@property
+	def MlpppIPAddress(self):
+		"""The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mlpppIPAddress')
+
+	@property
+	def MlpppMACAddress(self):
+		"""The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mlpppMACAddress')
+
+	@property
+	def Mrru(self):
+		"""Max Receive Reconstructed Unit for PPP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mrru')
+
+	@property
+	def MrruNegotiation(self):
+		"""Enable MRRU Negotiation
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mrruNegotiation')
 
 	@property
 	def MruNegotiation(self):
@@ -1231,7 +1327,7 @@ class Pppoxclient(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, AcMatchMac=None, AcMatchName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentAccessAggregationCircuitId=None, AgentCircuitId=None, AgentRemoteId=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientDnsOptions=None, ClientLocalIp=None, ClientLocalIpv6Iid=None, ClientNcpOptions=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIWF=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, ClientV6NcpOptions=None, ClientWinsOptions=None, ClientWinsPrimaryAddress=None, ClientWinsSecondaryAddress=None, DataLink=None, DomainList=None, DslTypeTlv=None, EchoReqInterval=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHostUniq=None, EnableMaxPayload=None, EnableRedial=None, Encaps1=None, Encaps2=None, HostUniq=None, HostUniqLength=None, LcpAccm=None, LcpEnableAccm=None, LcpMaxFailure=None, LcpRetries=None, LcpStartDelay=None, LcpTermRetries=None, LcpTimeout=None, MaxPayload=None, MruNegotiation=None, Mtu=None, NcpRetries=None, NcpTimeout=None, NcpType=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PonTypeTlv=None, RedialMax=None, RedialTimeout=None, ServiceName=None, ServiceOptions=None, UnlimitedRedialAttempts=None, UserDefinedDslType=None, UserDefinedPonType=None):
+	def get_device_ids(self, PortNames=None, AcMatchMac=None, AcMatchName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentAccessAggregationCircuitId=None, AgentCircuitId=None, AgentRemoteId=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientDnsOptions=None, ClientLocalIp=None, ClientLocalIpv6Iid=None, ClientNcpOptions=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIWF=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, ClientV6NcpOptions=None, ClientWinsOptions=None, ClientWinsPrimaryAddress=None, ClientWinsSecondaryAddress=None, DataLink=None, DomainList=None, DslTypeTlv=None, EchoReqInterval=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHostUniq=None, EnableMaxPayload=None, EnableRedial=None, Encaps1=None, Encaps2=None, EndpointDiscNegotiation=None, EndpointDiscriminatorClass=None, HostUniq=None, HostUniqLength=None, LcpAccm=None, LcpEnableAccm=None, LcpMaxFailure=None, LcpRetries=None, LcpStartDelay=None, LcpTermRetries=None, LcpTimeout=None, MaxPayload=None, MlpppIPAddress=None, MlpppMACAddress=None, Mrru=None, MrruNegotiation=None, MruNegotiation=None, Mtu=None, NcpRetries=None, NcpTimeout=None, NcpType=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PonTypeTlv=None, RedialMax=None, RedialTimeout=None, ServiceName=None, ServiceOptions=None, UnlimitedRedialAttempts=None, UserDefinedDslType=None, UserDefinedPonType=None):
 		"""Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1279,6 +1375,8 @@ class Pppoxclient(Base):
 			EnableRedial (str): optional regex of enableRedial
 			Encaps1 (str): optional regex of encaps1
 			Encaps2 (str): optional regex of encaps2
+			EndpointDiscNegotiation (str): optional regex of endpointDiscNegotiation
+			EndpointDiscriminatorClass (str): optional regex of endpointDiscriminatorClass
 			HostUniq (str): optional regex of hostUniq
 			HostUniqLength (str): optional regex of hostUniqLength
 			LcpAccm (str): optional regex of lcpAccm
@@ -1289,6 +1387,10 @@ class Pppoxclient(Base):
 			LcpTermRetries (str): optional regex of lcpTermRetries
 			LcpTimeout (str): optional regex of lcpTimeout
 			MaxPayload (str): optional regex of maxPayload
+			MlpppIPAddress (str): optional regex of mlpppIPAddress
+			MlpppMACAddress (str): optional regex of mlpppMACAddress
+			Mrru (str): optional regex of mrru
+			MrruNegotiation (str): optional regex of mrruNegotiation
 			MruNegotiation (str): optional regex of mruNegotiation
 			Mtu (str): optional regex of mtu
 			NcpRetries (str): optional regex of ncpRetries

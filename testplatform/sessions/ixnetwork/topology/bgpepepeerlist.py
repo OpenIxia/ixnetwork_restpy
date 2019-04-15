@@ -48,6 +48,20 @@ class BgpEpePeerList(Base):
 		return BgpEpePeerLinkList(self)._select()
 
 	@property
+	def BgpEpePeerSetList(self):
+		"""An instance of the BgpEpePeerSetList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist.BgpEpePeerSetList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist import BgpEpePeerSetList
+		return BgpEpePeerSetList(self)
+
+	@property
 	def Active(self):
 		"""Activate/Deactivate Configuration
 
@@ -58,7 +72,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def BBit(self):
-		"""B-Flag
+		"""B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -103,7 +117,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def EnablePeerNodeSid(self):
-		"""
+		"""Enable Peer-Node-SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -112,7 +126,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def LBit(self):
-		"""Local Flag
+		"""L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -121,7 +135,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def LocalAsn(self):
-		"""Local ASN
+		"""AS# of Egress node
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -141,8 +155,20 @@ class BgpEpePeerList(Base):
 		self._set_attribute('name', value)
 
 	@property
-	def NoOflinks(self):
+	def NoOfPeerSet(self):
+		"""Number of EPE Peer Set
+
+		Returns:
+			number
 		"""
+		return self._get_attribute('noOfPeerSet')
+	@NoOfPeerSet.setter
+	def NoOfPeerSet(self, value):
+		self._set_attribute('noOfPeerSet', value)
+
+	@property
+	def NoOflinks(self):
+		"""Number of Links
 
 		Returns:
 			number
@@ -153,17 +179,8 @@ class BgpEpePeerList(Base):
 		self._set_attribute('noOflinks', value)
 
 	@property
-	def OtherBits(self):
-		"""
-
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('otherBits')
-
-	@property
 	def PBit(self):
-		"""P-Flag
+		"""P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -190,7 +207,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def RemoteAsn(self):
-		"""Remote ASN
+		"""AS# of Peer Node
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -199,7 +216,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def Reserved(self):
-		"""
+		"""Reserved
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -207,8 +224,17 @@ class BgpEpePeerList(Base):
 		return self._get_attribute('reserved')
 
 	@property
+	def RsvdBits(self):
+		"""Reserved for future use and MUST be zero when originated and ignored when received
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('rsvdBits')
+
+	@property
 	def SidIndex(self):
-		"""SID/Index
+		"""Local Label for Peer-Node
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +243,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def SidIndexValue(self):
-		"""SID or Index Value
+		"""If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -244,7 +270,7 @@ class BgpEpePeerList(Base):
 
 	@property
 	def VBit(self):
-		"""Value Flag
+		"""V-Flag: Value flag. If set, then the SID carries a label value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -260,7 +286,7 @@ class BgpEpePeerList(Base):
 		"""
 		return self._get_attribute('weight')
 
-	def get_device_ids(self, PortNames=None, Active=None, BBit=None, BgpLocalRouterId=None, BgpRemoteRouterId=None, EnablePeerNodeSid=None, LBit=None, LocalAsn=None, OtherBits=None, PBit=None, PeerName=None, PeerSetGroup=None, RemoteAsn=None, Reserved=None, SidIndex=None, SidIndexValue=None, UseLocalConfedId=None, UseRemoteConfedId=None, VBit=None, Weight=None):
+	def get_device_ids(self, PortNames=None, Active=None, BBit=None, BgpLocalRouterId=None, BgpRemoteRouterId=None, EnablePeerNodeSid=None, LBit=None, LocalAsn=None, PBit=None, PeerName=None, PeerSetGroup=None, RemoteAsn=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, UseLocalConfedId=None, UseRemoteConfedId=None, VBit=None, Weight=None):
 		"""Base class infrastructure that gets a list of bgpEpePeerList device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -274,12 +300,12 @@ class BgpEpePeerList(Base):
 			EnablePeerNodeSid (str): optional regex of enablePeerNodeSid
 			LBit (str): optional regex of lBit
 			LocalAsn (str): optional regex of localAsn
-			OtherBits (str): optional regex of otherBits
 			PBit (str): optional regex of pBit
 			PeerName (str): optional regex of peerName
 			PeerSetGroup (str): optional regex of peerSetGroup
 			RemoteAsn (str): optional regex of remoteAsn
 			Reserved (str): optional regex of reserved
+			RsvdBits (str): optional regex of rsvdBits
 			SidIndex (str): optional regex of sidIndex
 			SidIndexValue (str): optional regex of sidIndexValue
 			UseLocalConfedId (str): optional regex of useLocalConfedId

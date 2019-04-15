@@ -112,6 +112,24 @@ class PreEstablishedSrLsps(Base):
 		return self._get_attribute('bandwidth')
 
 	@property
+	def BindingType(self):
+		"""Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label. Default value is 20bit MPLS Label.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bindingType')
+
+	@property
+	def Bos(self):
+		"""This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('bos')
+
+	@property
 	def Count(self):
 		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
@@ -247,6 +265,15 @@ class PreEstablishedSrLsps(Base):
 		return self._get_attribute('includeSymbolicPathNameTlv')
 
 	@property
+	def IncludeTEPathBindingTLV(self):
+		"""Indicates if TE-PATH-BINDING TLV is to be included in PCC Sync LSP.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeTEPathBindingTLV')
+
+	@property
 	def InitialDelegation(self):
 		"""Initial Delegation
 
@@ -284,6 +311,15 @@ class PreEstablishedSrLsps(Base):
 			list(str[delegated|delegationConfirmed|delegationRejected|delegationReturned|delegationRevoked|nonDelegated|none])
 		"""
 		return self._get_attribute('lspDelegationState')
+
+	@property
+	def MplsLabel(self):
+		"""This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('mplsLabel')
 
 	@property
 	def Name(self):
@@ -414,7 +450,25 @@ class PreEstablishedSrLsps(Base):
 		"""
 		return self._get_attribute('symbolicPathName')
 
-	def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndpoint=None, AssociationId=None, Bandwidth=None, DestinationIpv4Address=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludePpag=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, InitialDelegation=None, LocalProtection=None, PlspId=None, ProtectionLspBit=None, RedelegationTimeoutInterval=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, StandbyLspBit=None, SymbolicPathName=None):
+	@property
+	def Tc(self):
+		"""This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('tc')
+
+	@property
+	def Ttl(self):
+		"""This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ttl')
+
+	def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndpoint=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, DestinationIpv4Address=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludePpag=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, InitialDelegation=None, LocalProtection=None, MplsLabel=None, PlspId=None, ProtectionLspBit=None, RedelegationTimeoutInterval=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, StandbyLspBit=None, SymbolicPathName=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of preEstablishedSrLsps device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -425,6 +479,8 @@ class PreEstablishedSrLsps(Base):
 			ActiveDataTrafficEndpoint (str): optional regex of activeDataTrafficEndpoint
 			AssociationId (str): optional regex of associationId
 			Bandwidth (str): optional regex of bandwidth
+			BindingType (str): optional regex of bindingType
+			Bos (str): optional regex of bos
 			DestinationIpv4Address (str): optional regex of destinationIpv4Address
 			ExcludeAny (str): optional regex of excludeAny
 			HoldingPriority (str): optional regex of holdingPriority
@@ -438,8 +494,10 @@ class PreEstablishedSrLsps(Base):
 			IncludePpag (str): optional regex of includePpag
 			IncludeSrp (str): optional regex of includeSrp
 			IncludeSymbolicPathNameTlv (str): optional regex of includeSymbolicPathNameTlv
+			IncludeTEPathBindingTLV (str): optional regex of includeTEPathBindingTLV
 			InitialDelegation (str): optional regex of initialDelegation
 			LocalProtection (str): optional regex of localProtection
+			MplsLabel (str): optional regex of mplsLabel
 			PlspId (str): optional regex of plspId
 			ProtectionLspBit (str): optional regex of protectionLspBit
 			RedelegationTimeoutInterval (str): optional regex of redelegationTimeoutInterval
@@ -448,6 +506,8 @@ class PreEstablishedSrLsps(Base):
 			SrcEndPointIpv6 (str): optional regex of srcEndPointIpv6
 			StandbyLspBit (str): optional regex of standbyLspBit
 			SymbolicPathName (str): optional regex of symbolicPathName
+			Tc (str): optional regex of tc
+			Ttl (str): optional regex of ttl
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters
