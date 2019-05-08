@@ -262,3 +262,57 @@ class EcpriChannelsRe(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+
+	def Start(self, *args, **kwargs):
+		"""Executes the start operation on the server.
+
+		Start selected protocols.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		start()
+
+		start(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		start(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('start', payload=payload, response_object=None)
+
+	def Stop(self, *args, **kwargs):
+		"""Executes the stop operation on the server.
+
+		Stop selected protocols.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		stop()
+
+		stop(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		stop(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('stop', payload=payload, response_object=None)

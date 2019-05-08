@@ -49,6 +49,20 @@ class TrafficTest(Base):
 		return Results(self)._select()
 
 	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest.testconfig.testconfig import TestConfig
+		return TestConfig(self)._select()
+
+	@property
 	def ForceApplyQTConfig(self):
 		"""Apply QT config
 

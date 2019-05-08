@@ -49,6 +49,20 @@ class L2tpRate(Base):
 		return Results(self)._select()
 
 	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate.testconfig.testconfig import TestConfig
+		return TestConfig(self)
+
+	@property
 	def InputParameters(self):
 		"""Input Parameters
 

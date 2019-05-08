@@ -35,6 +35,20 @@ class FcoeMaxNoPauseThroughput(Base):
 		super(FcoeMaxNoPauseThroughput, self).__init__(parent)
 
 	@property
+	def PassCriteria(self):
+		"""An instance of the PassCriteria class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.passcriteria.passcriteria.PassCriteria)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.passcriteria.passcriteria import PassCriteria
+		return PassCriteria(self)._select()
+
+	@property
 	def Results(self):
 		"""An instance of the Results class.
 
@@ -47,6 +61,20 @@ class FcoeMaxNoPauseThroughput(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.results.results import Results
 		return Results(self)._select()
+
+	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.testconfig.testconfig import TestConfig
+		return TestConfig(self)._select()
 
 	@property
 	def ForceApplyQTConfig(self):

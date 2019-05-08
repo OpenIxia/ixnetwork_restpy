@@ -35,6 +35,34 @@ class OpenFlowLayer2LearningRate(Base):
 		super(OpenFlowLayer2LearningRate, self).__init__(parent)
 
 	@property
+	def LearnFrames(self):
+		"""An instance of the LearnFrames class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.learnframes.learnframes.LearnFrames)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.learnframes.learnframes import LearnFrames
+		return LearnFrames(self)._select()
+
+	@property
+	def PassCriteria(self):
+		"""An instance of the PassCriteria class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.passcriteria.passcriteria.PassCriteria)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.passcriteria.passcriteria import PassCriteria
+		return PassCriteria(self)._select()
+
+	@property
 	def Results(self):
 		"""An instance of the Results class.
 
@@ -47,6 +75,20 @@ class OpenFlowLayer2LearningRate(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.results.results import Results
 		return Results(self)._select()
+
+	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.testconfig.testconfig import TestConfig
+		return TestConfig(self)._select()
 
 	@property
 	def ForceApplyQTConfig(self):

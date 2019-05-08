@@ -579,6 +579,54 @@ class NetconfClient(Base):
 		"""
 		return self._get_ngpf_device_ids(locals())
 
+	def ClearAllLearnedSchemaInfo(self, *args, **kwargs):
+		"""Executes the clearAllLearnedSchemaInfo operation on the server.
+
+		Clear All Learned Schema Info.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		clearAllLearnedSchemaInfo()
+
+		clearAllLearnedSchemaInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		clearAllLearnedSchemaInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('clearAllLearnedSchemaInfo', payload=payload, response_object=None)
+
+	def ClearAllLearnedSchemaInfoInClient(self, *args, **kwargs):
+		"""Executes the clearAllLearnedSchemaInfoInClient operation on the server.
+
+		Clears ALL learned info.
+
+		clearAllLearnedSchemaInfoInClient(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('clearAllLearnedSchemaInfoInClient', payload=payload, response_object=None)
+
 	def ExecuteCommandGet(self, *args, **kwargs):
 		"""Executes the executeCommandGet operation on the server.
 
@@ -649,6 +697,40 @@ class NetconfClient(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getDecryptedCapture', payload=payload, response_object=None)
+
+	def GetLearnedSchemaInfo(self, *args, **kwargs):
+		"""Executes the getLearnedSchemaInfo operation on the server.
+
+		Get Learned Schema Info.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getLearnedSchemaInfo()
+
+		getLearnedSchemaInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getLearnedSchemaInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getLearnedSchemaInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getLearnedSchemaInfo', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.

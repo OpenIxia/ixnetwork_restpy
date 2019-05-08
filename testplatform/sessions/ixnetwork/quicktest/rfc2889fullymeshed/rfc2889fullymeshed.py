@@ -35,6 +35,34 @@ class Rfc2889fullyMeshed(Base):
 		super(Rfc2889fullyMeshed, self).__init__(parent)
 
 	@property
+	def LearnFrames(self):
+		"""An instance of the LearnFrames class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.learnframes.learnframes.LearnFrames)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.learnframes.learnframes import LearnFrames
+		return LearnFrames(self)._select()
+
+	@property
+	def PassCriteria(self):
+		"""An instance of the PassCriteria class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.passcriteria.passcriteria.PassCriteria)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.passcriteria.passcriteria import PassCriteria
+		return PassCriteria(self)._select()
+
+	@property
 	def Results(self):
 		"""An instance of the Results class.
 
@@ -47,6 +75,20 @@ class Rfc2889fullyMeshed(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.results.results import Results
 		return Results(self)._select()
+
+	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.testconfig.testconfig import TestConfig
+		return TestConfig(self)._select()
 
 	@property
 	def ForceApplyQTConfig(self):

@@ -35,6 +35,34 @@ class Rfc3918mixedClassThroughput(Base):
 		super(Rfc3918mixedClassThroughput, self).__init__(parent)
 
 	@property
+	def LearnFrames(self):
+		"""An instance of the LearnFrames class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.learnframes.learnframes.LearnFrames)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.learnframes.learnframes import LearnFrames
+		return LearnFrames(self)._select()
+
+	@property
+	def PassCriteria(self):
+		"""An instance of the PassCriteria class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.passcriteria.passcriteria.PassCriteria)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.passcriteria.passcriteria import PassCriteria
+		return PassCriteria(self)._select()
+
+	@property
 	def Results(self):
 		"""An instance of the Results class.
 
@@ -47,6 +75,20 @@ class Rfc3918mixedClassThroughput(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.results.results import Results
 		return Results(self)._select()
+
+	@property
+	def TestConfig(self):
+		"""An instance of the TestConfig class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.testconfig.testconfig.TestConfig)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.testconfig.testconfig import TestConfig
+		return TestConfig(self)._select()
 
 	@property
 	def ForceApplyQTConfig(self):

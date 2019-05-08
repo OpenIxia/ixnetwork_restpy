@@ -555,6 +555,28 @@ class NetconfServer(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
+	def GetDecryptedCapture(self, *args, **kwargs):
+		"""Executes the getDecryptedCapture operation on the server.
+
+		If Enable Capture is enabled, this will fetch and open the decrypted capture for selected sessions.
+
+		getDecryptedCapture(Arg2:list, Arg3:number)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+				args[1] is Arg3 (number): The TCP Port number of the server connection for which the capture file is to be fetched. Enter 0 for the first server connection
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getDecryptedCapture', payload=payload, response_object=None)
+
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.
 
@@ -581,6 +603,108 @@ class NetconfServer(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('restartDown', payload=payload, response_object=None)
+
+	def ResumeRPCReply(self, *args, **kwargs):
+		"""Executes the resumeRPCReply operation on the server.
+
+		Resume sending responses to RPC requests.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		resumeRPCReply()
+
+		resumeRPCReply(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		resumeRPCReply(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		resumeRPCReply(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('resumeRPCReply', payload=payload, response_object=None)
+
+	def SendRPCReplyWithWrongCharacterCount(self, *args, **kwargs):
+		"""Executes the sendRPCReplyWithWrongCharacterCount operation on the server.
+
+		The response to the next RPC request will be sent with wrong message Id.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		sendRPCReplyWithWrongCharacterCount()
+
+		sendRPCReplyWithWrongCharacterCount(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		sendRPCReplyWithWrongCharacterCount(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		sendRPCReplyWithWrongCharacterCount(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('sendRPCReplyWithWrongCharacterCount', payload=payload, response_object=None)
+
+	def SendRPCReplyWithWrongMessageId(self, *args, **kwargs):
+		"""Executes the sendRPCReplyWithWrongMessageId operation on the server.
+
+		The response to the next RPC request will be sent with wrong message Id.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		sendRPCReplyWithWrongMessageId()
+
+		sendRPCReplyWithWrongMessageId(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		sendRPCReplyWithWrongMessageId(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		sendRPCReplyWithWrongMessageId(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('sendRPCReplyWithWrongMessageId', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.
@@ -635,3 +759,71 @@ class NetconfServer(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stop', payload=payload, response_object=None)
+
+	def StopRPCReplyDropOutstandingRequests(self, *args, **kwargs):
+		"""Executes the stopRPCReplyDropOutstandingRequests operation on the server.
+
+		Stop sending replies to rpc requests. Drop the outstanding requests so that when Resume RPC Reply is triggered, responses will not be sent for these requests.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		stopRPCReplyDropOutstandingRequests()
+
+		stopRPCReplyDropOutstandingRequests(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		stopRPCReplyDropOutstandingRequests(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		stopRPCReplyDropOutstandingRequests(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('stopRPCReplyDropOutstandingRequests', payload=payload, response_object=None)
+
+	def StopRPCReplyStoreOutstandingRequests(self, *args, **kwargs):
+		"""Executes the stopRPCReplyStoreOutstandingRequests operation on the server.
+
+		Stop sending replies to rpc requests. Store the outstanding requests so that when Resume RPC Reply is triggered, responses will be sent for these requests.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		stopRPCReplyStoreOutstandingRequests()
+
+		stopRPCReplyStoreOutstandingRequests(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		stopRPCReplyStoreOutstandingRequests(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		stopRPCReplyStoreOutstandingRequests(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the device group.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('stopRPCReplyStoreOutstandingRequests', payload=payload, response_object=None)
