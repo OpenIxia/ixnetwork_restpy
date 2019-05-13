@@ -1,6 +1,7 @@
+from __future__ import unicode_literals
 from ipaddress import IPv4Address, ip_network
 import pytest
-
+import sys
 
 @pytest.fixture
 def multivalue(ixnetwork):
@@ -107,9 +108,10 @@ def test_multivalue_can_clear_overlay(multivalue):
     assert '2.2.2.2' not in values
     assert '3.3.3.3' not in values
 
+@pytest.mark.skipif(sys.version_info > (2,7), reason='only for python2.7 variants')
 def test_multivalue_can_retrieve_info(multivalue):
     info = multivalue.Info
-    assert isinstance(info,str)
+    assert isinstance(info,unicode)
 
 def test_multivalue_can_retrieve_source(multivalue):
     source = multivalue.Source
