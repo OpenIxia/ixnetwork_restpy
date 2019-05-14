@@ -61,7 +61,7 @@ def test_can_login_to_server_by_api_key(test_platform):
             :when: provided appropriate api key
             :then: should get authenticate
     """
-    if test_platform._connection._platform == 'windows':
+    if test_platform._connection._platform == 'windows' or test_platform._connection._platform == 'connection_manager':
         pytest.skip('Test is not possible for windows platform')
 
     import os
