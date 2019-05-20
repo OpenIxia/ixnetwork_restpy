@@ -191,7 +191,7 @@ class StatViewAssistant(object):
         Returns:
             list(str): A list of available drill down options
         """
-        drill_down = self._View.Drilldown.Find()
+        drill_down = self._View.DrillDown.find()
         return drill_down.AvailableDrillDownOptions
 
     def TargetRowFilters(self):
@@ -200,10 +200,10 @@ class StatViewAssistant(object):
         Returns:
             list(str): A list of available target row filters
         """
-        drill_down = self._View.Drilldown.Find()
-        return drill_down.TargetRowFilters
+        drill_down = self._View.DrillDown.find()
+        return drill_down.AvailableTargetRowFilters
 
-    def Drilldown(self, TargetRowIndex, DrillDownOption, TargetRowFilter):
+    def Drilldown(self, TargetRowIndex, DrillDownOption, TargetRowFilter, IxNetwork):
         """Drilldown on an existing view to get a new StatViewAssistant
 
         Args:
@@ -214,12 +214,13 @@ class StatViewAssistant(object):
         Returns:
             obj(ixnetwork_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
         """
-        drill_down = self._View.Drilldown.Find()
+        self.IxNetwork = IxNetwork
+        drill_down = self._View.DrillDown.find()
         drill_down.TargetRowIndex = TargetRowIndex
         drill_down.TargetDrillDownOption = DrillDownOption
         drill_down.TargetRowFilter = TargetRowFilter
         drill_down.DoDrillDown()
-        return StatViewAssistant('User Defined Statistics')
+        return StatViewAssistant(self.IxNetwork, 'User Defined Statistics')
 
     def __str__(self):
         """Return a string with all the rows in the current view
