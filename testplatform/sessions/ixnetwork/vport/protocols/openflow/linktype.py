@@ -56,3 +56,15 @@ class LinkType(Base):
 	@OfppfFiber.setter
 	def OfppfFiber(self, value):
 		self._set_attribute('ofppfFiber', value)
+
+	def update(self, OfppfCopper=None, OfppfFiber=None):
+		"""Updates a child instance of linkType on the server.
+
+		Args:
+			OfppfCopper (bool): NOT DEFINED
+			OfppfFiber (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -68,6 +68,17 @@ class Rip(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of rip on the server.
+
+		Args:
+			Enabled (bool): Enables or disables the use of this emulated RIP router in the emulated RIP network. (default = disabled)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

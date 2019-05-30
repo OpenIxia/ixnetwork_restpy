@@ -46,6 +46,17 @@ class Layer23ProtocolPortFilter(Base):
 	def PortFilterIds(self, value):
 		self._set_attribute('portFilterIds', value)
 
+	def update(self, PortFilterIds=None):
+		"""Updates a child instance of layer23ProtocolPortFilter on the server.
+
+		Args:
+			PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Selected port filters from the availablePortFilter list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, PortFilterIds=None):
 		"""Adds a new layer23ProtocolPortFilter node on the server and retrieves it in this instance.
 

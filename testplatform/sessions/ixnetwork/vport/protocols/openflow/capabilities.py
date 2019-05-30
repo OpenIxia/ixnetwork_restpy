@@ -128,3 +128,21 @@ class Capabilities(Base):
 	@TableStatistics.setter
 	def TableStatistics(self, value):
 		self._set_attribute('tableStatistics', value)
+
+	def update(self, FlowStatistics=None, MatchIpAddressInArpPackets=None, PortStatistics=None, QueueStatistics=None, ReassambleIpFragments=None, Reserved=None, SpanningTree=None, TableStatistics=None):
+		"""Updates a child instance of capabilities on the server.
+
+		Args:
+			FlowStatistics (bool): Indicates that the ofChannel capabilities of the switch includes flow statistics.
+			MatchIpAddressInArpPackets (bool): Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
+			PortStatistics (bool): Indicates that the ofChannel capabilities of the switch includes port statistics.
+			QueueStatistics (bool): Indicates that the ofChannel capabilities of the switch include Queue statistics.
+			ReassambleIpFragments (bool): Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
+			Reserved (bool): Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
+			SpanningTree (bool): Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
+			TableStatistics (bool): Indicates that the ofChannel capabilities of the switch includes table statistics.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

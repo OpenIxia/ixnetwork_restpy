@@ -185,6 +185,23 @@ class FlowSet(Base):
 		"""
 		return self._get_attribute('priority')
 
+	def update(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
+		"""Updates a child instance of flowSet on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
+			FlowSetId (str): Specify the controller Flow Set identifier.
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfFlows (number): The number of flows to be configured for the controller table.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
 		"""Finds and retrieves flowSet data from the server.
 

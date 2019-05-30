@@ -82,6 +82,20 @@ class Column(Base):
 	def Values(self, value):
 		self._set_attribute('values', value)
 
+	def update(self, Format=None, Offset=None, Size=None, Values=None):
+		"""Updates a child instance of column on the server.
+
+		Args:
+			Format (str(ascii|binary|custom|decimal|hex|ipv4|ipv6|mac)): The format of the Table UDF list (column).
+			Offset (number): The offset value, in bytes, of the Table UDF list (column).
+			Size (number): The size, in bytes, of the Table UDF list (column).
+			Values (list(str)): The value of the table UDF column.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Format=None, Offset=None, Size=None, Values=None):
 		"""Adds a new column node on the server and retrieves it in this instance.
 

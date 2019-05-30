@@ -178,6 +178,28 @@ class DceNodeMacGroups(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, IncludeMacGroups=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NoOfUnicastScrMacsPerMulicastMac=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+		"""Updates a child instance of dceNodeMacGroups on the server.
+
+		Args:
+			IncludeMacGroups (bool): If true, includes MAC groups for this Network Range.
+			InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups.
+			IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group.
+			MulticastAddressNodeStep (str): The Multicast MAC address that configures the increment across the Network Range simulated RBridges.
+			MulticastMacCount (number): The number of Multicast MAC addresses.
+			MulticastMacStep (str): The incremental value of Multicast MAC address.
+			NoOfUnicastScrMacsPerMulicastMac (number): The number of Unicast Source for each Multicast MAC address.
+			SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
+			StartMulticastMac (str): The MAC address format of the starting Multicast MAC.
+			StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC.
+			UnicastAddressNodeStep (str): The Unicast MAC address that configures the increment across the Network Range simulated RBridges.
+			VlanId (number): The VLAN ID of the enabled Multicast MAC Range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeMacGroups=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NoOfUnicastScrMacsPerMulicastMac=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
 		"""Adds a new dceNodeMacGroups node on the server and retrieves it in this instance.
 

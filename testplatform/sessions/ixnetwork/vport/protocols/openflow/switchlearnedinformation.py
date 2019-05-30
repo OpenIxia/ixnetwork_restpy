@@ -401,6 +401,37 @@ class SwitchLearnedInformation(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, EnableVendorExperimenterMessage=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Source=None, Ipv4destination=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None, TansportSource=None, TransportDestination=None, VendorExperimenterId=None, VendorExperimenterType=None, VendorMessage=None, VendorMessageLength=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of switchLearnedInformation on the server.
+
+		Args:
+			EnableVendorExperimenterMessage (bool): If true, the vendor message trigger configuration parameters are available.
+			EthernetDestination (str): This describes the flow match value for ethernet destination address field.
+			EthernetSource (str): This describes the flow match value for ethernet source address field.
+			EthernetType (str): This describes the Ethernet type of the flow match.
+			InPort (str): This describes the flow match value for input port field
+			IpDscp (str): This describes the flow match value for IP ToS field.
+			IpProtocol (str): This describes the flow match value for IP Protocol field.
+			Ipv4Source (str): This describes the flow match value for IPv4 source address field.
+			Ipv4destination (str): This describes the flow match value for IPv4 destination address field.
+			OutPort (number): This describes the flow match value for output port field.
+			OutPortInputMode (str(ofppMax|ofppInPort|ofppTable|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppNone|outPortCustom)): This describes the output port type.
+			TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+			TableIdInputMode (str(allTables|emergency|tableIdCustom)): This describes the type of table from which flow statistics will be sought.
+			TansportSource (str): This describes the flow match value for transport source field.
+			TransportDestination (str): This describes the flow match value for transport destination field.
+			VendorExperimenterId (number): This describes the ID of the vendor for which vendor message is triggered.
+			VendorExperimenterType (number): This describes the Type of experimenter only for v 1.3.
+			VendorMessage (str): This describes the vendor data of the vendor message trigger.
+			VendorMessageLength (number): This describes the length of vendor data of the vendor message trigger.
+			VlanId (str): This describes the flow match value for VLAN ID field.
+			VlanPriority (str): This describes the flow match value for VLAN Priority field.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def ClearRecordsForTrigger(self):
 		"""Executes the clearRecordsForTrigger operation on the server.
 

@@ -215,6 +215,21 @@ class SpbTopologyList(Base):
 		"""
 		return self._get_attribute('vbit')
 
+	def update(self, BaseVidCount=None, Name=None):
+		"""Updates a child instance of spbTopologyList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			BaseVidCount (number): Base VID Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AuxMcidConfName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootId=None, LinkMetric=None, McidConfName=None, McidSignature=None, NumberOfPorts=None, PortIdentifier=None, SpSourceId=None, TopologyId=None, Vbit=None):
 		"""Base class infrastructure that gets a list of spbTopologyList device ids encapsulated by this object.
 

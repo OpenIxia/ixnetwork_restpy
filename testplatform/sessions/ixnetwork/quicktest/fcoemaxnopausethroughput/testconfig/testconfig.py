@@ -1269,6 +1269,119 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CountRandomLoadRate=None, DelayAfterTransmit=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnablePauseFrames=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FrameLossUnit=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GroupDistributionType=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, IsMulticastAutomaticFrameData=None, IsMulticastTrafficIncluded=None, IsUnicastTrafficIncluded=None, JoinLeaveMultiplier=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, SaturationIteration=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, TestTrafficType=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+			BinaryBackoff (number): Specifies the percentage of binary backoff.
+			BinaryFrameLossUnit (str(%|frames)): The frame loss unit of measurement for the binary algorithm in binary.
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies the binary load unit.
+			BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			BinarySearchType (str(linear|perFlow|perPort|perTrafficItem)): The binary search type value.
+			BinaryTolerance (number): The binary tolerance level.
+			BurstSize (number): The number of packets to send in a burst.
+			CalculateJitter (bool): If true, the jitter is calculated.
+			CalculateLatency (bool): If true, calculates the latency.
+			ComboBackoff (number): The backoff combination of the test configuration.
+			ComboResolution (number): The combined resolution value.
+			ComboTolerance (number): The combined tolerance level.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			CountRandomLoadRate (number): The random count of the load rate.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+			EnableBackoffIteration (bool): If true, enables back off iteration test.
+			EnableDataIntegrity (bool): If true, enables the checking of data integrity for the pass or fail of the trial.
+			EnableExtraIterations (bool): If true, more iterations are performed.
+			EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnablePauseFrames (bool): If enabled, it pauses the frames of unicast.
+			EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the SaturationLatency.
+			EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
+			ExtraIterationOffsets (str): This enables the test to run an extra iteration.
+			FastConvergenceDuration (number): This enables the test to perform iterations using the fast convergence duration configured.
+			FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
+			FrameLossUnit (str): Frame loss measurement unit.
+			FramesPerBurstGap (number): The number of frames to be sent after each burst.
+			Framesize (str): The frame size to be used.
+			FramesizeFixedValue (number): The fixed value of frame size.
+			FramesizeList (list(str)): The list of the available frame sizes.
+			Gap (number): The gap in transmission of frames.
+			GenerateTrackingOptionAggregationFiles (bool): If enabled, it generates the tracking option for aggregation files.
+			GroupDistributionType (str(acrossHosts|acrossPorts)): Indicates the group distribution type.
+			Igmpv3MessageType (str(exclude|include)): It gives details about the IGMPv3 message type in the test configuration.
+			Igmpv3SourceAddrList (str): It gives details about the IGMPv3 source address list in the test configuration.
+			InitialBinaryLoadRate (number): The initial binary value of the load rate.
+			InitialComboLoadRate (number): The initial combination value of the load rate.
+			InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+			InitialStepLoadRate (number): The initial step value of the load rate.
+			Ipv4rate (number): The rate at which IPv4 traffic is sent.
+			Ipv6rate (number): The rate at which IPv6 traffic is sent.
+			IsMulticastAutomaticFrameData (str): It signifies the automatic frame data for multicast.
+			IsMulticastTrafficIncluded (bool): Sets if the test has multicast traffic included.
+			IsUnicastTrafficIncluded (bool): Sets if the test has unicast traffic included.
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveWaitTime (number): The wait time for the leave.
+			LatencyBins (str): Sets the latency bins statistics.
+			LatencyBinsEnabled (bool): Enables the latency bins statistics.
+			LatencyType (str(cutThrough|storeForward)): The type of latency.
+			LoadRateList (str): Enters the Load Rate List.
+			LoadRateValue (number): The value of the load rate.
+			LoadType (str(binary|step)): The type of the payload setting.
+			MaxBinaryLoadRate (number): The upper bound of the iteration rates for each frame size during a binary search.
+			MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
+			MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxRandomLoadRate (number): The maximum random value of the load rate.
+			MaxStepLoadRate (number): The maximum step value of the load rate.
+			MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+			MinComboLoadRate (number): The minimum combination load rate.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinQuickSearchLoadRate (number): Sets the minimum Quick Search load rate.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			MinRandomLoadRate (number): The maximum random value of the load rate.
+			Numtrials (number): The integer value that states the number of trials permitted.
+			PercentMaxRate (number): The rate selected in maximum percentage.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
+			PortDelayValue (number): Sets the port delay value.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit.
+			QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit.
+			QuickSearchResolution (number): Sets the quick search resolution.
+			QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): Sets the quick search type.
+			QuickSearchTolerance (number): Sets the quick search tolerance.
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): The rate selected.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The unit of rate for throughput.
+			Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
+			StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
+			StepComboLoadRate (number): The step value of combination load rate.
+			StepFrameLossUnit (str(%|frames)): The step frame loss unit.
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			StepIncrementLoadRate (number): The step incremental value of the load rate.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
+			StepStepLoadRate (number): The incremental step value of load rate.
+			StepTolerance (number): The step value of the tolerance level.
+			StopTestOnHighLoss (number): If true, enables this to stop the test in case of high frame loss.
+			TestTrafficType (str): It signifies the test traffic type value.
+			Tolerance (number): The value set for the tolerance level.
+			TrafficType (str(burstyLoading|constantLoading)): The test based on the traffic type.
+			TxDelay (number): Signifies the transmission delay time.
+			UnchangedValueList (str): The number of unchanged sessions.
+			UsePercentOffsets (str): If true, sets the offset value in percentage.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

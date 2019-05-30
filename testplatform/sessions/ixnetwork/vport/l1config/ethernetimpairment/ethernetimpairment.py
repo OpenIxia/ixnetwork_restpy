@@ -56,3 +56,15 @@ class EthernetImpairment(Base):
 	@Ppm.setter
 	def Ppm(self, value):
 		self._set_attribute('ppm', value)
+
+	def update(self, EnablePPM=None, Ppm=None):
+		"""Updates a child instance of ethernetImpairment on the server.
+
+		Args:
+			EnablePPM (bool): If true, enables the portsppm.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

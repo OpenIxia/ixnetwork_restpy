@@ -54,6 +54,17 @@ class Hex(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Value=None):
+		"""Updates a child instance of hex on the server.
+
+		Args:
+			Value (str): Parameter hex value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Default=None, Value=None):
 		"""Finds and retrieves hex data from the server.
 

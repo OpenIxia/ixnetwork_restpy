@@ -381,6 +381,24 @@ class Vport(Base):
 		"""
 		return self._get_attribute('validTxModes')
 
+	def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None):
+		"""Updates a child instance of vport on the server.
+
+		Args:
+			ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)): The physical port to which the unassigned port is assigned.
+			IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+			Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
+			RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
+			TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
+			TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
+			TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
+			Type (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): The type of port selection.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None):
 		"""Adds a new vport node on the server and retrieves it in this instance.
 

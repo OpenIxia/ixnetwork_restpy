@@ -92,6 +92,19 @@ class Bfd(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None, IntervalValue=None, PacketsPerInterval=None):
+		"""Updates a child instance of bfd on the server.
+
+		Args:
+			Enabled (bool): Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
+			IntervalValue (number): Interval Value
+			PacketsPerInterval (number): Number of BFD control packets per interval.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

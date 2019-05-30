@@ -56,3 +56,15 @@ class ImportTarget(Base):
 	@ImportTargetListEx.setter
 	def ImportTargetListEx(self, value):
 		self._set_attribute('importTargetListEx', value)
+
+	def update(self, ImportTargetList=None, ImportTargetListEx=None):
+		"""Updates a child instance of importTarget on the server.
+
+		Args:
+			ImportTargetList (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
+			ImportTargetListEx (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN routeranges.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -142,6 +142,25 @@ class Atm(Base):
 	def Vpi(self, value):
 		self._set_attribute('vpi', value)
 
+	def update(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+		"""Updates a child instance of atm on the server.
+
+		Args:
+			AtmEncapsulation (str(llcRoutedSnap|llcBridged802p3WithFcs|llcBridged802p3WithOutFcs|ppp|vcMultiplexedPpp|vcMultiRouted|vcMultiBridged802p3WithFcs|vcMultiBridged802p3WithOutFcs)): The type of ATM encapsulation to use for this ATM Name.
+			Count (number): The total number of VPI/VCI pairs to create.
+			Enabled (bool): Enables this ATM VPI/VCI entry.
+			IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
+			IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
+			Name (str): The identifier associated with this ATM VPI/VCI entry.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
+			Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
 		"""Adds a new atm node on the server and retrieves it in this instance.
 

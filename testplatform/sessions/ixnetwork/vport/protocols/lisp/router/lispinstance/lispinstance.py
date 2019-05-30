@@ -258,6 +258,30 @@ class LispInstance(Base):
 	def Ttl(self, value):
 		self._set_attribute('ttl', value)
 
+	def update(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
+		"""Updates a child instance of lispInstance on the server.
+
+		Args:
+			Act (str(noAction|nativelyForward|sendMapRequest|drop)): It gives details about the action
+			AllowAllEids (bool): It allows all the eids
+			AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
+			AuthoritativeBit (bool): If true, it enables the authoritative bit
+			AutoComposeNegativeMapReply (bool): If true, it enables the auto compose negative map reply
+			Enabled (bool): If true, it enables the protocol
+			EtrRegistrationTimeout (number): It gives the etr registration timeout
+			InstanceId (str): It gives the instance id
+			InternalMsmrSelectionMode (str(allMsmrInSameIxiaPort|custom|none)): it gives the details about the internal Msmr selection mode
+			Key (str): It gives details about the key
+			MapVersionNumber (number): It gives details about the map version number
+			Reserved (number): It gives details about the reserved protocols
+			Rsvd (number): It gives details about the rsvd
+			Ttl (number): It gives details about the ttl
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
 		"""Adds a new lispInstance node on the server and retrieves it in this instance.
 

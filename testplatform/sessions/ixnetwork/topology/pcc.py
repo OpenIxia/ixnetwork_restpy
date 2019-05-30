@@ -460,6 +460,28 @@ class Pcc(Base):
 		"""
 		return self._get_attribute('tcpPort')
 
+	def update(self, Active_pre_established_lsps=None, ConnectedVia=None, ExpectedInitiatedLspsForTraffic=None, Multiplier=None, Name=None, NumberOfBackupPCEs=None, PreEstablishedSrLspsPerPcc=None, RequestedLspsPerPcc=None, StackedLayers=None):
+		"""Updates a child instance of pcc on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Active_pre_established_lsps (number): 
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			ExpectedInitiatedLspsForTraffic (number): Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfBackupPCEs (number): Number of Backup PCEs
+			PreEstablishedSrLspsPerPcc (number): Pre-Established SR LSPs per PCC
+			RequestedLspsPerPcc (number): Requested LSPs per PCC
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Active_pre_established_lsps=None, ConnectedVia=None, ExpectedInitiatedLspsForTraffic=None, Multiplier=None, Name=None, NumberOfBackupPCEs=None, PreEstablishedSrLspsPerPcc=None, RequestedLspsPerPcc=None, StackedLayers=None):
 		"""Adds a new pcc node on the server and retrieves it in this instance.
 

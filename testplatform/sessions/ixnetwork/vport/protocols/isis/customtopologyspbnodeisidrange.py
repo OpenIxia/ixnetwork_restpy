@@ -214,6 +214,31 @@ class CustomTopologySpbNodeIsidRange(Base):
 	def VlanType(self, value):
 		self._set_attribute('vlanType', value)
 
+	def update(self, CMacAddressCount=None, CMacAddressStep=None, EnableIsid=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, Isid=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TransmissionType=None, VlanType=None):
+		"""Updates a child instance of customTopologySpbNodeIsidRange on the server.
+
+		Args:
+			CMacAddressCount (number): NOT DEFINED
+			CMacAddressStep (str): NOT DEFINED
+			EnableIsid (bool): NOT DEFINED
+			InterNodeCmacAddress (str): NOT DEFINED
+			InterNodeCvlan (number): NOT DEFINED
+			InterNodeIsIdIncrement (number): NOT DEFINED
+			InterNodeSvlan (number): NOT DEFINED
+			Isid (number): NOT DEFINED
+			RBit (bool): NOT DEFINED
+			StartCmacAddress (str): NOT DEFINED
+			StartCvlan (number): NOT DEFINED
+			StartSvlan (number): NOT DEFINED
+			TBit (bool): NOT DEFINED
+			TransmissionType (str(unicast|multicast)): NOT DEFINED
+			VlanType (str(singleVlan|stackedVlanQinQ)): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CMacAddressCount=None, CMacAddressStep=None, EnableIsid=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, Isid=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TransmissionType=None, VlanType=None):
 		"""Adds a new customTopologySpbNodeIsidRange node on the server and retrieves it in this instance.
 

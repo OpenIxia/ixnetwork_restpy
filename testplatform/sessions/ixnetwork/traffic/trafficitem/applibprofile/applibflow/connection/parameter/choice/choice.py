@@ -63,6 +63,17 @@ class Choice(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Value=None):
+		"""Updates a child instance of choice on the server.
+
+		Args:
+			Value (str): Parameter choice selected value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Default=None, SupportedValues=None, Value=None):
 		"""Finds and retrieves choice data from the server.
 

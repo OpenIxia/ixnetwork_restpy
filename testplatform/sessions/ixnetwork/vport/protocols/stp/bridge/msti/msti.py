@@ -194,6 +194,27 @@ class Msti(Base):
 	def VlanStop(self, value):
 		self._set_attribute('vlanStop', value)
 
+	def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+		"""Updates a child instance of msti on the server.
+
+		Args:
+			Enabled (bool): Enables the use of this MSTP MSTI. (default = disabled)
+			InternalRootPathCost (number): The MSTI Internal Root Path Cost. A 4-byte unsigned integer. (default is 0)
+			Mac (str): The 6-byte MAC address for the MSTI root. This is part of the MSTI regional root identifier.
+			MstiHops (number): The number of MSTI hops remaining. An unsigned integer. The valid range is 1 to 255. (default = 20)
+			MstiId (number): The identifier for this MST Instance (MSTI). The valid range is 1 to 4,094. (default = 1)
+			MstiName (str): The name of the MSTI which is configured from the list of MSTIs. Format: MSTI ID-n. (Editable by the user.)
+			PortPriority (str(0|16|32|48|64|80|96|112|128|144|160|176|192|208|224|240)): The MSTI Port Priority. This is part of the MSTI Regional Root Identifier. An unsigned integer; a multiple of 16. The valid range is 0 to 240. (default = 0)
+			Priority (str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)): The MSTI Root Priority. This is part of the MSTI Regional Root Identifier. Since MAC address reduction is used, only multiples of 4096 are used.
+			UpdateRequired (bool): If true, causes the MSTI to update.
+			VlanStart (number): The ID for the first VLAN in the VLAN range to which the MSTI is mapped. An unsigned integer. Valid range: 1 to 4094.
+			VlanStop (number): The ID for the last VLAN in the VLAN range to which the MSTI is mapped. An unsigned integer. Valid range: 1 to 4094.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
 		"""Adds a new msti node on the server and retrieves it in this instance.
 

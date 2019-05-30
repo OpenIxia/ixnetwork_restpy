@@ -99,6 +99,20 @@ class DynamicFrameSize(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
+		"""Updates a child instance of dynamicFrameSize on the server.
+
+		Args:
+			FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
+			RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+			RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+			Type (str(fixed|random)): Sets the frame size to either fixed or random lengths in bytes.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
 		"""Finds and retrieves dynamicFrameSize data from the server.
 

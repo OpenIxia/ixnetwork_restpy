@@ -58,6 +58,18 @@ class Interface(Base):
 	def InterfaceId(self, value):
 		self._set_attribute('interfaceId', value)
 
+	def update(self, Enabled=None, InterfaceId=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Enabled (bool): If true, the interface is enabled.
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface identifier for the interface.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InterfaceId=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

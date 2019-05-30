@@ -82,6 +82,20 @@ class NetTopologyGrid(Base):
 	def Rows(self, value):
 		self._set_attribute('rows', value)
 
+	def update(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+		"""Updates a child instance of netTopologyGrid on the server.
+
+		Args:
+			Columns (number): number of columns
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LinkMultiplier (number): number of links between two nodes
+			Rows (number): number of rows
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
 		"""Adds a new netTopologyGrid node on the server and retrieves it in this instance.
 

@@ -116,3 +116,20 @@ class DhcpV4Properties(Base):
 	@VendorId.setter
 	def VendorId(self, value):
 		self._set_attribute('vendorId', value)
+
+	def update(self, ClientId=None, Enabled=None, RenewTimer=None, RequestRate=None, ServerId=None, Tlvs=None, VendorId=None):
+		"""Updates a child instance of dhcpV4Properties on the server.
+
+		Args:
+			ClientId (str): The user may optionally assign an identifier for the Client. This value must be unique on the subnet where the DHCP Client is located.
+			Enabled (bool): If enabled, DHCP negotiation will be started and an IPv4 address learned from the DHCP server will be assigned automatically to the protocol interface.
+			RenewTimer (number): The renew timer value specified by the DHCPv4 server.
+			RequestRate (number): (For rate control) The user-specified maximum number of Request messages that can be sent per second from the client to the DHCP server, requesting an IPv4 address. A value of zero (0) indicates that there will be no rate control, i.e., Requests will be sent as quickly as possible.
+			ServerId (str): This IPv4 address value is used to identify the DHCP Server and as a destination address from the client.
+			Tlvs (list(dict(arg1:number,arg2:str))): The type length value for DHCP.
+			VendorId (str): The optional, user-assigned Vendor ID (vendor class identifier).
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

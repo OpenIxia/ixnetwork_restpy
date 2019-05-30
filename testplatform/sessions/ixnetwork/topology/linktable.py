@@ -57,6 +57,18 @@ class LinkTable(Base):
 	def ToNodeIndex(self, value):
 		self._set_attribute('toNodeIndex', value)
 
+	def update(self, FromNodeIndex=None, ToNodeIndex=None):
+		"""Updates a child instance of linkTable on the server.
+
+		Args:
+			FromNodeIndex (list(str)): from node index.
+			ToNodeIndex (list(str)): to node index.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

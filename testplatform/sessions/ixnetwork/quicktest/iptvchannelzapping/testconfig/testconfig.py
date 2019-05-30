@@ -237,6 +237,33 @@ class TestConfig(Base):
 	def TrackByIpDestination(self, value):
 		self._set_attribute('trackByIpDestination', value)
 
+	def update(self, AutomaticEnableIptvStats=None, BackgroundTrafficEnabled=None, Duration=None, EnableJoinFailuresMode=None, EnableLeaveFailuresMode=None, LoadType=None, Numtrials=None, PassCriteriaJoinFailuresValue=None, PassCriteriaJoinLatencyValue=None, PassCriteriaLeaveFailuresValue=None, PassCriteriaLeaveLatencyValue=None, ProtocolItem=None, StartIptvEndpointsBeforeTraffic=None, TestTrafficType=None, TrackByEgressVlanId=None, TrackByFlowGroup=None, TrackByIpDestination=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			AutomaticEnableIptvStats (str): If true, enables the automatic Iptv Statistics.
+			BackgroundTrafficEnabled (str): If true, the traffic in background is enabled.
+			Duration (number): Period of time over which the configured IPTV subscribers and multicast traffic sources execute the configured behavior.
+			EnableJoinFailuresMode (str): If true, Failure Mode for Joined state is enabled.
+			EnableLeaveFailuresMode (str): If true, Failure Mode for Leave state is enabled.
+			LoadType (str(custom)): The type of load used to modify the variable parameter value.
+			Numtrials (number): The number of trials that can be run for the test.
+			PassCriteriaJoinFailuresValue (number): Denotes the value of Join actions marked as failed.
+			PassCriteriaJoinLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
+			PassCriteriaLeaveFailuresValue (number): How many Leave actions were marked as Failed.
+			PassCriteriaLeaveLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			StartIptvEndpointsBeforeTraffic (str): The IPTV Endpoints are set before sending traffic.
+			TestTrafficType (str): Indicates the type of traffic to be tested.
+			TrackByEgressVlanId (str): If true, Custom Offset from Packet Locations can be configured.
+			TrackByFlowGroup (str): It configures flow tracking for all flow groups.
+			TrackByIpDestination (str): If true, flows are tracked by the IPv4 Destination Address as per the route ranges configured under destination endpoint.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -443,6 +443,23 @@ class IsisTrillRouter(Base):
 	def TrillMCastMacGroupCount(self, value):
 		self._set_attribute('trillMCastMacGroupCount', value)
 
+	def update(self, Name=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+		"""Updates a child instance of isisTrillRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			TrillMCastIpv4GroupCount (number): # Multicast IPv4 Groups(multiplier)
+			TrillMCastIpv6GroupCount (number): # Multicast IPv6 Groups(multiplier)
+			TrillMCastMacGroupCount (number): MAC Group Count(multiplier)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Name=None, SessionInfo=None, SessionStatus=None, StateCounts=None, Status=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
 		"""Finds and retrieves isisTrillRouter data from the server.
 

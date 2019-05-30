@@ -58,6 +58,18 @@ class EnumerationFilter(Base):
 	def TrackingFilterId(self, value):
 		self._set_attribute('trackingFilterId', value)
 
+	def update(self, SortDirection=None, TrackingFilterId=None):
+		"""Updates a child instance of enumerationFilter on the server.
+
+		Args:
+			SortDirection (str(ascending|descending)): Sets the display order of the view.
+			TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, SortDirection=None, TrackingFilterId=None):
 		"""Adds a new enumerationFilter node on the server and retrieves it in this instance.
 

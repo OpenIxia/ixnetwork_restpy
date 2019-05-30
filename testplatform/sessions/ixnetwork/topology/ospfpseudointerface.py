@@ -368,6 +368,21 @@ class OspfPseudoInterface(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, Name=None, SrlgCount=None):
+		"""Updates a child instance of ospfPseudoInterface on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Name=None, SrlgCount=None):
 		"""Finds and retrieves ospfPseudoInterface data from the server.
 

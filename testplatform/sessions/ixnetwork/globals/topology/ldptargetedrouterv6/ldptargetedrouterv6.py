@@ -127,6 +127,20 @@ class LdpTargetedRouterV6(Base):
 		"""
 		return self._get_attribute('vpnLabel')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ldpTargetedRouterV6 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, DiscardSelfOriginatedFECs=None, TransportLabels=None, VpnLabel=None):
 		"""Base class infrastructure that gets a list of ldpTargetedRouterV6 device ids encapsulated by this object.
 

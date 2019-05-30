@@ -58,6 +58,18 @@ class SourceRange(Base):
 	def IpFrom(self, value):
 		self._set_attribute('ipFrom', value)
 
+	def update(self, Count=None, IpFrom=None):
+		"""Updates a child instance of sourceRange on the server.
+
+		Args:
+			Count (number): The number of IP addresses in the source range.
+			IpFrom (str): The first IP address in the source range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, IpFrom=None):
 		"""Adds a new sourceRange node on the server and retrieves it in this instance.
 

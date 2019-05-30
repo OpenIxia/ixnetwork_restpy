@@ -72,6 +72,17 @@ class Ovsdbcontroller(Base):
 		"""
 		return self._get_attribute('rowNames')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ovsdbcontroller on the server.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

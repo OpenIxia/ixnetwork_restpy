@@ -219,3 +219,18 @@ class Page(Base):
 			number
 		"""
 		return self._get_attribute('totalRows')
+
+	def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
+		"""Updates a child instance of page on the server.
+
+		Args:
+			CurrentPage (number): The current page number being displayed.
+			EgressMode (str(conditional|paged)): Emulates conditional or paged egress tracking view based on selected mode.
+			EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
+			IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
+			PageSize (number): The number of statistics per page.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

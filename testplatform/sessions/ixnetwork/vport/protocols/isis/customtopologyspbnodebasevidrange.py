@@ -108,6 +108,21 @@ class CustomTopologySpbNodeBaseVidRange(Base):
 	def UseFlag(self, value):
 		self._set_attribute('useFlag', value)
 
+	def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+		"""Updates a child instance of customTopologySpbNodeBaseVidRange on the server.
+
+		Args:
+			BVlanPriority (number): NOT DEFINED
+			BVlanTpId (str(33024|37120|37376|34987)): NOT DEFINED
+			BaseVid (number): NOT DEFINED
+			EctAlgorithm (str(00-80-C2-01|00-80-C2-02|00-80-C2-03|00-80-C2-04|00-80-C2-05|00-80-C2-06|00-80-C2-07|00-80-C2-08|00-80-C2-09|00-80-C2-0A|00-80-C2-0B|00-80-C2-0C|00-80-C2-0D|00-80-C2-0E|00-80-C2-0F|00-80-C2-10)): NOT DEFINED
+			UseFlag (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
 		"""Adds a new customTopologySpbNodeBaseVidRange node on the server and retrieves it in this instance.
 

@@ -140,3 +140,22 @@ class Trigger(Base):
 	@CaptureTriggerSA.setter
 	def CaptureTriggerSA(self, value):
 		self._set_attribute('captureTriggerSA', value)
+
+	def update(self, CaptureTriggerDA=None, CaptureTriggerEnable=None, CaptureTriggerError=None, CaptureTriggerExpressionString=None, CaptureTriggerFrameSizeEnable=None, CaptureTriggerFrameSizeFrom=None, CaptureTriggerFrameSizeTo=None, CaptureTriggerPattern=None, CaptureTriggerSA=None):
+		"""Updates a child instance of trigger on the server.
+
+		Args:
+			CaptureTriggerDA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
+			CaptureTriggerEnable (bool): Enables or disables the capture trigger.
+			CaptureTriggerError (str(errAnyFrame|errAnyIpTcpUdpChecksumError|errAnySequencekError|errBadCRC|errBadFrame|errBigSequenceError|errDataIntegrityError|errGoodFrame|errInvalidFcoeFrame|errReverseSequenceError|errSmallSequenceError)): Applicable only when captureTriggerEnable is set to true.
+			CaptureTriggerExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
+			CaptureTriggerFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
+			CaptureTriggerFrameSizeFrom (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
+			CaptureTriggerFrameSizeTo (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+			CaptureTriggerPattern (str(anyPattern|notPattern1|notPattern2|pattern1|pattern1AndPattern2|pattern2)): Applicable only when captureTriggerEnable is set to true.
+			CaptureTriggerSA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

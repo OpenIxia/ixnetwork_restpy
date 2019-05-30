@@ -1221,6 +1221,115 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, BackoffIteration=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramelossPercentValue=None, FramesPerBurstGap=None, FramesizeList=None, Gap=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, InitialBinaryLoadRate=None, InitialRate=None, InitialStepLoadRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxIncrementFrameSize=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinIncrementFrameSize=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MldVersion=None, NumAddresses=None, NumIterations=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, ReportSequenceError=None, ReportTputRateUnit=None, RouterAlert=None, SaturationIteration=None, ShowDetailedBinaryResults=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, SupportedTrafficTypes=None, TestMapType=None, TestTrafficType=None, TxDelay=None, UnchangedInitial=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): The assigned group type.
+			BackoffIteration (number): IF true, the iteration is backed off.
+			BidirectionalOptionEnabled (bool): if true, the bidirectional option is enabled.
+			BinaryBackoff (number): The binary backoff.
+			BinaryFrameLossUnit (str(%|frames)): The binary frame loss unit.
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The binary load unit.
+			BinaryResolution (number): The binary resolution.
+			BinarySearchType (str(linear)): The binary search type.
+			BinaryTolerance (number): The binary tolerance.
+			BurstSize (number): The burst size.
+			CalculateJitter (bool): The calculated jitter.
+			CalculateLatency (bool): The latency is calculated.
+			CountRandomFrameSize (number): if true, the random frame size is counted.
+			DelayAfterTransmit (number): The delay after transmit of test config.
+			Duration (number): The test configuration duration.
+			EnableBackoffIteration (bool): If true, the back off iteration is enabled.
+			EnableDataIntegrity (bool): If true, data integrity is enabled.
+			EnableExtraIterations (bool): If true, extra iterations are enabled.
+			EnableFastConvergence (bool): If true, fast convergence is enabled.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableLeaveGroup (bool): If true, the leave group is enabled.
+			EnableMinFrameSize (bool): If true,the minimum frame size is enabled.
+			EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+			EnableOldStatsForReef (bool): If true, the old stats for reef is enabled.
+			EnableSaturationIteration (bool): If true, the saturation iteration us enabled.
+			EnableStopTestOnHighLoss (bool): If true, the test is stopped on high loss.
+			ExtraIterationOffsets (str): The extra iteration offsets.
+			FastConvergenceDuration (number): The fast convergence duration.
+			FastConvergenceThreshold (number): The fast convergence threshold.
+			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+			ForceRegenerate (bool): If true, the test configuration is forcefully regenerated.
+			FrameLossUnit (str): The frame loss unit.
+			FrameSizeMode (str(custom|customlist|increment|random)): The frame size mode of test configuration.
+			FramelossPercentValue (number): The frame loss percentage value.
+			FramesPerBurstGap (number): The frames per burst gap.
+			FramesizeList (list(str)): The frame size list of the test configuration.
+			Gap (number): The test configuration gap.
+			GroupDistributionType (str(acrossHosts|acrossPorts)): The group distribution type.
+			IgmpV1Timeout (number): The igmp V1 timeout.
+			IgmpVersion (number): The igmp version of the test configuration.
+			Igmpv3MessageType (str(exclude|include)): It gives details about the igmpv3 message type in the test configuration
+			Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+			IncrAddresses (number): The incremented address of the test configuration.
+			InitialBinaryLoadRate (number): The initial binary load rate.
+			InitialRate (str): The initial rate of the test configuration.
+			InitialStepLoadRate (number): The initial step of the load type.
+			Ipv4Address (str): The IPV4 address.
+			Ipv6Address (str): The IPV6 address.
+			IsIPv6 (str): The ipv6 address.
+			IsMulticastAutomaticFrameData (str): The Multicast automatic frame data.
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): The join and leave rate of the test configuration.
+			JoinLeaveWaitTime (number): The join and leave wait time.
+			LatencyBins (str): Sets the latency bins statistics
+			LatencyBinsEnabled (bool): Enables the latency bins statistics
+			LatencyType (str(cutThrough|storeForward)): The latency type.
+			LoadInitialRate (number): The initial rate of the load.
+			LoadType (str(binary|quickSearch|step)): The load type.
+			MapType (str): The map type.
+			MaxBinaryLoadRate (number): The maximum binary load rate.
+			MaxIncrementFrameSize (number): The maximum frame size incrememnt.
+			MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
+			MaxRandomFrameSize (number): The maximum random frame size.
+			MaxStepLoadRate (number): The maximum step of the load rate.
+			MinBinaryLoadRate (number): The minimum binary load rate.
+			MinIncrementFrameSize (number): The minimum frame size increment.
+			MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
+			MinRandomFrameSize (number): The minimum random frame size.
+			MldVersion (number): The mld version of the test configuration.
+			NumAddresses (number): The number of addresses of the test configuration.
+			NumIterations (number): The number of iterations.
+			Numtrials (number): The number of trials for the test configuration.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
+			QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit
+			QuickSearchResolution (number): Sets the quick search resolution
+			QuickSearchSearchType (str(linear)): Sets the quick search type
+			QuickSearchTolerance (number): Sets the quick search tolerance
+			ReportSequenceError (bool): The report of sequence error.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The report throughput rate unit.
+			RouterAlert (bool): The router alert.
+			SaturationIteration (number): The saturation iteration.
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepFrameLossUnit (str(%|frames)): The step frame loss unit.
+			StepIncrementFrameSize (number): The step increment frame size.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The step load unit.
+			StepStepLoadRate (number): The step of the step load rate.
+			StepTolerance (number): The step tolerance.
+			StopTestOnHighLoss (number): If true, the test is stopped at high loss.
+			SupportedTrafficTypes (str): The supported traffic types.
+			TestMapType (str(fullymesh|one2many)): The test map type.
+			TestTrafficType (str): The test traffic type.
+			TxDelay (number): The transmission delay.
+			UnchangedInitial (str(False|True)): If true, the initial is unchanged.
+			UsePercentOffsets (str): The use percent offsets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

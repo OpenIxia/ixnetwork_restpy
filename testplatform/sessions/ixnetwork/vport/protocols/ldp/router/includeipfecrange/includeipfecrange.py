@@ -94,6 +94,21 @@ class IncludeIpFecRange(Base):
 	def NumberOfNetworks(self, value):
 		self._set_attribute('numberOfNetworks', value)
 
+	def update(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
+		"""Updates a child instance of includeIpFecRange on the server.
+
+		Args:
+			EnableExactPrefixMatch (bool): Matching for FEC address ranges, for the purpose of filtering.
+			Enabled (bool): Enables this explicit include FEC range.
+			FirstNetwork (str): The first FEC network address in the range (in IP address format).
+			MaskWidth (number): The number of bits in the FEC mask applied to the FEC network address. The masked bits in the First Network address form the FEC address prefix.
+			NumberOfNetworks (number): The number of FEC network addresses to be included in the FEC range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
 		"""Adds a new includeIpFecRange node on the server and retrieves it in this instance.
 

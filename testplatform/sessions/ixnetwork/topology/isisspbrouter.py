@@ -387,6 +387,21 @@ class IsisSpbRouter(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, Name=None, SpbTopologyCount=None):
+		"""Updates a child instance of isisSpbRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SpbTopologyCount (number): Topology Count(multiplier)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, SpbTopologyCount=None):
 		"""Adds a new isisSpbRouter node on the server and retrieves it in this instance.
 

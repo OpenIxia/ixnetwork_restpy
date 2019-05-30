@@ -957,6 +957,93 @@ class TestConfig(Base):
 	def UseMulticast(self, value):
 		self._set_attribute('useMulticast', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurdenFrameSize=None, BurdenProtocolItems=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DelayBetweenIterations=None, DelayMode=None, Duration=None, EnableExtraJoinFrames=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastLearning=None, EnableMulticastQuerier=None, EnableRouterAlert=None, ExtraFramesFirstGroupAddress=None, ExtraFramesFirstGroupAddressIPv6=None, ExtraFramesTotalGroupAddresses=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrStep=None, IncrementBurdenLoadUnit=None, IncrementLoadUnit=None, InitialBurdenIncrementLoadRate=None, InitialRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinDelayRefUnit=None, JoinDelayRefValue=None, JoinLeaveAlgorithm=None, JoinLeaveFramesPerGroup=None, JoinLeaveMode=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LeaveDelayRefUnit=None, LeaveDelayRefValue=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MaxRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, Mldv2MessageType=None, Mldv2SourceAddrList=None, NumAddresses=None, NumIterations=None, NumberOfExtraJoins=None, Numtrials=None, OffsetTime=None, PercentMaxRate=None, ProtocolItem=None, Rfc2889ordering=None, StaggeredStart=None, StepBurdenIncrementLoadRate=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TestTrafficType=None, TrafficBeforeJoinLeave=None, TxDelay=None, Use3376mode=None, UseMulticast=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): It gives details about the assigned group types
+			BidirectionalOptionEnabled (bool): It the bi directional option enabled
+			BurdenFrameSize (number): It gives details about the burden frame size
+			BurdenProtocolItems (list(str)): NOT DEFINED
+			CountRandomFrameSize (number): It gives a count of the random frame sizes
+			DelayAfterTransmit (number): It gives details about the delay after the transmission
+			DelayBetweenIterations (number): It gives details about the delay between the Iterations
+			DelayMode (str(average|max)): It gives details about the delay mode
+			Duration (number): The duration till of the test run
+			EnableExtraJoinFrames (bool): If true, It enables the extra join frames
+			EnableLeaveGroup (bool): If True, it enables the leave group
+			EnableMinFrameSize (bool): If true, it enables the minimum frame size
+			EnableMulticastLearning (bool): NOT DEFINED
+			EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+			EnableRouterAlert (bool): If true, It enables the router alert
+			ExtraFramesFirstGroupAddress (str): It gives details about the extra First frame group address
+			ExtraFramesFirstGroupAddressIPv6 (str): It gives details about the extra First frame group address in IP version 6 version
+			ExtraFramesTotalGroupAddresses (number): It gives details about the extra frame total group address
+			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+			ForceRegenerate (bool): It makes the test to force regenerate
+			FrameSizeMode (str(custom|increment|random)): It provides details about the frame size mode
+			FramesizeList (list(str)): It provides details about the list of frame size
+			GroupCapacityGreaterThan (number): It provides details about the protocols which are greater than group capacity
+			GroupDistributionType (str(acrossHosts|acrossPorts)): It gives details about the distribution group types
+			IgmpV1Timeout (number): It gives details about the igmp v1 timeout
+			IgmpVersion (number): It provides details about the version of the igmp
+			Igmpv3MessageType (str(exclude|include)): It gives details about the igmpv3 message type in the test configuration
+			Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+			IncrAddresses (number): It gives details about the Incrementing addresses
+			IncrStep (number): It gives details about the incremental step test configuration
+			IncrementBurdenLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): It gives details about the incremental burden load unit
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): It gives details about the increment load unit
+			InitialBurdenIncrementLoadRate (number): It gives details about the initial burden incremental load rate
+			InitialRate (str): It provides details of the initial rate
+			Ipv4Address (str): It provides IP version 4 address
+			Ipv6Address (str): It provides IP version 6 address
+			IsIPv6 (str): It provides with the confirmation whether ipv6 address is in use
+			IsMulticastAutomaticFrameData (str): It provides details multicast automatic frame data is in use or not?
+			JoinDelayRefUnit (str(ms|ns|us)): It gives details about the Join delay in Reference unit
+			JoinDelayRefValue (number): It gives details about the Join delay in Reference value
+			JoinLeaveAlgorithm (str(joinExisting|joinNew)): It gives details about the join leave algorithm in the test configuration
+			JoinLeaveFramesPerGroup (number): It gives details about the Join leave frames per group
+			JoinLeaveMode (str(join)): It gives details about the join leave mode
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): It gives details about the join leave rate of the test configuration
+			JoinLeaveWaitTime (number): It gives details about the join leave rate of the test configuration
+			LeaveDelayRefUnit (str(ms|ns|us)): It gives details about the leave delay reference unit
+			LeaveDelayRefValue (number): It gives details about the leave delay reference value
+			LoadInitialRate (number): It loads the initial rate in the test configuration
+			LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): It gives details about the load type
+			MapType (str): The mapping type of the test configuration is displayed here
+			MaxIncrementFrameSize (number): It gives details about the maximum increment in frame size
+			MaxRandomFrameSize (number): It provides details about the maximum random frame size
+			MaxRate (number): It gives the maximum rate
+			MinIncrementFrameSize (number): It gives details about the minimum increment in frame size
+			MinRandomFrameSize (number): It provides details about the minimum random frame size
+			MldVersion (number): It provides details about the mld version
+			Mldv2MessageType (str(exclude|include)): It gives details about the mldv2 message type in the test configuration
+			Mldv2SourceAddrList (str): It gives details about the mldv2 source address list in the test configuration
+			NumAddresses (number): It provides with the number addresses
+			NumIterations (number): It provides with the number of iterations
+			NumberOfExtraJoins (number): It gives details about the number of extra joins
+			Numtrials (number): It provides with the number trials
+			OffsetTime (number): It provides details about the off set time
+			PercentMaxRate (number): It provides with the percentage of the maximum rate
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			Rfc2889ordering (str(val2889Ordering)): The rfc 2889 ordering in the the test configuration is shown here
+			StaggeredStart (bool): It gives a staggered start to the test configuration
+			StepBurdenIncrementLoadRate (number): It gives details about the step burden incremental load rate
+			StepIncrementFrameSize (number): It gives details about the step increment in frame size
+			SupportedTrafficTypes (str): All the supported test types are displayed of the test configuration
+			TestTrafficType (str): It signifies the test traffic type value.
+			TrafficBeforeJoinLeave (bool): It gives details about the traffic reported before the Join Leave
+			TxDelay (number): It provides with the information of the delay the transmitter causes
+			Use3376mode (bool): 
+			UseMulticast (bool): It uses Multicast for the test configuration
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

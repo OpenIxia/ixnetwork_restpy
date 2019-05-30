@@ -153,6 +153,20 @@ class NssaRoutes(Base):
 		"""
 		return self._get_attribute('rangeSize')
 
+	def update(self, Name=None):
+		"""Updates a child instance of nssaRoutes on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Name=None):
 		"""Finds and retrieves nssaRoutes data from the server.
 

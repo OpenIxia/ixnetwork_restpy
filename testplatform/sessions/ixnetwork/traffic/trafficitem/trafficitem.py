@@ -506,6 +506,43 @@ class TrafficItem(Base):
 		"""
 		return self._get_attribute('warnings')
 
+	def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+		"""Updates a child instance of trafficItem on the server.
+
+		Args:
+			AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+			BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
+			EgressEnabled (bool): Enables the egress.
+			EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+			Enabled (bool): If true, this enables the selected traffic item.
+			HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
+			HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
+			InterAsBgpPreference (str(one|two)): Signifies the inter as BGP prefence
+			InterAsLdpPreference (str(one|two)): Preferences inter as LDP
+			MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
+			MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
+			MulticastForwardingMode (str(loadBalancing|replication)): 
+			Name (str): The name of the traffic item.
+			NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
+			OrdinalNo (number): Signifies the ordinal number
+			OriginatorType (str(endUser|quickTest)): Indicates who created this trafficItem.
+			RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
+			RouteMesh (str(fullMesh|oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
+			SrcDestMesh (str(fullMesh|manyToMany|none|oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
+			Suspend (bool): Suspends all traffic on this stream.
+			TrafficItemType (str(application|applicationLibrary|l2L3|quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
+			TrafficType (str(atm|avb1722|avbRaw|ethernetVlan|fc|fcoe|frameRelay|hdlc|ipv4|ipv4ApplicationTraffic|ipv6|ipv6ApplicationTraffic|ppp|raw)): Helps to select the type of traffic endpoint to be configured.
+			TransmitMode (str(interleaved|sequential)): The transmit mode for this traffic item
+			TransportLdpPreference (str(one|two)): Transports LDP preference
+			TransportRsvpTePreference (str(one|two)): Transports RSVP TE preference
+			UseControlPlaneFrameSize (bool): 
+			UseControlPlaneRate (bool): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
 		"""Adds a new trafficItem node on the server and retrieves it in this instance.
 

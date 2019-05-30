@@ -120,6 +120,22 @@ class InterfaceGroup(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+		"""Updates a child instance of interfaceGroup on the server.
+
+		Args:
+			AtmEncapsulation (str(vcMuxIpv4Routed|vcMuxIpv6Routed|vcMuxBridgedEth802p3WithFcs|vcMuxBridgedEth802p3WithOutFcs|llcRoutedAal5Snap|llcBridgedEthernetWithFcs|llcBridgedEthernetWithoutFcs)): The type of ATM encapsulation used for the Protocol Interfaces in this Group.
+			Description (str): A brief description of the Interface Group.
+			EnableVlan (bool): Enables the use of VLANs.
+			Enabled (bool): Enables this Interface Group.
+			Ip (str(ipv4|ipv6)): The IP version being used for the Protocol Interfaces in this Group.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
 		"""Adds a new interfaceGroup node on the server and retrieves it in this instance.
 

@@ -200,3 +200,27 @@ class Fc(Base):
 	@TxIgnoreRxLinkFaults.setter
 	def TxIgnoreRxLinkFaults(self, value):
 		self._set_attribute('txIgnoreRxLinkFaults', value)
+
+	def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
+		"""Updates a child instance of fc on the server.
+
+		Args:
+			CreditStarvationValue (number): If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
+			EnableEmissionLoweringProtocol (bool): NOT DEFINED
+			EnablePPM (bool): If true, enables the portsppm.
+			FixedDelayValue (number): Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
+			ForceErrors (str(noErrors|noRRDY|noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
+			Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
+			MaxDelayForRandomValue (number): The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
+			MinDelayForRandomValue (number): The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
+			NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			RrdyResponseDelays (str(creditStarvation|fixedDelay|noDelay|randomDelay)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+			Speed (str(speed2000|speed4000|speed8000)): Indicates the line speed.
+			TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
+			TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

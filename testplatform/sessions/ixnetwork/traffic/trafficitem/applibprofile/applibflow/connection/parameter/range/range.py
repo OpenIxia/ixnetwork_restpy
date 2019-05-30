@@ -75,6 +75,18 @@ class Range(Base):
 	def To(self, value):
 		self._set_attribute('to', value)
 
+	def update(self, From=None, To=None):
+		"""Updates a child instance of range on the server.
+
+		Args:
+			From (number): Start range value.
+			To (number): End range value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, From=None, MaxValue=None, MinValue=None, To=None):
 		"""Finds and retrieves range data from the server.
 

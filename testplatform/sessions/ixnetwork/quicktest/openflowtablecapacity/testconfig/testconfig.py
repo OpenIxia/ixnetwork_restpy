@@ -381,6 +381,45 @@ class TestConfig(Base):
 	def WaitAffterFlowAdd(self, value):
 		self._set_attribute('waitAffterFlowAdd', value)
 
+	def update(self, BinaryLoadUnit=None, BinaryResolution=None, CalculateLatency=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayBeforeStartTransmit=None, DeleteFlowsAtStartup=None, EnableMinFrameSize=None, EnableTrafficValidation=None, FrameSizeMode=None, Gap=None, InitialBinaryLoadIntegerValues=None, InitialStepIntegerValues=None, LatencyType=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadIntegerValue=None, MaxRandomFrameSize=None, MaxStepIntegerValues=None, MinAddressTableSize=None, MinBinaryLoadIntegerValues=None, MinRandomFrameSize=None, Numtrials=None, PacketsPerFlow=None, ProtocolItem=None, RangeCount=None, StepLoadUnit=None, StepStepIntegerValues=None, WaitAffterFlowAdd=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The load unit value in binary. Possible values include:
+			BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops
+			CalculateLatency (bool): If true, calculates the latency.
+			CustomFramesizeValue (number): Sets the custom framesize value
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
+			DelayBeforeStartTransmit (number): If true, a delay is introduced before transmission is started.
+			DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnableTrafficValidation (bool): If true, traffic validation is performed. It provides a high level view of the errors detected in each traffic item and flow group. With the help of this option you can easily identify the various categories of errors detected in each traffic item and flow group.
+			FrameSizeMode (str(increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			Gap (number): The gap in transmission of frames.
+			InitialBinaryLoadIntegerValues (number): Indicates the initial binary load integer values.
+			InitialStepIntegerValues (number): Indicates the initial step value.
+			LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): Indicate the type of latency that needs to be measured. Can be Cut-Through, Store-Forward and so on.
+			LoadRateValue (number): The value of the load rate.
+			LoadType (str(binary|step)): Indicates the load type. Can be any of the following:
+			MaxBinaryLoadIntegerValue (number): Indicates the maximum load integer values.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxStepIntegerValues (number): Indicates the maximum step value.
+			MinAddressTableSize (number): Indicates the minimum size of the address table.
+			MinBinaryLoadIntegerValues (number): Indicates the minimum binary load integer values.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			Numtrials (number): Number of trials that can be run
+			PacketsPerFlow (number): Indicates the number of packets per flow.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			RangeCount (number): Indicates the range count.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
+			StepStepIntegerValues (number): Indicates the step integer value.
+			WaitAffterFlowAdd (number): If true, the traffic is paused after flowdetection is added.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

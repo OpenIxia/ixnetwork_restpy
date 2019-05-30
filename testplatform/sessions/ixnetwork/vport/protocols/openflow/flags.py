@@ -80,3 +80,17 @@ class Flags(Base):
 	@RatePacket.setter
 	def RatePacket(self, value):
 		self._set_attribute('ratePacket', value)
+
+	def update(self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None):
+		"""Updates a child instance of flags on the server.
+
+		Args:
+			BurstSize (bool): This flag indicate that burst size calculation is to be done while applying the bands.
+			CollectStatistics (bool): This flag enables statistics collection for the meter and each band.
+			RateKb (bool): This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
+			RatePacket (bool): This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -93,6 +93,21 @@ class PassCriteria(Base):
 	def RibInConvergenceTime(self, value):
 		self._set_attribute('ribInConvergenceTime', value)
 
+	def update(self, EnablePassFail=None, EnableRibInPassFail=None, PassFailFrequency=None, RibInConvergenceFactorScale=None, RibInConvergenceTime=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			EnablePassFail (bool): 
+			EnableRibInPassFail (bool): 
+			PassFailFrequency (str(iteration)): 
+			RibInConvergenceFactorScale (str): 
+			RibInConvergenceTime (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -59,6 +59,17 @@ class TableUdf(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of tableUdf on the server.
+
+		Args:
+			Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Enabled=None):
 		"""Finds and retrieves tableUdf data from the server.
 

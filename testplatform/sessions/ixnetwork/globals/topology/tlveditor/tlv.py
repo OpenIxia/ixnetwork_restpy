@@ -157,6 +157,22 @@ class Tlv(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Description=None, IncludeInMessages=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+		"""Updates a child instance of tlv on the server.
+
+		Args:
+			Description (str): Description of the tlv
+			IncludeInMessages (list(str)): Include the TLV in these protocol messages
+			IsEditable (bool): Indicates whether this is editable or not
+			IsRepeatable (bool): Indicates whether this can be multiplied in the TLV definition
+			IsRequired (bool): Flag indicating whether this is required or not
+			Name (str): Name of the tlv
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, IncludeInMessages=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
 		"""Adds a new tlv node on the server and retrieves it in this instance.
 

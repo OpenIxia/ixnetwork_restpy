@@ -550,6 +550,28 @@ class View(Base):
 	def Visible(self, value):
 		self._set_attribute('visible', value)
 
+	def update(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
+		"""Updates a child instance of view on the server.
+
+		Args:
+			AutoRefresh (bool): If true, automatically refreshes the statistics values. Default = true
+			AutoUpdate (bool): If true, automatically refreshes the statistics values. Default = true
+			Caption (str): This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
+			CsvFileName (str): Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
+			EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
+			Enabled (bool): If true, enables the view that is created from the tcl script.
+			EnabledStatsSelectorColumns (list(str)): NOT DEFINED
+			PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
+			TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
+			TreeViewNodeName (str): Displays the name of the tree view node.
+			Type (str(layer23NextGenProtocol|layer23ProtocolAuthAccess|layer23ProtocolPort|layer23ProtocolRouting|layer23ProtocolStack|layer23TrafficFlow|layer23TrafficFlowDetective|layer23TrafficItem|layer23TrafficPort|layer47AppLibraryTraffic|sVReadOnly)): The type of view the user wants to create from tcl.
+			Visible (bool): If true, displays the custom created tcl SVs in the SV tree under TCL Views node.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
 		"""Adds a new view node on the server and retrieves it in this instance.
 

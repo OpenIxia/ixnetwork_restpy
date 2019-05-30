@@ -129,6 +129,24 @@ class PassCriteria(Base):
 	def PassFailMeasureUnit(self, value):
 		self._set_attribute('passFailMeasureUnit', value)
 
+	def update(self, EnableFrameLossPassFail=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, PassFailMeasureUnit=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			EnableFrameLossPassFail (bool): NOT DEFINED
+			LossThresholdMode (str(average|maximum)): NOT DEFINED
+			LossThresholdValue (number): NOT DEFINED
+			PassCriteriaLoadRateMode (str(average|minimum)): NOT DEFINED
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): NOT DEFINED
+			PassCriteriaLoadRateValue (number): NOT DEFINED
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+			PassFailMeasureUnit (str(fps)): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

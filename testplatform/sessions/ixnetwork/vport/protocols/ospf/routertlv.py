@@ -45,6 +45,17 @@ class RouterTlv(Base):
 	def RouterAddress(self, value):
 		self._set_attribute('routerAddress', value)
 
+	def update(self, RouterAddress=None):
+		"""Updates a child instance of routerTlv on the server.
+
+		Args:
+			RouterAddress (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, RouterAddress=None):
 		"""Finds and retrieves routerTlv data from the server.
 

@@ -536,6 +536,33 @@ class Ovsdbcontroller(Base):
 	def VxlanReplicator(self, value):
 		self._set_attribute('vxlanReplicator', value)
 
+	def update(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
+		"""Updates a child instance of ovsdbcontroller on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
+			LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
+			LatestErrorFileNames (str): Api to fetch latest Error Files
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PseudoConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
+			PseudoConnectedToBfd (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
+			PseudoConnectedToVxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
+			ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
+			Vxlan (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+			VxlanReplicator (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
 		"""Adds a new ovsdbcontroller node on the server and retrieves it in this instance.
 

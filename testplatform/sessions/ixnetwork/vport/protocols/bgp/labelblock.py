@@ -115,6 +115,22 @@ class LabelBlock(Base):
 		"""
 		return self._get_attribute('totalLabelCount')
 
+	def update(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
+		"""Updates a child instance of labelBlock on the server.
+
+		Args:
+			Enabled (bool): Enables or disables use of the L2 VPN label block.
+			LabelBlockOffsetIncrementAcrossL2Site (number): Signifies the increment of label block offset across L2 site
+			LabelStartIncrementAcrossL2Site (number): Starts the increment of label across L2 site
+			NumberOfLabels (number): The number of labels contained in the label block. (default = 0)
+			Offset (number): The VPLS block offset value used to create a unique subset of the label values. (default = 0)
+			Start (number): The first label in the label block. (default = 0)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
 		"""Adds a new labelBlock node on the server and retrieves it in this instance.
 

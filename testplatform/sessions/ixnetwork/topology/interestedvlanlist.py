@@ -162,6 +162,20 @@ class InterestedVlanList(Base):
 		"""
 		return self._get_attribute('vlanIdIncr')
 
+	def update(self, Name=None):
+		"""Updates a child instance of interestedVlanList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, IncludeInLSP=None, IncludeInMGroupPDU=None, M4BitEnabled=None, M6BitEnabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdIncr=None):
 		"""Base class infrastructure that gets a list of interestedVlanList device ids encapsulated by this object.
 

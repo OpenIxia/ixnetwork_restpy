@@ -297,6 +297,20 @@ class DotOneX(Base):
 		"""
 		return self._get_attribute('waitBeforeRun')
 
+	def update(self, Name=None):
+		"""Updates a child instance of dotOneX on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, AltName=None, AuthOnNoResponse=None, AuthWaitPeriod=None, City=None, Company=None, Country=None, Department=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, GetCACertOnly=None, KeySize=None, KeyUsage=None, MacAuthPrefix=None, MaxOutstandingRequests=None, MaxSetupRate=None, MaxStart=None, MaxTeardownRate=None, OnlyMulticast=None, ServerURL=None, StartPeriod=None, State=None, SuccessiveStart=None, UseVlanIdentify=None, WaitBeforeRun=None):
 		"""Base class infrastructure that gets a list of dotOneX device ids encapsulated by this object.
 

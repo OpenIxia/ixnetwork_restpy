@@ -140,6 +140,21 @@ class Layer23NextGenProtocolFilter(Base):
 	def ProtocolFilterIds(self, value):
 		self._set_attribute('protocolFilterIds', value)
 
+	def update(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
+		"""Updates a child instance of layer23NextGenProtocolFilter on the server.
+
+		Args:
+			AdvancedCVFilter (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+			AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
+			AggregationType (str(perPort|perSession)): Signifies the type of aggregation of next gen protocols
+			PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Filters the port IDs
+			ProtocolFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])): Filters the protocol IDs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
 		"""Adds a new layer23NextGenProtocolFilter node on the server and retrieves it in this instance.
 

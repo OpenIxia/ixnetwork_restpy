@@ -92,6 +92,19 @@ class Ripng(Base):
 	def TimePeriod(self, value):
 		self._set_attribute('timePeriod', value)
 
+	def update(self, Enabled=None, NumRoutes=None, TimePeriod=None):
+		"""Updates a child instance of ripng on the server.
+
+		Args:
+			Enabled (bool): Enables this particular protocol interface.
+			NumRoutes (number): NOT DEFINED
+			TimePeriod (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

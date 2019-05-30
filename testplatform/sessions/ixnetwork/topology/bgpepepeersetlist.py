@@ -168,6 +168,28 @@ class BgpEpePeerSetList(Base):
 	def Weight(self, value):
 		self._set_attribute('weight', value)
 
+	def update(self, BBit=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+		"""Updates a child instance of bgpEpePeerSetList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
+			LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
+			Reserved (number): Reserved
+			SidIndex (str(index|sid)): Local Label for Peer-Set
+			SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
+			VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
+			Weight (number): Weight of SID for the purpose of load balancing
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, BBit=None, Count=None, DescriptiveName=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
 		"""Finds and retrieves bgpEpePeerSetList data from the server.
 

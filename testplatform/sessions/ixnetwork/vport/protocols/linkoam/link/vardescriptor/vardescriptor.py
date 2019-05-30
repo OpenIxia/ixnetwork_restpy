@@ -58,6 +58,18 @@ class VarDescriptor(Base):
 	def VariableLeaf(self, value):
 		self._set_attribute('variableLeaf', value)
 
+	def update(self, VariableBranch=None, VariableLeaf=None):
+		"""Updates a child instance of varDescriptor on the server.
+
+		Args:
+			VariableBranch (number): 
+			VariableLeaf (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, VariableBranch=None, VariableLeaf=None):
 		"""Adds a new varDescriptor node on the server and retrieves it in this instance.
 

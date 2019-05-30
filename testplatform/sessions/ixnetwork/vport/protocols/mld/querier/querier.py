@@ -288,6 +288,33 @@ class Querier(Base):
 	def Version(self, value):
 		self._set_attribute('version', value)
 
+	def update(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+		"""Updates a child instance of querier on the server.
+
+		Args:
+			DiscardLearnedInfo (bool): If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
+			Enabled (bool): If true, the querier is enabled.
+			GeneralQueryInterval (number): The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
+			GqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The interface associated with the MLD querier. The interface must be previously configured.
+			InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
+			InterfaceType (str): The type of interface to be selected for this SM interface.
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
+			RobustnessVariable (number): Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+			RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
+			SqResponseInterval (number): The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+			SqTransmissionCount (number): Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+			StartupQueryCount (number): The number of general query messages sent at startup. The default startup query count is 2.
+			SupportElection (bool): If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+			SupportOlderVersionHost (bool): If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+			SupportOlderVersionQuerier (bool): If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+			Version (str(version1|version2)): Sets the version for the MLD querier.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
 		"""Adds a new querier node on the server and retrieves it in this instance.
 

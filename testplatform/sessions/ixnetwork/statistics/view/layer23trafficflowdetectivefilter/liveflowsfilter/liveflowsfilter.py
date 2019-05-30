@@ -70,6 +70,19 @@ class LiveFlowsFilter(Base):
 	def SortingCondition(self, value):
 		self._set_attribute('sortingCondition', value)
 
+	def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+		"""Updates a child instance of liveFlowsFilter on the server.
+
+		Args:
+			NumberOfResults (number): Number of traffic flows to be displayed.
+			SortByStatisticId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+			SortingCondition (str(bestPerformers|worstPerformers)): Sets the display of the view according to best or worst performers.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
 		"""Adds a new liveFlowsFilter node on the server and retrieves it in this instance.
 

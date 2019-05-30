@@ -588,6 +588,24 @@ class CMacProperties(Base):
 		"""
 		return self._get_attribute('useSameSequenceNumber')
 
+	def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+		"""Updates a child instance of cMacProperties on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+			NoOfClusters (number): Number of Clusters
+			NoOfCommunities (number): Number of Communities
+			NoOfExtendedCommunity (number): Number of Extended Communities
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
 		"""Adds a new cMacProperties node on the server and retrieves it in this instance.
 

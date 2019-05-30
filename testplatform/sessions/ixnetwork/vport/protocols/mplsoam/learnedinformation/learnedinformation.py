@@ -438,6 +438,44 @@ class LearnedInformation(Base):
 	def VendorEnterpriseNumber(self, value):
 		self._set_attribute('vendorEnterpriseNumber', value)
 
+	def update(self, DestinationAddressIpv4=None, DownstreamAddressType=None, DownstreamInterfaceAddress=None, DownstreamIpAddress=None, EchoResponseTimeoutMs=None, EnableAdvance=None, EnableDsiFlag=None, EnableDsnFlag=None, EnableFecValidation=None, EnableIncludeDownstreamMappingTlv=None, EnableIncludePadTlv=None, EnableIncludeVendorEnterpriseNumberTlv=None, EnablePauseResumeBfdPduTrigger=None, EnablePauseResumeReplyTrigger=None, EnableSendTriggeredPing=None, EnableSendTriggeredTraceroute=None, EnableSetResetEchoReplyCodeTrigger=None, PadTlvFirstOctetOptions=None, PadTlvLength=None, PauseResumeBfdPduTriggerOption=None, PauseResumeReplyTriggerOption=None, ReplyMode=None, ReturnCodeOption=None, ReturnSubCode=None, TriggerOptions=None, TriggerType=None, TtlLimit=None, VendorEnterpriseNumber=None):
+		"""Updates a child instance of learnedInformation on the server.
+
+		Args:
+			DestinationAddressIpv4 (str): This signifies the destination IPv4 address.
+			DownstreamAddressType (str(ipv4Numbered|ipv4UnNumbered)): This signifies the address type of the downstream traffic. Possible values include Ipv4Numbered and Ipv4UnNumbered.
+			DownstreamInterfaceAddress (str): This signifies the interface address of the downstream LSR.
+			DownstreamIpAddress (str): This signifies the IPv4/IPv6 address of the downstream LSR.
+			EchoResponseTimeoutMs (number): This signifies the minimum tiomeout interval, in milliseconds, between received Echo packets that this interface is capable of supporting.
+			EnableAdvance (bool): This signifies the enablement of advance.
+			EnableDsiFlag (bool): This signifies the activation of the DS I Flag.
+			EnableDsnFlag (bool): This signifies the activation of the DN S Flag.
+			EnableFecValidation (bool): This signifies the selection of the check box to enable FEC validation.
+			EnableIncludeDownstreamMappingTlv (bool): This signifies the inclusion of the downstream mapping TLV in triggered Trace Route.
+			EnableIncludePadTlv (bool): This signifies the selection of the check box to include Pad TLV.
+			EnableIncludeVendorEnterpriseNumberTlv (bool): This signifies the selection of the checkbox to include the the TLV number of the vendor organization.
+			EnablePauseResumeBfdPduTrigger (bool): This signifies the pausing of the BFD PDU trigger.
+			EnablePauseResumeReplyTrigger (bool): This signifies the pausing of the reply trigger.
+			EnableSendTriggeredPing (bool): This signifies the sending of the triggered ping.
+			EnableSendTriggeredTraceroute (bool): This signifies the enablement of the sending of triggered trace route.
+			EnableSetResetEchoReplyCodeTrigger (bool): This signifies the setting of the echo reply code trigger.
+			PadTlvFirstOctetOptions (str(dropPadTlvFromReply|copyPadTlvToReply)): This signifies the first octate of Pad TLV in triggered ping. Possible values include CopyPadTlvToReply and DropPadTlvFromReply.
+			PadTlvLength (number): This signifies the specification of the length of the Pad TLV.
+			PauseResumeBfdPduTriggerOption (str(pause|resume)): This signifies the pausing of the BFD PDU trigger option.Possible values include Pause and Resume.
+			PauseResumeReplyTriggerOption (str(pause|resume)): This signifies the pausing of the reply trigger option. Possible values include Pause and Resume.
+			ReplyMode (str(doNotReply|replyViaIpv4Ipv6UdpPacket|replyViaIpv4Ipv6UdpPacketWithRouterAlert|replyViaApplicationLevelControlChannel)): This signifies the selection of the mode of reply. Possible values include:
+			ReturnCodeOption (str(noReturnCode|malformedEchoRequestReceived|oneOrMoreOfTheTlvsWasNotUnderstood|replyingRouterIsAnEgressForTheFecAtStackDepthRsc|replyingRouterHasNoMappingForTheFecAtStackDepthRsc|downstreamMappingMismatch|upstreamInterfaceIndexUnknown|lspPingReserved|labelSwitchedAtStackDepthRsc|labelSwitchedButNoMplsForwardingAtStackDepthRsc|mappingForThisFecIsNotTheGivenLabelAtStackDepthRsc|noLabelEntryAtStackDepthRsc|protocolNotAssociatedWithInterfaceatFecStackDepthRsc|prematureTerminationOfPingDueToLabelStackShrinkingToSingleLabel)): This signifies the return code option value. Possible values include:
+			ReturnSubCode (number): This signifies the return subcode value.
+			TriggerOptions (str(tx|rx|txRx)): This signifies the trigger option value. Possible values include:
+			TriggerType (str(resetToNormalReply|forceReplyCode)): This signifies the type of the trigger. Possible values include:
+			TtlLimit (number): This signifies the maximum value of TTL up to which the TTL will be incremented while sending echo request packets.
+			VendorEnterpriseNumber (number): This signifies the specification of the enterprise number of the vendor.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, DestinationAddressIpv4=None, DownstreamAddressType=None, DownstreamInterfaceAddress=None, DownstreamIpAddress=None, EchoResponseTimeoutMs=None, EnableAdvance=None, EnableDsiFlag=None, EnableDsnFlag=None, EnableFecValidation=None, EnableIncludeDownstreamMappingTlv=None, EnableIncludePadTlv=None, EnableIncludeVendorEnterpriseNumberTlv=None, EnablePauseResumeBfdPduTrigger=None, EnablePauseResumeReplyTrigger=None, EnableSendTriggeredPing=None, EnableSendTriggeredTraceroute=None, EnableSetResetEchoReplyCodeTrigger=None, IsGeneralLearnedInformationRefreshed=None, IsTriggeredPingLearnedInformationRefreshed=None, IsTriggeredTraceRouteLearnedInformationRefreshed=None, PadTlvFirstOctetOptions=None, PadTlvLength=None, PauseResumeBfdPduTriggerOption=None, PauseResumeReplyTriggerOption=None, ReplyMode=None, ReturnCodeOption=None, ReturnSubCode=None, TriggerOptions=None, TriggerType=None, TtlLimit=None, VendorEnterpriseNumber=None):
 		"""Finds and retrieves learnedInformation data from the server.
 

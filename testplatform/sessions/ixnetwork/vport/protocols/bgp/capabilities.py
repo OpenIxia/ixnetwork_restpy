@@ -236,3 +236,30 @@ class Capabilities(Base):
 	@Vpls.setter
 	def Vpls(self, value):
 		self._set_attribute('vpls', value)
+
+	def update(self, AdVpls=None, Evpn=None, FetchDetailedIpV4UnicastInfo=None, FetchDetailedIpV6UnicastInfo=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastMplsVpn=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastMplsVpn=None, IpV6MulticastVpn=None, IpV6Unicast=None, Vpls=None):
+		"""Updates a child instance of capabilities on the server.
+
+		Args:
+			AdVpls (bool): If true, enables the BGP autodiscovery VPLS tunnels.
+			Evpn (bool): If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
+			FetchDetailedIpV4UnicastInfo (bool): If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
+			FetchDetailedIpV6UnicastInfo (bool): NOT DEFINED
+			IpV4Mpls (bool): If true, learns IPv4 MPLS routes.
+			IpV4MplsVpn (bool): If true, learns MPLS VPN routes.
+			IpV4Multicast (bool): If true, learns IPv4 Multicast routes.
+			IpV4MulticastMplsVpn (bool): NOT DEFINED
+			IpV4MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
+			IpV4Unicast (bool): If true, learns IPv4 Unicast routes.
+			IpV6Mpls (bool): If true, learns IPv6 MPLS routes.
+			IpV6MplsVpn (bool): If true, learns IPv6 MPLS VPN routes.
+			IpV6Multicast (bool): If true, learns IPv6 Multicast routes.
+			IpV6MulticastMplsVpn (bool): NOT DEFINED
+			IpV6MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
+			IpV6Unicast (bool): If true, learns IPv6 Unicast routes.
+			Vpls (bool): If true, learns VPLS routes.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

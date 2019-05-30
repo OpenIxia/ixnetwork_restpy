@@ -92,3 +92,18 @@ class FrameRate(Base):
 	@Type.setter
 	def Type(self, value):
 		self._set_attribute('type', value)
+
+	def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+		"""Updates a child instance of frameRate on the server.
+
+		Args:
+			BitRateUnitsType (str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)): The rate units for transmitting packet.
+			EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+			InterPacketGapUnitsType (str(bytes|nanoseconds)): The inter-packet gap expressed in units.
+			Rate (number): The rate at which packet is transmitted.
+			Type (str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)): Sets the frame rate types.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

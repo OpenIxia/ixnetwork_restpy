@@ -411,6 +411,34 @@ class Field(Base):
 	def ValueType(self, value):
 		self._set_attribute('valueType', value)
 
+	def update(self, ActiveFieldChoice=None, Auto=None, CountValue=None, FieldValue=None, FixedBits=None, FullMesh=None, MaxValue=None, MinValue=None, OnTheFlyMask=None, OptionalEnabled=None, RandomMask=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, TrackingEnabled=None, ValueList=None, ValueType=None):
+		"""Updates a child instance of field on the server.
+
+		Args:
+			ActiveFieldChoice (bool): 
+			Auto (bool): 
+			CountValue (str): 
+			FieldValue (str): 
+			FixedBits (str): 
+			FullMesh (bool): 
+			MaxValue (str): 
+			MinValue (str): 
+			OnTheFlyMask (str): 
+			OptionalEnabled (bool): 
+			RandomMask (str): 
+			Seed (str): 
+			SingleValue (str): 
+			StartValue (str): 
+			StepValue (str): 
+			TrackingEnabled (bool): 
+			ValueList (list(str)): 
+			ValueType (str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
 		"""Finds and retrieves field data from the server.
 

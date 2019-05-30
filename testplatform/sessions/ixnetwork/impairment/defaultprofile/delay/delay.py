@@ -68,3 +68,16 @@ class Delay(Base):
 	@Value.setter
 	def Value(self, value):
 		self._set_attribute('value', value)
+
+	def update(self, Enabled=None, Units=None, Value=None):
+		"""Updates a child instance of delay on the server.
+
+		Args:
+			Enabled (bool): If true, delay packets.
+			Units (str(kilometers|kKilometers|kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)): Specify the units for the delay value.
+			Value (number): Time to delay each packet.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

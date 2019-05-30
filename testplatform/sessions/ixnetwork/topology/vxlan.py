@@ -382,6 +382,28 @@ class Vxlan(Base):
 		"""
 		return self._get_attribute('vni')
 
+	def update(self, ConnectedVia=None, EnableStaticInfo=None, ExternalLearning=None, Multiplier=None, Name=None, OvsdbConnectorMultiplier=None, RunningMode=None, StackedLayers=None, StaticInfoCount=None):
+		"""Updates a child instance of vxlan on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableStaticInfo (bool): If true, VXLAN will use unicast entries for VTEP information instead of multicast learning.
+			ExternalLearning (bool): If true, VXLAN will use information received from another protocol which will handle the learning mechanism.
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			OvsdbConnectorMultiplier (number): Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
+			RunningMode (str(none|ovsdbControllerBfdStack|ovsdbStack)): There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			StaticInfoCount (number): number of unicast VTEP
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, EnableStaticInfo=None, ExternalLearning=None, Multiplier=None, Name=None, OvsdbConnectorMultiplier=None, RunningMode=None, StackedLayers=None, StaticInfoCount=None):
 		"""Adds a new vxlan node on the server and retrieves it in this instance.
 

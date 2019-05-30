@@ -854,6 +854,82 @@ class L2VcRange(Base):
 	def VplsIdType(self, value):
 		self._set_attribute('vplsIdType', value)
 
+	def update(self, CapableOfReassembly=None, Cas=None, CeIpAddress=None, CemOption=None, CemPayload=None, Count=None, Description=None, DoNotExpandIntoVcs=None, DownInterval=None, DownStartInterval=None, EnableBfdIpUdpCv=None, EnableBfdPwAchCv=None, EnableCBit=None, EnableCccvNegotiation=None, EnableCemOption=None, EnableCemPayload=None, EnableDescriptionPresent=None, EnableLspPingCv=None, EnableMaxAtmPresent=None, EnableMtuPresent=None, EnablePacking=None, EnablePwAchCc=None, EnablePwStatusTlv=None, EnableRouterAlertCc=None, Enabled=None, FecType=None, Frequency=None, IncludeRtpHeader=None, IncludeSsrc=None, IncludeTdmBitrate=None, IncludeTdmOption=None, IncludeTdmPayload=None, IpType=None, LabelMode=None, LabelStart=None, MaxNumberOfAtmCells=None, Mtu=None, PayloadType=None, PeerAddress=None, ProvisioningModel=None, PwStatusCode=None, RepeatCount=None, SendPwStatus=None, SourceAiiAsIp=None, SourceAiiAsNumber=None, SourceAiiType=None, Sp=None, Ssrc=None, Step=None, TargetAiiAsIp=None, TargetAiiAsNumber=None, TargetAiiType=None, TdmBitrate=None, TdmDataSize=None, TimestampMode=None, UpInterval=None, VcId=None, VcIdStep=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdCount=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None):
+		"""Updates a child instance of l2VcRange on the server.
+
+		Args:
+			CapableOfReassembly (bool): If enabled, makes the interface capable of reassembly.
+			Cas (str(e1Trunk|t1EsfTrunk|t1SfTrunk)): It signifies the CAS value.
+			CeIpAddress (str): The IP address of attached CE endpoint. If IP Type is set to Ipv4, then the default is 0.0.0.0, and if the IP type is set to Ipv6, then the default is 0:0:0:0:0:0:0:0.
+			CemOption (number): The value of the CEM option.
+			CemPayload (number): If enabled, indicates that there is a Circuit Emulation Service over MPLS (CEM) payload.
+			Count (number): (In octets) The 8-bit VC information Length field. It indicates the length of the (2-octet) VC ID field plus combined length of all of the parameters in the VC FEC element.
+			Description (str): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
+			DoNotExpandIntoVcs (bool): If true, the VC ranges do not expand into individual VCs.
+			DownInterval (number): Time interval for which the PW status will remain down. (Default= 60 seconds)
+			DownStartInterval (number): The duration in time after session becomes up and a notification message being sent to make the session down. (Default= 30 seconds)
+			EnableBfdIpUdpCv (bool): NOT DEFINED
+			EnableBfdPwAchCv (bool): NOT DEFINED
+			EnableCBit (bool): Controls generation of the control word.
+			EnableCccvNegotiation (bool): NOT DEFINED
+			EnableCemOption (bool): Enable the Circuit Emulation over MPLS option, for encapsulation of TDM signals.
+			EnableCemPayload (bool): Enable the Circuit Emulation over MPLS payload.
+			EnableDescriptionPresent (bool): If enabled, indicates that an optional interface description is present.
+			EnableLspPingCv (bool): NOT DEFINED
+			EnableMaxAtmPresent (bool): Enables the generation of an interface parameter field with the maximum number of concatenated ATM cells. (default = 0)
+			EnableMtuPresent (bool): This attribute enables the generation of an MTU interface parameter field.
+			EnablePacking (bool): (For L2 VC FEC ranges and in Unsolicited Label Distribution Mode ONLY.) If enabled, L2 VC FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
+			EnablePwAchCc (bool): NOT DEFINED
+			EnablePwStatusTlv (bool): If checked, this enables the use of PW status TLV in notification messages to notify the PW status.
+			EnableRouterAlertCc (bool): NOT DEFINED
+			Enabled (bool): Enables use of this VC range.
+			FecType (str(pwIdFec|generalizedIdFecVpls)): The FEC type. The options are: PW Id FEC 0x80, Generalized Id FEC 0x81 VPLS.
+			Frequency (number): It is the frequency.
+			IncludeRtpHeader (bool): If true, includes the RTP header.
+			IncludeSsrc (bool): If true, enables SSRC.
+			IncludeTdmBitrate (bool): If true, enables TDM bit rate.
+			IncludeTdmOption (bool): If true, includes the TDM option.
+			IncludeTdmPayload (bool): If true, enables TDM payload.
+			IpType (number): The type (IPv4 or IPv6) of the neighbor.
+			LabelMode (str(none|increment)): Indicates whether the same label or incrementing labels should be used in the VC ranges.
+			LabelStart (number): The first label in the range of labels. The default is 16.
+			MaxNumberOfAtmCells (number): The maximum number of ATM cells which may be concatenated and sent in a single MPLS frame. This parameter is part of the FEC element.
+			Mtu (number): (in octets) The 2-octet value for the maximum Transmission Unit (MTU).
+			PayloadType (number): It is the payload type.
+			PeerAddress (str): The IPv4 address of the LDP router which is the peer for this VC range.
+			ProvisioningModel (str(manualConfiguration|bgpAutoDiscovery)): Editable dropdown to denote the Provisioning Model.
+			PwStatusCode (number): This is an editable dropdown to denote the PW status. This field is editable. The range is from 0x00000001 - 0xFFFFFFFF.
+			RepeatCount (number): The number of times to repeat the above processes. The default is 1.
+			SendPwStatus (bool): If checked, it signifies whether to send a notification message with a PW status for the corresponding PW.
+			SourceAiiAsIp (str): The IP address.
+			SourceAiiAsNumber (number): The numerical value indicating the AS of the Source AII.
+			SourceAiiType (str(number|ipAddress)): Editable dropdown. The options are: AS, IP.
+			Sp (str(hexVal0|hexVal1|hexVal2|hexVal3)): It signifies the SP value.
+			Ssrc (number): Indicates the SSRC value.
+			Step (number): The number to increment the peer address by.
+			TargetAiiAsIp (str): The IP address of the Target AII.
+			TargetAiiAsNumber (number): The numerical value of the Target AII.
+			TargetAiiType (str(number|ipAddress)): Editable dropdown. The options are: AS, IP.
+			TdmBitrate (number): The tdm bit rate.
+			TdmDataSize (number): Indicates the TDM data size.
+			TimestampMode (str(absolute|differential)): The time stamp mode.
+			UpInterval (number): Time interval for which the same process to be repeated. (Default = 30 sec)
+			VcId (number): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
+			VcIdStep (number): The increment step to be added to each additional VC ID in the range of VC IDs.
+			VplsIdAsNumber (number): The 2 byte unsigned integer value indicating the VPLS ID AS Number.
+			VplsIdAsNumberStep (number): The 2 byte unsigned integer value indicating the VPLS ID AS Number Step.
+			VplsIdAssignedNumber (number): The 2 or 4 byte unsigned integer value dependent on the vplsIdType
+			VplsIdAssignedNumberStep (number): The 2 or 4 byte unsigned integer value dependent on the vplsIdType.
+			VplsIdCount (number): The 4 byte unsigned integer indicating the VPLS ID Count.
+			VplsIdIpAddress (str): The IP address of the VPLS Id.
+			VplsIdIpAddressStep (str): The IP address of the VPLS Id.
+			VplsIdType (str(asNumber|ipAddress)): Editable dropdown. The options are: AS, IP.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CapableOfReassembly=None, Cas=None, CeIpAddress=None, CemOption=None, CemPayload=None, Count=None, Description=None, DoNotExpandIntoVcs=None, DownInterval=None, DownStartInterval=None, EnableBfdIpUdpCv=None, EnableBfdPwAchCv=None, EnableCBit=None, EnableCccvNegotiation=None, EnableCemOption=None, EnableCemPayload=None, EnableDescriptionPresent=None, EnableLspPingCv=None, EnableMaxAtmPresent=None, EnableMtuPresent=None, EnablePacking=None, EnablePwAchCc=None, EnablePwStatusTlv=None, EnableRouterAlertCc=None, Enabled=None, FecType=None, Frequency=None, IncludeRtpHeader=None, IncludeSsrc=None, IncludeTdmBitrate=None, IncludeTdmOption=None, IncludeTdmPayload=None, IpType=None, LabelMode=None, LabelStart=None, MaxNumberOfAtmCells=None, Mtu=None, PayloadType=None, PeerAddress=None, ProvisioningModel=None, PwStatusCode=None, RepeatCount=None, SendPwStatus=None, SourceAiiAsIp=None, SourceAiiAsNumber=None, SourceAiiType=None, Sp=None, Ssrc=None, Step=None, TargetAiiAsIp=None, TargetAiiAsNumber=None, TargetAiiType=None, TdmBitrate=None, TdmDataSize=None, TimestampMode=None, UpInterval=None, VcId=None, VcIdStep=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdCount=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None):
 		"""Adds a new l2VcRange node on the server and retrieves it in this instance.
 

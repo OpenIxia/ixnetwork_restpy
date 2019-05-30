@@ -120,6 +120,21 @@ class CustomTLVs(Base):
 		"""
 		return self._get_attribute('value')
 
+	def update(self, Name=None, NumberOfCustomTLVs=None):
+		"""Updates a child instance of customTLVs on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfCustomTLVs (number): Number of Custom TLVs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, BridgeId=None, Count=None, DescriptiveName=None, Name=None, NumberOfCustomTLVs=None):
 		"""Finds and retrieves customTLVs data from the server.
 

@@ -166,6 +166,27 @@ class DceMulticastMacRange(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
+		"""Updates a child instance of dceMulticastMacRange on the server.
+
+		Args:
+			Enabled (bool): If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
+			InterGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
+			IntraGroupUnicastMacIncrement (str): The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
+			MulticastMacCount (number): The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
+			MulticastMacStep (str): The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
+			SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
+			StartMulticastMac (str): The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
+			StartUnicastSourceMac (str): The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
+			Topology (number): The topology identifier to which the corresponding MAC belongs.
+			UnicastSourcesPerMulticastMac (number): The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
+			VlanId (number): The VLAN ID of the enabled Multicast MAC Range. (default = 1)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
 		"""Adds a new dceMulticastMacRange node on the server and retrieves it in this instance.
 

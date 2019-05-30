@@ -44,3 +44,14 @@ class MisdirectedPerFlow(Base):
 	@Enabled.setter
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
+
+	def update(self, Enabled=None):
+		"""Updates a child instance of misdirectedPerFlow on the server.
+
+		Args:
+			Enabled (bool): If true then misdirected per flow statistics will be enabled
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

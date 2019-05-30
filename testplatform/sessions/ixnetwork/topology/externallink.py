@@ -70,6 +70,19 @@ class ExternalLink(Base):
 	def ToNodeIndex(self, value):
 		self._set_attribute('toNodeIndex', value)
 
+	def update(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
+		"""Updates a child instance of externalLink on the server.
+
+		Args:
+			FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
+			ToNetworkTopology (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): Network Topology this link is pointing to
+			ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
 		"""Adds a new externalLink node on the server and retrieves it in this instance.
 

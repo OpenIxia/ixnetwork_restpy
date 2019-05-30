@@ -1245,6 +1245,117 @@ class TestConfig(Base):
 	def UseTiLoss(self, value):
 		self._set_attribute('useTiLoss', value)
 
+	def update(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CalibrateLatency=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, Grain=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, MinStepLoadRate=None, NumFrames=None, Numtrials=None, PeakLoadingReplicationCount=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, Runmode=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StaggeredStart=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, StepLoadRateFormula=None, StepLoadUnit=None, StepStepLoadRate=None, StepTiLoss=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UseTiLoss=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BurstSize (number): The number of packets to send in a burst.
+			CalculateJitter (bool): If true, the jitter is calculated.
+			CalculateLatency (bool): If true, calculates the latency.
+			CalibrateLatency (bool): If true, calibrates the latency.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			CountRandomIpRatio (number): Sets the count of the random ip ratio loop
+			CountRandomLoadRate (number): The random count of the load rate.
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			DetailedResultsEnabled (bool): If true, it enables the detailed results for the fully meshed case
+			Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+			EnableDataIntegrity (bool): If true, enables the checking of data integrity for the pass or fail of the trial.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
+			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameSizeMode (str(custom|increment|random|unchanged)): This attribute is the frame size mode for the Quad Gaussian.
+			FramesPerBurstGap (number): The number of frames to be sent after each burst.
+			Framesize (str): The frame size to be used.
+			FramesizeImixList (str): The list of the available lmix frame sizes.
+			FramesizeList (list(str)): The list of the available frame sizes.
+			Gap (number): The gap in transmission of frames.
+			GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+			Grain (str(coarse|fine)): The granular value of the test parameter.
+			ImixAdd (str): Adds an imix data.
+			ImixData (str): Displays imix data.
+			ImixDelete (str): Deletes an imix data.
+			ImixDistribution (str(bwpercentage|weight)): Shows the distribution of imix data.
+			ImixEnabled (bool): If True, Enables the imix value.
+			ImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Specefies the imix templates.
+			ImixTrafficType (str): Displays the imix traffic type.
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The unit increment for the load.
+			InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+			InitialStepLoadRate (number): The initial step value of the load rate.
+			IpRatioMode (str(custom|fixed|increment|random)): Sets the ip ratio mode
+			Ipv4RatioList (str): Sets the ipv4 ratio list
+			Ipv4rate (number): The rate at which IPv4 traffic is sent.
+			Ipv6RatioList (str): Sets the ipv6 ratio list
+			Ipv6rate (number): The rate at which IPv6 traffic is sent.
+			LatencyBins (str): Sets the latency bins statistics.
+			LatencyBinsEnabled (bool): Enables the latency bins statistics.
+			LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): The type of latency.
+			LoadRateList (str): Enters the Load Rate List.
+			LoadType (str(step)): The type of the payload setting.
+			LoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The load unit value.
+			MapType (str): The mapping type.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxIncrementIpv4Ratio (str): Sets the maximum increment value for the ipv4 ratio
+			MaxIncrementIpv6Ratio (str): Sets the maximum increment value for the ipv6 ratio
+			MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxRandomIpv4Ratio (str): Sets the maximum radom value for the ipv4 ratio
+			MaxRandomIpv6Ratio (str): Sets the maximum random value for the ipv6 ratio
+			MaxRandomLoadRate (number): The maximum random value of the load rate.
+			MaxStepLoadRate (number): The maximum step value of the load rate.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinIncrementIpv4Ratio (str): Sets the minimum increment value for the ipv4 ratio
+			MinIncrementIpv6Ratio (str): Sets the minimum increment value for the ipv6 ratio
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			MinRandomIpv4Ratio (str): Sets the minimum random value for the ipv4 ratio
+			MinRandomIpv6Ratio (str): Sets the minimum random value for the ipv6 ratio
+			MinRandomLoadRate (number): The maximum random value of the load rate.
+			MinStepLoadRate (number): The minimum step value of load rate.
+			NumFrames (number): The number of frames sent.
+			Numtrials (number): The integer value that states the number of trials permitted.
+			PeakLoadingReplicationCount (number): NOT DEFINED
+			PerTrafficResults (bool): 
+			PercentMaxRate (number): The maximum percentage rate.
+			PortDelayEnabled (bool): Enables the port delay.
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			RandomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The random values of the load unit.
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): The rate selected.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The unit of rate for throughput.
+			Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			Rfc2544ImixDataQoS (bool): If true, it uses the same frame data qos
+			Rfc2889ordering (str(noOrdering|peakLoading|unchanged|val2889Ordering)): If true, indicates frame ordering by Rfc2889.
+			Runmode (str(duration|noframes)): Specifies the number of frames that IxNetwork sends from each port in running mode.
+			SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
+			ShowDetailedBinaryResults (bool): 
+			StaggeredStart (bool): Starts test with a stagger.
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented
+			StepIncrementIpv6Ratio (str): The step in which the ipv6 ratio loop is incremented
+			StepIncrementLoadRate (number): The step incremental value of the load rate.
+			StepLoadRateFormula (str): 
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
+			StepStepLoadRate (number): The incremental step value of load rate.
+			StepTiLoss (bool): NOT DEFINED
+			StepTolerance (number): The step value of the tolerance level.
+			SupportedTrafficTypes (str): The traffic types supported.
+			Tolerance (number): The value set for the tolerance level.
+			TrafficType (str(burstyLoading|constantLoading)): The test based on the traffic type.
+			TxDelay (number): Specifies the amount of delay after every transmit.
+			UnchangedValueList (str): The number of unchanged sessions.
+			UseTiLoss (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

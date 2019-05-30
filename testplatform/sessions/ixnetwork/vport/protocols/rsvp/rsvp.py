@@ -140,6 +140,23 @@ class Rsvp(Base):
 	def UseTransportLabelsForMplsOam(self, value):
 		self._set_attribute('useTransportLabelsForMplsOam', value)
 
+	def update(self, EnableBgpOverLsp=None, EnableControlLspInitiationRate=None, EnableShowTimeValue=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, MaxLspInitiationsPerSec=None, UseTransportLabelsForMplsOam=None):
+		"""Updates a child instance of rsvp on the server.
+
+		Args:
+			EnableBgpOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+			EnableControlLspInitiationRate (bool): Controls the LSP initiation rate.
+			EnableShowTimeValue (bool): If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
+			EnableVpnLabelExchangeOverLsp (bool): If true, enables VPN label exchange over LSP
+			Enabled (bool): Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
+			MaxLspInitiationsPerSec (number): The maximum number of LSP Initiations sent per second.
+			UseTransportLabelsForMplsOam (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

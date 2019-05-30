@@ -173,3 +173,24 @@ class AccumulateAndBurst(Base):
 	@QueueSize.setter
 	def QueueSize(self, value):
 		self._set_attribute('queueSize', value)
+
+	def update(self, BurstSize=None, BurstSizeUnit=None, BurstTimeout=None, BurstTimeoutUnit=None, Enabled=None, InterBurstGap=None, InterBurstGapValue=None, InterBurstGapValueUnit=None, PacketCount=None, QueueAutoSizeEnabled=None, QueueSize=None):
+		"""Updates a child instance of accumulateAndBurst on the server.
+
+		Args:
+			BurstSize (number): Represents the burst octet size. The default value is 1014.
+			BurstSizeUnit (str(kilobytes|kKilobytes|kMegabytes|megabytes)): The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
+			BurstTimeout (str): The burst timeout.The default value is 5 seconds.
+			BurstTimeoutUnit (str(kMilliseconds|kSeconds|kTimeFormat|milliseconds|seconds|timeFormat)): Seconds(default) / milliseconds / mm:ss.fff time format.
+			Enabled (bool): If true, received packets are queued and transmitted in bursts.
+			InterBurstGap (str(headToHead|kHeadToHead|kTailToHead|tailToHead)): Tail to head (default) / Head to head.
+			InterBurstGapValue (number): The InterBurst gap value. The default value is 20 ms.
+			InterBurstGapValueUnit (str(kMilliseconds|kSeconds|milliseconds|seconds)): Seconds / milliseconds (default).
+			PacketCount (number): Represents the burst packet count. The default value is 1000 packets.
+			QueueAutoSizeEnabled (bool): Automatically calculate queue size. The default value is true.
+			QueueSize (number): The accumulate-and-burst queue size expressed in MB. The default value is 1.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

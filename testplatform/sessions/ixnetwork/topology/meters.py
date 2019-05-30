@@ -146,6 +146,22 @@ class Meters(Base):
 	def NumberOfBands(self, value):
 		self._set_attribute('numberOfBands', value)
 
+	def update(self, Multiplier=None, Name=None, NumberOfBands=None):
+		"""Updates a child instance of meters on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Multiplier (number): Number of instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfBands (number): Specify the number of Bands.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Multiplier=None, Name=None, NumberOfBands=None):
 		"""Finds and retrieves meters data from the server.
 

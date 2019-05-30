@@ -267,6 +267,25 @@ class Test(Base):
 	def TrafficItemIds(self, value):
 		self._set_attribute('trafficItemIds', value)
 
+	def update(self, Enabled=None, EndTimeAsTicks=None, MonitorPorts=None, Repeat=None, StartTimeAsTicks=None, State=None, TimingPort=None, TrackBy=None, TrafficItemIds=None):
+		"""Updates a child instance of test on the server.
+
+		Args:
+			Enabled (bool): 
+			EndTimeAsTicks (number): 
+			MonitorPorts (list(str)): 
+			Repeat (number): 
+			StartTimeAsTicks (number): 
+			State (str(cancelled|cpDpConvergenceNotReached|fail|failedCriteria|pass|preflightCheck|preflightFail|ribInConvergenceThresholdNotReached|running|skipped|waitingForStart)): 
+			TimingPort (str): 
+			TrackBy (list(str)): 
+			TrafficItemIds (list(str[None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficItem])): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableTrackBy=None, ConfigId=None, Enabled=None, EndTime=None, EndTimeAsTicks=None, IncrementalState=None, MonitorPorts=None, MonitorTrafficItemId=None, NowTime=None, PreflightCheckState=None, PreflightComplete=None, QuickTestId=None, Repeat=None, StartTime=None, StartTimeAsTicks=None, State=None, SupportsMonitoring=None, SupportsTiming=None, TimingPort=None, TimingTopologyId=None, TimingTrafficItemId=None, TrackBy=None, TrafficItemIds=None):
 		"""Finds and retrieves test data from the server.
 

@@ -92,3 +92,18 @@ class State(Base):
 	@StpListen.setter
 	def StpListen(self, value):
 		self._set_attribute('stpListen', value)
+
+	def update(self, LinkDown=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+		"""Updates a child instance of state on the server.
+
+		Args:
+			LinkDown (bool): Indicates that, no physical link is present.
+			StpBlock (bool): Indicates that the port is not part of spanning tree.
+			StpForward (bool): Indicates that the port is learning and relaying frames.
+			StpLearn (bool): Indicates that the port is learning but not relaying frames.
+			StpListen (bool): Indicates that the port is not learning or relaying frames.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

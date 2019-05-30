@@ -2033,6 +2033,143 @@ class LearnedInformation(Base):
 	def VendorStateResponseTimeOut(self, value):
 		self._set_attribute('vendorStateResponseTimeOut', value)
 
+	def update(self, AsyncConfStatResponseTimeOut=None, DescriptionStatResponseTimeOut=None, EnableAsyncConfMasterFlowRemovedFlowDelete=None, EnableAsyncConfMasterFlowRemovedGroupDelete=None, EnableAsyncConfMasterFlowRemovedHardTimeOut=None, EnableAsyncConfMasterFlowRemovedIdleTimeOut=None, EnableAsyncConfMasterPacketInActionOutputToController=None, EnableAsyncConfMasterPacketInInvalidTtl=None, EnableAsyncConfMasterPacketInNoMatching=None, EnableAsyncConfMasterPortStatusAdd=None, EnableAsyncConfMasterPortStatusDelete=None, EnableAsyncConfMasterPortStatusModify=None, EnableAsyncConfSlaveFlowRemovedFlowDelete=None, EnableAsyncConfSlaveFlowRemovedGroupDelete=None, EnableAsyncConfSlaveFlowRemovedHardTimeOut=None, EnableAsyncConfSlaveFlowRemovedIdleTimeOut=None, EnableAsyncConfSlavePacketInActionOutputToController=None, EnableAsyncConfSlavePacketInInvalidTtl=None, EnableAsyncConfSlavePacketInNoMatching=None, EnableAsyncConfSlavePortStatusAdd=None, EnableAsyncConfSlavePortStatusDelete=None, EnableAsyncConfSlavePortStatusModify=None, EnableFlowAggregatedStatMatchCapability=None, EnableFlowStatMatchCapability=None, EnableGroupStatMatchCapability=None, EnablePortStatMatchCapability=None, EnableQueueStatMatchCapability=None, EnableSendTableFeaturesTrigger=None, EnableSendTriggerPortFeaturesLearnedInformation=None, EnableSendTriggeredAsyncConfStatLearnedInformation=None, EnableSendTriggeredBarrierRequestMessage=None, EnableSendTriggeredDescriptionStatLearnedInformation=None, EnableSendTriggeredFlowAggregatedStatLearnedInformation=None, EnableSendTriggeredFlowStatLearnedInformation=None, EnableSendTriggeredGroupDescriptionStatLearnedInformation=None, EnableSendTriggeredGroupFeatureStatLearnedInformation=None, EnableSendTriggeredGroupStatLearnedInformation=None, EnableSendTriggeredPacketOutMessage=None, EnableSendTriggeredPortModificationMessage=None, EnableSendTriggeredPortStatLearnedInformation=None, EnableSendTriggeredQueueConfigLearnedInformation=None, EnableSendTriggeredQueueStatLearnedInformation=None, EnableSendTriggeredRoleRequestMessage=None, EnableSendTriggeredSwitchConfigLearnedInformation=None, EnableSendTriggeredTableStatLearnedInformation=None, EnableSendTriggeredVendorStatLearnedInformation=None, EnableSetAsyncConfig=None, EnableSetSwitchConfig=None, EnableSetTableFeatures=None, EnableTableStatMatchCapability=None, EnableTriggeredVendorMessage=None, FlowAggregatedStatEthernetDestination=None, FlowAggregatedStatEthernetSource=None, FlowAggregatedStatEthernetType=None, FlowAggregatedStatInPort=None, FlowAggregatedStatIpDscp=None, FlowAggregatedStatIpProtocol=None, FlowAggregatedStatIpv4Destination=None, FlowAggregatedStatIpv4Source=None, FlowAggregatedStatOutPortInputMode=None, FlowAggregatedStatResponseTimeOut=None, FlowAggregatedStatTableIdInputMode=None, FlowAggregatedStatTableIdInputModeNumber=None, FlowAggregatedStatTransportDestination=None, FlowAggregatedStatTransportSource=None, FlowAggregatedStatVlanId=None, FlowAggregatedStatVlanPriority=None, FlowStatEthernetDestination=None, FlowStatEthernetSource=None, FlowStatEthernetType=None, FlowStatInPort=None, FlowStatIpDscp=None, FlowStatIpProtocol=None, FlowStatIpv4Destination=None, FlowStatIpv4Source=None, FlowStatOutPortInputMode=None, FlowStatResponseTimeOut=None, FlowStatTableIdInputMode=None, FlowStatTableIdInputModeNumber=None, FlowStatTransportDestination=None, FlowStatTransportSource=None, FlowStatVlanId=None, FlowStatVlanPriority=None, GroupDescriptionStatResponseTimeOut=None, GroupFeatureStatResponseTimeOut=None, GroupId=None, GroupIdType=None, GroupStatResponseTimeOut=None, PacketOutAuxiliaryId=None, PacketOutBufferId=None, PacketOutBufferIdInputMode=None, PacketOutData=None, PacketOutDataLength=None, PacketOutInPortInputMode=None, PacketOutInPortNumber=None, PortFeaturesResponseTimeOut=None, PortNumber=None, PortNumberInputMode=None, PortStatResponseTimeOut=None, QueueConfigPortNumber=None, QueueConfigResponseTimeOut=None, QueueId=None, QueueIdInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, QueueStatResponseTimeOut=None, RoleRequestGenerationId=None, RoleRequestType=None, SwitchConfigDropFragments=None, SwitchConfigMissSendLength=None, SwitchConfigReassembleFragments=None, SwitchConfigResponseTimeOut=None, TableFeatureConfig=None, TableFeatureMaxEntries=None, TableFeatureMetadataMatch=None, TableFeatureMetadataWrite=None, TableFeatureName=None, TableFeatureResponseTimeOut=None, TableFeatureTableId=None, TableStatResponseTimeOut=None, TriggeredVendorMessage=None, TriggeredVendorMessageId=None, TriggeredVendorMessageLength=None, VendorId=None, VendorMessage=None, VendorMessageLength=None, VendorStateResponseTimeOut=None):
+		"""Updates a child instance of learnedInformation on the server.
+
+		Args:
+			AsyncConfStatResponseTimeOut (number): NOT DEFINED
+			DescriptionStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no description statistics response is received.
+			EnableAsyncConfMasterFlowRemovedFlowDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Flow Delete is received.
+			EnableAsyncConfMasterFlowRemovedGroupDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Group Delete is received.
+			EnableAsyncConfMasterFlowRemovedHardTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Hard Time Out is received.
+			EnableAsyncConfMasterFlowRemovedIdleTimeOut (bool): NOT DEFINED
+			EnableAsyncConfMasterPacketInActionOutputToController (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In Action Output To Controller is received.
+			EnableAsyncConfMasterPacketInInvalidTtl (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In Invalid Ttl is received.
+			EnableAsyncConfMasterPacketInNoMatching (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In No Matching is received.
+			EnableAsyncConfMasterPortStatusAdd (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Port Status Add is received.
+			EnableAsyncConfMasterPortStatusDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Port Status Delete is received.
+			EnableAsyncConfMasterPortStatusModify (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Delete is received.
+			EnableAsyncConfSlaveFlowRemovedFlowDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Flow Delete is received.
+			EnableAsyncConfSlaveFlowRemovedGroupDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Group Delete is received.
+			EnableAsyncConfSlaveFlowRemovedHardTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Hard Time Out is received.
+			EnableAsyncConfSlaveFlowRemovedIdleTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Idle Time Out is received.
+			EnableAsyncConfSlavePacketInActionOutputToController (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In Action Output To Controller is received.
+			EnableAsyncConfSlavePacketInInvalidTtl (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In Invalid Ttl is received.
+			EnableAsyncConfSlavePacketInNoMatching (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In No Matching is received.
+			EnableAsyncConfSlavePortStatusAdd (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Add is received.
+			EnableAsyncConfSlavePortStatusDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Delete is received.
+			EnableAsyncConfSlavePortStatusModify (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Modify is received.
+			EnableFlowAggregatedStatMatchCapability (bool): Checks to see if the switch has the capability to publish Flow Aggregated Statistics
+			EnableFlowStatMatchCapability (bool): Checks to see if the switch has the capability to publish Flow Statistics
+			EnableGroupStatMatchCapability (bool): If enabled,it denotes that the enable Group Statistics Match Capability is received.
+			EnablePortStatMatchCapability (bool): Checks to see if the switch has the capability to publish Port Statistics
+			EnableQueueStatMatchCapability (bool): If true, the switch has the capability to publish Queue Statistics.
+			EnableSendTableFeaturesTrigger (bool): If enabled,it denotes that the enable Send Table Features Trigger is received.
+			EnableSendTriggerPortFeaturesLearnedInformation (bool): Enables Trigger for port features learned information.
+			EnableSendTriggeredAsyncConfStatLearnedInformation (bool): If enabled,it denotes that the Triggered Asynchronous Configuration Statistics Learned Information is received.
+			EnableSendTriggeredBarrierRequestMessage (bool): If true, enables trigger for barrier request message
+			EnableSendTriggeredDescriptionStatLearnedInformation (bool): If true, the description statistic trigger configuration parameters are available.
+			EnableSendTriggeredFlowAggregatedStatLearnedInformation (bool): If true, the flow aggregated statistic trigger configuration parameters are available.
+			EnableSendTriggeredFlowStatLearnedInformation (bool): If true, the flow statistic trigger configuration parameters are available.
+			EnableSendTriggeredGroupDescriptionStatLearnedInformation (bool): If enabled,it denotes that the enable Send Triggered Group Description Statistics Learned Information is received.
+			EnableSendTriggeredGroupFeatureStatLearnedInformation (bool): If enabled,it denotes that the enable Send Triggered Group Feature Statistics Learned Information is received.
+			EnableSendTriggeredGroupStatLearnedInformation (bool): If enabled,it denotes that the Send Triggered Group Statistics Learned Information is received.
+			EnableSendTriggeredPacketOutMessage (bool): If enabled,it denotes that the enable Send Triggered Packet Out Message is received.
+			EnableSendTriggeredPortModificationMessage (bool): If enabled,it denotes that the enable Send Triggered Port Modification Message is received.
+			EnableSendTriggeredPortStatLearnedInformation (bool): If true, the port statistic trigger configuration parameters are available.
+			EnableSendTriggeredQueueConfigLearnedInformation (bool): If true, the queue config trigger configuration parameters are available.
+			EnableSendTriggeredQueueStatLearnedInformation (bool): If true, the queue statistic trigger configuration parameters are available.
+			EnableSendTriggeredRoleRequestMessage (bool): If enabled,it denotes that the Triggered Role Request Message is received.
+			EnableSendTriggeredSwitchConfigLearnedInformation (bool): If enabled,it denotes that the enable Switch Configuration Learned Information is received.
+			EnableSendTriggeredTableStatLearnedInformation (bool): If true, the table statistic trigger configuration parameters are available.
+			EnableSendTriggeredVendorStatLearnedInformation (bool): If true, the vendor statistic trigger configuration parameters are available.
+			EnableSetAsyncConfig (bool): If enabled,it denotes that the Set Asynchronous Configuration is received.
+			EnableSetSwitchConfig (bool): If enabled,it denotes that the enable Set Switch Configuration is received.
+			EnableSetTableFeatures (bool): NOT DEFINED
+			EnableTableStatMatchCapability (bool): If true, the switch has the capability to publish Table Statistics.
+			EnableTriggeredVendorMessage (bool): If true, the vendor message trigger configuration parameters are available.
+			FlowAggregatedStatEthernetDestination (str): Signifies the ethernet destination address.
+			FlowAggregatedStatEthernetSource (str): Signifies the ethernet source address.
+			FlowAggregatedStatEthernetType (str): Signifies the type of Ethernet used.
+			FlowAggregatedStatInPort (str): Signifies the input port used.
+			FlowAggregatedStatIpDscp (str): Signifies the IP DSCP value for advertising.
+			FlowAggregatedStatIpProtocol (str): Signifies the IP protocol used.
+			FlowAggregatedStatIpv4Destination (str): Signifies the IPv4 destination address.
+			FlowAggregatedStatIpv4Source (str): Signifies the IPv4 source address.
+			FlowAggregatedStatOutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppNone|custom)): Signifies the identifier output mode of the aggregated flow statistics table.
+			FlowAggregatedStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no flow aggregated statistics response is received.
+			FlowAggregatedStatTableIdInputMode (str(allTables|emergency|custom)): Signifies the identifier input mode of the flow aggregated statistics table.
+			FlowAggregatedStatTableIdInputModeNumber (number): Signifies the identifier input mode of the flow aggregated statistics table.
+			FlowAggregatedStatTransportDestination (str): Signifies the Transport destination address.
+			FlowAggregatedStatTransportSource (str): Signifies the Transport source address.
+			FlowAggregatedStatVlanId (str): Signifies the unique VLAN Identifier.
+			FlowAggregatedStatVlanPriority (str): Signifies the User Priority for this VLAN.
+			FlowStatEthernetDestination (str): Specifies the Ethernet destination address.
+			FlowStatEthernetSource (str): Specifies the Ethernet source address.
+			FlowStatEthernetType (str): Specifies the type of Ethernet used.
+			FlowStatInPort (str): Specifies the input port used.
+			FlowStatIpDscp (str): Specifies the IP DSCP value for advertising.
+			FlowStatIpProtocol (str): Specifies the IP protocol used.
+			FlowStatIpv4Destination (str): Specifies the The IPv4 destination address.
+			FlowStatIpv4Source (str): Specifies the The IPv4 source address.
+			FlowStatOutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppNone|custom)): Specifies the output mode of the Table identifier.
+			FlowStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no response is received.
+			FlowStatTableIdInputMode (str(allTables|emergency|custom)): Specifies the input mode of the Table identifier.
+			FlowStatTableIdInputModeNumber (number): Signifies the identifier input mode of the flow statistics table.
+			FlowStatTransportDestination (str): Specifies the Transport destination address.
+			FlowStatTransportSource (str): Specifies the Transport source address.
+			FlowStatVlanId (str): Specifies the unique VLAN Identifier.
+			FlowStatVlanPriority (str): Specifies the User Priority for this VLAN.
+			GroupDescriptionStatResponseTimeOut (number): NOT DEFINED
+			GroupFeatureStatResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+			GroupId (number): The ID of the group used. .
+			GroupIdType (str(ofpgAll|ofpgAny|manual)): NOT DEFINED
+			GroupStatResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+			PacketOutAuxiliaryId (number): NOT DEFINED
+			PacketOutBufferId (number): NOT DEFINED
+			PacketOutBufferIdInputMode (str(opfNoBuffer|manual)): NOT DEFINED
+			PacketOutData (str): NOT DEFINED
+			PacketOutDataLength (number): NOT DEFINED
+			PacketOutInPortInputMode (str(ofppController|ofppLocal|manual)): NOT DEFINED
+			PacketOutInPortNumber (number): NOT DEFINED
+			PortFeaturesResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+			PortNumber (number): Specifies the port number.
+			PortNumberInputMode (str(ofppNone|custom)): Specifies the input mode for the Port number.
+			PortStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no port statistics response is received.
+			QueueConfigPortNumber (number): Indicates the Port for which the queue config request is sought.
+			QueueConfigResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no queue config response is received.
+			QueueId (number): Indicates the queue ID for which queue statistics is being sought.
+			QueueIdInputMode (str(ofpqAll|custom)): Request queue statistics for the queues belonging to the specified ports.
+			QueueStatPortNumber (number): Specifies the port number for which queue statistics is sought.
+			QueueStatPortNumberInputMode (str(ofppAll|custom)): Indicates the ports for which queue statistics is sought.
+			QueueStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no queue statistics response is received.
+			RoleRequestGenerationId (str): The generation ID number.
+			RoleRequestType (str(equal|master|slave|noChange)): Select the type of role for the controller.
+			SwitchConfigDropFragments (bool): NOT DEFINED
+			SwitchConfigMissSendLength (number): NOT DEFINED
+			SwitchConfigReassembleFragments (bool): NOT DEFINED
+			SwitchConfigResponseTimeOut (number): NOT DEFINED
+			TableFeatureConfig (number): The bitmap of OFPTC_* values.
+			TableFeatureMaxEntries (number): The maximum number of entries supported.
+			TableFeatureMetadataMatch (str): The bits of metadata which the table can match.
+			TableFeatureMetadataWrite (str): MetaData Write The bits of metadata which the table can write.
+			TableFeatureName (str): The table name.
+			TableFeatureResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+			TableFeatureTableId (number): The table identifier.
+			TableStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no table statistics response is received.
+			TriggeredVendorMessage (str): Indicates the vendor data of the vendor message trigger.
+			TriggeredVendorMessageId (number): Indicates the ID of the vendor for which vendor message is triggered.
+			TriggeredVendorMessageLength (number): Indicates the length of vendor data of the vendor message trigger.
+			VendorId (number): Specifies the unique Vendor identifier.
+			VendorMessage (str): Speciifes the vendor message value.
+			VendorMessageLength (number): Specifies the length of the message being transmitted.
+			VendorStateResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no vendor statistics response is received.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def ClearRecordsForTrigger(self):
 		"""Executes the clearRecordsForTrigger operation on the server.
 

@@ -90,6 +90,20 @@ class StartRate(Base):
 	def ScaleMode(self, value):
 		self._set_attribute('scaleMode', value)
 
+	def update(self, ScaleMode=None):
+		"""Updates a child instance of startRate on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ScaleMode (str(deviceGroup|port)): Indicates whether the control is specified per port or per device group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Enabled=None, Interval=None, Rate=None):
 		"""Base class infrastructure that gets a list of startRate device ids encapsulated by this object.
 

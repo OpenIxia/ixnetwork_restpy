@@ -1109,6 +1109,31 @@ class IsisL3Router(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, EnableBIER=None, EnableSR=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+		"""Updates a child instance of isisL3Router on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EnableBIER (bool): Enable BIER
+			EnableSR (bool): Enable Segment Routing
+			LocatorCount (number): Locator Count
+			MtCount (number): MT Count
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfBIERSubDomains (number): Number of BIER Sub Domains
+			NoOfSRTunnels (number): Number of MPLS SR Tunnels
+			NumberOfMappingIPV4Ranges (number): Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
+			NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
+			SRAlgorithmCount (number): SR Algorithm Count
+			SRGBRangeCount (number): SRGB Range Count
+			SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSR=None, Errors=None, LocalSystemID=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SessionInfo=None, SessionStatus=None, SrlbDescriptorCount=None, StateCounts=None, Status=None):
 		"""Finds and retrieves isisL3Router data from the server.
 

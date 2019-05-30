@@ -216,6 +216,30 @@ class LocalEidRange(Base):
 	def UseAllInterfaceAddressesAsLocator(self, value):
 		self._set_attribute('useAllInterfaceAddressesAsLocator', value)
 
+	def update(self, Count=None, EnableProxyMapReplyBit=None, EnableWantMapNotifyBit=None, Enabled=None, Family=None, MaxRecordPerMapRegisterPacket=None, PeriodicRefreshInterval=None, PrefixLength=None, QuickRegistrationPeriod=None, RefreshIntervalInQuickRegistrationPeriod=None, StartAddress=None, SupportSmrGeneration=None, Ttl=None, UseAllInterfaceAddressesAsLocator=None):
+		"""Updates a child instance of localEidRange on the server.
+
+		Args:
+			Count (number): It gives details about the count
+			EnableProxyMapReplyBit (bool): If true, it enables the proxy map reply bit
+			EnableWantMapNotifyBit (str(always|duringQuickRegistration|never)): If true, it enables the Want map Notify bit
+			Enabled (bool): If true, it enables the protocol
+			Family (str(ipv4|ipv6)): It gives details about the family
+			MaxRecordPerMapRegisterPacket (number): It gives details about the maximum record per map register packet
+			PeriodicRefreshInterval (number): It gives details about the periodic refresh interval
+			PrefixLength (number): it gives details about the prefix length
+			QuickRegistrationPeriod (number): it gives details about the quick registration period
+			RefreshIntervalInQuickRegistrationPeriod (number): It refreshs the interval in quick registration periods
+			StartAddress (str): It gives details about the start address
+			SupportSmrGeneration (bool): It supports smr generation
+			Ttl (number): It gives details about the ttl
+			UseAllInterfaceAddressesAsLocator (bool): If True, it uses all interface address as locator
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, EnableProxyMapReplyBit=None, EnableWantMapNotifyBit=None, Enabled=None, Family=None, MaxRecordPerMapRegisterPacket=None, PeriodicRefreshInterval=None, PrefixLength=None, QuickRegistrationPeriod=None, RefreshIntervalInQuickRegistrationPeriod=None, StartAddress=None, SupportSmrGeneration=None, Ttl=None, UseAllInterfaceAddressesAsLocator=None):
 		"""Adds a new localEidRange node on the server and retrieves it in this instance.
 

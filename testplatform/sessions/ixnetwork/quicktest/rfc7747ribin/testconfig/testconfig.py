@@ -417,6 +417,48 @@ class TestConfig(Base):
 	def WaitBeforeAdvertise(self, value):
 		self._set_attribute('waitBeforeAdvertise', value)
 
+	def update(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
+			DataPlaneJitterWindow (str(k_10485760|k_1310720|k_167772160|k_20971520|k_2621440|k_335544320|k_41943040|k_5242880|k_671088640|k_83886080)): 
+			Duration (number): 
+			EnableBFD (bool): 
+			EnableTolerance (bool): 
+			FixedFrameSize (number): 
+			ForceContinuosTraffic (bool): 
+			FrameSizeMode (str(fixed)): 
+			Framesize (str): 
+			HoldDownTimer (number): 
+			IpRatioMode (str(custom|fixed|increment|random)): 
+			Ipv4rate (number): 
+			Ipv6rate (number): 
+			LoadRateValue (number): 
+			LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): 
+			NetworkGroupRoutesType (str(ipv4|ipv4/ipv6|ipv6)): 
+			NetworkGroupSizeListIpv4 (list(str)): 
+			NetworkGroupSizeListIpv6 (list(str)): 
+			NetworkGroupSizeModeIpv4 (str(custom)): 
+			NetworkGroupSizeModeIpv6 (str(custom)): 
+			NumberOfIterations (number): 
+			Numtrials (number): 
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportConvergenceUnit (str(ms|s|us)): 
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): 
+			RoutesDistribution (str(distributedAcrossPorts|equalCostOnEachPort)): 
+			TestTrafficType (str): 
+			Threshold (number): 
+			Tolerance (number): 
+			TrafficType (str(burstyLoading|constantLoading)): 
+			WaitAfterThresholdReached (number): 
+			WaitBeforeAdvertise (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -153,6 +153,26 @@ class LearnFrames(Base):
 	def SendArp(self, value):
 		self._set_attribute('sendArp', value)
 
+	def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, SendArp=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			FastPathEnable (bool): NOT DEFINED
+			FastPathLearnFrameSize (number): NOT DEFINED
+			FastPathNumFrames (number): NOT DEFINED
+			FastPathRate (number): NOT DEFINED
+			LearnFrequency (str(onBinaryIteration)): NOT DEFINED
+			LearnNumFrames (number): NOT DEFINED
+			LearnSendMacOnly (bool): NOT DEFINED
+			LearnSendRouterSolicitation (bool): NOT DEFINED
+			LearnWaitTime (number): NOT DEFINED
+			SendArp (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

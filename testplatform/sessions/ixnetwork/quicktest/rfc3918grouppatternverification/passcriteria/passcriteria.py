@@ -321,6 +321,40 @@ class PassCriteria(Base):
 	def SeqErrorsThresholdValue(self, value):
 		self._set_attribute('seqErrorsThresholdValue', value)
 
+	def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, FramelossThresholdMode=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			DataErrorThresholdMode (str(average|maximum)): The data error threshold mode.
+			DataErrorThresholdValue (number): The data error threshold value.
+			EnableDataIntegrityPassFail (bool): If true, the data integrity pass fail is enabled.
+			EnableFrameLossPassFail (bool): If true, the frame loss pass fail is enabled.
+			EnableLatencyPassFail (bool): If true, the latency pass fail is enabled.
+			EnablePassFail (bool): If true, the pass criteria is enabled.
+			EnableRatePassFail (bool): If true, the pass fail rate is enabled.
+			EnableSequenceErrorsPassFail (bool): If true, enables sequence errors pass fail.
+			EnableStandardDeviationPassFail (bool): If true, the standard deviation of pass fail is enabled.
+			FramelossThresholdMode (str(average|maximum)): Thr frame loss threshold mode.
+			LatencyThresholdMode (str(average|maximum)): The latency threshold mode.
+			LatencyThresholdScale (str(ms|ns|us)): The latency threshold scale.
+			LatencyThresholdValue (number): The latency threshold value.
+			LatencyVarThresholdMode (str(average|maximum)): The latency variable threshold mode.
+			LatencyVariationThresholdScale (str(ms|ns|us)): The variation threshold scale.
+			LatencyVariationThresholdValue (number): The latency threshold value variation.
+			LossThresholdMode (str(average|maximum)): The loss threshold mode.
+			LossThresholdValue (number): The loss threshold value.
+			PassCriteriaLoadRateMode (str(average|minimum)): The pass criteria load rate mode.
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass Criteria Load rate scale.
+			PassCriteriaLoadRateValue (number): The pass criteria load rate value.
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+			SeqErrorsThresholdMode (str(average|maximum)): The sequence errors threshold mode.
+			SeqErrorsThresholdValue (number): The sequence error threshold value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

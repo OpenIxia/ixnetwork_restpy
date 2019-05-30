@@ -129,6 +129,24 @@ class Uds(Base):
 	def SourceAddressSelector(self, value):
 		self._set_attribute('sourceAddressSelector', value)
 
+	def update(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
+		"""Updates a child instance of uds on the server.
+
+		Args:
+			CustomFrameSizeFrom (number): Frame size customized from.
+			CustomFrameSizeTo (number): Customized frame size.
+			DestinationAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Destination address selector.
+			Error (str(errAnyFrame|errBadCRC|errBadFrame|errGoodFrame)): Indicates error.
+			FrameSizeType (str(any|custom|jumbo|oversized|undersized)): The type of frame size.
+			IsEnabled (bool): If true, UDS is enabled.
+			PatternSelector (str(anyPattern|notPattern1|notPattern2|pattern1|pattern2)): Pattern selector.
+			SourceAddressSelector (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Source address selector.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
 		"""Finds and retrieves uds data from the server.
 

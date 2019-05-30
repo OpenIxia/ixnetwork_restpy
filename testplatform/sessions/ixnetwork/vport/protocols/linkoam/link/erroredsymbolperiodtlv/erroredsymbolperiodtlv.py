@@ -80,3 +80,17 @@ class ErroredSymbolPeriodTlv(Base):
 	@Window.setter
 	def Window(self, value):
 		self._set_attribute('window', value)
+
+	def update(self, Enabled=None, Symbols=None, Threshold=None, Window=None):
+		"""Updates a child instance of erroredSymbolPeriodTlv on the server.
+
+		Args:
+			Enabled (bool): 
+			Symbols (number): 
+			Threshold (number): 
+			Window (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

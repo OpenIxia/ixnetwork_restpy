@@ -1449,6 +1449,134 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountFramesize=None, CountRandomFrameSize=None, CountRandomLoadRate=None, CustomFramesize=None, CustomLoadUnit=None, CustomRate=None, DelayAfterTransmit=None, DisableInheritedImix=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FixedLoadUnit=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialFramesize=None, InitialIncrementLoadRate=None, InitialRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, LastFramesize=None, LastRate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, LoadUnit=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxFramesize=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinFramesize=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, MinRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, SaturationIteration=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepFramesize=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepRate=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedInitial=None, UnchangedValueList=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+			BinaryBackoff (number): Specifies the percentage of binary backoff.
+			BinaryFrameLossUnit (str(%|frames)): Signifies the two values of frame loss unit.
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the binary load unit.
+			BinaryResolution (number): Specifies the resolution of the iteration.
+			BinarySearchType (str(linear|perFlow|perPort|perTrafficItem)): The binary search type value.
+			BinaryTolerance (number): The binary tolerance level.
+			BurstSize (number): The number of packets to send in a burst.
+			CalculateJitter (bool): If true, calculates jitter.
+			CalculateLatency (bool): If true, calculates the latency.
+			ComboBackoff (number): The combined backoff value.
+			ComboFrameLossUnit (str(%|frames)): Signifies the loss unit for frames for test configuration.
+			ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the combo load unit.
+			ComboResolution (number): The combined resolution value.
+			ComboTolerance (number): The combined tolerance level.
+			CountFramesize (number): Count of frame size.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			CountRandomLoadRate (number): The random count of the load rate.
+			CustomFramesize (str): The customized frame size.
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
+			CustomRate (str): The customized rate of transmission.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			DisableInheritedImix (str): If true, disables inherited imix data.
+			Duration (number): sec
+			EnableBackoffIteration (bool): If true, enables the test to run an extra iteration for calculating the Backoff Latency.
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableExtraIterations (bool): If enabled, it signifies extra iterations.
+			EnableFastConvergence (bool): If enabled, it signifies the fast convergence.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): if true, enables minimum frame size.
+			EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the Saturation Latency.
+			EnableStopTestOnHighLoss (bool): If true, enable this to stop the high frame loss.
+			ExtraIterationOffsets (str): It signifies the extra iterations offsets value.
+			FastConvergenceDuration (number): It signifies the fast convergence duration value.
+			FastConvergenceThreshold (number): It signifies the fast convergence threshold value.
+			FixedLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies the fixed load unit.
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameLossUnit (str): Signifies the unit for frame loss for test configuration.
+			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FramesPerBurstGap (number): The number of frames to be sent after each burst.
+			Framesize (str): Custom Step frame size.
+			FramesizeFixedValue (number): It signifies the frame size fixed value.
+			FramesizeImixList (str): The list of frame size to be used.
+			FramesizeList (list(str)): It signifies the list of the frame size.
+			Gap (number): It signifies the gap value for the protocol.
+			GenerateTrackingOptionAggregationFiles (bool): If enabled, it generates the tracking option for aggregation files.
+			ImixAdd (str): Signifies the test configuration.
+			ImixData (str): Signifies the IMIX data for test configuration.
+			ImixDelete (str): Signifies the test configuration attributes.
+			ImixDistribution (str(bwpercentage|weight)): Signifies the distribution list for imix values.
+			ImixEnabled (bool): If True, enables the imix value.
+			ImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Specifies the imix templates.
+			ImixTrafficType (str): Signifies the traffic type of test configuration.
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The incremental value of the load unit.
+			InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
+			InitialComboLoadRate (number): The first combination load rate.
+			InitialFramesize (number): The initial frame size.
+			InitialIncrementLoadRate (number): Increments the initial load rate value.
+			InitialRate (number): The first rate of transmission.
+			InitialStepLoadRate (number): The initial step value of the load rate.
+			Ipv4rate (number): The rate at which IPv4 traffic is sent.
+			Ipv6rate (number): The rate at which IPv6 traffic is sent.
+			LastFramesize (number): The last frame size.
+			LastRate (number): The last rate of transmission.
+			LatencyBins (str): Sets the latency bins statistics.
+			LatencyBinsEnabled (bool): Enables the latency bins statistics.
+			LatencyType (str(cutThrough|storeForward)): The type of latency.
+			LoadRateList (str): Enter the Load Rate List.
+			LoadRateValue (number): The load rate value for the Pass Criteria per trial.
+			LoadType (str(custom|increment|random|unchanged)): The type of the payload setting.
+			LoadUnit (str): Specifies the step rate of the load unit.
+			MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
+			MaxComboLoadRate (number): The maximum combination load rate.
+			MaxFramesize (number): The maximum frame size.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxIncrementLoadRate (number): Signifies the maximum increment of load rate.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxRandomLoadRate (number): The maximum random value of the load rate.
+			MaxRate (number): The maximum rate of transmission.
+			MaxStepLoadRate (number): The maximum step value of the load rate.
+			MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+			MinComboLoadRate (number): The minimum combination load rate.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinFramesize (number): The minimum frame size.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			MinRandomLoadRate (number): The minimum random value of the load rate.
+			MinRate (number): The minimum rate of transmission.
+			Numtrials (number): The integer value that states the number of trials permitted.
+			PercentMaxRate (number): Percent of maximum rate.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
+			PortDelayValue (number): Sets the port delay value.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			RandomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The random values of the load unit.
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): Selects the rate.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): Report throughput rate unit for custom step.
+			Resolution (number): Specify the resolution of the iteration.
+			SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation Latency.
+			StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
+			StepComboLoadRate (number): The step value of combination load rate.
+			StepFrameLossUnit (str(%|frames)): Signifies the step value for frame loss unit.
+			StepFramesize (number): The step frame size.
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			StepIncrementLoadRate (number): Signifies the increment of step load rate value.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
+			StepRate (number): The step rate of transmission.
+			StepStepLoadRate (number): The incremental step value of load rate.
+			StepTolerance (number): The step value of the tolerance level.
+			StopTestOnHighLoss (number): If true, enables this to stop the test in case of high frame loss.
+			Tolerance (number): The value set for the tolerance level.
+			TrafficType (str(burstyLoading|constantLoading)): The test based on the traffic type.
+			TxDelay (number): Signifies the transmission delay time.
+			UnchangedInitial (str(False|True)): Signifies the initial unchanged value.
+			UnchangedValueList (str): It signifies the unchanged value list.
+			UsePercentOffsets (str): It signifies the value of percent offsets when used.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

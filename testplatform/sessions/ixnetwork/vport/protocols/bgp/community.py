@@ -44,3 +44,14 @@ class Community(Base):
 	@Val.setter
 	def Val(self, value):
 		self._set_attribute('val', value)
+
+	def update(self, Val=None):
+		"""Updates a child instance of community on the server.
+
+		Args:
+			Val (list(number)): The value of the community attribute.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

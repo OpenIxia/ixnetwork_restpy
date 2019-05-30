@@ -44,3 +44,14 @@ class ExtendedCommunity(Base):
 	@ExtendedCommunity.setter
 	def ExtendedCommunity(self, value):
 		self._set_attribute('extendedCommunity', value)
+
+	def update(self, ExtendedCommunity=None):
+		"""Updates a child instance of extendedCommunity on the server.
+
+		Args:
+			ExtendedCommunity (list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|fourOctetAs|opaque|ip],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))): Associates BGP4 extended community attributes with a route item.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

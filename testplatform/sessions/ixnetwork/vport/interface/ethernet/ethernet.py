@@ -68,3 +68,16 @@ class Ethernet(Base):
 	@UidFromMac.setter
 	def UidFromMac(self, value):
 		self._set_attribute('uidFromMac', value)
+
+	def update(self, MacAddress=None, Mtu=None, UidFromMac=None):
+		"""Updates a child instance of ethernet on the server.
+
+		Args:
+			MacAddress (str): A 48-bit hardware address that uniquely identifies each node of a network.
+			Mtu (number): The maximum packet size, in bytes, that a particular interface can handle.
+			UidFromMac (bool): The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

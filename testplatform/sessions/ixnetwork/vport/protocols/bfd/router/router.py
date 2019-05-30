@@ -107,6 +107,19 @@ class Router(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, Enabled=None, RouterId=None, TrafficGroupId=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			Enabled (bool): Enables or disables the simulated router.
+			RouterId (str): The ID of the simulated router, expressed as an IP address.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, RouterId=None, TrafficGroupId=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

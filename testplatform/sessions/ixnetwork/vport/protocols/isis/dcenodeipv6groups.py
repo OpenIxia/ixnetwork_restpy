@@ -178,6 +178,28 @@ class DceNodeIpv6Groups(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, IncludeIpv6Groups=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NoOfUnicastScrIpv6sPerMulicastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
+		"""Updates a child instance of dceNodeIpv6Groups on the server.
+
+		Args:
+			IncludeIpv6Groups (bool): If true, includes IPv6 groups for this Network Range.
+			InterGroupUnicastIpv6Increment (str): The IPv6 address format of the Unicast IPv6 between one or more node groups.
+			IntraGroupUnicastIpv6Increment (str): The IPv6 address format of the Unicast MAC within a node group.
+			MulticastAddressNodeStep (str): The Multicast IPv6 address that configures the increment across the Network Range simulated RBridges.
+			MulticastIpv6Count (number): The number of Multicast IPv6 addresses.
+			MulticastIpv6Step (str): The incremental value of Multicast IPv6 address.
+			NoOfUnicastScrIpv6sPerMulicastIpv6 (number): The number of Unicast Source for each Multicast IPv6 address.
+			SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
+			StartMulticastIpv6 (str): The IP address format of the starting Multicast IPv6 address.
+			StartUnicastSourceIpv6 (str): The IPv6 address format of the starting Unicast Source IPv6.
+			UnicastAddressNodeStep (str): The Unicast IPv6 address that configures the increment across the Network Range simulated RBridges.
+			VlanId (number): The VLAN ID of the enabled Multicast IPv6 Group Range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeIpv6Groups=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NoOfUnicastScrIpv6sPerMulicastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
 		"""Adds a new dceNodeIpv6Groups node on the server and retrieves it in this instance.
 

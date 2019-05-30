@@ -286,6 +286,22 @@ class RsvpP2mpEgressLsps(Base):
 	def TypeP2mpId(self, value):
 		self._set_attribute('typeP2mpId', value)
 
+	def update(self, Name=None, NumberOfRroSubObjects=None, TypeP2mpId=None):
+		"""Updates a child instance of rsvpP2mpEgressLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+			TypeP2mpId (str(iP|p2MPId)): P2MP ID Type
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, DestinationIpv4GroupAddress=None, EnableFixedLabelForReservations=None, EndPointIpv6=None, IncludeConnectedIpOnTop=None, IncludeLeafIpAtBottom=None, LabelValue=None, P2mpIdAsNumber=None, P2mpIdIp=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, SendAsRro=None, SendAsSrro=None, SendReservationConfirmation=None, SubLspsDown=None, TimeoutMultiplier=None):
 		"""Base class infrastructure that gets a list of rsvpP2mpEgressLsps device ids encapsulated by this object.
 

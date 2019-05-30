@@ -96,6 +96,20 @@ class CustomTopologyNodeTopologyRange(Base):
 	def StartNickname(self, value):
 		self._set_attribute('startNickname', value)
 
+	def update(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
+		"""Updates a child instance of customTopologyNodeTopologyRange on the server.
+
+		Args:
+			NicknameCount (number): NOT DEFINED
+			NodeNicknameIncrement (number): NOT DEFINED
+			NumberOftreesToCompute (number): NOT DEFINED
+			StartNickname (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
 		"""Adds a new customTopologyNodeTopologyRange node on the server and retrieves it in this instance.
 

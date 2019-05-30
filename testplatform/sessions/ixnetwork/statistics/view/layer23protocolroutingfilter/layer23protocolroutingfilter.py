@@ -58,6 +58,18 @@ class Layer23ProtocolRoutingFilter(Base):
 	def ProtocolFilterIds(self, value):
 		self._set_attribute('protocolFilterIds', value)
 
+	def update(self, PortFilterIds=None, ProtocolFilterIds=None):
+		"""Updates a child instance of layer23ProtocolRoutingFilter on the server.
+
+		Args:
+			PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Ports that have been filtered.
+			ProtocolFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolFilter])): Protocols that have been filtered.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, PortFilterIds=None, ProtocolFilterIds=None):
 		"""Adds a new layer23ProtocolRoutingFilter node on the server and retrieves it in this instance.
 

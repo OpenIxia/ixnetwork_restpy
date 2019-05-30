@@ -70,6 +70,19 @@ class OrganizationSpecificInfoTlv(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Enabled=None, Oui=None, Value=None):
+		"""Updates a child instance of organizationSpecificInfoTlv on the server.
+
+		Args:
+			Enabled (bool): 
+			Oui (str): 
+			Value (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, Oui=None, Value=None):
 		"""Adds a new organizationSpecificInfoTlv node on the server and retrieves it in this instance.
 

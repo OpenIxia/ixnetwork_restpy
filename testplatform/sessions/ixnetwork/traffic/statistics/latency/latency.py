@@ -56,3 +56,15 @@ class Latency(Base):
 	@Mode.setter
 	def Mode(self, value):
 		self._set_attribute('mode', value)
+
+	def update(self, Enabled=None, Mode=None):
+		"""Updates a child instance of latency on the server.
+
+		Args:
+			Enabled (bool): If true, latency statistics is enabled and if false, latency statistics is disabled.
+			Mode (str(cutThrough|forwardingDelay|mef|storeForward)): Latency statistics is generated according to the mode set if latency is enabled.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

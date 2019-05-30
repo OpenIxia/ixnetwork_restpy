@@ -45,6 +45,17 @@ class Level(Base):
 	def NodeCount(self, value):
 		self._set_attribute('nodeCount', value)
 
+	def update(self, NodeCount=None):
+		"""Updates a child instance of level on the server.
+
+		Args:
+			NodeCount (number): Number of Nodes Per Level
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, NodeCount=None):
 		"""Finds and retrieves level data from the server.
 

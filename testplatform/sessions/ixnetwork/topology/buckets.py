@@ -143,6 +143,21 @@ class Buckets(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, Multiplier=None, Name=None):
+		"""Updates a child instance of buckets on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Multiplier (number): Number of instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, GroupIndex=None, GroupName=None, Multiplier=None, Name=None):
 		"""Finds and retrieves buckets data from the server.
 

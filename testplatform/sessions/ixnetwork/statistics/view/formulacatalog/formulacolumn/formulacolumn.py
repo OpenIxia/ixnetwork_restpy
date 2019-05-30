@@ -58,6 +58,18 @@ class FormulaColumn(Base):
 	def Formula(self, value):
 		self._set_attribute('formula', value)
 
+	def update(self, Caption=None, Formula=None):
+		"""Updates a child instance of formulaColumn on the server.
+
+		Args:
+			Caption (str): The name of the formula.
+			Formula (str): The formula that is filtered.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Caption=None, Formula=None):
 		"""Adds a new formulaColumn node on the server and retrieves it in this instance.
 

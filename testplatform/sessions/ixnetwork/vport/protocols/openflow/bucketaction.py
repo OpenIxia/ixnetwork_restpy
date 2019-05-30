@@ -634,6 +634,66 @@ class BucketAction(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of bucketAction on the server.
+
+		Args:
+			ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): It denotes the action type associated with bucket action.
+			ArpDstHwAddr (str): Set the destination hardware address in the ARP payload.
+			ArpDstIpv4Addr (str): Set the destination IPv4 address in the ARP payload.
+			ArpOpcode (number): Set the ARP Opcode.
+			ArpSrcHwAddr (str): Set the source hardware address in the ARP payload.
+			ArpSrcIpv4Addr (str): Set the source IPv4 address in the ARP payload.
+			Enabled (bool): If selected, the bucket action is used in this controller configuration. The default Value is False
+			EthernetDestination (str): The destination address of the Ethernet port.
+			EthernetSource (str): The source address of the Ethernet port.
+			EthernetType (str): The the type of Ethernet used.
+			Experimenter (number): Set the Experimenter details.
+			ExperimenterData (str): The data of the Experimenter.
+			ExperimenterDatalength (number): The data length of the Experimenter. The default value is 1.
+			ExperimenterField (number): NOT DEFINED
+			GroupId (number): A 32-bit integer uniquely identifying thegroup.
+			Icmpv4Code (number): Set the ICMP code.
+			Icmpv4Type (number): Set the ICMP type.
+			Icmpv6Code (number): Set the ICMP code.
+			Icmpv6Type (number): Set the ICMP type.
+			IpDscp (number): Specify the IP DSCP value.
+			IpEcn (number): Set the ECN bits of the IP header.
+			IpProtocol (number): Specify the IPv4 or IPv6 protocol number.
+			Ipv4Destination (str): Specify the destination IPv4 address.
+			Ipv4Source (str): Specify the source IPv4 address.
+			Ipv6Destination (str): Set the IPv6 destination address.
+			Ipv6ExtHeader (number): Set the IPv6 Extension Header pseudo-field.
+			Ipv6FlowLabel (number): Set the IPv6 Flow label.
+			Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6Source (str): Set the IPv6 source address.
+			Ipv6ndTarget (str): Set the target address in an IPv6 Neighbor Discovery message.
+			MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+			MplsBos (number): Set the BoS bit in the first MPLS shim header.
+			MplsLabel (number): Set the LABEL in the first MPLS shim header.
+			MplsTc (number): Set the TC in the first MPLS shim header.
+			MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			NwTtl (number): Set the IP TTL.
+			OutputPort (number): The Output port number to be used.
+			OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction
+			PbbIsId (number): Set the I-SID in the first PBB service instance tag.
+			QueueId (number): Set queue ID when outputting to a port.
+			SctpDestination (number): Specify the SCTP Destination address.
+			SctpSource (number): Specify the SCTP Source address.
+			TcpDestination (number): Specify the TCP Destination address.
+			TcpSource (number): Specify the TCP Source address.
+			TunnelId (str): Set the unique identifier used for the Tunnel.
+			UdpDestination (number): Specify the UDP Destination address.
+			UdpSource (number): Specify the UDP Source address.
+			VlanId (number): The 802.1q VLAN identifier.
+			VlanPriority (number): Set the 802.1q priority.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
 		"""Adds a new bucketAction node on the server and retrieves it in this instance.
 

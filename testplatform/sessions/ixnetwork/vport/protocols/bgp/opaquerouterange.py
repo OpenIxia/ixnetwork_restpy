@@ -115,6 +115,22 @@ class OpaqueRouteRange(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, __id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
+		"""Updates a child instance of opaqueRouteRange on the server.
+
+		Args:
+			__id__ (str): NOT DEFINED
+			Enabled (bool): Appends the local AsNumber.
+			ImportedFile (str): Location of the route import file.
+			NextHopAsIs (bool): If true, it takes the next Hop AsIs.
+			NumberOfRoutes (number): Total number of opaque routes.
+			SendMultiExitDiscovery (bool): If true, sends a Multi Exit Discriminator attribute with the indicated value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, __id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
 		"""Adds a new opaqueRouteRange node on the server and retrieves it in this instance.
 

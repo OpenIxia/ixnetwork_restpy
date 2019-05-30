@@ -94,6 +94,21 @@ class Ipv6(Base):
 	def TrafficClass(self, value):
 		self._set_attribute('trafficClass', value)
 
+	def update(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
+		"""Updates a child instance of ipv6 on the server.
+
+		Args:
+			Gateway (str): The IPv6 address of the Gateway to the network,typically an interface on the DUT.
+			Ip (str): The 128-bit IPv6 address assigned to this unconnected interface.
+			PrefixLength (number): A learned/allocated IPv4 address prefix length (mask) for this interface.
+			TargetLinkLayerAddressOption (bool): Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
+			TrafficClass (str): This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
 		"""Adds a new ipv6 node on the server and retrieves it in this instance.
 

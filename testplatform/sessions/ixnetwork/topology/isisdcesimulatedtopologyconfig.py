@@ -116,6 +116,21 @@ class IsisDceSimulatedTopologyConfig(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, DceNodeTopologyCount=None, Name=None):
+		"""Updates a child instance of isisDceSimulatedTopologyConfig on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			DceNodeTopologyCount (number): Node Topology Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DceNodeTopologyCount=None, DescriptiveName=None, Name=None):
 		"""Finds and retrieves isisDceSimulatedTopologyConfig data from the server.
 

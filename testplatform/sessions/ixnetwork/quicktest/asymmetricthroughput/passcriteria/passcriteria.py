@@ -489,6 +489,54 @@ class PassCriteria(Base):
 	def Upstream_passFailFrequency(self, value):
 		self._set_attribute('upstream_passFailFrequency', value)
 
+	def update(self, DownstreamDataErrorThresholdMode=None, DownstreamDataErrorThresholdValue=None, DownstreamEnableDataIntegrityPassFail=None, DownstreamEnableLatencyPassFail=None, DownstreamEnableRatePassFail=None, DownstreamEnableSequenceErrorsPassFail=None, DownstreamEnableStandardDeviationPassFail=None, DownstreamLatencyThresholdMode=None, DownstreamLatencyThresholdScale=None, DownstreamLatencyThresholdValue=None, DownstreamLatencyVarThresholdMode=None, DownstreamLatencyVariationThresholdScale=None, DownstreamLatencyVariationThresholdValue=None, DownstreamPassCriteriaLoadRateMode=None, DownstreamPassCriteriaLoadRateScale=None, DownstreamPassCriteriaLoadRateValue=None, DownstreamSeqErrorsThresholdMode=None, DownstreamSeqErrorsThresholdValue=None, Downstream_passFailFrequency=None, UpstreamDataErrorThresholdMode=None, UpstreamDataErrorThresholdValue=None, UpstreamEnableDataIntegrityPassFail=None, UpstreamEnableLatencyPassFail=None, UpstreamEnableRatePassFail=None, UpstreamEnableSequenceErrorsPassFail=None, UpstreamEnableStandardDeviationPassFail=None, UpstreamLatencyThresholdMode=None, UpstreamLatencyThresholdScale=None, UpstreamLatencyThresholdValue=None, UpstreamLatencyVarThresholdMode=None, UpstreamLatencyVariationThresholdScale=None, UpstreamLatencyVariationThresholdValue=None, UpstreamPassCriteriaLoadRateMode=None, UpstreamPassCriteriaLoadRateScale=None, UpstreamPassCriteriaLoadRateValue=None, UpstreamSeqErrorsThresholdMode=None, UpstreamSeqErrorsThresholdValue=None, Upstream_passFailFrequency=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			DownstreamDataErrorThresholdMode (str(average|maximum)): Signifies threshold mode for downstream data error.
+			DownstreamDataErrorThresholdValue (number): Signifies the downstream data error threshold value.
+			DownstreamEnableDataIntegrityPassFail (bool): if true, enables pass or faill of data integrity for downstream.
+			DownstreamEnableLatencyPassFail (bool): If true, enables latency pass fail for downstream.
+			DownstreamEnableRatePassFail (bool): If true, enables pass fail rate for downstream.
+			DownstreamEnableSequenceErrorsPassFail (bool): If true, enables the pass fail for sequence errors for downstream.
+			DownstreamEnableStandardDeviationPassFail (bool): If true, enables pass fail of standard deviation for downstream.
+			DownstreamLatencyThresholdMode (str(average|maximum)): Signifies the latency threshold mode for downstream.
+			DownstreamLatencyThresholdScale (str(ms|ns|us)): Signifies the threshold scale for downstream latency.
+			DownstreamLatencyThresholdValue (number): Signifies the latency threshold value for downstream.
+			DownstreamLatencyVarThresholdMode (str(average|maximum)): Signifies latency variation threshold mode for downstream.
+			DownstreamLatencyVariationThresholdScale (str(ms|ns|us)): Signifies latency variation threshold scale for downstream.
+			DownstreamLatencyVariationThresholdValue (number): Signifies the latency variation threshold value for downstream.
+			DownstreamPassCriteriaLoadRateMode (str(average|minimum)): Signifies the pass criteria load rate mode for downstream.
+			DownstreamPassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): Signifies the pass criteria load rate scale for downstream.
+			DownstreamPassCriteriaLoadRateValue (number): Signifies pass criteria load rate value for downstream.
+			DownstreamSeqErrorsThresholdMode (str(average|maximum)): Signifies the threshold mode for sequence errors for downstream.
+			DownstreamSeqErrorsThresholdValue (number): Signifies the threshold value for sequence errors for downstream.
+			Downstream_passFailFrequency (str(framesizes|trials)): NOT DEFINED
+			UpstreamDataErrorThresholdMode (str(average|maximum)): Signifies the data error threshold mode for upstream.
+			UpstreamDataErrorThresholdValue (number): Signifies data error threshold value for upstream.
+			UpstreamEnableDataIntegrityPassFail (bool): If true, enables pass fail of data integrity for upstream.
+			UpstreamEnableLatencyPassFail (bool): If true, enables latency pass fail for upstream.
+			UpstreamEnableRatePassFail (bool): If true, enables the rate of pass fail for upstream.
+			UpstreamEnableSequenceErrorsPassFail (bool): If true, enables sequence errors pass fail for upstream.
+			UpstreamEnableStandardDeviationPassFail (bool): If true, enables standard deviation of pass and fail for upstream.
+			UpstreamLatencyThresholdMode (str(average|maximum)): Signifies the latency threshold mode for upstream.
+			UpstreamLatencyThresholdScale (str(ms|ns|us)): Signifies the latency threshold scale for upstream.
+			UpstreamLatencyThresholdValue (number): It is the latency threshold value for upstream.
+			UpstreamLatencyVarThresholdMode (str(average|maximum)): Signifies the latency variation threshold mode for upstream.
+			UpstreamLatencyVariationThresholdScale (str(ms|ns|us)): It is the latency variation threshold scale for upstream.
+			UpstreamLatencyVariationThresholdValue (number): Signifies the latency variation threshold value for upstream.
+			UpstreamPassCriteriaLoadRateMode (str(average|minimum)): Signifies the pass criteria load rate mode for upstream.
+			UpstreamPassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): Signifies pass criteria for load rate scale for upstream.
+			UpstreamPassCriteriaLoadRateValue (number): Signifies the pass criteria load rate value for upstream.
+			UpstreamSeqErrorsThresholdMode (str(average|maximum)): Signifies the sequence errors threshold mode for upstream.
+			UpstreamSeqErrorsThresholdValue (number): Signifies sequence errors threshold value for upstream.
+			Upstream_passFailFrequency (str(framesizes|trials)): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

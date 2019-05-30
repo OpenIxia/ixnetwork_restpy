@@ -146,6 +146,23 @@ class Vlan(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+		"""Updates a child instance of vlan on the server.
+
+		Args:
+			Enabled (bool): Enables the use of this STP VLAN. (default = disabled)
+			InternalRootPathCost (number): Administrative path cost to the root bridge. The default is 0.
+			Mac (str): The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
+			PortPriority (number): The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
+			Priority (str(0|4096|8192|12288|16384|20480|24576|28672|32768|36864|40960|45056|49152|53248|57344|61440)): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
+			UpdateRequired (bool): If true, cause the VLAN to update.
+			VlanId (number): The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
 		"""Adds a new vlan node on the server and retrieves it in this instance.
 

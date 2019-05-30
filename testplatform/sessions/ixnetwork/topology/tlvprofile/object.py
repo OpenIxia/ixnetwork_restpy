@@ -101,6 +101,17 @@ class Object(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of object on the server.
+
+		Args:
+			Name (str): The name of the object
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Name=None):
 		"""Finds and retrieves object data from the server.
 

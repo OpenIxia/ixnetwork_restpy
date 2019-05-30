@@ -524,3 +524,54 @@ class Match(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of match on the server.
+
+		Args:
+			ArpDestinationHardwareAddress (bool): If selected, ARP Destination Hardware Address matching is supported.
+			ArpDestinationIpv4Address (bool): If selected, ARP Destination IPv4 Address matching is supported.
+			ArpOpcode (bool): If selected, ARP Opcode matching is supported.
+			ArpSourceHardwareAddress (bool): If selected, ARP Source Hardware Address matching is supported.
+			ArpSourceIpv4Address (bool): If selected, ARP Source IPv4 Address matching is supported.
+			EthernetDestination (bool): If selected, Ethernet Destination matching is supported.
+			EthernetSource (bool): If selected, Ethernet Source matching is supported.
+			EthernetType (bool): If selected, Ethernet Type matching is supported.
+			Experimenter (bool): If selected, Experimenter matching is supported.
+			IcmpCode (bool): If selected, ICMP Code matching is supported.
+			IcmpType (bool): If selected, ICMP Type matching is supported.
+			Icmpv6Code (bool): If selected, ICMPv6 Code matching is supported.
+			Icmpv6Type (bool): If selected, ICMPv6 Type matching is supported.
+			InPort (bool): If selected, In Port matching is supported.
+			IpDscp (bool): If selected, IP DSCP matching is supported.
+			IpEcn (bool): If selected, IP ECN matching is supported.
+			IpProtocol (bool): If selected, IP Protocol matching is supported.
+			Ipv4Destination (bool): If selected, IPv4 Destination matching is supported.
+			Ipv4Source (bool): If selected, IPv4 Source matching is supported.
+			Ipv6Destination (bool): If selected, IPv6 Destination matching is supported.
+			Ipv6ExtHeader (bool): If selected, IPv6 Ext Header matching is supported.
+			Ipv6FlowLabel (bool): If selected, IPv6 Flow Label matching is supported.
+			Ipv6NdSll (bool): If selected, IPv6 ND SLL matching is supported.
+			Ipv6NdTarget (bool): If selected, IPv6 ND Target matching is supported.
+			Ipv6NdTll (bool): If selected, IPv6 ND TLL matching is supported.
+			Ipv6Source (bool): If selected, IPv6 Source matching is supported.
+			Metadata (bool): If selected, Metadata matching is supported.
+			MplsBos (bool): If selected, MPLS BoS matching is supported.
+			MplsLabel (bool): If selected, MPLS Label matching is supported.
+			MplsTc (bool): If selected, MPLS TC matching is supported.
+			PbbIsid (bool): If selected, PBB ISID matching is supported.
+			PhysicalInPort (bool): If selected, Physical In Port matching is supported.
+			SctpDestination (bool): If selected, SCTP Destination matching is supported.
+			SctpSource (bool): If selected, SCTP Source matching is supported.
+			TcpDestination (bool): If selected, TCP Destination matching is supported.
+			TcpSource (bool): If selected, TCP Source matching is supported.
+			TunnelId (bool): If selected, Tunnel ID matching is supported.
+			UdpDestination (bool): If selected, UDP Destination matching is supported.
+			UdpSource (bool): If selected, UDP Source matching is supported.
+			VlanId (bool): If selected, VLAN ID matching is supported.
+			VlanPriority (bool): If selected, VLAN Priority matching is supported.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

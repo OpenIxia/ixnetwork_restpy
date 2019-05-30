@@ -631,6 +631,27 @@ class BgpEthernetSegmentV4(Base):
 		"""
 		return self._get_attribute('vtepIpv4Address')
 
+	def update(self, EvisCount=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfbMacMappedIpsV4=None, UseControlWord=None):
+		"""Updates a child instance of bgpEthernetSegmentV4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EvisCount (number): Number of EVIs
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+			NoOfClusters (number): Number of Clusters
+			NoOfCommunities (number): Number of Communities
+			NoOfExtendedCommunity (number): Number of Extended Communities
+			NoOfbMacMappedIpsV4 (number): Number of B-MAC Mapped IPs
+			UseControlWord (bool): Use Control Word
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, AdvertiseAliasingBeforeAdPerEsRoute=None, AdvertiseInclusiveMulticastRoute=None, AliasingRouteGranularity=None, Active=None, AdvertiseAliasingAutomatically=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionTimer=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSingleActive=None, EnableStickyStaticFlag=None, EsImport=None, EsiLabel=None, EsiType=None, EsiValue=None, IncludeMacMobilityExtendedCommunity=None, Ipv4NextHop=None, Ipv6NextHop=None, IrbIPv4Address=None, IrbInterfaceLabel=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, RouterMacAddress=None, SetNextHop=None, SetNextHopIpType=None, SupportFastConvergence=None, SupportMultihomedEsAutoDiscovery=None, UseSameSequenceNumber=None, VtepIpv4Address=None):
 		"""Base class infrastructure that gets a list of bgpEthernetSegmentV4 device ids encapsulated by this object.
 

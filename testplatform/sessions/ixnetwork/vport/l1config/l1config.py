@@ -282,3 +282,14 @@ class L1Config(Base):
 	@CurrentType.setter
 	def CurrentType(self, value):
 		self._set_attribute('currentType', value)
+
+	def update(self, CurrentType=None):
+		"""Updates a child instance of l1Config on the server.
+
+		Args:
+			CurrentType (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): Indicates the five types of ports for configuration to choose from.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

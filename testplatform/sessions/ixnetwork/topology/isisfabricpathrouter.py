@@ -428,6 +428,24 @@ class IsisFabricPathRouter(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, DceMCastIpv4GroupCount=None, DceMCastIpv6GroupCount=None, DceMCastMacGroupCount=None, DceTopologyCount=None, Name=None):
+		"""Updates a child instance of isisFabricPathRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			DceMCastIpv4GroupCount (number): # Multicast IPv4 Groups(multiplier)
+			DceMCastIpv6GroupCount (number): # Multicast IPv6 Groups(multiplier)
+			DceMCastMacGroupCount (number): MAC Group Count(multiplier)
+			DceTopologyCount (number): Topology Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DceMCastIpv4GroupCount=None, DceMCastIpv6GroupCount=None, DceMCastMacGroupCount=None, DceTopologyCount=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Name=None, SessionInfo=None, SessionStatus=None, StateCounts=None, Status=None):
 		"""Finds and retrieves isisFabricPathRouter data from the server.
 

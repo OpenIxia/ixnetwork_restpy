@@ -146,6 +146,23 @@ class Router(Base):
 	def UpdateIntervalOffset(self, value):
 		self._set_attribute('updateIntervalOffset', value)
 
+	def update(self, EnableInterfaceMetric=None, Enabled=None, ReceiveType=None, RouterId=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			EnableInterfaceMetric (bool): Enables the use of the RIPng interface metric. This user-assigned metric is added to the normal routing metric.
+			Enabled (bool): Enables the RIPing interface.
+			ReceiveType (str(ignore|store)): Determines how the emulated RIPng router will handle received RIPng update messages.
+			RouterId (number): The assigned router ID. The default is 1.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			UpdateInterval (number): In seconds) Triggered events, such as sending of unsolicited response messages, are spaced at timed intervals.
+			UpdateIntervalOffset (number): (In seconds) To avoid synchronization of the update messages sent by all routers, the update interval is incremented/decremented by a small random time.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableInterfaceMetric=None, Enabled=None, ReceiveType=None, RouterId=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

@@ -82,6 +82,20 @@ class OpaqueValueElement(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Increment=None, Length=None, Type=None, Value=None):
+		"""Updates a child instance of opaqueValueElement on the server.
+
+		Args:
+			Increment (str): It signifies the incremented value.
+			Length (number): It signifies the length.
+			Type (number): It signifies the type.
+			Value (str): It signifies the value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Increment=None, Length=None, Type=None, Value=None):
 		"""Adds a new opaqueValueElement node on the server and retrieves it in this instance.
 

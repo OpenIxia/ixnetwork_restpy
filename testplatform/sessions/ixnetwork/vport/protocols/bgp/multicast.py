@@ -96,3 +96,16 @@ class Multicast(Base):
 	@GroupAddress.setter
 	def GroupAddress(self, value):
 		self._set_attribute('groupAddress', value)
+
+	def update(self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None):
+		"""Updates a child instance of multicast on the server.
+
+		Args:
+			EnableMulticast (bool): Enables the use of Multicast VRFs (MVRFs). (default = false)
+			EnableMulticastCluster (bool): If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
+			GroupAddress (str): The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

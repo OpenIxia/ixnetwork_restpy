@@ -116,3 +116,20 @@ class InstructionMiss(Base):
 	@WriteMetadata.setter
 	def WriteMetadata(self, value):
 		self._set_attribute('writeMetadata', value)
+
+	def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+		"""Updates a child instance of instructionMiss on the server.
+
+		Args:
+			ApplyActions (bool): If selected, applies the actions associated with a flow immediately.
+			ClearActions (bool): If selected, clears the actions attached with the flow.
+			Experimenter (bool): If selected, gives experimenter instruction.
+			GoToTable (bool): If selected, forwards the packet to the next table in the pipeline.
+			Meter (bool): If selected, directs a flow to a particular meter.
+			WriteActions (bool): If selected, appends actions to the existing action set of the packet.
+			WriteMetadata (bool): If selected, writes the masked metadata field to the match.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

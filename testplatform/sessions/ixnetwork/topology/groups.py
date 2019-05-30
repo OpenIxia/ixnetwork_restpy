@@ -164,6 +164,22 @@ class Groups(Base):
 		"""
 		return self._get_attribute('ofChannel')
 
+	def update(self, Multiplier=None, Name=None, NumberOfBuckets=None):
+		"""Updates a child instance of groups on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Multiplier (number): Number of instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfBuckets (number): Specify the number of Buckets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ChannelName=None, Count=None, DescriptiveName=None, Multiplier=None, Name=None, NumberOfBuckets=None):
 		"""Finds and retrieves groups data from the server.
 

@@ -213,6 +213,31 @@ class LearnFrames(Base):
 	def LearningStepIncrementFrameSize(self, value):
 		self._set_attribute('learningStepIncrementFrameSize', value)
 
+	def update(self, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None, LearningCountRandomFrameSize=None, LearningFrameSizeMode=None, LearningFramesizeFixedValue=None, LearningFramesizeList=None, LearningMaxIncrementFrameSize=None, LearningMaxRandomFrameSize=None, LearningMinIncrementFrameSize=None, LearningMinRandomFrameSize=None, LearningStepIncrementFrameSize=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			LearnFrameSize (number): Specifies the size of the learning frames.
+			LearnFrequency (str(onBinaryIteration)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+			LearnNumFrames (number): Specifies the number of learning frames that IxNetwork sends for each address.
+			LearnRate (number): Specifies the rate at which IxNetwork sends learn frames to the DUT.
+			LearnWaitTime (number): Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
+			LearnWaitTimeBeforeTransmit (number): The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+			LearningCountRandomFrameSize (str): NOT DEFINED
+			LearningFrameSizeMode (str(custom|fixed|increment|random)): NOT DEFINED
+			LearningFramesizeFixedValue (number): NOT DEFINED
+			LearningFramesizeList (str): NOT DEFINED
+			LearningMaxIncrementFrameSize (str): NOT DEFINED
+			LearningMaxRandomFrameSize (str): NOT DEFINED
+			LearningMinIncrementFrameSize (str): NOT DEFINED
+			LearningMinRandomFrameSize (str): NOT DEFINED
+			LearningStepIncrementFrameSize (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -268,6 +268,32 @@ class Evi(Base):
 	def UseV4MappedV6Address(self, value):
 		self._set_attribute('useV4MappedV6Address', value)
 
+	def update(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
+		"""Updates a child instance of evi on the server.
+
+		Args:
+			AdRouteLabel (number): Label value carried in AD route per EVI. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			AutoConfigureRdEvi (bool): If true then RD EVI part of RD is constructed automatically. If false then RD EVI is taken from user in GUI in RD EVI field. Default value is true.
+			AutoConfigureRdIpAddress (bool): If true then IP address part of RD is constructed automatically and this IP address is taken from loopback address of local BGP peer. If false then IP address is taken from user in GUI in RD IP Address field. Default value is true.
+			Enabled (bool): If true then this EVI is used in EVPN. Default value is false.
+			ExportTargetList (list(dict(arg1:str[as|ip],arg2:number,arg3:str,arg4:number))): NOT DEFINED
+			ImportTargetList (list(dict(arg1:str[as|ip],arg2:number,arg3:str,arg4:number))): Used to import the routes received from remote peer. Ixia port needs to have at least one export RT of remote peer as import RT.
+			IncludePmsiTunnelAttribute (bool): If true then PMSI tunnel attribute is included in Inclusive Multicast Ethernet Tag Route. Default value is false.
+			MplsAssignedUpstreamOrDownStreamLabel (number): If Use Upstream/Downstream Assigned Label is true then label value mentioned in this field is carried in PMSI tunnel attribute. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			MulticastTunnelType (str(rsvpTeP2mp|mldpP2mp|ingressReplication)): Drop down of {Ingress Replication, RSVP-TE P2MP, mLDP P2MP}. Default value is Ingress Replication.
+			RdEvi (number): when Auto Configure RD EVI is false then RD EVI part of RD is taken from here. Default value is zero.
+			RdIpAddress (str): when Auto Configure RD IP Address is false then IP address part of RD is taken from here. Default value is all zero.
+			RsvpP2mpId (str): The P2MP Id represented in IP address format. Default value is all zero.
+			RsvpP2mpIdAsNumber (number): The P2MP Id represented in integer format. Default value is 0.
+			RsvpTunnelId (number): The Tunnel ID value. Default value is 0. Minimum value is 0 and maximum value is 0xFFFF.
+			UseUpstreamOrDownStreamAssignedLabel (bool): If true then MPLS assigned Upstream/Downstream label is carried in PMSI tunnel attribute else 0 is carried in PMSI tunnel attribute. Default value is true.
+			UseV4MappedV6Address (bool): If true then V4 mapped V6 address is used for tunnel identifier in case of Ingress Replication only.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
 		"""Adds a new evi node on the server and retrieves it in this instance.
 

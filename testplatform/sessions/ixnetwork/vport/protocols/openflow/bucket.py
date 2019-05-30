@@ -96,6 +96,20 @@ class Bucket(Base):
 	def Weight(self, value):
 		self._set_attribute('weight', value)
 
+	def update(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
+		"""Updates a child instance of bucket on the server.
+
+		Args:
+			Description (str): A description of the bucket.
+			WatchGroup (number): A group whose state determines whether this bucket is live.
+			WatchPort (number): A Port whose state determines whether this bucket is live.
+			Weight (number): Specify the weight of buckets. The range allowed is 0-65535
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
 		"""Adds a new bucket node on the server and retrieves it in this instance.
 

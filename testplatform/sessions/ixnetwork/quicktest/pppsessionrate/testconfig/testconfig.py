@@ -45,6 +45,17 @@ class TestConfig(Base):
 	def EnableThreshold(self, value):
 		self._set_attribute('enableThreshold', value)
 
+	def update(self, EnableThreshold=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			EnableThreshold (bool): If true, enables the threshold parameter.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, EnableThreshold=None):
 		"""Finds and retrieves testConfig data from the server.
 

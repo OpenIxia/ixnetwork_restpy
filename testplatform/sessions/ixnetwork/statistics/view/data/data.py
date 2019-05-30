@@ -207,3 +207,17 @@ class Data(Base):
 			number
 		"""
 		return self._get_attribute('totalRows')
+
+	def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, PageSize=None):
+		"""Updates a child instance of data on the server.
+
+		Args:
+			CurrentPage (number): 
+			EgressMode (str(conditional|paged)): 
+			EgressPageSize (number): 
+			PageSize (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

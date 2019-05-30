@@ -1669,6 +1669,47 @@ class BgpIpv4Peer(Base):
 		"""
 		return self._get_attribute('vplsNextHop')
 
+	def update(self, AdvertiseEvpnRoutesForOtherVtep=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, EnableEpeTraffic=None, EthernetSegmentsCountV4=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None):
+		"""Updates a child instance of bgpIpv4Peer on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			AdvertiseEvpnRoutesForOtherVtep (bool): Advertise EVPN routes for other VTEPS
+			BgpLsNoOfASPathSegments (number): Number Of AS Path Segments Per Route Range
+			BgpLsNoOfClusters (number): Number of Clusters
+			BgpLsNoOfCommunities (number): Number of Communities
+			CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
+			CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableEpeTraffic (bool): Enable EPE Traffic
+			EthernetSegmentsCountV4 (number): Number of Ethernet Segments
+			IpVrfToIpVrfType (str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)): IP-VRF-to-IP-VRF Model Type
+			Ipv4MplsCapability (bool): IPv4 MPLS Capability
+			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability
+			Ipv6MplsCapability (bool): IPv6 MPLS Capability
+			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability
+			MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
+			MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfEpePeers (number): Number of EPE Peers
+			NoOfExtendedCommunities (number): Number of Extended Communities
+			NoOfUserDefinedAfiSafi (number): Count of User Defined AFI SAFI
+			NumberFlowSpecRangeV4 (number): Number of IPv4 Flow Spec Ranges
+			NumberFlowSpecRangeV6 (number): Number of IPv6 Flow Spec Ranges
+			NumberSRTEPolicies (number): Count of SR TE Policies
+			SRGBRangeCount (number): SRGB Range Count
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			UdpPortEndValue (number): UDP Port End Value
+			UdpPortStartValue (number): UDP Port Start Value
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertiseEvpnRoutesForOtherVtep=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, EnableEpeTraffic=None, EthernetSegmentsCountV4=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None):
 		"""Adds a new bgpIpv4Peer node on the server and retrieves it in this instance.
 

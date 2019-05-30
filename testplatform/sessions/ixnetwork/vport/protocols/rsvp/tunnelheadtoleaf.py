@@ -187,6 +187,28 @@ class TunnelHeadToLeaf(Base):
 	def TunnelLeafPrefixLength(self, value):
 		self._set_attribute('tunnelLeafPrefixLength', value)
 
+	def update(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
+		"""Updates a child instance of tunnelHeadToLeaf on the server.
+
+		Args:
+			DutHopType (str(strict|loose)): Based on the input, the corresponding L bit in the packet is set.
+			DutPrefixLength (number): Prefix length of DUT.
+			Enabled (bool): It enables or disables the ERO/SERO specific configuration.
+			IsAppendTunnelLeaf (bool): If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
+			IsPrependDut (bool): Enables prepend DUT to the ERO/SERO list.
+			IsSendingAsEro (bool): If enabled, the entire configuration would go as ERO.
+			IsSendingAsSero (bool): If enabled, the entire configuration would go as SERO.
+			SubObjectList (str): The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
+			TunnelLeafCount (number): The count of tunnel leaf.
+			TunnelLeafHopType (str(strict|loose)): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
+			TunnelLeafIpStart (str): It contains the start IP address of leaf for which the ERO/SERO will be configured.
+			TunnelLeafPrefixLength (number): Prefix length of tunnel leaf.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
 		"""Adds a new tunnelHeadToLeaf node on the server and retrieves it in this instance.
 

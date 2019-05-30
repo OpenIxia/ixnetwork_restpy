@@ -64,6 +64,17 @@ class Connector(Base):
 		"""
 		return self._get_attribute('propagateMultiplier')
 
+	def update(self, ConnectedTo=None):
+		"""Updates a child instance of connector on the server.
+
+		Args:
+			ConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/lag?deepchild=*)): Scenario element this connector is connecting to
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedTo=None):
 		"""Adds a new connector node on the server and retrieves it in this instance.
 

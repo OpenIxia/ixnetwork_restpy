@@ -164,3 +164,24 @@ class FrameSize(Base):
 	@WeightedRangePairs.setter
 	def WeightedRangePairs(self, value):
 		self._set_attribute('weightedRangePairs', value)
+
+	def update(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
+		"""Updates a child instance of frameSize on the server.
+
+		Args:
+			FixedSize (number): Sets all frames to a constant specified size.
+			IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
+			IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
+			IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
+			PresetDistribution (str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)): If set, Frame Size is set to IMIX.
+			QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
+			RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+			RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+			Type (str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)): Sets the type of Frame Size.
+			WeightedPairs (list(number)): Defines the values for the weight pairs.
+			WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -58,6 +58,18 @@ class DeadFlowsFilter(Base):
 	def SortingCondition(self, value):
 		self._set_attribute('sortingCondition', value)
 
+	def update(self, NumberOfResults=None, SortingCondition=None):
+		"""Updates a child instance of deadFlowsFilter on the server.
+
+		Args:
+			NumberOfResults (number): Number of traffic flows to be displayed.
+			SortingCondition (str(ascending|descending)): Sets the display order of the view.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, NumberOfResults=None, SortingCondition=None):
 		"""Adds a new deadFlowsFilter node on the server and retrieves it in this instance.
 

@@ -981,6 +981,93 @@ class ControllerTableFlowRanges(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ArpDstHwAddr=None, ArpDstHwAddrMask=None, ArpDstIpv4Addr=None, ArpDstIpv4AddrMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddrMask=None, ArpSrcIpv4Addr=None, ArpSrcIpv4AddrMask=None, CheckOverlapFlags=None, Cookie=None, CookieMask=None, Description=None, Enabled=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None, FlowAdvertise=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPhyPort=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4DestinationMask=None, Ipv4Source=None, Ipv4SourceMask=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, MatchType=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NoByteCounts=None, NoPacketCounts=None, NumberOfFlows=None, PbbIsId=None, PbbIsIdMask=None, Priority=None, ResetCounts=None, SctpDestination=None, SctpSource=None, SendFlowRemoved=None, TcpDestination=None, TcpSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanIdMask=None, VlanMatchType=None, VlanPriority=None):
+		"""Updates a child instance of controllerTableFlowRanges on the server.
+
+		Args:
+			ArpDstHwAddr (str): The target hardware address in the ARP payload.
+			ArpDstHwAddrMask (str): The mask value of the target hardware address in the ARP payload.
+			ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
+			ArpDstIpv4AddrMask (str): The mask value of the target IPv4 address in the ARP payload.
+			ArpOpcode (str): Value of the ARP opcode field.
+			ArpSrcHwAddr (str): Value of the ARP source hardware address.
+			ArpSrcHwAddrMask (str): The mask value of the source hardware address in the ARP payload.
+			ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
+			ArpSrcIpv4AddrMask (str): The mask value of the source IPv4 address in the ARP payload.
+			CheckOverlapFlags (bool): If selected, the configuration checks for flow range overlaps.
+			Cookie (str): The Cookie field value.
+			CookieMask (str): Value of the cookie mask field.
+			Description (str): Description of flow.
+			Enabled (bool): Enables flow.
+			EthernetDestination (str): The Ethernet destination address.
+			EthernetDestinationMask (str): The ethernet destination mask field.
+			EthernetSource (str): Specify the Ethernet source address for the flow range.
+			EthernetSourceMask (str): Specify the Ethernet Source mask value.
+			EthernetType (str): The type of Ethernet port used.
+			ExperimenterData (str): The experimenter data field value.
+			ExperimenterDatalength (number): Value of the Experimenter data length field.
+			ExperimenterField (number): Value of the Experimenter Field field.
+			ExperimenterHasMask (bool): The experimenter hash mask value.
+			ExperimenterId (str): The experimenter ID field value.
+			FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
+			HardTimeout (number): The inactive time in seconds after which the Flow range will hard timeout and close.
+			Icmpv4Code (str): The code of ICMPv4 port used.
+			Icmpv4Type (str): The type of ICMPv4 port used.
+			Icmpv6Code (str): The ICMPv6 code field value.
+			Icmpv6Type (str): Value of the ICMPv6 type field.
+			IdleTimeout (number): The inactive time in seconds after which the Flow range will timeout and become idle.
+			InPhyPort (str): Specify the physical In port value for this flow range. It is the underlying physical port when packet is received on a logical port.
+			InPort (str): Specify the Ingress port. It is the numerical representation of incoming port, starting at 1. This may be a physical or switch-defined logical port.
+			IpDscp (str): The IP DSCP value for advertising.
+			IpEcn (str): The IP ECN field value.
+			IpProtocol (str): The IP protocol used.
+			Ipv4Destination (str): The IPv4 destination address.
+			Ipv4DestinationMask (str): The IPv4 destination address mask value.
+			Ipv4Source (str): The IPv4 source address.
+			Ipv4SourceMask (str): The IP source address mask value.
+			Ipv6Destination (str): Value of the IPv6 destination field.
+			Ipv6DestinationMask (str): Value of the IPv6 destination mask field.
+			Ipv6ExtHeader (str): The Ipv6 extension header field value.
+			Ipv6ExtHeaderMask (str): The mask value of the IPv6 Extension Header.
+			Ipv6FlowLabel (str): Value of the IPv6 flow label field.
+			Ipv6FlowLabelMask (str): Value of the IPv6 flow label mask field.
+			Ipv6NdDll (str): The IPv6 ND DLL field value.
+			Ipv6NdSll (str): The source link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6NdTarget (str): The IPv6 ND target field value.
+			Ipv6Source (str): Value of the IPv6 source field.
+			Ipv6SourceMask (str): The mask value of IPv6 source address.
+			MatchType (str(loose|strict)): The type of match to be configured.
+			Metadata (str): Specify the table metadata value used to pass information between tables.
+			MetadataMask (str): Specify the metadata bitmask value.
+			MplsBos (str): Value of the MPLS BoS field.
+			MplsLabel (str): Value of the MPLS label field.
+			MplsTc (str): The MPLS TC field value.
+			NoByteCounts (bool): If selected, the byte count is not tracked anymore.
+			NoPacketCounts (bool): If selected, the packet count is not tracked anymore.
+			NumberOfFlows (number): Total number of flows in a flow range.
+			PbbIsId (str): Value of the PBB I-SID field.
+			PbbIsIdMask (str): Value of the PBB I-SID mask field.
+			Priority (number): The priority level for the Flow Range.
+			ResetCounts (bool): If selected, flow packet and byte counts are reset.
+			SctpDestination (str): The SCTP destination field value.
+			SctpSource (str): Value of the SCTP source field.
+			SendFlowRemoved (bool): If selected, Flow Remove message is sent to the controller, when the Flow entry is deleted from the Flow table.
+			TcpDestination (str): The Transport destination address.
+			TcpSource (str): Value of the TCP source field.
+			TunnelId (str): Value of the tunnel ID field.
+			TunnelIdMask (str): Value of the tunnel ID mask field.
+			UdpDestination (str): Value of the UDP destination field.
+			UdpSource (str): Value of the UDP source field.
+			VlanId (str): The unique VLAN Identifier.
+			VlanIdMask (str): The VLAN mask value.
+			VlanMatchType (str(anyVlanTag|withoutVlanTag|withVlanTag|specificVlanTag)): The type of VLAN match to be configured.
+			VlanPriority (str): The User Priority for this VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ArpDstHwAddr=None, ArpDstHwAddrMask=None, ArpDstIpv4Addr=None, ArpDstIpv4AddrMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddrMask=None, ArpSrcIpv4Addr=None, ArpSrcIpv4AddrMask=None, CheckOverlapFlags=None, Cookie=None, CookieMask=None, Description=None, Enabled=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None, FlowAdvertise=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPhyPort=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4DestinationMask=None, Ipv4Source=None, Ipv4SourceMask=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, MatchType=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NoByteCounts=None, NoPacketCounts=None, NumberOfFlows=None, PbbIsId=None, PbbIsIdMask=None, Priority=None, ResetCounts=None, SctpDestination=None, SctpSource=None, SendFlowRemoved=None, TcpDestination=None, TcpSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanIdMask=None, VlanMatchType=None, VlanPriority=None):
 		"""Adds a new controllerTableFlowRanges node on the server and retrieves it in this instance.
 

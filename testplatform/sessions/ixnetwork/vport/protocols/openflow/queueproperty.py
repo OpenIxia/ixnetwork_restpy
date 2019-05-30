@@ -56,3 +56,15 @@ class QueueProperty(Base):
 	@None.setter
 	def None(self, value):
 		self._set_attribute('none', value)
+
+	def update(self, MinimumDataRateGuaranteed=None, None=None):
+		"""Updates a child instance of queueProperty on the server.
+
+		Args:
+			MinimumDataRateGuaranteed (bool): If true, indicates that a minimum data rate is guaranteed.
+			None (bool): If true, indicates that no property is defined for the queue.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -116,3 +116,20 @@ class Config(Base):
 	@PortDown.setter
 	def PortDown(self, value):
 		self._set_attribute('portDown', value)
+
+	def update(self, NoFlood=None, NoForward=None, NoPacketIn=None, NoReceive=None, NoReceiveStp=None, NoStp=None, PortDown=None):
+		"""Updates a child instance of config on the server.
+
+		Args:
+			NoFlood (bool): Indicates that the port is not included when flooding.
+			NoForward (bool): Indicates that the port drop all packets forwarded to it.
+			NoPacketIn (bool): Indicates that the port does not send packet-in messages.
+			NoReceive (bool): Indicates that the port drops all packets except 802.1D spanning tree packets.
+			NoReceiveStp (bool): Indicates that the port drops received 802.1D STP packets.
+			NoStp (bool): Indicates that 802.1D spanning tree on port is disable.
+			PortDown (bool): Indicates that the port is administratively down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

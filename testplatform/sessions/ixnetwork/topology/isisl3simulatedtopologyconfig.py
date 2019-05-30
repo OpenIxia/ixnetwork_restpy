@@ -142,6 +142,22 @@ class IsisL3SimulatedTopologyConfig(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+		"""Updates a child instance of isisL3SimulatedTopologyConfig on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			IsisL3Ipv4NodeRouteCount (number): Node Route Range Count(multiplier)
+			IsisL3Ipv6NodeRouteCount (number): Node Route Range Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
 		"""Finds and retrieves isisL3SimulatedTopologyConfig data from the server.
 

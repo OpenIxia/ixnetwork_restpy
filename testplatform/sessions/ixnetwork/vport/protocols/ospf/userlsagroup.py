@@ -84,6 +84,19 @@ class UserLsaGroup(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, AreaId=None, Description=None, Enabled=None):
+		"""Updates a child instance of userLsaGroup on the server.
+
+		Args:
+			AreaId (number): The area ID for the LSA group. (default = 0)
+			Description (str): A commentary description for the user LSA group.
+			Enabled (bool): Enables the use of this router in the simulated OSPF network.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AreaId=None, Description=None, Enabled=None):
 		"""Adds a new userLsaGroup node on the server and retrieves it in this instance.
 

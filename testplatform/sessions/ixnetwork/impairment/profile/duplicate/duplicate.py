@@ -80,3 +80,17 @@ class Duplicate(Base):
 	@PercentRate.setter
 	def PercentRate(self, value):
 		self._set_attribute('percentRate', value)
+
+	def update(self, ClusterSize=None, DuplicateCount=None, Enabled=None, PercentRate=None):
+		"""Updates a child instance of duplicate on the server.
+
+		Args:
+			ClusterSize (number): Number of packets to duplicate on each occurrence.
+			DuplicateCount (number): Number of times to duplicate each packet.
+			Enabled (bool): If true, periodically duplicate received packets.
+			PercentRate (number): How often to duplicate packets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

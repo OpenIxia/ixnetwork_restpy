@@ -110,3 +110,18 @@ class Ethernetvm(Base):
 	@Speed.setter
 	def Speed(self, value):
 		self._set_attribute('speed', value)
+
+	def update(self, AutoInstrumentation=None, Loopback=None, Mtu=None, PromiscuousMode=None, Speed=None):
+		"""Updates a child instance of ethernetvm on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): NOT DEFINED
+			Loopback (bool): If true, enables the ports ppm
+			Mtu (number): 
+			PromiscuousMode (bool): 
+			Speed (str(speed100|speed1000|speed10g|speed2000|speed20g|speed25g|speed3000|speed30g|speed4000|speed40g|speed5000|speed50g|speed6000|speed7000|speed8000|speed9000)): Select one of the enums to set the speed of the ethernet vm
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

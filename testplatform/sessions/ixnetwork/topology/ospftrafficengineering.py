@@ -180,6 +180,20 @@ class OspfTrafficEngineering(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of ospfTrafficEngineering on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, AdministratorGroup=None, BandwidthPriority0=None, BandwidthPriority1=None, BandwidthPriority2=None, BandwidthPriority3=None, BandwidthPriority4=None, BandwidthPriority5=None, BandwidthPriority6=None, BandwidthPriority7=None, Enable=None, MaxBandwidth=None, MaxReservableBandwidth=None, MetricLevel=None):
 		"""Base class infrastructure that gets a list of ospfTrafficEngineering device ids encapsulated by this object.
 

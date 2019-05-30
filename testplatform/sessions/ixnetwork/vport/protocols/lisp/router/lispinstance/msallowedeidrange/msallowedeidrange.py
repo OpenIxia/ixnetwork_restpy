@@ -94,6 +94,21 @@ class MsAllowedEidRange(Base):
 	def PrefixLength(self, value):
 		self._set_attribute('prefixLength', value)
 
+	def update(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
+		"""Updates a child instance of msAllowedEidRange on the server.
+
+		Args:
+			Address (str): It gives details about the address
+			Count (number): it gives details about the count
+			Enabled (bool): If true, it enables the protocol
+			Family (str(ipv4|ipv6)): It details about the ip family
+			PrefixLength (number): It gives details about the prefix length
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
 		"""Adds a new msAllowedEidRange node on the server and retrieves it in this instance.
 

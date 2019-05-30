@@ -84,6 +84,19 @@ class SwitchPortQueues(Base):
 	def QueueId(self, value):
 		self._set_attribute('queueId', value)
 
+	def update(self, MinRate=None, NumberOfQueues=None, QueueId=None):
+		"""Updates a child instance of switchPortQueues on the server.
+
+		Args:
+			MinRate (str): Indicates the minimum-rate, in 1/10 of a percent, applicable when queue property is OFPQT_MIN.
+			NumberOfQueues (number): Specifies the number of entries in the queue range.
+			QueueId (str): Indicates the ID for the specific queue.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, MinRate=None, NumberOfQueues=None, QueueId=None):
 		"""Adds a new switchPortQueues node on the server and retrieves it in this instance.
 

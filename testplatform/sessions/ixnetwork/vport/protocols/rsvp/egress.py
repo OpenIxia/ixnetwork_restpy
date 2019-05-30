@@ -188,3 +188,26 @@ class Egress(Base):
 	@TimeoutMultiplier.setter
 	def TimeoutMultiplier(self, value):
 		self._set_attribute('timeoutMultiplier', value)
+
+	def update(self, Bandwidth=None, EgressBehavior=None, EnableFixedLabelForResv=None, LabelValue=None, PathErrorTlv=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, ReservationTearTlv=None, ReservationTlv=None, Rro=None, SendResvConfirmation=None, TimeoutMultiplier=None):
+		"""Updates a child instance of egress on the server.
+
+		Args:
+			Bandwidth (number): The requested bandwidth for the tunnel, expressed in kbits per second.
+			EgressBehavior (str(alwaysUseConfiguredStyle|useSeWhenIndicatedInSessionAttribute)): Dictates the RSVP reservation style when the value of behavior is rsvpEgress.
+			EnableFixedLabelForResv (bool): Enables the use of a fixed label in RESV messages while in Egress mode.
+			LabelValue (str): RSVP label for IPV4 and IPv6 RSVP related routes.
+			PathErrorTlv (list(dict(arg1:number,arg2:number,arg3:str))): When signaling fails in the head-end area, a path error message is sent to the head-end.
+			ReflectRro (bool): Enables the reflection of a received RRO object for Egress mode destination ranges. When selected, any RRO items added with addRroItem are ignored. (default = true)
+			RefreshInterval (number): When the destination range is used in Egress mode, this indicates the time, in seconds, between the simulated router's message to the DUT.
+			ReservationStyle (str(se|ff|wf)): The reservation style desired. One of the following options: rsvpFF (fixed filtered mode) or rsvpSE (shared explicit mode).
+			ReservationTearTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV TEAR messages. These may only be used for egress routers.
+			ReservationTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV messages. These may only be used for egress routers.
+			Rro (list(dict(arg1:str[ip|label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool))): If enabled, an RRO is reflected back to the originating router.
+			SendResvConfirmation (bool): Enables the generation of RESV Confirmation messages for received RESV messages which contain a RESV Confirmation Class object. (default = false)
+			TimeoutMultiplier (number): The number of Hellos before a router is declared dead.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

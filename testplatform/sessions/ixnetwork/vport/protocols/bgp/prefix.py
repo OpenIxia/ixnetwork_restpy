@@ -44,3 +44,14 @@ class Prefix(Base):
 	@Prefix.setter
 	def Prefix(self, value):
 		self._set_attribute('prefix', value)
+
+	def update(self, Prefix=None):
+		"""Updates a child instance of prefix on the server.
+
+		Args:
+			Prefix (list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))): Controls the prefix attributes that are filtered on.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

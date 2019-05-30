@@ -182,6 +182,26 @@ class SpbNetworkRange(Base):
 	def SystemIdIncrementBy(self, value):
 		self._set_attribute('systemIdIncrementBy', value)
 
+	def update(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+		"""Updates a child instance of spbNetworkRange on the server.
+
+		Args:
+			EnableAdvertiseNetworkRange (bool): If true, this SPB ISIS Network Range is advertised.
+			EnableHostName (bool): If true, the host name of the router is activated.
+			EntryColumn (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+			EntryRow (number): The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
+			HostNamePrefix (str): The host name prefix information.
+			InterfaceMetric (number): The metric cost associated with this emulated SPB ISIS router.
+			NoOfColumns (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+			NoOfRows (number): The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
+			StartSystemId (str): The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
+			SystemIdIncrementBy (str): This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
 		"""Adds a new spbNetworkRange node on the server and retrieves it in this instance.
 

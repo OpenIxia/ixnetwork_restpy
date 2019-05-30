@@ -224,3 +224,29 @@ class FeaturesSupported(Base):
 	@WriteSetFieldMiss.setter
 	def WriteSetFieldMiss(self, value):
 		self._set_attribute('writeSetFieldMiss', value)
+
+	def update(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Experimenter=None, ExperimenterMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+		"""Updates a child instance of featuresSupported on the server.
+
+		Args:
+			ApplyActions (bool): Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
+			ApplyActionsMiss (bool): Select the type of apply action miss instructions that the table miss flow entry will support.
+			ApplySetField (bool): Apply set field property.
+			ApplySetFieldMiss (bool): Apply set field for table-miss.
+			Experimenter (bool): This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
+			ExperimenterMiss (bool): Experimenter for table-miss.
+			Instruction (bool): It select the type of instructions that the table flow entry will support
+			InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
+			Match (bool): Select the type of match instructions that the table will support.
+			NextTable (bool): Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
+			NextTableMiss (bool): Specify the Next table Miss value.
+			Wildcards (bool): Select the type of wildcard instructions that the table will support.
+			WriteActions (bool): Select the type of write action instructions that the table flow entry will support.
+			WriteActionsMiss (bool): Select the type of write action miss instructions that the table miss flow entry will support.
+			WriteSetField (bool): Apply set field for table-miss.
+			WriteSetFieldMiss (bool): Write set field for table-miss.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

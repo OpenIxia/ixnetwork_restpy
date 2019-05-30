@@ -84,6 +84,19 @@ class SwitchOfChannel(Base):
 	def RemoteIp(self, value):
 		self._set_attribute('remoteIp', value)
 
+	def update(self, Description=None, Enabled=None, RemoteIp=None):
+		"""Updates a child instance of switchOfChannel on the server.
+
+		Args:
+			Description (str): A description of the object
+			Enabled (bool): If true, the object is enabled.
+			RemoteIp (str): Signifies the Remote IP address of the selected interface.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, Enabled=None, RemoteIp=None):
 		"""Adds a new switchOfChannel node on the server and retrieves it in this instance.
 

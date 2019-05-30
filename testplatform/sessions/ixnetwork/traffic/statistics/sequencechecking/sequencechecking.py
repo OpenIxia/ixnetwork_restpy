@@ -68,3 +68,16 @@ class SequenceChecking(Base):
 	@SequenceMode.setter
 	def SequenceMode(self, value):
 		self._set_attribute('sequenceMode', value)
+
+	def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
+		"""Updates a child instance of sequenceChecking on the server.
+
+		Args:
+			AdvancedSequenceThreshold (number): Checks the sequence.
+			Enabled (bool): If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
+			SequenceMode (str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)): The mode to conduct sequence checking.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

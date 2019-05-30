@@ -411,6 +411,42 @@ class L2Site(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, DistinguishAssignedIncrement=None, DistinguishIpIncrement=None, DistinguishNumberIncrementAs=None, EnableBfdVccv=None, EnableCluster=None, EnableControlWord=None, EnableL2SiteAsTrafficEndpoint=None, EnableSequenceDelivery=None, EnableVccvPing=None, Enabled=None, Mtu=None, NoOfL2Site=None, RouteDistinguisherAs=None, RouteDistinguisherAssignedNum=None, RouteDistinguisherIp=None, RouteDistinguisherType=None, RouteTargetAs=None, RouteTargetAssignedNum=None, RouteTargetIp=None, RouteTargetType=None, SiteId=None, SiteIdIncrement=None, TargetAssignedNumberIncrement=None, TargetIncrementAs=None, TargetIpIncrement=None, TrafficGroupId=None):
+		"""Updates a child instance of l2Site on the server.
+
+		Args:
+			DistinguishAssignedIncrement (number): Distinguishes increment of the assigned value
+			DistinguishIpIncrement (str): Distinguishes the increment of the IP address
+			DistinguishNumberIncrementAs (number): Signifies the distinguished increment as number
+			EnableBfdVccv (bool): If true, enables BFD VCCV
+			EnableCluster (bool): Enables and controls the use of L2 VPN VPLS.
+			EnableControlWord (bool): Enables the use of a control word, as part of the extended community information.
+			EnableL2SiteAsTrafficEndpoint (bool): If true, enables L2 site as traffic endpoint
+			EnableSequenceDelivery (bool): Enables the use of sequenced delivery of frames, as part of the extended community information.
+			EnableVccvPing (bool): If true, enables the VCCV ping
+			Enabled (bool): Enables or disables use of the L2 VPN site.
+			Mtu (number): The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
+			NoOfL2Site (number): Signifies the number of L2 sites
+			RouteDistinguisherAs (number): Available for use only if the route distinguish type is set to AS. The route distinguisher autonomous system (AS) number.
+			RouteDistinguisherAssignedNum (number): The assigned number for use with the distinguisher IP address or AS number, to create the route distinguisher.The default is 0.
+			RouteDistinguisherIp (str): Available for use only if the route Distinguish Type is set to IP. The route distinguisher IP address. A 4-byte IPv4 address.The default is 0.0.0.0.
+			RouteDistinguisherType (str(twoOctetAs|ip|fourOctetAs)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+			RouteTargetAs (number): Autonomous system (AS) number. A 2-byte AS number, used to create the route target extended community attribute associated with this L2 site.
+			RouteTargetAssignedNum (number): Autonomous system (AS) and assigned number. A 2-byte AS number and a 4-byte assigned number, used to create the route target extended community attribute associated with this L2 site.
+			RouteTargetIp (str): IP address and assigned number. A 4-byte IPv4 address and a 2-byte assigned number, used to create the route target extended community attribute associated with this L2 site.
+			RouteTargetType (str(as|ip)): The Admin part type is to the type of route target attribute
+			SiteId (number): The identifier for the L2 (CE) site. The default is 0.
+			SiteIdIncrement (number): Increments the site identifier
+			TargetAssignedNumberIncrement (number): Signifies increment of the target assigned number
+			TargetIncrementAs (number): Signifies increment as target
+			TargetIpIncrement (str): Signifies the increment of IP as target
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DistinguishAssignedIncrement=None, DistinguishIpIncrement=None, DistinguishNumberIncrementAs=None, EnableBfdVccv=None, EnableCluster=None, EnableControlWord=None, EnableL2SiteAsTrafficEndpoint=None, EnableSequenceDelivery=None, EnableVccvPing=None, Enabled=None, Mtu=None, NoOfL2Site=None, RouteDistinguisherAs=None, RouteDistinguisherAssignedNum=None, RouteDistinguisherIp=None, RouteDistinguisherType=None, RouteTargetAs=None, RouteTargetAssignedNum=None, RouteTargetIp=None, RouteTargetType=None, SiteId=None, SiteIdIncrement=None, TargetAssignedNumberIncrement=None, TargetIncrementAs=None, TargetIpIncrement=None, TrafficGroupId=None):
 		"""Adds a new l2Site node on the server and retrieves it in this instance.
 

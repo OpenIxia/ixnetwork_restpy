@@ -115,6 +115,22 @@ class TrillNodeMacRanges(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
+		"""Updates a child instance of trillNodeMacRanges on the server.
+
+		Args:
+			Count (number): NOT DEFINED
+			EnableMacRanges (bool): NOT DEFINED
+			InterNodeMacStep (str): NOT DEFINED
+			StartUnicastMac (str): NOT DEFINED
+			UnicastMacStep (str): NOT DEFINED
+			VlanId (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
 		"""Adds a new trillNodeMacRanges node on the server and retrieves it in this instance.
 

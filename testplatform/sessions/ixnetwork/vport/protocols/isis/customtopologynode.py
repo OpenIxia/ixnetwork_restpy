@@ -120,6 +120,22 @@ class CustomTopologyNode(Base):
 	def SpSrcId(self, value):
 		self._set_attribute('spSrcId', value)
 
+	def update(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
+		"""Updates a child instance of customTopologyNode on the server.
+
+		Args:
+			BridgePriority (number): NOT DEFINED
+			EdgeBridge (bool): NOT DEFINED
+			Enabled (bool): NOT DEFINED
+			Nickname (number): NOT DEFINED
+			Priority (number): NOT DEFINED
+			SpSrcId (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
 		"""Adds a new customTopologyNode node on the server and retrieves it in this instance.
 

@@ -54,6 +54,17 @@ class Statistic(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of statistic on the server.
+
+		Args:
+			Enabled (bool): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Caption=None, Enabled=None):
 		"""Finds and retrieves statistic data from the server.
 

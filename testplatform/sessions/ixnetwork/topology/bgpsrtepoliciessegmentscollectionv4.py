@@ -261,6 +261,20 @@ class BgpSRTEPoliciesSegmentsCollectionV4(Base):
 		"""
 		return self._get_attribute('trafficClass')
 
+	def update(self, Name=None):
+		"""Updates a child instance of bgpSRTEPoliciesSegmentsCollectionV4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, BottomOfStack=None, InterfaceIndex=None, Ipv4LocalAddress=None, Ipv4NodeAddress=None, Ipv4RemoteAddress=None, Ipv6LocalAddress=None, Ipv6NodeAddress=None, Ipv6RemoteAddress=None, Ipv6SID=None, Label=None, OptionalBottomOfStack=None, OptionalIpv6SID=None, OptionalLabel=None, OptionalTLVType=None, OptionalTimeToLive=None, OptionalTrafficClass=None, SegmentType=None, TimeToLive=None, TrafficClass=None):
 		"""Base class infrastructure that gets a list of bgpSRTEPoliciesSegmentsCollectionV4 device ids encapsulated by this object.
 

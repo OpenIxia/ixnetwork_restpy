@@ -108,3 +108,17 @@ class LearnedFilter(Base):
 	@Safi.setter
 	def Safi(self, value):
 		self._set_attribute('safi', value)
+
+	def update(self, Afi=None, EnableAfiSafi=None, EnablePrefix=None, Safi=None):
+		"""Updates a child instance of learnedFilter on the server.
+
+		Args:
+			Afi (number): Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
+			EnableAfiSafi (bool): If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
+			EnablePrefix (bool): If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
+			Safi (number): Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

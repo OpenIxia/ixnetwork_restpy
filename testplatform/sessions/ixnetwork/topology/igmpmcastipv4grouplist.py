@@ -157,6 +157,21 @@ class IgmpMcastIPv4GroupList(Base):
 		"""
 		return self._get_attribute('state')
 
+	def update(self, Name=None, NoOfSrcRanges=None):
+		"""Updates a child instance of igmpMcastIPv4GroupList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfSrcRanges (number): Sources per Multicast Group (multiplier)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, McastAddrCnt=None, McastAddrIncr=None, SourceMode=None, StartMcastAddr=None):
 		"""Base class infrastructure that gets a list of igmpMcastIPv4GroupList device ids encapsulated by this object.
 

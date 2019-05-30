@@ -57,6 +57,18 @@ class TestConfig(Base):
 	def ProtocolItem(self, value):
 		self._set_attribute('protocolItem', value)
 
+	def update(self, NumTrials=None, ProtocolItem=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			NumTrials (str): Defines how many times each frame size will be tested.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

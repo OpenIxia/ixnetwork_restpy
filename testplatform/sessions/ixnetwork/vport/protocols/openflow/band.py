@@ -106,6 +106,22 @@ class Band(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+		"""Updates a child instance of band on the server.
+
+		Args:
+			BurstSize (number): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
+			Description (str): A description of the band.
+			Experimenter (number): The experimenter ID. The default value is 1.
+			PrecedenceLevel (number): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
+			Rate (number): This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
+			Type (str(drop|dscpRemark|experimenter)): Select the band type from the list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
 		"""Adds a new band node on the server and retrieves it in this instance.
 

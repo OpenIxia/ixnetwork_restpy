@@ -202,6 +202,30 @@ class CrpRange(Base):
 	def TriggeredCrpMessageCount(self, value):
 		self._set_attribute('triggeredCrpMessageCount', value)
 
+	def update(self, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, PriorityChangeInterval=None, PriorityType=None, PriorityValue=None, RouterCount=None, TriggeredCrpMessageCount=None):
+		"""Updates a child instance of crpRange on the server.
+
+		Args:
+			AdvertisementHoldTime (number): The time interval (in seconds) between two consecutive Candidate RP advertisements.
+			BackOffInterval (number): The back off time interval for the C-RP-Adv messages.
+			CrpAddress (str): Start address of the set of candidate RPs to be simulated.
+			Enabled (bool): Enables/disables a Candidate RP range on the fly. The default is disabled.
+			GroupAddress (str): Starting group address of the group range for which the candidate RP will advertise candidacy.
+			GroupCount (number): Number of groups in the range.
+			GroupMaskLen (number): Mask width (prefix length in bits) for the group range.
+			MeshingType (str(fullyMeshed|oneToOne)): It indicates if the mappings for groups and RP addresses are Fully-Meshed or One-To-One.
+			PeriodicAdvertisementInterval (number): Rate controlling variable indicating how many C-RP-Adv messages can be sent in the specified time interval.
+			PriorityChangeInterval (number): Time interval after which priority of all the RPs get changed, if priority type is incremental or random.
+			PriorityType (str(same|incremental|random)): It indicates the type of priority to be held by the candidate RPs (CRPs). The options are Same, Incremental, and Random.
+			PriorityValue (number): Value of priority field sent in candidate RP advertisement messages.
+			RouterCount (number): Total number of candidate RPs to be simulated starting from C-RP Address. A contiguous address range is used for this RP range simulation.
+			TriggeredCrpMessageCount (number): The number of times CRP advertisements is sent to the newly elected Bootstrap Router.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, PriorityChangeInterval=None, PriorityType=None, PriorityValue=None, RouterCount=None, TriggeredCrpMessageCount=None):
 		"""Adds a new crpRange node on the server and retrieves it in this instance.
 

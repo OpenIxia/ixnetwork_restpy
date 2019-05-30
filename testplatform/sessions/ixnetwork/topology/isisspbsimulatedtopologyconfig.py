@@ -125,6 +125,21 @@ class IsisSpbSimulatedTopologyConfig(Base):
 	def SpbNodeTopologyCount(self, value):
 		self._set_attribute('spbNodeTopologyCount', value)
 
+	def update(self, Name=None, SpbNodeTopologyCount=None):
+		"""Updates a child instance of isisSpbSimulatedTopologyConfig on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SpbNodeTopologyCount (number): Node Topology Count(multiplier)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Name=None, SpbNodeTopologyCount=None):
 		"""Finds and retrieves isisSpbSimulatedTopologyConfig data from the server.
 

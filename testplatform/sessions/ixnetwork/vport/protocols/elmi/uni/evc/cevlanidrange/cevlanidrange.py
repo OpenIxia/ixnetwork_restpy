@@ -82,6 +82,20 @@ class CeVlanIdRange(Base):
 	def StartVlanId(self, value):
 		self._set_attribute('startVlanId', value)
 
+	def update(self, Count=None, Enabled=None, IncrementStep=None, StartVlanId=None):
+		"""Updates a child instance of ceVlanIdRange on the server.
+
+		Args:
+			Count (number): It signifies the number of Vlan Ids configured for the EVC.
+			Enabled (bool): If enabled, CE VLAN Id range is in effect for the EVC.
+			IncrementStep (number): It shows the Increment Step of Vlan ID. Default is 1.
+			StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Enabled=None, IncrementStep=None, StartVlanId=None):
 		"""Adds a new ceVlanIdRange node on the server and retrieves it in this instance.
 

@@ -223,6 +223,21 @@ class ConfigElement(Base):
 	def PreambleFrameSizeMode(self, value):
 		self._set_attribute('preambleFrameSizeMode', value)
 
+	def update(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
+		"""Updates a child instance of configElement on the server.
+
+		Args:
+			Crc (str(badCrc|goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+			DestinationMacMode (str(arp|manual)): The destination MAC address that is to be configured.
+			EnableDisparityError (bool): If true, enables disparity error
+			PreambleCustomSize (number): Indicates the customized preamble size of the frame.
+			PreambleFrameSizeMode (str(auto|custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, EncapsulationName=None, EndpointSetId=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
 		"""Finds and retrieves configElement data from the server.
 

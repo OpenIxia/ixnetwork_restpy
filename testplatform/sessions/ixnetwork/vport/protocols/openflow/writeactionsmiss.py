@@ -236,3 +236,30 @@ class WriteActionsMiss(Base):
 	@SetQueue.setter
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
+
+	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of writeActionsMiss on the server.
+
+		Args:
+			CopyTtlIn (bool): Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
+			CopyTtlOut (bool): Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
+			DecrementMplsTtl (bool): Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
+			Experimenter (bool): If selected, table supports Experimenter Write Actions.
+			Group (bool): Sets the Group ID
+			Output (bool): Output to switch port.
+			PopMpls (bool): Pops the outer MPLS tag.
+			PopPbb (bool): If selected, table supports Pop PBB Write Actions.
+			PopVlan (bool): Pops the outer VLAN tag.
+			PushMpls (bool): Pushes a new MPLS tag.
+			PushPbb (bool): If selected, table supports Push PBB Write Actions.
+			PushVlan (bool): Pushes a new VLAN tag
+			SetField (bool): If selected, table supports Set Field Write Actions.
+			SetMplsTtl (bool): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
+			SetQueue (bool): Set queue ID when outputting to a port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

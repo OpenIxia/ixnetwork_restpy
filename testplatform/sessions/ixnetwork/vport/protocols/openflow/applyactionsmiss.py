@@ -236,3 +236,30 @@ class ApplyActionsMiss(Base):
 	@SetQueue.setter
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
+
+	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of applyActionsMiss on the server.
+
+		Args:
+			CopyTtlIn (bool): If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
+			CopyTtlOut (bool): If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
+			DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
+			DecrementNetworkTtl (bool): If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
+			Experimenter (bool): If selected, Experimenter Apply Actions is supported for table miss flow entries.
+			Group (bool): If selected, Group Apply Actions is supported for table miss flow entries.
+			Output (bool): If selected, Output Apply Actions is supported for table miss flow entries.
+			PopMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
+			PopPbb (bool): If selected, Pop PBB Apply Actions is supported for table miss flow entries.
+			PopVlan (bool): If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
+			PushMpls (bool): If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
+			PushPbb (bool): If selected, Push PBB Apply Actions is supported for table miss flow entries.
+			PushVlan (bool): If selected, Push VLAN Apply Actions is supported for table miss flow entries.
+			SetField (bool): If selected, Set Field Apply Actions is supported for table miss flow entries.
+			SetMplsTtl (bool): If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
+			SetNetworkTtl (bool): If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
+			SetQueue (bool): If selected, Set Queue Apply Actions is supported for table miss flow entries.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

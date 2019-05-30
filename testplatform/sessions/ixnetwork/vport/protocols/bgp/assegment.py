@@ -44,3 +44,14 @@ class AsSegment(Base):
 	@AsSegments.setter
 	def AsSegments(self, value):
 		self._set_attribute('asSegments', value)
+
+	def update(self, AsSegments=None):
+		"""Updates a child instance of asSegment on the server.
+
+		Args:
+			AsSegments (list(dict(arg1:bool,arg2:str[asSet|asSequence|asConfedSet|unknown|asConfedSequence],arg3:list[number]))): Used to construct AS list related items.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

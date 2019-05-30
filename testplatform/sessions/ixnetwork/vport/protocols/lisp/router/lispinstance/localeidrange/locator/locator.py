@@ -166,6 +166,27 @@ class Locator(Base):
 	def Weight(self, value):
 		self._set_attribute('weight', value)
 
+	def update(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+		"""Updates a child instance of locator on the server.
+
+		Args:
+			Address (str): It gives details about the Ip
+			Enabled (bool): It True, it enables the protocol
+			Family (str(ipv4|ipv6)): It gives details about the family
+			LispInterfaceId (number): It gives details about the LISP interface id
+			LocalLocator (bool): If True, It gives the address of the local locator
+			MPriority (number): It denotes the m priority
+			MWeight (number): It denotes the m weight
+			Priority (number): It gives the priority
+			ProtocolInterfaceIpItemId (number): It gives details about the protocol interface ip item id
+			Reachability (bool): If true, it defines the reachability
+			Weight (number): It gives details about the weight
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
 		"""Adds a new locator node on the server and retrieves it in this instance.
 

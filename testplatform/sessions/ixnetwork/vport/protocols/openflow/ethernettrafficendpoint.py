@@ -274,6 +274,36 @@ class EthernetTrafficEndPoint(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of ethernetTrafficEndPoint on the server.
+
+		Args:
+			ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+			CustomEtherHeaderLength (number): Specify the Custom Header length in bytes. The default length is 46 bytes.
+			CustomEtherHeaderValue (str): Specify the Custom Header value.
+			CustomEtherType (str): Specify the Custom Ether type.
+			EnableMacInMac (bool): NOT DEFINED
+			EnableVlan (bool): Select this check box to make VLAN available.
+			GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			Name (str): The name of the Traffic Source Endpoint.
+			PbbDestinamtionMac (str): NOT DEFINED
+			PbbEtherType (str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)): NOT DEFINED
+			PbbIsId (str): NOT DEFINED
+			PbbSourceMac (str): NOT DEFINED
+			PbbVlanId (str): NOT DEFINED
+			PbbVlanPcp (str): NOT DEFINED
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
+			RangeSize (number): Specify the size of the Range.
+			VlanCount (number): Specify the VLAN count. The default value is 1.
+			VlanId (str): Specify the VLAN ID (Outer and Inner).
+			VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
 		"""Adds a new ethernetTrafficEndPoint node on the server and retrieves it in this instance.
 

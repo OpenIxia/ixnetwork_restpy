@@ -103,6 +103,18 @@ class Lacp(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, EnablePreservePartnerInfo=None, Enabled=None):
+		"""Updates a child instance of lacp on the server.
+
+		Args:
+			EnablePreservePartnerInfo (bool): If true, the fields of previous link are updatedw
+			Enabled (bool): If true, the Link Aggregation Control Protocol (LACP) is enabled.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def RefreshLacpPortLearnedInfo(self):
 		"""Executes the refreshLacpPortLearnedInfo operation on the server.
 

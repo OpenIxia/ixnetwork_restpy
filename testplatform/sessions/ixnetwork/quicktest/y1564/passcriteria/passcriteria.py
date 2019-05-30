@@ -165,6 +165,27 @@ class PassCriteria(Base):
 	def PassFailLatencyUnit(self, value):
 		self._set_attribute('passFailLatencyUnit', value)
 
+	def update(self, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassFailLatencyUnit=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+			EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+			EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+			EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
+			LatencyThresholdMode (str(average|maximum)): The threshold mode for the latency.
+			LatencyThresholdScale (str(ms|ns|us)): The scale by which the latency threshold is measured.
+			LatencyVarThresholdMode (str(average|maximum)): The latency variation threshold mode.
+			LatencyVariationThresholdScale (str(ms|ns|us)): The scale by which the latency variation threshold is measured.
+			PassCriteriaLoadRateMode (str(average|minimum)): The pass critria set for the load rate mode.
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass criteria scale in which the load rateis to be measured.
+			PassFailLatencyUnit (str(ms|ns|us)): If true, the pass fail latency unit is set.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

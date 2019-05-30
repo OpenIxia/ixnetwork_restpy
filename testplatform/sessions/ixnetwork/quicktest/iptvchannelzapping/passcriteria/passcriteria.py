@@ -105,6 +105,22 @@ class PassCriteria(Base):
 	def PassFailLeaveLatencyAgg(self, value):
 		self._set_attribute('passFailLeaveLatencyAgg', value)
 
+	def update(self, EnableJoinFailuresPassFail=None, EnableJoinLatencyPassFail=None, EnableLeaveFailuresPassFail=None, EnableLeaveLatencyPassFail=None, PassFailJoinLatencyAgg=None, PassFailLeaveLatencyAgg=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			EnableJoinFailuresPassFail (bool): If true, allows to show how many Join actions were marked as Failed or Passed.
+			EnableJoinLatencyPassFail (bool): If true, allows to show the amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
+			EnableLeaveFailuresPassFail (bool): If true, allows to show how many Leave actions were marked as Failed or Passed.
+			EnableLeaveLatencyPassFail (bool): If true, allows to The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
+			PassFailJoinLatencyAgg (str(average|maximum|minimum)): If true, allows to join pass and failure latency aggregate results.
+			PassFailLeaveLatencyAgg (str(average|maximum|minimum)): The pass fail leave latency aggregate.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

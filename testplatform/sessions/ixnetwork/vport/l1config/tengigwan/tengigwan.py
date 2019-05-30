@@ -204,3 +204,25 @@ class TenGigWan(Base):
 	@TxIgnoreRxLinkFaults.setter
 	def TxIgnoreRxLinkFaults(self, value):
 		self._set_attribute('txIgnoreRxLinkFaults', value)
+
+	def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+		"""Updates a child instance of tenGigWan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			C2Expected (number): The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
+			C2Tx (number): The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
+			EnablePPM (bool): If true, enables the portsppm.
+			EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+			FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+			IfsStretch (bool): If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
+			InterfaceType (str(wanSdh|wanSonet)): The 10G WAN interface type for the port.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			TransmitClocking (str(external|internal|recovered)): The transmit clocking type for this 10G WAN port.
+			TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

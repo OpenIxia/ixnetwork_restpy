@@ -92,3 +92,18 @@ class Vlan(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, Tpid=None, VlanCount=None, VlanEnable=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of vlan on the server.
+
+		Args:
+			Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
+			VlanCount (number): The number of VLANs configured for this interface.
+			VlanEnable (bool): If enabled, a VLAN can be assigned for each of the interfaces.
+			VlanId (str): If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
+			VlanPriority (str): The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

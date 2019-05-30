@@ -187,6 +187,28 @@ class SpbIsIdRange(Base):
 	def VlanType(self, value):
 		self._set_attribute('vlanType', value)
 
+	def update(self, CMacAddressCount=None, CMacAddressStep=None, CVlan=None, Enabled=None, ISid=None, RBit=None, SVlan=None, StartCmacAddress=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
+		"""Updates a child instance of spbIsIdRange on the server.
+
+		Args:
+			CMacAddressCount (number): The number of C-MAC for each C-MAC range. The default is 1. Maximum value is 4095. The minimum value is 1.
+			CMacAddressStep (str): The amount to increment each successive C-MAC address from the starting CMAC address.
+			CVlan (number): The number of stacked VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+			Enabled (bool): If true, the topology range will be part of the simulated network.
+			ISid (number): The I-component Service Instance identifier. The maximum value is 16777215. The minimum value is 0.
+			RBit (bool): The Restart State bit.
+			SVlan (number): The number of single VLAN. The minimum value is 1. The maximum value is 4095. The default is 1.
+			StartCmacAddress (str): The starting C-MAC address for the C_MAC range.
+			TBit (bool): The external route tag bit.
+			TrafficDestMacAddress (str): The traffic-destination MAC address.
+			TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
+			VlanType (number): Select the VLAN type. Options include Single VLAN and Stacked VLAN. Selecting Stacked VLAN activates the C-VLAN options. The Default option is Single VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CMacAddressCount=None, CMacAddressStep=None, CVlan=None, Enabled=None, ISid=None, RBit=None, SVlan=None, StartCmacAddress=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
 		"""Adds a new spbIsIdRange node on the server and retrieves it in this instance.
 

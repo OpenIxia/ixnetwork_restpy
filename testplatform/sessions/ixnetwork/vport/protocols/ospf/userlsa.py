@@ -274,6 +274,29 @@ class UserLsa(Base):
 	def Option(self, value):
 		self._set_attribute('option', value)
 
+	def update(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
+		"""Updates a child instance of userLsa on the server.
+
+		Args:
+			AdvertisingRouterId (str): 
+			Enabled (bool): 
+			ExpandIntoLinksOrAttachedRouters (bool): 
+			LinkStateId (str): 
+			LsaType (str(router|network|areaSummary|externalSummary|external|nssa|opaqueLocalScope|opaqueAreaScope|opaqueAsScope)): 
+			OptBitDemandCircuit (bool): 
+			OptBitExternalAttributes (bool): 
+			OptBitExternalRouting (bool): 
+			OptBitLsaNoForward (bool): 
+			OptBitMulticast (bool): 
+			OptBitNssaCapability (bool): 
+			OptBitTypeOfService (bool): 
+			Option (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
 		"""Adds a new userLsa node on the server and retrieves it in this instance.
 

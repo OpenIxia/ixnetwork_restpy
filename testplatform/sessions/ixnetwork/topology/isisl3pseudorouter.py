@@ -667,6 +667,24 @@ class IsisL3PseudoRouter(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, EnableSR=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+		"""Updates a child instance of isisL3PseudoRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EnableSR (bool): Enable Segment Routing
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SRAlgorithmCount (number): SR Algorithm Count
+			SRGBRangeCount (number): SRGB Range Count
+			SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, EnableSR=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
 		"""Finds and retrieves isisL3PseudoRouter data from the server.
 

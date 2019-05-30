@@ -84,6 +84,18 @@ class DynamicUpdate(Base):
 	def EnabledSessionAwareTrafficFields(self, value):
 		self._set_attribute('enabledSessionAwareTrafficFields', value)
 
+	def update(self, EnabledDynamicUpdateFields=None, EnabledSessionAwareTrafficFields=None):
+		"""Updates a child instance of dynamicUpdate on the server.
+
+		Args:
+			EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
+			EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableDynamicUpdateFields=None, AvailableSessionAwareTrafficFields=None, EnabledDynamicUpdateFields=None, EnabledDynamicUpdateFieldsDisplayNames=None, EnabledSessionAwareTrafficFields=None):
 		"""Finds and retrieves dynamicUpdate data from the server.
 

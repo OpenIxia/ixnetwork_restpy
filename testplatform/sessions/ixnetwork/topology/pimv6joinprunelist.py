@@ -257,6 +257,20 @@ class PimV6JoinPruneList(Base):
 		"""
 		return self._get_attribute('switchOverInterval')
 
+	def update(self, Name=None):
+		"""Updates a child instance of pimV6JoinPruneList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, EnableFlapInfo=None, EnablePack=None, FlapInterval=None, GroupAddressCount=None, GroupV6Address=None, GroupV6MaskWidth=None, PruneSourceAddressCount=None, PruneSourceV6Address=None, PruneSourceV6MaskWidth=None, RangeType=None, RegisterStopTriggerCount=None, RpV6Address=None, SourceAddressCount=None, SourceGroupMappingType=None, SourceV6Address=None, SourceV6MaskWidth=None, SwitchOverInterval=None):
 		"""Base class infrastructure that gets a list of pimV6JoinPruneList device ids encapsulated by this object.
 

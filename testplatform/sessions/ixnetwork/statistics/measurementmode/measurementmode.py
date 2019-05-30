@@ -44,3 +44,14 @@ class MeasurementMode(Base):
 	@MeasurementMode.setter
 	def MeasurementMode(self, value):
 		self._set_attribute('measurementMode', value)
+
+	def update(self, MeasurementMode=None):
+		"""Updates a child instance of measurementMode on the server.
+
+		Args:
+			MeasurementMode (str(cumulativeMode|instantaneousMode|mixedMode)): Mode of the measurement
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

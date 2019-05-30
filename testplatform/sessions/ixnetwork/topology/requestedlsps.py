@@ -608,6 +608,27 @@ class RequestedLsps(Base):
 		"""
 		return self._get_attribute('symbolicPathName')
 
+	def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, MaxNoOfIroSubObjects=None, MaxNoOfXroSubObjects=None, MaxNumberOfMetrics=None, Name=None, OverridePlspId=None, OverrideRequestId=None):
+		"""Updates a child instance of requestedLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+			MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+			MaxNoOfIroSubObjects (number): Max Number of IRO Sub Objects
+			MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
+			MaxNumberOfMetrics (number): Max Number of Metrics
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			OverridePlspId (bool): Override PLSP-ID
+			OverrideRequestId (bool): Override Request ID
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndPoints=None, Bandwidth=None, BiDirectional=None, DestinationIpv4Address=None, DestinationIpv6Address=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEndPoints=None, IncludeIro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeXro=None, InitialDelegation=None, IpVersion=None, LocalProtection=None, Loose=None, OverrideSourceAddress=None, PFlagBandwidth=None, PFlagIro=None, PFlagLsp=None, PFlagLspa=None, PFlagRp=None, PFlagXro=None, PflagEndpoints=None, PlspId=None, Priority=None, ReOptimization=None, RedelegationTimeoutInterval=None, RequestId=None, SetupPriority=None, SourceEndPointIPv4=None, SourceEndPointIPv6=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
 		"""Base class infrastructure that gets a list of requestedLsps device ids encapsulated by this object.
 

@@ -350,6 +350,40 @@ class Interface(Base):
 	def TypeOfConnection(self, value):
 		self._set_attribute('typeOfConnection', value)
 
+	def update(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			AcceptUnconfiguredChannel (bool): If true, un-configured channels are accepted for this interface.
+			AllFlowsDelOnStart (bool): If set, Ixia sends out an OpenFlow flow delete message (all wildcard) at startup. This should delete all existing flows in DUT.
+			AuxiliaryConnectionTimeout (str(auxReSendFeatureRequest|auxFeatureRequestTerminateConnection)): Period of time after which auxiliary connection will time out , if no messages are received.
+			BadVersionErrorAction (str(auxReSendHello|auxTerminateConnection)): Defines what action to take in case an auxiliary connection receives an error of type OFPET_BAD_REQUEST and code OFPBRC_BAD_VERSION.
+			EchoInterval (number): Indicates the periodic interval in seconds at which the Interface sends Echo Request Packets applicable if enablePeriodicEcho attribute is set.
+			EchoMultiplier (number): Indicates the value specified for the selected Timeout option.
+			EchoTimeout (number): Indicates the duration interval of the state machine waiting for echo reply to arrive applicable if echoTimeout is set.
+			EnableEchoTimeOut (bool): If true, enables echoTimeout field.
+			EnableMultipleLogicalSwitch (bool): if true, we add multiple number of switch per interface
+			EnablePeriodicEcho (bool): If set enables echoInterval field.
+			EnablePeriodicLldp (bool): If true, enables Periodic LLDP PacketOut Sending for each Switch Port
+			Enabled (bool): If set enables the interface.
+			FeatureRequestTimeout (number): Specifies the time after which a feature request will time out , if feature reply is received.
+			FeatureRequestTimeoutAction (number): Specifies if action should be taken when feature request timeouts.
+			InstallFlowForLldp (bool): If true, installs Flow in Switch for LLDP Packets to be explicitly send to Controller.
+			LldpDestinationMacAddress (str): Indicates the Destination MAC Address for LLDP Packet Out.
+			ModeOfConnection (str(passive|active|mixed)): Indicates the mode of connection used for the Interface.
+			NonHelloMessageStartupAction (str(auxAcceptConnection|auxSendError)): Defines what action to take in case an auxiliary connection receives a non-hello message at startup.
+			PeriodicLldpInterval (number): Indicates the Periodic LLDP Packet Out Interval.
+			ProtocolInterfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
+			SendPortFeatureAtStartup (bool): If true , Port feature request is sent , once OF session is established.
+			TcpPort (number): Specify the TCP port for this interface.
+			TimeOutOption (str(multiplier|timeOutValue)): Indicates the types of timeout options supported.
+			TypeOfConnection (str(tcp|tls)): Indicates the type of connection used for the Interfaces.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

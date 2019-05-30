@@ -130,6 +130,24 @@ class RouteRange(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, Enabled=None, FirstRoute=None, IsRedistributed=None, MaskWidth=None, Metric=None, NumberOfRoutes=None, RouteOrigin=None, Type=None):
+		"""Updates a child instance of routeRange on the server.
+
+		Args:
+			Enabled (bool): Enables the use of this route range for the simulated router.
+			FirstRoute (str): The first route of the route range, in IPv4 dotted decimal format. (default = 0.0.0.0)
+			IsRedistributed (bool): Sets the Up/Down (Redistribution) bit defined for TLVs 128 and 130 by RFC 2966. It is used for domain-wide advertisement of prefix information.
+			MaskWidth (number): The network mask width for the route range (in bits). The valid range is from 0 to 32 bits. (default = 24)
+			Metric (number): The user-defined metric associated with this route range.
+			NumberOfRoutes (number): The number of routes to be generated for this route range.
+			RouteOrigin (bool): The origin of the advertised route - internal or external to the ISIS area.
+			Type (str(ipAny|ipv4|ipv6)): The IP type of the route range for the ISIS router.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, FirstRoute=None, IsRedistributed=None, MaskWidth=None, Metric=None, NumberOfRoutes=None, RouteOrigin=None, Type=None):
 		"""Adds a new routeRange node on the server and retrieves it in this instance.
 

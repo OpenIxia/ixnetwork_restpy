@@ -258,6 +258,26 @@ class Ovsdbserver(Base):
 	def Vxlan(self, value):
 		self._set_attribute('vxlan', value)
 
+	def update(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
+		"""Updates a child instance of ovsdbserver on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			ManagerCount (number): Number of Managers the OVSDB Server will initiate connections to
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PseudoConnectedTo (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): GUI-only connection
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			Vxlan (str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
 		"""Adds a new ovsdbserver node on the server and retrieves it in this instance.
 

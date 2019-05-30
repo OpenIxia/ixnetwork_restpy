@@ -108,6 +108,21 @@ class CustomTopologySpbNodeTopologyRange(Base):
 	def PortIdentifier(self, value):
 		self._set_attribute('portIdentifier', value)
 
+	def update(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
+		"""Updates a child instance of customTopologySpbNodeTopologyRange on the server.
+
+		Args:
+			CistExternalRootCost (number): NOT DEFINED
+			CistRootIdentifier (str): NOT DEFINED
+			EnableVbit (bool): NOT DEFINED
+			NoOfPorts (number): NOT DEFINED
+			PortIdentifier (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
 		"""Adds a new customTopologySpbNodeTopologyRange node on the server and retrieves it in this instance.
 

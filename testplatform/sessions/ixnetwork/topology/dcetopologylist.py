@@ -160,6 +160,22 @@ class DceTopologyList(Base):
 		"""
 		return self._get_attribute('topologyId')
 
+	def update(self, InterestedVlanRangeCount=None, Name=None, NicknameCount=None):
+		"""Updates a child instance of dceTopologyList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			InterestedVlanRangeCount (number): Interested VLAN Range Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NicknameCount (number): Nickname Count(multiplier)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, EnableFTAG=None, NoOfTreesToCompute=None, StartFTAGValue=None, TopologyId=None):
 		"""Base class infrastructure that gets a list of dceTopologyList device ids encapsulated by this object.
 

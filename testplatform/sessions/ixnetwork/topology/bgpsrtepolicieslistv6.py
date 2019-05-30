@@ -481,6 +481,25 @@ class BgpSRTEPoliciesListV6(Base):
 		"""
 		return self._get_attribute('srtepolicyName')
 
+	def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV6=None):
+		"""Updates a child instance of bgpSRTEPoliciesListV6 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+			NoOfClusters (number): Number of Clusters
+			NoOfCommunities (number): Number of Communities
+			NoOfExtendedCommunity (number): Number of Extended Communities
+			NumberOfTunnelsV6 (number): Count of Tunnel TLVs Per Policy
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
 		"""Base class infrastructure that gets a list of bgpSRTEPoliciesListV6 device ids encapsulated by this object.
 

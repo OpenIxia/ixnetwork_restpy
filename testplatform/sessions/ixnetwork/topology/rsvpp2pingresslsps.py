@@ -988,6 +988,29 @@ class RsvpP2PIngressLsps(Base):
 		"""
 		return self._get_attribute('usingHeadendIp')
 
+	def update(self, BackupLspNumberOfEroSubObjects=None, DelayLspSwitchOver=None, DoMBBOnApplyChanges=None, EroSameAsPrimary=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfEroSubObjects=None, NumberOfRroSubObjects=None, TSpecSameAsPrimary=None):
+		"""Updates a child instance of rsvpP2PIngressLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			BackupLspNumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+			DelayLspSwitchOver (bool): Delay LSP switch over
+			DoMBBOnApplyChanges (bool): Do Make Before Break on Apply Changes
+			EroSameAsPrimary (bool): ERO Same As Primary
+			LspSwitchOverDelayTime (number): LSP Switch Over Delay timer (sec)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfDetourSubObjects (number): Number Of Detour Sub-Objects
+			NumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+			NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+			TSpecSameAsPrimary (bool): TSpec Same As Primary
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, AutoGenerateSessionName=None, AutorouteTraffic=None, BackupLspEnableEro=None, BackupLspId=None, BackupLspMaximumPacketSize=None, BackupLspMinimumPolicedUnit=None, BackupLspPeakDataRate=None, BackupLspPrefixLength=None, BackupLspPrependDutToEro=None, BackupLspSessionId=None, BackupLspTokenBucketRate=None, BackupLspTokenBucketSize=None, Bandwidth=None, BandwidthProtectionDesired=None, ConfigureSyncLspObject=None, EnableBfdMpls=None, EnableEro=None, EnableFastReroute=None, EnableLspPing=None, EnableLspSelfPing=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, InitialDelegation=None, InsertIPv6ExplicitNull=None, IpDSCPofLspSelfPing=None, IpTTLofLspSelfPing=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspCount=None, LspId=None, LspOperativeMode=None, LspSelfPingRetryCount=None, LspSelfPingRetryInterval=None, LspSelfPingSessionId=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, PeakDataRate=None, PpagTLVType=None, PrefixLength=None, PrependDutToEro=None, ProtectionLsp=None, ReEvaluationRequestInterval=None, RedelegationTimeoutInterval=None, RefreshInterval=None, RemoteIp=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIp=None, SourceIpv6=None, StandbyMode=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
 		"""Base class infrastructure that gets a list of rsvpP2PIngressLsps device ids encapsulated by this object.
 

@@ -90,6 +90,20 @@ class EcpriRec(Base):
 		"""
 		return self._get_attribute('rowNames')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ecpriRec on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
 		"""Base class infrastructure that gets a list of ecpriRec device ids encapsulated by this object.
 

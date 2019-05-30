@@ -213,6 +213,31 @@ class GenerateIpv6RoutesParams(Base):
 	def SkipMcast(self, value):
 		self._set_attribute('skipMcast', value)
 
+	def update(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, SkipLoopback=None, SkipMcast=None):
+		"""Updates a child instance of generateIpv6RoutesParams on the server.
+
+		Args:
+			AddressRangesToSkip (str): Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
+			CustomDistributionFile (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
+			DuplicateRoutesAsPathSuffix (str): AS Path Suffix for Duplicate Routes
+			DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
+			NetworkAddressStart (str): Network Address Start Value.
+			NetworkAddressStep (str): Network Address Step Value.
+			PrefixLengthDistributionScope (str(perDevice|perPort|perTopology)): Prefix Length Distribution Scope.
+			PrefixLengthDistributionType (str(custom|even|exponential|fixed|internet|random)): Prefix Length Distribution Type.
+			PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
+			PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
+			PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
+			PrimaryRoutesPerDevice (number): Number of Primary Routes per Device.
+			PrimaryRoutesPerRange (number): Number of Routes per Route Range.
+			SkipLoopback (bool): Do not include Loopback Address in the generated Address Range
+			SkipMcast (bool): Do not include Multicast Address in the generated Address Range
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

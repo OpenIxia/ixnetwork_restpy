@@ -134,6 +134,21 @@ class IsisBierSubDomainList(Base):
 		"""
 		return self._get_attribute('subDomainId')
 
+	def update(self, Name=None, NumberOfBSLen=None):
+		"""Updates a child instance of isisBierSubDomainList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfBSLen (number): Number of Supported BSL
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, IPA=None, Active=None, SubDomainId=None):
 		"""Base class infrastructure that gets a list of isisBierSubDomainList device ids encapsulated by this object.
 

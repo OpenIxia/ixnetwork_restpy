@@ -44,3 +44,14 @@ class OneTimeJoinLeaveLatency(Base):
 	@Enabled.setter
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
+
+	def update(self, Enabled=None):
+		"""Updates a child instance of oneTimeJoinLeaveLatency on the server.
+
+		Args:
+			Enabled (bool): If true enables one time join leave latency.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

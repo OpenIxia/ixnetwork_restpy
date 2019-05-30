@@ -192,3 +192,24 @@ class Pos(Base):
 	@TransmitClocking.setter
 	def TransmitClocking(self, value):
 		self._set_attribute('transmitClocking', value)
+
+	def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, TrafficMapType=None, TransmitClocking=None):
+		"""Updates a child instance of pos on the server.
+
+		Args:
+			C2Expected (number): C2 Byte
+			C2Tx (number): C2 Byte
+			CrcSize (str(crc16|crc32)): The type of cyclic redundancy check (CRC) to be used.
+			DataScrambling (bool): Data scrambling is enabled on this POS port.
+			EnablePPM (bool): If true, enables the portsppm
+			InterfaceType (str(oc12|oc192|oc3|oc48|stm1|stm16|stm4|stm64)): The POS interface type for the port.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			PayloadType (str(ciscoFrameRelay|ciscoHdlc|frameRelay|ppp)): The POS payload type.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			TrafficMapType (str(dcc|spe)): The POS traffic map type.
+			TransmitClocking (str(external|internal|recovered)): The POS transmit clocking type.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

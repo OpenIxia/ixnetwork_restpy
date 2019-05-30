@@ -162,6 +162,20 @@ class IsisSRv6AdjSIDList(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, Name=None):
+		"""Updates a child instance of isisSRv6AdjSIDList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdvertiseCustomSubTLV=None, Algorithm=None, BFlag=None, CustomSubTlv=None, EndPointFunction=None, Ipv6AdjSid=None, PFlag=None, Reserved=None, SFlag=None, Weight=None):
 		"""Base class infrastructure that gets a list of isisSRv6AdjSIDList device ids encapsulated by this object.
 

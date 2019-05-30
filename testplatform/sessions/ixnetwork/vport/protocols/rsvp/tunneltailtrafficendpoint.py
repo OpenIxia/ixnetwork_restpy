@@ -70,6 +70,19 @@ class TunnelTailTrafficEndPoint(Base):
 	def IpStart(self, value):
 		self._set_attribute('ipStart', value)
 
+	def update(self, EndPointType=None, IpCount=None, IpStart=None):
+		"""Updates a child instance of tunnelTailTrafficEndPoint on the server.
+
+		Args:
+			EndPointType (str(ipv4|ipv6|17|18)): Indicates the end point type. One of IPv4 or IPv6.
+			IpCount (number): This indicates that the number of Destination IPs to which the traffic sent over the P2MP RSVP-TE tunnel is destined. The minimum and default value is 1.
+			IpStart (str): The Start Destination IP Address for traffic that is sent over the P2MP RSVP-TE tunnel. Normally, this is an IPv4 or IPv6 Multicast address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EndPointType=None, IpCount=None, IpStart=None):
 		"""Adds a new tunnelTailTrafficEndPoint node on the server and retrieves it in this instance.
 

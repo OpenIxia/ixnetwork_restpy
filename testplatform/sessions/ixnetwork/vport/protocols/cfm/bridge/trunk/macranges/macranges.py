@@ -211,6 +211,30 @@ class MacRanges(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+		"""Updates a child instance of macRanges on the server.
+
+		Args:
+			CVlanId (number): The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
+			CVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+			CVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+			Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+			EnableVlan (bool): If true, the VLAN assigned to the MAC range is enabled.
+			Enabled (bool): If true, the MAC range is enabled.
+			ITagiSid (number): The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
+			SVlanId (number): A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
+			SVlanPriority (number): The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+			SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
+			StartMacAddress (str): The MAC address of the first entry in the range.
+			Step (str): The amount to increment each MAC address in the range.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+			Type (str(singleVlan|stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
 		"""Adds a new macRanges node on the server and retrieves it in this instance.
 

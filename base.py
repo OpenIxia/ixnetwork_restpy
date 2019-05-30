@@ -257,6 +257,8 @@ class Base(object):
         payload = self._build_payload(locals_dict)
         if payload is not None:
             self._connection._update(self._properties['href'], payload)
+            return self.refresh()
+        return self
     
     def _delete(self):
         try:

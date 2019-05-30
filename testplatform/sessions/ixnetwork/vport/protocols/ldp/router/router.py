@@ -359,6 +359,33 @@ class Router(Base):
 	def UseTransportAddress(self, value):
 		self._set_attribute('useTransportAddress', value)
 
+	def update(self, EnableBfdMplsLearnedLsp=None, EnableFilterFec=None, EnableGracefulRestart=None, EnableLspPingLearnedLsp=None, EnableOverrideRbit=None, EnableP2mpCapabilty=None, EnablePduRateControl=None, EnableVcFecs=None, EnableVcGroupMatch=None, Enabled=None, InterPduGap=None, ReconnectTime=None, RecoveryTime=None, RouterId=None, TrafficGroupId=None, TransportAddress=None, UseTransportAddress=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			EnableBfdMplsLearnedLsp (bool): NOT DEFINED
+			EnableFilterFec (bool): Enables Filter FEC, which allows the user to control which received FEC ranges will be stored in the state machine.
+			EnableGracefulRestart (bool): If enabled, LDP Graceful Restart is enabled on this Ixia-emulated LDP Router.
+			EnableLspPingLearnedLsp (bool): NOT DEFINED
+			EnableOverrideRbit (bool): NOT DEFINED
+			EnableP2mpCapabilty (bool): If true, enables P2MP capability.
+			EnablePduRateControl (bool): Enables the PDU Rate Control feature.
+			EnableVcFecs (bool): Enables the use of Layer 2 Virtual Circuit FECs.
+			EnableVcGroupMatch (bool): If enabled, the VC Group ID must be matched in addition to the VC ID, VC Type, and Peer for the PseudoWire to be considered Up (Up status).
+			Enabled (bool): Enables or disables the simulated router.
+			InterPduGap (number): The user-specified gap time between PDUs, in milliseconds (ms).
+			ReconnectTime (number): This Fault Tolerant (FT) Reconnect Timer value is advertised in the FT Session TLV in the Initialization message sent by a neighbor LSR. It is a request sent by an LSR to its neighbor(s) in the event that the receiving neighbor detects that the LDP session has failed, the receiver should maintain MPLS forwarding state and wait for the sender to perform a restart of the control plane and LDP protocol. If the value = 0, the sender is indicating that it will not preserve its MPLS forwarding state across the restart.
+			RecoveryTime (number): The restarting LSR is advertising the amount of time that it will retain its MPLS forwarding state. This time period begins when it sends the restart Initialization message, with the FT session TLV, to the neighbor LSRs (to re-establish the LDP session). This timer allows the neighbors some time to resync the LSPs in an orderly manner. If the value = 0, it means that the restarting LSR was not able to preserve the MPLS forwarding state.
+			RouterId (str): The ID of the simulated router, expressed as an IP address.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			TransportAddress (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The string interface description for the transport address.
+			UseTransportAddress (bool): The boolean value for the transport address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableBfdMplsLearnedLsp=None, EnableFilterFec=None, EnableGracefulRestart=None, EnableLspPingLearnedLsp=None, EnableOverrideRbit=None, EnableP2mpCapabilty=None, EnablePduRateControl=None, EnableVcFecs=None, EnableVcGroupMatch=None, Enabled=None, InterPduGap=None, ReconnectTime=None, RecoveryTime=None, RouterId=None, TrafficGroupId=None, TransportAddress=None, UseTransportAddress=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

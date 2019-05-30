@@ -355,6 +355,26 @@ class HighLevelStream(Base):
 		"""
 		return self._get_attribute('txPortName')
 
+	def update(self, Crc=None, DestinationMacMode=None, Enabled=None, Name=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, Suspend=None, TxPortId=None):
+		"""Updates a child instance of highLevelStream on the server.
+
+		Args:
+			Crc (str(badCrc|goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
+			DestinationMacMode (str(arp|manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
+			Enabled (bool): 
+			Name (str): An alphanumeric string that returns the name of the field.
+			Pause (bool): If true then pause is enabled.
+			PreambleCustomSize (number): Customizes the preamble size of the frame.
+			PreambleFrameSizeMode (str(auto|custom)): The starting size of the frame.
+			RxPortIds (list(str[None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
+			Suspend (bool): Suspends all traffic on this high level stream.
+			TxPortId (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): The virtual port that is the transmitting port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AppliedFrameSize=None, AppliedPacketCount=None, Crc=None, CurrentPacketCount=None, DestinationMacMode=None, Distributions=None, Enabled=None, EncapsulationName=None, EndpointSetId=None, Name=None, OverSubscribed=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, RxPortNames=None, State=None, Suspend=None, TxPortId=None, TxPortName=None):
 		"""Finds and retrieves highLevelStream data from the server.
 

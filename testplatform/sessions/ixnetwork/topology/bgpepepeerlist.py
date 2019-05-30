@@ -286,6 +286,22 @@ class BgpEpePeerList(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, Name=None, NoOfPeerSet=None, NoOflinks=None):
+		"""Updates a child instance of bgpEpePeerList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfPeerSet (number): Number of EPE Peer Set
+			NoOflinks (number): Number of Links
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, BBit=None, BgpLocalRouterId=None, BgpRemoteRouterId=None, EnablePeerNodeSid=None, LBit=None, LocalAsn=None, PBit=None, PeerName=None, PeerSetGroup=None, RemoteAsn=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, UseLocalConfedId=None, UseRemoteConfedId=None, VBit=None, Weight=None):
 		"""Base class infrastructure that gets a list of bgpEpePeerList device ids encapsulated by this object.
 

@@ -106,6 +106,22 @@ class VariableResponseDatabase(Base):
 	def VariableWidth(self, value):
 		self._set_attribute('variableWidth', value)
 
+	def update(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+		"""Updates a child instance of variableResponseDatabase on the server.
+
+		Args:
+			Enabled (bool): 
+			VariableBranch (number): 
+			VariableIndication (bool): 
+			VariableLeaf (number): 
+			VariableValue (str): 
+			VariableWidth (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
 		"""Adds a new variableResponseDatabase node on the server and retrieves it in this instance.
 

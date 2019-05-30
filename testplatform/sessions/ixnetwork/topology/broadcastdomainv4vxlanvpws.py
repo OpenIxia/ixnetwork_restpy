@@ -290,6 +290,22 @@ class BroadcastDomainV4VxlanVpws(Base):
 		"""
 		return self._get_attribute('vidNormalization')
 
+	def update(self, Name=None, NoOfMacPools=None, UsebVlan=None):
+		"""Updates a child instance of broadcastDomainV4VxlanVpws on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfMacPools (number): Number of Mac Pools
+			UsebVlan (bool): Use B-VLAN
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, BackupFlag=None, EnableVlanAwareService=None, EthernetTagId=None, FxcType=None, GroupAddress=None, IncludeVpwsL2AttrExtComm=None, L2Mtu=None, PrimaryPE=None, RemoteServiceId=None, RequireCW=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None, VidNormalization=None):
 		"""Base class infrastructure that gets a list of broadcastDomainV4VxlanVpws device ids encapsulated by this object.
 

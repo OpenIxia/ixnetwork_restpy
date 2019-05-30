@@ -44,3 +44,14 @@ class Unconnected(Base):
 	@ConnectedVia.setter
 	def ConnectedVia(self, value):
 		self._set_attribute('connectedVia', value)
+
+	def update(self, ConnectedVia=None):
+		"""Updates a child instance of unconnected on the server.
+
+		Args:
+			ConnectedVia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

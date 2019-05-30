@@ -165,6 +165,27 @@ class TestConfig(Base):
 	def ProtocolItem(self, value):
 		self._set_attribute('protocolItem', value)
 
+	def update(self, AlgorithmType=None, Duration=None, IncrementRequestsRate=None, InitialRequestsRate=None, LeaveSessionsUp=None, LoadRateList=None, MaxOutstandingRequests=None, MaximumRequestsRate=None, NoOfSessions=None, Numtrials=None, ProtocolItem=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			AlgorithmType (str): 
+			Duration (number): 
+			IncrementRequestsRate (str): 
+			InitialRequestsRate (str): 
+			LeaveSessionsUp (bool): 
+			LoadRateList (str): 
+			MaxOutstandingRequests (number): 
+			MaximumRequestsRate (str): 
+			NoOfSessions (number): 
+			Numtrials (number): 
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

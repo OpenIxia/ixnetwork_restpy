@@ -144,6 +144,24 @@ class DceNodeTopologyRange(Base):
 	def TopologyId(self, value):
 		self._set_attribute('topologyId', value)
 
+	def update(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+		"""Updates a child instance of dceNodeTopologyRange on the server.
+
+		Args:
+			BroadcastPriority (number): Sets the priority in which the topology is broadcast.
+			IncludeL2Topology (bool): If true, includes the L2 topology.
+			InternodeNicknameIncrement (number): The increment step to be used for creating the internode increment.
+			NicknameCount (number): The count of the nickname.
+			NoOfTreesToCompute (number): The number of trees to compute.
+			StartNickname (number): If true, uses the nickname.
+			TopologyCount (number): The count of the topology.
+			TopologyId (number): The unique identification number of the topology range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
 		"""Adds a new dceNodeTopologyRange node on the server and retrieves it in this instance.
 

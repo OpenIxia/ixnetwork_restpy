@@ -120,6 +120,22 @@ class SwitchPacketIn(Base):
 	def SendPacketIn(self, value):
 		self._set_attribute('sendPacketIn', value)
 
+	def update(self, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, SendPacketIn=None):
+		"""Updates a child instance of switchPacketIn on the server.
+
+		Args:
+			ConsultFlowTable (bool): If true, consults Flow Table before sending packet-in messages. If any flow present then do not send packet-in messages.
+			Enabled (bool): If true, enables Packet-In Range for the switch.
+			InPort (str): Specifies the number of ports on which the switch receives the new packet.
+			PacketIn (str): Specifies the contents of the new packet that will be sent via the Packet-In message.
+			PacketInName (str): Indicates the packet-in Range identifier name.
+			SendPacketIn (bool): If true, packet-in messages will be sent to the controller using this Packet-In range definitions.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, SendPacketIn=None):
 		"""Adds a new switchPacketIn node on the server and retrieves it in this instance.
 

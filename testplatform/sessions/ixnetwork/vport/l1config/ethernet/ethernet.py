@@ -218,3 +218,25 @@ class Ethernet(Base):
 	@SpeedAuto.setter
 	def SpeedAuto(self, value):
 		self._set_attribute('speedAuto', value)
+
+	def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, Speed=None, SpeedAuto=None):
+		"""Updates a child instance of ethernet on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
+			EnablePPM (bool): If true, enables the portsppm.
+			EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+			FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			MasterSlaveMode (str(master|slave)): NOT DEFINED
+			Media (str(copper|fiber|sgmii)): Available only for Ethernet cards that support this dual-PHY capability.
+			NegotiateMasterSlave (bool): NOT DEFINED
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+			Speed (str(auto|speed1000|speed100fd|speed100hd|speed10fd|speed10hd)): The speed and duplex operation options.
+			SpeedAuto (list(str[all|speed1000|speed100fd|speed100hd|speed10fd|speed10hd])): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

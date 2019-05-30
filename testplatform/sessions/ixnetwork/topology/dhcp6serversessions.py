@@ -315,6 +315,20 @@ class Dhcp6ServerSessions(Base):
 		"""
 		return self._get_attribute('useCustomTimes')
 
+	def update(self, Name=None):
+		"""Updates a child instance of dhcp6ServerSessions on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, AddressDuidMask=None, AddressDuidPattern=None, AddressesPerIA=None, CustomRebindTime=None, CustomRenewTime=None, DefaultLeaseTime=None, EnableAddressMatchDuid=None, EnablePrefixMatchDuid=None, IaType=None, Ignore=None, IgnoreMask=None, IgnorePattern=None, IpAddress=None, IpAddressIncrement=None, IpAddressPD=None, IpPrefix=None, IpPrefixIncrement=None, LeaseTimeIncrement=None, Nak=None, NakMask=None, NakPattern=None, PoolPrefixSize=None, PoolSize=None, PrefixDuidIncrement=None, PrefixDuidStart=None, PrefixLength=None, PrefixesPerIA=None, UseCustomTimes=None):
 		"""Base class infrastructure that gets a list of dhcp6ServerSessions device ids encapsulated by this object.
 

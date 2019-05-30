@@ -336,6 +336,40 @@ class MulticastSenderSite(Base):
 	def UseUpstreamAssignedLabel(self, value):
 		self._set_attribute('useUpstreamAssignedLabel', value)
 
+	def update(self, AddressFamilyType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, MplsAssignedUpstreamLabel=None, MplsAssignedUpstreamLabelStep=None, SPmsiRsvpP2mpId=None, SPmsiRsvpP2mpIdAsNumber=None, SPmsiRsvpP2mpIdStep=None, SPmsiRsvpTunnelCount=None, SPmsiRsvpTunnelId=None, SPmsiRsvpTunnelIdStep=None, SPmsiTrafficGroupId=None, SPmsiTunnelCount=None, SendTriggeredSourceActiveAdRoute=None, SetLeafInformationRequiredBit=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, TuunelType=None, UseUpstreamAssignedLabel=None):
+		"""Updates a child instance of multicastSenderSite on the server.
+
+		Args:
+			AddressFamilyType (str(addressFamilyIpv4|addressFamilyIpv6)): Indicates the IPv4/IPv6 interface id of the router.
+			Enabled (bool): Enables or disables use of the multicast Sender site.
+			GroupAddressCount (number): The number of group addresses to be included in the Register message.
+			GroupMaskWidth (number): The number of bits in the network mask used with the Group Address.
+			IncludeIpv6ExplicitNullLabel (bool): If true, allows to include Explicit NULL label (2) in I-PMSI IPv6 PE-to-CE Traffic.
+			MplsAssignedUpstreamLabel (number): This helps to assign unique upstream assigned label for each flow. This is applicable only if Use Upstream Assigned Label is true.
+			MplsAssignedUpstreamLabelStep (number): S-PMSI A-D route is sent with this Upstream Label. This is applicable only if Use Upstream Assigned Label is true.
+			SPmsiRsvpP2mpId (str): The P2MP Id represented in IP address format.
+			SPmsiRsvpP2mpIdAsNumber (number): The P2MP Id represented in integer format.
+			SPmsiRsvpP2mpIdStep (number): Indicates the P2MP ID. This accepts only integer values.
+			SPmsiRsvpTunnelCount (number): The total count of the S-PMSI RSVP Tunnel Count.
+			SPmsiRsvpTunnelId (number): The first Tunnel ID value in the range of Tunnel IDs.
+			SPmsiRsvpTunnelIdStep (number): Indicates the P2MP ID. This accepts only integer values.
+			SPmsiTrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+			SPmsiTunnelCount (number): Signifies the SPMSI tunnel count
+			SendTriggeredSourceActiveAdRoute (bool): If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
+			SetLeafInformationRequiredBit (bool): his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
+			SourceAddressCount (number): The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values of the Source Address and the Source Mask Width.
+			SourceGroupMapping (str(fullyMeshed|oneToOne)): Indicates the source group mapping.
+			SourceMaskWidth (number): The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
+			StartGroupAddress (str): The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
+			StartSourceAddress (str): The first IPv4 or IPv6 source address to be included in this Register message.
+			TuunelType (str()): the tunnel type.
+			UseUpstreamAssignedLabel (bool): Indicates whether upstream label as configured be used or not. If this field is false, then MPLS Assigned Upstream Label and MPLS Assigned Upstream Label Step fields are disabled.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddressFamilyType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, MplsAssignedUpstreamLabel=None, MplsAssignedUpstreamLabelStep=None, SPmsiRsvpP2mpId=None, SPmsiRsvpP2mpIdAsNumber=None, SPmsiRsvpP2mpIdStep=None, SPmsiRsvpTunnelCount=None, SPmsiRsvpTunnelId=None, SPmsiRsvpTunnelIdStep=None, SPmsiTrafficGroupId=None, SPmsiTunnelCount=None, SendTriggeredSourceActiveAdRoute=None, SetLeafInformationRequiredBit=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, TuunelType=None, UseUpstreamAssignedLabel=None):
 		"""Adds a new multicastSenderSite node on the server and retrieves it in this instance.
 

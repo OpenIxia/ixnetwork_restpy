@@ -93,6 +93,21 @@ class SendgPtpSignalingParams(Base):
 	def TimeSyncInterval(self, value):
 		self._set_attribute('timeSyncInterval', value)
 
+	def update(self, AnnounceInterval=None, ComputeNeighborPropDelay=None, ComputeNeighborRateRatio=None, LinkDelayInterval=None, TimeSyncInterval=None):
+		"""Updates a child instance of sendgPtpSignalingParams on the server.
+
+		Args:
+			AnnounceInterval (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired announceInterval
+			ComputeNeighborPropDelay (bool): computeNeighborPropDelay flag
+			ComputeNeighborRateRatio (bool): computeNeighborRateRatio flag
+			LinkDelayInterval (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired linkDelayInterval
+			TimeSyncInterval (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired timeSyncInterval
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

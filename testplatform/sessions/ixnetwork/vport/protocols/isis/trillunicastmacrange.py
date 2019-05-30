@@ -103,6 +103,21 @@ class TrillUnicastMacRange(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
+		"""Updates a child instance of trillUnicastMacRange on the server.
+
+		Args:
+			Enabled (bool): If true, enables the use of TRILL unicast MAC range.
+			StartUnicastMac (str): Starts unicast MAC address.
+			UnicastMacCount (number): Signifies the count of unicast MAC address.
+			UnicastMacStep (str): Signifies the step value of unicast MAC address.
+			VlanId (number): Signifies VLAN identifier.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
 		"""Adds a new trillUnicastMacRange node on the server and retrieves it in this instance.
 

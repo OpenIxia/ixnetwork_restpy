@@ -68,3 +68,16 @@ class PacketInMaskSlave(Base):
 	@NoMatch.setter
 	def NoMatch(self, value):
 		self._set_attribute('noMatch', value)
+
+	def update(self, Action=None, InvalidTtl=None, NoMatch=None):
+		"""Updates a child instance of packetInMaskSlave on the server.
+
+		Args:
+			Action (bool): Action explicitly output to controller.
+			InvalidTtl (bool): This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
+			NoMatch (bool): This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

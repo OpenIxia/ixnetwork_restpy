@@ -180,6 +180,27 @@ class Interface(Base):
 	def Pvid(self, value):
 		self._set_attribute('pvid', value)
 
+	def update(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			AutoPick (bool): If set, then the Auto-Pick Port Number feature is enabled and each STP interface configured for the same bridge will be assigned a unique port number automatically.(default = enabled)
+			BdpuGap (number): The length of time between transmissions of BPDUs, in milliseconds. The valid range is 0 msec to 60,000 msec. (default = 0)
+			Cost (number): The administrative path cost assigned to this interface. The valid range is 0 to 4294967295. (default = 1)
+			Enabled (bool): Enables or disables the use of the interface. (default = disabled)
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The unique identifier for this interface.
+			JitterEnabled (bool): Staggered transmit (jitter) for Hello messages. If set, then the jitter feature is enabled. (default = enabled)
+			JitterPercentage (number): The maximum percentage of +/- variation (jitter) from the Hello message transmission interval.
+			LinkType (str(pointToPoint|shared)): The type of link attached to this interface.
+			MstiOrVlanId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=all|/api/v1/sessions/1/ixnetwork/vport?deepchild=msti|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
+			PortNo (number): The port number associated with this STP interface. If enableAutoPickPortNum is set, the port number will be automatically assigned (not editable by the user). If enableAutoPickPortNum is not set, the port number can be configured by the user. The valid range is 1 to 4,095. (default = 1)
+			Pvid (number): The Port VLAN ID. This value must be the same for all ports participating in the PVST+/RPVST+ protocol. The valid range is 1 to 4,094. (default = 1)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

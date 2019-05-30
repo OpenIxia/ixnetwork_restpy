@@ -156,6 +156,25 @@ class Router(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, DataMdtInterval=None, DataMdtTimeOut=None, DrPriority=None, Enabled=None, JoinPruneHoldTime=None, JoinPruneInterval=None, RouterId=None, RpDiscoveryMode=None, TrafficGroupId=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			DataMdtInterval (number): The time interval, in seconds, between transmissions of Data MDT Join TLV messages by the source PE Router. (default = 60)
+			DataMdtTimeOut (number): The Data MDT hold time, in seconds. If a PE router connected to a receiver does not receive a Data MDT Join TLV message within this time period, it will leave the Data MDT group. (default = 180)
+			DrPriority (number): The Designated Router (DR) priority, used for DR election.
+			Enabled (bool): Enables or disables the router's simulation.
+			JoinPruneHoldTime (number): The amount of time that neighbor routers should hold a received Join state.
+			JoinPruneInterval (number): The interval between transmitted Join/Prune messages.
+			RouterId (str): The ID of the router, in IPv4 format.
+			RpDiscoveryMode (str(manual|auto)): Sets the discovery mode of the router.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DataMdtInterval=None, DataMdtTimeOut=None, DrPriority=None, Enabled=None, JoinPruneHoldTime=None, JoinPruneInterval=None, RouterId=None, RpDiscoveryMode=None, TrafficGroupId=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

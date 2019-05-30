@@ -82,6 +82,20 @@ class AuxiliaryConnection(Base):
 	def UdpSourcePortNumber(self, value):
 		self._set_attribute('udpSourcePortNumber', value)
 
+	def update(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+		"""Updates a child instance of auxiliaryConnection on the server.
+
+		Args:
+			AuxiliaryId (number): Indicates the Id of the auxiliary connection.
+			ConnectionType (str(tcp|tls|udp)): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
+			Enable (bool): If true, the object is enabled.
+			UdpSourcePortNumber (number): Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
 		"""Adds a new auxiliaryConnection node on the server and retrieves it in this instance.
 

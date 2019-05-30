@@ -68,3 +68,16 @@ class Preferences(Base):
 	@RebootPortsOnConnect.setter
 	def RebootPortsOnConnect(self, value):
 		self._set_attribute('rebootPortsOnConnect', value)
+
+	def update(self, ConnectPortsOnLoadConfig=None, LatestConfigInDiagEnabled=None, RebootPortsOnConnect=None):
+		"""Updates a child instance of preferences on the server.
+
+		Args:
+			ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
+			LatestConfigInDiagEnabled (bool): 
+			RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -63,6 +63,17 @@ class TransmissionDistribution(Base):
 		"""
 		return self._get_attribute('distributionsDisplayNames')
 
+	def update(self, Distributions=None):
+		"""Updates a child instance of transmissionDistribution on the server.
+
+		Args:
+			Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableDistributions=None, Distributions=None, DistributionsDisplayNames=None):
 		"""Finds and retrieves transmissionDistribution data from the server.
 

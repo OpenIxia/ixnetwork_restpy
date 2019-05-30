@@ -86,6 +86,17 @@ class Link(Base):
 		"""
 		return self._get_attribute('txPortName')
 
+	def update(self, ForwardingInterruption=None):
+		"""Updates a child instance of link on the server.
+
+		Args:
+			ForwardingInterruption (bool): Emulate a link fault. Drop all packets received.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ForwardingInterruption=None, Name=None, RxPortName=None, TxPortName=None):
 		"""Finds and retrieves link data from the server.
 

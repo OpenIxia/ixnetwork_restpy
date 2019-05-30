@@ -789,6 +789,79 @@ class TestConfig(Base):
 	def UpstreamStepTolerance(self, value):
 		self._set_attribute('upstreamStepTolerance', value)
 
+	def update(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamGrain=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GranularityLabel=None, ImixTrafficType=None, InitialRateLabel=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, LoadUnitLabel=None, MapType=None, NumFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Runmode=None, StaggeredStart=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, TrafficType=None, TxDelay=None, UpstreamGrain=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BurstSize (number): The number of packets to send in a burst.
+			CalculateJitter (bool): If true, calculates jitter.
+			CalculateLatency (bool): If true, calibrates the latency.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			DownstreamGrain (str(coarse|fine)): The type downstream grain.
+			DownstreamImixAdd (str): Adds the IMIX for downstream.
+			DownstreamImixData (str): Signifies the downstream IMIX data
+			DownstreamImixDataQoS (bool): Signifies the quality of service for downstream IMIX data
+			DownstreamImixDelete (str): Deletes the downstream IMIX value
+			DownstreamImixDistribution (str(bwpercentage|weight)): It gives details about the down stream Imix distribution.
+			DownstreamImixEnabled (bool): If true, enables downstream IMIX
+			DownstreamImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Signifies the downstream IMIX templates.
+			DownstreamInitialStepLoadRate (number): Signifies downstream initial step load rate
+			DownstreamLoadType (str(step)): Signifies downstream load type
+			DownstreamStepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies downstream step load unit.
+			DownstreamStepStepLoadRate (str): Signifies downstream step load rate
+			DownstreamStepTolerance (number): Signifies downstream step tolerance
+			Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate.
+			EnableDataIntegrity (bool): Allows to do a data integrity check.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): If true, allows to set minimum frame size.
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FramesPerBurstGap (number): Specifies the per burst gap.
+			Gap (number): The inter burst gap.
+			GenerateTrackingOptionAggregationFiles (bool): Generates tracking option on aggregation files.
+			GranularityLabel (str): Signifies the granulity label
+			ImixTrafficType (str): Signifies the traffic type for IMIX
+			InitialRateLabel (str): Signifies the initial rate label
+			LatencyBins (str): Sets the latency bins statistics.
+			LatencyBinsEnabled (bool): Enables the latency bins statistics.
+			LatencyType (str(cutThrough|storeForward)): The latency type, either Cut Through or Store and Forward.
+			LoadType (str(step)): The latency type, either Cut Through or Store and Forward.
+			LoadUnitLabel (str): Signifies the load unit label
+			MapType (str): The map type.
+			NumFrames (number): Number of frames.
+			Numtrials (number): Number of trials.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportSequenceError (bool): Specifies to include the types of sequence errors in the results, such as Small.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The throughput rate unit.
+			Runmode (str(duration|noframes)): The running mode.
+			StaggeredStart (bool): Enable a staggered start to traffic transmit.
+			SupportedTrafficTypes (str): The supported traffic types.
+			TestType (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies the test type
+			TestTypeTemp (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies the temporary test type
+			TestTypeTemp2 (str(downstreamOnly|upstreamDownstream|upstreamOnly)): Signifies the second termorary version of test type
+			TrafficType (str(burstyLoading|constantLoading)): The type of traffic to be transmitted.
+			TxDelay (number): The delay in transmission.
+			UpstreamGrain (str(coarse|fine)): The upstream traffic grain type.
+			UpstreamImixAdd (str): Adds IMIX upstream.
+			UpstreamImixData (str): Signifies the data of upstream IMIX
+			UpstreamImixDataQoS (bool): Signifies the quality of service for upstream IMIX data
+			UpstreamImixDelete (str): Deletes upstream IMIX
+			UpstreamImixDistribution (str(bwpercentage|weight)): Signifies the distribution of upstream IMIX
+			UpstreamImixEnabled (bool): If true, enables upstream IMIX
+			UpstreamImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Signifies the upstream IMIX templates.
+			UpstreamInitialStepLoadRate (number): Signifies upstream initial step load rate
+			UpstreamLoadType (str(step)): Signifies upstream load type
+			UpstreamStepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies upstream step load unit.
+			UpstreamStepStepLoadRate (str): Signifies the upstream step load rate
+			UpstreamStepTolerance (number): Signifies upstream step tolerance value
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

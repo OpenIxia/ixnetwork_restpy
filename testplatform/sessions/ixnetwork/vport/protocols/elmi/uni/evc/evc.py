@@ -158,6 +158,24 @@ class Evc(Base):
 	def UntaggedPriorityTagged(self, value):
 		self._set_attribute('untaggedPriorityTagged', value)
 
+	def update(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+		"""Updates a child instance of evc on the server.
+
+		Args:
+			DefaultEvc (bool): If enabled, default EVC bit is set to 1. It indicates that all CE-VLAN IDs that are not specified in this or other CE-VLAN ID/EVC Map IEs are mapped to this EVC. At most one EVC can be identified as a Default EVC on the UNI. The 'Default EVC' bit has significance only if CE-VLAN ID/EVC Map Type is equal to 'Bundling' (see UNI Status information element octet 3). It must be set to 0 when it is not significant. Default is 0.
+			Enabled (bool): If enabled, the EVC is in effect.
+			EvcIdentifier (str): It signifies the content of EVC ID. The length is determined by EVC ID Length. Default is 0.
+			EvcIdentifierLength (number): It signifies one octet and indicates the length of EVC ID content. Default is 1. Min is 1 and Max is 100.
+			EvcStatus (str(notActive|newAndNotActive|active|newAndActive|partiallyActive|newAndPartiallyActive)): Default is New and Active.
+			EvcType (str(pointToPoint|multipointToMultipoint)): It is a drop down of Point-to-Point which is 0 and Multipoint-to-Multipoint which is 1. Default is Point-to-Point.
+			ReferenceId (number): Default value is 1. Max two octet maximum value, Min 1.
+			UntaggedPriorityTagged (bool): If enabled, Untagged/Priority Tagged bit is set to 1. It indicates that this EVC Map Entry identifies the CE VLAN ID for Untagged/Priority Service Frames. The 'Untagged/Priority Tagged' bit has significance only if CE-VLAN ID/EVC Map Type is not equal to 'All to one Bundling' (see UNI Status information element octet 3). It must be set to 0 when it is not significant. Default is 0.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
 		"""Adds a new evc node on the server and retrieves it in this instance.
 

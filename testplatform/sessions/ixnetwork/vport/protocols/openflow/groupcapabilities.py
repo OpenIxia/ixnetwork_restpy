@@ -80,3 +80,17 @@ class GroupCapabilities(Base):
 	@SelectWeight.setter
 	def SelectWeight(self, value):
 		self._set_attribute('selectWeight', value)
+
+	def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
+		"""Updates a child instance of groupCapabilities on the server.
+
+		Args:
+			Chaining (bool): Chaining groups.
+			ChainingChecks (bool): NOT DEFINED
+			SelectLiveness (bool): Liveness for select groups.
+			SelectWeight (bool): Weight for select groups.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

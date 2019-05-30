@@ -1176,6 +1176,110 @@ class Trunk(Base):
 	def Ttl(self, value):
 		self._set_attribute('ttl', value)
 
+	def update(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisInterval=None, AisMode=None, AisPriority=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, DstMacAddress=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableReverseBvlan=None, EnableTstRx=None, Enabled=None, LbmPriority=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevelId=None, MdName=None, MdNameFormat=None, MepId=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ReverseBvlanId=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, Ttl=None):
+		"""Updates a child instance of trunk on the server.
+
+		Args:
+			AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
+			AddDataTlv (bool): If true, adds a data TLV to bridge messages.
+			AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
+			AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
+			AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
+			AddLmmCustomTlvs (bool): NOT DEFINED
+			AddLmrCustomTlvs (bool): NOT DEFINED
+			AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+			AddLtrCustomTlvs (bool): If true, adds a custom link trace response message.
+			AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
+			AddPortStatusTlv (bool): If true, adds a custom port status message TLV to bridge messages.
+			AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
+			AisInterval (str(oneSec|oneMin)): NOT DEFINED
+			AisMode (str(auto|start|stop)): NOT DEFINED
+			AisPriority (number): NOT DEFINED
+			AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
+			AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
+			AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+			AutoLbTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+			AutoLmIteration (number): NOT DEFINED
+			AutoLmTimeout (number): NOT DEFINED
+			AutoLmTimer (number): NOT DEFINED
+			AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+			AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+			BVlanId (number): The VLAN identifier for the trunk.
+			BVlanPriority (number): The VLAN priority for the trunk.
+			BVlanTpId (str): The VLAN TPID for the trunk. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, and 0x88A8.
+			CciInterval (str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)): Sets the continuity check interval for the trunk.
+			CcmLmmTxFcf (number): NOT DEFINED
+			CcmLmmTxFcfStep (number): NOT DEFINED
+			CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
+			CcmRxFcb (number): NOT DEFINED
+			CcmRxFcbStep (number): NOT DEFINED
+			ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
+			ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
+			ChassisIdSubType (str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
+			DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
+			DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
+			DmMethod (str(twoWay|oneWay)): The type of Delay Measurment support.
+			DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Method for each MIP). The default is 0.
+			DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+			DstMacAddress (str): Sets the destination MAC address for the trunk.
+			EnableAisRx (bool): NOT DEFINED
+			EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
+			EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
+			EnableAutoLm (bool): NOT DEFINED
+			EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
+			EnableLckRx (bool): NOT DEFINED
+			EnableLmCounterUpdate (bool): NOT DEFINED
+			EnableReverseBvlan (bool): If true, enables the use of reverse B-VLANs on this trunk. In some cases, a PBB-TE Trunk will require a different B-VID in the reversed path. This option allows the user to specify whether a reverse B-VID is same as forward direction or not.
+			EnableTstRx (bool): NOT DEFINED
+			Enabled (bool): If true, the trunk is enabled.
+			LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+			LckInterval (str(oneSec|oneMin)): NOT DEFINED
+			LckMode (str(auto|start|stop)): NOT DEFINED
+			LckPriority (number): NOT DEFINED
+			LckSupportAisGeneration (bool): NOT DEFINED
+			LmMethod (str(singleEnded|dualEnded)): NOT DEFINED
+			LmmPriority (number): NOT DEFINED
+			LmrPriority (number): NOT DEFINED
+			LmrRxFcf (number): NOT DEFINED
+			LmrRxFcfStep (number): NOT DEFINED
+			LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+			ManagementAddress (str): Sets the trunk management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+			ManagementAddressDomain (str): Sets the trunk management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+			ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+			ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+			MdLevelId (number): Sets the MD level identification for the trunk.
+			MdName (str): Sets the MD name for the trunk.
+			MdNameFormat (str(noDomainName|domainNameBasedString|macAddress2OctetInteger|characterString)): Sets the MD Name format for the trunk.
+			MepId (number): Sets the MEP identifier for the trunk.
+			OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+			OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+			OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+			Rdi (str(auto|on|off)): The Remote Defect Identification.
+			ReverseBvlanId (number): Specifies the B-VLAN identifier for the reverse path on this trunk.
+			ShortMaName (str): Sets the Short MA Name for the trunk.
+			ShortMaNameFormat (str(primaryVid|characterString|2octetInteger|rfc2685VpnId)): Sets the Short MA Name format for the trunk.
+			SrcMacAddress (str): Sets the source MAC address for the trunk.
+			TstIncrPacketLength (bool): NOT DEFINED
+			TstIncrPacketLengthStep (number): NOT DEFINED
+			TstInitialPatternValue (number): NOT DEFINED
+			TstInterval (number): NOT DEFINED
+			TstMode (str(start|stop)): NOT DEFINED
+			TstOverwriteSequenceNumber (bool): NOT DEFINED
+			TstPacketLength (number): NOT DEFINED
+			TstPatternType (str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)): NOT DEFINED
+			TstPriority (number): NOT DEFINED
+			TstSequenceNumber (number): NOT DEFINED
+			TstTestType (str(inService|outOfService)): NOT DEFINED
+			Ttl (number): Sets the trunk Time-to-live value. Default is 64. Min: 1 Max: 255
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisInterval=None, AisMode=None, AisPriority=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, DstMacAddress=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableReverseBvlan=None, EnableTstRx=None, Enabled=None, LbmPriority=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevelId=None, MdName=None, MdNameFormat=None, MepId=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ReverseBvlanId=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, Ttl=None):
 		"""Adds a new trunk node on the server and retrieves it in this instance.
 

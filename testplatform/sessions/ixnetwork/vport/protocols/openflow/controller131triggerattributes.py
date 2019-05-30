@@ -347,3 +347,37 @@ class Controller131TriggerAttributes(Base):
 	@VendorStatExperimenterType.setter
 	def VendorStatExperimenterType(self, value):
 		self._set_attribute('vendorStatExperimenterType', value)
+
+	def update(self, EnableSendTriggerMeterConfigStatsLearnedInformation=None, EnableSendTriggerMeterFeatureStatsLearnedInformation=None, EnableSendTriggerMeterStatLearnedInformation=None, FlowStatOutGroup=None, FlowStatOutGroupInputMode=None, FlowStatOutPort=None, FlowStatOutPortInputMode=None, FlowStatTableId=None, FlowStatTableIdInputMode=None, MeterConfigStatMeterId=None, MeterConfigStatMeterNumber=None, MeterConfigStatResponseTimeOut=None, MeterFeatureStatResponseTimeOut=None, MeterStatMeterId=None, MeterStatMeterNumber=None, MeterStatResponseTimeOut=None, PortStatPortNumber=None, PortStatPortNumberInputMode=None, QueueConfigPortNumber=None, QueueConfigPortNumberInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, VendorMessageExperimenterType=None, VendorStatExperimenterType=None):
+		"""Updates a child instance of controller131TriggerAttributes on the server.
+
+		Args:
+			EnableSendTriggerMeterConfigStatsLearnedInformation (bool): NOT DEFINED
+			EnableSendTriggerMeterFeatureStatsLearnedInformation (bool): NOT DEFINED
+			EnableSendTriggerMeterStatLearnedInformation (bool): NOT DEFINED
+			FlowStatOutGroup (number): The out group used.
+			FlowStatOutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): The input mode of the out group.
+			FlowStatOutPort (number): Specifies the Output port number.
+			FlowStatOutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): The output port used.
+			FlowStatTableId (number): The identifier of the table.
+			FlowStatTableIdInputMode (str(allTables|emergency|custom)): The identifier of the table.
+			MeterConfigStatMeterId (str(ofpmController|ofpmSlowPath|ofpmAll|manual)): NOT DEFINED
+			MeterConfigStatMeterNumber (number): NOT DEFINED
+			MeterConfigStatResponseTimeOut (number): NOT DEFINED
+			MeterFeatureStatResponseTimeOut (number): NOT DEFINED
+			MeterStatMeterId (str(ofpmController|ofpmSlowPath|ofpmAll|manual)): NOT DEFINED
+			MeterStatMeterNumber (number): NOT DEFINED
+			MeterStatResponseTimeOut (number): NOT DEFINED
+			PortStatPortNumber (number): The port number for port stat learned information.
+			PortStatPortNumberInputMode (str(ofppAny|portNumberCustom)): The input mode of port number for port stat learned information.
+			QueueConfigPortNumber (number): The port number for queue config learned information.
+			QueueConfigPortNumberInputMode (str(ofppAny|portNumberCustom)): The input mode of port number for queue config learned information.
+			QueueStatPortNumber (number): The port number for queue statistics learned information.
+			QueueStatPortNumberInputMode (str(ofppAll|ofppAny|portNumberCustom)): The input mode of port number for queue statistics learned information.
+			VendorMessageExperimenterType (number): Experimenter type for Vendor Message.
+			VendorStatExperimenterType (number): Experimenter type for Vendor stat.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

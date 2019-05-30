@@ -129,6 +129,21 @@ class DynamicRate(Base):
 		"""
 		return self._get_attribute('txPort')
 
+	def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, RateType=None):
+		"""Updates a child instance of dynamicRate on the server.
+
+		Args:
+			BitRateUnitsType (str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)): The rate units for transmitting packet.
+			EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only.
+			InterPacketGapUnitsType (str(bytes|nanoseconds)): The inter-packet gap expressed in units.
+			Rate (number): The rate at which packet is transmitted.
+			RateType (str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)): The types of packet rate transmission.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, HighLevelStreamName=None, InterPacketGapUnitsType=None, OverSubscribed=None, Rate=None, RateType=None, TrafficItemName=None, TxPort=None):
 		"""Finds and retrieves dynamicRate data from the server.
 

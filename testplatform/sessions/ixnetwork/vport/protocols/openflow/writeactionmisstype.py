@@ -236,3 +236,30 @@ class WriteActionMissType(Base):
 	@SetQueue.setter
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
+
+	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of writeActionMissType on the server.
+
+		Args:
+			CopyTtlIn (bool): NOT DEFINED
+			CopyTtlOut (bool): NOT DEFINED
+			DecrementMplsTtl (bool): NOT DEFINED
+			DecrementNetworkTtl (bool): NOT DEFINED
+			Experimenter (bool): NOT DEFINED
+			Group (bool): NOT DEFINED
+			Output (bool): NOT DEFINED
+			PopMpls (bool): NOT DEFINED
+			PopPbb (bool): NOT DEFINED
+			PopVlan (bool): NOT DEFINED
+			PushMpls (bool): NOT DEFINED
+			PushPbb (bool): NOT DEFINED
+			PushVlan (bool): NOT DEFINED
+			SetField (bool): NOT DEFINED
+			SetMplsTtl (bool): NOT DEFINED
+			SetNetworkTtl (bool): NOT DEFINED
+			SetQueue (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

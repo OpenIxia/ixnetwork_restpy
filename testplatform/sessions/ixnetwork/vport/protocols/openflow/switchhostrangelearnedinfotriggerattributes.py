@@ -200,3 +200,27 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
 	@SourceHostList.setter
 	def SourceHostList(self, value):
 		self._set_attribute('sourceHostList', value)
+
+	def update(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
+		"""Updates a child instance of switchHostRangeLearnedInfoTriggerAttributes on the server.
+
+		Args:
+			CustomPacket (str): NOT DEFINED
+			DestinationCustom (bool): NOT DEFINED
+			DestinationCustomIpv4Address (str): NOT DEFINED
+			DestinationCustomIpv4AddressStep (str): NOT DEFINED
+			DestinationCustomMacAddress (str): NOT DEFINED
+			DestinationCustomMacAddressStep (str): NOT DEFINED
+			DestinationHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
+			MeshingType (str(fullyMesh)): NOT DEFINED
+			PacketType (str(arp|ping|custom)): NOT DEFINED
+			PeriodIntervalInMs (number): NOT DEFINED
+			Periodic (bool): NOT DEFINED
+			PeriodicIterationNumber (number): NOT DEFINED
+			ResponseTimeout (number): NOT DEFINED
+			SourceHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -225,6 +225,20 @@ class IsisMappingServerIPV4List(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, Name=None):
+		"""Updates a child instance of isisMappingServerIPV4List on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, AFlag=None, Active=None, Algorithm=None, DFlag=None, EFlag=None, FECPrefix=None, LFlag=None, MFlag=None, NFlag=None, PFlag=None, PrefixLength=None, RFlag=None, Range=None, SFlag=None, StartSIDLabel=None, VFlag=None, Weight=None):
 		"""Base class infrastructure that gets a list of isisMappingServerIPV4List device ids encapsulated by this object.
 

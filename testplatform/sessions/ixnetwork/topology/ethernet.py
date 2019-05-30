@@ -647,6 +647,26 @@ class Ethernet(Base):
 	def VlanCount(self, value):
 		self._set_attribute('vlanCount', value)
 
+	def update(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
+		"""Updates a child instance of ethernet on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NotifyMACMove (bool): Flag to determine if MAC move notification to be sent
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			UseVlans (bool): Flag to determine whether VLANs are enabled
+			VlanCount (number): Number of active VLANs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
 		"""Adds a new ethernet node on the server and retrieves it in this instance.
 

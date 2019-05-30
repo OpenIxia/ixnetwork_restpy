@@ -142,6 +142,25 @@ class ItrRemoteEidRange(Base):
 	def StartAddress(self, value):
 		self._set_attribute('startAddress', value)
 
+	def update(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
+		"""Updates a child instance of itrRemoteEidRange on the server.
+
+		Args:
+			Count (number): it gives details about the count
+			EnableMapReplyRecordSegmentMbit (bool): If true, it enables Map reply record Segment Mbit
+			Enabled (bool): If true, it gives details about then protocol
+			Family (str(ipv4|ipv6)): It gives details about the IP family it represents
+			KeepQueryingUnlessResolved (bool): If true, it keeps Querying Unless resolved
+			MapResolvingInterval (number): It gives the map resolving interval
+			PrefixLength (number): it gives the prefix length
+			QueryIntervalUnlessResolved (number): It gives the query regarding the interval unless resolved
+			StartAddress (str): It gives details about the start address
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
 		"""Adds a new itrRemoteEidRange node on the server and retrieves it in this instance.
 

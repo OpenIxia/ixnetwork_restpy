@@ -164,3 +164,24 @@ class Oam(Base):
 	@VendorSpecificInformation.setter
 	def VendorSpecificInformation(self, value):
 		self._set_attribute('vendorSpecificInformation', value)
+
+	def update(self, EnableTlvOption=None, Enabled=None, IdleTimer=None, LinkEvents=None, Loopback=None, MacAddress=None, MaxOAMPDUSize=None, OrganizationUniqueIdentifier=None, TlvType=None, TlvValue=None, VendorSpecificInformation=None):
+		"""Updates a child instance of oam on the server.
+
+		Args:
+			EnableTlvOption (bool): If true, enables the tlv option.
+			Enabled (bool): If true, enables OAM for the Ten Gig Lan port.
+			IdleTimer (number): The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
+			LinkEvents (bool): If true, enables link event interpreting support in Ixia port.
+			Loopback (bool): If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back.
+			MacAddress (str): Mac address of the local DTE. By default, the mac address is automatically generated from card, port and other related information.
+			MaxOAMPDUSize (number): Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
+			OrganizationUniqueIdentifier (str): This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
+			TlvType (str): Indicates the tlv type.
+			TlvValue (str): Enters the tlv value.
+			VendorSpecificInformation (str): Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

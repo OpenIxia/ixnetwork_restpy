@@ -116,6 +116,21 @@ class Instructions(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+		"""Updates a child instance of instructions on the server.
+
+		Args:
+			Description (str): Description of the TLV prototype.
+			IsEditable (bool): Information on the requirement of the field.
+			IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+			IsRequired (bool): Information on the requirement of the field.
+			Name (str): Name of the TLV field.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

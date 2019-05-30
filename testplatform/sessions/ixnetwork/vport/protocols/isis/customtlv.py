@@ -118,6 +118,23 @@ class CustomTlv(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
+		"""Updates a child instance of customTlv on the server.
+
+		Args:
+			Enabled (bool): NOT DEFINED
+			IncludeInHello (bool): NOT DEFINED
+			IncludeInLsp (bool): NOT DEFINED
+			IncludeInNetworkRange (bool): NOT DEFINED
+			Length (number): NOT DEFINED
+			Type (number): NOT DEFINED
+			Value (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
 		"""Adds a new customTlv node on the server and retrieves it in this instance.
 

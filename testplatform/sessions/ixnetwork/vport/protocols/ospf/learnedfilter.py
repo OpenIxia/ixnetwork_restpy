@@ -323,3 +323,29 @@ class LearnedFilter(Base):
 			number
 		"""
 		return self._get_attribute('totalLsaCount')
+
+	def update(self, AdvRouterId=None, EnableAdvRouterId=None, EnableFilter=None, EnableLinkStateId=None, ExcludeAdvRouterId=None, ExcludeLinkStateId=None, LinkStateId=None, ShowExternalAsLsa=None, ShowNetworkLsa=None, ShowNssaLsa=None, ShowOpaqueAreaLsa=None, ShowOpaqueDomainLsa=None, ShowOpaqueLocalLsa=None, ShowRouterLsa=None, ShowSummaryAsLsa=None, ShowSummaryIpLsa=None):
+		"""Updates a child instance of learnedFilter on the server.
+
+		Args:
+			AdvRouterId (str): Filter on the router ID of the router that is originating the LSA.
+			EnableAdvRouterId (bool): If true filter on the advertised router ID.
+			EnableFilter (bool): Enables the use of the OSPF learned filter.
+			EnableLinkStateId (bool): If true, filter on the Link State ID.
+			ExcludeAdvRouterId (bool): If true, filter on no advertised router ID available.
+			ExcludeLinkStateId (bool): If true, filter on no Link State ID available.
+			LinkStateId (str): Filter on the Link State ID.
+			ShowExternalAsLsa (bool): If true, filter on the LSAs from routers with External routes.
+			ShowNetworkLsa (bool): If true, filter on LSAs from router with Network routes.
+			ShowNssaLsa (bool): If true, filter on LSAs from router with NSSA routes.
+			ShowOpaqueAreaLsa (bool): If true, filter on LSAs from router with Opaque Area routes.
+			ShowOpaqueDomainLsa (bool): If true, filter on LSAs from router with Opaque Domain routes.
+			ShowOpaqueLocalLsa (bool): If true, filter on LSAs from router with Opaque Local routes.
+			ShowRouterLsa (bool): If true, filter on LSAs from router with BR or DBR routes.
+			ShowSummaryAsLsa (bool): If true, filter on LSAs from router with Summary AS routes.
+			ShowSummaryIpLsa (bool): If true, filter on LSAs from router with Summary IP routes.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

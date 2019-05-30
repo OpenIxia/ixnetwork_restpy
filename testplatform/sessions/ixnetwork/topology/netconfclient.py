@@ -461,6 +461,26 @@ class NetconfClient(Base):
 		"""
 		return self._get_attribute('userName')
 
+	def update(self, ConnectedVia=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOfCommandSnippetsPerClient=None, StackedLayers=None):
+		"""Updates a child instance of netconfClient on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfCommandSnippetsPerClient (number): Number of Command Snippets per client.Maximum 100 are allowed per client.
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOfCommandSnippetsPerClient=None, StackedLayers=None):
 		"""Adds a new netconfClient node on the server and retrieves it in this instance.
 

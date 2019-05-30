@@ -164,3 +164,24 @@ class LinkMode(Base):
 	@OfppfOther.setter
 	def OfppfOther(self, value):
 		self._set_attribute('ofppfOther', value)
+
+	def update(self, Ofppf100GbFd=None, Ofppf100MbFd=None, Ofppf100MbHd=None, Ofppf10GbFd=None, Ofppf10MbFd=None, Ofppf10MbHd=None, Ofppf1GbFd=None, Ofppf1GbHd=None, Ofppf1TbFd=None, Ofppf40GbFd=None, OfppfOther=None):
+		"""Updates a child instance of linkMode on the server.
+
+		Args:
+			Ofppf100GbFd (bool): NOT DEFINED
+			Ofppf100MbFd (bool): NOT DEFINED
+			Ofppf100MbHd (bool): NOT DEFINED
+			Ofppf10GbFd (bool): NOT DEFINED
+			Ofppf10MbFd (bool): NOT DEFINED
+			Ofppf10MbHd (bool): NOT DEFINED
+			Ofppf1GbFd (bool): NOT DEFINED
+			Ofppf1GbHd (bool): NOT DEFINED
+			Ofppf1TbFd (bool): NOT DEFINED
+			Ofppf40GbFd (bool): NOT DEFINED
+			OfppfOther (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

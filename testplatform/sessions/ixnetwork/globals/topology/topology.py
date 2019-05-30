@@ -933,6 +933,18 @@ class Topology(Base):
 		"""
 		return self._get_attribute('vports')
 
+	def update(self, NgpfProtocolRateMode=None, ProtocolStackingMode=None):
+		"""Updates a child instance of topology on the server.
+
+		Args:
+			NgpfProtocolRateMode (str(basic|smooth)): Decides whether protocol's sessions will started in normal or smooth mode
+			ProtocolStackingMode (str(parallel|sequential)): Decides whether protocol's sessions will started sequentially or parallelly across the layers
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def AbortApplyOnTheFly(self):
 		"""Executes the abortApplyOnTheFly operation on the server.
 

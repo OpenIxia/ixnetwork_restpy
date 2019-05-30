@@ -160,6 +160,22 @@ class Tracking(Base):
 	def Values(self, value):
 		self._set_attribute('values', value)
 
+	def update(self, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
+		"""Updates a child instance of tracking on the server.
+
+		Args:
+			FieldWidth (str(eightBits|sixteenBits|thirtyTwoBits|twentyFourBits)): Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
+			Offset (number): Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
+			OneToOneMesh (bool): If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
+			ProtocolOffset (str): Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
+			TrackBy (list(str)): Specifies the tracking option by which the Flows of a Traffic Item are tracked.
+			Values (list(str)): Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableProtocolOffsets=None, AvailableTrackBy=None, AvailableTrackByInfos=None, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
 		"""Finds and retrieves tracking data from the server.
 

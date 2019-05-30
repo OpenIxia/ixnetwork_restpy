@@ -249,6 +249,34 @@ class Globals(Base):
 	def Version(self, value):
 		self._set_attribute('version', value)
 
+	def update(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
+		"""Updates a child instance of globals on the server.
+
+		Args:
+			Comments (str): User-specified comments for reporting
+			EnableAbortIfLinkDown (bool): Controls how long to wait for an up link state before aborting the test.
+			EnableCapture (bool): Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
+			EnableCheckLinkState (bool): Initiates a link state check of the port before a test is run.
+			EnableGenerateReportAfterRun (bool): When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
+			EnableRebootCpu (bool): Reboots the port CPU before a test is run.
+			EnableSwitchToResult (bool): When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
+			EnableSwitchToStats (bool): If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
+			LinkDownTimeout (number): Select this option to simulate a port link being down.
+			MaxLinesToDisplay (number): The maximum number of lines to display.
+			OutputRootPath (str): This object holds the configurable output root path of IxNetwork for quick test.
+			ProductLabel (str): User-specified product label for reporting
+			SaveCaptureBeforeRun (bool): This command saves the current capture data to the specified directory before run.
+			SerialNumber (str): User-specified serial number for reporting
+			SleepTimeAfterReboot (number): If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
+			TitlePageComments (str): User-specified comments for title page
+			UseDefaultRootPath (bool): This object uses the default root path for quick test.
+			Version (str): User-specified version for reporting
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -130,6 +130,24 @@ class Lan(Base):
 	def VlanIncrement(self, value):
 		self._set_attribute('vlanIncrement', value)
 
+	def update(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+		"""Updates a child instance of lan on the server.
+
+		Args:
+			Enabled (bool): Enables the use of the STP LAN.
+			MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
+			MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
+			MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+			VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
+			VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
+			VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
 		"""Adds a new lan node on the server and retrieves it in this instance.
 

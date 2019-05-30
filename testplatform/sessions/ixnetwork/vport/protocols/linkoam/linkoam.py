@@ -68,6 +68,17 @@ class LinkOam(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of linkOam on the server.
+
+		Args:
+			Enabled (bool): If true, the Link OAM protocol is enabled.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

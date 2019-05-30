@@ -106,6 +106,22 @@ class NetTopologyTree(Base):
 	def UseTreeDepth(self, value):
 		self._set_attribute('useTreeDepth', value)
 
+	def update(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+		"""Updates a child instance of netTopologyTree on the server.
+
+		Args:
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LinkMultiplier (number): number of links between two nodes
+			MaxChildPerNode (number): Maximum children per node
+			Nodes (number): number of nodes
+			TreeDepth (number): Depth of the Tree, defined as length of path from root node to deepest node in the tree
+			UseTreeDepth (bool): Use Tree Depth
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
 		"""Adds a new netTopologyTree node on the server and retrieves it in this instance.
 

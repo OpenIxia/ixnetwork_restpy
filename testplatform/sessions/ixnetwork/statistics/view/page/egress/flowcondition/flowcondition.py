@@ -82,6 +82,20 @@ class FlowCondition(Base):
 	def Values(self, value):
 		self._set_attribute('values', value)
 
+	def update(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+		"""Updates a child instance of flowCondition on the server.
+
+		Args:
+			Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
+			ShowFirstMatchingSet (bool): If true, displays the first matching set.
+			TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+			Values (list(number)): Value to be matched for the condition.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
 		"""Adds a new flowCondition node on the server and retrieves it in this instance.
 

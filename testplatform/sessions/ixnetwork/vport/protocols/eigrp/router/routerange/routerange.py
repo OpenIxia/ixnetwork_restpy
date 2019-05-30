@@ -286,6 +286,37 @@ class RouteRange(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+		"""Updates a child instance of routeRange on the server.
+
+		Args:
+			Bandwidth (number): The minimum amount of bandwidth available on this link, in Kbps. The valid range is 1 to 4294967295. (default = 10,000 Kbps)
+			Delay (number): The total of delays on the path to the route/network, in microseconds. The valid range is 0 to 4294967295. (default = 0)
+			DestCount (number): (Available only if Packing is enabled.) If packing is enabled, it indicates the maximum number of destinations that can be packed into a single Internal/External TLV. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. The valid range is 0 to 255. (default = 90)
+			EnablePacking (bool): Enables packing of multiple destinations into a single Internal/External TLV. If disabled, only one destination will be packed into a single Internal/External TLV. (default = enabled)
+			Enabled (bool): Enables the route range. (default = disabled)
+			FirstRoute (str): The first route of the route range, in IPv4/IPv6 dotted decimal format. (default = 0.0.0.0)
+			Flag (str(externalRoute|candidateDefault)): (Available only for External route ranges.) The origin of the advertised route.
+			HopCount (number): The number of hops on the way to the destination address. The valid range is 0 to 255. (default = 0)
+			Load (number): The amount of load on the link. The valid range is 0 to 255. (default = 0)
+			Mask (number): The network mask width for the route range (in bits). The valid range is from 0 to 32 bits. (default = 24)
+			Metric (number): (Available only for External route ranges.) The EIGRP vector metric for the cost of the path to this route/network. The valid range is 1 to 4294967295. (default = 1)
+			Mtu (number): The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
+			NextHop (str): The immediate next hop IP address on the way to the destination address, in IPv4/IPv6 dotted decimal format. (default = 0.0.0.0)
+			NomberOfRoutes (number): The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
+			NumberOfRoutes (number): The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
+			OriginatingAs (number): (Available only for External route ranges.) The external AS where this route was originated. The valid range is 1 to 4294967295. (default = 1)
+			ProtocolId (str(igrp|enhancedIgrp|static|rip|hello|ospf|isis|egp|bgp|idrp|connected)): (Available only for External route ranges.) The external protocol where the route was originated, if applicable.
+			Reliability (number): The reliability factor. The valid range is 0 to 255 (100% reliable). (default = 255)
+			RouteTag (number): (Available only for External route ranges.) An administrative tag applied to the route when it is redistributed between EIGRP and an external protocol, to prevent routing loops. Used as a route mapping filter. The valid range is 0 to 4294967295. (default = 0)
+			Source (str): (Available only for External route ranges.) The IPv4 address for the external source of the route information, in dotted decimal format. (default = 0.0.0.0)
+			Type (str(external|internal)): The type of route range: internal or external to the AS.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
 		"""Adds a new routeRange node on the server and retrieves it in this instance.
 

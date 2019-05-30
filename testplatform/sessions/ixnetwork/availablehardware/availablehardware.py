@@ -93,3 +93,15 @@ class AvailableHardware(Base):
 	@OffChassisHwM.setter
 	def OffChassisHwM(self, value):
 		self._set_attribute('offChassisHwM', value)
+
+	def update(self, IsOffChassis=None, OffChassisHwM=None):
+		"""Updates a child instance of availableHardware on the server.
+
+		Args:
+			IsOffChassis (bool): If true, the Hardware Manager is Off Chassis.
+			OffChassisHwM (str): Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

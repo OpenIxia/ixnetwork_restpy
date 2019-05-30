@@ -76,6 +76,21 @@ class Tag(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Enabled=None, Name=None):
+		"""Updates a child instance of tag on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Enabled (bool): Enables/disables tags
+			Name (str): specifies the name of the tag the entity will be part of
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, Name=None):
 		"""Adds a new tag node on the server and retrieves it in this instance.
 

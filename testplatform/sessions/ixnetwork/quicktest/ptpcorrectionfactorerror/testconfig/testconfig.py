@@ -249,6 +249,34 @@ class TestConfig(Base):
 	def UseExistingSetupRate(self, value):
 		self._set_attribute('useExistingSetupRate', value)
 
+	def update(self, CorrectionFactorMode=None, CorrectionFactorScale=None, Duration=None, EnableCorrectionFactorPassFail=None, MaxOutstanding=None, MeasuredResidenceTime=None, NumberCorrectionFactorPassFail=None, Numtrials=None, OffsetGraph=None, PathDelayGraphing=None, ProtocolItem=None, ResidenceTime=None, Runmode=None, SetupRate=None, StartTraffic=None, TeardownRate=None, TestConfiguration=None, UseExistingSetupRate=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			CorrectionFactorMode (str): Correction Factor mode
+			CorrectionFactorScale (str): Correction Factor Scale
+			Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+			EnableCorrectionFactorPassFail (str): If selected, a Pass/Fail criteria is applied to the Correction Factor Error test
+			MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+			MeasuredResidenceTime (str): The measured time taken by a packet to move from the ingress port to the egress port
+			NumberCorrectionFactorPassFail (number): Number of criteria used for Pass/Fail
+			Numtrials (number): The number of trials that can be run
+			OffsetGraph (str): Offset graphing
+			PathDelayGraphing (str): Graphing of path delay
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ResidenceTime (number): The time taken by a packet to move from the ingress port to the egress port
+			Runmode (str(duration|noframes)): Running mode used
+			SetupRate (number): The number of PTP connections to be initiated per second
+			StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+			TeardownRate (number): The number of PTP connections to tear down per second
+			TestConfiguration (str): Test configuration
+			UseExistingSetupRate (bool): The current setup rate value is used
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

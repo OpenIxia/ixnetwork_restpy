@@ -156,6 +156,25 @@ class Instructions(Base):
 	def TableId(self, value):
 		self._set_attribute('tableId', value)
 
+	def update(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+		"""Updates a child instance of instructions on the server.
+
+		Args:
+			Experimenter (number): The unique identifier for the Experimenter.
+			ExperimenterData (str): The experimenter data field value.
+			ExperimenterDataLength (number): The Value of the data length of the Experimenter. The default value is 1.
+			InstructionType (str(meter|applyActions|clearActions|experimenter|goToTable|writeActions|writeMetadata)): The instruction type associated with this Flow Range.
+			Metadata (str): Value of the metadata field.
+			MetadataInHex (str): Specify the table metadata value in hexadecimal format.
+			MetadataMask (str): Specify the metadata bitmask value.
+			MeterId (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
+			TableId (number): The ID of the table to go to.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
 		"""Adds a new instructions node on the server and retrieves it in this instance.
 

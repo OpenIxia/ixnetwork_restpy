@@ -110,6 +110,20 @@ class PtpCorrectionFactorError(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
+		"""Updates a child instance of ptpCorrectionFactorError on the server.
+
+		Args:
+			ForceApplyQTConfig (bool): Apply QT config
+			InputParameters (str): Input Parameters
+			Mode (str(existingMode|newMode)): Test mode
+			Name (str): Test name
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
 		"""Adds a new ptpCorrectionFactorError node on the server and retrieves it in this instance.
 

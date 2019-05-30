@@ -234,6 +234,28 @@ class DestinationRange(Base):
 	def P2mpId(self, value):
 		self._set_attribute('p2mpId', value)
 
+	def update(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
+		"""Updates a child instance of destinationRange on the server.
+
+		Args:
+			Behavior (str(ingress|egress)): Indicates whether the destination range corresponds to an Ingress or Egress router.
+			EmulationType (str(reserved|rsvpTe|rsvpTeP2mP)): The emulation type selected, the values being RSVP-TE, RSVP-TE P2MP.
+			EnableReplyingLspPing (bool): NOT DEFINED
+			Enabled (bool): Enables or disables the use of the destination range.
+			IpAddressFrom (str): The IP address of the first destination router.
+			IpCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+			IsConnectedIpAppended (bool): Append the connected IP as RRO/SRRO subobject at the end of the RRo/SRRO list in the packet.
+			IsHeadIpPrepended (bool): If true, prepend the tunnel head IP as a RRO/SERO subobject at the beginning of the RRO/SRRO list in the packet.
+			IsLeafIpPrepended (bool): If true, prepend the tunnel leaf IP as a RRO/SRRO subobject at the beginning of the RRO/SRRO list in the packet.
+			IsSendingAsRro (bool): If true, send this as a RRO. True only if emulation type is RSVP-TE P2MP.
+			IsSendingAsSrro (bool): If true, send this as a SRRO. Note that both Send as RRO and Send as SRRO can be selected at the same time if so required by the user. True only if emulation type is RSVP-TE P2MP.
+			P2mpId (str): The P2MP id represented in IP address format.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
 		"""Adds a new destinationRange node on the server and retrieves it in this instance.
 

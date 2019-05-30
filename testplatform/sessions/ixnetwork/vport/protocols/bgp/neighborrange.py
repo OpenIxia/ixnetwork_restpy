@@ -856,6 +856,69 @@ class NeighborRange(Base):
 	def Vpls(self, value):
 		self._set_attribute('vpls', value)
 
+	def update(self, AsNumMode=None, Authentication=None, BfdModeOfOperation=None, BgpId=None, DutIpAddress=None, Enable4ByteAsNum=None, EnableActAsRestarted=None, EnableBfdRegistration=None, EnableBgpId=None, EnableDiscardIxiaGeneratedRoutes=None, EnableGracefulRestart=None, EnableLinkFlap=None, EnableNextHop=None, EnableOptionalParameters=None, EnableSendIxiaSignatureWithRoutes=None, EnableStaggeredStart=None, Enabled=None, Evpn=None, EvpnNextHopCount=None, HoldTimer=None, InterfaceStartIndex=None, InterfaceType=None, Interfaces=None, IpV4Mdt=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastVpn=None, IpV6Unicast=None, IsAsbr=None, LinkFlapDownTime=None, LinkFlapUpTime=None, LocalAsNumber=None, LocalIpAddress=None, Md5Key=None, NextHop=None, NumUpdatesPerIteration=None, RangeCount=None, RemoteAsNumber=None, RestartTime=None, StaggeredStartPeriod=None, StaleTime=None, TcpWindowSize=None, TrafficGroupId=None, TtlValue=None, Type=None, UpdateInterval=None, Vpls=None):
+		"""Updates a child instance of neighborRange on the server.
+
+		Args:
+			AsNumMode (str(fixed|increment)): (External only) Indicates that each new session uses a different AS number.
+			Authentication (str(null|md5)): Select the type of cryptographic authentication to be used for the BGP peers in this peer range.
+			BfdModeOfOperation (str(multiHop|singleHop)): Indicates whether to use a single-hop or a multi-hop mode of operation for the BFD session being created with a BGP peer.
+			BgpId (str): The BGP ID used in OPEN messages.
+			DutIpAddress (str): The IP address of the DUT router.
+			Enable4ByteAsNum (bool): Enables the 4-byte Autonomous System (AS) number of the DUT/SUT.
+			EnableActAsRestarted (bool): Controls the operation of BGP Graceful Restart.
+			EnableBfdRegistration (bool): Enables the BFD registration.
+			EnableBgpId (bool): The BGP ID used in OPEN messages.
+			EnableDiscardIxiaGeneratedRoutes (bool): If true, enables the discard of Ixia generated routes
+			EnableGracefulRestart (bool): Controls the operation of BGP Graceful Restart.
+			EnableLinkFlap (bool): If true, enables link flap
+			EnableNextHop (bool): Used for IPv4 traffic. Controls the use of the NEXT_HOP attribute. (default = disabled)
+			EnableOptionalParameters (bool): Controls how an OPEN is conducted in the presence of optional parameters.
+			EnableSendIxiaSignatureWithRoutes (bool): If true, enables sending of Ixia signature with routes
+			EnableStaggeredStart (bool): Controls the staggering and period of initial start messages.
+			Enabled (bool): Enables or disables simulation of the router.
+			Evpn (bool): If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
+			EvpnNextHopCount (number): It is used to replicate the traffic among the available Next Hops in Ingress Replication mode. Default value is 1. Minimum value is 1 and maximum value is 255.
+			HoldTimer (number): The period of time between KEEP-ALIVE messages sent to the DUT.
+			InterfaceStartIndex (number): The assigned protocol interface ID for this SM interface.
+			InterfaceType (str): The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
+			IpV4Mdt (bool): Enables the use of this Data MDT range on the simulated interface.
+			IpV4Mpls (bool): If enabled, this BGP router/peer supports the IPv4 MPLS address family.
+			IpV4MplsVpn (bool): If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
+			IpV4Multicast (bool): If enabled, this BGP router/peer supports the IPv4 multicast address family.
+			IpV4MulticastVpn (bool): If true, this BGP router/peer supports the IPv4 Multicast/VPN address family.
+			IpV4Unicast (bool): If enabled, this BGP router/peer supports the IPv4 unicast address family.
+			IpV6Mpls (bool): If enabled, this BGP router/peer supports the IPv6 MPLS address family.
+			IpV6MplsVpn (bool): If enabled, this BGP router/peer supports the IPv6 MPLS/VPN address family.
+			IpV6Multicast (bool): If enabled, this BGP router/peer supports the IPv6 multicast address family.
+			IpV6MulticastVpn (bool): If true, this BGP router/peer supports the IPv6 Multicast/VPN address family.
+			IpV6Unicast (bool): If enabled, this BGP router/peer supports the IPv6 unicast address family.
+			IsAsbr (bool): If true, it is ASBR
+			LinkFlapDownTime (number): Signifies the link flap down time
+			LinkFlapUpTime (number): Signifies the link flap up time
+			LocalAsNumber (str): (External only) The first AS Num assigned to the simulated neighbor router. May be set for external neighbors on any port type, but only Linux-based ports may set this for internal neighbors.
+			LocalIpAddress (str): The first IP address for the simulated neighbor routers and the number of routers.
+			Md5Key (str): (Active only when MD5 is selected in the Authentication Type field.) (String) Enter a value to be used as a secret MD5 Key for authentication. The maximum length allowed is 255 characters.One MD5 key can be configured per BGP peer range. Sessions from all peers in this peer range will use this MD5 key if MD5 is enabled.
+			NextHop (str): If enableNextHop is true, this is the IPv4 address used as the next hop. (default = 0.0.0.0)
+			NumUpdatesPerIteration (number): When the protocol server operates on older ports that do not possess a local processor, this tuning parameter controls how many UPDATE messages will be sent at a time. When many routers are being simulated on such a port, changing this value may help to increase or decrease performance. (default = 1)
+			RangeCount (number): The number of routers.
+			RemoteAsNumber (number): The remote Autonomous System number associated with the routers.
+			RestartTime (number): Controls the operation of BGP Graceful Restart.
+			StaggeredStartPeriod (number): Controls the staggering and period of initial start messages.
+			StaleTime (number): Controls the operation of BGP Graceful Restart.
+			TcpWindowSize (number): (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			TtlValue (number): The limited number of iterations that a unit of data can experience before the data is discarded.
+			Type (str(internal|external)): Indicates that the neighbor is either an internal or external router.
+			UpdateInterval (number): The frequency with which UPDATE messages are sent to the DUT.
+			Vpls (bool): If enabled, this BGP router/peer supports BGP VPLS per the Kompella draft.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AsNumMode=None, Authentication=None, BfdModeOfOperation=None, BgpId=None, DutIpAddress=None, Enable4ByteAsNum=None, EnableActAsRestarted=None, EnableBfdRegistration=None, EnableBgpId=None, EnableDiscardIxiaGeneratedRoutes=None, EnableGracefulRestart=None, EnableLinkFlap=None, EnableNextHop=None, EnableOptionalParameters=None, EnableSendIxiaSignatureWithRoutes=None, EnableStaggeredStart=None, Enabled=None, Evpn=None, EvpnNextHopCount=None, HoldTimer=None, InterfaceStartIndex=None, InterfaceType=None, Interfaces=None, IpV4Mdt=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastVpn=None, IpV6Unicast=None, IsAsbr=None, LinkFlapDownTime=None, LinkFlapUpTime=None, LocalAsNumber=None, LocalIpAddress=None, Md5Key=None, NextHop=None, NumUpdatesPerIteration=None, RangeCount=None, RemoteAsNumber=None, RestartTime=None, StaggeredStartPeriod=None, StaleTime=None, TcpWindowSize=None, TrafficGroupId=None, TtlValue=None, Type=None, UpdateInterval=None, Vpls=None):
 		"""Adds a new neighborRange node on the server and retrieves it in this instance.
 

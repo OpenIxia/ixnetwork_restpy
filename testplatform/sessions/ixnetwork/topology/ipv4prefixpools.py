@@ -376,6 +376,22 @@ class Ipv4PrefixPools(Base):
 		"""
 		return self._get_attribute('prefixLength')
 
+	def update(self, AddrStepSupported=None, Name=None, NumberOfAddresses=None):
+		"""Updates a child instance of ipv4PrefixPools on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddrStepSupported=None, Name=None, NumberOfAddresses=None):
 		"""Adds a new ipv4PrefixPools node on the server and retrieves it in this instance.
 

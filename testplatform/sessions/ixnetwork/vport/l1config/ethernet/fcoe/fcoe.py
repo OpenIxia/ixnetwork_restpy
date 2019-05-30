@@ -104,3 +104,19 @@ class Fcoe(Base):
 	@SupportDataCenterMode.setter
 	def SupportDataCenterMode(self, value):
 		self._set_attribute('supportDataCenterMode', value)
+
+	def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+		"""Updates a child instance of fcoe on the server.
+
+		Args:
+			EnablePFCPauseDelay (bool): If true, PFC pause delay is enabled.
+			FlowControlType (str(ieee802.1Qbb|ieee802.3x)): The type of flow control to be selected.
+			PfcPauseDelay (number): If selected, enables to increase the number of frames that is sent when a pause frame is received.
+			PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
+			PriorityGroupSize (str(priorityGroupSize-4|priorityGroupSize-8)): The maximum size of a Priority Group.
+			SupportDataCenterMode (bool): If true, this mode automatically sets Transmit Mode to Interleaved Streams.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

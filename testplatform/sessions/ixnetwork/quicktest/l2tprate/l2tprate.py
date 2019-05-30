@@ -98,6 +98,19 @@ class L2tpRate(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, InputParameters=None, Mode=None, Name=None):
+		"""Updates a child instance of l2tpRate on the server.
+
+		Args:
+			InputParameters (str): Input Parameters
+			Mode (str(existingMode|newMode)): Test mode
+			Name (str): Test name
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, InputParameters=None, Mode=None, Name=None):
 		"""Adds a new l2tpRate node on the server and retrieves it in this instance.
 

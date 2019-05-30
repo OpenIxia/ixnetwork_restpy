@@ -319,6 +319,39 @@ class Link(Base):
 		"""
 		return self._get_attribute('updateRequired')
 
+	def update(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
+		"""Updates a child instance of link on the server.
+
+		Args:
+			ActorKey (number): The operational Key value assigned to the port by the Actor. This is a 2 byte field with a default of 1. Minimum value is 0, maximum value is 65535.
+			ActorPortNumber (number): The port number assigned to the port by the Actor (the System sending the PDU). It is a 2 byte field with a default of 1. Min: 0, Max: 65535.
+			ActorPortPriority (number): This field specifies the port priority of the link Actor. It is a 2 byte field, with a default or 1. Min: 0, Max: 65535.
+			ActorSystemId (str): This field specifies the system identifier for the link Actor. It is a 6 byte field, with a default of 00-00-00-00-00-01. Min: 00-00-00-00-00-00, Max: FF-FF-FF-FF-FF-FF.
+			ActorSystemPriority (number): This field specifies the system priority of the link Actor. It is a 2 byte field, with a default or 1. Min: 0, Max: 65535.
+			AdministrativeKey (number): This field controls the aggregation of ports of the same system with similar Actor Key.
+			AggregationFlagState (str(disable|auto)): If enabled, sets the port status to automatically allow aggregation.
+			AutoPickPortMac (bool): If true the source MAC is the interface MAC address.
+			CollectingFlag (bool): If true, the actor port state Collecting is set to true based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent
+			CollectorMaxDelay (number): The maximum time in microseconds that the Frame Collector may delay the delivery of a frame received from an Aggregator to its MAC client. This is a 2 byte field with a default 0. Min: 0, Max: 65535.
+			DistributingFlag (bool): If true, the actor port state Distributing is set to true based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent.
+			Enabled (bool): If true, the link is enabled.
+			InterMarkerPduDelay (str): The time gap in seconds between two consecutive Marker PDUs when transmitted periodically.
+			LacpActivity (str(active|passive)): Sets the value of LACPs Actor activity, either passive or active.
+			LacpTimeout (number): This timer is used to detect whether received protocol information has expired. The user can provide a custom value from 1 to 65535.
+			LacpduPeriodicTimeInterval (number): This field defines how frequently LACPDUs are sent to the link partner. The user can provide a custom values from 1 to 65535, in seconds
+			MarkerRequestMode (str(fixed|random)): Sets the marker request mode for the Actor link.In either case, the mode parameters are specified in Marker Request Frequency.
+			MarkerResponseWaitTime (number): The number of seconds to wait for Marker Response after sending a Marker Request. After this time, the Marker Response Timeout Count is incremented. If a marker response does arrive for the request after this timeout, it is not considered as a legitimate response.
+			PortMac (str): specifies the port MAC address.
+			SendMarkerRequestOnLagChange (bool): If true, this checkbox causes LACP to send a Marker PDU on the following situations: 1) System Priority has been modified; 2) System Id has been modified; 3) Actor Key has been modified; 4) Port Number/Port Priority has been modified while we are in Individual mode.
+			SendPeriodicMarkerRequest (bool): If true, Marker Request PDUs are periodically after both actor and partner are IN SYNC and our state is aggregated. The moment we come out of this state, the periodic sending of Marker will be stopped.
+			SupportRespondingToMarker (bool): If true, LACP doesn't respond to MARKER request PDUs from the partner.
+			SyncFlag (str(disable|auto)): If enabled, the actor port state is set to True based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
 		"""Adds a new link node on the server and retrieves it in this instance.
 

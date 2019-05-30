@@ -296,6 +296,21 @@ class OfSwitchPorts(Base):
 		"""
 		return self._get_attribute('transmissionDelay')
 
+	def update(self, Name=None, NumQueueRange=None):
+		"""Updates a child instance of ofSwitchPorts on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumQueueRange (number): Specify the number of Queue ranges to be configured for this switch port
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, EtherAddr=None, ForcedConnectionType=None, MaxSpeed=None, PeerAdvertisedFeatures=None, PortIndex=None, PortLivenessSupport=None, PortName=None, PortNumber=None, RemotePortIndex=None, RemoteSwitch=None, RemoteSwitchIndex=None, RemoteSwitchPort=None, State=None, SupportedFeatures=None, SwitchIndex=None, TransmissionDelay=None):
 		"""Base class infrastructure that gets a list of ofSwitchPorts device ids encapsulated by this object.
 

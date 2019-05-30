@@ -1072,6 +1072,93 @@ class LearnedInformation(Base):
 	def PwStatusFaultTransmitInterval(self, value):
 		self._set_attribute('pwStatusFaultTransmitInterval', value)
 
+	def update(self, AlarmTrigger=None, AlarmType=None, ApsTriggerType=None, CccvPauseTriggerOption=None, CccvResumeTriggerOption=None, ChangeSessionParameters=None, ClearMisconnectivityDefect=None, CounterType=None, DmInterval=None, DmIterations=None, DmMode=None, DmPadLen=None, DmRequestPaddedReply=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableAlarm=None, EnableAlarmAis=None, EnableAlarmFastClear=None, EnableAlarmLck=None, EnableAlarmSetLdi=None, EnableApsTrigger=None, EnableCccvPause=None, EnableCccvResume=None, EnableDmTrigger=None, EnableLmTrigger=None, EnableLspPing=None, EnableLspPingFecStackValidation=None, EnableLspPingValidateReversePath=None, EnableLspTraceRoute=None, EnableLspTraceRouteFecStackValidation=None, EnablePwStatusClear=None, EnablePwStatusFault=None, LastDmResponseTimeout=None, LastLmResponseTimeout=None, LmInitialRxValue=None, LmInitialTxValue=None, LmInterval=None, LmIterations=None, LmMode=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspPingEncapsulationType=None, LspPingResponseTimeout=None, LspPingTtlValue=None, LspTraceRouteEncapsulationType=None, LspTraceRouteResponseTimeout=None, LspTraceRouteTtlLimit=None, MinRxInterval=None, MinTxInterval=None, MisconnectivityDefect=None, MisconnectivityDefectOption=None, OnDemandCvDownstreamAddressType=None, OnDemandCvDownstreamIpAddress=None, OnDemandCvDsIflag=None, OnDemandCvDsNflag=None, OnDemandCvEgressIfNumber=None, OnDemandCvIncludeDestinationIdentifierTlv=None, OnDemandCvIncludeDetailedDownstreamMappingTlv=None, OnDemandCvIncludeDownstreamMappingTlv=None, OnDemandCvIncludePadTlv=None, OnDemandCvIncludeReplyTosByteTlv=None, OnDemandCvIncludeSourceIdentifierTlv=None, OnDemandCvIngressIfNumber=None, OnDemandCvNumberedDownstreamInterfaceAddress=None, OnDemandCvPadTlvFirstOctet=None, OnDemandCvPadTlvLength=None, OnDemandCvTosByte=None, OnDemandCvUnnumberedDownstreamInterfaceAddress=None, Periodicity=None, PwStatusClearLabelTtl=None, PwStatusClearTransmitInterval=None, PwStatusCode=None, PwStatusFaultLabelTtl=None, PwStatusFaultTransmitInterval=None):
+		"""Updates a child instance of learnedInformation on the server.
+
+		Args:
+			AlarmTrigger (str(clear|start)): This signifies the alarm trigger. Possible values include Clear and Start.
+			AlarmType (str(ietf|y1731)): This signifies the alarm type. Possible values include IETF and Y.1731.
+			ApsTriggerType (str(clear|forcedSwitch|manualSwitchToProtect|manualSwitchToWorking|lockout|exercise|freeze)): This signifies the Trigger type. Possible values include Clear, Exercise, Forced Switch, Freeze, Lockout, Manual Switch To Protect and Manual Switch To Working.
+			CccvPauseTriggerOption (str(tx|rx|txRx)): This signifies the cccv pause trigger option. Possible values include TX, RX and TXRX.
+			CccvResumeTriggerOption (str(tx|rx|txRx)): This signifies the cccv resume trigger option. Possible values include Tx, Rx and TxRx.
+			ChangeSessionParameters (bool): This specifies the minimum receive interval of cc messages in millisecond, at the source side that the user intends to set on the fly.
+			ClearMisconnectivityDefect (bool): If set true all the misconnectivity defects that have been triggered earlier with any type gets cleared.
+			CounterType (str(32Bit|64Bit)): This signifies the LM Counter Type. Possible values include 32 Bit (default) and 64 Bit.
+			DmInterval (number): This signifies the DM interval in milliseconds.
+			DmIterations (number): This signifies the total number of DM queries to be sent.
+			DmMode (str(noResponseExpected|responseExpected)): This signifies the DM mode. The possible values include Response Expected and No Response Expected.
+			DmPadLen (number): This signifies the DM pad length.
+			DmRequestPaddedReply (bool): This signifies the DM request as a padded reply.
+			DmTimeFormat (str(ieee|ntp)): This signifies the DM time format. The possible values include IEEE and NTP.
+			DmTrafficClass (number): This signifies the DM traffic class value.
+			DmType (str(ietf|y1731)): This signifies the DM Type. Possible values include IETF and Y.1731.
+			EnableAlarm (bool): This signifies the enablement of the Alarm and the fields under it.
+			EnableAlarmAis (bool): This signifies the enablement of the Alarm AIS.
+			EnableAlarmFastClear (bool): Clears the Alarm State in 10 seconds
+			EnableAlarmLck (bool): This signifies the enablement of the Alarm lck.
+			EnableAlarmSetLdi (bool): This signifies the enablement of the Alarm Set LDI.
+			EnableApsTrigger (bool): This signifies the enablement of APS trigger.
+			EnableCccvPause (bool): This signifies the enabling of CCCV Pause.
+			EnableCccvResume (bool): This signifies the enablement of CCCV Resume.
+			EnableDmTrigger (bool): This signifies the enablement of the DM trigger.
+			EnableLmTrigger (bool): This signifies the enablement of the LM trigger.
+			EnableLspPing (bool): This signifies the enablement of the LSP Ping.
+			EnableLspPingFecStackValidation (bool): This signifies the enablement of the FEC Stack Validation.
+			EnableLspPingValidateReversePath (bool): If true validate reverse path bit is set in lsp ping message.
+			EnableLspTraceRoute (bool): This signifies the enablement of the lsp traceroute.
+			EnableLspTraceRouteFecStackValidation (bool): This signifies the enablement of the FEC Stack Validation.
+			EnablePwStatusClear (bool): This signifies the enablement of the PW Status Clear and the fields under it.
+			EnablePwStatusFault (bool): This signifies the enablement of the PW Status Fault.
+			LastDmResponseTimeout (number): This signifies the last DM Response Timeout.
+			LastLmResponseTimeout (number): This signifies the last LM response timeout.
+			LmInitialRxValue (number): This signifies the LM Initial Rx value.
+			LmInitialTxValue (number): This signifies the LM Initial Tx value.
+			LmInterval (number): This signifies the LM interval in milliseconds.
+			LmIterations (number): This signifies the number of LM queries to be sent.
+			LmMode (str(responseExpected|noResponseExpected)): This signifies the LM mode. Possible values include Response Expected and No Response Expected.
+			LmRxStep (number): This signifies the LM Rx step value.
+			LmTrafficClass (number): This signifies the LM Traffic Class.
+			LmTxStep (number): This signifies the LM Tx Step value.
+			LmType (str(ietf|y1731)): This signifies the LM type. The possible values include IETF and Y.1731.
+			LspPingEncapsulationType (str(GAch|UDP over IP over GAch)): This signifies the encapsulation type with which the lsp ping request message will be sent out. The possible values include UDP-IP-GAch and GAch.
+			LspPingResponseTimeout (number): This signifies the response timeout in milliseconds.
+			LspPingTtlValue (number): This signifies the LSP Ping Ttl value.
+			LspTraceRouteEncapsulationType (str(GAch|UDP over IP over GAch)): This signifies the encapsulation type with which the Trace route request message will be sen out. The possible values include UDP-IP-GAch and GAch.
+			LspTraceRouteResponseTimeout (number): This signifies the response timeout in milliseconds.
+			LspTraceRouteTtlLimit (number): This signifies the max TTL till which the Echo Request will be sent out as part of trace route process.
+			MinRxInterval (str(10|100|1000|10000|3.33|60000|600000)): This signifies the minimum receive interval of cc messages in millisecond, at the source side that the user intends to set on the fly.
+			MinTxInterval (str(10|100|1000|10000|3.33|60000|600000)): This signifies the learned information minimum transmit interval, in milliseconds. This specifies the minimum transmit interval of cc messages in millisecond, at the source side that the user intends to set on the fly.
+			MisconnectivityDefect (bool): To enable misconnectivity defect on the fly by changing LSP/PW MEP/MEG Id parameter or Your Discriminator on the source side.
+			MisconnectivityDefectOption (str(unexpectedMepId|unexpectedYourDiscriminator)): To enable misconnectivity defect on the fly by changing LSP/PW MEP/MEG Id parameter or Your Discriminator on the source side.
+			OnDemandCvDownstreamAddressType (str(ipv4Numbered|ipv4Unnumbered|nonIp)): This signifies the Address Type of the Downstream or Detailed Downstream Mapping TLV. This can be of three types.
+			OnDemandCvDownstreamIpAddress (str): This signifies the inclusion of the IP address in Downstream or Detailed Downstream Mapping TLV. This takes input in ip address format.
+			OnDemandCvDsIflag (bool): This signifies the setting of I bit in the DS Flag of Downstream or Detailed Downstream Mapping TLV.
+			OnDemandCvDsNflag (bool): If set true, N bit is set in the DS Flag of Downstream or Detailed Downstream Mapping TLV.
+			OnDemandCvEgressIfNumber (number): This signifies the Egress If Number, if address type of Downstream or Detailed Downstream Mapping TLV is set to nonIP.
+			OnDemandCvIncludeDestinationIdentifierTlv (bool): If channel type is set to GAch, this signifies the inclusion of Destination Identifier TLV in the On Demand CV message. Possible values are true or false.
+			OnDemandCvIncludeDetailedDownstreamMappingTlv (bool): This signifies the inclusion of the Detailed Downstream Mapping TLV in on demand cv message. Possible values are true or false.
+			OnDemandCvIncludeDownstreamMappingTlv (bool): This signifies the inclusion of Downstream Mapping TLV in on demand cv messages.
+			OnDemandCvIncludePadTlv (bool): This signifies the inclusion of Pad TLV in on demand cv messages (ping or traceroute).
+			OnDemandCvIncludeReplyTosByteTlv (bool): This signifies the inclusion of Reply Tos Byte TLV in on demand cv messages, if channel type is configured ip-udp-gach.
+			OnDemandCvIncludeSourceIdentifierTlv (bool): If channel type is set to GAch, this signifies the inclusion of Source Identifier TLV in the On Demand CV message. Possible values are true or false.
+			OnDemandCvIngressIfNumber (number): This signifies the Ingress If Number, if address type of Downstream or Detailed Downstream Mapping TLV is set to nonIP.
+			OnDemandCvNumberedDownstreamInterfaceAddress (str): If the address type of Downstream Address TLV is set to ipv4Numbered, it signifies the numbered Interface Address. This takes value in ip address format.
+			OnDemandCvPadTlvFirstOctet (str(drop|copy)): This signifies the value of first octet of Pad TLV. The possible values are copy or drop.
+			OnDemandCvPadTlvLength (number): This signifies the inclusion of Pad TLV length in On Demand CV message.
+			OnDemandCvTosByte (number): If channel type is set ip-udp-Gach, this signifies the value of Tos Byte field within Reply TOS Byte TLV, included in on demand cv messages.
+			OnDemandCvUnnumberedDownstreamInterfaceAddress (number): If the address type of Downstream Address TLV is set to ipv4Unnumbered, this signifies the unnumbered Interface Address. This takes value in integer format. The max value can be 4294967295.
+			Periodicity (number): This signifies the periodicity of the alarm.
+			PwStatusClearLabelTtl (number): This signifies the PW status clear label Ttl.
+			PwStatusClearTransmitInterval (number): This signifies the transmit interval in seconds.
+			PwStatusCode (number): This signifies the selecting of the relevant option from the drop-down on the right hand side.
+			PwStatusFaultLabelTtl (number): This signifies the TTL value to be set in the PW label header while sending out PW Status message.
+			PwStatusFaultTransmitInterval (number): This signifies the PW Status Fault Transmit Interval in seconds.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def ClearRecordsForTrigger(self):
 		"""Executes the clearRecordsForTrigger operation on the server.
 

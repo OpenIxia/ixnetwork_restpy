@@ -104,6 +104,20 @@ class OfTopologyLearnedInformation(Base):
 	def LldpResponseTimeOut(self, value):
 		self._set_attribute('lldpResponseTimeOut', value)
 
+	def update(self, EnableInstallLldpFlow=None, EnableRefreshLldpLearnedInformation=None, LldpDestinationMac=None, LldpResponseTimeOut=None):
+		"""Updates a child instance of ofTopologyLearnedInformation on the server.
+
+		Args:
+			EnableInstallLldpFlow (bool): If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
+			EnableRefreshLldpLearnedInformation (bool): If true, the LLDP trigger configuration parameters are available.
+			LldpDestinationMac (str): Indicates the Destination MAC Address for LLDP PacketOut.
+			LldpResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def RefreshOfTopology(self):
 		"""Executes the refreshOfTopology operation on the server.
 

@@ -104,6 +104,20 @@ class Ospf(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, EnableDrOrBdr=None, Enabled=None, FloodLinkStateUpdatesPerInterval=None, RateControlInterval=None):
+		"""Updates a child instance of ospf on the server.
+
+		Args:
+			EnableDrOrBdr (bool): If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
+			Enabled (bool): Enables this emulated OSPF router.
+			FloodLinkStateUpdatesPerInterval (number): Sets the number of Flood Link State Updates to be sent in each rate control interval.
+			RateControlInterval (number): Enables the option Rate Control Interval to define a value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

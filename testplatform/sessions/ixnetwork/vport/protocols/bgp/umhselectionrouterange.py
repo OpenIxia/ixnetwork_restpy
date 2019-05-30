@@ -694,6 +694,64 @@ class UmhSelectionRouteRange(Base):
 	def Step(self, value):
 		self._set_attribute('step', value)
 
+	def update(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+		"""Updates a child instance of umhSelectionRouteRange on the server.
+
+		Args:
+			AggregatorAsNumber (number): AS number associated with Aggregator ID in Aggregator attribute
+			AggregatorIdIncrementMode (str(fixed|increment)): Increment mode of aggregator ID
+			AggregatorIpAddress (str): IP address of the aggregator in Aggregator attribute
+			DistinguisherAsNumber (number): Distinguisher AS number
+			DistinguisherAsNumberStep (number): Increment step of Distinguisher AS number across the routes in route range
+			DistinguisherAsNumberStepAcrossVrfs (number): Increment step of Distinguisher AS number across the VRFs in VRF range
+			DistinguisherAssignedNumber (number): Distinguisher assigned number
+			DistinguisherAssignedNumberStep (number): Increment step of distinguisher assigned number across routes in route range
+			DistinguisherAssignedNumberStepAcrossVrfs (number): Increment step of distinguisher assigned number across VRFs in VRF range
+			DistinguisherCount (number): Number of times increment step will be used ( default = 1 )
+			DistinguisherCountPerVrf (number): Number of times increment step will be used per VRF
+			DistinguisherIpAddress (str): Distinguisher IP address
+			DistinguisherIpAddressStep (str): Increment step of distinguisher IP address across routes in route range
+			DistinguisherIpAddressStepAcrossVrfs (str): Increment step of distinguisher IP address across VRFs in VRF range
+			DistinguisherMode (str(global|local)): Specifies which part of the route distinguisher you want to increment.
+			DistinguisherStep (number): The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
+			DistinguisherType (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+			EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+			EnableAsPath (bool): Enables the generation of AS Path related items.
+			EnableAtomicAggregator (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+			EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+			EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+			EnableGenerateUniqueRoutes (bool): When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
+			EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+			EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+			EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+			EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+			EnableOriginator (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+			EnableUseTraditionalNlri (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
+			Enabled (bool): Enables the UMH route range.
+			FirstRoute (str): First route in route range
+			IncludeSourceAsExtendedCommunityPresent (bool): If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
+			IncludeVrfRouteImportExtendedCommunityPresent (bool): Defines the route target extended community.
+			IpType (str(ipAny|ipv4|ipv6)): The type of IP address in nextworkAddress.
+			LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+			MaskWidth (number): Mask width of route range
+			MaskWidthTo (number): mask width of last route range
+			Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+			NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+			NextHopMode (str(nextHopIncrement|fixed|incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+			NextHopSetMode (str(sameAsLocalIp|setManually)): Indicates now to set the next hop IP address.
+			OriginProtocol (str(igp|egp|incomplete)): An indication of where the route entry originated.
+			OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+			PackingFrom (number): Initial number of route packed in one BGP update
+			PackingTo (number): Final number of routes packed in one BGP update
+			RouteCountPerVrfs (number): Number of route per VRF
+			RouteStepAcrossVrfs (str): The route increment value across VRFs.
+			Step (number): step
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
 		"""Adds a new umhSelectionRouteRange node on the server and retrieves it in this instance.
 

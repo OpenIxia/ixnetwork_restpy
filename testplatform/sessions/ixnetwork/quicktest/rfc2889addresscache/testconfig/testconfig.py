@@ -597,6 +597,63 @@ class TestConfig(Base):
 	def TxDelay(self, value):
 		self._set_attribute('txDelay', value)
 
+	def update(self, AddrRateNumFrames=None, AddrRateValidationFpsRate=None, AddrRateValidationRate=None, AddrRateValidationRateUnit=None, AddressCachePassCriteriaMode=None, AddressRatePassFailValue=None, Age=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, EnableAddressRatePassFail=None, EnableDataIntegrity=None, EnableDropLink=None, EnableMinFrameSize=None, EnforceBidirectional=None, FrameSizeMode=None, FramesizeList=None, Gap=None, InitialAddressNum=None, InitialBinaryLoadRate=None, LoadType=None, LoadUnit=None, MapType=None, MaxBinaryLoadRate=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinAddressNum=None, MinBinaryLoadRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortDownTime=None, ProtocolItem=None, Rfc2889ordering=None, ShowDetailedBinaryResults=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, Tablesize=None, TxDelay=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			AddrRateNumFrames (number): The number of addresses that are to be used for each port in the current configuration.
+			AddrRateValidationFpsRate (str): The rate at which validation frames are sent.
+			AddrRateValidationRate (number): The number of validation frames that IxNetwork sends for each address.
+			AddrRateValidationRateUnit (str(fps|percentMaxRate)): The unit of rate at which validation frames are sent.
+			AddressCachePassCriteriaMode (str): Signifies the address cache pass criteria mode.
+			AddressRatePassFailValue (number): Signifies the address pass and fail rate value.
+			Age (number): New table size for each retry.
+			BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+			BinaryBackoff (number): Specifies the percentage of binary backoff.
+			BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real ratetransmission in two consecutive iterations, expressed as a percentage, iscompared with the resolution value. When the difference is smaller than thevalue specified for the resolution, the test stops.
+			BinarySearchType (str(linear)): Signifies the binary search type.
+			BinaryTolerance (number): The binary tolerance level.
+			CalculateLatency (bool): If true, the latency is calculated.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			EnableAddressRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableDropLink (bool): If true, allows to drop link.
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnforceBidirectional (bool): If true, uses bidirectional traffic mapping.
+			FrameSizeMode (str(custom|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FramesizeList (list(str)): List containing the frame sizes used in the test.
+			Gap (number): It signifies the gap value for the protocol.
+			InitialAddressNum (number): The initial number of addresses used in the test.
+			InitialBinaryLoadRate (number): Specifies the initial rate of the binary algorithm.
+			LoadType (str(binary)): The type of load used to modify the variable parameter value.
+			LoadUnit (str(fpsRate)): The load unit value.
+			MapType (str): The mapping type.
+			MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MinAddressNum (number): The minimum number of addresses used in the test.
+			MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			Numtrials (number): Defines how many times each frame size will be tested.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured.
+			PortDelayValue (number): Sets the port delay value.
+			PortDownTime (number): The time interval during the port is down.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			Rfc2889ordering (str(noOrdering|unchanged|val2889Ordering)): Enables ordering.
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			SupportedTrafficTypes (str): The traffic types supported.
+			Tablesize (number): The number of addresses that are to be used for the test.
+			TxDelay (number): Signifies the transmission delay time.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

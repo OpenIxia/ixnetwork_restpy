@@ -135,6 +135,20 @@ class PcRequestMatchCriteria(Base):
 		"""
 		return self._get_attribute('srcIpv6Address')
 
+	def update(self, Name=None):
+		"""Updates a child instance of pcRequestMatchCriteria on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, DestIpv4Address=None, DestIpv6Address=None, IpVersion=None, IroType=None, MatchEndPoints=None, SrcIpv4Address=None, SrcIpv6Address=None):
 		"""Base class infrastructure that gets a list of pcRequestMatchCriteria device ids encapsulated by this object.
 

@@ -236,3 +236,30 @@ class ApplyActions(Base):
 	@SetQueue.setter
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
+
+	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of applyActions on the server.
+
+		Args:
+			CopyTtlIn (bool): If selected, table supports Copy TTL In Apply Actions.
+			CopyTtlOut (bool): If selected, table supports Copy TTL Out Apply Actions.
+			DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL Apply Actions.
+			DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
+			Experimenter (bool): If selected, table supports Experimenter Write Actions.
+			Group (bool): If selected, table supports Group Write Actions.
+			Output (bool): If selected, table supports Output Apply Actions.
+			PopMpls (bool): If selected, table supports Pop MPLS Apply Actions.
+			PopPbb (bool): If selected, table supports Pop PBB Write Actions.
+			PopVlan (bool): If selected, table supports Pop VLAN Apply Actions.
+			PushMpls (bool): If selected, table supports Push MPLS Apply Actions.
+			PushPbb (bool): If selected, table supports Push PBB Write Actions.
+			PushVlan (bool): If selected, table supports Push VLAN Apply Actions.
+			SetField (bool): If selected, table supports Set Field Write Actions.
+			SetMplsTtl (bool): If selected, table supports Set MPLS TTL Apply Actions.
+			SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
+			SetQueue (bool): If selected, table supports Set Queue Write Actions.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

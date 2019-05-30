@@ -784,6 +784,61 @@ class ControllerTables(Base):
 	def WriteActionMissExperimenterId(self, value):
 		self._set_attribute('writeActionMissExperimenterId', value)
 
+	def update(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
+		"""Updates a child instance of controllerTables on the server.
+
+		Args:
+			ApplyActionExperimenterData (str): The data of the Apply Action Experimenter.
+			ApplyActionExperimenterDataLength (number): The data length of the Apply Action Experimenter.
+			ApplyActionExperimenterId (number): The unique identifier for Apply Action Experimenter.
+			ApplyActionMissExperimenterData (str): Experimenter Data The data of the apply action for table-miss of Controller Table Experimenter.
+			ApplyActionMissExperimenterDataLength (number): The data length of the Apply Action Miss Experimenter.
+			ApplyActionMissExperimenterId (number): The unique identifier for Apply Action Miss Experimenter.
+			Config (number): Specify the bitmap of OFPTC_* values. The default value is 0.
+			Enabled (bool): If selected, this table is used in this controller configuration.
+			ExperimenterData (str): The data of the Experimenter.
+			ExperimenterDataLength (number): The data length of the Experimenter for table-miss.
+			ExperimenterId (number): The unique identifier for the Experimenter.
+			ExperimenterMissData (str): The data of the Experimenter for table-miss.
+			ExperimenterMissDataLength (number): The data length of the Experimenter for table-miss.
+			ExperimenterMissId (number): The unique identifier for the Experimenter for table-miss.
+			ExperimenterMissType (number): The type of experimenter for table-miss.
+			ExperimenterType (number): The type of experimenter.
+			InstructionExperimenterData (str): The data of the Instruction Experimenter.
+			InstructionExperimenterDataLength (number): The data length of the experimental instruction of Controller Table Experimenter.
+			InstructionExperimenterId (number): The unique identifier for the Experimenter.
+			InstructionMissExperimenterData (str): The data of the Instruction Miss Experimenter.
+			InstructionMissExperimenterDataLength (number): It indicates the data length of the Instruction Miss Experimenter
+			InstructionMissExperimenterId (number): The unique identifier of Instruction Miss Experimenter.
+			MatchExperimenterData (str): The match data of the Controller Table Experimenter.
+			MatchExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+			MatchExperimenterField (number): The identifier for match experimenter of Controller Table Experimenter.
+			MatchExperimenterHasMask (bool): Mask If selected, the match experimenter hash mask field of Controller Table Experimenter is available.
+			MatchExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+			MaxEntries (number): Specify the maximum number of entries supported. The default value is 0.
+			MetadataMatch (str): Specify the bits of metadata table that can match. The default value is 0.
+			MetadataWrite (str): Specify the bits of metadata table that can write. The default value is 0.
+			NextTable (str): Next table property.
+			NextTableMiss (str): Next table for table-miss.
+			TableId (number): Specify the controller table identifier. Lower numbered tables are consulted first.
+			TableName (str): Specify the name of the controller table.
+			WildcardExperimenterData (str): The data of the wildcard experimenter of Controller Table Experimenter.
+			WildcardExperimenterDataLength (number): The data length of the wildcard experimenter of Controller Table Experimenter.
+			WildcardExperimenterField (number): The identifier for wildcard experimenter of Controller Table Experimenter.
+			WildcardExperimenterHasMask (bool): Mask If selected, the wildcard experimenter hash mask field of Controller Table Experimenter is available.
+			WildcardExperimenterId (number): The unique identifier for wildcard experimenter of Controller Table Experimenter.
+			WriteActionExperimenterData (str): The data of the Write Action Experimenter.
+			WriteActionExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+			WriteActionExperimenterId (number): The unique identifier for Write Action Experimenter.
+			WriteActionMissExperimenterData (str): The data of the Write Action Miss Experimenter.
+			WriteActionMissExperimenterDataLength (number): The data length of the Write Action Miss Experimenter.
+			WriteActionMissExperimenterId (number): The unique identifier of Write Action Miss Experimenter.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
 		"""Adds a new controllerTables node on the server and retrieves it in this instance.
 

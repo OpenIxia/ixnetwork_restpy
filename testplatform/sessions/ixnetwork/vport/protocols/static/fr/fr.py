@@ -94,6 +94,21 @@ class Fr(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
+		"""Updates a child instance of fr on the server.
+
+		Args:
+			Count (number): The total number of DLCIs to create for this range.
+			Dlci (number): The Data Link Connection Identifier (DLCI) value.
+			EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
+			Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
 		"""Adds a new fr node on the server and retrieves it in this instance.
 

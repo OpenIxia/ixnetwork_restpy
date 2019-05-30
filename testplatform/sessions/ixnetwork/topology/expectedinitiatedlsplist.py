@@ -137,6 +137,22 @@ class ExpectedInitiatedLspList(Base):
 		"""
 		return self._get_attribute('symbolicPathName')
 
+	def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None):
+		"""Updates a child instance of expectedInitiatedLspList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+			MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
 		"""Base class infrastructure that gets a list of expectedInitiatedLspList device ids encapsulated by this object.
 

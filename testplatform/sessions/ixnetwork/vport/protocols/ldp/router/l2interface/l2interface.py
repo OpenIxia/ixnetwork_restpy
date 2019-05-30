@@ -108,6 +108,21 @@ class L2Interface(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+		"""Updates a child instance of l2Interface on the server.
+
+		Args:
+			Count (number): The number of contiguous values of groupId that will be used in generating FECs.
+			Enabled (bool): Enables the use of this interface for the simulated router.
+			GroupId (number): The group ID associated with all VC FEC elements of this interface.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+			Type (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip|satopE1|satopT1|satopE3|satopT3|cesoPsnBasic|cesoPsnCas|frameRelayRfc4619)): The type of virtual circuit.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
 		"""Adds a new l2Interface node on the server and retrieves it in this instance.
 

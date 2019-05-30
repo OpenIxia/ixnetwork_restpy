@@ -261,6 +261,35 @@ class TestConfig(Base):
 	def UseExistingSetupRate(self, value):
 		self._set_attribute('useExistingSetupRate', value)
 
+	def update(self, BinaryResolutionSlaveNumber=None, Duration=None, EnableSlavesPassFail=None, IncrementStepSlaveNumber=None, InitialBinarySlaveNumber=None, InitialStepSlaveNumber=None, LoadType=None, MaxBinarySlaveNumber=None, MaxOutstanding=None, MaxStepSlaveNumber=None, MinBinarySlaveNumber=None, NumberOfSlavesPassFail=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BinaryResolutionSlaveNumber (number): Specifies the binary resolution slave number.
+			Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate.
+			EnableSlavesPassFail (str): If true, enables slaves pass fail.
+			IncrementStepSlaveNumber (number): The incremental step value for the slave number.
+			InitialBinarySlaveNumber (number): The initial incremental value of the binary slave number.
+			InitialStepSlaveNumber (number): The initial step value of the slave number.
+			LoadType (str(binary|step)): The type of the payload setting.
+			MaxBinarySlaveNumber (number): The maximum value of the binary slave number.
+			MaxOutstanding (number): The maximum oustanding value of the slave scalability.
+			MaxStepSlaveNumber (number): The maximum step value of the slave number.
+			MinBinarySlaveNumber (number): The minimum binary value of the slave number.
+			NumberOfSlavesPassFail (number): The number of slaves pass fail.
+			Numtrials (number): The number of trials.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			Runmode (str(duration|noframes)): It gives the run mode
+			SetupRate (number): The setup rate.
+			StartTraffic (str): It starts the traffic
+			TeardownRate (number): The teardown rate.
+			UseExistingSetupRate (bool): If True, it uses the Existing Setup rate
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

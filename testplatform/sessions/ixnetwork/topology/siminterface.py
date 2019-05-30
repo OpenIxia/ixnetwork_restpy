@@ -133,6 +133,17 @@ class SimInterface(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of simInterface on the server.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, Name=None):
 		"""Finds and retrieves simInterface data from the server.
 

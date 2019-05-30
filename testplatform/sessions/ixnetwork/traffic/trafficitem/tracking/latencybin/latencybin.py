@@ -68,3 +68,16 @@ class LatencyBin(Base):
 	@NumberOfBins.setter
 	def NumberOfBins(self, value):
 		self._set_attribute('numberOfBins', value)
+
+	def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
+		"""Updates a child instance of latencyBin on the server.
+
+		Args:
+			BinLimits (list(number)): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
+			Enabled (bool): If true, Latency Bin Tracking is enabled.
+			NumberOfBins (number): Specifies the number of Time Bins for Latency Bin Tracking.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -269,6 +269,21 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 		"""
 		return self._get_attribute('useAsMPLSLabel')
 
+	def update(self, Name=None, NumberOfSegmentListV4=None):
+		"""Updates a child instance of bgpSRTEPoliciesTunnelEncapsulationListV4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfSegmentListV4 (number): Count of Segment Lists Per Tunnel
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, IPv6SID=None, SID4Octet=None, Active=None, AddressFamily=None, As4Number=None, BindingSIDType=None, ColorCOBits=None, ColorReservedBits=None, ColorValue=None, EnBindingTLV=None, EnColorTLV=None, EnPrefTLV=None, EnRemoteEndPointTLV=None, NumberOfActiveSegmentList=None, PrefValue=None, RemoteEndpointIPv4=None, RemoteEndpointIPv6=None, TunnelType=None, UseAsMPLSLabel=None):
 		"""Base class infrastructure that gets a list of bgpSRTEPoliciesTunnelEncapsulationListV4 device ids encapsulated by this object.
 

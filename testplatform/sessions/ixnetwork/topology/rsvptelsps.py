@@ -284,6 +284,28 @@ class RsvpteLsps(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
+		"""Updates a child instance of rsvpteLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableP2PEgress (bool): Enable to configure P2P Egress LSPs
+			ExpectedPceInitiatedLspsCount (number): Number of Expected PCE Initiated RSVP-TE LSPs
+			IngressP2PLsps (number): Number of P2P Ingress LSPs configured per IPv4 Loopback
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			P2mpEgressTunnelCount (number): Number of P2MP Egress Tunnels configured per IPv4 Loopback
+			P2mpIngressLspCount (number): Number of P2MP Ingress LSPs configured per IPv4 Loopback
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
 		"""Adds a new rsvpteLsps node on the server and retrieves it in this instance.
 

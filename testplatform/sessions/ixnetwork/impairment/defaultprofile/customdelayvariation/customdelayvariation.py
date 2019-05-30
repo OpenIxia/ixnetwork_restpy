@@ -70,3 +70,15 @@ class CustomDelayVariation(Base):
 	@Name.setter
 	def Name(self, value):
 		self._set_attribute('name', value)
+
+	def update(self, Enabled=None, Name=None):
+		"""Updates a child instance of customDelayVariation on the server.
+
+		Args:
+			Enabled (bool): If true, vary the packet delay.
+			Name (str): Descriptive name of custom value list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

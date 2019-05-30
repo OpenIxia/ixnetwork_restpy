@@ -236,3 +236,30 @@ class WriteActions(Base):
 	@SetQueue.setter
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
+
+	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of writeActions on the server.
+
+		Args:
+			CopyTtlIn (bool): Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
+			CopyTtlOut (bool): Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
+			DecrementMplsTtl (bool): Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			DecrementNetworkTtl (bool): Decrement the IP TTL.
+			Experimenter (bool): Sets the Experimenter details.
+			Group (bool): Sets the Group ID.
+			Output (bool): Output to switch port.
+			PopMpls (bool): Pops the outer MPLS tag.
+			PopPbb (bool): Pops the outer PBB service tag (I-TAG).
+			PopVlan (bool): Pops the outer VLAN tag.
+			PushMpls (bool): Pushes a new MPLS tag.
+			PushPbb (bool): Pushes a new PBB service tag (I-TAG).
+			PushVlan (bool): Pushes a new VLAN tag.
+			SetField (bool): Sets a header field using OXM TLV format.
+			SetMplsTtl (bool): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			SetNetworkTtl (bool): Sets the IP TTL.
+			SetQueue (bool): Set queue ID when outputting to a port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -82,6 +82,17 @@ class MplsOam(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of mplsOam on the server.
+
+		Args:
+			Enabled (bool): This signifies the enablement or disablement of the simulated router.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

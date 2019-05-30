@@ -252,6 +252,33 @@ class Source(Base):
 	def UdpSrcPort(self, value):
 		self._set_attribute('udpSrcPort', value)
 
+	def update(self, DiscardSgJoinStates=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SuppressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDstPort=None, UdpSrcPort=None):
+		"""Updates a child instance of source on the server.
+
+		Args:
+			DiscardSgJoinStates (bool): If enabled, the learned join states sent by the RP (DUT) in response to this specific register message will be discarded.
+			Enabled (bool): Enables this source entry for use in PIM-SM register messages.
+			GroupAddress (str): The first IPv4 or IPv6 multicast group address in the range of group addresses included in this register message.
+			GroupCount (number): The number of group addresses to be included in this register message.
+			GroupMappingMode (str(fullyMeshed|oneToOne)): Controls the mapping from sources to groups during advertisement.
+			GroupMaskWidth (number): The number of bits in the network mask used with the group address.
+			MulticastDataLength (number): The length of the multicast data, in bytes.
+			RegisterProbeTime (number): Part of the register-stop timer (RST (S,G). Used to control the time intervals for the transmission of null-register messages from the source's DR to the RP. Prior to expiration of the register suppression time of the RST, a null-register message is sent to probe the RP, as a reminder to the RP to send a new register-stop message and maintain the state. If the RP does not respond with a new register-stop message, the source's DR will start sending register-encapsulated data again. The default is 5 seconds.Note: This value must be less than half of the register suppression time value.
+			RpAddress (str): The IP address of the rendezvous point (RP) router - the root of the RPT (rendezvous point tree).
+			SendNullRegAtBegin (bool): If checked, a null register packet will be sent by the Ixia-emulated designated router (DR)/source range to the RP to start the message exchange. (A null register packet contains no data.)
+			SourceAddress (str): The first IPv4 or IPv6 source address to be included in this register message. (IPv4 Multicast addresses are not valid for sources.)
+			SourceCount (number): The number of source addresses to be included in the register message.
+			SuppressionTime (number): Part of the register-stop timer (RST (S,G). The amount of time, following receipt of a register-stop message, that the DR will NOT send register-encapsulated data to the rendezvous point (RP).
+			SwitchOverInterval (number): The time interval (in seconds) allowed for the switch from using the RP tree to using a Source-specific tree - from (*,G) to (S,G). The default value is 0.
+			TxIterationGap (number): The gap between each iteration of the register range (in milliseconds) . The default is 60,000 ms (= 60 seconds). (Does not apply to NULL Registers, which contain no data.)
+			UdpDstPort (number): The number of UDP destination ports in the receiving multicast group.The default is 3000 UDP destination ports.
+			UdpSrcPort (number): The number of UDP source ports sending encapsulated UDP packets to multicast groups (via register messages to the RP). The default is 3000 UDP source ports.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DiscardSgJoinStates=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SuppressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDstPort=None, UdpSrcPort=None):
 		"""Adds a new source node on the server and retrieves it in this instance.
 

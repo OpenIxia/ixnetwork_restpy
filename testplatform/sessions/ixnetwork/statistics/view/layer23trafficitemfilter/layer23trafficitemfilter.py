@@ -46,6 +46,17 @@ class Layer23TrafficItemFilter(Base):
 	def TrafficItemFilterIds(self, value):
 		self._set_attribute('trafficItemFilterIds', value)
 
+	def update(self, TrafficItemFilterIds=None):
+		"""Updates a child instance of layer23TrafficItemFilter on the server.
+
+		Args:
+			TrafficItemFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, TrafficItemFilterIds=None):
 		"""Adds a new layer23TrafficItemFilter node on the server and retrieves it in this instance.
 

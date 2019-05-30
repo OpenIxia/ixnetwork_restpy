@@ -80,3 +80,17 @@ class DelayVariation(Base):
 	@StatisticsMode.setter
 	def StatisticsMode(self, value):
 		self._set_attribute('statisticsMode', value)
+
+	def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
+		"""Updates a child instance of delayVariation on the server.
+
+		Args:
+			Enabled (bool): If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
+			LargeSequenceNumberErrorThreshold (number): The value for the large sequence number error.
+			LatencyMode (str(cutThrough|forwardingDelay|mef|storeForward)): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
+			StatisticsMode (str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)): If enabled, allows to receive delay variation statistics with sequence error measurements.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

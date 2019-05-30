@@ -224,3 +224,29 @@ class FilterPalette(Base):
 	@SourceAddress2Mask.setter
 	def SourceAddress2Mask(self, value):
 		self._set_attribute('sourceAddress2Mask', value)
+
+	def update(self, DestinationAddress1=None, DestinationAddress1Mask=None, DestinationAddress2=None, DestinationAddress2Mask=None, Pattern1=None, Pattern1Mask=None, Pattern1Offset=None, Pattern1OffsetType=None, Pattern2=None, Pattern2Mask=None, Pattern2Offset=None, Pattern2OffsetType=None, SourceAddress1=None, SourceAddress1Mask=None, SourceAddress2=None, SourceAddress2Mask=None):
+		"""Updates a child instance of filterPalette on the server.
+
+		Args:
+			DestinationAddress1 (str): Destination address 1.
+			DestinationAddress1Mask (str): The destination address mask.
+			DestinationAddress2 (str): Destination address 2.
+			DestinationAddress2Mask (str): Destination address to mask.
+			Pattern1 (str): Pattern 1.
+			Pattern1Mask (str): Pattern 1 mask.
+			Pattern1Offset (number): Pattern 1 offset.
+			Pattern1OffsetType (str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)): The pattern offset type.
+			Pattern2 (str): Patternt 2.
+			Pattern2Mask (str): The pattern mask.
+			Pattern2Offset (number): The offset at which the pattern is located in the packet.
+			Pattern2OffsetType (str(fromStartOfFrame|fromStartOfIp|fromStartOfProtocol|fromStartOfSonet)): Pattern 2 offset type
+			SourceAddress1 (str): Source address 1.
+			SourceAddress1Mask (str): Source address 1 mask.
+			SourceAddress2 (str): Source address 2.
+			SourceAddress2Mask (str): Source address to mask.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

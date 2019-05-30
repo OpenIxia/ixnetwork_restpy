@@ -104,3 +104,19 @@ class Fcoe(Base):
 	@SupportDataCenterMode.setter
 	def SupportDataCenterMode(self, value):
 		self._set_attribute('supportDataCenterMode', value)
+
+	def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+		"""Updates a child instance of fcoe on the server.
+
+		Args:
+			EnablePFCPauseDelay (bool): 
+			FlowControlType (str(ieee802.1Qbb|ieee802.3x)): 
+			PfcPauseDelay (number): 
+			PfcPriorityGroups (list(str)): 
+			PriorityGroupSize (str(priorityGroupSize-4|priorityGroupSize-8)): 
+			SupportDataCenterMode (bool): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

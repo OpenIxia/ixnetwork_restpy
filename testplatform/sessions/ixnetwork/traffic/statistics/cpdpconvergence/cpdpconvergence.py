@@ -92,3 +92,18 @@ class CpdpConvergence(Base):
 	@Enabled.setter
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
+
+	def update(self, DataPlaneJitterWindow=None, DataPlaneThreshold=None, EnableControlPlaneEvents=None, EnableDataPlaneEventsRateMonitor=None, Enabled=None):
+		"""Updates a child instance of cpdpConvergence on the server.
+
+		Args:
+			DataPlaneJitterWindow (str(0|10485760|1310720|167772160|20971520|2621440|335544320|41943040|5242880|671088640|83886080)): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
+			DataPlaneThreshold (number): The data loss threshold percentage for CP/DP events at the prompt.
+			EnableControlPlaneEvents (bool): If enabled, fetches control plane event statistics of event name, event start timestamp, and event end timestamp.
+			EnableDataPlaneEventsRateMonitor (bool): If enabled, fetches data plane event rate statistics of DP above Threshold Timestamp, DP below Threshold Timestamp, Ramp Up Convergence, Ramp Down Convergence, CP/DP Convergence, and DP/DP Convergence.
+			Enabled (bool): If enabled, fetches control plane/data plane statistics.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

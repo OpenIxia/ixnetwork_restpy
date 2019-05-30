@@ -128,3 +128,21 @@ class RangeTe(Base):
 	@TeUnreservedBandWidth.setter
 	def TeUnreservedBandWidth(self, value):
 		self._set_attribute('teUnreservedBandWidth', value)
+
+	def update(self, EnableRangeTe=None, TeAdmGroup=None, TeLinkMetric=None, TeMaxBandWidth=None, TeMaxReserveBandWidth=None, TeRouterId=None, TeRouterIdIncrement=None, TeUnreservedBandWidth=None):
+		"""Updates a child instance of rangeTe on the server.
+
+		Args:
+			EnableRangeTe (bool): Enables the generation of Traffic Engineering data. (default = false)
+			TeAdmGroup (str): For setting the Administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into Group numbers which range from 0 to 31 (integers).
+			TeLinkMetric (number): The metric associated with the interface that the TE data is advertised on.
+			TeMaxBandWidth (number): For setting the maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+			TeMaxReserveBandWidth (number): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+			TeRouterId (str): The 32-bit TE router ID assigned to the first emulated ISIS router in this network range used with the increment TE router ID value when more than one router is to be created.
+			TeRouterIdIncrement (str): The 32-bit increment value that will be added to the previous TE Router ID, for automatically creating additional TE Router IDs for the emulated routers in this network range.
+			TeUnreservedBandWidth (list(number)): The traffic engineering unreserved bandwidth for each priority to be advertised. There are eight distinct options. (default = 0.0)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

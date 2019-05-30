@@ -315,6 +315,22 @@ class BgpMVpnReceiverSitesIpv4(Base):
 	def WildCardLeafAdForBierPta(self, value):
 		self._set_attribute('wildCardLeafAdForBierPta', value)
 
+	def update(self, IncludeBierPtainLeafAd=None, Name=None, WildCardLeafAdForBierPta=None):
+		"""Updates a child instance of bgpMVpnReceiverSitesIpv4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			IncludeBierPtainLeafAd (bool): Include Bier PTA in Leaf A-D
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			WildCardLeafAdForBierPta (bool): Wildcard Leaf A-D For Bier PTA
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeBierPtainLeafAd=None, Name=None, WildCardLeafAdForBierPta=None):
 		"""Adds a new bgpMVpnReceiverSitesIpv4 node on the server and retrieves it in this instance.
 

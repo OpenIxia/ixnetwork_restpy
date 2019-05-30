@@ -1774,6 +1774,55 @@ class BgpIpv6Peer(Base):
 		"""
 		return self._get_attribute('vplsNextHop')
 
+	def update(self, AdvertiseEvpnRoutesForOtherVtep=None, AutoGenSegmentLeftValue=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, CopyTtl=None, EnSRv6DataPlane=None, EnableEpeTraffic=None, EnableReducedEncapsulation=None, EthernetSegmentsCountV6=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MaxSidPerSrh=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, SegmentLeftValue=None, Srv6Ttl=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None, UseStaticPolicy=None):
+		"""Updates a child instance of bgpIpv6Peer on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			AdvertiseEvpnRoutesForOtherVtep (bool): Advertise EVPN routes for other VTEPS
+			AutoGenSegmentLeftValue (bool): If enabled then Segment Left field value will be auto generated
+			BgpLsNoOfASPathSegments (number): Number Of AS Path Segments Per Route Range
+			BgpLsNoOfClusters (number): Number of Clusters
+			BgpLsNoOfCommunities (number): Number of Communities
+			CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
+			CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
+			EnSRv6DataPlane (bool): Ingress Peer Supports SRv6 VPN
+			EnableEpeTraffic (bool): Enable EPE Traffic
+			EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
+			EthernetSegmentsCountV6 (number): Number of Ethernet Segments
+			IpVrfToIpVrfType (str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)): IP-VRF-to-IP-VRF Model Type
+			Ipv4MplsCapability (bool): IPv4 MPLS Capability
+			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability
+			Ipv6MplsCapability (bool): IPv6 MPLS Capability
+			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability
+			MaxSidPerSrh (number): Max number of SIDs a SRH can have
+			MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
+			MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfEpePeers (number): Number of EPE Peers
+			NoOfExtendedCommunities (number): Number of Extended Communities
+			NoOfUserDefinedAfiSafi (number): Count of User defined AFI SAFI
+			NumberFlowSpecRangeV4 (number): Number of IPv4 Flow Spec Ranges
+			NumberFlowSpecRangeV6 (number): Number of IPv6 Flow Spec Ranges
+			NumberSRTEPolicies (number): Count of SR TE Policies
+			SRGBRangeCount (number): SRGB Range Count
+			SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
+			Srv6Ttl (number): TTL value to be used in outer IPv6 header
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			UdpPortEndValue (number): UDP Port End Value
+			UdpPortStartValue (number): UDP Port Start Value
+			UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertiseEvpnRoutesForOtherVtep=None, AutoGenSegmentLeftValue=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, CopyTtl=None, EnSRv6DataPlane=None, EnableEpeTraffic=None, EnableReducedEncapsulation=None, EthernetSegmentsCountV6=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MaxSidPerSrh=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, SegmentLeftValue=None, Srv6Ttl=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None, UseStaticPolicy=None):
 		"""Adds a new bgpIpv6Peer node on the server and retrieves it in this instance.
 

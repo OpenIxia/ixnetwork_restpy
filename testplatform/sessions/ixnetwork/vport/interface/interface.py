@@ -248,6 +248,21 @@ class Interface(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, Description=None, Enabled=None, Eui64Id=None, Mtu=None, Type=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Description (str): The identifier for the port including card and port numbers, and the port type.
+			Enabled (bool): Enables the selected protocol interface.
+			Eui64Id (str): This is the 64-bit IEEE Modified EUI ID value for the Interface Identifier portion of the IPv6 address.
+			Mtu (number): The maximum transmission unit for the interfaces created with this range.
+			Type (str(default|gre|routed)): The identifier or 'tag' for this DHCP option.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, Enabled=None, Eui64Id=None, Mtu=None, Type=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

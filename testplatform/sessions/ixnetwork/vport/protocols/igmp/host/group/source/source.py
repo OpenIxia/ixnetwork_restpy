@@ -58,6 +58,18 @@ class Source(Base):
 	def SourceRangeStart(self, value):
 		self._set_attribute('sourceRangeStart', value)
 
+	def update(self, SourceRangeCount=None, SourceRangeStart=None):
+		"""Updates a child instance of source on the server.
+
+		Args:
+			SourceRangeCount (number): The number of IP addresses in the source range.
+			SourceRangeStart (str): The first IP address in the source range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, SourceRangeCount=None, SourceRangeStart=None):
 		"""Adds a new source node on the server and retrieves it in this instance.
 

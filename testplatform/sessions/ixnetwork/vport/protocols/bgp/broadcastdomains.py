@@ -120,6 +120,22 @@ class BroadcastDomains(Base):
 	def EthernetTagId(self, value):
 		self._set_attribute('ethernetTagId', value)
 
+	def update(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+		"""Updates a child instance of broadcastDomains on the server.
+
+		Args:
+			AdRouteLabel (number): Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			BVlanId (number): B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+			BVlanPriority (number): B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+			BVlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+			Enabled (bool): If true then Broadcast Domain is used in EVPN.
+			EthernetTagId (number): Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
 		"""Adds a new broadcastDomains node on the server and retrieves it in this instance.
 

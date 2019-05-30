@@ -176,3 +176,25 @@ class SupportedFeatures(Base):
 	@Pause.setter
 	def Pause(self, value):
 		self._set_attribute('pause', value)
+
+	def update(self, 100MbFd=None, 100MbHd=None, 10GbFd=None, 10MbFd=None, 10MbHd=None, 1GbFd=None, 1GbHd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, Pause=None):
+		"""Updates a child instance of supportedFeatures on the server.
+
+		Args:
+			100MbFd (bool): Indicates that the supported features include 100 Mb full-duplex rate support.
+			100MbHd (bool): Indicates that the supported features include 100 Mb half-duplex rate support.
+			10GbFd (bool): Indicates that the supported features include 10 Gb full-duplex rate support.
+			10MbFd (bool): Indicates that the supported features include 10 Mb full-duplex rate support.
+			10MbHd (bool): Indicates that the supported features include 10 Mb half-duplex rate support.
+			1GbFd (bool): Indicates that the supported features include 1 Gb full-duplex rate support.
+			1GbHd (bool): Indicates that the supported features include 1 Gb half-duplex rate support.
+			AsymmetricPause (bool): Indicates that the supported features include Asymmetric pause.
+			AutoNegotiation (bool): Indicates that the supported features include Auto-negotiation.
+			CopperMedium (bool): Indicates that the supported features include Copper medium.
+			FiberMedium (bool): Indicates that the supported features include Fiber medium.
+			Pause (bool): Indicates that the supported features include Pause.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

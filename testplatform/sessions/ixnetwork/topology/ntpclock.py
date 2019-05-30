@@ -222,6 +222,26 @@ class Ntpclock(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, AcceptNTPPacketswithCryptoNAK=None, ConnectedVia=None, IsParentV6=None, Multiplier=None, Name=None, NtpServerCount=None, StackedLayers=None):
+		"""Updates a child instance of ntpclock on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			AcceptNTPPacketswithCryptoNAK (bool): Accept NTP Packets with Crypto-NAK
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			IsParentV6 (bool): Parent v6
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NtpServerCount (number): NTP server Count
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AcceptNTPPacketswithCryptoNAK=None, ConnectedVia=None, IsParentV6=None, Multiplier=None, Name=None, NtpServerCount=None, StackedLayers=None):
 		"""Adds a new ntpclock node on the server and retrieves it in this instance.
 

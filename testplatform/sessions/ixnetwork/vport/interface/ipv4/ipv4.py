@@ -70,6 +70,19 @@ class Ipv4(Base):
 	def MaskWidth(self, value):
 		self._set_attribute('maskWidth', value)
 
+	def update(self, Gateway=None, Ip=None, MaskWidth=None):
+		"""Updates a child instance of ipv4 on the server.
+
+		Args:
+			Gateway (str): The IPv4 address of the Gateway to the network, typically an interface on the DUT.
+			Ip (str): The 32-bit IPv4 address assigned to this unconnected interface.
+			MaskWidth (number): The number of bits in the mask used with the IPv4 address. The default is 24 bits.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Gateway=None, Ip=None, MaskWidth=None):
 		"""Adds a new ipv4 node on the server and retrieves it in this instance.
 

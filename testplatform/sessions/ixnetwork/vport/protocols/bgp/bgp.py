@@ -368,6 +368,42 @@ class Bgp(Base):
 	def VrfRouteImportExtendedCommunitySubType(self, value):
 		self._set_attribute('vrfRouteImportExtendedCommunitySubType', value)
 
+	def update(self, AutoFillUpDutIp=None, DisableReceivedUpdateValidation=None, EVpnAfi=None, EVpnSafi=None, EnableAdVplsPrefixLengthInBits=None, EnableExternalActiveConnect=None, EnableInternalActiveConnect=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, EsImportRouteTargetSubType=None, EsImportRouteTargetType=None, EsiLabelExtendedCommunitySubType=None, EsiLabelExtendedCommunityType=None, EvpnIpAddressLengthUnit=None, ExternalRetries=None, ExternalRetryDelay=None, InternalRetries=None, InternalRetryDelay=None, MacMobilityExtendedCommunitySubType=None, MacMobilityExtendedCommunityType=None, MldpP2mpFecType=None, Tester4ByteAsForIbgp=None, TesterAsForIbgp=None, TriggerVplsPwInitiation=None, VrfRouteImportExtendedCommunitySubType=None):
+		"""Updates a child instance of bgp on the server.
+
+		Args:
+			AutoFillUpDutIp (bool): If true, automatically fills up the IP of the DUT
+			DisableReceivedUpdateValidation (bool): If true, disables any update validation request from the DUT.
+			EVpnAfi (number): AFI to support EVPN. Default value is 25. Minimum valus is 0 and maximum value is 0xFFFF
+			EVpnSafi (number): SAFI to support EVPN. Default value is 70. Minimum valus is 0 and maximum value is 0xFF.
+			EnableAdVplsPrefixLengthInBits (bool): If true, enables the AdVpls length in bits.
+			EnableExternalActiveConnect (bool): Causes a HELLO message to be actively sent when BGP testing starts.
+			EnableInternalActiveConnect (bool): Causes a HELLO message to be actively sent when BGP testing starts.
+			EnableLabelExchangeOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+			EnableVpnLabelExchangeOverLsp (bool): If true, enables the exchange of VPN exchange over LSP
+			Enabled (bool): Enables or disables the use of this emulated BGP router in the emulated BGP network. (default = disabled)
+			EsImportRouteTargetSubType (number): This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 2. Minimum value is 1 and maximum value is 0xFF.
+			EsImportRouteTargetType (number): This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+			EsiLabelExtendedCommunitySubType (number): This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 1. Minimum value is 1 and maximum value is 0xFF.
+			EsiLabelExtendedCommunityType (number): This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+			EvpnIpAddressLengthUnit (str(bit|byte)): The unit of the IP address length field in MAC Advertisement route packet, can be bits or bytes
+			ExternalRetries (number): The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
+			ExternalRetryDelay (number): When retries are necessary, the delay between retries.
+			InternalRetries (number): The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
+			InternalRetryDelay (number): When retries are necessary, the delay between retries.
+			MacMobilityExtendedCommunitySubType (number): This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 0. Minimum value is 0 and maximum value is 0xFF.
+			MacMobilityExtendedCommunityType (number): This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+			MldpP2mpFecType (number): The MLDP P2MP FEC type value in hexadecimal.LOCAL EXECS
+			Tester4ByteAsForIbgp (number): NOT DEFINED
+			TesterAsForIbgp (number): NOT DEFINED
+			TriggerVplsPwInitiation (bool): Enable to initiate a trigger a VPLS PW initation that is a BGP-LDP communication.
+			VrfRouteImportExtendedCommunitySubType (number): Extended Community Sub Type to be used in VRF Route Import Extended Community.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

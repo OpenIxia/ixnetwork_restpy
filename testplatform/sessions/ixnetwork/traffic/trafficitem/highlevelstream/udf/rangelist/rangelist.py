@@ -78,6 +78,19 @@ class RangeList(Base):
 	def Width(self, value):
 		self._set_attribute('width', value)
 
+	def update(self, BitOffset=None, StartValueCountStepList=None, Width=None):
+		"""Updates a child instance of rangeList on the server.
+
+		Args:
+			BitOffset (number): Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
+			StartValueCountStepList (list(number)): Specifies the Start Value, Count and Step Value of the UDF.
+			Width (str(1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|32|4|5|6|7|8|9)): Specifies the width of the UDF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableWidths=None, BitOffset=None, StartValueCountStepList=None, Width=None):
 		"""Finds and retrieves rangeList data from the server.
 

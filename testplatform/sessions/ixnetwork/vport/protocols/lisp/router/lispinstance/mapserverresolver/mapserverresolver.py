@@ -130,6 +130,24 @@ class MapServerResolver(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+		"""Updates a child instance of mapServerResolver on the server.
+
+		Args:
+			AuthenticationAlgorithm (str(sha-1-96|sha-128-256)): It gives details about the authentication algorithm
+			Enabled (bool): If true, it enables the protocol
+			ExternalMsmrAddress (str): It gives details about the external Msmr address
+			Family (str(ipv4|ipv6)): It gives details about the ip family it represents
+			InternalIxiaMsmrRouter (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=router)): It gives details about the internal ixia msmr router
+			Key (str): it gives details about the key
+			MsmrLocation (str(internal|external)): It details about the msmr location
+			Type (str(ms|mr|msmr)): It gives details about the type
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
 		"""Adds a new mapServerResolver node on the server and retrieves it in this instance.
 

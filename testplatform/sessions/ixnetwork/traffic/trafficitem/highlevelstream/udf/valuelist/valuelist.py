@@ -66,6 +66,18 @@ class ValueList(Base):
 	def Width(self, value):
 		self._set_attribute('width', value)
 
+	def update(self, StartValueList=None, Width=None):
+		"""Updates a child instance of valueList on the server.
+
+		Args:
+			StartValueList (list(number)): Specifies the starting value for a particular UDF.
+			Width (str(16|24|32|8)): Specifies the width of the UDF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableWidths=None, StartValueList=None, Width=None):
 		"""Finds and retrieves valueList data from the server.
 

@@ -204,6 +204,22 @@ class ClusterData(Base):
 		"""
 		return self._get_attribute('vni')
 
+	def update(self, BindingsCount=None, MaxRetryCount=None, Name=None):
+		"""Updates a child instance of clusterData on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			BindingsCount (number): Bindings Count
+			MaxRetryCount (number): Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, ActionTriggered=None, AttachAtStart=None, AutoSyncAtStart=None, LogicalSwitchName=None, PhysicalPortName=None, PhysicalSwitchName=None, Vlan=None, Vni=None):
 		"""Base class infrastructure that gets a list of clusterData device ids encapsulated by this object.
 

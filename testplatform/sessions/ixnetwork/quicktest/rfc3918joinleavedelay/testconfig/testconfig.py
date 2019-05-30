@@ -1173,6 +1173,111 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CalibrateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DelayBetweenIterations=None, DelayMode=None, DummyTrafficId=None, Duration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableExtraJoinFrames=None, EnableFastConvergence=None, EnableLayer2=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableRouterAlert=None, ExtraFramesFirstGroupAddress=None, ExtraFramesFirstGroupAddressIPv6=None, ExtraFramesTotalGroupAddresses=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FirstMulticastDestMACAddress=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, Framesize=None, FramesizeList=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncMulticastDestMACAddress=None, IncPortMACAddress=None, IncrAddresses=None, IncrStep=None, InitialRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinDelayRefUnit=None, JoinDelayRefValue=None, JoinLeaveAlgorithm=None, JoinLeaveFramesPerGroup=None, JoinLeaveMode=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyType=None, LeaveDelayRefUnit=None, LeaveDelayRefValue=None, LoadInitialRate=None, LoadType=None, LoadUnit=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MaxRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MixedClassMulticast=None, MldVersion=None, Mldv2MessageType=None, Mldv2SourceAddrList=None, NumAddresses=None, NumIterations=None, NumTrials=None, NumberOfExtraJoins=None, Numtrials=None, OffsetTime=None, PercentMaxRate=None, PercentMulticastFrames=None, PercentUnicastFrames=None, PortMACAddress=None, ProtocolItem=None, RatePass=None, ReportSequenceError=None, SendJoinsBeforeLeave=None, StaggeredStart=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TestTrafficType=None, TrafficBeforeJoinLeave=None, TxDelay=None, Use3376mode=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): The type assigned to the type.
+			BidirectionalOptionEnabled (bool): If enabled, it shows the outer VLAN connections.
+			BurstSize (number): The number of packets to send in a burst .
+			CalculateJitter (bool): If true, calculates jitter.
+			CalculateLatency (bool): If true, calculates the latency.
+			CalibrateLatency (bool): If true, calibrates the latency.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
+			DelayBetweenIterations (number): The delay in time between iterations of trasmit.
+			DelayMode (str(average|max)): The mode of delay.
+			DummyTrafficId (str): The id of the monitor traffic item
+			Duration (number): sec
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableExtraIterations (bool): If true, enables extra iterations.Sets extra iteration offset values.
+			EnableExtraJoinFrames (bool): If true, enables extra join frames.
+			EnableFastConvergence (bool): If true, enables fast convergence.
+			EnableLayer2 (bool): If true, enables Layer2 protocols.
+			EnableLeaveGroup (bool): If true, enables leave group.
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+			EnableRouterAlert (bool): If true, enables router alert.
+			ExtraFramesFirstGroupAddress (str): The extra frames first group IP address.
+			ExtraFramesFirstGroupAddressIPv6 (str): The extra frames first group IPv6 address.
+			ExtraFramesTotalGroupAddresses (number): The extra frames total group address.
+			ExtraIterationOffsets (str): Sets extra iteration offset values.
+			FastConvergenceDuration (number): sec
+			FastConvergenceThreshold (number): If true, enables fast convergence threshold value.
+			FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
+			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameSizeMode (str(custom|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			Framesize (number): Bytes
+			FramesizeList (list(str)): The list of the available frame size.
+			GroupCapacityGreaterThan (number): The greater value of group capacity.
+			GroupDistributionType (str(acrossHosts|acrossPorts)): The type of group distribution.
+			IgmpV1Timeout (number): The IGMPv1 timeout value.
+			IgmpVersion (number): The version of IGMP.
+			Igmpv3MessageType (str(exclude|include)): The message type of IGMPv3.
+			Igmpv3SourceAddrList (str): The source address list of IGMPv3.
+			IncMulticastDestMACAddress (str): The incrementing multicast destination MAC address.
+			IncPortMACAddress (str): The incrementing MAC address of the port.
+			IncrAddresses (number): The incremental address.
+			IncrStep (number): The incremental step value.
+			InitialRate (str): The first rate of transmission.
+			Ipv4Address (str): The allocated IPv4 address for this interface.
+			Ipv6Address (str): The allocated IPv6address for this interface.
+			IsIPv6 (str): Signifies if the address is an ipv6 address.
+			IsMulticastAutomaticFrameData (str): Signifies automatic frameData for multicast.
+			JoinDelayRefUnit (str(ms|ns|us)): The reference unit of join delay.
+			JoinDelayRefValue (number): The reference value of join delay.
+			JoinLeaveAlgorithm (str(joinExisting|joinNew)): The algorithm for join leave.
+			JoinLeaveFramesPerGroup (number): The join leave frames per group.
+			JoinLeaveMode (str(join|joinLeave|leave)): The mode of join leave delay.
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): The join leave rate.
+			JoinLeaveWaitTime (number): The wait time for join delay.
+			LatencyType (str(cutThrough|storeForward)): The type of latency
+			LeaveDelayRefUnit (str(ms|ns|us)): The reference unit of leave delay.
+			LeaveDelayRefValue (number): The leave delay reference value.
+			LoadInitialRate (number): The initial load rate.
+			LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): The type of the payload setting
+			LoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit.
+			MapType (str): The POS traffic map type.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxRate (number): The maximum rate.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			MixedClassMulticast (str): The mixed multicast class.
+			MldVersion (number): The version of MLD.
+			Mldv2MessageType (str(exclude|include)): Signifies the message type of mldv2.
+			Mldv2SourceAddrList (str): The source address list of mldv2.
+			NumAddresses (number): The number address.
+			NumIterations (number): The number of iterations.
+			NumTrials (number): %
+			NumberOfExtraJoins (number): The number of extra joins in the address.
+			Numtrials (number): The number address.
+			OffsetTime (number): The offset time value.
+			PercentMaxRate (number): Specifies the step rate of the load unit.
+			PercentMulticastFrames (number): The percentage of multicast frames.
+			PercentUnicastFrames (number): The percentage of unicast frames.
+			PortMACAddress (str): The MAC address of the port.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			RatePass (number): A Pass criteria applied to each trial in the test to determine whether the trialpassed or failed.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			SendJoinsBeforeLeave (bool): 
+			StaggeredStart (bool): Starts test with a stagger.
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			SupportedTrafficTypes (str): The traffic types supported.
+			TestTrafficType (str): It signifies the test traffic type value.
+			TrafficBeforeJoinLeave (bool): The traffic sent before join leave.
+			TxDelay (number): Specifies the amount of delay after every transmit.
+			Use3376mode (bool): 
+			UsePercentOffsets (bool): Uses percentage offset value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

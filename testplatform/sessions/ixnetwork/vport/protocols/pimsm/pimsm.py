@@ -224,6 +224,30 @@ class Pimsm(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, BsmFramePerInterval=None, CrpFramePerInterval=None, DataMdtFramePerInterval=None, DenyGrePimIpPrefix=None, EnableDiscardJoinPruneProcessing=None, EnableRateControl=None, Enabled=None, GreFilterType=None, HelloMsgsPerInterval=None, Interval=None, JoinPruneMessagesPerInterval=None, OverrideSourceIpForSmInterface=None, RegisterMessagesPerInterval=None, RegisterStopMessagesPerInterval=None):
+		"""Updates a child instance of pimsm on the server.
+
+		Args:
+			BsmFramePerInterval (number): Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+			CrpFramePerInterval (number): Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+			DataMdtFramePerInterval (number): The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+			DenyGrePimIpPrefix (str): Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
+			EnableDiscardJoinPruneProcessing (bool): If enabled, discards the join/prune messages.
+			EnableRateControl (bool): Rate control (flow control) is enabled on this PIM-SM port.
+			Enabled (bool): Enables the emulated PIM-SM router.
+			GreFilterType (str(noDataMdt|dataMdtIpv4)): Specifies type of filter for GRE.
+			HelloMsgsPerInterval (number): The total hello messages received per interval.
+			Interval (number): The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
+			JoinPruneMessagesPerInterval (number): The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
+			OverrideSourceIpForSmInterface (bool): If enabled, it will override source ip for SM interfaces.
+			RegisterMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+			RegisterStopMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -278,6 +278,34 @@ class CMacRange(Base):
 	def UseSameSequenceNumber(self, value):
 		self._set_attribute('useSameSequenceNumber', value)
 
+	def update(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+		"""Updates a child instance of cMacRange on the server.
+
+		Args:
+			CmacPrefixLength (number): Prefix length of C-MAC address. Default value is 48. Minimum value is 0 and maximum value is 48.
+			CvlanId (number): C-VLAN Identifier used in EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+			CvlanPriority (number): C-VLAN Priority used in EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+			CvlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): C-VLAN TPID used in EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+			EnableCvlan (bool): If true then C-VLAN is used in EVPN traffic. Default value is false.
+			EnableSecondLabel (bool): If true then second label is inserted in the EVPN label stack. Default value is false. Label value is obtained for all macs in the same way of first label.
+			EnableSvlan (bool): If true then S-VLAN is used in EVPN traffic. Default value is false.
+			Enabled (bool): If true then this C-MAC range is used in EVPN.
+			FirstLabelStart (number): First EVPN label in label stack for MAC route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF. This label value is used in first mac of this mac range. If Label mode is fixed then same label value is used for all mac in this mac range. If label mode is Increment then label value for subsequent mac is obtained by adding the label step value to the first label value.
+			LabelMode (str(fixed|increment)): It is used to get the label value of subsequent macs in the range by adding this value to the first label value. Default value is Increment. It can be either Fixed or Increment.
+			LabelStep (number): Label step to get the label value of subsequent macs in the mac range. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFF.
+			NoOfCmacs (number): Number of C-MACs in this mac range. Default value is 1. Minimum value is 1 and maximum value is 0xFFFFFFFF.
+			SecondLabelStart (number): Second EVPN label in label stack for MAC route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF. This label value is used in first mac of this mac range. If Label mode is fixed then same label value is used for all mac in this mac range. If label mode is Increment then label value for subsequent mac is obtained by adding the label step value to the second label value.
+			StartCmacPrefix (str): Start mac address of this range. Default value is 0x00 00 00 00 00 01.
+			SvlanId (number): S-VLAN Identifier used in EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
+			SvlanPriority (number): S-VLAN Priority used in EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
+			SvlanTpId (str(0x8100|0x9100|0x9200|0x88A8)): S-VLAN TPID used in EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
+			UseSameSequenceNumber (bool): If true then same sequence number is used in MAC Mobility Extended Community for all MAC routes for mac mobility. If false then subsequent C-MAC route uses unique sequence number in MAC Mobility Extended Community.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
 		"""Adds a new cMacRange node on the server and retrieves it in this instance.
 

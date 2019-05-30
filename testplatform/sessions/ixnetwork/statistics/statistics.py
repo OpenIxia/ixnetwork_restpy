@@ -282,6 +282,29 @@ class Statistics(Base):
 		"""
 		return self._get_attribute('ugsTcpPort')
 
+	def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None):
+		"""Updates a child instance of statistics on the server.
+
+		Args:
+			AdditionalFcoeStat1 (str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)): Signifies additional FCOE stat 1
+			AdditionalFcoeStat2 (str(fcoeInvalidDelimiter|fcoeInvalidFrames|fcoeInvalidSize|fcoeNormalSizeBadFcCRC|fcoeNormalSizeGoodFcCRC|fcoeUndersizeBadFcCRC|fcoeUndersizeGoodFcCRC|fcoeValidFrames)): Sets the additional FCoE shared stats.
+			CsvFilePath (str): Sets the CSV file path.
+			CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
+			DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+			EnableAutoDataStore (bool): If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
+			EnableCsvLogging (bool): If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
+			EnableDataCenterSharedStats (bool): If true, enables statistics for Data Center.
+			GuardrailEnabled (bool): NOT DEFINED
+			MaxNumberOfStatsPerCustomGraph (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+			PollInterval (number): The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
+			TimeSynchronization (str(syncTimeToSystemClock|syncTimeToTestStart)): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
+			TimestampPrecision (number): The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def CheckViewTreeGroupExists(self, *args, **kwargs):
 		"""Executes the checkViewTreeGroupExists operation on the server.
 

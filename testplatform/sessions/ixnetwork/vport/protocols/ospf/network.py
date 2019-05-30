@@ -57,6 +57,18 @@ class Network(Base):
 	def NetworkMask(self, value):
 		self._set_attribute('networkMask', value)
 
+	def update(self, NeighborRouterIds=None, NetworkMask=None):
+		"""Updates a child instance of network on the server.
+
+		Args:
+			NeighborRouterIds (list(str)): 
+			NetworkMask (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, NeighborRouterIds=None, NetworkMask=None):
 		"""Finds and retrieves network data from the server.
 

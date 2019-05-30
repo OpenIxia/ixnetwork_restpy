@@ -70,6 +70,19 @@ class GroupTrafficRange(Base):
 	def GrpCount(self, value):
 		self._set_attribute('grpCount', value)
 
+	def update(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
+		"""Updates a child instance of groupTrafficRange on the server.
+
+		Args:
+			AddrFamilyType (str(ipv4|ipv6)): The address family of group address.
+			GrpAddress (str): Group Address for traffic destination address.
+			GrpCount (number): The group address count per LSP.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
 		"""Adds a new groupTrafficRange node on the server and retrieves it in this instance.
 

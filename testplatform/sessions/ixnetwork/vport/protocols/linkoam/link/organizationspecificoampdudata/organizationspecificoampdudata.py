@@ -58,6 +58,18 @@ class OrganizationSpecificOamPduData(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Oui=None, Value=None):
+		"""Updates a child instance of organizationSpecificOamPduData on the server.
+
+		Args:
+			Oui (str): 
+			Value (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Oui=None, Value=None):
 		"""Adds a new organizationSpecificOamPduData node on the server and retrieves it in this instance.
 

@@ -70,6 +70,19 @@ class DceOutsideLinks(Base):
 	def LinkedRid(self, value):
 		self._set_attribute('linkedRid', value)
 
+	def update(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
+		"""Updates a child instance of dceOutsideLinks on the server.
+
+		Args:
+			ConnectionCol (number): Used with the Connection Row value to specify the particular network range router that is the endpoint of the Outside Link.
+			ConnectionRow (number): Used with the Connection Col value to specify the particular network range router that is the endpoint of the Outside Link.
+			LinkedRid (str): The Router ID of the emulated DCE ISIS router at the far end of the Outside Link.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
 		"""Adds a new dceOutsideLinks node on the server and retrieves it in this instance.
 

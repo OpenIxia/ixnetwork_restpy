@@ -60,6 +60,17 @@ class Template(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of template on the server.
+
+		Args:
+			Name (str): The name of the template
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None):
 		"""Adds a new template node on the server and retrieves it in this instance.
 

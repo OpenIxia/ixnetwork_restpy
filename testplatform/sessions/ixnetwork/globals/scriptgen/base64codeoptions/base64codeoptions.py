@@ -56,3 +56,15 @@ class Base64CodeOptions(Base):
 	@SampleObjectReferences.setter
 	def SampleObjectReferences(self, value):
 		self._set_attribute('sampleObjectReferences', value)
+
+	def update(self, IncludeSampleCode=None, SampleObjectReferences=None):
+		"""Updates a child instance of base64CodeOptions on the server.
+
+		Args:
+			IncludeSampleCode (bool): Flag to include sample code
+			SampleObjectReferences (list(str[None])): A list of object references used to generate sample code
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

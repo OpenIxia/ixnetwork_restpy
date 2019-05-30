@@ -186,6 +186,28 @@ class CsvSnapshot(Base):
 	def Views(self, value):
 		self._set_attribute('views', value)
 
+	def update(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
+		"""Updates a child instance of csvSnapshot on the server.
+
+		Args:
+			CsvDecimalPrecision (number): NOT DEFINED
+			CsvDumpTxPortLabelMap (bool): NOT DEFINED
+			CsvFormatTimestamp (bool): NOT DEFINED
+			CsvLocation (str): NOT DEFINED
+			CsvName (str): 
+			CsvStringQuotes (bool): NOT DEFINED
+			CsvSupportsCSVSorting (bool): NOT DEFINED
+			NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
+			OpenViewer (bool): 
+			SnapshotViewContents (str(allPages|currentPage)): NOT DEFINED
+			SnapshotViewCsvGenerationMode (str(appendCSVFile|newCSVFile|overwriteCSVFile)): NOT DEFINED
+			Views (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=view])): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def ResetToDefaults(self):
 		"""Executes the resetToDefaults operation on the server.
 

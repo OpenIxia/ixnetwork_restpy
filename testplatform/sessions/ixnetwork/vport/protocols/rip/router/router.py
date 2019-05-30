@@ -168,6 +168,26 @@ class Router(Base):
 	def UpdateIntervalOffset(self, value):
 		self._set_attribute('updateIntervalOffset', value)
 
+	def update(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
+			EnableAuthorization (bool): Indicates whether authorization is included in update messages.
+			Enabled (bool): Enables or disables the simulated router.
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The ID associated with the simulated interface.
+			ReceiveType (str(receiveVersion1|receiveVersion2|receiveVersion1And2)): Filters the RIP version of messages this router will receive.
+			ResponseMode (str(default|splitHorizon|poisonReverse|splitHorizonSpaceSaver|silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
+			SendType (str(multicast|broadcastV1|broadcastV2)): The method for sending RIP packets.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			UpdateInterval (number): The time, in seconds, between transmitted update messages.
+			UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

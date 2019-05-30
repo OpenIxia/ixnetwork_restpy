@@ -97,6 +97,22 @@ class OfHostData(Base):
 		"""
 		return self._get_attribute('parentSwitchPortName')
 
+	def update(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
+		"""Updates a child instance of ofHostData on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfHostPorts (number): number of Host Ports per OF Switch.
+			NumberOfHostsPerPort (number): Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
 		"""Adds a new ofHostData node on the server and retrieves it in this instance.
 

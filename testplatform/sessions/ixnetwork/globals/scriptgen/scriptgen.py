@@ -181,6 +181,26 @@ class Scriptgen(Base):
 	def SerializationType(self, value):
 		self._set_attribute('serializationType', value)
 
+	def update(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
+		"""Updates a child instance of scriptgen on the server.
+
+		Args:
+			ConnectHostname (str): The hostname to be used in the connect command
+			ConnectPort (number): The port number to be used in the connect command
+			ConnectVersion (str): The version number to be used in the connect command
+			IncludeConnect (bool): Flag to include the connect command
+			IncludeTestComposer (bool): Flag to include test composer code
+			Language (str(perl|python|ruby|tcl)): Select the target scriptgen language
+			LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
+			OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten
+			ScriptFilename (str): The name of the target scriptgen file
+			SerializationType (str(base64|ixNet)): The scriptgen serialization type
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Generate(self, *args, **kwargs):
 		"""Executes the generate operation on the server.
 

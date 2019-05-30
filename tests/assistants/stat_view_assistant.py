@@ -57,3 +57,9 @@ ixnetwork.info('traffic stat check')
 traffic_statistics = StatViewAssistant(ixnetwork, 'Traffic Item Statistics')
 tx_frames = traffic_statistics.Rows[0]['Tx Frames']
 ixnetwork.info('tx frames: %s' % tx_frames)
+
+transport.info('drilldown sample')
+ixnetwork.info(traffic_statistics.DrillDownOptions())
+ixnetwork.info(traffic_statistics.TargetRowFilters())
+drilldown = traffic_statistics.Drilldown(0, traffic_statistics.DrillDownOptions()[0], traffic_statistics.TargetRowFilters()[0])
+print(drilldown)

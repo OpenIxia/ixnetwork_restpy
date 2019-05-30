@@ -309,6 +309,39 @@ class PassCriteria(Base):
 	def SeqErrorsThresholdValue(self, value):
 		self._set_attribute('seqErrorsThresholdValue', value)
 
+	def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameCountPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, PassCriteriaFrameCountMode=None, PassCriteriaFrameCountValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			DataErrorThresholdMode (str(average|maximum)): NOT DEFINED
+			DataErrorThresholdValue (number): NOT DEFINED
+			EnableDataIntegrityPassFail (bool): NOT DEFINED
+			EnableFrameCountPassFail (bool): NOT DEFINED
+			EnableLatencyPassFail (bool): NOT DEFINED
+			EnablePassFail (bool): NOT DEFINED
+			EnableRatePassFail (bool): NOT DEFINED
+			EnableSequenceErrorsPassFail (bool): NOT DEFINED
+			EnableStandardDeviationPassFail (bool): NOT DEFINED
+			LatencyThresholdMode (str(average|maximum)): NOT DEFINED
+			LatencyThresholdScale (str(ms|ns|us)): NOT DEFINED
+			LatencyThresholdValue (number): NOT DEFINED
+			LatencyVarThresholdMode (str(average|maximum)): NOT DEFINED
+			LatencyVariationThresholdScale (str(ms|ns|us)): NOT DEFINED
+			LatencyVariationThresholdValue (number): NOT DEFINED
+			PassCriteriaFrameCountMode (str(average|maximum)): NOT DEFINED
+			PassCriteriaFrameCountValue (number): NOT DEFINED
+			PassCriteriaLoadRateMode (str(average|minimum)): NOT DEFINED
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): NOT DEFINED
+			PassCriteriaLoadRateValue (number): NOT DEFINED
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+			SeqErrorsThresholdMode (str(average|maximum)): NOT DEFINED
+			SeqErrorsThresholdValue (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

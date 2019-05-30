@@ -82,6 +82,20 @@ class Interface(Base):
 	def ResponseMode(self, value):
 		self._set_attribute('responseMode', value)
 
+	def update(self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Enabled (bool): Enables this particular RIPng interface.
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The assigned interface ID.
+			InterfaceMetric (number): The value of the metric assigned to this particular interface. This value is added to the RIPng routing metric before transmission on this interface. It allows metrics for routes with the same standard RIPng routing metric to be identified by the particular interface.The default value is'0. Care should be taken so the combined metric value for a route does not exceed 15. A combined metric of 16 or above indicates that the route is unreachable.
+			ResponseMode (str(splitHorizon|noSplitHorizon|poisonReverse)): The response mode of the RIPng interface.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

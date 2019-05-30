@@ -81,6 +81,20 @@ class ReportGeneration(Base):
 	def TestRunId(self, value):
 		self._set_attribute('TestRunId', value)
 
+	def update(self, OutputFile=None, OutputType=None, Template=None, TestRunId=None):
+		"""Updates a child instance of reportGeneration on the server.
+
+		Args:
+			OutputFile (str): Signifies the output file
+			OutputType (str(Html|Pdf)): Signifies the output type
+			Template (str): Signifies the template for IxReporter
+			TestRunId (number): Signifies the identifier for the test run
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -1089,6 +1089,104 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FrameLossUnit=None, FrameOrderingByRfc2889=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialStepLoadRate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2889ordering=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BinaryBackoff (number): NOT DEFINED
+			BinaryFrameLossUnit (str(%|frames)): NOT DEFINED
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			BinaryResolution (number): NOT DEFINED
+			BinarySearchType (str(linear|perFlow|perPort)): NOT DEFINED
+			BinaryTolerance (number): NOT DEFINED
+			BurstSize (number): NOT DEFINED
+			CalculateJitter (bool): NOT DEFINED
+			CalculateLatency (bool): NOT DEFINED
+			ComboBackoff (number): NOT DEFINED
+			ComboFrameLossUnit (str(%|frames)): NOT DEFINED
+			ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			ComboResolution (number): NOT DEFINED
+			ComboTolerance (number): NOT DEFINED
+			CountRandomFrameSize (number): NOT DEFINED
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			DelayAfterTransmit (number): NOT DEFINED
+			DetailedResultsEnabled (bool): 
+			Duration (number): NOT DEFINED
+			EnableDataIntegrity (bool): NOT DEFINED
+			EnableExtraIterations (bool): NOT DEFINED
+			EnableFastConvergence (bool): NOT DEFINED
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): NOT DEFINED
+			EnableOldStatsForReef (bool): NOT DEFINED
+			ExtraIterationOffsets (str): NOT DEFINED
+			FastConvergenceDuration (number): sec
+			FastConvergenceThreshold (number): NOT DEFINED
+			ForceRegenerate (bool): NOT DEFINED
+			FrameLossUnit (str): NOT DEFINED
+			FrameOrderingByRfc2889 (bool): NOT DEFINED
+			FrameSizeMode (str(custom|customlist|increment|random)): NOT DEFINED
+			FramesPerBurstGap (number): NOT DEFINED
+			Framesize (number): Bytes
+			FramesizeList (list(str)): NOT DEFINED
+			Gap (number): NOT DEFINED
+			GenerateTrackingOptionAggregationFiles (bool): NOT DEFINED
+			InitialBinaryLoadRate (number): NOT DEFINED
+			InitialComboLoadRate (number): NOT DEFINED
+			InitialStepLoadRate (number): NOT DEFINED
+			LatencyBins (str): NOT DEFINED
+			LatencyBinsEnabled (bool): NOT DEFINED
+			LatencyType (str(cutThrough|storeForward)): NOT DEFINED
+			LoadRateList (str): NOT DEFINED
+			LoadType (str(binary|combo|custom|quickSearch|step|unchanged)): NOT DEFINED
+			MapType (str): NOT DEFINED
+			MaxBinaryLoadRate (number): NOT DEFINED
+			MaxComboLoadRate (number): NOT DEFINED
+			MaxIncrementFrameSize (number): NOT DEFINED
+			MaxQuickSearchLoadRate (number): NOT DEFINED
+			MaxRandomFrameSize (number): NOT DEFINED
+			MaxStepLoadRate (number): NOT DEFINED
+			MinBinaryLoadRate (number): NOT DEFINED
+			MinComboLoadRate (number): NOT DEFINED
+			MinFpsRate (number): NOT DEFINED
+			MinIncrementFrameSize (number): NOT DEFINED
+			MinKbpsRate (number): NOT DEFINED
+			MinQuickSearchLoadRate (number): NOT DEFINED
+			MinRandomFrameSize (number): NOT DEFINED
+			Numtrials (number): NOT DEFINED
+			PercentMaxRate (number): NOT DEFINED
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): NOT DEFINED
+			PortDelayValue (number): NOT DEFINED
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			QuickSearchFrameLossUnit (str(%)): NOT DEFINED
+			QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			QuickSearchResolution (number): NOT DEFINED
+			QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): NOT DEFINED
+			QuickSearchTolerance (number): NOT DEFINED
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): NOT DEFINED
+			ReportSequenceError (bool): NOT DEFINED
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): NOT DEFINED
+			Resolution (number): NOT DEFINED
+			Rfc2889ordering (str(noOrdering|unchanged|val2889Ordering)): NOT DEFINED
+			SendFullyMeshed (bool): NOT DEFINED
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepComboLoadRate (number): NOT DEFINED
+			StepFrameLossUnit (str(%|frames)): NOT DEFINED
+			StepIncrementFrameSize (number): NOT DEFINED
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			StepStepLoadRate (number): NOT DEFINED
+			StepTolerance (number): NOT DEFINED
+			SupportedTrafficTypes (str): NOT DEFINED
+			Tolerance (number): NOT DEFINED
+			TrafficType (str(burstyLoading|constantLoading)): NOT DEFINED
+			TxDelay (number): NOT DEFINED
+			UsePercentOffsets (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

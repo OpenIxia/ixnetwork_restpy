@@ -46,6 +46,17 @@ class Ping(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of ping on the server.
+
+		Args:
+			Enabled (bool): Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None):
 		"""Adds a new ping node on the server and retrieves it in this instance.
 

@@ -610,6 +610,64 @@ class PacketOutTriggerActions(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbISid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of packetOutTriggerActions on the server.
+
+		Args:
+			ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter)): The action type associated with this instruction.
+			ArpDstHwAddr (str): NOT DEFINED
+			ArpDstIpv4Addr (number): NOT DEFINED
+			ArpOpcode (number): NOT DEFINED
+			ArpSrcHwAddr (str): NOT DEFINED
+			ArpSrcIpv4Addr (number): NOT DEFINED
+			EthernetDestination (str): NOT DEFINED
+			EthernetSource (str): NOT DEFINED
+			EthernetType (number): NOT DEFINED
+			Experimenter (number): NOT DEFINED
+			ExperimenterData (str): NOT DEFINED
+			ExperimenterDatalength (number): NOT DEFINED
+			GroupId (number): NOT DEFINED
+			Icmpv4Code (number): NOT DEFINED
+			Icmpv4Type (number): NOT DEFINED
+			Icmpv6Code (number): NOT DEFINED
+			Icmpv6Type (number): NOT DEFINED
+			IpDscp (number): NOT DEFINED
+			IpEcn (number): NOT DEFINED
+			IpProtocol (number): NOT DEFINED
+			Ipv4Destination (str): NOT DEFINED
+			Ipv4Source (str): NOT DEFINED
+			Ipv6Destination (str): NOT DEFINED
+			Ipv6ExtHeader (number): NOT DEFINED
+			Ipv6FlowLabel (number): NOT DEFINED
+			Ipv6NdSll (str): NOT DEFINED
+			Ipv6NdTll (str): NOT DEFINED
+			Ipv6Source (str): NOT DEFINED
+			Ipv6ndTarget (str): NOT DEFINED
+			MaxByteLength (number): NOT DEFINED
+			MplsBos (number): NOT DEFINED
+			MplsLabel (number): NOT DEFINED
+			MplsTc (number): NOT DEFINED
+			MplsTtl (number): NOT DEFINED
+			NwTtl (number): NOT DEFINED
+			OutputPort (number): The Output port number to be used.
+			OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppTable)): NOT DEFINED
+			PbbISid (number): NOT DEFINED
+			QueueId (number): NOT DEFINED
+			SctpDestination (number): NOT DEFINED
+			SctpSource (number): NOT DEFINED
+			TcpDestination (number): NOT DEFINED
+			TcpSource (number): NOT DEFINED
+			TunnelId (number): NOT DEFINED
+			UdpDestination (number): NOT DEFINED
+			UdpSource (number): NOT DEFINED
+			VlanId (number): NOT DEFINED
+			VlanPriority (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbISid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
 		"""Adds a new packetOutTriggerActions node on the server and retrieves it in this instance.
 

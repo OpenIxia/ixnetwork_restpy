@@ -82,6 +82,20 @@ class TunnelLeafRange(Base):
 	def SubLspDown(self, value):
 		self._set_attribute('subLspDown', value)
 
+	def update(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
+		"""Updates a child instance of tunnelLeafRange on the server.
+
+		Args:
+			Enabled (bool): If true, enables the RSVP-TE Tunnel Tail Range.
+			IpCount (number): The number of IPv4 addresses in the range of Tunnel Tail addresses.
+			IpStart (str): The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
+			SubLspDown (bool): This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
 		"""Adds a new tunnelLeafRange node on the server and retrieves it in this instance.
 

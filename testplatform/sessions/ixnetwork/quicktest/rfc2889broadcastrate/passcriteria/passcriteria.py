@@ -153,6 +153,26 @@ class PassCriteria(Base):
 	def PassFailFrequency(self, value):
 		self._set_attribute('passFailFrequency', value)
 
+	def update(self, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+			EnablePassFail (bool): If true, the pass fail criteria is set.
+			EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+			LatencyThresholdMode (str(average|maximum)): The threshold mode for the latency.
+			LatencyThresholdScale (str(ms|ns|us)): The scale by which the latency threshold is measured.
+			LatencyThresholdValue (number): The value by which legacy threshold value is to be measured.
+			PassCriteriaLoadRateMode (str(average|minimum)): The pass criteria set for the load rate mode.
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass criteria scale in which the load rate is to be measured.
+			PassCriteriaLoadRateValue (number): The pass criteria for the Value of the load rate.
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

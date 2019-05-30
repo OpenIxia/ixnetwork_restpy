@@ -83,6 +83,19 @@ class Type(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, IsEditable=None, IsRequired=None, Name=None):
+		"""Updates a child instance of type on the server.
+
+		Args:
+			IsEditable (bool): Indicates whether this is editable or not
+			IsRequired (bool): Indicates whether this is required or not
+			Name (str): Name of the node
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

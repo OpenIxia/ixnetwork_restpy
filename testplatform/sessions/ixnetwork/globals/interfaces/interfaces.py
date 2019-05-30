@@ -80,3 +80,17 @@ class Interfaces(Base):
 	@SendSingleNsPerGateway.setter
 	def SendSingleNsPerGateway(self, value):
 		self._set_attribute('sendSingleNsPerGateway', value)
+
+	def update(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
+		"""Updates a child instance of interfaces on the server.
+
+		Args:
+			ArpOnLinkup (bool): If true, automatically enables ARP and PING when the interfaces is associated with a port.
+			NsOnLinkup (bool): If true, automatically enables NS when the interfaces is associated with a port.
+			SendSingleArpPerGateway (bool): If true, only a single ARP is sent via each defined gateway address.
+			SendSingleNsPerGateway (bool): If true, only a single NS is sent via each defined gateway address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

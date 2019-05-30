@@ -94,6 +94,18 @@ class Statistic(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Enable=None, Value=None):
+		"""Updates a child instance of statistic on the server.
+
+		Args:
+			Enable (bool): Enable/Disable monitoring for the current statistic.
+			Value (number): The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enable=None, Value=None):
 		"""Adds a new statistic node on the server and retrieves it in this instance.
 

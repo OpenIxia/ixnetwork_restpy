@@ -343,6 +343,34 @@ class DceNetworkRange(Base):
 	def SystemIdIncrementBy(self, value):
 		self._set_attribute('systemIdIncrementBy', value)
 
+	def update(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
+		"""Updates a child instance of dceNetworkRange on the server.
+
+		Args:
+			AdvertiseNetworkRange (bool): If true, this DCE ISIS Network Range is advertised.
+			BroadcastRootPriorityStep (number): The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
+			CapabilityRouterId (str): The IP address format of Capability Router.
+			EnableHostName (bool): If true, the given dynamic host name is transmitted in all the packets sent from this router.
+			EnableMultiTopology (bool): Enables more than one topology (distribution tree) corresponding to the given R bridge.
+			EntryCol (number): The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+			EntryRow (number): The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+			HostNamePrefix (str): Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
+			InterfaceMetric (number): The metric cost associated with this emulated DCE ISIS router.
+			NoOfCols (number): The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
+			NoOfRows (number): The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
+			NumberOfMultiDestinationTrees (number): The number of Multi-Destination Trees for the DCE ISIS router.
+			StartBroadcastRootPriority (number): The starting value of the Broadcast Root Priority of this DCE ISIS router.
+			StartSwitchId (number): The Switch ID of this emulated DCE ISIS router.
+			StartSystemId (str): The System ID assigned to the starting DCE ISIS router in this network range.
+			SwitchIdPriority (number): The Switch ID priority of this DCE ISIS router.
+			SwitchIdStep (number): The increment value by which the Switch ID of the DCE ISIS router increases.
+			SystemIdIncrementBy (str): The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
 		"""Adds a new dceNetworkRange node on the server and retrieves it in this instance.
 

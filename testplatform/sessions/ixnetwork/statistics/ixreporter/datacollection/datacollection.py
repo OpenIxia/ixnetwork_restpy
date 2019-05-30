@@ -53,3 +53,14 @@ class DataCollection(Base):
 			number
 		"""
 		return self._get_attribute('LastRunId')
+
+	def update(self, Enable=None):
+		"""Updates a child instance of dataCollection on the server.
+
+		Args:
+			Enable (bool): If it is true, enables collection of data
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

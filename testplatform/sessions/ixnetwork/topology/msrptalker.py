@@ -254,6 +254,26 @@ class MsrpTalker(Base):
 	def TalkerDomainCount(self, value):
 		self._set_attribute('talkerDomainCount', value)
 
+	def update(self, AdvertiseVlanMembership=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None, StreamCount=None, TalkerDomainCount=None):
+		"""Updates a child instance of msrpTalker on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			AdvertiseVlanMembership (bool): Advertise VLAN Membership from these talkers
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			StreamCount (number): number of stream id instances per talker instance (multiplier)
+			TalkerDomainCount (number): Domain Count
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertiseVlanMembership=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None, StreamCount=None, TalkerDomainCount=None):
 		"""Adds a new msrpTalker node on the server and retrieves it in this instance.
 

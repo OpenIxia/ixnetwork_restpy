@@ -200,6 +200,22 @@ class LdpLeafRangeV4(Base):
 		"""
 		return self._get_attribute('rootAddressStep')
 
+	def update(self, LSPType=None, Name=None, NumberOfTLVs=None):
+		"""Updates a child instance of ldpLeafRangeV4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			LSPType (str(p2MP)): LSP Type
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfTLVs (number): Number Of TLVs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, ContinuousIncrementOVAcrossRoot=None, GroupAddressV4=None, GroupAddressV6=None, GroupCountPerLsp=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None):
 		"""Base class infrastructure that gets a list of ldpLeafRangeV4 device ids encapsulated by this object.
 

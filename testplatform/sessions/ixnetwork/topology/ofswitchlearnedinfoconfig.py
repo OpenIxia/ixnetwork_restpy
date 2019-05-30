@@ -135,6 +135,23 @@ class OFSwitchLearnedInfoConfig(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, FlowStatOutGroupMode=None, FlowStatOutGroupValue=None, FlowStatOutPortMode=None, FlowStatOutPortValue=None, FlowStatTableIdMode=None, FlowStatTableIdValue=None, Name=None):
+		"""Updates a child instance of oFSwitchLearnedInfoConfig on the server.
+
+		Args:
+			FlowStatOutGroupMode (str(oFPGALL|oFPGANY|outGroupCustom)): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
+			FlowStatOutGroupValue (number): If Out Group is Custom/Manual, type the output group value in the box provided
+			FlowStatOutPortMode (str(oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NORMAL|outPortCustom)): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
+			FlowStatOutPortValue (number): If Out Port is Custom/Manual, type the output port value.
+			FlowStatTableIdMode (str(tableIdAllTables|tableIdCustom)): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
+			FlowStatTableIdValue (number): If Table ID is Custom/ Manual, type the Table ID Number
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

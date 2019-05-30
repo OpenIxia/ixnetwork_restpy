@@ -174,6 +174,20 @@ class Udf(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, ByteOffset=None, ChainedFromUdf=None, Enabled=None, Type=None):
+		"""Updates a child instance of udf on the server.
+
+		Args:
+			ByteOffset (number): The offset from the start of the frame in bytes. Default is 0.
+			ChainedFromUdf (str(none|udf1|udf2|udf3|udf4|udf5)): Allows to set what UDF the current UDF should chain from. If enabled, the UDF stays in its initial value until the UDF it is chained from reaches its terminating value.
+			Enabled (bool): If enabled, enables this User Defined Field.
+			Type (str(counter|ipv4|nestedCounter|random|rangeList|valueList)): The counter types of this UDF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ByteOffset=None, Chained=None, ChainedFromUdf=None, Enabled=None, Type=None):
 		"""Finds and retrieves udf data from the server.
 

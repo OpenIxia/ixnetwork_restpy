@@ -622,6 +622,65 @@ class InstructionActions(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of instructionActions on the server.
+
+		Args:
+			ActionType (str(drop|output|setEthernetSource|setEthernetDestination|setEthernetType|setVlanId|setVlanPriority|setIpDscp|setIpEcn|setIpProtocol|setIpv4Source|setIpv4Destination|setTcpSource|setTcpDestination|setUdpSource|setUdpDestination|setSctpSource|setSctpDestination|setIcmpv4Type|setIcmpv4Code|setArpOpcode|setArpSourceHwAddress|setArpTargetHwAddress|setArpSourceIpv4Address|setArpTargetIpv4Address|setIpv6Source|setIpv6Destination|setIpv6FlowLabel|setIcmpv6Type|setIcmpv6Code|setIpv6NdTarget|setIpv6NdSll|setIpv6NdTll|setMplsLabel|setMplsTc|setMplsBos|setPbbIsid|setTunnelId|setIpv6ExtHeader|copyTtlOut|copyTtlIn|setMplsTtl|decrementMplsTtl|pushVlan|popVlan|pushMpls|popMpls|setQueue|group|setNetworkTtl|decrementNetworkTtl|pushPbb|popPbb|experimenter|setExperimenter)): The action type associated with this instruction.
+			ArpDstHwAddr (str): Value of the ARP destination hardware address.
+			ArpDstIpv4Addr (str): The ARP destination IPv4 address field value.
+			ArpOpcode (number): Value of the ARP opcode field.
+			ArpSrcHwAddr (str): Value of the ARP source hardware address.
+			ArpSrcIpv4Addr (str): The ARP source IPv4 address field value.
+			EthernetDestination (str): The Ethernet destination address.
+			EthernetSource (str): The Ethernet source address.
+			EthernetType (str): The type of Ethernet port used.
+			Experimenter (number): The unique Experimenter identifier. The default value is 1.
+			ExperimenterData (str): The experimenter data field value.
+			ExperimenterDatalength (number): Value of the Experimenter data length field.
+			ExperimenterField (number): NOT DEFINED
+			GroupId (number): Set the Group identifier.
+			Icmpv4Code (number): The code of ICMPv4 port used.
+			Icmpv4Type (number): The type of ICMPv4 port used.
+			Icmpv6Code (number): Value of the ICMPv6 code field.
+			Icmpv6Type (number): Value of the ICMPv6 type field.
+			IpDscp (number): The IP DSCP value for advertising.
+			IpEcn (number): The IP ECN field value.
+			IpProtocol (number): The IP protocol used.
+			Ipv4Destination (str): The IPv4 destination address.
+			Ipv4Source (str): The IPv4 source address.
+			Ipv6Destination (str): Value of the IPv6 destination field.
+			Ipv6ExtHeader (number): The Ipv6 extension header field value.
+			Ipv6FlowLabel (number): Value of the IPv6 flow label field.
+			Ipv6NdSll (str): Set the source link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6NdTll (str): Set the target link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6Source (str): Value of the IPv6 source field.
+			Ipv6ndTarget (str): The IPv6 ND target field value.
+			MaxByteLength (number): Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
+			MplsBos (number): Value of the MPLS BoS field.
+			MplsLabel (number): Set the LABEL in the first MPLS shim header.
+			MplsTc (number): The MPLS TC field value.
+			MplsTtl (number): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+			NwTtl (number): Set the IP TTL.
+			OutputPort (number): The Output port number to be used.
+			OutputPortType (str(ofppInPort|manual|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal)): Specify the Output Port Type for this Instruction.
+			PbbIsId (number): Value of the PBB I-SID field.
+			QueueId (number): The identifier of the Queue.
+			SctpDestination (number): The SCTP destination field value.
+			SctpSource (number): Value of the SCTP source field.
+			TcpDestination (number): The Transport destination address.
+			TcpSource (number): Value of the TCP source field.
+			TunnelId (str): Value of the tunnel ID field.
+			UdpDestination (number): Value of the UDP destination field.
+			UdpSource (number): Value of the UDP source field.
+			VlanId (number): The unique VLAN Identifier.
+			VlanPriority (number): The User Priority for this VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
 		"""Adds a new instructionActions node on the server and retrieves it in this instance.
 

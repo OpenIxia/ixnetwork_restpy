@@ -550,6 +550,52 @@ class MplsRouteRange(Base):
 	def ThruPrefix(self, value):
 		self._set_attribute('thruPrefix', value)
 
+	def update(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, AsPathSetMode=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, ThruPacking=None, ThruPrefix=None):
+		"""Updates a child instance of mplsRouteRange on the server.
+
+		Args:
+			AdvertiseNextHopAsV4 (bool): NOT DEFINED
+			AggregatorAsNum (number): If enabled, sets the AS associated with the aggregator router ID.
+			AggregatorIpAddress (str): If enabled, generates an aggregator attribute that indicates the router ID of the router that aggregated two or more routes into one.
+			AsPathSetMode (str(noInclude|includeAsSeq|includeAsSet|includeAsSeqConf|includeAsSetConf|prependAs)): The mode to set the AsPath. Possible values include:+ noInclude+ includeAsSeq+ includeAsSet+ includeAsSeqConf+ includeAsSetConf+ prependAs
+			EnableAggregator (bool): If enabled, generates an aggregator attribute that indicates the router ID that aggregated two or more routes into one.
+			EnableAggregatorIdIncrementMode (bool): If true, Causes the AS field to be incremented for each neighbor session generated for the range of neighbor addresses in the AGGREGATOR attribute. (default = 1)
+			EnableAsPath (bool): If true, Enables the generation of AS Path related items.
+			EnableAtomicAttribute (bool): If enabled, sets the attribute bit that indicates that the router has aggregated two or more prefixes together into one.
+			EnableCluster (bool): If enabled, generates a list of BGP clusters that a particular route has passed through.
+			EnableCommunity (bool): If enabled, indicates that a community attribute should be added to the BGP entry.
+			EnableGenerateUniqueRoutes (bool): When true, each router generates a different IP address range.
+			EnableIncludeLoopback (bool): If true, will include the loopback address (127.0.0.1) if it is in the generated network range. (default = false)
+			EnableIncludeMulticast (bool): If true, will include multicast addresses if they are in the generated network range. The SAFI used for multicast addresses is dictated by the setting of the enableProperSafi option. (default = false)
+			EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+			EnableMed (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute, based on the information in MED. (default = false)
+			EnableNextHop (bool): Enables the generation of a NEXT HOP attribute, based on information in nextHopIpAddress and nextHopMode (default = true)
+			EnableOrigin (bool): Enables the generation of an ORIGIN attribute, based on information in originProtocol. (default = true)
+			EnableOriginatorId (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId.
+			EnableTraditionalNlriUpdate (bool): If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
+			Enabled (bool): If true, enables the MPLS route range.
+			EndOfRib (bool): If true, enables end of rib
+			FromPacking (number): The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
+			FromPrefix (number): The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
+			IpType (str(ipAny|ipv4|ipv6)): The Internet Protocol type for the addresses.
+			IterationStep (number): During prefix generation, the increment between prefixes. (default = 1)
+			LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+			Med (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+			NetworkAddress (str): The network address used for the generated prefixes, in either IPv4 or IPv6 format. (default = 0.0.0.0)
+			NextHopIpAddress (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+			NextHopMode (str(fixed|nextHopIncrement|incrementPerPrefix)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+			NextHopSetMode (str(setManually|sameAsLocalIp)): Indicates now to set the next hop IP address.
+			NumRoutes (number): The number of prefixes (routes) to generate for this routeItem. (default = 1)
+			OriginProtocol (str(igp|egp|incomplete)): An indication of where the route entry originated.
+			OriginatorId (str): The ID for the router that originated the route.
+			ThruPacking (number): The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking.
+			ThruPrefix (number): The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, AsPathSetMode=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, ThruPacking=None, ThruPrefix=None):
 		"""Adds a new mplsRouteRange node on the server and retrieves it in this instance.
 

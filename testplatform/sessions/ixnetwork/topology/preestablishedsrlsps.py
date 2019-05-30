@@ -468,6 +468,24 @@ class PreEstablishedSrLsps(Base):
 		"""
 		return self._get_attribute('ttl')
 
+	def update(self, InsertIpv6ExplicitNull=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, OverridePlspId=None):
+		"""Updates a child instance of preEstablishedSrLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+			NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
+			OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndpoint=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, DestinationIpv4Address=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludePpag=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, InitialDelegation=None, LocalProtection=None, MplsLabel=None, PlspId=None, ProtectionLspBit=None, RedelegationTimeoutInterval=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, StandbyLspBit=None, SymbolicPathName=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of preEstablishedSrLsps device ids encapsulated by this object.
 

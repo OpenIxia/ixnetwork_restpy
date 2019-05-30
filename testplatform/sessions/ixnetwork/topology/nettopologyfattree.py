@@ -84,6 +84,19 @@ class NetTopologyFatTree(Base):
 	def LinkMultiplier(self, value):
 		self._set_attribute('linkMultiplier', value)
 
+	def update(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
+		"""Updates a child instance of netTopologyFatTree on the server.
+
+		Args:
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LevelCount (number): Number of Levels
+			LinkMultiplier (number): number of links between two nodes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
 		"""Adds a new netTopologyFatTree node on the server and retrieves it in this instance.
 

@@ -461,6 +461,35 @@ class Capture(Base):
 	def TriggerPosition(self, value):
 		self._set_attribute('triggerPosition', value)
 
+	def update(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureTrigger=None, ControlInterfaceType=None, ControlSliceSize=None, DataActiveCapture=None, DataReceiveTimestamp=None, DisplayFiltersControlCapture=None, DisplayFiltersDataCapture=None, HardwareEnabled=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+		"""Updates a child instance of capture on the server.
+
+		Args:
+			AfterTriggerFilter (str(captureAfterTriggerAll|captureAfterTriggerConditionFilter|captureAfterTriggerFilter)): Controls the capture of data after triggering when operating in triggered mode.
+			BeforeTriggerFilter (str(captureBeforeTriggerAll|captureBeforeTriggerFilter|captureBeforeTriggerNone)): Controls the capture of data prior to triggering when operating in triggered mode
+			CaptureMode (str(captureContinuousMode|captureTriggerMode)): Controls whether data capture is performed in a continuous or triggered mode.
+			ContinuousFilters (str(captureContinuousAll|captureContinuousFilter)): Controls the circular buffer behaviour: continuous capture of all received packets or continuous capture of received packets which match the filter conditions applied.
+			ControlActiveCapture (str): The name of the active control capture (if any).The active control capture is the last one made on the port by default; but the user can change it using this attribute.
+			ControlBufferBehaviour (str(bufferAfterStopCircular|bufferAfterStopNonCircular|bufferLiveCircular|bufferLiveNonCircular)): Sets the control capture buffer behavior.
+			ControlBufferSize (number): Sets the size(%) of the ports memory used by the control capture.
+			ControlCaptureFilter (str): Controls the dividing line within the capture buffer between before trigger dataand post trigger data. This control is only useful in triggered mode.
+			ControlCaptureTrigger (str): This is the control Trigger string.
+			ControlInterfaceType (str(anyInterface|specificInterface)): Enables control capture on the desired interfaces.
+			ControlSliceSize (number): Sets the size of the control capture slices.
+			DataActiveCapture (str): The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
+			DataReceiveTimestamp (str(chassisUtcTime|hwTimestamp)): Controls whether the data capture packets timestamp are using the chassis UTC time or the HW timestamp.
+			DisplayFiltersControlCapture (str): Displays the packet filter set inside the control capture that is used to filter the already captured packets
+			DisplayFiltersDataCapture (str): Displays the packet filter set inside the data capture that is used to filter the already captured packets
+			HardwareEnabled (bool): If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+			SliceSize (number): The size of the capture slice.
+			SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+			TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def DecodeAsApply(self, *args, **kwargs):
 		"""Executes the decodeAsApply operation on the server.
 

@@ -92,6 +92,22 @@ class SubTlv(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Description=None, IsEnabled=None, Name=None):
+		"""Updates a child instance of subTlv on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Description (str): Description of the tlv
+			IsEnabled (bool): Enables/disables this tlv
+			Name (str): Name of the tlv
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Description=None, IsEnabled=None, Name=None):
 		"""Finds and retrieves subTlv data from the server.
 

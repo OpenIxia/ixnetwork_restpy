@@ -56,3 +56,15 @@ class FrameRateDistribution(Base):
 	@StreamDistribution.setter
 	def StreamDistribution(self, value):
 		self._set_attribute('streamDistribution', value)
+
+	def update(self, PortDistribution=None, StreamDistribution=None):
+		"""Updates a child instance of frameRateDistribution on the server.
+
+		Args:
+			PortDistribution (str(applyRateToAll|splitRateEvenly)): At the port level, apply the target configuration transmission rate for each encapsulation.
+			StreamDistribution (str(applyRateToAll|splitRateEvenly)): At the flow group level, apply the target rate of each port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

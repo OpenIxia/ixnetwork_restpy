@@ -142,6 +142,25 @@ class CustomTopologyInterestedVlanRange(Base):
 	def VlanIdStep(self, value):
 		self._set_attribute('vlanIdStep', value)
 
+	def update(self, IncludeInterestedVlan=None, InterNodeVlanStep=None, M4BitEnabled=None, M6BitEnabled=None, NumberOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+		"""Updates a child instance of customTopologyInterestedVlanRange on the server.
+
+		Args:
+			IncludeInterestedVlan (bool): NOT DEFINED
+			InterNodeVlanStep (number): NOT DEFINED
+			M4BitEnabled (bool): NOT DEFINED
+			M6BitEnabled (bool): NOT DEFINED
+			NumberOfSpanningTreeRoots (number): NOT DEFINED
+			StartSpanningTreeRootBridgeId (str): NOT DEFINED
+			StartVlanId (number): NOT DEFINED
+			VlanCount (number): NOT DEFINED
+			VlanIdStep (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeInterestedVlan=None, InterNodeVlanStep=None, M4BitEnabled=None, M6BitEnabled=None, NumberOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
 		"""Adds a new customTopologyInterestedVlanRange node on the server and retrieves it in this instance.
 

@@ -453,6 +453,21 @@ class DeviceGroup(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, Multiplier=None, Name=None):
+		"""Updates a child instance of deviceGroup on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Multiplier (number): Number of device instances per parent device instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Multiplier=None, Name=None):
 		"""Adds a new deviceGroup node on the server and retrieves it in this instance.
 

@@ -332,3 +332,38 @@ class CmacRouteAttributes(Base):
 	@SetNextHop.setter
 	def SetNextHop(self, value):
 		self._set_attribute('setNextHop', value)
+
+	def update(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
+		"""Updates a child instance of cmacRouteAttributes on the server.
+
+		Args:
+			AggregatorAs (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+			AggregatorId (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+			AsPath (list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))): Indicates the local IP address of the BGP router
+			AsSetMode (str(includeAsSeq|includeAsSeqConf|includeAsSet|includeAsSetConf|noInclude|prependAs)): NOT DEFINED
+			Cluster (list(number)): The list of BGP clusters that a particular route has passed through
+			Community (list(number)): The BGP Community attribute to be added to the BGP entry
+			EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+			EnableAsPath (bool): Indicates the local IP address of the BGP router.
+			EnableAtomicAggregate (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+			EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+			EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+			EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+			EnableMultiExit (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+			EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+			EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+			EnableOriginator (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+			ExtendedCommunity (list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|ip|fourOctetAs|opaque|administratorAsTwoOctetLinkBw],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))): This object is used to construct an extended community attribute for a route item
+			LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+			MultiExit (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+			NextHop (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+			NextHopIpType (str(ipv4|ipv6)): IP type of Next Hop. Default is IPv4.
+			NextHopMode (str(fixed|incrementPerPeer)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses
+			Origin (str(igp|egp|incomplete)): An indication of where the route entry originated
+			OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+			SetNextHop (str(manually|sameAsLocalIp)): Indicates now to set the next hop IP address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

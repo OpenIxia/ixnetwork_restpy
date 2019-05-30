@@ -128,6 +128,22 @@ class Cfm(Base):
 	def SuppressErrorsOnAis(self, value):
 		self._set_attribute('suppressErrorsOnAis', value)
 
+	def update(self, EnableOptionalLmFunctionality=None, EnableOptionalTlvValidation=None, Enabled=None, ReceiveCcm=None, SendCcm=None, SuppressErrorsOnAis=None):
+		"""Updates a child instance of cfm on the server.
+
+		Args:
+			EnableOptionalLmFunctionality (bool): NOT DEFINED
+			EnableOptionalTlvValidation (bool): If true, the CFM protocol will validate optional TLVs present in CFM packets.
+			Enabled (bool): If true, the CFM protcol is enabled.
+			ReceiveCcm (bool): If true, the CFM protocol can receive CFM CCMs on this port.
+			SendCcm (bool): If true, the CFM protocol can send CFM CCMs from this port.
+			SuppressErrorsOnAis (bool): If true, the errors on AIS are suopressed.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

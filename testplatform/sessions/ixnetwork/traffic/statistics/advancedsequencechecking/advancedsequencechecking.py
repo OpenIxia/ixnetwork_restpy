@@ -56,3 +56,15 @@ class AdvancedSequenceChecking(Base):
 	@Enabled.setter
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
+
+	def update(self, AdvancedSequenceThreshold=None, Enabled=None):
+		"""Updates a child instance of advancedSequenceChecking on the server.
+
+		Args:
+			AdvancedSequenceThreshold (number): Signifies the threshold of advanced sequence
+			Enabled (bool): If true, enables advanced sequence checking
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

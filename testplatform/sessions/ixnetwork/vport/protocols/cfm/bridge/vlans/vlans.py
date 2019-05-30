@@ -144,6 +144,24 @@ class Vlans(Base):
 	def Type(self, value):
 		self._set_attribute('type', value)
 
+	def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
+		"""Updates a child instance of vlans on the server.
+
+		Args:
+			CVlanId (number): The stacked VLAN identifier.
+			CVlanPriority (number): The stacked VLAN priority.
+			CVlanTpId (str): The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+			Enabled (bool): If true, the VLAN is enabled.
+			SVlanId (number): The single VLAN identifier.
+			SVlanPriority (number): The single VLAN priority.
+			SVlanTpId (str): The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
+			Type (str(singleVlan|stackedVlan)): Sets the VLAN type.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
 		"""Adds a new vlans node on the server and retrieves it in this instance.
 

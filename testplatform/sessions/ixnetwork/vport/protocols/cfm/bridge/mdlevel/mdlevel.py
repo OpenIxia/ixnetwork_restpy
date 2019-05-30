@@ -82,6 +82,20 @@ class MdLevel(Base):
 	def MdNameFormat(self, value):
 		self._set_attribute('mdNameFormat', value)
 
+	def update(self, Enabled=None, MdLevelId=None, MdName=None, MdNameFormat=None):
+		"""Updates a child instance of mdLevel on the server.
+
+		Args:
+			Enabled (bool): If true, the MD levels are enabled.
+			MdLevelId (number): Sets the MD level identifier.
+			MdName (str): Sets the MD name.
+			MdNameFormat (str(noDomainName|domainNameBasedString|macAddress2OctetInteger|characterString)): Sets the MD Name format.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, MdLevelId=None, MdName=None, MdNameFormat=None):
 		"""Adds a new mdLevel node on the server and retrieves it in this instance.
 

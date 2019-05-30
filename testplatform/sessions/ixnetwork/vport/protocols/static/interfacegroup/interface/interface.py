@@ -58,6 +58,18 @@ class Interface(Base):
 	def ProtocolInterface(self, value):
 		self._set_attribute('protocolInterface', value)
 
+	def update(self, Enabled=None, ProtocolInterface=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Enabled (bool): 
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, ProtocolInterface=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

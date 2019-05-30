@@ -584,3 +584,59 @@ class FlowAggregatedStatMatchCriteria131TriggerAttributes(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbISid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of flowAggregatedStatMatchCriteria131TriggerAttributes on the server.
+
+		Args:
+			ArpDstHwAddr (dict(arg1:str,arg2:str)): Value of the ARP destination hardware address.
+			ArpDstIpv4Addr (dict(arg1:str,arg2:str)): The ARP destination IPv4 address field value.
+			ArpOpcode (dict(arg1:str,arg2:str)): Value of the ARP opcode field.
+			ArpSrcHwAddr (dict(arg1:str,arg2:str)): Value of the ARP source hardware address.
+			ArpSrcIpv4Addr (dict(arg1:str,arg2:str)): The ARP source IPv4 address field value.
+			Cookie (dict(arg1:str,arg2:str)): The Cookie field value.
+			EthernetDestination (dict(arg1:str,arg2:str)): The Ethernet destination address.
+			EthernetSource (dict(arg1:str,arg2:str)): The Ethernet source address.
+			EthernetType (dict(arg1:str,arg2:str)): The type of Ethernet port used.
+			ExperimenterData (dict(arg1:str,arg2:str)): The experimenter data field value.
+			ExperimenterDataLength (dict(arg1:number,arg2:str)): Value of the Experimenter data length field.
+			ExperimenterField (dict(arg1:number,arg2:str)): Value of the Experimenter Field field.
+			ExperimenterHashmask (dict(arg1:bool,arg2:str)): The experimented hasmask field value.
+			ExperimenterId (dict(arg1:str,arg2:str)): Value of the experimenter ID field.
+			Icmpv4Code (dict(arg1:str,arg2:str)): The code of ICMPv4 port used.
+			Icmpv4Type (dict(arg1:str,arg2:str)): The type of ICMPv4 port used.
+			Icmpv6Code (dict(arg1:str,arg2:str)): Value of the ICMPv6 code field.
+			Icmpv6Type (dict(arg1:str,arg2:str)): Value of the ICMPv6 type field.
+			InPort (dict(arg1:str,arg2:str)): The input port used.
+			IpDscp (dict(arg1:str,arg2:str)): The IP DSCP value for advertising.
+			IpEcn (dict(arg1:str,arg2:str)): The IP ECN field value.
+			IpProtocol (dict(arg1:str,arg2:str)): The IP protocol used.
+			Ipv4Destination (dict(arg1:str,arg2:str)): The IPv4 destination address.
+			Ipv4Source (dict(arg1:str,arg2:str)): The IPv4 source address.
+			Ipv6Destination (dict(arg1:str,arg2:str)): Value of the IPv6 destination field.
+			Ipv6ExtHeader (dict(arg1:str,arg2:str)): The Ipv6 extension header field value.
+			Ipv6FlowLabel (dict(arg1:str,arg2:str)): Value of the IPv6 flow label field.
+			Ipv6NdDll (dict(arg1:str,arg2:str)): The IPv6 ND DLL field value.
+			Ipv6NdSll (dict(arg1:str,arg2:str)): Value of the Ipv6 ND SLL field.
+			Ipv6NdTarget (dict(arg1:str,arg2:str)): Value of the IPv6 ND target field.
+			Ipv6Source (dict(arg1:str,arg2:str)): Value of the IPv6 source field.
+			MetaData (dict(arg1:str,arg2:str)): Value of the metadata field.
+			MplsBos (dict(arg1:str,arg2:str)): Value of the MPLS BoS field.
+			MplsLabel (dict(arg1:str,arg2:str)): Value of the MPLS label field.
+			MplsTc (dict(arg1:str,arg2:str)): Value of the MPLS TC field.
+			PbbISid (dict(arg1:str,arg2:str)): Value of the PBB I-SID field.
+			PhysicalInPort (dict(arg1:str,arg2:str)): Value of the Physical IN port field.
+			SctpDestination (dict(arg1:str,arg2:str)): The SCTP destination field value.
+			SctpSource (dict(arg1:str,arg2:str)): Value of the SCTP destination field.
+			TcpDestination (dict(arg1:str,arg2:str)): The Transport destination address.
+			TcpSource (dict(arg1:str,arg2:str)): Value of the TCP source field.
+			TunnelId (dict(arg1:str,arg2:str)): Value of the tunnel ID field.
+			UdpDestination (dict(arg1:str,arg2:str)): Value of the UDP destination field.
+			UdpSource (dict(arg1:str,arg2:str)): Value of the UDP source field.
+			VlanId (dict(arg1:str,arg2:str)): The unique VLAN Identifier.
+			VlanPriority (dict(arg1:str,arg2:str)): The User Priority for this VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

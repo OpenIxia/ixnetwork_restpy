@@ -185,6 +185,22 @@ class Layer23TrafficFlowDetectiveFilter(Base):
 	def TrafficItemFilterIds(self, value):
 		self._set_attribute('trafficItemFilterIds', value)
 
+	def update(self, DeadFlowsThreshold=None, FlowFilterType=None, PortFilterIds=None, ShowEgressFlows=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+		"""Updates a child instance of layer23TrafficFlowDetectiveFilter on the server.
+
+		Args:
+			DeadFlowsThreshold (number): Threshold in seconds after which the flows are declared dead if there are no packets received for a specified number of seconds. This is a global attibute and hence the latest value entered takes precedence over previous values in all the custom views.
+			FlowFilterType (str(allFlows|deadFlows|liveFlows)): Indicates the flow detective filter settings.
+			PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Selected port filters from the availablePortFilter list.
+			ShowEgressFlows (bool): NOT DEFINED
+			TrafficItemFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
+			TrafficItemFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DeadFlowsThreshold=None, FlowFilterType=None, PortFilterIds=None, ShowEgressFlows=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
 		"""Adds a new layer23TrafficFlowDetectiveFilter node on the server and retrieves it in this instance.
 

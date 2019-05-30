@@ -166,6 +166,27 @@ class CustomTopologyMulticastMacRange(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+		"""Updates a child instance of customTopologyMulticastMacRange on the server.
+
+		Args:
+			IncludeMacGroup (bool): NOT DEFINED
+			IntraGroupUnicastMacIncrement (str): NOT DEFINED
+			MulticastAddressNodeStep (str): NOT DEFINED
+			MulticastMacCount (number): NOT DEFINED
+			MulticastMacStep (str): NOT DEFINED
+			NumberOfUnicastSourceMacsPerMulticast (number): NOT DEFINED
+			SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
+			StartMulticastMac (str): NOT DEFINED
+			StartUnicastSourceMac (str): NOT DEFINED
+			UnicastAddressNodeStep (str): NOT DEFINED
+			VlanId (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
 		"""Adds a new customTopologyMulticastMacRange node on the server and retrieves it in this instance.
 

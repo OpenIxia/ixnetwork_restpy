@@ -153,6 +153,20 @@ class PtpNegBehaveList(Base):
 		"""
 		return self._get_attribute('ptpValueDisPattern1')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ptpNegBehaveList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, MvActive=None, MvDelay=None, MvFieldValue=None, MvFieldValue1=None, MvMsgAction=None, MvPtpMsgField=None, MvPtpMsgField1=None, PtpMsgType=None, PtpValueDisPattern=None, PtpValueDisPattern1=None):
 		"""Base class infrastructure that gets a list of ptpNegBehaveList device ids encapsulated by this object.
 

@@ -68,3 +68,16 @@ class Dcc(Base):
 	@TimeFill.setter
 	def TimeFill(self, value):
 		self._set_attribute('timeFill', value)
+
+	def update(self, Crc=None, OverheadByte=None, TimeFill=None):
+		"""Updates a child instance of dcc on the server.
+
+		Args:
+			Crc (str(crc16|crc32)): Choose the type of Cyclic Redundancy Check to be used.
+			OverheadByte (str(loh|soh)): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
+			TimeFill (str(flag7E|markIdle)): Choose the type of bytes used to fill the gaps between DCC frames.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

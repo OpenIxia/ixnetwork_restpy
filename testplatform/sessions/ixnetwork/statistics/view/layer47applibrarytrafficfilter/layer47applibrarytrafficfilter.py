@@ -102,6 +102,19 @@ class Layer47AppLibraryTrafficFilter(Base):
 	def TopxValue(self, value):
 		self._set_attribute('topxValue', value)
 
+	def update(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
+		"""Updates a child instance of layer47AppLibraryTrafficFilter on the server.
+
+		Args:
+			AdvancedFilterName (str): Specifies an advanced filter from the ones available in the selected drill down view.
+			TopxEnabled (bool): The view only shows the number of rows specified by TopXValue. If the view is OnDemand, it will become RealTime.
+			TopxValue (number): The number of rows to be shown when TopXEnabled is set to true.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
 		"""Adds a new layer47AppLibraryTrafficFilter node on the server and retrieves it in this instance.
 

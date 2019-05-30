@@ -280,6 +280,33 @@ class Router(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, DiscardLearnedLsa=None, Enabled=None, GenerateRouterLsa=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxFloodLsUpdatesPerBurst=None, RebuildAdjForLsdbChange=None, RouterId=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwotchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TrafficGroupId=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			DiscardLearnedLsa (bool): When this option is true, this simulated OSPF router (RID) will not learn any LSAs from the neighbor. (default = false)
+			Enabled (bool): Enables or disables the use of this emulated OSPF router in the emulated OSPF network. (default = disabled)
+			GenerateRouterLsa (bool): If enabled, the router will automatically generate a router LSA including all of the interfaces added with the ospfRouter addInterface command. This should be turned off if you are building OSPF topologies with ospfUserLsa commands. (default = true)
+			GracefulRestart (bool): Enables the graceful restart Helper Mode function, per the IETF drafts, for the emulated OSPF router. (default = false)
+			InterFloodLsUpdateBurstGap (number): The number of FloodlsUpdates sent between each Burst gap.
+			LsaRefreshTime (number): The time taken for LSA refresh.
+			LsaRetransmitTime (number): The time taken to retransmit LSA.
+			MaxFloodLsUpdatesPerBurst (number): The maximum number of FloodLsUpdates sent for each Burst.
+			RebuildAdjForLsdbChange (bool): The enableGracefulRestart option must be true. If this option is true, Database Description (DBD) packets will have the R bit set - and the DBD packets will also have the LR (LSDB Resynchronization) bit set in the LLS Extended Options TLV. Out-of-Band Link State Database (OOB LSDB) resynchronization will be used instead of normal LSDB resynchronization, in order to preserve the OSPF adjacency with the neighbor router across OSPF Graceful Restart. (default = false)
+			RouterId (str): The router ID for this emulated OSPF router, in IPv4 format.
+			StrictLsaChecking (bool): If enabled, the OSPFv2 Restart Helper will terminate Graceful Restart when there are changes to an LSA that would be flooded to, or retransmitted by, the restarting router.
+			SupportForRfc3623 (bool): Enables Graceful Restart Helper Mode per RFC 3623 on the emulated OSPF router. (default = false)
+			SupportReasonSoftReloadUpgrade (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a Software Reload or Upgrade on the restarting router. (Planned outage) The default is checked/enabled.
+			SupportReasonSoftRestart (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is an OSPFv2 software restart (on the restarting router). (Planned or unplanned outage) The default is checked/enabled.
+			SupportReasonSwotchRedundantCntrlProcessor (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a unplanned switchover to a redundant control processor on the restarting router. (Unplanned outage)
+			SupportReasonUnknown (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is unknown and unplanned. (Unplanned outage) The default is enabled.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DiscardLearnedLsa=None, Enabled=None, GenerateRouterLsa=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxFloodLsUpdatesPerBurst=None, RebuildAdjForLsdbChange=None, RouterId=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwotchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TrafficGroupId=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

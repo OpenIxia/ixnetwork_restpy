@@ -249,6 +249,34 @@ class TestConfig(Base):
 	def UseExistingSetupRate(self, value):
 		self._set_attribute('useExistingSetupRate', value)
 
+	def update(self, Duration=None, EnableAllSlavesStatus=None, EnableExpectedGrandMasterStatus=None, EnableNonExpectedMasterStatus=None, ExpectedMasterClockId=None, ExpectedMasterPort=None, GrandMasterStatus=None, MasterPorts=None, MaxOutstanding=None, NonExpectedMasterStatus=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, SlavePorts=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+			EnableAllSlavesStatus (str): Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
+			EnableExpectedGrandMasterStatus (str): Status of the clock configured as Expected Master is Grand Master
+			EnableNonExpectedMasterStatus (str): Status of clocks configured as Master is not Grand Master
+			ExpectedMasterClockId (str): ID of the Expected Master Clock
+			ExpectedMasterPort (str): Port selected as Expected Master
+			GrandMasterStatus (str): Port selected as Grand Master Clock
+			MasterPorts (str): Ports selected as Master
+			MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+			NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
+			Numtrials (number): Number of trials that can be run
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			Runmode (str(duration|noframes)): Running mode used
+			SetupRate (number): The number of PTP connections to be initiated per second
+			SlavePorts (str): The ports selected as slaves
+			StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+			TeardownRate (number): The number of PTP connections to tear down per second
+			UseExistingSetupRate (bool): Currently set Setup Rate value is used
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -177,6 +177,28 @@ class LearnFrames(Base):
 	def LearnWaitTimeBeforeTransmit(self, value):
 		self._set_attribute('learnWaitTimeBeforeTransmit', value)
 
+	def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			FastPathEnable (bool): If true, the fast path is enabled.
+			FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+			FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+			FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+			LearnFrameSize (number): The learnt information on frame size.
+			LearnFrequency (str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+			LearnNumFrames (number): The frequency at which number of frames are to be learnt.
+			LearnRate (number): The rate at which the data is to be learnt.
+			LearnSendMacOnly (bool): The learnt information on the MAC address sent.
+			LearnSendRouterSolicitation (bool): The learnt information on the router sent solicitation.
+			LearnWaitTime (number): The learnt information on the wait time.
+			LearnWaitTimeBeforeTransmit (number): The learnt wait time before transmitting.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -432,6 +432,26 @@ class LdpBasicRouter(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, ConnectedVia=None, LdpVersion=None, LeafRangesCountV4=None, Multiplier=None, Name=None, RootRangesCountV4=None, StackedLayers=None):
+		"""Updates a child instance of ldpBasicRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			LdpVersion (str(version1|version2)): Version of LDP. When RFC 5036 is chosen, LDP version is version 1. When draft-pdutta-mpls-ldp-adj-capability-00 is chosen, LDP version is version 2
+			LeafRangesCountV4 (number): The number of Leaf Ranges configured for this LDP router
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			RootRangesCountV4 (number): The number of Root Ranges configured for this LDP router
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, LdpVersion=None, LeafRangesCountV4=None, Multiplier=None, Name=None, RootRangesCountV4=None, StackedLayers=None):
 		"""Adds a new ldpBasicRouter node on the server and retrieves it in this instance.
 

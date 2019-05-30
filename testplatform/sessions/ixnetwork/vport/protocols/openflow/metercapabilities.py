@@ -80,3 +80,17 @@ class MeterCapabilities(Base):
 	@PacketPerSecond.setter
 	def PacketPerSecond(self, value):
 		self._set_attribute('packetPerSecond', value)
+
+	def update(self, CollectStatistics=None, DoBurstSize=None, KiloBitPerSecond=None, PacketPerSecond=None):
+		"""Updates a child instance of meterCapabilities on the server.
+
+		Args:
+			CollectStatistics (bool): The capability to collect statistics.
+			DoBurstSize (bool): The size of burst.
+			KiloBitPerSecond (bool): Rate value in kilo-bit per second.
+			PacketPerSecond (bool): Rate value in packet per second.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -129,6 +129,24 @@ class PassCriteria(Base):
 	def PassFailFrequency(self, value):
 		self._set_attribute('passFailFrequency', value)
 
+	def update(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, EnableCpDpPassFail=None, EnablePacketLossDurationPassFail=None, EnablePassFail=None, PacketLossDurationConvergenceTime=None, PacketLossDurationFactorScale=None, PassFailFrequency=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			CpDpConvergenceFactorScale (str): 
+			CpDpConvergenceTime (number): 
+			EnableCpDpPassFail (bool): 
+			EnablePacketLossDurationPassFail (bool): 
+			EnablePassFail (bool): 
+			PacketLossDurationConvergenceTime (number): 
+			PacketLossDurationFactorScale (str): 
+			PassFailFrequency (str(iteration)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -94,6 +94,21 @@ class TunnelHeadTrafficEndPoint(Base):
 	def IpStart(self, value):
 		self._set_attribute('ipStart', value)
 
+	def update(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
+		"""Updates a child instance of tunnelHeadTrafficEndPoint on the server.
+
+		Args:
+			EndPointType (str(ipv4|ipv6|17|18)): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
+			InsertExplicitTrafficItem (bool): NOT DEFINED
+			InsertIpv6ExplicitNull (bool): This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
+			IpCount (number): Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
+			IpStart (str): The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
 		"""Adds a new tunnelHeadTrafficEndPoint node on the server and retrieves it in this instance.
 

@@ -112,6 +112,21 @@ class AdvancedCVFilters(Base):
 	def SortingStats(self, value):
 		self._set_attribute('sortingStats', value)
 
+	def update(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
+		"""Updates a child instance of advancedCVFilters on the server.
+
+		Args:
+			Caption (str): Sets a name for the filter.
+			Expression (str): Specifies the filter body. This is a string that must have the specific format. This can be empty or no filter.The available operations and statistics can be obtained from availableFilterOptions.
+			Grouping (str): Sets a grouping for the filter.
+			Protocol (str): Sets a protocol for the filter.
+			SortingStats (str): Specifies the list of statistics by which the view is sorted.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
 		"""Adds a new advancedCVFilters node on the server and retrieves it in this instance.
 

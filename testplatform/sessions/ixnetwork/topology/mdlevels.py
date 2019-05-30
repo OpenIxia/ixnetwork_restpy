@@ -120,6 +120,21 @@ class MdLevels(Base):
 	def NumberOfMdLevels(self, value):
 		self._set_attribute('numberOfMdLevels', value)
 
+	def update(self, Name=None, NumberOfMdLevels=None):
+		"""Updates a child instance of mdLevels on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfMdLevels (number): Number of MD Levels
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, BridgeId=None, Count=None, DescriptiveName=None, Name=None, NumberOfMdLevels=None):
 		"""Finds and retrieves mdLevels data from the server.
 

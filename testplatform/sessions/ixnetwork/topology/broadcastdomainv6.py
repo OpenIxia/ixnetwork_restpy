@@ -218,6 +218,22 @@ class BroadcastDomainV6(Base):
 	def UsebVlan(self, value):
 		self._set_attribute('usebVlan', value)
 
+	def update(self, Name=None, NoOfMacPools=None, UsebVlan=None):
+		"""Updates a child instance of broadcastDomainV6 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfMacPools (number): Number of Mac Pools
+			UsebVlan (bool): Use B-VLAN
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, GroupAddress=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None):
 		"""Base class infrastructure that gets a list of broadcastDomainV6 device ids encapsulated by this object.
 

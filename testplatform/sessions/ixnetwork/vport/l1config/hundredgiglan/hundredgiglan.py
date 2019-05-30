@@ -156,3 +156,21 @@ class HundredGigLan(Base):
 	@TxIgnoreRxLinkFaults.setter
 	def TxIgnoreRxLinkFaults(self, value):
 		self._set_attribute('txIgnoreRxLinkFaults', value)
+
+	def update(self, AutoInstrumentation=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, Speed=None, TxIgnoreRxLinkFaults=None):
+		"""Updates a child instance of hundredGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			EnablePPM (bool): If true, enables the portsppm.
+			EnabledFlowControl (bool): If true, enables the ports's MAC flow control and mechanisms to listen for a directed address pause message
+			FlowControlDirectedAddress (str): the 48 bit MAC address that the port listens on for a directed pause
+			Loopback (bool): The loopback address.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			Speed (str(speed100g|speed40g)): The speed of the lan
+			TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

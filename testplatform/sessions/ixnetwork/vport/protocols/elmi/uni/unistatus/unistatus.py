@@ -96,6 +96,20 @@ class UniStatus(Base):
 	def UniIdentifierLength(self, value):
 		self._set_attribute('uniIdentifierLength', value)
 
+	def update(self, CeVlanIdEvcMapType=None, Enabled=None, UniIdentifier=None, UniIdentifierLength=None):
+		"""Updates a child instance of uniStatus on the server.
+
+		Args:
+			CeVlanIdEvcMapType (str(allToOneBundling|noBundling|bundling)): Possible values include:allToOneBundling 1, noBundling 2, bundling 3
+			Enabled (bool): If enabled, it shows the UNI status. Not more than one UNI Status can be enabled per UNI-N per port.
+			UniIdentifier (str): It signifies the content of the UNI identifier. The length is determined by UNI Identifier Length field. Default is 0.
+			UniIdentifierLength (number): It is a 1 octet field. It indicates the length of UNI Identifier content. Default is 1. Min is 1 and Max is 64.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CeVlanIdEvcMapType=None, Enabled=None, UniIdentifier=None, UniIdentifierLength=None):
 		"""Adds a new uniStatus node on the server and retrieves it in this instance.
 

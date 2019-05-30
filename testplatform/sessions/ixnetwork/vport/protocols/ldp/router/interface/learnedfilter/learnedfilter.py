@@ -296,3 +296,35 @@ class LearnedFilter(Base):
 	@RootAddress.setter
 	def RootAddress(self, value):
 		self._set_attribute('rootAddress', value)
+
+	def update(self, EnableFilter=None, EnableIpv4FecAddress=None, EnableIpv4FecMask=None, EnableIpv4RootAddress=None, EnableLabel=None, EnableMartiniDescription=None, EnableMartiniGroupId=None, EnableMartiniVcId=None, EnableMartiniVcType=None, EnablePeerAddress=None, EnablePeerMask=None, Ipv4FecAddress=None, Ipv4FecMask=None, Ipv4FecMaskMatch=None, Label=None, MartiniDescription=None, MartiniGroupId=None, MartiniVcId=None, MartiniVcType=None, PeerAddress=None, PeerMask=None, RootAddress=None):
+		"""Updates a child instance of learnedFilter on the server.
+
+		Args:
+			EnableFilter (bool): Enables the use of the LDP learned labels filter.
+			EnableIpv4FecAddress (bool): If enabled, uses the network address associated with the FEC.
+			EnableIpv4FecMask (bool): (FEC Mask Match must be enabled for this option to be active.)
+			EnableIpv4RootAddress (bool): If enabled, it signifies the IP version 4 root address.
+			EnableLabel (bool): If enabled, uses the label value added to the packet(s) by the upstream LDP peer.
+			EnableMartiniDescription (bool): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
+			EnableMartiniGroupId (bool): An arbitrary 32-bit value used to identify a group of VCs.
+			EnableMartiniVcId (bool): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
+			EnableMartiniVcType (bool): Enables the type of martini virtual circuit.
+			EnablePeerAddress (bool): Uses the IP address of the LDP peer.
+			EnablePeerMask (bool): (Peer address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
+			Ipv4FecAddress (str): The IPv4 address component of the FEC. (default = 0.0.0.0)
+			Ipv4FecMask (number): The prefix length of the network IPv4 address. (default = 24)
+			Ipv4FecMaskMatch (str(exactMatch|looseMatch)): FEC Mask Match must be enabled for this option to be active.
+			Label (number): The first label to be assigned to the FEC.
+			MartiniDescription (str): An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
+			MartiniGroupId (number): An arbitrary 32-bit value used to identify a group of VCs.
+			MartiniVcId (number): The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
+			MartiniVcType (str(frameRelay|atmaal5|atmxCell|vlan|ethernet|hdlc|ppp|cem|atmvcc|atmvpc|ip)): The type of L2 VC depends on the Layer 2 protocol types.
+			PeerAddress (str): If enabled, uses the IP address of the LDP peer.
+			PeerMask (number): (Peer Address must be enabled for this option to be active.) If enabled, uses the number of bits in the mask for the peer's IP address for a loose match.
+			RootAddress (str): Indicates the root address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

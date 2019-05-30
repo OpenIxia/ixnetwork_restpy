@@ -117,6 +117,23 @@ class Nssa(Base):
 	def RouteTag(self, value):
 		self._set_attribute('routeTag', value)
 
+	def update(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+		"""Updates a child instance of nssa on the server.
+
+		Args:
+			EBit (bool): 
+			ForwardingAddress (str): 
+			IncrementLinkStateIdBy (str): 
+			Metric (number): 
+			NetworkMask (str): 
+			NumberOfLsa (number): 
+			RouteTag (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
 		"""Finds and retrieves nssa data from the server.
 

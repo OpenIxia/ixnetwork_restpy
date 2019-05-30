@@ -68,3 +68,16 @@ class OrganizationSpecificEventTlv(Base):
 	@Value.setter
 	def Value(self, value):
 		self._set_attribute('value', value)
+
+	def update(self, Enabled=None, Oui=None, Value=None):
+		"""Updates a child instance of organizationSpecificEventTlv on the server.
+
+		Args:
+			Enabled (bool): 
+			Oui (str): 
+			Value (str): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

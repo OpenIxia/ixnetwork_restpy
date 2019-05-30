@@ -82,6 +82,20 @@ class AdvancedFilter(Base):
 	def TrackingFilterId(self, value):
 		self._set_attribute('trackingFilterId', value)
 
+	def update(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+		"""Updates a child instance of advancedFilter on the server.
+
+		Args:
+			Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
+			Name (str): Specifies the filter name. It must be unique per view.
+			SortingStats (str): Specifies the list of statistics by which the view will be sorted.
+			TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
 		"""Adds a new advancedFilter node on the server and retrieves it in this instance.
 

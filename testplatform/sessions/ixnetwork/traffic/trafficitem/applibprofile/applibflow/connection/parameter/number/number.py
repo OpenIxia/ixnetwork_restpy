@@ -72,6 +72,17 @@ class Number(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Value=None):
+		"""Updates a child instance of number on the server.
+
+		Args:
+			Value (number): Parameter integer value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Default=None, MaxValue=None, MinValue=None, Value=None):
 		"""Finds and retrieves number data from the server.
 

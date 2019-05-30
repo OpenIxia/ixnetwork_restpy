@@ -80,3 +80,17 @@ class FlowRemovedMaskMaster(Base):
 	@IdleTimeout.setter
 	def IdleTimeout(self, value):
 		self._set_attribute('idleTimeout', value)
+
+	def update(self, Delete=None, GroupDelete=None, HardTimeout=None, IdleTimeout=None):
+		"""Updates a child instance of flowRemovedMaskMaster on the server.
+
+		Args:
+			Delete (bool): This indicates that flow entry is evicted by a delete Flow Mod message.
+			GroupDelete (bool): This indicates that the group is removed.
+			HardTimeout (bool): This indicates that Flow idle time exceeded hard timeout.
+			IdleTimeout (bool): This indicates that Flow idle time exceeded idle timeout.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

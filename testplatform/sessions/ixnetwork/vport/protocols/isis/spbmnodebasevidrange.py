@@ -108,6 +108,21 @@ class SpbmNodeBaseVidRange(Base):
 	def UseFlag(self, value):
 		self._set_attribute('useFlag', value)
 
+	def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+		"""Updates a child instance of spbmNodeBaseVidRange on the server.
+
+		Args:
+			BVlanPriority (number): The user priority of the Base VLAN.
+			BVlanTpId (number): The tag priority identifier for base VLAN.
+			BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+			EctAlgorithm (number): The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
+			UseFlag (bool): Set to true to activate the user flag.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
 		"""Adds a new spbmNodeBaseVidRange node on the server and retrieves it in this instance.
 

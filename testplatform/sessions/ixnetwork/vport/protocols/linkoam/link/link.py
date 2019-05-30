@@ -681,6 +681,51 @@ class Link(Base):
 	def Version(self, value):
 		self._set_attribute('version', value)
 
+	def update(self, DisableInformationPduTx=None, DisableNonInformationPduTx=None, EnableCriticalEvent=None, EnableDyingGasp=None, EnableLinkFault=None, EnableLoopbackResponse=None, EnableVariableResponse=None, Enabled=None, EthernetTypeUsedForDataTraffic=None, EventInterval=None, InformationPduCountPerSecond=None, LinkEventTxMode=None, LocalLostLinkTimer=None, LoopbackCmd=None, LoopbackTimeout=None, MacAddress=None, MaxOamPduSize=None, OperationMode=None, Oui=None, OverrideLocalEvaluating=None, OverrideLocalSatisfied=None, OverrideLocalStable=None, OverrideRemoteEvaluating=None, OverrideRemoteStable=None, OverrideRevision=None, OverrideSequenceNumber=None, Revision=None, SequenceNumber=None, SupportsInterpretingLinkEvents=None, SupportsRemoteLoopback=None, SupportsUnidirectionalMode=None, SupportsVariableRetrieval=None, VariableResponseTimeout=None, VendorSpecificInformation=None, Version=None):
+		"""Updates a child instance of link on the server.
+
+		Args:
+			DisableInformationPduTx (bool): 
+			DisableNonInformationPduTx (bool): 
+			EnableCriticalEvent (bool): 
+			EnableDyingGasp (bool): 
+			EnableLinkFault (bool): 
+			EnableLoopbackResponse (bool): 
+			EnableVariableResponse (bool): 
+			Enabled (bool): 
+			EthernetTypeUsedForDataTraffic (number): 
+			EventInterval (number): 
+			InformationPduCountPerSecond (number): 
+			LinkEventTxMode (str(single|periodic)): 
+			LocalLostLinkTimer (number): 
+			LoopbackCmd (str(disableLoopback|enableLoopback)): 
+			LoopbackTimeout (number): 
+			MacAddress (str): 
+			MaxOamPduSize (number): 
+			OperationMode (str(active|passive)): 
+			Oui (str): 
+			OverrideLocalEvaluating (bool): 
+			OverrideLocalSatisfied (bool): 
+			OverrideLocalStable (bool): 
+			OverrideRemoteEvaluating (bool): 
+			OverrideRemoteStable (bool): 
+			OverrideRevision (bool): 
+			OverrideSequenceNumber (bool): 
+			Revision (number): 
+			SequenceNumber (number): 
+			SupportsInterpretingLinkEvents (bool): 
+			SupportsRemoteLoopback (bool): 
+			SupportsUnidirectionalMode (bool): 
+			SupportsVariableRetrieval (bool): 
+			VariableResponseTimeout (number): 
+			VendorSpecificInformation (str): 
+			Version (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DisableInformationPduTx=None, DisableNonInformationPduTx=None, EnableCriticalEvent=None, EnableDyingGasp=None, EnableLinkFault=None, EnableLoopbackResponse=None, EnableVariableResponse=None, Enabled=None, EthernetTypeUsedForDataTraffic=None, EventInterval=None, InformationPduCountPerSecond=None, LinkEventTxMode=None, LocalLostLinkTimer=None, LoopbackCmd=None, LoopbackTimeout=None, MacAddress=None, MaxOamPduSize=None, OperationMode=None, Oui=None, OverrideLocalEvaluating=None, OverrideLocalSatisfied=None, OverrideLocalStable=None, OverrideRemoteEvaluating=None, OverrideRemoteStable=None, OverrideRevision=None, OverrideSequenceNumber=None, Revision=None, SequenceNumber=None, SupportsInterpretingLinkEvents=None, SupportsRemoteLoopback=None, SupportsUnidirectionalMode=None, SupportsVariableRetrieval=None, VariableResponseTimeout=None, VendorSpecificInformation=None, Version=None):
 		"""Adds a new link node on the server and retrieves it in this instance.
 

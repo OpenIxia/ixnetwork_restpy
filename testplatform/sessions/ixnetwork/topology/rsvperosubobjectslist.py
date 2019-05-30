@@ -117,6 +117,20 @@ class RsvpEROSubObjectsList(Base):
 		"""
 		return self._get_attribute('type')
 
+	def update(self, Name=None):
+		"""Updates a child instance of rsvpEROSubObjectsList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None):
 		"""Finds and retrieves rsvpEROSubObjectsList data from the server.
 
@@ -312,6 +326,20 @@ class RsvpEroSubObjectsList(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('type')
+
+	def update(self, Name=None):
+		"""Updates a child instance of rsvpEroSubObjectsList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
 
 	def find(self, Count=None, DescriptiveName=None, LeafIp=None, LocalIp=None, Name=None, P2mpIdAsIp=None, P2mpIdAsNum=None):
 		"""Finds and retrieves rsvpEroSubObjectsList data from the server.

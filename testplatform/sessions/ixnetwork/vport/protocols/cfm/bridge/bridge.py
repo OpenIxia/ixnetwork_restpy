@@ -1199,6 +1199,61 @@ class Bridge(Base):
 	def UserUsabilityOption(self, value):
 		self._set_attribute('userUsabilityOption', value)
 
+	def update(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
+		"""Updates a child instance of bridge on the server.
+
+		Args:
+			AisInterval (str(oneSec|oneMin)): The interval between AIS messages sent from this CFM bridge.
+			AllowCfmMaidFormatsInY1731 (bool): If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
+			BridgeId (str): The bridge MAC address.
+			EnableAis (bool): If true, enables the use of AIS messages.
+			EnableOutOfSequenceDetection (bool): If true, enables the detection of out of sequence CCM messages.
+			Enabled (bool): If true, enables the CFM bridge.
+			Encapsulation (str(ethernet|llcSnap)): Sets the encapsulation type for the bridge.
+			EtherType (number): Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
+			Function (str(faultManagement|performanceMeasurement)): Determines the CFM function when operationMode is set to Y.1731.
+			GarbageCollectTime (number): Integer value denotes the interval for holding the expired database. Default 10 seconds.
+			OperationMode (str(cfm|y1731|pbbTe)): Selects the type of CFM to enable.
+			UserBvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for PBB-TE learned information for the VLAN.
+			UserBvlanId (number): Sets the PBB-TE VLAN identifier for filtering learned information.
+			UserBvlanPriority (number): Sets the PBB-TE VLAN priority for filtering learned information.
+			UserBvlanTpId (str): Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+			UserCvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a single VLAN.
+			UserCvlanId (number): Sets the single VLAN identifier for filtering learned information.
+			UserCvlanPriority (number): Sets the single VLAN priority for filtering learned information.
+			UserCvlanTpId (str): Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+			UserDelayMethod (str(oneWay|twoWay)): Sets the type of delay method to use.
+			UserDelayType (str(dm|dvm)): Sets the type of delay measurement to use.
+			UserDstMacAddress (str): Filters on the destination MAC address specified.
+			UserDstMepId (number): Sets the MEP identifier for use with userSelectDstMepById.
+			UserDstType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user destination type.
+			UserLearnedInfoTimeOut (number): The interval in millisecond for the learned record to timeout. Default: 5000.
+			UserLossMethod (str(dualEnded|singleEnded)): NOT DEFINED
+			UserMdLevel (str(0|1|2|3|4|5|6|7|allMd)): Filters on the specified MD level.
+			UserPbbTeDelayMethod (str(twoWay|oneWay)): Sets the PBB-TE type of delay method to use.
+			UserPbbTeDelayType (str(dm|dvm)): Sets the PBB-TE type of delay measurement to use.
+			UserPeriodicOamType (str(linkTrace|loopback|delayMeasurement|lossMeasurement)): Sets the type of periodic OAM.
+			UserSelectDstMepById (bool): If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
+			UserSelectSrcMepById (bool): If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
+			UserSendType (str(unicast|multicast)): Filters on the the send type.
+			UserShortMaName (str): Filters on the specified Short MA Name.
+			UserShortMaNameFormat (str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)): Filters on the Short MA Name Format.
+			UserSrcMacAddress (str): Filters on the specified source MAC address.
+			UserSrcMepId (number): Sets the MEP identifier for use with userSelectSrcMepById.
+			UserSrcType (str(mepMac|mepId|mepMacAll|mepIdAll)): The user source type.
+			UserSvlan (str(noVlanId|vlanId|allVlanId)): Sets the bridge filter for learned information for a stacked VLAN.
+			UserSvlanId (number): Sets the stacked VLAN identifier for filtering learned information.
+			UserSvlanPriority (number): Sets the stacked VLAN priority for filtering learned information.
+			UserSvlanTpId (str): Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+			UserTransactionId (number): The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
+			UserTtlInterval (number): Time to live value, in seconds. Default is 64.
+			UserUsabilityOption (str(manual|oneToOne|oneToAll|allToOne|allToAll)): User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
 		"""Adds a new bridge node on the server and retrieves it in this instance.
 

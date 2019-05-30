@@ -181,8 +181,12 @@ class Connection(object):
             if local_directory is not None:
                 local_filename = os.path.join(local_directory, local_filename)
             local_filename = os.path.normpath(local_filename)
-            with open(local_filename, 'wb') as fid:
-                fid.write(response.content)
+            try:
+                with open(local_filename, 'wb') as fid:
+                    fid.write(response.content)
+            except Exception as e:
+                self._info('cwd:%s filename:%s exception:%s' % (os.getcwd(), local_filename, e))
+                raise e
             return local_filename
         else:
             self._process_response_status_code(response) 

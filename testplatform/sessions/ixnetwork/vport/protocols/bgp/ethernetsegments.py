@@ -304,6 +304,35 @@ class EthernetSegments(Base):
 	def UseSameSequenceNumber(self, value):
 		self._set_attribute('useSameSequenceNumber', value)
 
+	def update(self, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionMethod=None, DfElectionTimer=None, EnableActiveStandby=None, EnableRootLeaf=None, EnableSecondLabel=None, Enabled=None, EsImport=None, Esi=None, EsiLabel=None, FirstLabel=None, IncludeMacMobilityExtendedCommunity=None, SecondLabel=None, SupportFastConvergence=None, SupportMultiHomedEsAutoDiscovery=None, TypeOfEthernetVpn=None, UseSameSequenceNumber=None):
+		"""Updates a child instance of ethernetSegments on the server.
+
+		Args:
+			AutoConfigureEsImport (bool): NOT DEFINED
+			BMacPrefix (str): B-MAC address as a prefix where the MAC address length field is set to the length of the prefix. This provides the ability to aggregate MAC addresses if the deployment environment supports that. By default a unique B-MAC is constructed per ethernet segment. it can be changed to any value but multicast and broadcast addresses are not used.
+			BMacPrefixLength (number): The MAC address length field is typically set to 48. However this length value can be changed to specify the MAC address as a prefix; in which case, the MAC address length field is set to the length of the prefix. This provides the ability to aggregate MAC addresses if the deployment environment supports that. Default value is 48. Minimum value is 0 and maximum value is 48.
+			DfElectionMethod (str(serviceCarving)): This is a read only field. user can not change the value of this field. This is just to show that IxNetwork is using Service Carving method for DF election.
+			DfElectionTimer (number): Time interval in second to wait for DF election process to complete. Default value is 3 seconds. Minimum value is 1 second and maximum value is 300 seconds.
+			EnableActiveStandby (bool): If true then this ethernet segment operates in active-standby mode. If false then this ethernet segment operates in all-active mode. Default value is false.
+			EnableRootLeaf (bool): If true then ESI label is associated with a leaf side. If false then ESI label is associated with a root side. Default value is true.
+			EnableSecondLabel (bool): If true then second EVPN label is inserted in label stack for ES route, AD per segment route.
+			Enabled (bool): If true, ethernet segment is enabled and is used in evpn. Default value is false.
+			EsImport (str): When Auto Configure ES-Import is false then user has to put ES-Import here. Default value is 0x00 00 00 00 00 00.
+			Esi (str): Ethernet Segment Identifier (ESI) which is encoded as a ten octets integer. Default value is 0x00 00 00 00 00 00 00 00 00 00.
+			EsiLabel (number): Label value carried in ESI Label Extended Community in AD route per segment. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			FirstLabel (number): First EVPN label in label stack for ES route, AD per segment route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			IncludeMacMobilityExtendedCommunity (bool): If true then MAC mobility is performed in EVPN mode. If false then MAC mobility is not performed even if duplicate MAC address is found from remote PE.
+			SecondLabel (number): Second EVPN label in label stack for ES route, AD per segment route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
+			SupportFastConvergence (bool): If true then fast convergence is performed. Default value is true.
+			SupportMultiHomedEsAutoDiscovery (bool): If true then auto discovery between multihomed PEs is performed.
+			TypeOfEthernetVpn (str(evpn|pbbEvpn)): Type of ethernet vpn. It can be either EVPN or PBB-EVPN. Default mode is PBB-EVPN.
+			UseSameSequenceNumber (bool): If true then same sequence number is used in MAC Mobility Extended Community for all MAC route to flush the remote C-MAC forwarding table. If false then subsequent C-MAC route uses unique sequence number in MAC Mobility Extended Community.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionMethod=None, DfElectionTimer=None, EnableActiveStandby=None, EnableRootLeaf=None, EnableSecondLabel=None, Enabled=None, EsImport=None, Esi=None, EsiLabel=None, FirstLabel=None, IncludeMacMobilityExtendedCommunity=None, SecondLabel=None, SupportFastConvergence=None, SupportMultiHomedEsAutoDiscovery=None, TypeOfEthernetVpn=None, UseSameSequenceNumber=None):
 		"""Adds a new ethernetSegments node on the server and retrieves it in this instance.
 

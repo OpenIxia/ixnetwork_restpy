@@ -118,6 +118,23 @@ class Pattern(Base):
 	def Width(self, value):
 		self._set_attribute('width', value)
 
+	def update(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+		"""Updates a child instance of pattern on the server.
+
+		Args:
+			BitOffset (number): Bit offset within a byte. Starting point of the mask.
+			Enabled (bool): If true, match incoming packets against this pattern.
+			Mask (str): Bitmask to match against. Same format as value.
+			Name (str): Name of pattern.
+			Offset (number): Byte offset from start of L2 frame.
+			Value (str): The field value to match. For MAC, IPv4, and IPv6 addresses, the value is a formatted address. For all other fields, the value is encoded as a string of hex bytes, most significant byte first, and most significant bit first within each byte. Each hex byte must be exactly two hex digits; A-F and a-f are both accepted. The hex bytes must be separated by a single white space. Example: 00 01 02 FF.
+			Width (number): Width of field, in bits.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
 		"""Adds a new pattern node on the server and retrieves it in this instance.
 

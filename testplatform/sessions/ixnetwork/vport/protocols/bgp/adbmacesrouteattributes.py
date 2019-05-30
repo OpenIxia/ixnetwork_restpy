@@ -332,3 +332,38 @@ class AdBmacEsRouteAttributes(Base):
 	@SetNextHop.setter
 	def SetNextHop(self, value):
 		self._set_attribute('setNextHop', value)
+
+	def update(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
+		"""Updates a child instance of adBmacEsRouteAttributes on the server.
+
+		Args:
+			AggregatorAs (number): This signifies the AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+			AggregatorId (str): This signifies the IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+			AsPath (list(dict(arg1:bool,arg2:str[unknown|asSet|asSequence|asConfedSet|asConfedSequence],arg3:list[number]))): This signifes the local IP address of the BGP router
+			AsSetMode (str(includeAsSeq|includeAsSeqConf|includeAsSet|includeAsSetConf|noInclude|prependAs)): NOT DEFINED
+			Cluster (list(number)): The list of BGP clusters that a particular route has passed through.
+			Community (list(number)): This signifies the BGP Community attribute to be added to the BGP entry
+			EnableAggregator (bool): This signifies to generate an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+			EnableAsPath (bool): NOT DEFINED
+			EnableAtomicAggregate (bool): This signifies to set the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+			EnableCluster (bool): This signifies to enable the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+			EnableCommunity (bool): This enables the generation of a COMMUNITY attribute list. (default = false)
+			EnableLocalPref (bool): This enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+			EnableMultiExit (bool): This enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+			EnableNextHop (bool): This enables the generation of a NEXT HOP attribute. (default = true)
+			EnableOrigin (bool): This enables the generation of an ORIGIN attribute. (default = true)
+			EnableOriginator (bool): This signifies to enable the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+			ExtendedCommunity (list(dict(arg1:str[decimal|hex|ip|ieeeFloat],arg2:str[decimal|hex|ip|ieeeFloat],arg3:str[twoOctetAs|ip|fourOctetAs|opaque|administratorAsTwoOctetLinkBw],arg4:str[routeTarget|origin|extendedBandwidthSubType],arg5:str))): This is used to construct an extended community attribute for a route item
+			LocalPref (number): This signifies the local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+			MultiExit (number): This signifies the multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+			NextHop (str): This signifies the IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+			NextHopIpType (str(ipv4|ipv6)): This signifies the IP type of Next Hop. Default is IPv4.
+			NextHopMode (str(fixed|incrementPerPeer)): This signifies that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
+			Origin (str(igp|egp|incomplete)): This signifies an indication of where the route entry originated.
+			OriginatorId (str): This signifies the router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+			SetNextHop (str(manually|sameAsLocalIp)): This signifies now to set the next hop IP address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -178,6 +178,28 @@ class MulticastReceiverSite(Base):
 	def SupportLeafAdRoutesSending(self, value):
 		self._set_attribute('supportLeafAdRoutesSending', value)
 
+	def update(self, AddressFamilyType=None, CMcastRouteType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, SendTriggeredCmulticastRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, SupportLeafAdRoutesSending=None):
+		"""Updates a child instance of multicastReceiverSite on the server.
+
+		Args:
+			AddressFamilyType (str(addressFamilyIpv4|addressFamilyIpv6)): Indicates the IPv4/IPv6 interface id of the router.
+			CMcastRouteType (str(sourceTreeJoin|sharedTreeJoin)): The C-Multicast Route Type.
+			Enabled (bool): Enables or disables use of the multicast Sender site.
+			GroupAddressCount (number): The number of group addresses to be included in the Register message.
+			GroupMaskWidth (number): The number of bits in the network mask used with the Group Address.
+			SendTriggeredCmulticastRoute (bool): This helps to send Source Tree Join C-Multicast route after receiving Source Active A-D route. This is also required by Shared Tree Join C-Multicast route to send Source Tree Join after receiving Source Active A-D Route.
+			SourceAddressCount (number): The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values for the Source Address and the Source Mask Width. the default value is 0.
+			SourceGroupMapping (str(fullyMeshed|oneToOne)): Indicates the source group mapping.
+			SourceMaskWidth (number): The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
+			StartGroupAddress (str): The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
+			StartSourceAddress (str): The first IPv4 or IPv6 source address to be included in this Register message.(IPv4 Multicast addresses are not valid for sources.).
+			SupportLeafAdRoutesSending (bool): If true, helps IXIA to send Leaf A-D Route on receiving a S-PMSI A-D Route with the Leaf Information Required flag set. If false, IXIA shall not send the Leaf A-D Route even if such Update message is received.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddressFamilyType=None, CMcastRouteType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, SendTriggeredCmulticastRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, SupportLeafAdRoutesSending=None):
 		"""Adds a new multicastReceiverSite node on the server and retrieves it in this instance.
 

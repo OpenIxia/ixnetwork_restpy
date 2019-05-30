@@ -101,3 +101,18 @@ class L2VcIpRange(Base):
 	@StartAddress.setter
 	def StartAddress(self, value):
 		self._set_attribute('startAddress', value)
+
+	def update(self, Enabled=None, IncrementBy=None, Mask=None, NumHosts=None, StartAddress=None):
+		"""Updates a child instance of l2VcIpRange on the server.
+
+		Args:
+			Enabled (bool): Enables the Layer 2 IP address range.
+			IncrementBy (number): The value to be added for creating each additional L2 VC IP route range.
+			Mask (number): The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
+			NumHosts (number): The number of emulated LDP hosts to be created on this port.
+			StartAddress (str): The IP address that starts the L2 VC IP range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

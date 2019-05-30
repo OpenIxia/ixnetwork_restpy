@@ -92,3 +92,18 @@ class LabelSpace(Base):
 	@Step.setter
 	def Step(self, value):
 		self._set_attribute('step', value)
+
+	def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
+		"""Updates a child instance of labelSpace on the server.
+
+		Args:
+			End (number): The last label value available in the label space (range).
+			LabelId (number): The identifier for the label space.
+			Mode (str(fixedLabel|incrementLabel)): Sets the Label mode.
+			Start (number): The first label value available in the label space (range). The default is 16.
+			Step (number): The value to add for creating each additional label value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

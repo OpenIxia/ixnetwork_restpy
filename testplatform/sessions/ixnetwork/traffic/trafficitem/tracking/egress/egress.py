@@ -124,3 +124,18 @@ class Egress(Base):
 	@Offset.setter
 	def Offset(self, value):
 		self._set_attribute('offset', value)
+
+	def update(self, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
+		"""Updates a child instance of egress on the server.
+
+		Args:
+			CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+			CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+			Enabled (bool): If true, egress tracking is enabled.
+			Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+			Offset (str): Specifies the Offset for Egress Tracking.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

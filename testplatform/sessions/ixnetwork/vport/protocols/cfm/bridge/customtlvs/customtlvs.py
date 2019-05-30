@@ -166,6 +166,27 @@ class CustomTlvs(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+		"""Updates a child instance of customTlvs on the server.
+
+		Args:
+			Enabled (bool): If true, the custom TLV is enabled.
+			IncludeInCcm (bool): If true, a custom TLV is included in the bridge CCM messages.
+			IncludeInLbm (bool): If true, a custom TLV is included in the bridge loopback messages.
+			IncludeInLbr (bool): If true, a custom TLV is included in the bridge loopback responses messages.
+			IncludeInLmm (bool): NOT DEFINED
+			IncludeInLmr (bool): NOT DEFINED
+			IncludeInLtm (bool): If true, a custom TLV is included in the bridge link trace messages.
+			IncludeInLtr (bool): If true, a custom TLV is included in the bridge link trace response messages.
+			Length (number): Enter the data for the TLV length field.
+			Type (number): Enter the data for the TLV type field.
+			Value (str): Enter the data for the TLV value field. This data is in hexadecimal format.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
 		"""Adds a new customTlvs node on the server and retrieves it in this instance.
 

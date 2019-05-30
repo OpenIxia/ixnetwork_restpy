@@ -137,3 +137,18 @@ class TxLane(Base):
 	@SynchronizedSkewVal.setter
 	def SynchronizedSkewVal(self, value):
 		self._set_attribute('synchronizedSkewVal', value)
+
+	def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
+		"""Updates a child instance of txLane on the server.
+
+		Args:
+			IsSkewSynchronized (bool): 
+			LaneMappingType (str(custom|decrement|default|increment|random)): 
+			PcsLane (list(number)): 
+			SkewValues (list(number)): 
+			SynchronizedSkewVal (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

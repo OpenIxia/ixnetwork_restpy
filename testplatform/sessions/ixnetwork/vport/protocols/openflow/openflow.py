@@ -206,6 +206,18 @@ class OpenFlow(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None, PortRole=None):
+		"""Updates a child instance of openFlow on the server.
+
+		Args:
+			Enabled (bool): If true, the openFlow object is enabled.
+			PortRole (str(control|traffic|controlAndTraffic)): Indicates the role of the port in the protocol configuration.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

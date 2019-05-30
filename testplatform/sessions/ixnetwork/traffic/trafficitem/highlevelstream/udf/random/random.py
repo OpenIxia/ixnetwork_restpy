@@ -66,6 +66,18 @@ class Random(Base):
 	def Width(self, value):
 		self._set_attribute('width', value)
 
+	def update(self, Mask=None, Width=None):
+		"""Updates a child instance of random on the server.
+
+		Args:
+			Mask (str): Sets the UDF mask.
+			Width (str(16|24|32|8)): Specifies the width of the UDF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableWidths=None, Mask=None, Width=None):
 		"""Finds and retrieves random data from the server.
 

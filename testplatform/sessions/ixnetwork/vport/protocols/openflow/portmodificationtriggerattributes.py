@@ -242,3 +242,27 @@ class PortModificationTriggerAttributes(Base):
 	@PortNumber.setter
 	def PortNumber(self, value):
 		self._set_attribute('portNumber', value)
+
+	def update(self, AdvertisedFeatures=None, DoNotSendPacketIn=None, DropAllPackets=None, DropForwardedPackets=None, EnableAdvertiseFeature=None, EnableEthernetAddress=None, EnablePortConfig=None, EnablePortModPortFeatures=None, EnablePortNumber=None, EthernetAddress=None, PortAdministrativelyDown=None, PortConfig=None, PortConfigMask=None, PortNumber=None):
+		"""Updates a child instance of portModificationTriggerAttributes on the server.
+
+		Args:
+			AdvertisedFeatures (str): NOT DEFINED
+			DoNotSendPacketIn (bool): NOT DEFINED
+			DropAllPackets (bool): NOT DEFINED
+			DropForwardedPackets (bool): NOT DEFINED
+			EnableAdvertiseFeature (bool): NOT DEFINED
+			EnableEthernetAddress (bool): NOT DEFINED
+			EnablePortConfig (bool): NOT DEFINED
+			EnablePortModPortFeatures (bool): NOT DEFINED
+			EnablePortNumber (bool): NOT DEFINED
+			EthernetAddress (str): NOT DEFINED
+			PortAdministrativelyDown (bool): NOT DEFINED
+			PortConfig (str): NOT DEFINED
+			PortConfigMask (str): NOT DEFINED
+			PortNumber (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

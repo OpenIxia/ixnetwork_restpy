@@ -214,6 +214,31 @@ class Interface(Base):
 	def SplitHorizon(self, value):
 		self._set_attribute('splitHorizon', value)
 
+	def update(self, Bandwidth=None, Delay=None, EnableBfdRegistration=None, Enabled=None, HelloInterval=None, HoldTime=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, Load=None, MaxTlvPerPacket=None, Mtu=None, Reliability=None, SplitHorizon=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Bandwidth (number): The minimum amount of bandwidth available on this link, in Kbps. The valid range is 1 to 4294967295. (default = 10,000 Kbps)
+			Delay (number): The total of delays on the path to the route/network, in microseconds. The valid range is 0 to 4294967295. (default = 0)
+			EnableBfdRegistration (bool): Indicates if a BFD session is to be created to the EIGRP peer IP address once the EIGRP session is established. This allows EIGRP to use BFD to maintain IPv4 connectivity the EIGRP peer.
+			Enabled (bool): Enables the EIGRP interface. (default = disabled)
+			HelloInterval (number): The time interval between Hello packets sent over the interface, in seconds. (default = 5 seconds)
+			HoldTime (number): The amount of time starting from the reception of a HELLO from a neighbor until the moment when the neighbor is to be dropped if no further HELLO is received from it, in seconds. (default = 15 seconds)
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The local ID associated with the interface, which is unique per router.
+			InterfaceIndex (number): The assigned protocol interface ID for this EIGRP interface.
+			InterfaceType (str): The type of interface to be selected for this EIGRP interface.
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
+			Load (number): The amount of load on the link. The valid range is 0 to 255. (default = 0)
+			MaxTlvPerPacket (number): The maximum number of TLVs that will be packed into a single Update packet, taking MTU into consideration. The valid range is 0-255. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. (default = 30)
+			Mtu (number): The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
+			Reliability (number): The reliability factor. The valid range is 0 to 255. (default =255, which means 100% reliable)
+			SplitHorizon (bool): Split Horizon is a method for omitting routes learned from a neighbor in update messages to that same neighbor. This enables or disables poison reverse.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Bandwidth=None, Delay=None, EnableBfdRegistration=None, Enabled=None, HelloInterval=None, HoldTime=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, Load=None, MaxTlvPerPacket=None, Mtu=None, Reliability=None, SplitHorizon=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

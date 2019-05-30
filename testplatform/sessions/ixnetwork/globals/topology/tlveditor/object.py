@@ -88,6 +88,17 @@ class Object(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of object on the server.
+
+		Args:
+			Name (str): The name of the object
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None):
 		"""Adds a new object node on the server and retrieves it in this instance.
 

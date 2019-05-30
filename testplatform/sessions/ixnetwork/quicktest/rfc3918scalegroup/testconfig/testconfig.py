@@ -909,6 +909,89 @@ class TestConfig(Base):
 	def TxDelay(self, value):
 		self._set_attribute('txDelay', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryResolution=None, BinaryTolerance=None, CalculateJitter=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DummyTrafficId=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, FloodedFramesProcessing=None, FloodedFramesTemp=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, Gap=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrementLoadUnit=None, InitialBinaryLoadIntegerValues=None, InitialLoadRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxBinaryLoadIntegerValue=None, MaxIncrementFrameSize=None, MaxNumGroups=None, MaxRandomFrameSize=None, MinBinaryLoadIntegerValues=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, NumAddresses=None, NumIterations=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, RouterAlert=None, ShowDetailedBinaryResults=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepTolerance=None, SupportedTrafficTypes=None, TestTrafficType=None, TxDelay=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): Assigns the group type.
+			BidirectionalOptionEnabled (bool): If true, enables the bidirectional option.
+			BinaryBackoff (number): NOT DEFINED
+			BinaryFrameLossUnit (str(%|frames)): NOT DEFINED
+			BinaryResolution (number): NOT DEFINED
+			BinaryTolerance (number): NOT DEFINED
+			CalculateJitter (bool): If true, calculates jitter.
+			CalculateLatency (bool): If true, calculates the latency.
+			CountRandomFrameSize (number): If true, frame sizes are counted at random.
+			DelayAfterTransmit (number): The amount of delay after every transmit.
+			DummyTrafficId (str): The id of the monitor traffic item
+			Duration (number): The duration of the test in hours, which is used to calculate the number of framesto transmit. (read only)
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableLeaveGroup (bool): If true, the leave group is enabled.
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+			EnableOldStatsForReef (bool): Enables old statistics for reef.
+			FloodedFramesEnabled (bool): Enables the flooded frames statistic
+			FloodedFramesProcessing (bool): NOT DEFINED
+			FloodedFramesTemp (str): NOT DEFINED
+			ForceRegenerate (bool): If true, forces regeneration.
+			FrameSizeMode (str(custom|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussianis the superposition of four Gaussian distributions.
+			FramesizeList (list(str)): The list of frame sizes.
+			Gap (number): The gap in transmission of frames.
+			GroupDistributionType (str(acrossHosts|acrossPorts)): Indicates the group distribution type.
+			IgmpV1Timeout (number): The IGMPv1 timeout value.
+			IgmpVersion (number): The igmp version.
+			Igmpv3MessageType (str(exclude|include)): It gives details about the igmpv3 message type in the test configuration
+			Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+			IncrAddresses (number): If true, the MAC address is incremented.
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies the incremented load unit.
+			InitialBinaryLoadIntegerValues (number): NOT DEFINED
+			InitialLoadRate (str): The initial load rate.
+			Ipv4Address (str): The allocated IPv4 address for this interface.
+			Ipv6Address (str): The allocated IPv6address for this interface .
+			IsIPv6 (str): It signifies the ipv6 traffic type.
+			IsMulticastAutomaticFrameData (str): It signifies the automatic frame data for multicast.
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): The leave rate.
+			JoinLeaveWaitTime (number): The wait time for thr leave.
+			LatencyBins (str): Sets the latency bins statistics
+			LatencyBinsEnabled (bool): Enables the latency bins statistics
+			LatencyType (str(cutThrough|storeForward)): The type of latency.
+			LoadInitialRate (number): The initial rate of the load.
+			LoadType (str(binary|step)): The type of the payload setting.
+			MapType (str): The POS traffic map type.
+			MaxBinaryLoadIntegerValue (number): NOT DEFINED
+			MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
+			MaxNumGroups (str): NOT DEFINED
+			MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+			MinBinaryLoadIntegerValues (number): NOT DEFINED
+			MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
+			MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
+			MldVersion (number): The version of the MLD messages.
+			NumAddresses (number): The integer value for the number of addresses.
+			NumIterations (number): The number of iterations.
+			Numtrials (number): Defines how many times each frame size will be tested.
+			PortDelayEnabled (bool): Enables the Port Delay
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
+			RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepFrameLossUnit (str(%|frames)): NOT DEFINED
+			StepIncrementFrameSize (number): The step to increment the frame size.
+			StepTolerance (number): NOT DEFINED
+			SupportedTrafficTypes (str): The traffic types supported.
+			TestTrafficType (str): It signifies the test traffic type value.
+			TxDelay (number): The delay recorded in the transmit port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -54,6 +54,17 @@ class String(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Value=None):
+		"""Updates a child instance of string on the server.
+
+		Args:
+			Value (str): Parameter string value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Default=None, Value=None):
 		"""Finds and retrieves string data from the server.
 

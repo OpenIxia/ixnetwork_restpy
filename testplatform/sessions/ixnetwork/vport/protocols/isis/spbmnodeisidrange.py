@@ -223,6 +223,31 @@ class SpbmNodeIsIdRange(Base):
 	def VlanType(self, value):
 		self._set_attribute('vlanType', value)
 
+	def update(self, CMacAddressCount=None, CMacAddressStep=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, IsId=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
+		"""Updates a child instance of spbmNodeIsIdRange on the server.
+
+		Args:
+			CMacAddressCount (number): The number of C-MAC addresses.
+			CMacAddressStep (str): The incremental value of C-MAC address.
+			InterNodeCmacAddress (str): The incremental value of the Inter Node C-MAC address.
+			InterNodeCvlan (number): The Inter Node Stacked VLAN.
+			InterNodeIsIdIncrement (number): The incremental value of Inter Node service identifier.
+			InterNodeSvlan (number): The Inter Node Single VLAN.
+			IsId (number): The I-component service identifier. The maximum value is 16777215. The minimum value is 0.
+			RBit (bool): The Restart State bit.
+			StartCmacAddress (str): The starting C-MAC address.
+			StartCvlan (number): The starting value of Stacked VLAN.
+			StartSvlan (number): The starting value of Single VLAN.
+			TBit (bool): The external route tag bit.
+			TrafficDestMacAddress (str): The traffic-destination MAC address.
+			TransmissionType (number): Select the type of packet transmission. Options include Unicast and Multicast.
+			VlanType (number): The type of VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CMacAddressCount=None, CMacAddressStep=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, IsId=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
 		"""Adds a new spbmNodeIsIdRange node on the server and retrieves it in this instance.
 

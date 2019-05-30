@@ -70,6 +70,19 @@ class BMacMappedIp(Base):
 	def IpType(self, value):
 		self._set_attribute('ipType', value)
 
+	def update(self, Enabled=None, IpAddress=None, IpType=None):
+		"""Updates a child instance of bMacMappedIp on the server.
+
+		Args:
+			Enabled (bool): If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
+			IpAddress (str): IP address value is given here depending on the IP Type. Default value is all zero.
+			IpType (str(ipV4|ipV6)): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, IpAddress=None, IpType=None):
 		"""Adds a new bMacMappedIp node on the server and retrieves it in this instance.
 

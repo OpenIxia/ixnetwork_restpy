@@ -584,3 +584,59 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of switchFlowMatchCriteria131TriggerAttributes on the server.
+
+		Args:
+			ArpDstHwAddr (dict(arg1:str,arg2:str)): This describes the target hardware address in the ARP payload.
+			ArpDstIpv4Addr (dict(arg1:str,arg2:str)): This describes the target IPv4 address in the ARP payload.
+			ArpOpcode (dict(arg1:str,arg2:str)): This describes the ARP opcode.
+			ArpSrcHwAddr (dict(arg1:str,arg2:str)): This describes the source hardware address in the ARP payload.
+			ArpSrcIpv4Addr (dict(arg1:str,arg2:str)): This describes the source IPv4 address in the ARP payload.
+			Cookie (dict(arg1:str,arg2:str)): This describes the Cookie of the flow entry that was looked up. This is the opaque controller-issued identifier.
+			EthernetDestination (dict(arg1:str,arg2:str)): This describes the destination address of the Ethernet port.
+			EthernetSource (dict(arg1:str,arg2:str)): This describes the source address of the Ethernet port.
+			EthernetType (dict(arg1:str,arg2:str)): This describes the Ethernet type of the flow match.
+			ExperimenterData (dict(arg1:str,arg2:str)): This describes the data of the Experimenter.
+			ExperimenterDataLength (dict(arg1:number,arg2:str)): This describes the data length of the Experimenter.
+			ExperimenterField (dict(arg1:number,arg2:str)): This describes the field type for experimenter match.
+			ExperimenterHashmask (dict(arg1:bool,arg2:str)): This describes the experimenter hash mask value.
+			ExperimenterId (dict(arg1:str,arg2:str)): This describes the unique identifier for the Experimenter.
+			Icmpv4Code (dict(arg1:str,arg2:str)): This describes the ICMP code.
+			Icmpv4Type (dict(arg1:str,arg2:str)): This describes the ICMP type.
+			Icmpv6Code (dict(arg1:str,arg2:str)): This describes the ICMPv6 code.
+			Icmpv6Type (dict(arg1:str,arg2:str)): This describes the ICMPv6 type.
+			InPort (dict(arg1:str,arg2:str)): This describes the input port used.
+			IpDscp (dict(arg1:str,arg2:str)): This describes the IP DSCP value for advertising.
+			IpEcn (dict(arg1:str,arg2:str)): This describes the ECN bits of the IP header.
+			IpProtocol (dict(arg1:str,arg2:str)): This describes the IP Protocol used.
+			Ipv4Destination (dict(arg1:str,arg2:str)): This describes the IPv4 Destination address for the port.
+			Ipv4Source (dict(arg1:str,arg2:str)): This describes the IPv4 source address.
+			Ipv6Destination (dict(arg1:str,arg2:str)): This describes the IPv6 destination address.
+			Ipv6ExtHeader (dict(arg1:str,arg2:str)): This describes the IPv6 Extension Header pseudo-field.
+			Ipv6FlowLabel (dict(arg1:str,arg2:str)): This describes the IPv6 Flow label.
+			Ipv6NdDll (dict(arg1:str,arg2:str)): This describes the target link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6NdSll (dict(arg1:str,arg2:str)): This describes the source link-layer address option in an IPv6 Neighbor Discovery message.
+			Ipv6NdTarget (dict(arg1:str,arg2:str)): This describes the target address in an IPv6 Neighbor Discovery message.
+			Ipv6Source (dict(arg1:str,arg2:str)): This describes the IPv6 source address.
+			MetaData (dict(arg1:str,arg2:str)): This describes the table metadata value used to pass information between tables.
+			MplsBos (dict(arg1:str,arg2:str)): This describes the BoS bit in the first MPLS shim header.
+			MplsLabel (dict(arg1:str,arg2:str)): This describes the LABEL in the first MPLS shim header.
+			MplsTc (dict(arg1:str,arg2:str)): This describes the TC in the first MPLS shim header.
+			PbbIsid (dict(arg1:str,arg2:str)): This describes the I-SID in the first PBB service instance tag.
+			PhysicalInPort (dict(arg1:str,arg2:str)): This describes the physical In port value for this flow range. It is the underlying physical port when packet is received on a logical port.
+			SctpDestination (dict(arg1:str,arg2:str)): This describes the SCTP target port.
+			SctpSource (dict(arg1:str,arg2:str)): This describes the SCTP source port.
+			TcpDestination (dict(arg1:str,arg2:str)): This describes the TCP destination address.
+			TcpSource (dict(arg1:str,arg2:str)): This describes the TCP source address.
+			TunnelId (dict(arg1:str,arg2:str)): This describes the unique identifier used for the Tunnel.
+			UdpDestination (dict(arg1:str,arg2:str)): This describes the UDP destination port.
+			UdpSource (dict(arg1:str,arg2:str)): This describes the UDP source port.
+			VlanId (dict(arg1:str,arg2:str)): This describes the unique VLAN Identifier.
+			VlanPriority (dict(arg1:str,arg2:str)): This describes the User Priority for this VLAN.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

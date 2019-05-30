@@ -134,6 +134,21 @@ class Tables(Base):
 		"""
 		return self._get_attribute('tableName')
 
+	def update(self, Name=None, NumberOfFlowSet=None):
+		"""Updates a child instance of tables on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfFlowSet (number): Specify the number of Flow Set for this controller configuration.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ChannelIndex=None, ChannelRemoteIp=None, Count=None, DescriptiveName=None, Name=None, NumberOfFlowSet=None):
 		"""Finds and retrieves tables data from the server.
 

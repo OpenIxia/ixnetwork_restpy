@@ -166,6 +166,24 @@ class Lisp(Base):
 		"""
 		return self._get_attribute('protocolState')
 
+	def update(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None):
+		"""Updates a child instance of lisp on the server.
+
+		Args:
+			BurstIntervalInMs (number): It shows the details abou the burst interval in micro seconds
+			Enabled (bool): If true, it shows enabled.
+			Ipv4MapRegisterPacketsPerBurst (number): It gives details about the ip v4 map register packets per burst
+			Ipv4MapRequestPacketsPerBurst (number): It gives details about the ip v4 map requests packets per burst
+			Ipv4SmrPacketsPerBurst (number): It gives details about the Ip v4 Smr packets per bursts
+			Ipv6MapRegisterPacketsPerBurst (number): It gives details about the ip v6 map register packets per burst
+			Ipv6MapRequestPacketsPerBurst (number): It gives details about the ip v6 map requests packets per burst
+			Ipv6SmrPacketsPerBurst (number): It gives details about the Ip v6 Smr packets per bursts
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -207,6 +207,20 @@ class PimV4CandidateRPsList(Base):
 		"""
 		return self._get_attribute('triggeredCrpMessageCount')
 
+	def update(self, Name=None):
+		"""Updates a child instance of pimV4CandidateRPsList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, CrpAddressCount=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, Priority=None, PriorityChangeInterval=None, PriorityType=None, TriggeredCrpMessageCount=None):
 		"""Base class infrastructure that gets a list of pimV4CandidateRPsList device ids encapsulated by this object.
 

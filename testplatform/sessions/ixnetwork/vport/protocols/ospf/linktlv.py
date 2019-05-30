@@ -261,6 +261,35 @@ class LinkTlv(Base):
 	def SubTlvs(self, value):
 		self._set_attribute('subTlvs', value)
 
+	def update(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
+		"""Updates a child instance of linkTlv on the server.
+
+		Args:
+			EnableLinkId (bool): 
+			EnableLinkMetric (bool): 
+			EnableLinkResourceClass (bool): 
+			EnableLinkType (bool): 
+			EnableLocalIpAddress (bool): 
+			EnableMaxBandwidth (bool): 
+			EnableMaxResBandwidth (bool): 
+			EnableRemoteIpAddress (bool): 
+			EnableUnreservedBandwidth (bool): 
+			LinkId (str): 
+			LinkLocalIpAddress (str): 
+			LinkMetric (number): 
+			LinkRemoteIpAddress (str): 
+			LinkResourceClass (str): 
+			LinkType (str(pointToPoint|multiaccess)): 
+			LinkUnreservedBandwidth (list(number)): 
+			MaxBandwidth (number): 
+			MaxResBandwidth (number): 
+			SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
 		"""Finds and retrieves linkTlv data from the server.
 

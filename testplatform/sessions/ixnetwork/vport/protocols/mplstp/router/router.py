@@ -86,6 +86,18 @@ class Router(Base):
 	def RouterId(self, value):
 		self._set_attribute('routerId', value)
 
+	def update(self, Enabled=None, RouterId=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			Enabled (bool): This signifies the enablement of the simulated router.
+			RouterId (str): This signifies the Id of the simulated router, expressed as an IP address.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, RouterId=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

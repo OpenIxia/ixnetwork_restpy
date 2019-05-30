@@ -310,6 +310,39 @@ class Ipv6TrafficEndPoint(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ArpViaInterface=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of ipv6TrafficEndPoint on the server.
+
+		Args:
+			ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+			DestinationPort (str): NOT DEFINED
+			EnableVlan (bool): Select this check box to make VLAN available.
+			GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			Ipv6Address (str): Specify the IPv6 address of the Source Traffic Endpoint. The default value is 0.0.0.0.0.0.0.0
+			Ipv6AddressMask (number): Specify the Mask value. The default value is 64.
+			Ipv6CustomHeaderLength (number): The Custom IPv6 Header Length value. The default value is 1.
+			Ipv6CustomHeaderValue (str): The Custom IPv6 Header Value. The default value is 00.
+			Ipv6CustomNextHeader (str): The Custom IPv6 Next Header value. The default value is 1.
+			Ipv6Dscp (str): The priority specified for the IP address. The default value is 0.
+			Ipv6Ecn (str): The ECN value specified for the IP address.
+			Ipv6FlowLabel (str): The IPv6 Flow Label value.
+			Ipv6NextHeader (str(custom|tcp|udp)): The IPv6 Next Header value.
+			MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
+			RangeSize (number): Specify the size of the traffic range.
+			SourcePort (str): NOT DEFINED
+			UdpDestination (str): Specify the UDP Destination. The default value is 1.
+			UdpSource (str): Specify the UDP Source. The default value is 1.
+			VlanCount (number): Specify the VLAN count. The default value is 1.
+			VlanId (str): Specify the VLAN ID (Outer and Inner).
+			VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ArpViaInterface=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
 		"""Adds a new ipv6TrafficEndPoint node on the server and retrieves it in this instance.
 

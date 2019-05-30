@@ -167,6 +167,24 @@ class MulticastLeafRange(Base):
 	def RootAddress(self, value):
 		self._set_attribute('rootAddress', value)
 
+	def update(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
+		"""Updates a child instance of multicastLeafRange on the server.
+
+		Args:
+			ContinuousIncrOpaqueValuesAcrossRoot (bool): It signifies the continuous increment of opaque values across root.
+			Enabled (bool): If true, enables the protocol.
+			LabelValueStart (number): The first label in the range of labels.
+			LabelValueStep (number): The label value increment step for more than 1 range.
+			LspCountPerRoot (number): This is to specify how many different LSPs are created per Root.
+			RootAddrCount (number): The root address count for this Multicast FEC range.
+			RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
+			RootAddress (str): The root address of the multicast LSP.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
 		"""Adds a new multicastLeafRange node on the server and retrieves it in this instance.
 

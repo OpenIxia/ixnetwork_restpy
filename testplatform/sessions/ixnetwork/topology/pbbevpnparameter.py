@@ -64,6 +64,20 @@ class PbbEVpnParameter(Base):
 	def UsePbbEVpnParameters(self, value):
 		self._set_attribute('usePbbEVpnParameters', value)
 
+	def update(self, UsePbbEVpnParameters=None):
+		"""Updates a child instance of pbbEVpnParameter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, UsePbbEVpnParameters=None):
 		"""Adds a new pbbEVpnParameter node on the server and retrieves it in this instance.
 

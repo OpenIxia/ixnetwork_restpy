@@ -246,6 +246,33 @@ class SwitchGroupFeature(Base):
 	def SetQueue(self, value):
 		self._set_attribute('setQueue', value)
 
+	def update(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+		"""Updates a child instance of switchGroupFeature on the server.
+
+		Args:
+			ApplyGroup (bool): If selected, table supports Apply Group capability.
+			CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
+			CopyTtlOut (bool): If selected, table supports Copy TTL capability.
+			DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
+			DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
+			MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
+			Output (bool): If selected, table supports Output capability.
+			PopMpls (bool): If selected, table supports Pop MPLS capability.
+			PopPbb (bool): If selected, table supports Experimenter capability.
+			PopVlan (bool): If selected, table supports Pop VLAN capability.
+			PushMpls (bool): If selected, table supports Push MPLS capability.
+			PushPbb (bool): If selected, table supports Push PBB capability.
+			PushVlan (bool): If selected, table supports Push VLAN capability.
+			SetField (bool): If selected, table supports Set Field capability.
+			SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
+			SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
+			SetQueue (bool): If selected, table supports Set Queue capability.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, GroupType=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
 		"""Finds and retrieves switchGroupFeature data from the server.
 

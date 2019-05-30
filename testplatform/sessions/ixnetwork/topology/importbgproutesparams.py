@@ -93,6 +93,21 @@ class ImportBgpRoutesParams(Base):
 	def RouteDistributionType(self, value):
 		self._set_attribute('routeDistributionType', value)
 
+	def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None):
+		"""Updates a child instance of importBgpRoutesParams on the server.
+
+		Args:
+			BestRoutes (bool): Import only the best routes (provided route file has this information).
+			DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
+			FileType (str(cisco|csv|juniper)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+			NextHop (str(overwriteTestersAddress|preserveFromFile)): Option for setting Next Hop modification type.
+			RouteDistributionType (str(replicate|roundRobin)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 

@@ -228,6 +228,31 @@ class Host(Base):
 	def Version(self, value):
 		self._set_attribute('version', value)
 
+	def update(self, Enabled=None, GqResponseMode=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ReportFreq=None, RespToQueryImmediately=None, RobustnessVariable=None, RouterAlert=None, SqResponseMode=None, SuppressReports=None, TrafficGroupId=None, UpResponseMode=None, Version=None):
+		"""Updates a child instance of host on the server.
+
+		Args:
+			Enabled (bool): Enables the use of the host in the IGMP simulation.
+			GqResponseMode (bool): If enabled, responds to General Query messages (where the Group Address field and Number of Sources Field = 0). This query message is sent by a multicast router so it can learn about the complete multicast reception state for each of the neighboring interfaces. interfaces.
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This is a local ID and is unique per router.
+			InterfaceIndex (number): The assigned protocol interface ID for this IGMP interface.
+			InterfaceType (str): The type of interface to be selected for this IGMP interface.
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
+			ReportFreq (number): When the mode is report to all unsolicited, this is the frequency in seconds with unsolicited messages are generated.
+			RespToQueryImmediately (bool): If enabled, the state machine will ignore the value specified in the maximum response delay in the membership query message, assume that the delay is always 0 seconds, and immediately responds to the query by sending a report.
+			RobustnessVariable (number): NOT DEFINED
+			RouterAlert (bool): Sets the IP header Send Router Alert bit.
+			SqResponseMode (bool): If enabled, responds to Group-Specific Query messages. This query message is sent by a multicast router so it can learn about the multicast reception state, concerning one multicast address, for each of the neighboring interfaces; for example, when member leaves a group.
+			SuppressReports (bool): Suppress generation of V3 reports on receipt of v1/v2 reports having common groups. If enabled, it indicates that a host/group member will allow its IGMPv3 Membership Record to be suppressed by a membership report for Version 1 or 2. The suppression will only be for group reports received from another port.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): This object contains the traffic group information configured in the trafficGroup object.
+			UpResponseMode (bool): Report to all unsolicited-causes each simulated host to automatically send full memberships messages at regular intervals.
+			Version (str(igmpv1|igmpv2|igmpv3)): Sets the IGMP version number that is to be simulated on the host: 1, 2, or 3.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, GqResponseMode=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ReportFreq=None, RespToQueryImmediately=None, RobustnessVariable=None, RouterAlert=None, SqResponseMode=None, SuppressReports=None, TrafficGroupId=None, UpResponseMode=None, Version=None):
 		"""Adds a new host node on the server and retrieves it in this instance.
 

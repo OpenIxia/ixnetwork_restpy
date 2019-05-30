@@ -183,6 +183,21 @@ class NtpServers(Base):
 		"""
 		return self._get_attribute('serverIPv6Address')
 
+	def update(self, IsParentV6=None, Name=None):
+		"""Updates a child instance of ntpServers on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			IsParentV6 (bool): Parent v6
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AuthDelay=None, Authentication=None, AuthenticationKey=None, BurstMode=None, InitialBurstMode=None, KeyId=None, MaxPollInterval=None, MinPollInterval=None, ParticipateInClockSelect=None, ServerIPAddress=None, ServerIPv6Address=None):
 		"""Base class infrastructure that gets a list of ntpServers device ids encapsulated by this object.
 

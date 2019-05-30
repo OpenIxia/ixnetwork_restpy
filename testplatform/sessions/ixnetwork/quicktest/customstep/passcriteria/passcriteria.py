@@ -273,6 +273,36 @@ class PassCriteria(Base):
 	def SeqErrorsThresholdValue(self, value):
 		self._set_attribute('seqErrorsThresholdValue', value)
 
+	def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			DataErrorThresholdMode (str(average|maximum)): The upstream Data Error Threshold mode.
+			DataErrorThresholdValue (number): The downstream data error threshold value.
+			EnableDataIntegrityPassFail (bool): If true, the data integrity pass /fail criteria is set.
+			EnableLatencyPassFail (bool): If true, enables latency at which trails pass or fail.
+			EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+			EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+			EnableSequenceErrorsPassFail (bool): Enables downstream sequence errors pass or fail criteria.
+			EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
+			LatencyThresholdMode (str(average|maximum)): The upstream traffic latency threshold mode.
+			LatencyThresholdScale (str(ms|ns|us)): The latency threshold scale for downstream traffic.
+			LatencyThresholdValue (number): The upstream latency threshold value.
+			LatencyVarThresholdMode (str(average|maximum)): Signifies the latency variation threshold mode.
+			LatencyVariationThresholdScale (str(ms|ns|us)): The upstream traffic latency variation threshold scale.
+			LatencyVariationThresholdValue (number): The upstream latency variation threshold value.
+			PassCriteriaLoadRateMode (str(average|minimum)): The downstream traffic pass criteria for load rate mode.
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass criteria scale in which the load rate is to be measured.
+			PassCriteriaLoadRateValue (number): The downstream traffic pass criteria load rate value.
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+			SeqErrorsThresholdMode (str(average|maximum)): The upstream sequence error threshold mode.
+			SeqErrorsThresholdValue (number): The upstream sequence error threshold value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

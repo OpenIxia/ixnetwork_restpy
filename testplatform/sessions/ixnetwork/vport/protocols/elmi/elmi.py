@@ -59,6 +59,17 @@ class Elmi(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of elmi on the server.
+
+		Args:
+			Enabled (bool): If true, enables the view that is created from the tcl script.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

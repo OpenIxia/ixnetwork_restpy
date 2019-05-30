@@ -188,6 +188,27 @@ class Isis(Base):
 	def SpbNlpId(self, value):
 		self._set_attribute('spbNlpId', value)
 
+	def update(self, AllL1RbridgesMac=None, EmulationType=None, Enabled=None, HelloMulticastMac=None, LspMgroupPdusPerInterval=None, NlpId=None, RateControlInterval=None, SendP2PHellosToUnicastMac=None, SpbAllL1BridgesMac=None, SpbHelloMulticastMac=None, SpbNlpId=None):
+		"""Updates a child instance of isis on the server.
+
+		Args:
+			AllL1RbridgesMac (str): ISIS All L1 RBridge MAC
+			EmulationType (str(isisL3Routing|dceIsis|spbIsis|trillIsis)): Sets the router emulation type of ISIS component of the protocol server for a particular port.
+			Enabled (bool): Enables or disables the use of this emulated IS-IS router in the emulated IS-IS network. (default = disabled)
+			HelloMulticastMac (str): ISIS Hello Multicast MAC
+			LspMgroupPdusPerInterval (number): Indicates the number of LSP MGROUP-PDUs to be sent for each interval.
+			NlpId (number): ISIS NLP ID
+			RateControlInterval (number): Indicates the wait time for transmission.
+			SendP2PHellosToUnicastMac (bool): If enabled, sends point to point hello messages to unicast mac addresses.
+			SpbAllL1BridgesMac (str): Contains all SPB ISIS specific attributes.
+			SpbHelloMulticastMac (str): Contains all hello messages to multicast mac addresses.
+			SpbNlpId (number): SPB NLP ID
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -147,6 +147,22 @@ class Device(Base):
 	def Version(self, value):
 		self._set_attribute('version', value)
 
+	def update(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
+		"""Updates a child instance of device on the server.
+
+		Args:
+			Description (str): A description of the device used to configure this protocol.
+			DeviceRole (str(controller|switch)): Indicates the device role of the OpenFlow device.
+			EnableVersion100 (bool): Enables protocol version 1.0
+			EnableVersion131 (bool): Enables protocol version 1.3
+			Enabled (bool): If set enables the open-flow device.
+			Version (str(1.0.0)): Indicates the current version of the Openflow protocol implemented.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
 		"""Adds a new device node on the server and retrieves it in this instance.
 

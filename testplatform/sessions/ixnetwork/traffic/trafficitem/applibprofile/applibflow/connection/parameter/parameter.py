@@ -147,6 +147,17 @@ class Parameter(Base):
 		"""
 		return self._get_attribute('supportedOptions')
 
+	def update(self, Option=None):
+		"""Updates a child instance of parameter on the server.
+
+		Args:
+			Option (str(choice|range|value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, DisplayValue=None, Option=None, SupportedOptions=None):
 		"""Finds and retrieves parameter data from the server.
 

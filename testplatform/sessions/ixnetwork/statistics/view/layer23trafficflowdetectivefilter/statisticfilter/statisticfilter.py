@@ -70,6 +70,19 @@ class StatisticFilter(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Operator=None, StatisticFilterId=None, Value=None):
+		"""Updates a child instance of statisticFilter on the server.
+
+		Args:
+			Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isLike|isNotLike|isSmaller)): The logical operation to be performed.
+			StatisticFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+			Value (str): Value of statistic to be matched based on operator.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Operator=None, StatisticFilterId=None, Value=None):
 		"""Adds a new statisticFilter node on the server and retrieves it in this instance.
 

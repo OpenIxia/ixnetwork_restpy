@@ -73,6 +73,17 @@ class Opaque(Base):
 	def EnableRouterTlv(self, value):
 		self._set_attribute('enableRouterTlv', value)
 
+	def update(self, EnableRouterTlv=None):
+		"""Updates a child instance of opaque on the server.
+
+		Args:
+			EnableRouterTlv (bool): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, EnableRouterTlv=None):
 		"""Finds and retrieves opaque data from the server.
 

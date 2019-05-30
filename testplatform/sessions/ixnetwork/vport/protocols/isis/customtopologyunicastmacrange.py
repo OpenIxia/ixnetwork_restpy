@@ -106,6 +106,22 @@ class CustomTopologyUnicastMacRange(Base):
 	def StartVlanId(self, value):
 		self._set_attribute('startVlanId', value)
 
+	def update(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+		"""Updates a child instance of customTopologyUnicastMacRange on the server.
+
+		Args:
+			Count (number): NOT DEFINED
+			Enabled (bool): NOT DEFINED
+			InterNodeMacIncrement (str): NOT DEFINED
+			MacIncrement (str): NOT DEFINED
+			StartMac (str): NOT DEFINED
+			StartVlanId (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
 		"""Adds a new customTopologyUnicastMacRange node on the server and retrieves it in this instance.
 

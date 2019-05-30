@@ -165,6 +165,27 @@ class LearnFrames(Base):
 	def SendArp(self, value):
 		self._set_attribute('sendArp', value)
 
+	def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None, SendArp=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			FastPathEnable (bool): If true, the fast path is enabled.
+			FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+			FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+			FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+			LearnFrequency (str(onBinaryIteration)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+			LearnNumFrames (number): The number of learned frames.
+			LearnRate (number): The learned frame rate.
+			LearnSendRouterSolicitation (bool): The learnt information on the router sent solicitation.
+			LearnWaitTime (number): The learnt information on the wait time.
+			LearnWaitTimeBeforeTransmit (number): The learned wait time before transmit.
+			SendArp (bool): If true, the ARP request sent.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

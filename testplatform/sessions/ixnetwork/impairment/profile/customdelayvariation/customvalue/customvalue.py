@@ -58,6 +58,18 @@ class CustomValue(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Percentage=None, Value=None):
+		"""Updates a child instance of customValue on the server.
+
+		Args:
+			Percentage (number): How often this value occurs, as a percentage.
+			Value (number): Delay value, in microseconds.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Percentage=None, Value=None):
 		"""Adds a new customValue node on the server and retrieves it in this instance.
 

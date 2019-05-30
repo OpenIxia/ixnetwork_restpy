@@ -178,6 +178,28 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, IncludeIpv6Groups=None, IntergroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
+		"""Updates a child instance of customTopologyMulticastIpv6GroupRange on the server.
+
+		Args:
+			IncludeIpv6Groups (bool): NOT DEFINED
+			IntergroupUnicastIpv6Increment (str): NOT DEFINED
+			IntraGroupUnicastIpv6Increment (str): NOT DEFINED
+			MulticastAddressNodeStep (str): NOT DEFINED
+			MulticastIpv6Count (number): NOT DEFINED
+			MulticastIpv6Step (str): NOT DEFINED
+			NumberOfUnicastSourceIpv6MacsPerMulticastIpv6 (number): NOT DEFINED
+			SourceGroupMapping (str(fully-Meshed|one-To-One|manual-Mapping)): NOT DEFINED
+			StartMulticastIpv6 (str): NOT DEFINED
+			StartUnicastSourceIpv6 (str): NOT DEFINED
+			UnicastAddressNodeStep (str): NOT DEFINED
+			VlanId (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeIpv6Groups=None, IntergroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
 		"""Adds a new customTopologyMulticastIpv6GroupRange node on the server and retrieves it in this instance.
 

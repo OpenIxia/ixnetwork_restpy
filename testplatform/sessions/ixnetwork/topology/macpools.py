@@ -276,6 +276,23 @@ class MacPools(Base):
 	def VlanCount(self, value):
 		self._set_attribute('vlanCount', value)
 
+	def update(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
+		"""Updates a child instance of macPools on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
+			UseVlans (bool): Flag to determine whether VLANs are enabled
+			VlanCount (number): Number of active VLANs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
 		"""Adds a new macPools node on the server and retrieves it in this instance.
 

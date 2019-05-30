@@ -114,6 +114,20 @@ class EgressTracking(Base):
 	def Offset(self, value):
 		self._set_attribute('offset', value)
 
+	def update(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
+		"""Updates a child instance of egressTracking on the server.
+
+		Args:
+			CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+			CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+			Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+			Offset (str): Specifies the Offset for Egress Tracking.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
 		"""Adds a new egressTracking node on the server and retrieves it in this instance.
 

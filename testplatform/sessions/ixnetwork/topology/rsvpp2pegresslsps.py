@@ -256,6 +256,21 @@ class RsvpP2PEgressLsps(Base):
 		"""
 		return self._get_attribute('timeoutMultiplier')
 
+	def update(self, Name=None, NumberOfRroSubObjects=None):
+		"""Updates a child instance of rsvpP2PEgressLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, EnableFixedLabelForReservations=None, EnableReplyingLspPing=None, EndPointIpv6=None, ForwardLspSelfPing=None, InitialLspSelfPingDropCount=None, IpTTLDecrementCount=None, LabelValue=None, LspSelfPingIPDSCP=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, RetainLspSelfPingDSCP=None, SendReservationConfirmation=None, TimeoutMultiplier=None):
 		"""Base class infrastructure that gets a list of rsvpP2PEgressLsps device ids encapsulated by this object.
 

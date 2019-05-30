@@ -141,6 +141,20 @@ class Topology(Base):
 	def Vports(self, value):
 		self._set_attribute('vports', value)
 
+	def update(self, Name=None, Note=None, Ports=None, Vports=None):
+		"""Updates a child instance of topology on the server.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			Note (str): Any Note about the Topology
+			Ports (list(str[None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport])): Logical port information.
+			Vports (list(str[None|/api/v1/sessions/1/ixnetwork/vport])): Virtual port information.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, Note=None, Ports=None, Vports=None):
 		"""Adds a new topology node on the server and retrieves it in this instance.
 

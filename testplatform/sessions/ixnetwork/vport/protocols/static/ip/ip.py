@@ -130,6 +130,24 @@ class Ip(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+		"""Updates a child instance of ip on the server.
+
+		Args:
+			Count (number): The total number of addresses to create for this range of IP addresses.
+			Enabled (bool): Enables this IP address entry.
+			IpStart (str): The first IP address in the range.
+			IpType (str(ipv4|ipv6)): The Internet Protocol (IP version).
+			Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): There may be multiple interfaces listed.
+			Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
 		"""Adds a new ip node on the server and retrieves it in this instance.
 

@@ -94,6 +94,21 @@ class MacRanges(Base):
 	def TrafficGroupId(self, value):
 		self._set_attribute('trafficGroupId', value)
 
+	def update(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+		"""Updates a child instance of macRanges on the server.
+
+		Args:
+			Count (number): The number of times to increment in this MAC range, starting with the address set in macAddress.
+			Enabled (bool): If true, the MAC range is enabled.
+			MacAddress (str): The MAC address of the first entry in the range.
+			Step (str): The amount to increment each MAC address in the range.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
 		"""Adds a new macRanges node on the server and retrieves it in this instance.
 

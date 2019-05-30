@@ -920,6 +920,28 @@ class BgpV6L3VpnRouteProperty(Base):
 		"""
 		return self._get_attribute('weight')
 
+	def update(self, EnableIpv6Receiver=None, EnableIpv6Sender=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLargeCommunities=None, UseAsIpv6UmhRoutes=None):
+		"""Updates a child instance of bgpV6L3VpnRouteProperty on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EnableIpv6Receiver (bool): Enable IPv6 Receiver
+			EnableIpv6Sender (bool): Enable IPv6 Sender
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
+			NoOfClusters (number): Number of Clusters
+			NoOfCommunities (number): Number of Communities
+			NoOfExternalCommunities (number): Number of Extended Communities
+			NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+			UseAsIpv6UmhRoutes (bool): Use As IPv6 UMH Routes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableIpv6Receiver=None, EnableIpv6Sender=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLargeCommunities=None, UseAsIpv6UmhRoutes=None):
 		"""Adds a new bgpV6L3VpnRouteProperty node on the server and retrieves it in this instance.
 

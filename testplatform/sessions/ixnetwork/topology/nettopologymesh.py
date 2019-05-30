@@ -70,6 +70,19 @@ class NetTopologyMesh(Base):
 	def Nodes(self, value):
 		self._set_attribute('nodes', value)
 
+	def update(self, IncludeEntryPoint=None, LinkMultiplier=None, Nodes=None):
+		"""Updates a child instance of netTopologyMesh on the server.
+
+		Args:
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LinkMultiplier (number): number of links between two nodes
+			Nodes (number): number of nodes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeEntryPoint=None, LinkMultiplier=None, Nodes=None):
 		"""Adds a new netTopologyMesh node on the server and retrieves it in this instance.
 

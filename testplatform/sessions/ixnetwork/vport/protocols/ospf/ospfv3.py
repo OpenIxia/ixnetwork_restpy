@@ -80,6 +80,18 @@ class OspfV3(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, EnableDrOrBdr=None, Enabled=None):
+		"""Updates a child instance of ospfV3 on the server.
+
+		Args:
+			EnableDrOrBdr (bool): Enables the OSPF Router to participate in DR/BDR election process
+			Enabled (bool): Enables this emulated OSPFv3 router.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def GracefulRouterRestart(self, *args, **kwargs):
 		"""Executes the gracefulRouterRestart operation on the server.
 

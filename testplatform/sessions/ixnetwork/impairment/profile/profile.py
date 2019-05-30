@@ -271,6 +271,21 @@ class Profile(Base):
 		"""
 		return self._get_attribute('profileId')
 
+	def update(self, __links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
+		"""Updates a child instance of profile on the server.
+
+		Args:
+			__links__ (list(str[None|/api/v1/sessions/1/ixnetwork/impairment?deepchild=link])): List of references to impairment links.
+			AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
+			Enabled (bool): If true, enables the profile.
+			Name (str): The name of the profile.
+			Priority (number): Profile priority. 1 is highest.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, __links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
 		"""Adds a new profile node on the server and retrieves it in this instance.
 

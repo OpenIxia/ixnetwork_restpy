@@ -126,6 +126,23 @@ class Ipv4(Base):
 	def Width(self, value):
 		self._set_attribute('width', value)
 
+	def update(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
+		"""Updates a child instance of ipv4 on the server.
+
+		Args:
+			BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
+			InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+			InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+			OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
+			SkipValues (bool): If true, Skip Values option is enabled.
+			StartValue (number): Specifies the start value of the UDF.
+			Width (str(32)): Specifies the width of the UDF.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableWidths=None, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
 		"""Finds and retrieves ipv4 data from the server.
 

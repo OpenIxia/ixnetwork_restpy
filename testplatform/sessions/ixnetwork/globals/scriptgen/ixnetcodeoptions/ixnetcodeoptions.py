@@ -152,3 +152,23 @@ class IxNetCodeOptions(Base):
 	@IncludeTrafficStack.setter
 	def IncludeTrafficStack(self, value):
 		self._set_attribute('includeTrafficStack', value)
+
+	def update(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
+		"""Updates a child instance of ixNetCodeOptions on the server.
+
+		Args:
+			IncludeAvailableHardware (bool): Flag to include available hardware nodes
+			IncludeConnect (bool): Flag to include the connect command
+			IncludeDefaultValues (bool): Flag to include attributes that have values which are default
+			IncludeQuickTest (bool): Flag to include quickTest nodes
+			IncludeStatistic (bool): Flag to include statistic view nodes
+			IncludeTAPSettings (bool): 
+			IncludeTestComposer (bool): Flag to include test composer code
+			IncludeTraffic (bool): Flag to include traffic item nodes
+			IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes
+			IncludeTrafficStack (bool): Flag to include high level stream stack nodes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

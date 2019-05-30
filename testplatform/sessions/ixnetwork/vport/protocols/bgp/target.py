@@ -56,3 +56,15 @@ class Target(Base):
 	@TargetListEx.setter
 	def TargetListEx(self, value):
 		self._set_attribute('targetListEx', value)
+
+	def update(self, TargetList=None, TargetListEx=None):
+		"""Updates a child instance of target on the server.
+
+		Args:
+			TargetList (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
+			TargetListEx (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN route ranges.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -168,6 +168,21 @@ class EcpriChannelsRe(Base):
 		"""
 		return self._get_attribute('userDataLen')
 
+	def update(self, MessageType=None, Name=None):
+		"""Updates a child instance of ecpriChannelsRe on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			MessageType (str(bitSequence|genericDataTransfer|iQData)): Message Type
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, MessageType=None, Name=None):
 		"""Adds a new ecpriChannelsRe node on the server and retrieves it in this instance.
 

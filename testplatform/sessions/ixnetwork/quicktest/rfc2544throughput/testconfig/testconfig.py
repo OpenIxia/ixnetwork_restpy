@@ -3477,6 +3477,303 @@ class TestConfig(Base):
 	def UseTiLoss(self, value):
 		self._set_attribute('useTiLoss', value)
 
+	def update(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTiLoss=None, BinaryTolerance=None, Binary_delay_enableAccLoss=None, Binary_delay_modeAccLoss=None, Binary_delay_scaleAccLoss=None, Binary_delay_thresholdAccLoss=None, Binary_flooded_enableAccLoss=None, Binary_flooded_thresholdAccLoss=None, Binary_integrity_enableAccLoss=None, Binary_integrity_thresholdAccLoss=None, Binary_latency_enableAccLoss=None, Binary_latency_modeAccLoss=None, Binary_latency_scaleAccLoss=None, Binary_latency_thresholdAccLoss=None, Binary_seq_enableAccLoss=None, Binary_seq_modeAccLoss=None, Binary_seq_thresholdAccLoss=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTiLoss=None, ComboTolerance=None, Combo_delay_enableAccLoss=None, Combo_delay_modeAccLoss=None, Combo_delay_scaleAccLoss=None, Combo_delay_thresholdAccLoss=None, Combo_flooded_enableAccLoss=None, Combo_flooded_thresholdAccLoss=None, Combo_integrity_enableAccLoss=None, Combo_integrity_thresholdAccLoss=None, Combo_latency_enableAccLoss=None, Combo_latency_modeAccLoss=None, Combo_latency_scaleAccLoss=None, Combo_latency_thresholdAccLoss=None, Combo_seq_enableAccLoss=None, Combo_seq_modeAccLoss=None, Combo_seq_thresholdAccLoss=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, CustomTiLoss=None, Custom_binary_delay_enableAccLoss=None, Custom_binary_delay_modeAccLoss=None, Custom_binary_delay_scaleAccLoss=None, Custom_binary_delay_thresholdAccLoss=None, Custom_binary_flooded_enableAccLoss=None, Custom_binary_flooded_thresholdAccLoss=None, Custom_binary_integrity_enableAccLoss=None, Custom_binary_integrity_thresholdAccLoss=None, Custom_binary_latency_enableAccLoss=None, Custom_binary_latency_modeAccLoss=None, Custom_binary_latency_scaleAccLoss=None, Custom_binary_latency_thresholdAccLoss=None, Custom_binary_peak_Backoff=None, Custom_binary_peak_FrameLossUnit=None, Custom_binary_peak_Resolution=None, Custom_binary_peak_Tolerance=None, Custom_binary_peak_initialValue=None, Custom_binary_peak_maxValue=None, Custom_binary_peak_minValue=None, Custom_binary_seq_enableAccLoss=None, Custom_binary_seq_modeAccLoss=None, Custom_binary_seq_thresholdAccLoss=None, Custom_peak_loadType=None, Custom_step_delay_enableAccLoss=None, Custom_step_delay_modeAccLoss=None, Custom_step_delay_scaleAccLoss=None, Custom_step_delay_thresholdAccLoss=None, Custom_step_flooded_enableAccLoss=None, Custom_step_flooded_thresholdAccLoss=None, Custom_step_integrity_enableAccLoss=None, Custom_step_integrity_thresholdAccLoss=None, Custom_step_latency_enableAccLoss=None, Custom_step_latency_modeAccLoss=None, Custom_step_latency_scaleAccLoss=None, Custom_step_latency_thresholdAccLoss=None, Custom_step_peak_FrameLossUnit=None, Custom_step_peak_initialValue=None, Custom_step_peak_maxValue=None, Custom_step_peak_stepTolerance=None, Custom_step_peak_stepValue=None, Custom_step_seq_enableAccLoss=None, Custom_step_seq_modeAccLoss=None, Custom_step_seq_thresholdAccLoss=None, CustompeakvalueList=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FixedLoadUnit=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameLossUnit=None, FrameOrderingTemp=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, Numtrials=None, PeakLoadingReplicationCount=None, Peak_customLoadUnit=None, Peak_initialStepLoadRate=None, Peak_loadRateList=None, Peak_maxStepLoadRate=None, Peak_rate_loadType=None, Peak_stepLoadUnit=None, Peak_stepStepLoadRate=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickBackoffIteration=None, QuickEnableBackoffIteration=None, QuickEnableSaturationIteration=None, QuickSaturationIteration=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTiLoss=None, QuickSearchTolerance=None, RandomLoadUnit=None, RandomTiLoss=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, SaturationIteration=None, SearchBase=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTiLoss=None, StepTolerance=None, Step_binary_delay_enableAccLoss=None, Step_binary_delay_modeAccLoss=None, Step_binary_delay_scaleAccLoss=None, Step_binary_delay_thresholdAccLoss=None, Step_binary_flooded_enableAccLoss=None, Step_binary_flooded_thresholdAccLoss=None, Step_binary_integrity_enableAccLoss=None, Step_binary_integrity_thresholdAccLoss=None, Step_binary_latency_enableAccLoss=None, Step_binary_latency_modeAccLoss=None, Step_binary_latency_scaleAccLoss=None, Step_binary_latency_thresholdAccLoss=None, Step_binary_peak_Backoff=None, Step_binary_peak_FrameLossUnit=None, Step_binary_peak_Resolution=None, Step_binary_peak_Tolerance=None, Step_binary_peak_initialValue=None, Step_binary_peak_maxValue=None, Step_binary_peak_minValue=None, Step_binary_seq_enableAccLoss=None, Step_binary_seq_modeAccLoss=None, Step_binary_seq_thresholdAccLoss=None, Step_delay_enableAccLoss=None, Step_delay_modeAccLoss=None, Step_delay_scaleAccLoss=None, Step_delay_thresholdAccLoss=None, Step_flooded_enableAccLoss=None, Step_flooded_thresholdAccLoss=None, Step_integrity_enableAccLoss=None, Step_integrity_thresholdAccLoss=None, Step_latency_enableAccLoss=None, Step_latency_modeAccLoss=None, Step_latency_scaleAccLoss=None, Step_latency_thresholdAccLoss=None, Step_peak_loadType=None, Step_seq_enableAccLoss=None, Step_seq_modeAccLoss=None, Step_seq_thresholdAccLoss=None, Step_step_delay_enableAccLoss=None, Step_step_delay_modeAccLoss=None, Step_step_delay_scaleAccLoss=None, Step_step_delay_thresholdAccLoss=None, Step_step_flooded_enableAccLoss=None, Step_step_flooded_thresholdAccLoss=None, Step_step_integrity_enableAccLoss=None, Step_step_integrity_thresholdAccLoss=None, Step_step_latency_enableAccLoss=None, Step_step_latency_modeAccLoss=None, Step_step_latency_scaleAccLoss=None, Step_step_latency_thresholdAccLoss=None, Step_step_peak_FrameLossUnit=None, Step_step_peak_initialValue=None, Step_step_peak_maxValue=None, Step_step_peak_stepTolerance=None, Step_step_peak_stepValue=None, Step_step_seq_enableAccLoss=None, Step_step_seq_modeAccLoss=None, Step_step_seq_thresholdAccLoss=None, StopTestOnHighLoss=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedInitial=None, UnchangedValueList=None, UsePercentOffsets=None, UseTiLoss=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+			BinaryBackoff (number): Specifies the percentage of binary backoff.
+			BinaryFrameLossUnit (str(%|frames)): The frame loss unit for traffic in binary.
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The load unit value in binary. Possible values include:
+			BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			BinarySearchType (str(linear|perFlow|perPort|perTrafficItem)): The binary search type value. Possible values include:
+			BinaryTiLoss (bool): Use loss across Rx Ports
+			BinaryTolerance (number): The binary tolerance level.
+			Binary_delay_enableAccLoss (bool): NOT DEFINED
+			Binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Binary_delay_thresholdAccLoss (number): NOT DEFINED
+			Binary_flooded_enableAccLoss (bool): NOT DEFINED
+			Binary_flooded_thresholdAccLoss (number): NOT DEFINED
+			Binary_integrity_enableAccLoss (bool): NOT DEFINED
+			Binary_integrity_thresholdAccLoss (number): NOT DEFINED
+			Binary_latency_enableAccLoss (bool): NOT DEFINED
+			Binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Binary_latency_thresholdAccLoss (number): NOT DEFINED
+			Binary_seq_enableAccLoss (bool): NOT DEFINED
+			Binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Binary_seq_thresholdAccLoss (number): NOT DEFINED
+			BurstSize (number): The number of packets that are sent in a burst.
+			CalculateJitter (bool): If true, calculates jitter.
+			CalculateLatency (bool): If true, calculates the latency.
+			ComboBackoff (number): The backoff combination of the test configuration.
+			ComboFrameLossUnit (str(%|frames)): The frame loss unit for traffic in binary.
+			ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The combination of load units. Possible values include:
+			ComboResolution (number): The combined resolution value.
+			ComboTiLoss (bool): Use loss across Rx Ports
+			ComboTolerance (number): The combined tolerance level.
+			Combo_delay_enableAccLoss (bool): NOT DEFINED
+			Combo_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Combo_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Combo_delay_thresholdAccLoss (number): NOT DEFINED
+			Combo_flooded_enableAccLoss (bool): NOT DEFINED
+			Combo_flooded_thresholdAccLoss (number): NOT DEFINED
+			Combo_integrity_enableAccLoss (bool): NOT DEFINED
+			Combo_integrity_thresholdAccLoss (number): NOT DEFINED
+			Combo_latency_enableAccLoss (bool): NOT DEFINED
+			Combo_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Combo_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Combo_latency_thresholdAccLoss (number): NOT DEFINED
+			Combo_seq_enableAccLoss (bool): NOT DEFINED
+			Combo_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Combo_seq_thresholdAccLoss (number): NOT DEFINED
+			CountRandomFrameSize (number): Randomly counts the frame size.
+			CountRandomIpRatio (number): Sets the count of the random ip ratio loop
+			CountRandomLoadRate (number): Randomly counts the load rate.
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit. Possible values include:
+			CustomTiLoss (bool): Use loss across Rx Ports
+			Custom_binary_delay_enableAccLoss (bool): NOT DEFINED
+			Custom_binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Custom_binary_delay_thresholdAccLoss (number): NOT DEFINED
+			Custom_binary_flooded_enableAccLoss (bool): NOT DEFINED
+			Custom_binary_flooded_thresholdAccLoss (number): NOT DEFINED
+			Custom_binary_integrity_enableAccLoss (bool): NOT DEFINED
+			Custom_binary_integrity_thresholdAccLoss (number): NOT DEFINED
+			Custom_binary_latency_enableAccLoss (bool): NOT DEFINED
+			Custom_binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Custom_binary_latency_thresholdAccLoss (number): NOT DEFINED
+			Custom_binary_peak_Backoff (number): NOT DEFINED
+			Custom_binary_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
+			Custom_binary_peak_Resolution (number): NOT DEFINED
+			Custom_binary_peak_Tolerance (number): NOT DEFINED
+			Custom_binary_peak_initialValue (number): NOT DEFINED
+			Custom_binary_peak_maxValue (number): NOT DEFINED
+			Custom_binary_peak_minValue (number): NOT DEFINED
+			Custom_binary_seq_enableAccLoss (bool): NOT DEFINED
+			Custom_binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_binary_seq_thresholdAccLoss (number): NOT DEFINED
+			Custom_peak_loadType (str(binary|custom|step)): NOT DEFINED
+			Custom_step_delay_enableAccLoss (bool): NOT DEFINED
+			Custom_step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Custom_step_delay_thresholdAccLoss (number): NOT DEFINED
+			Custom_step_flooded_enableAccLoss (bool): NOT DEFINED
+			Custom_step_flooded_thresholdAccLoss (number): NOT DEFINED
+			Custom_step_integrity_enableAccLoss (bool): NOT DEFINED
+			Custom_step_integrity_thresholdAccLoss (number): NOT DEFINED
+			Custom_step_latency_enableAccLoss (bool): NOT DEFINED
+			Custom_step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Custom_step_latency_thresholdAccLoss (number): NOT DEFINED
+			Custom_step_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
+			Custom_step_peak_initialValue (number): NOT DEFINED
+			Custom_step_peak_maxValue (number): NOT DEFINED
+			Custom_step_peak_stepTolerance (number): NOT DEFINED
+			Custom_step_peak_stepValue (number): NOT DEFINED
+			Custom_step_seq_enableAccLoss (bool): NOT DEFINED
+			Custom_step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Custom_step_seq_thresholdAccLoss (number): NOT DEFINED
+			CustompeakvalueList (str): NOT DEFINED
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit
+			DetailedResultsEnabled (bool): If true, it enables the detailed results for the fully meshed case
+			Duration (number): sec
+			EnableBackoffIteration (bool): If true, enables back off iteration test.
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableExtraIterations (bool): If true, more iterations are performed.
+			EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): If Enabled, The minimum size of the frame is used .
+			EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
+			EnableSaturationIteration (bool): If true, SaturationIteration in enabled .
+			EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
+			ExtraIterationOffsets (str): This enables the test to run an extra iteration.
+			FastConvergenceDuration (number): sec
+			FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
+			FixedLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Possible values include:
+			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameLossUnit (str): The frame loss unit for traffic.
+			FrameOrderingTemp (str(noOrdering|peakLoading|unchanged|val2889Ordering)): NOT DEFINED
+			FrameSizeMode (str(custom|increment|random|unchanged)): This attribute is the frame size mode for the Quad Gaussian. Possible values includes:
+			FramesPerBurstGap (number): The number of frames to be sent after each burst.
+			Framesize (number): Bytes
+			FramesizeFixedValue (number): The fixed value of framesize.
+			FramesizeImixList (str): The list of the available lmix frame size.
+			FramesizeList (list(str)): The list of the available frame size.
+			Gap (number): The gap in transmission of frames.
+			GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+			ImixAdd (str): Adds an imix data.
+			ImixData (str): Displays the imix Data.
+			ImixDelete (str): Deletes the imix data.
+			ImixDistribution (str(bwpercentage|weight)): Specifies the imix distribution unit.
+			ImixEnabled (bool): If True, Enables the imix value.
+			ImixTemplates (str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)): Specefies the imix templates.
+			ImixTrafficType (str): Displays the imix traffic type.
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Possible values include:
+			InitialBinaryLoadRate (number): The initial binary value of the load rate.
+			InitialComboLoadRate (number): The initial combination value of the load rate .
+			InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+			InitialStepLoadRate (number): The initial step value of the load rate.
+			IpRatioMode (str(custom|fixed|increment|random)): Sets the ip ratio mode
+			Ipv4RatioList (str): Sets the ipv4 ratio list
+			Ipv4rate (number): The rate at which IPv4 traffic is sent.
+			Ipv6RatioList (str): Sets the ipv6 ratio list
+			Ipv6rate (number): The rate at which IPv6 traffic is sent.
+			LatencyBins (str): Sets the latency bins statistics
+			LatencyBinsEnabled (bool): Enables the latency bins statistics
+			LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): The type of latency. Possible values include:
+			LoadRateList (str): The list of Load Rate.
+			LoadRateValue (number): The value of the load rate.
+			LoadType (str(binary|combo|custom|quickSearch|random|step|unchanged)): Possible values include:
+			MapType (str): The mapping type.
+			MaxBinaryLoadRate (number): The upper bound of the iteration rates for each frame size during a binary search.
+			MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
+			MaxIncrementFrameSize (number): It signifies the maximum increment frame size.
+			MaxIncrementIpv4Ratio (str): Sets the maximum increment value for the ipv4 ratio
+			MaxIncrementIpv6Ratio (str): Sets the maximum increment value for the ipv6 ratio
+			MaxIncrementLoadRate (number): It signifies the maximum increment load rate value.
+			MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
+			MaxRandomFrameSize (number): It signifies the maximum random frame size value.
+			MaxRandomIpv4Ratio (str): Sets the maximum radom value for the ipv4 ratio
+			MaxRandomIpv6Ratio (str): Sets the maximum random value for the ipv6 ratio
+			MaxRandomLoadRate (number): It signifies the maximum random load rate value.
+			MaxStepLoadRate (number): It signifies the maximum step value for load rate.
+			MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+			MinComboLoadRate (number): The minimum combination load rate.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinIncrementFrameSize (number): It signifies the minimum increment frame size.
+			MinIncrementIpv4Ratio (str): Sets the minimum increment value for the ipv4 ratio
+			MinIncrementIpv6Ratio (str): Sets the minimum increment value for the ipv6 ratio
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			MinRandomIpv4Ratio (str): Sets the minimum random value for the ipv4 ratio
+			MinRandomIpv6Ratio (str): Sets the minimum random value for the ipv6 ratio
+			MinRandomLoadRate (number): The minimum random value of the load rate.
+			Numtrials (number): The integer value that states the number of trials permitted.
+			PeakLoadingReplicationCount (number): NOT DEFINED
+			Peak_customLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			Peak_initialStepLoadRate (number): NOT DEFINED
+			Peak_loadRateList (str): NOT DEFINED
+			Peak_maxStepLoadRate (number): NOT DEFINED
+			Peak_rate_loadType (str(custom|step)): NOT DEFINED
+			Peak_stepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
+			Peak_stepStepLoadRate (number): NOT DEFINED
+			PerTrafficResults (bool): 
+			PercentMaxRate (number): The maximum rate percentage.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			QuickBackoffIteration (number): Sets the quicksearch backoff iteration
+			QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
+			QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
+			QuickSaturationIteration (number): Sets the quick search saturation iteration
+			QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
+			QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit
+			QuickSearchResolution (number): Sets the quick search resolution
+			QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): Sets the quick search type
+			QuickSearchTiLoss (bool): Use loss across Rx Ports
+			QuickSearchTolerance (number): Sets the quick search tolerance
+			RandomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The random values of the load unit. Possible values include:
+			RandomTiLoss (bool): Use loss across Rx Ports
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): Possible values include:
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The reported throughput rate unit values. Possible values include:
+			Resolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops .
+			Rfc2544ImixDataQoS (bool): If true, it uses the same frame data qos
+			Rfc2889ordering (str(noOrdering|peakLoading|unchanged|val2889Ordering)): If true, indicates frame ordering by Rfc2889.
+			SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
+			SearchBase (str(rate|replicationCount)): NOT DEFINED
+			SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StaggeredStart (bool): Starts test with a stagger.
+			StepComboLoadRate (number): The step value of combination load rate.
+			StepFrameLossUnit (str(%|frames)): The frame loss unit.
+			StepIncrementFrameSize (number): The traffic step increment frame size.
+			StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented
+			StepIncrementIpv6Ratio (str): The step in which the ipv6 ratio loop is incremented
+			StepIncrementLoadRate (number): The incremental step value of the load rate.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the step rate of the load unit. Possible values include:
+			StepStepLoadRate (number): The incremental step value of load rate.
+			StepTiLoss (bool): Use loss across Rx Ports
+			StepTolerance (number): The step value of the tolerance level.
+			Step_binary_delay_enableAccLoss (bool): NOT DEFINED
+			Step_binary_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_binary_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_binary_delay_thresholdAccLoss (number): NOT DEFINED
+			Step_binary_flooded_enableAccLoss (bool): NOT DEFINED
+			Step_binary_flooded_thresholdAccLoss (number): NOT DEFINED
+			Step_binary_integrity_enableAccLoss (bool): NOT DEFINED
+			Step_binary_integrity_thresholdAccLoss (number): NOT DEFINED
+			Step_binary_latency_enableAccLoss (bool): NOT DEFINED
+			Step_binary_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_binary_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_binary_latency_thresholdAccLoss (number): NOT DEFINED
+			Step_binary_peak_Backoff (number): NOT DEFINED
+			Step_binary_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
+			Step_binary_peak_Resolution (number): NOT DEFINED
+			Step_binary_peak_Tolerance (number): NOT DEFINED
+			Step_binary_peak_initialValue (number): NOT DEFINED
+			Step_binary_peak_maxValue (number): NOT DEFINED
+			Step_binary_peak_minValue (number): NOT DEFINED
+			Step_binary_seq_enableAccLoss (bool): NOT DEFINED
+			Step_binary_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_binary_seq_thresholdAccLoss (number): NOT DEFINED
+			Step_delay_enableAccLoss (bool): NOT DEFINED
+			Step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_delay_thresholdAccLoss (number): NOT DEFINED
+			Step_flooded_enableAccLoss (bool): NOT DEFINED
+			Step_flooded_thresholdAccLoss (number): NOT DEFINED
+			Step_integrity_enableAccLoss (bool): NOT DEFINED
+			Step_integrity_thresholdAccLoss (number): NOT DEFINED
+			Step_latency_enableAccLoss (bool): NOT DEFINED
+			Step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_latency_thresholdAccLoss (number): NOT DEFINED
+			Step_peak_loadType (str(binary|custom|step)): NOT DEFINED
+			Step_seq_enableAccLoss (bool): NOT DEFINED
+			Step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_seq_thresholdAccLoss (number): NOT DEFINED
+			Step_step_delay_enableAccLoss (bool): NOT DEFINED
+			Step_step_delay_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_step_delay_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_step_delay_thresholdAccLoss (number): NOT DEFINED
+			Step_step_flooded_enableAccLoss (bool): NOT DEFINED
+			Step_step_flooded_thresholdAccLoss (number): NOT DEFINED
+			Step_step_integrity_enableAccLoss (bool): NOT DEFINED
+			Step_step_integrity_thresholdAccLoss (number): NOT DEFINED
+			Step_step_latency_enableAccLoss (bool): NOT DEFINED
+			Step_step_latency_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_step_latency_scaleAccLoss (str(ms|ns|us)): NOT DEFINED
+			Step_step_latency_thresholdAccLoss (number): NOT DEFINED
+			Step_step_peak_FrameLossUnit (str(%|frames)): NOT DEFINED
+			Step_step_peak_initialValue (number): NOT DEFINED
+			Step_step_peak_maxValue (number): NOT DEFINED
+			Step_step_peak_stepTolerance (number): NOT DEFINED
+			Step_step_peak_stepValue (number): NOT DEFINED
+			Step_step_seq_enableAccLoss (bool): NOT DEFINED
+			Step_step_seq_modeAccLoss (str(average|maximum)): NOT DEFINED
+			Step_step_seq_thresholdAccLoss (number): NOT DEFINED
+			StopTestOnHighLoss (number): It stops test on high loss.
+			SupportedTrafficTypes (str): The supported traffic types.
+			Tolerance (number): The tolerance value.
+			TrafficType (str(burstyLoading|constantLoading)): It signifies the traffic type for the protocol. Possible values include:
+			TxDelay (number): The minimum delay between successive packets.
+			UnchangedInitial (str(False|True)): The first value of an unchanged parameter.
+			UnchangedValueList (str): A list of variable parameter values that are unchanged.
+			UsePercentOffsets (bool): If true, sets the offset value in percentage.
+			UseTiLoss (str): Use loss across Rx Ports
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

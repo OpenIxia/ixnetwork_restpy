@@ -192,6 +192,21 @@ class SwitchPorts(Base):
 	def PortNumber(self, value):
 		self._set_attribute('portNumber', value)
 
+	def update(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
+		"""Updates a child instance of switchPorts on the server.
+
+		Args:
+			Enabled (bool): If true, the ports in the selected port range are added to the switch.
+			EthernetAddress (str): Indicates the hardware address of the ports in the port range.
+			NumberOfPorts (number): Specifies the number of ports in a port range.
+			PortName (str): Indicates the name for the switch port interface.
+			PortNumber (str): Indicates a value that the datapath associates with a physical port.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
 		"""Adds a new switchPorts node on the server and retrieves it in this instance.
 

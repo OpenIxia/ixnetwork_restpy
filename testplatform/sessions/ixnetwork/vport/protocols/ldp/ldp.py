@@ -224,6 +224,30 @@ class Ldp(Base):
 	def UseTransportLabelsForMplsOam(self, value):
 		self._set_attribute('useTransportLabelsForMplsOam', value)
 
+	def update(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
+		"""Updates a child instance of ldp on the server.
+
+		Args:
+			EnableDiscardSelfAdvFecs (bool): Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
+			EnableHelloJitter (bool): Allows staggered transmission of many HELLO messages.
+			EnableLabelExchangeOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+			EnableVpnLabelExchangeOverLsp (bool): NOT DEFINED
+			Enabled (bool): Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
+			HelloHoldTime (number): One of the timers associated with maintaining adjacencies based on hello messages.
+			HelloInterval (number): One of the timers associated with maintaining adjacencies based on hello messages.
+			KeepAliveHoldTime (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+			KeepAliveInterval (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+			P2mpCapabilityParam (number): The P2MP capability parameter value in hexadecimal.
+			P2mpFecType (number): The MLDP P2MP FEC type value in hexadecimal.
+			TargetedHelloInterval (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+			TargetedHoldTime (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+			UseTransportLabelsForMplsOam (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -144,6 +144,24 @@ class DceTopologyRange(Base):
 	def TopologyIdStep(self, value):
 		self._set_attribute('topologyIdStep', value)
 
+	def update(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):
+		"""Updates a child instance of dceTopologyRange on the server.
+
+		Args:
+			EnableFtag (bool): If true, the F tag is enabled.
+			Enabled (bool): Signifies if DCE Topology is enabled or disabled.
+			NicknameList (list(dict(arg1:number,arg2:number,arg3:number))): The list of nicknames.
+			NoOfTreesToCompute (number): The number of trees to compute.
+			StartFtagValue (number): If true, the Ftag value is started.
+			TopologyCount (number): The count of the topology.
+			TopologyId (number): The unique identification number of the topology range.
+			TopologyIdStep (number): It shows the Increment Step of the ID of DCE Topology Range. Default is 1.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):
 		"""Adds a new dceTopologyRange node on the server and retrieves it in this instance.
 

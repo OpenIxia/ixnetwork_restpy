@@ -70,3 +70,15 @@ class TestInspector(Base):
 	@PollingInterval.setter
 	def PollingInterval(self, value):
 		self._set_attribute('pollingInterval', value)
+
+	def update(self, EnableTestInspector=None, PollingInterval=None):
+		"""Updates a child instance of testInspector on the server.
+
+		Args:
+			EnableTestInspector (bool): Enable/Disable Test Inspector
+			PollingInterval (number): Polling Interval
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

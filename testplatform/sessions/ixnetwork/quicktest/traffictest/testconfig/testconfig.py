@@ -309,6 +309,39 @@ class TestConfig(Base):
 	def TrafficType(self, value):
 		self._set_attribute('trafficType', value)
 
+	def update(self, CalculateJitter=None, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			CalculateJitter (bool): 
+			CalculateLatency (bool): 
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
+			DetailedResultsEnabled (bool): 
+			Duration (number): 
+			EnableDataIntegrity (bool): 
+			EnableLayer1Rate (bool): 
+			FixedFrameSize (number): 
+			FloodedFramesEnabled (bool): 
+			ForceContinuosTraffic (bool): 
+			FrameSizeMode (str(fixed)): 
+			Gap (number): 
+			IpRatioMode (str(custom|fixed|increment|random)): 
+			Ipv4rate (number): 
+			Ipv6rate (number): 
+			LatencyType (str(cutThrough|forwardingDelay|mef|storeForward)): 
+			LoadRateValue (number): 
+			LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): 
+			Numtrials (number): 
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportSequenceError (bool): 
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): 
+			TrafficType (str(burstyLoading|constantLoading)): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

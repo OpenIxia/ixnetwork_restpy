@@ -197,6 +197,21 @@ class LdpRootRangeV4(Base):
 		"""
 		return self._get_attribute('startGroupAddressV6')
 
+	def update(self, Name=None, NumberOfTLVs=None):
+		"""Updates a child instance of ldpRootRangeV4 on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfTLVs (number): Number Of TLVs
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, ContinuousIncrementOVAcrossRoot=None, FilterOnGroupAddress=None, GroupCountPerLSP=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None, SourceAddressV4=None, SourceAddressV6=None, SourceCountPerLSP=None, StartGroupAddressV4=None, StartGroupAddressV6=None):
 		"""Base class infrastructure that gets a list of ldpRootRangeV4 device ids encapsulated by this object.
 

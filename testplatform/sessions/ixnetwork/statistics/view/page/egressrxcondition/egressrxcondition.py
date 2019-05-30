@@ -56,3 +56,15 @@ class EgressRxCondition(Base):
 	@Values.setter
 	def Values(self, value):
 		self._set_attribute('values', value)
+
+	def update(self, Operator=None, Values=None):
+		"""Updates a child instance of egressRxCondition on the server.
+
+		Args:
+			Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
+			Values (list(number)): Value to be matched for the condition.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

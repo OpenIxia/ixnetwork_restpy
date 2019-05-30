@@ -298,6 +298,38 @@ class Lan(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, AtmEncapsulation=None, Count=None, CountPerVc=None, EnableIncrementMac=None, EnableIncrementVlan=None, EnableSiteId=None, EnableVlan=None, Enabled=None, FrEncapsulation=None, IncrementPerVcVlanMode=None, IncrementVlanMode=None, IncremetVlanMode=None, Mac=None, MacRangeMode=None, NumberOfVcs=None, SiteId=None, SkipVlanIdZero=None, Tpid=None, TrafficGroupId=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of lan on the server.
+
+		Args:
+			AtmEncapsulation (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=atm)): Select the ATM VPI/VCI Name from the list configured in the atm object.
+			Count (number): If the VLAN is enabled, then this is the number of MAC address/VLAN combinations that will be created.
+			CountPerVc (number): The total count per VC in this bundled mode.
+			EnableIncrementMac (bool): Enables the use of multiple MAC addresses, which are incremented for each additional address. The default increment is 00 00 00 00 00 01.
+			EnableIncrementVlan (bool): Enables the use of multiple VLANs, which are incremented for each additional VLAN. The default increment is 1.
+			EnableSiteId (bool): Enables this site identifier (ID).
+			EnableVlan (bool): Enables the use of VLANs.
+			Enabled (bool): Enables this LAN entry.
+			FrEncapsulation (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=fr)): Selects the Frame Relay encapsulation for the LAN based on the configuration of the fr object.
+			IncrementPerVcVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If true, enables the use of multiple VLANs, which are incremented for each additional VLAN per VC. The default increment is 1.
+			IncrementVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If true, enables the use of multiple VLANs, which are incremented for each additional VLAN per VC. The default increment is 1.
+			IncremetVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If true, enables the use of multiple VLANs, which are incremented for each additional VLAN per VC. The default increment is 1.
+			Mac (str): The first MAC address in the range.
+			MacRangeMode (str(normal|bundled)): Indicates the available MAC range mode.
+			NumberOfVcs (number): The total number of VCs in this mode.
+			SiteId (number): The value of the site identifier (ID). The valid range is 0 to 4,294,967,295. The default is 0.
+			SkipVlanIdZero (bool): Skip the value of vlad id, if the vlan id value is equal to zero.
+			Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+			VlanCount (number): The number of VLANs created.
+			VlanId (str): The identifier for the first VLAN in the range.
+			VlanPriority (str): The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AtmEncapsulation=None, Count=None, CountPerVc=None, EnableIncrementMac=None, EnableIncrementVlan=None, EnableSiteId=None, EnableVlan=None, Enabled=None, FrEncapsulation=None, IncrementPerVcVlanMode=None, IncrementVlanMode=None, IncremetVlanMode=None, Mac=None, MacRangeMode=None, NumberOfVcs=None, SiteId=None, SkipVlanIdZero=None, Tpid=None, TrafficGroupId=None, VlanCount=None, VlanId=None, VlanPriority=None):
 		"""Adds a new lan node on the server and retrieves it in this instance.
 

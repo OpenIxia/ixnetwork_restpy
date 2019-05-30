@@ -583,6 +583,27 @@ class Mpls(Base):
 	def UpperLayer(self, value):
 		self._set_attribute('upperLayer', value)
 
+	def update(self, ConnectedVia=None, Enablecw=None, Multiplier=None, Name=None, Overridecos=None, StackedLayers=None, TransportType=None, UpperLayer=None):
+		"""Updates a child instance of mpls on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			Enablecw (bool): Enable Control Word
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			Overridecos (bool): Override Cos
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			TransportType (str(overMac|overTunnel)): TransportType
+			UpperLayer (str(nhEthernet|nhIp)): Value to Determine who is upper Layer.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, Enablecw=None, Multiplier=None, Name=None, Overridecos=None, StackedLayers=None, TransportType=None, UpperLayer=None):
 		"""Adds a new mpls node on the server and retrieves it in this instance.
 

@@ -206,3 +206,24 @@ class TenGigLan(Base):
 	@TxIgnoreRxLinkFaults.setter
 	def TxIgnoreRxLinkFaults(self, value):
 		self._set_attribute('txIgnoreRxLinkFaults', value)
+
+	def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+		"""Updates a child instance of tenGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			AutoNegotiate (str(asymmetric|both|fullDuplex|none)): NOT DEFINED
+			EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
+			EnablePPM (bool): If true, enables the portsppm.
+			EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+			FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			TransmitClocking (str(external|internal|recovered)): The transmit clocking type for the 10G LAN port.
+			TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

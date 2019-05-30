@@ -148,6 +148,21 @@ class IsisSRTunnelList(Base):
 		"""
 		return self._get_attribute('usingHeadEndNodePrefix')
 
+	def update(self, Name=None, NumberOfSegments=None):
+		"""Updates a child instance of isisSRTunnelList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfSegments (number): Number of Segments
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, SourceIpv4=None, SourceIpv6=None, TunnelDescription=None, UsingHeadEndNodePrefix=None):
 		"""Base class infrastructure that gets a list of isisSRTunnelList device ids encapsulated by this object.
 

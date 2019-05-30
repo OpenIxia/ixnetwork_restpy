@@ -617,6 +617,44 @@ class Switch(Base):
 	def TableMissAction(self, value):
 		self._set_attribute('tableMissAction', value)
 
+	def update(self, BarrierReplyDelay=None, BarrierReplyDelayType=None, BarrierReplyMaxDelay=None, CalculateControllerFlowTxRate=None, CalculatePacketInReplyDelay=None, DatapathDescription=None, DatapathId=None, DatapathIdInHex=None, Description=None, Enable=None, EnableCalculatePacketOutRxRate=None, EnableHelloElement=None, HardwareDescription=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaxPacketInBytes=None, MaximumColorValue=None, MaximumNoOfBandsPerMeter=None, MaximumNoOfBucketsPerGroup=None, MaximumNoOfMeters=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, SerialNumber=None, SoftwareDescription=None, StoreFlows=None, SupportPacketForwarding=None, TableMissAction=None):
+		"""Updates a child instance of switch on the server.
+
+		Args:
+			BarrierReplyDelay (number): Indicates the delay between successive barrier notifications.
+			BarrierReplyDelayType (str(fixed|random)): Select the delay type supported for barrier reply messages
+			BarrierReplyMaxDelay (number): Indicates the delay between successive barrier notifications.
+			CalculateControllerFlowTxRate (bool): If true, the Flow Rate of the controller is calculated.
+			CalculatePacketInReplyDelay (bool): If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
+			DatapathDescription (str): Indicates a description of datapath.
+			DatapathId (str): Indicates the Datapath ID of the OpenFlow switch.
+			DatapathIdInHex (str): Indicates the Datapath ID in hexadecimal format.
+			Description (str): A description for the object.
+			Enable (bool): If true, the object is enabled.
+			EnableCalculatePacketOutRxRate (bool): If enabled packet_out rx rate and packet_in tx rate will be caculated for the switch and shown in Aggregated Switch Statistics and Switch Learned Info. This field can be enabled only if Calculate PacketIn Reply Delay is disabled for the switch.
+			EnableHelloElement (bool): If true, enables Hello element for version negotiation.
+			HardwareDescription (str): Indicates the hardware description of the switch.
+			InterPacketInBurstGap (number): Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
+			ManufacturerDescription (str): Indicates the description of the switch manufacturer.
+			MaxPacketInBytes (number): Specifies the max amount of data to be sent in the Packet-In message.
+			MaximumColorValue (number): Specify the maximum color value supported.The minimum value is 0 and the maximum value is 160. The default value is 50.
+			MaximumNoOfBandsPerMeter (number): Specify the maximum number of bands supported per meter. The minimum value is 0 and the maximum value is 160. The default value is 50.
+			MaximumNoOfBucketsPerGroup (number): Specify the maximum number of Buckets supported per group.The minimum value is 1 and the maximum value is 4092.The default value is 4092.
+			MaximumNoOfMeters (number): Specify the maximum number of meters supported. The default value is 1000.
+			NumberOfBuffers (number): Indicates the maximum number of packets that can be stored in the buffered at a time.
+			PacketInReplyTimeout (number): Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
+			PacketInTxBurstSize (number): Indicates the number of packets in messages sent in a single burst.
+			SerialNumber (str): Indicates the Serial Number of the switch.
+			SoftwareDescription (str): Indicates the description of the software installed on the switch.
+			StoreFlows (bool): If true, the switch will store the flows advertised by the controller in its tables.
+			SupportPacketForwarding (bool): If true, indicates that Packet Forwarding is supported on the OpenFlow switch.
+			TableMissAction (str(drop|sendToController)): Specify what the Switch should do when there is no match for the packets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BarrierReplyDelay=None, BarrierReplyDelayType=None, BarrierReplyMaxDelay=None, CalculateControllerFlowTxRate=None, CalculatePacketInReplyDelay=None, DatapathDescription=None, DatapathId=None, DatapathIdInHex=None, Description=None, Enable=None, EnableCalculatePacketOutRxRate=None, EnableHelloElement=None, HardwareDescription=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaxPacketInBytes=None, MaximumColorValue=None, MaximumNoOfBandsPerMeter=None, MaximumNoOfBucketsPerGroup=None, MaximumNoOfMeters=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, SerialNumber=None, SoftwareDescription=None, StoreFlows=None, SupportPacketForwarding=None, TableMissAction=None):
 		"""Adds a new switch node on the server and retrieves it in this instance.
 

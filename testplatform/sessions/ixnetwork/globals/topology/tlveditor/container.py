@@ -108,6 +108,21 @@ class Container(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+		"""Updates a child instance of container on the server.
+
+		Args:
+			Description (str): Description of the tlv
+			IsEditable (bool): Indicates whether this is editable or not
+			IsRepeatable (bool): Flag indicating whether this is repeatable or not
+			IsRequired (bool): Flag indicating whether this is required or not
+			Name (str): Name of the tlv
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
 		"""Adds a new container node on the server and retrieves it in this instance.
 

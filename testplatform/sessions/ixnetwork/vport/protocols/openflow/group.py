@@ -117,6 +117,21 @@ class Group(Base):
 		"""
 		return self._get_attribute('updateGroupModStatus')
 
+	def update(self, __id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
+		"""Updates a child instance of group on the server.
+
+		Args:
+			__id__ (number): A 32-bit integer uniquely identifying the group. The minimum value is 1. the maximum value is 4294967295
+			Description (str): A description of the group is shown
+			Enabled (bool): If selected, this group is used in this controller configuration. The default value is False.
+			GroupAdvertise (bool): If this check box is selected, Group ADD message is sent automatically after OpenFlow channel comes up. Group ADD or DEL message is sent out when the Enable is checked or cleared respectively. When this check box is not selected, no group is advertised when the OpenFlow channel comes up or when the Enable check box is selected/ cleared. This field is useful to send group ADD/MOD/DEL messages on demand, or doing negative testing. The on-demand ADD/MOD/DEL messages can be sent by choosing the appropriate option from the right-click menu or from the ribbon option of Update Group Mod Status.
+			Type (str(all|select|indirect|fastFailover)): Select the type to determine the group semantics.The default Value is all.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, __id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
 		"""Adds a new group node on the server and retrieves it in this instance.
 

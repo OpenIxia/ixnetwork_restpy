@@ -92,3 +92,18 @@ class Checksums(Base):
 	@DropRxL2FcsErrors.setter
 	def DropRxL2FcsErrors(self, value):
 		self._set_attribute('dropRxL2FcsErrors', value)
+
+	def update(self, AlwaysCorrectWhenModifying=None, CorrectTxChecksumOverIp=None, CorrectTxIpv4Checksum=None, CorrectTxL2FcsErrors=None, DropRxL2FcsErrors=None):
+		"""Updates a child instance of checksums on the server.
+
+		Args:
+			AlwaysCorrectWhenModifying (bool): If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
+			CorrectTxChecksumOverIp (bool): If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
+			CorrectTxIpv4Checksum (bool): If true, correct the IPv4 header checksum in outgoing IPv4 packets.
+			CorrectTxL2FcsErrors (bool): If true, correct the L2 frame check sequence in outgoing packets.
+			DropRxL2FcsErrors (bool): If true, drop incoming packets with L2 frame check sequence errors.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

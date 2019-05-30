@@ -206,6 +206,21 @@ class IsisSRv6LocatorEntryList(Base):
 	def SidCount(self, value):
 		self._set_attribute('sidCount', value)
 
+	def update(self, Name=None, SidCount=None):
+		"""Updates a child instance of isisSRv6LocatorEntryList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SidCount (number): SID Count
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
 		"""Base class infrastructure that gets a list of isisSRv6LocatorEntryList device ids encapsulated by this object.
 

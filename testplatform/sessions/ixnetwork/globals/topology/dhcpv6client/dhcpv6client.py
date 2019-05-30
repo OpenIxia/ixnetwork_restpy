@@ -299,6 +299,20 @@ class Dhcpv6client(Base):
 		"""
 		return self._get_attribute('skipReleaseOnStop')
 
+	def update(self, Name=None):
+		"""Updates a child instance of dhcpv6client on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Dhcp6EchoIAInfo=None, Dhcp6InfoReqMaxRc=None, Dhcp6InfoReqMaxRt=None, Dhcp6InfoReqTimeout=None, Dhcp6NsGw=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
 		"""Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.
 

@@ -140,3 +140,22 @@ class TrillPingOam(Base):
 	@TimeOut.setter
 	def TimeOut(self, value):
 		self._set_attribute('timeOut', value)
+
+	def update(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
+		"""Updates a child instance of trillPingOam on the server.
+
+		Args:
+			AlertFlag (bool): NOT DEFINED
+			DestinationNickname (number): NOT DEFINED
+			EtherType (number): NOT DEFINED
+			HopCount (number): NOT DEFINED
+			NativeFlag (bool): NOT DEFINED
+			NoOfPingRequests (number): NOT DEFINED
+			SilentFlag (bool): NOT DEFINED
+			SourceNickname (number): NOT DEFINED
+			TimeOut (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

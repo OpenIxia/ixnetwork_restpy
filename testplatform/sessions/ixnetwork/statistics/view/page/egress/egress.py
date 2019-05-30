@@ -89,6 +89,18 @@ class Egress(Base):
 		"""
 		return self._get_attribute('totalPages')
 
+	def update(self, CommitEgressPage=None, CurrentPage=None):
+		"""Updates a child instance of egress on the server.
+
+		Args:
+			CommitEgressPage (bool): Attribute used to commit egress paging from TCL
+			CurrentPage (number): Determines the current egress page for the indicated ingress page.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
 		"""Finds and retrieves egress data from the server.
 

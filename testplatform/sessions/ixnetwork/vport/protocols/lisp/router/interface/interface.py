@@ -70,6 +70,19 @@ class Interface(Base):
 	def ProtocolInterfaces(self, value):
 		self._set_attribute('protocolInterfaces', value)
 
+	def update(self, Enabled=None, MapRegisterOrRequestTxInterface=None, ProtocolInterfaces=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			Enabled (bool): If True, it gives details about the interface
+			MapRegisterOrRequestTxInterface (bool): If true, it maps register or requests Tx interface
+			ProtocolInterfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): It gives the protocol interfaces
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, MapRegisterOrRequestTxInterface=None, ProtocolInterfaces=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

@@ -516,6 +516,25 @@ class PceInitiateLSPParameters(Base):
 		"""
 		return self._get_attribute('ttl')
 
+	def update(self, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None, OverridePlspId=None, OverrideSrpIdNumber=None):
+		"""Updates a child instance of pceInitiateLSPParameters on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+			NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
+			NumberOfXroSubObjects (number): Number of XRO Sub Objects
+			OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
+			OverrideSrpIdNumber (bool): Indicates whether SRP ID Number is overridable.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, DestEndPointIpv4=None, DestEndPointIpv6=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, IncludeBandwidth=None, IncludeEndPoints=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, IpVersion=None, LocalProtection=None, MplsLabel=None, PathSetupType=None, PlspId=None, ProtectionLsp=None, SendEmptyTLV=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, SrpIdNumber=None, StandbyMode=None, SymbolicPathName=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of pceInitiateLSPParameters device ids encapsulated by this object.
 

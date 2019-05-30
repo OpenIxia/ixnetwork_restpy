@@ -172,6 +172,29 @@ class Field(Base):
 		"""
 		return self._get_attribute('value')
 
+	def update(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+		"""Updates a child instance of field on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Description (str): Description of the TLV prototype.
+			Encoding (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): Encoding of the field value.
+			Enum (str): Internal enumeration type used to restrict possible field values.
+			IsEditable (bool): Information on the requirement of the field.
+			IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
+			IsRequired (bool): Information on the requirement of the field.
+			Name (str): Name of the TLV field.
+			SingleValue (bool): If true the field can only be configured with a single value pattern.
+			Size (number): The size of the field in bytes. Field size must be greater or equal to 0. For automatic detection set size to 0.
+			SizeType (str(bit|byte)): The size types/data unit of the field.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
 		"""Adds a new field node on the server and retrieves it in this instance.
 

@@ -142,6 +142,23 @@ class Tlv(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
+		"""Updates a child instance of tlv on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Description (str): Description of the tlv
+			IncludeInMessages (list(str)): Include the TLV in these protocol messages
+			IsEnabled (bool): Enables/disables this tlv
+			Name (str): Name of the tlv
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
 		"""Adds a new tlv node on the server and retrieves it in this instance.
 

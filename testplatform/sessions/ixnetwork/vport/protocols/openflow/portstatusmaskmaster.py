@@ -68,3 +68,16 @@ class PortStatusMaskMaster(Base):
 	@PortModify.setter
 	def PortModify(self, value):
 		self._set_attribute('portModify', value)
+
+	def update(self, PortAdd=None, PortDelete=None, PortModify=None):
+		"""Updates a child instance of portStatusMaskMaster on the server.
+
+		Args:
+			PortAdd (bool): This indicates that a port is added.
+			PortDelete (bool): This indicates that a port is removed.
+			PortModify (bool): This indicates that some attributes of the port is changed.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

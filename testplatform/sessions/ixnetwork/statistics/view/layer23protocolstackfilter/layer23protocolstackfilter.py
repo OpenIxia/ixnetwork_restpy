@@ -94,6 +94,21 @@ class Layer23ProtocolStackFilter(Base):
 	def SortingStatistic(self, value):
 		self._set_attribute('sortingStatistic', value)
 
+	def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+		"""Updates a child instance of layer23ProtocolStackFilter on the server.
+
+		Args:
+			DrilldownType (str(perRange|perSession)): Emulates perRange or perSession view based on the option seleted.
+			NumberOfResults (number): Number of traffic flows to be displayed.
+			ProtocolStackFilterId (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+			SortAscending (bool): Sets the display order of the view.
+			SortingStatistic (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=statistic)): The reference statistic by which the data will be sorted in created SV.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
 		"""Adds a new layer23ProtocolStackFilter node on the server and retrieves it in this instance.
 

@@ -104,3 +104,19 @@ class Flapping(Base):
 	@UpTime.setter
 	def UpTime(self, value):
 		self._set_attribute('upTime', value)
+
+	def update(self, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
+		"""Updates a child instance of flapping on the server.
+
+		Args:
+			DownTime (number): During route flapping operation, the amount of time that the route ranges are withdrawn/down.
+			EnablePartialFlap (bool): If enabled, only a specified range of routes is flapped.
+			Enabled (bool): If true, enables route flapping.
+			RoutesToFlapFrom (number): The first route in the route range to be flapped.
+			RoutesToFlapTo (number): The last route in the route range to be flapped.
+			UpTime (number): During the route flapping operation, the amount of time that the route ranges are up.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

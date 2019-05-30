@@ -46,6 +46,17 @@ class Arp(Base):
 	def Enabled(self, value):
 		self._set_attribute('enabled', value)
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of arp on the server.
+
+		Args:
+			Enabled (bool): (Non-POS cards only) Enables ARP requests and responses for this port. ARP requests are received at the MAC level.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None):
 		"""Adds a new arp node on the server and retrieves it in this instance.
 

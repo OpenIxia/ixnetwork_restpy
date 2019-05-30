@@ -94,6 +94,21 @@ class Hypervisor(Base):
 	def User(self, value):
 		self._set_attribute('user', value)
 
+	def update(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
+		"""Updates a child instance of hypervisor on the server.
+
+		Args:
+			Enabled (bool): If true the hypervisor is enabled
+			Password (str): Represents the hypervisor password
+			ServerIp (str): Represents the hypervisor Ip
+			Type (str(qemu|vCenter|vmware)): Represents the hypervisor host type
+			User (str): Represents the hypervisor username
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
 		"""Adds a new hypervisor node on the server and retrieves it in this instance.
 

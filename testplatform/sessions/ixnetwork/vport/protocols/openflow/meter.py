@@ -119,6 +119,20 @@ class Meter(Base):
 		"""
 		return self._get_attribute('updateMeterModStatus')
 
+	def update(self, __id__=None, Description=None, Enabled=None, MeterAdvertise=None):
+		"""Updates a child instance of meter on the server.
+
+		Args:
+			__id__ (number): The value by which a meter is uniquely identified within a switch. The default value is 1.
+			Description (str): A description of the meter.
+			Enabled (bool): If selected, this meter is used in this controller configuration.
+			MeterAdvertise (bool): If this check box is selected, the following happens: Meter ADD message is sent automatically after OpenFlow channel comes up. Meter ADD or DEL message is sent out when the Enable is checked or cleared respectively.When this check box is not selected, no meter is advertised when the OpenFlow channel comes up or when the Enable check box is disabled/enabled. This field is useful to send meter ADD/MOD/DEL messages on demand, or doing negative testing. The on-demand ADD/MOD/DEL messages can be sent by choosing the appropriate option from the right-click menu or from the ribbon option of Update Meter Mod.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, __id__=None, Description=None, Enabled=None, MeterAdvertise=None):
 		"""Adds a new meter node on the server and retrieves it in this instance.
 

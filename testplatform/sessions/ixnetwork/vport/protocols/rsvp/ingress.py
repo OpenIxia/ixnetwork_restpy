@@ -154,3 +154,22 @@ class Ingress(Base):
 	@TunnelIdsStart.setter
 	def TunnelIdsStart(self, value):
 		self._set_attribute('tunnelIdsStart', value)
+
+	def update(self, EnableEro=None, Ero=None, PrefixLength=None, PrependDutToEro=None, ReservationErrorTlv=None, Rro=None, SendRro=None, TunnelIdsCount=None, TunnelIdsStart=None):
+		"""Updates a child instance of ingress on the server.
+
+		Args:
+			EnableEro (bool): Enables use of the ERO option in Ingress mode.
+			Ero (list(dict(arg1:str[ip|as],arg2:str,arg3:number,arg4:bool))): Enables use of the ERO option in Ingress mode.
+			PrefixLength (number): If the DUT's address is to be prepended to the ERO list, this indicates what prefix length is to be used for the entry.
+			PrependDutToEro (str(none|prependLoose|prependStrict)): Enables the user to insert the DUT address at the beginning of the list of hops in the path.
+			ReservationErrorTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV ERR messages. These may only be used for ingress routers.
+			Rro (list(dict(arg1:str[ip|label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool))): If enabled, an RRO is reflected back to the originating router.
+			SendRro (bool): When the destination range is used in Ingress mode, this indicates that a SEND RRO option is to be included in RSVP messages sent downstream.
+			TunnelIdsCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+			TunnelIdsStart (number): Sets the start of the range of Tunnel IDs to be used in simulations.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

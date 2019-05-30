@@ -45,6 +45,17 @@ class StackLink(Base):
 	def LinkedTo(self, value):
 		self._set_attribute('linkedTo', value)
 
+	def update(self, LinkedTo=None):
+		"""Updates a child instance of stackLink on the server.
+
+		Args:
+			LinkedTo (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=stackLink)): Indicates which stack item this is linked to.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, LinkedTo=None):
 		"""Finds and retrieves stackLink data from the server.
 

@@ -166,6 +166,27 @@ class DceInterestedVlanRange(Base):
 	def VlanIdStep(self, value):
 		self._set_attribute('vlanIdStep', value)
 
+	def update(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+		"""Updates a child instance of dceInterestedVlanRange on the server.
+
+		Args:
+			EnableIncludeInLsp (bool): If true, enable a custom VLAN in the LSP.
+			EnableIncludeInMgroupPdu (bool): If true, enable and include VLAN in Mgroup PDU
+			EnableM4Bit (bool): If true, the M4 bit is enabled.
+			EnableM6Bit (bool): If true, the M6 bit is enabled.
+			Enabled (bool): Signifies if DCE Interested Vlan range is enabled or disabled.
+			Nickname (number): The nickname of the VLAN range.
+			NoOfSpanningTreeRoots (number): The number of spanning tree roots for the VLAN.
+			StartSpanningTreeRootBridgeId (str): If true, starts the spanning tree root Bridge Id.
+			StartVlanId (number): The VLAN Id of first VLAN. Default is 1.
+			VlanCount (number): The count of the VLAN.
+			VlanIdStep (number): It shows the increment step of the VLAN. the default is 1.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
 		"""Adds a new dceInterestedVlanRange node on the server and retrieves it in this instance.
 

@@ -56,3 +56,15 @@ class BandTypes(Base):
 	@DscpRemark.setter
 	def DscpRemark(self, value):
 		self._set_attribute('dscpRemark', value)
+
+	def update(self, Drop=None, DscpRemark=None):
+		"""Updates a child instance of bandTypes on the server.
+
+		Args:
+			Drop (bool): This indicates that packets which exceed the band rate value are dropped.
+			DscpRemark (bool): This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -68,3 +68,16 @@ class Atm(Base):
 	@Vpi.setter
 	def Vpi(self, value):
 		self._set_attribute('vpi', value)
+
+	def update(self, Encapsulation=None, Vci=None, Vpi=None):
+		"""Updates a child instance of atm on the server.
+
+		Args:
+			Encapsulation (str(vcMuxIpv4|vcMuxIpv6|vcMuxBridgeFcs|vcMuxBridgeNoFcs|llcClip|llcBridgeFcs|llcBridgeNoFcs)): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
+			Vci (number): Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
+			Vpi (number): Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

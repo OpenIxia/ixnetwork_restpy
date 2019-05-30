@@ -1318,6 +1318,123 @@ class Mp(Base):
 	def Vlan(self, value):
 		self._set_attribute('vlan', value)
 
+	def update(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmAllDestination=None, AutoDmDestination=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbAllDestination=None, AutoLbDestination=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtAllDestination=None, AutoLtDestination=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableTstRx=None, Enabled=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, MacAddress=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevel=None, MegId=None, MegIdFormat=None, MepId=None, MipId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, Ttl=None, Vlan=None):
+		"""Updates a child instance of mp on the server.
+
+		Args:
+			AddCcmCustomTlvs (bool): If true, adds a custom CCM TLV to bridge messages.
+			AddDataTlv (bool): If true, adds a data TLV to bridge messages.
+			AddInterfaceStatusTlv (bool): If true, adds an interface status TLV to bridge messages.
+			AddLbmCustomTlvs (bool): If true, adds a custom loopback message TLV to bridge messages.
+			AddLbrCustomTlvs (bool): If true, adds a custom loopback response message TLV to bridge messages.
+			AddLmmCustomTlvs (bool): NOT DEFINED
+			AddLmrCustomTlvs (bool): NOT DEFINED
+			AddLtmCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+			AddLtrCustomTlvs (bool): If true, adds a custom link trace message TLV to bridge messages.
+			AddOrganizationSpecificTlv (bool): If true, adds a custom organization specific message TLV to bridge messages.
+			AddPortStatusTlv (bool): If true, adds a custom port statust message TLV to bridge messages.
+			AddSenderIdTlv (bool): If true, adds a custom sender ID message TLV to bridge messages.
+			AisEnableUnicastMac (bool): NOT DEFINED
+			AisInterval (str(oneSec|oneMin)): NOT DEFINED
+			AisMode (str(auto|start|stop)): NOT DEFINED
+			AisPriority (number): NOT DEFINED
+			AisUnicastMac (str): NOT DEFINED
+			AutoDmAllDestination (bool): If true, enables the automatic sending of DM Messages.
+			AutoDmDestination (str): The sent MAC address for the DM, if autoDmAllDestination is set to true.
+			AutoDmIteration (number): The count for how many times DMMs will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoDmTimeout (number): The timeout period in seconds to wait for a response to DMMs. This value should be less than the Auto LB Timer. Default is 30. Min: 1 Max: 65535
+			AutoDmTimer (number): The time period in seconds between DMMs. Default is 60. Min: 1 Max: 65535
+			AutoLbAllDestination (bool): If true, enables the automatic sending of Loopback Messages.
+			AutoLbDestination (str): Sets the loopback destination MAC address.
+			AutoLbIteration (number): The count for how many times LBM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoLbTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+			AutoLbTimer (number): The time period in seconds between LBMs. Default is 60. Min: 1 Max: 65535
+			AutoLmIteration (number): NOT DEFINED
+			AutoLmTimeout (number): NOT DEFINED
+			AutoLmTimer (number): NOT DEFINED
+			AutoLtAllDestination (bool): If true, enables the automatic sending to Link Trace Messages.
+			AutoLtDestination (str): Sets the link trance destination MAC address.
+			AutoLtIteration (number): The count for how many times LTM will be transmitted. Default is 0 (no limit). Min: 0 Max: 2^32
+			AutoLtTimeout (number): The timeout period in seconds to wait for a response to LTMs. This value should be less than the Auto LT Timer. Default is 30. Min: 1 Max: 65535
+			AutoLtTimer (number): The time period in seconds between LTMs. Default is 60. Min: 1 Max: 65535
+			CciInterval (str(3.33msec|10msec|100msec|1sec|10sec|1min|10min)): Sets the Continuity Check Interval (CCI).
+			CcmLmmTxFcf (number): NOT DEFINED
+			CcmLmmTxFcfStep (number): NOT DEFINED
+			CcmPriority (number): Sets the priority for Continuity Check Messages. The default is 0. Min: 0 Max: 7
+			CcmRxFcb (number): NOT DEFINED
+			CcmRxFcbStep (number): NOT DEFINED
+			ChassisId (str): Sets the chassis identification. Default is 00 00 00 00 00 00. This will take Hex value as input (0-255 byte).
+			ChassisIdLength (number): Sets the length of the Chassis ID field. Default is 6. Min: 0 Max: 255.
+			ChassisIdSubType (str(chassisComponent|interfaceAlias|portComponent|macAddress|networkAddress|interfaceName|locallyAssigned)): Sets the chassis identifier sub-type for the optional TLV messages. Options are:
+			DataTlvLength (number): Sets the length of the Data TLV field. Default is 4. Min: 0 Max: 1500.
+			DataTlvValue (str): This attribute will take Hex value of data. This data TLV will be added both for periodic LBM and requested LBM transmit. Default is 44 61 74 61.
+			DmMethod (str(twoWay|oneWay)): The type of Delay Measurment support.
+			DmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs one-way or two-way (for both type of DM Methodfor each MIP). The default is 0.
+			DmmPriority (number): Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+			EnableAisRx (bool): NOT DEFINED
+			EnableAutoDm (bool): If true, enables the automatic sending of DM Messages.
+			EnableAutoLb (bool): If true, enables the automatic sending of Loopback messages.
+			EnableAutoLm (bool): NOT DEFINED
+			EnableAutoLt (bool): If true, enables the automatic sending of Link Trace messages.
+			EnableLckRx (bool): NOT DEFINED
+			EnableLmCounterUpdate (bool): NOT DEFINED
+			EnableTstRx (bool): NOT DEFINED
+			Enabled (bool): If true, the MP is enabled.
+			InterRemoteMepRxIncrementStep (number): NOT DEFINED
+			InterRemoteMepTxIncrementStep (number): NOT DEFINED
+			LbmPriority (number): Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+			LckEnableUnicastMac (bool): NOT DEFINED
+			LckInterval (str(oneSec|oneMin)): NOT DEFINED
+			LckMode (str(auto|start|stop)): NOT DEFINED
+			LckPriority (number): NOT DEFINED
+			LckSupportAisGeneration (bool): NOT DEFINED
+			LckUnicastMac (str): NOT DEFINED
+			LmAllRemoteMeps (bool): NOT DEFINED
+			LmDestinationMacAddress (str): NOT DEFINED
+			LmMethod (str(singleEnded|dualEnded)): NOT DEFINED
+			LmmPriority (number): NOT DEFINED
+			LmrPriority (number): NOT DEFINED
+			LmrRxFcf (number): NOT DEFINED
+			LmrRxFcfStep (number): NOT DEFINED
+			LtmPriority (number): Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+			MacAddress (str): The MAC address of the MP.
+			ManagementAddress (str): Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+			ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+			ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+			ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+			MdLevel (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)): The MD level of the MP. The MD level must be previously configured.
+			MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
+			MegIdFormat (str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)): The MEG identifier format.
+			MepId (number): The MEP identifier.
+			MipId (number): The MIP identifier.
+			MpType (str(mip|mep)): Sets the MP type.
+			OrganizationSpecificTlvLength (number): Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+			OrganizationSpecificTlvValue (str): Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+			OverrideVlanPriority (bool): If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+			Rdi (str(auto|on|off)): The Remote Defect Identification.
+			ShortMaName (str): Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
+			ShortMaNameFormat (str(primaryVid|characterString|2octetInteger|rfc2685VpnId)): Sets the Short MA Name format.
+			TstEnableUnicastMac (bool): NOT DEFINED
+			TstIncrPacketLength (bool): NOT DEFINED
+			TstIncrPacketLengthStep (number): NOT DEFINED
+			TstInitialPatternValue (number): NOT DEFINED
+			TstInterval (number): NOT DEFINED
+			TstMode (str(start|stop)): NOT DEFINED
+			TstOverwriteSequenceNumber (bool): NOT DEFINED
+			TstPacketLength (number): NOT DEFINED
+			TstPatternType (str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)): NOT DEFINED
+			TstPriority (number): NOT DEFINED
+			TstSequenceNumber (number): NOT DEFINED
+			TstTestType (str(inService|outOfService)): NOT DEFINED
+			TstUnicastMac (str): NOT DEFINED
+			Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
+			Vlan (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmAllDestination=None, AutoDmDestination=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbAllDestination=None, AutoLbDestination=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtAllDestination=None, AutoLtDestination=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableTstRx=None, Enabled=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, MacAddress=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevel=None, MegId=None, MegIdFormat=None, MepId=None, MipId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, Ttl=None, Vlan=None):
 		"""Adds a new mp node on the server and retrieves it in this instance.
 

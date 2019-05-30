@@ -200,3 +200,27 @@ class TransmissionControl(Base):
 	@Type.setter
 	def Type(self, value):
 		self._set_attribute('type', value)
+
+	def update(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
+		"""Updates a child instance of transmissionControl on the server.
+
+		Args:
+			BurstPacketCount (number): Specifies the number of packets per burst.
+			Duration (number): Indicates the time duration.
+			EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
+			EnableInterStreamGap (bool): Enables the inter-stream gap of a frame.
+			FrameCount (number): Specifies Fixed Packet Count when Transmission Mode is Interleaved.
+			InterBurstGap (number): Specifies the gap between any two consecutive burst.
+			InterBurstGapUnits (str(bytes|nanoseconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+			InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+			IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
+			MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
+			RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
+			StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
+			StartDelayUnits (str(bytes|nanoseconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+			Type (str(auto|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)): The Transmission Control types.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

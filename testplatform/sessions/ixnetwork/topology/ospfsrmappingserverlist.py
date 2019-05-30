@@ -189,6 +189,20 @@ class OspfSRMappingServerList(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ospfSRMappingServerList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, EFlag=None, IaFlag=None, LFlag=None, MFlag=None, NetworkAddress=None, NpFlag=None, PrefixLength=None, Range=None, SidIndexLabel=None, VFlag=None):
 		"""Base class infrastructure that gets a list of ospfSRMappingServerList device ids encapsulated by this object.
 

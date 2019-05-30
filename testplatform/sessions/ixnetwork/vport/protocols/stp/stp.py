@@ -82,6 +82,17 @@ class Stp(Base):
 		"""
 		return self._get_attribute('runningState')
 
+	def update(self, Enabled=None):
+		"""Updates a child instance of stp on the server.
+
+		Args:
+			Enabled (bool): Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

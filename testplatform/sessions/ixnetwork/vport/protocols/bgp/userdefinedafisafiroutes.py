@@ -70,6 +70,19 @@ class UserDefinedAfiSafiRoutes(Base):
 	def Length(self, value):
 		self._set_attribute('length', value)
 
+	def update(self, Data=None, Enabled=None, Length=None):
+		"""Updates a child instance of userDefinedAfiSafiRoutes on the server.
+
+		Args:
+			Data (str): Data to be transmitted for AFI/SAFI, and regular enable-disable.
+			Enabled (bool): If true, the user-defined afi/safi is enabled.
+			Length (number): The data is padded up to length with left alignment otherwise chopped till length.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Data=None, Enabled=None, Length=None):
 		"""Adds a new userDefinedAfiSafiRoutes node on the server and retrieves it in this instance.
 

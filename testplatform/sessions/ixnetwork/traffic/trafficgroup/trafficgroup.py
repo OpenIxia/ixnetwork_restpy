@@ -46,6 +46,17 @@ class TrafficGroup(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of trafficGroup on the server.
+
+		Args:
+			Name (str): Name of the traffic item.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None):
 		"""Adds a new trafficGroup node on the server and retrieves it in this instance.
 

@@ -141,6 +141,25 @@ class LearnFrames(Base):
 	def SendArp(self, value):
 		self._set_attribute('sendArp', value)
 
+	def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, SendArp=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			FastPathEnable (bool): If true, the fast path is enabled.
+			FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+			FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+			FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+			LearnFrequency (str(onBinaryIteration)): The frequency at which the data is to be learnt.
+			LearnNumFrames (number): The number of learned frames.
+			LearnSendRouterSolicitation (bool): Sends router solicitation messages.
+			LearnWaitTime (number): The learnt information on the wait time.
+			SendArp (bool): The ARP request sent.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

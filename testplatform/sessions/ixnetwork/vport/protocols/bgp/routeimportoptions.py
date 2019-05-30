@@ -94,6 +94,21 @@ class RouteImportOptions(Base):
 	def SendMultiExitDiscValue(self, value):
 		self._set_attribute('sendMultiExitDiscValue', value)
 
+	def update(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+		"""Updates a child instance of routeImportOptions on the server.
+
+		Args:
+			AdverstiseBestRoutes (bool): If checked, only the best routes are imbibed and advertised. The sub-optimal routes are ignored.
+			NextHopAsIs (bool): If true, it takes the next Hop AsIs.
+			NumberOfRoutesPerBlock (number): Represents the maximum number of routes that can be forwared in a block.
+			RouteFileType (str): The route file type.
+			SendMultiExitDiscValue (bool): If enabled, the BGP router sends the MED value of the attribute.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
 		"""Adds a new routeImportOptions node on the server and retrieves it in this instance.
 

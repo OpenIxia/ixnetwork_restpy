@@ -136,6 +136,23 @@ class IxVmPort(Base):
 	def PromiscMode(self, value):
 		self._set_attribute('promiscMode', value)
 
+	def update(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
+		"""Updates a child instance of ixVmPort on the server.
+
+		Args:
+			Interface (str): Represents the interface name
+			IpAddress (str): Represents the IP address
+			MacAddress (str): Represents the MAC address
+			Mtu (number): Represents MTU
+			PortId (str): Represents a slot on the card
+			PortName (str): Represents a port name
+			PromiscMode (bool): Represents the promiscuos Mode
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
 		"""Adds a new ixVmPort node on the server and retrieves it in this instance.
 

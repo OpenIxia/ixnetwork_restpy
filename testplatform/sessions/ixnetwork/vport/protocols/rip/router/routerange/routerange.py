@@ -118,6 +118,23 @@ class RouteRange(Base):
 	def RouteTag(self, value):
 		self._set_attribute('routeTag', value)
 
+	def update(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NoOfRoutes=None, RouteTag=None):
+		"""Updates a child instance of routeRange on the server.
+
+		Args:
+			Enabled (bool): Enables the use of this route range for the simulated router.
+			FirstRoute (str): The first network address to be used in creating this route range. Note: Multicast and loopback addresses are not supported in this IPv4 route range implementation.
+			MaskWidth (number): The network mask to be applied to the networkIpAddress to yield the non-host part of the address. A value of 0 means there is no subnet address.
+			Metric (number): The total metric cost for these routes. The valid range is from 1 to 16 (inclusive). A value of 16 means that the destination is not reachable, and that route will be removed from service.
+			NextHop (str): The immediate next hop IP address on the way to the destination address.
+			NoOfRoutes (number): The number of networks to be generated for this route range, based on the network address plus the network mask.
+			RouteTag (number): An arbitrary value associated with the routes in this range. It is used to provide a means for distinguishing internal versus external RIP routes.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NoOfRoutes=None, RouteTag=None):
 		"""Adds a new routeRange node on the server and retrieves it in this instance.
 

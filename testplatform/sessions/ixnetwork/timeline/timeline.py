@@ -182,6 +182,22 @@ class Timeline(Base):
 		"""
 		return self._get_attribute('timingTopologyIds')
 
+	def update(self, EndTimeAsTicks=None, ExecutingTest=None, ForceTakePorts=None, PauseOnError=None, StartTimeAsTicks=None, TestOrder=None):
+		"""Updates a child instance of timeline on the server.
+
+		Args:
+			EndTimeAsTicks (number): 
+			ExecutingTest (str(None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test)): 
+			ForceTakePorts (bool): 
+			PauseOnError (bool): 
+			StartTimeAsTicks (number): 
+			TestOrder (list(str[None|/api/v1/sessions/1/ixnetwork/timeline?deepchild=test])): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def CreateProtocol(self, *args, **kwargs):
 		"""Executes the createProtocol operation on the server.
 

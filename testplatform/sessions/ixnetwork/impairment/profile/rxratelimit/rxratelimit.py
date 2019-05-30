@@ -104,3 +104,19 @@ class RxRateLimit(Base):
 	@Value.setter
 	def Value(self, value):
 		self._set_attribute('value', value)
+
+	def update(self, BufferSizeEnabled=None, BufferSizeUnits=None, BufferSizeValue=None, Enabled=None, Units=None, Value=None):
+		"""Updates a child instance of rxRateLimit on the server.
+
+		Args:
+			BufferSizeEnabled (bool): Allows user to specify a custom buffer size. Default false
+			BufferSizeUnits (str(kilobytes|kKilobytes|kMegabytes|megabytes)): Units (Kilobytes, Megabytes). Default: Kilobytes
+			BufferSizeValue (number): Burst tolerance buffer size. Default value is 32 KB
+			Enabled (bool): Enable or disable the receive rate limit impairment.
+			Units (str(kilobitsPerSecond|kKilobitsPerSecond|kMegabitsPerSecond|megabitsPerSecond)): Specify the units for the receive rate limit value.
+			Value (number): Specify the value of the receive rate limit.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

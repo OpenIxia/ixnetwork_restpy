@@ -122,6 +122,21 @@ class Layer23TrafficFlowFilter(Base):
 	def TrafficItemFilterIds(self, value):
 		self._set_attribute('trafficItemFilterIds', value)
 
+	def update(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+		"""Updates a child instance of layer23TrafficFlowFilter on the server.
+
+		Args:
+			AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
+			EgressLatencyBinDisplayOption (str(none|showEgressFlatView|showEgressRows|showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
+			PortFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availablePortFilter])): Selected port filters from the availablePortFilter list.
+			TrafficItemFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+			TrafficItemFilterIds (list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
 		"""Adds a new layer23TrafficFlowFilter node on the server and retrieves it in this instance.
 

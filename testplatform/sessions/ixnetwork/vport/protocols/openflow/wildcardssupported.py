@@ -176,3 +176,25 @@ class WildcardsSupported(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, EthernetDestinationAddress=None, EthernetFrameType=None, EthernetSourceAddress=None, IpDestinationAddress=None, IpProtocol=None, IpSourceAddress=None, IpTos=None, SwitchInputPort=None, TcpUdpDestinationPort=None, TcpUdpSourcePort=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of wildcardsSupported on the server.
+
+		Args:
+			EthernetDestinationAddress (bool): Indicates that the Ethernet destination address is supported.
+			EthernetFrameType (bool): Indicates that the Ethernet frame type is supported.
+			EthernetSourceAddress (bool): Indicates that the Ethernet source address is supported.
+			IpDestinationAddress (bool): Indicates that the IP destination address is supported.
+			IpProtocol (bool): Indicates that the IP protocol is supported.
+			IpSourceAddress (bool): Indicates that the IP source address is supported.
+			IpTos (bool): Indicates that the IP ToS (DSCP field, 6 bits) is supported.
+			SwitchInputPort (bool): Indicates that the Switch input port is supported.
+			TcpUdpDestinationPort (bool): Indicates that the TCP/UDP destination port is supported.
+			TcpUdpSourcePort (bool): Indicates that the TCP/UDP source port is supported.
+			VlanId (bool): Indicates that the VLAN id is supported.
+			VlanPriority (bool): Indicates that the VLAN priority is supported.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

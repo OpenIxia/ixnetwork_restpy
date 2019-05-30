@@ -358,6 +358,43 @@ class Bgp4VpnBgpAdVplsRange(Base):
 	def VsiIdAssignedNumber(self, value):
 		self._set_attribute('vsiIdAssignedNumber', value)
 
+	def update(self, Enabled=None, RouteDistinguisherAsNumber=None, RouteDistinguisherAsNumberStep=None, RouteDistinguisherAssignedNumber=None, RouteDistinguisherAssignedNumberStep=None, RouteDistinguisherIpAddress=None, RouteDistinguisherIpAddressStep=None, RouteDistinguisherType=None, RouteTargetAsNumber=None, RouteTargetAsNumberStep=None, RouteTargetAssignedNumber=None, RouteTargetAssignedNumberStep=None, RouteTargetIpAddress=None, RouteTargetIpAddressStep=None, RouteTargetType=None, UseRouteDistinguisherAsRouteTarget=None, UseVplsIdAsRouteDistinguisher=None, VplsCount=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None, VsiId=None, VsiIdAssignedNumber=None):
+		"""Updates a child instance of bgp4VpnBgpAdVplsRange on the server.
+
+		Args:
+			Enabled (bool): If true, enables one BGP AD VPLS.
+			RouteDistinguisherAsNumber (number): This option is available for use if Distinguish Type is set to AS. The default is 0.
+			RouteDistinguisherAsNumberStep (number): This option is available for use if Distinguish Type is set to AS. The default is 0.
+			RouteDistinguisherAssignedNumber (number): The distinguisher assigned number. The default is 0.
+			RouteDistinguisherAssignedNumberStep (number): The distinguisher assigned number. The default is 0.
+			RouteDistinguisherIpAddress (str): Available for use only if the IPv4 Input is set to IP
+			RouteDistinguisherIpAddressStep (str): Available for use only if the IPv4 Input is set to IP.
+			RouteDistinguisherType (str(asNumber|ipAddress)): The RD type, one of AS and IP.
+			RouteTargetAsNumber (number): Available for use only if Distinguish Type is set to AS.
+			RouteTargetAsNumberStep (number): Available for use only if Target AS Number is set to AS. The default is 0.
+			RouteTargetAssignedNumber (number): The target assigned number. The default is 0.
+			RouteTargetAssignedNumberStep (number): The target assigned number. The default is 0.
+			RouteTargetIpAddress (str): Available for use only if the IPv4 Input is set to IP.
+			RouteTargetIpAddressStep (str): Available for use only if it is set to IP. The default is 0.0.0.0.
+			RouteTargetType (str(asNumber|ipAddress)): The RT format, one of AS and IP. The default is AS.
+			UseRouteDistinguisherAsRouteTarget (bool): If true, the route distinginguisher is used as the route target.
+			UseVplsIdAsRouteDistinguisher (bool): If true, the VPLS Id is used as the route distinguisher.
+			VplsCount (number): The Integer value that indicates the number of VPLS instance emulated using this VPLS range.
+			VplsIdAsNumber (number): Available for use if VPLS Id Type is set to AS. The default is 0.
+			VplsIdAsNumberStep (number): Available for use only if VPLS Id Type is set to AS. The default is 0.
+			VplsIdAssignedNumber (number): The indicated value for the VPLS Id Assigned Number attribute. The default is 0.
+			VplsIdAssignedNumberStep (number): The indicated number for the VPLS Id Assigned Number attribute. The default is 0.
+			VplsIdIpAddress (str): Available for use only if the route VPLS Id Type is set to IP. The default is 0.0.0.0
+			VplsIdIpAddressStep (str): Available for use only if the route VPLS Id Type is set to IP. The default is 0.0.0.0
+			VplsIdType (str(asNumber|ipAddress)): The VPLS ID type, one of AS and IP. Default is AS.
+			VsiId (str(concatenatePeAddress|concatenateAssignedNumber)): The VSI ID, one of concatenatePeAddress and concatenateAssignedNumber.
+			VsiIdAssignedNumber (number): The indicated value for the VSI ID Assigned Number attribute.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, RouteDistinguisherAsNumber=None, RouteDistinguisherAsNumberStep=None, RouteDistinguisherAssignedNumber=None, RouteDistinguisherAssignedNumberStep=None, RouteDistinguisherIpAddress=None, RouteDistinguisherIpAddressStep=None, RouteDistinguisherType=None, RouteTargetAsNumber=None, RouteTargetAsNumberStep=None, RouteTargetAssignedNumber=None, RouteTargetAssignedNumberStep=None, RouteTargetIpAddress=None, RouteTargetIpAddressStep=None, RouteTargetType=None, UseRouteDistinguisherAsRouteTarget=None, UseVplsIdAsRouteDistinguisher=None, VplsCount=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None, VsiId=None, VsiIdAssignedNumber=None):
 		"""Adds a new bgp4VpnBgpAdVplsRange node on the server and retrieves it in this instance.
 

@@ -177,6 +177,28 @@ class LearnFrames(Base):
 	def LearnWaitTimeBeforeTransmit(self, value):
 		self._set_attribute('learnWaitTimeBeforeTransmit', value)
 
+	def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
+		"""Updates a child instance of learnFrames on the server.
+
+		Args:
+			FastPathEnable (bool): NOT DEFINED
+			FastPathLearnFrameSize (number): NOT DEFINED
+			FastPathNumFrames (number): NOT DEFINED
+			FastPathRate (number): NOT DEFINED
+			LearnFrameSize (number): NOT DEFINED
+			LearnFrequency (str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): NOT DEFINED
+			LearnNumFrames (number): NOT DEFINED
+			LearnRate (number): NOT DEFINED
+			LearnSendMacOnly (bool): NOT DEFINED
+			LearnSendRouterSolicitation (bool): NOT DEFINED
+			LearnWaitTime (number): NOT DEFINED
+			LearnWaitTimeBeforeTransmit (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -298,6 +298,38 @@ class Ipv4TrafficEndPoint(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of ipv4TrafficEndPoint on the server.
+
+		Args:
+			ArpViaInterface (bool): If selected, ARP request is conveyed through an Interface.
+			CustomIpHeaderLength (number): The Custom IPv4 Header Length value. The default value is 1.
+			CustomIpHeaderValue (str): The Custom IPv4 Header Value. The default value is 00
+			CustomIpProtocol (str): Specify the custom IP Protocol for the Source Traffic Endpoints.
+			DestinationPort (str): NOT DEFINED
+			EnableVlan (bool): Select this check box to make VLAN available.
+			GatewayMac (str): The Gateway MAC address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			IpAddress (str): Specify the IPv4 address of the Source Traffic Endpoint. The default value is 0.0.0.0.
+			IpMask (number): Specify the Mask value. The default value is 24.
+			IpProtocol (str(custom|tcp|udp)): Click the IP Protocol type to be used.
+			Ipv4Dscp (str): The priority specified for the IP address. The default value is 0.
+			Ipv4Ecn (str): The ECN value specified for the IP address.
+			MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
+			Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): NOT DEFINED
+			RangeSize (number): Specify the size of the traffic range.
+			SourcePort (str): NOT DEFINED
+			UdpDestination (str): Specify the UDP Destination. The default value is 1.
+			UdpSource (str): Specify the UDP Source. The default value is 1.
+			VlanCount (number): Specify the VLAN count. The default value is 1.
+			VlanId (str): Specify the VLAN ID (Outer and Inner).
+			VlanPriority (str): Specify the VLAN Priority (Outer and Inner).
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
 		"""Adds a new ipv4TrafficEndPoint node on the server and retrieves it in this instance.
 

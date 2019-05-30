@@ -427,3 +427,44 @@ class AtlasFourHundredGigLan(Base):
 	@UseANResults.setter
 	def UseANResults(self, value):
 		self._set_attribute('useANResults', value)
+
+	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+		"""Updates a child instance of atlasFourHundredGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): 
+			BadBlocksNumber (number): 
+			EnableAutoNegotiation (bool): 
+			EnablePPM (bool): 
+			EnableRsFec (bool): 
+			EnableRsFecStats (bool): 
+			EnabledFlowControl (bool): 
+			FirecodeAdvertise (bool): 
+			FirecodeForceOff (bool): 
+			FirecodeForceOn (bool): 
+			FirecodeRequest (bool): 
+			FlowControlDirectedAddress (str): 
+			ForceDisableFEC (bool): 
+			GoodBlocksNumber (number): 
+			LaserOn (bool): 
+			LinkTraining (bool): 
+			LoopContinuously (bool): 
+			LoopCountNumber (number): 
+			Loopback (bool): 
+			LoopbackMode (str(internalLoopback|lineLoopback|none)): 
+			Ppm (number): 
+			RsFecAdvertise (bool): 
+			RsFecForceOn (bool): 
+			RsFecRequest (bool): 
+			SendSetsMode (str(alternate|typeAOnly|typeBOnly)): 
+			Speed (str(speed100g|speed200g|speed400g|speed50g)): 
+			StartErrorInsertion (bool): 
+			TxIgnoreRxLinkFaults (bool): 
+			TypeAOrderedSets (str(localFault|remoteFault)): 
+			TypeBOrderedSets (str(localFault|remoteFault)): 
+			UseANResults (bool): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

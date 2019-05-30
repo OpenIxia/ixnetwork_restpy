@@ -717,6 +717,31 @@ class BgpIpv4MVrf(Base):
 		"""
 		return self._get_attribute('version')
 
+	def update(self, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+		"""Updates a child instance of bgpIpv4MVrf on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			EnableTRM (bool): Enable TRM
+			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumRtInExportRouteTargetList (number): Number of RTs in Export Route Target List(multiplier)
+			NumRtInImportRouteTargetList (number): Number of RTs in Import Route Target List(multiplier)
+			NumRtInUmhExportRouteTargetList (number): Number of RTs in Export Route Target List(multiplier)
+			NumRtInUmhImportRouteTargetList (number): Number of RTs in Import Route Target List(multiplier)
+			SameAsExportRT (bool): Same As Export RT Attribute
+			SameAsImportRT (bool): Same As Import RT Attribute
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
 		"""Adds a new bgpIpv4MVrf node on the server and retrieves it in this instance.
 

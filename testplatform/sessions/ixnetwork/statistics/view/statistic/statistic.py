@@ -99,6 +99,20 @@ class Statistic(Base):
 		"""
 		return self._get_attribute('sourceTypes')
 
+	def update(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
+		"""Updates a child instance of statistic on the server.
+
+		Args:
+			AggregationType (str(average|averageRate|ax|axRate|intervalAverage|min|minRate|none|rate|runStateAgg|runStateAggIgnoreRamp|sum|vectorMax|vectorMin|weightedAverage)): 
+			Caption (str): 
+			Enabled (bool): 
+			ScaleFactor (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AggregationType=None, Caption=None, DefaultCaption=None, Enabled=None, ScaleFactor=None, SourceTypes=None):
 		"""Finds and retrieves statistic data from the server.
 

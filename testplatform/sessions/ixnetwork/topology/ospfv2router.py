@@ -501,6 +501,26 @@ class Ospfv2Router(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, EnableBIER=None, EnableSegmentRouting=None, Name=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SrgbRangeCount=None):
+		"""Updates a child instance of ospfv2Router on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EnableBIER (bool): Enable BIER
+			EnableSegmentRouting (bool): Enable Segment Routing
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NoOfAddressPrefix (number): Number Of Address Prefix Range
+			NoOfBIERSubDomains (number): Number of BIER Sub Domains
+			SRAlgorithmCount (number): SR Algorithm Count
+			SrgbRangeCount (number): SRGB Range Count
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSegmentRouting=None, Errors=None, LocalRouterID=None, LoopBackAddress=None, Name=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SessionInfo=None, SessionStatus=None, SrgbRangeCount=None, StateCounts=None, Status=None):
 		"""Finds and retrieves ospfv2Router data from the server.
 

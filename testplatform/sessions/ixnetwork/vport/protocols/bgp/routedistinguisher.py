@@ -116,3 +116,20 @@ class RouteDistinguisher(Base):
 	@Type.setter
 	def Type(self, value):
 		self._set_attribute('type', value)
+
+	def update(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
+		"""Updates a child instance of routeDistinguisher on the server.
+
+		Args:
+			AsNumber (number): If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
+			AsNumberStep (number): The increment step for for the AS.
+			AssignedNumber (number): The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
+			AssignedNumberStep (number): The increment step for for the assigned number.
+			IpAddress (str): If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
+			IpAddressStep (str): The increment step for for the IP address.
+			Type (str(as|ip|asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

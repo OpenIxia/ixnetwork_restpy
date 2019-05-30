@@ -90,6 +90,20 @@ class LosLof(Base):
 	def Units(self, value):
 		self._set_attribute('units', value)
 
+	def update(self, Duration=None, IsBurst=None, Type=None, Units=None):
+		"""Updates a child instance of losLof on the server.
+
+		Args:
+			Duration (number): The burst duration.
+			IsBurst (bool): If true, loss of signal or loss of frame will be enabled for the specified duration.
+			Type (str(lof|los)): Selects loss of signal or loss of framing.
+			Units (str(kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)): Burst duration units.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

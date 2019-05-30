@@ -96,6 +96,20 @@ class SwitchTables(Base):
 	def TableName(self, value):
 		self._set_attribute('tableName', value)
 
+	def update(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
+		"""Updates a child instance of switchTables on the server.
+
+		Args:
+			MaxEntries (str): Indicates the maximum number of entries supported. The default value is 10,000.
+			NumberOfTables (number): Indicates the number of entries in the table range.
+			TableId (str): Indicates the Identifier of the switch table.
+			TableName (str): Indicates the name of the switch table
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
 		"""Adds a new switchTables node on the server and retrieves it in this instance.
 

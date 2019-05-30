@@ -106,6 +106,22 @@ class SourceTrafficRange(Base):
 	def SrcCountPerLsp(self, value):
 		self._set_attribute('srcCountPerLsp', value)
 
+	def update(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+		"""Updates a child instance of sourceTrafficRange on the server.
+
+		Args:
+			AddrFamily (str(ipv4|ipv6)): The address familyt value.
+			FilterOnGroupAddress (bool): The available filters on group address.
+			GroupAddress (str): The group address.
+			GrpCountPerLsp (number): The total group count per LSP.
+			SourceAddress (str): The source address.
+			SrcCountPerLsp (number): The total source count per LSP.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
 		"""Adds a new sourceTrafficRange node on the server and retrieves it in this instance.
 

@@ -204,6 +204,24 @@ class Router(Base):
 	def TunnelRouterMode(self, value):
 		self._set_attribute('tunnelRouterMode', value)
 
+	def update(self, Enabled=None, InstanceIdForEidToRlocMapCacheRefresh=None, InstanceIdForMapServerCacheRefresh=None, IsEidToRlocMapCacheRefreshAllInstances=None, IsMapServerCacheRefreshAllInstances=None, MappingServiceMode=None, RouterId=None, TunnelRouterMode=None):
+		"""Updates a child instance of router on the server.
+
+		Args:
+			Enabled (bool): If true, it enables the router
+			InstanceIdForEidToRlocMapCacheRefresh (number): It shows the instance ID for Eid to RLOc the refreshed Map Cache
+			InstanceIdForMapServerCacheRefresh (number): It shows the instance ID for refreshed Map Server Cache
+			IsEidToRlocMapCacheRefreshAllInstances (bool): If true, it shows the Eid to Rloc Map Cache refreshed in all instances
+			IsMapServerCacheRefreshAllInstances (bool): If true, it shows the Map Server Cache All Instances refreshed (Read-only)
+			MappingServiceMode (str(standAlone|alt|na)): It shows the mapping of service mode
+			RouterId (str): It shows the Router id
+			TunnelRouterMode (str(itr|etr|xtr|msmr)): It shows the tunnel Router mode
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InstanceIdForEidToRlocMapCacheRefresh=None, InstanceIdForMapServerCacheRefresh=None, IsEidToRlocMapCacheRefreshAllInstances=None, IsMapServerCacheRefreshAllInstances=None, MappingServiceMode=None, RouterId=None, TunnelRouterMode=None):
 		"""Adds a new router node on the server and retrieves it in this instance.
 

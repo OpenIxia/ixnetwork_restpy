@@ -104,3 +104,19 @@ class SwitchFlow131TriggerAttributes(Base):
 	@TableIdInputMode.setter
 	def TableIdInputMode(self, value):
 		self._set_attribute('tableIdInputMode', value)
+
+	def update(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
+		"""Updates a child instance of switchFlow131TriggerAttributes on the server.
+
+		Args:
+			OutGroup (number): This describes the out group value. It requires matching entries to include this as an output group.
+			OutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): This describes the input mode of the out group value.
+			OutPort (number): This describes the out port value. It requires matching entries to include this as an output port.
+			OutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): This describes the input mode of the out port value.
+			TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+			TableIdInputMode (str(allTables|emergency|custom)): This describes the input mode of the Table Identifier.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

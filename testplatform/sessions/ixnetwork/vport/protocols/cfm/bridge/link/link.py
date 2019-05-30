@@ -94,6 +94,21 @@ class Link(Base):
 	def MpTowardsIxia(self, value):
 		self._set_attribute('mpTowardsIxia', value)
 
+	def update(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
+		"""Updates a child instance of link on the server.
+
+		Args:
+			Enabled (bool): If true, the link is enabled.
+			LinkType (str(broadcast|pointToPoint)): Sets the link type.
+			MoreMps (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+			MpOutwardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+			MpTowardsIxia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
 		"""Adds a new link node on the server and retrieves it in this instance.
 

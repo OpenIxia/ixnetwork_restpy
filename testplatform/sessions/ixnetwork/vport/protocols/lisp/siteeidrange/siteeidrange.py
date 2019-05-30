@@ -118,6 +118,23 @@ class SiteEidRange(Base):
 	def PrefixLength(self, value):
 		self._set_attribute('prefixLength', value)
 
+	def update(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
+		"""Updates a child instance of siteEidRange on the server.
+
+		Args:
+			Address (str): It gives details about the Ip address
+			Count (number): It details about the count
+			Enabled (bool): It true, it enables the protocol
+			Family (str(ipv4|ipv6)): It describes which family it belongs to
+			IncludeOrExclude (str(include|exclude)): It decides whether to include or exclude
+			InstanceId (number): It gives the instance id
+			PrefixLength (number): It gives details about the prefix length
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
 		"""Adds a new siteEidRange node on the server and retrieves it in this instance.
 

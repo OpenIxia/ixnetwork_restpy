@@ -128,3 +128,21 @@ class Experimenter(Base):
 	@ExperimenterIdMiss.setter
 	def ExperimenterIdMiss(self, value):
 		self._set_attribute('experimenterIdMiss', value)
+
+	def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+		"""Updates a child instance of experimenter on the server.
+
+		Args:
+			ExperimenterData (str): NOT DEFINED
+			ExperimenterDataLength (number): NOT DEFINED
+			ExperimenterDataLengthMiss (number): NOT DEFINED
+			ExperimenterDataMiss (str): NOT DEFINED
+			ExperimenterField (number): NOT DEFINED
+			ExperimenterFieldMiss (number): NOT DEFINED
+			ExperimenterId (number): NOT DEFINED
+			ExperimenterIdMiss (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

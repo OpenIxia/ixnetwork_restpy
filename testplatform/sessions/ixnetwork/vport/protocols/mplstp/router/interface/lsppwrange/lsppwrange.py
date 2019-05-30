@@ -1198,6 +1198,113 @@ class LspPwRange(Base):
 	def WaitToRevertTime(self, value):
 		self._set_attribute('waitToRevertTime', value)
 
+	def update(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+		"""Updates a child instance of lspPwRange on the server.
+
+		Args:
+			AlarmTrafficClass (number): This signifies the Alarm Traffic Class for LSP PW Range.
+			AlarmType (str(ietf|y1731)): This signifies the Alarm Type. Possible values include IETF and Y.1731.
+			ApsTrafficClass (number): This signifies the Traffic Class of the APS message.
+			ApsType (str(ietf|y1731)): This signifies the APS type. Possible values include IETF and Y.1731.
+			CccvInterval (number): This signifies the CCCV Interval in milliseconds.If cccv type is bfd then this field will take any value between 3-600000, if cccv type is y1731 then cccv interval can be configured to values available in the drop down menu.
+			CccvTrafficClass (number): This signifies the CCCV Traffic Class.
+			CccvType (str(bfdCc|bfdCccv|y1731|none)): This signifies the CCCV Type. Possible values include BFD CC, Y.1731 and None.
+			Description (str): This signifies the description of the range.
+			DestAcId (number): This signifies the destination AC id. This is the ac id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+			DestAcIdStep (number): This signifies the destination AC id step value.
+			DestGlobalId (number): This signifies the global id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+			DestLspNumber (number): This signifies the lsp number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
+			DestLspNumberStep (number): This signifies the source LSP Number step value.
+			DestMepId (number): This signifies the destination MEP Id.
+			DestMepIdStep (number): This signifies the Destination MEP Id step value in integer.
+			DestNodeId (number): This signifies the destination node id. This is the node id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+			DestTunnelNumber (number): This signifies the tunnel number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
+			DestTunnelNumberStep (number): This signifies the destination tunnel number step value.
+			DestVplsIdAsNumber (number): This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
+			DestVplsIdAsNumberStep (number): This signifies the step of destination vpls id AS number by which the AS number will be incremented if there are multiple LSP/PW in the range.
+			DestVplsIdAssignedNumber (number): This signifies the destination VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber, the max value can be 4294967295.
+			DestVplsIdAssignedNumberStep (number): This signifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
+			DestVplsIdIpAddress (str): This specifies the IP Address configured as destination VPLS Id IP Address when VPLS Id type is set as ipAddress.
+			DestVplsIdIpAddressStep (str): This signifies the step of ip address by which the ip address will be incremented if there are multiple LSP/PW in the range.
+			DestVplsIdType (str(asNumber|ipAddress|asNumber4Bytes)): This signifies the destination VplsId type.
+			DmTimeFormat (str(ieee|ntp)): This signifies the DM Time Format. Possible values include IEEE and NTP.
+			DmTrafficClass (number): This signifies the DM Traffic Class for LSP PW Range.
+			DmType (str(ietf|y1731)): This signifies the DM Type. Possible values include IETF and Y.1731.
+			EnableVlan (bool): If true, the MAC Traffic will have a vlan header.
+			Enabled (bool): This signifies the enablement of this LSP PW Range.
+			IpAddress (str): This signifies the IP address.
+			IpAddressMask (number): This signifies the IP Address Mask.
+			IpAddressStep (number): This signifies the IP Address Step Value.
+			IpHostPerLsp (number): This signifies the total number of IP hosts per lsp.
+			IpType (str(ipv4|ipv6)): This signifies the IP Type. Possible values include IPv4 and IPv6.
+			LmCounterType (str(32Bit|64Bit)): This signifies the LM Counter Type. Possible values include 32 Bit and 64 Bit.
+			LmInitialRxValue (number): This signifies the LM Initial Rx value for LSP PW Range.
+			LmInitialTxValue (number): This signifies the LM Initial Tx value for LSP PW Range.
+			LmRxStep (number): This signifies the LM Rx step value for LSP PW Range.
+			LmTrafficClass (number): This signifies the LM Traffic Class.
+			LmTxStep (number): This signifies the LM Tx Step value for LSP PW Range.
+			LmType (str(ietf|y1731)): This signifies the LM Type. Possible values include IETF and Y.1731.
+			LspIncomingLabel (number): This signifies the LSP Incoming label value. All mpls-tp packets are expected to be received with this LSP label value, if there is a mismatch of this value with the peer's outgoing LSP label value, cccv sessions will not come up.
+			LspIncomingLabelStep (number): This signifies the LSP Incoming Label Step value.
+			LspOutgoingLabel (number): This signifies the LSP Outgoing Label value. All mpls-tp packets are transmitted with this LSP label from the port.
+			LspOutgoingLabelStep (number): This signifies the LSP Outgoing Label Step value.
+			MacAddress (str): This signifies the starting MAC address of the range, this will be used for traffic generation.
+			MacPerPw (number): This signifies the number of MACs behind each PW, these are the MACs that are used for traffic generation.
+			MegIdIntegerStep (number): This signifies the MEG Id step value in integer.
+			MegIdPrefix (str): This signifies the prefix for the MEG Id.
+			MegLevel (number): This signifies the peer range of the nested LSP PW value.
+			MinRxInterval (number): This signifies the CCCV minimum receive interval of cc messages, in milliseconds. Not valid for cccv type y1731.
+			MinTxInterval (number): This signifies the CCCV minimum transmit interval of cc messages, in milliseconds. Valid for all types of cccv.
+			NumberOfLsp (number): This signifies the total number of LSPs for this range.
+			NumberOfPwPerLsp (number): This signifies the total number of PWs per LSP.
+			OnDemandCvTrafficClass (number): This signifies the On Demand CV Traffic Class for LSP PW Range.
+			PeerLspOrPwRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=lspPwRange)): This signifies the type of Peer LSP Or PW Range.
+			PeerNestedLspPwRange (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=lspPwRange)): This signifies the peer range of the nested LSP PW value.
+			PwIncomingLabel (number): This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
+			PwIncomingLabelStep (number): This signifies the PW Incoming Label Step value.
+			PwIncomingLabelStepAcrossLsp (number): This signifies the PW Incoming Label Step value across LSPs.
+			PwOutgoingLabel (number): This signifies the PW Outgoing Label value. All mpls-tp packets are transmitted with this PW label from the port.
+			PwOutgoingLabelStep (number): This signifies the PW Outgoing Label Step value.
+			PwOutgoingLabelStepAcrossLsp (number): This signifies the PW Outgoing Label Step value across LSPs.
+			PwStatusFaultReplyInterval (number): This signifies the PW Status Fault Reply Interval in seconds.
+			PwStatusTrafficClass (number): This signifies the PW Status Traffic Class for LSP PW Range.
+			RangeRole (str(none|working|protect)): This signifies the role of the range. Possible values include None, Working and Protect.
+			RepeatMac (bool): If true, and the Count is greater than 1, the same address value will be repeated for all MAC addresses within a PW.
+			Revertive (bool): This signifies the switching mode, whether revertive or non-revertive.
+			SkipZeroVlanId (bool): This signifies the VLAN Id 0 will not be used for any MAC.
+			SrcAcId (number): This signifies the AC Id that is carried in the Echo Request message that is transmitted from this port.
+			SrcAcIdStep (number): This signifies the source AC id step value.
+			SrcGlobalId (number): This signifies the source global id. This is the global id that is carried in the Echo Request message that is transmitted from this port.
+			SrcLspNumber (number): This signifies the lsp number that is carried in the Echo Request message that is transmitted from this port.
+			SrcLspNumberStep (number): This signifies the source LSP Number step value.
+			SrcMepId (number): This signifies the source MEP Id.
+			SrcMepIdStep (number): This signifies the Source MEP Id step value in integer.
+			SrcNodeId (number): This signifies the node id that is carried in the Echo Request message that is transmitted from this port.
+			SrcTunnelNumber (number): This signifies the tunnel number that is carried in the Echo Request message that is transmitted from this port.
+			SrcTunnelNumberStep (number): This signifies the source tunnel number step value.
+			SrcVplsIdAsNumber (number): This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
+			SrcVplsIdAsNumberStep (number): This signifies the step of AS number by which the number is incremented if there are multiple LSP/PW in the range.
+			SrcVplsIdAssignedNumber (number): This signifies the source VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber the max value can be 4294967295.
+			SrcVplsIdAssignedNumberStep (number): This specifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
+			SrcVplsIdIpAddress (str): This signifies the IP Address configured as Source VPLS Id IP Address when VPLS Id type is set as ipAddress.
+			SrcVplsIdIpAddressStep (str): This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
+			SrcVplsIdType (str(asNumber|ipAddress|asNumber4Bytes)): This specifies the source VplsId type.
+			SupportSlowStart (bool): This signifies the Support Slow Start. This field is valid only for cccv type bfd and grayed out for y1731. If this is enabled then cccv interval for the peer is not matched for bfd session establishment.
+			TrafficGroupId (str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)): This signifies the Traffic Group Id.
+			TypeOfProtectionSwitching (str(1+1Unidirectional|1:1Bidirectional|1+1Bidirectional)): This signifies different types of protection switching mechanism.
+			TypeOfRange (str(lsp|pw|nestedLspPw)): This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
+			VlanCount (number): This signifies the number of VLANs configured for this MAC Range.
+			VlanId (str): This signifies the VLAN option is enabled for the current MAC Range and a VLAN Id may be added to the packet, to identify the VLAN that the packet belongs to.
+			VlanIncrementMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): This signifies the mode that defines how the VLAN will be incremented across MACs.
+			VlanPriority (str): This signifies the user priority of the VLAN tag. This may have a value from 0 through 7.
+			VlanTpId (str): This signifies the EtherType that identifies the protocol header that follows the VLAN header.
+			WaitToRevertTime (number): This signifies the duration after which data traffic will be switched from protect to working path once working path has recovered from signal fail. This is configurable only if Revertive is checked.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
 		"""Adds a new lspPwRange node on the server and retrieves it in this instance.
 

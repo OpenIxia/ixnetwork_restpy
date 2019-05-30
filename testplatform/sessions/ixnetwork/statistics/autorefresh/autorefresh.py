@@ -56,3 +56,15 @@ class AutoRefresh(Base):
 	@MinRefreshInterval.setter
 	def MinRefreshInterval(self, value):
 		self._set_attribute('minRefreshInterval', value)
+
+	def update(self, Enabled=None, MinRefreshInterval=None):
+		"""Updates a child instance of autoRefresh on the server.
+
+		Args:
+			Enabled (bool): NOT DEFINED
+			MinRefreshInterval (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

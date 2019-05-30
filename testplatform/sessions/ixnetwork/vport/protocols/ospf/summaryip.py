@@ -81,6 +81,20 @@ class SummaryIp(Base):
 	def NumberOfLsa(self, value):
 		self._set_attribute('numberOfLsa', value)
 
+	def update(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
+		"""Updates a child instance of summaryIp on the server.
+
+		Args:
+			IncrementLinkStateIdBy (str): 
+			Metric (number): 
+			NetworkMask (str): 
+			NumberOfLsa (number): 
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
 		"""Finds and retrieves summaryIp data from the server.
 

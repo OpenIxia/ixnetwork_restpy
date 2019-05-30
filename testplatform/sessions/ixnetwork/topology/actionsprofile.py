@@ -77,6 +77,17 @@ class ActionsProfile(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, Name=None):
+		"""Updates a child instance of actionsProfile on the server.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def AddFromTemplate(self, *args, **kwargs):
 		"""Executes the addFromTemplate operation on the server.
 

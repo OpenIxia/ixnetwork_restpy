@@ -1089,6 +1089,104 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FrameLossUnit=None, FrameOrderingByRfc2889=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialStepLoadRate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, MapType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2889ordering=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			BinaryBackoff (number): The percentage to be applied to the search interval through which the next iterations rate is obtained.
+			BinaryFrameLossUnit (str(%|frames)): The binary frame loss unit.
+			BinaryLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The binary load unit.
+			BinaryResolution (number): The resolution of the iteration during a binary search.
+			BinarySearchType (str(linear|perFlow|perPort)): The binary search type.
+			BinaryTolerance (number): The percentage of frame loss that is acceptable in order for an iteration to be considered successful during a binary search.
+			BurstSize (number): It signifies the burst size of the protocol.
+			CalculateJitter (bool): If true, enables jitter calculation.
+			CalculateLatency (bool): If true, enables latency calculation.
+			ComboBackoff (number): The percentage to be applied to the search interval through which the next iterations rate is obtained, for Combo Load Type.
+			ComboFrameLossUnit (str(%|frames)): The combo frame loss unit.
+			ComboLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The combo Load Unit.
+			ComboResolution (number): The resolution of the iteration for Combo Load Type.
+			ComboTolerance (number): The value of the tolerance level for Combo Load Type.
+			CountRandomFrameSize (number): If true, randomly counts the frame size.
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The custom load unit.
+			DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+			DetailedResultsEnabled (bool): 
+			Duration (number): The duration of the test in hours, which is used to calculate the number of framesto transmit.
+			EnableDataIntegrity (bool): If true, enables data integrity test.
+			EnableExtraIterations (bool): If true, enables the tracking option in aggregation files.
+			EnableFastConvergence (bool): If true, enables fast convergence.
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			EnableOldStatsForReef (bool): Enables old statistics for reef.
+			ExtraIterationOffsets (str): Sets extra iteration offset values.
+			FastConvergenceDuration (number): sec
+			FastConvergenceThreshold (number): If true, enables fast convergence threshold value.
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameLossUnit (str): The frame loss unit.
+			FrameOrderingByRfc2889 (bool): If true, indicates frame ordering by Rfc2889.
+			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FramesPerBurstGap (number): It signifies the frames per burst gap.
+			Framesize (number): Bytes
+			FramesizeList (list(str)): List containing the frame sizes used in the test.
+			Gap (number): Inter-frame gap.
+			GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+			InitialBinaryLoadRate (number): The load rate used in the first iteration for each frame size during a binary search.
+			InitialComboLoadRate (number): The initial value of the load rate for Combo Load Type.
+			InitialStepLoadRate (number): The initial value of the load rate for Step Load Type.
+			LatencyBins (str): Sets the latency bins statistics
+			LatencyBinsEnabled (bool): Enables the latency bins statistics
+			LatencyType (str(cutThrough|storeForward)): The type of latency.
+			LoadRateList (str): The list of Load Rate.
+			LoadType (str(binary|combo|custom|quickSearch|step|unchanged)): The type of load.
+			MapType (str): The POS traffic map type.
+			MaxBinaryLoadRate (number): The lower bound of the iteration rates for each frame size during a binary search.
+			MaxComboLoadRate (number): The maximum value of the load rate Combo Load Type.
+			MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+			MaxQuickSearchLoadRate (number): Sets the maximum QuickSearch load rate
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MaxStepLoadRate (number): The maximum value of the load rate Step Load Type.
+			MinBinaryLoadRate (number): The lower bound of the iteration rates for each frame size during a binary search.
+			MinComboLoadRate (number): The minimum value of the load rate Combo Load Type.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinQuickSearchLoadRate (number): Sets the minum Quick Search load rate
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			Numtrials (number): Defines how many times each frame size will be tested.
+			PercentMaxRate (number): The percentage of the maximum rate that is specified.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
+			QuickSearchLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Sets the quick search load unit
+			QuickSearchResolution (number): Sets the quick search resolution
+			QuickSearchSearchType (str(linear|perFlow|perPort|perTrafficItem)): Sets the quick search type
+			QuickSearchTolerance (number): Sets the quick search tolerance
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): It selects the rate value of the protocol.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The report throughput rate.
+			Resolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			Rfc2889ordering (str(noOrdering|unchanged|val2889Ordering)): Enables ordering.
+			SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepComboLoadRate (number): The step rate of the binary algorithm for Combo Load Type.
+			StepFrameLossUnit (str(%|frames)): The step frame loss unit.
+			StepIncrementFrameSize (number): The incremental step value of the frame size.
+			StepLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): The step load unit.
+			StepStepLoadRate (number): The step rate of the binary algorithm.
+			StepTolerance (number): The value of the tolerance level for Step Load Type.
+			SupportedTrafficTypes (str): The traffic types supported.
+			Tolerance (number): The level of acceptable threshold.
+			TrafficType (str(burstyLoading|constantLoading)): It signifies the traffic type.
+			TxDelay (number): Specifies the amount of delay after every transmit.
+			UsePercentOffsets (bool): Uses percentage offset value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

@@ -351,6 +351,32 @@ class TableFeaturePropertiesTrigger(Base):
 	def EnableWriteSetFieldMiss(self, value):
 		self._set_attribute('enableWriteSetFieldMiss', value)
 
+	def update(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+		"""Updates a child instance of tableFeaturePropertiesTrigger on the server.
+
+		Args:
+			EnableApplyAction (bool): NOT DEFINED
+			EnableApplyActionMiss (bool): NOT DEFINED
+			EnableApplySetField (bool): NOT DEFINED
+			EnableApplySetFieldMiss (bool): NOT DEFINED
+			EnableExperimenter (bool): NOT DEFINED
+			EnableExperimenterMiss (bool): NOT DEFINED
+			EnableInstruction (bool): NOT DEFINED
+			EnableInstructionMiss (bool): NOT DEFINED
+			EnableMatch (bool): NOT DEFINED
+			EnableNextTable (bool): NOT DEFINED
+			EnableNextTableMiss (bool): NOT DEFINED
+			EnableWildCard (bool): NOT DEFINED
+			EnableWriteAction (bool): NOT DEFINED
+			EnableWriteActionMiss (bool): NOT DEFINED
+			EnableWriteSetField (bool): NOT DEFINED
+			EnableWriteSetFieldMiss (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
 		"""Finds and retrieves tableFeaturePropertiesTrigger data from the server.
 

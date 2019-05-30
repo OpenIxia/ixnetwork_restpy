@@ -259,6 +259,27 @@ class Interface(Base):
 	def ProtocolInterface(self, value):
 		self._set_attribute('protocolInterface', value)
 
+	def update(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			AdvertisingMode (str(unsolicited|onDemand)): The mode by which labels are advertised, either downstream unsolicited or downstream on demand.
+			AtmVcDirection (str(unidirectional|bidirectional)): Whether a virtual circuit (VC) may be used one way or both ways as an LSP.
+			Authentication (str(null|md5)): The cryptographic authentication type used by the interface; one of: NULL (no authentication) or MD5. When MD5 is used, an md5Key must be configured by the user.
+			BfdOperationMode (str(singleHop|multiHop)): Helps to set the BFD session in terms of hops, one of Single and Multi.
+			DiscoveryMode (str(basic|extended|extendedMartini)): The discovery mode used for the interface: basic, extended, or extended Martini.
+			EnableAtmSession (bool): Enables the establishment of ATM sessions.
+			EnableBfdRegistration (bool): If true, enables BFD registration with LDP.
+			Enabled (bool): Enables the use of this interface for the simulated router.
+			LabelSpaceId (number): The LDP label space used by this interface.
+			Md5Key (str): Used with MD5 authentication. A user-defined string; maximum = 255 characters.
+			ProtocolInterface (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

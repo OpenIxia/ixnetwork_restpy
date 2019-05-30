@@ -81,6 +81,18 @@ class NetTopologyCustom(Base):
 		"""
 		return self._get_attribute('numberOfNodes')
 
+	def update(self, IncludeEntryPoint=None, LinkMultiplier=None):
+		"""Updates a child instance of netTopologyCustom on the server.
+
+		Args:
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LinkMultiplier (number): number of links between two nodes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeEntryPoint=None, LinkMultiplier=None):
 		"""Adds a new netTopologyCustom node on the server and retrieves it in this instance.
 

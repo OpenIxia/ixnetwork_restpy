@@ -136,6 +136,17 @@ class AppLibFlow(Base):
 	def Percentage(self, value):
 		self._set_attribute('percentage', value)
 
+	def update(self, Percentage=None):
+		"""Updates a child instance of appLibFlow on the server.
+
+		Args:
+			Percentage (number): The amount of traffic generated for this flows.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ConfigId=None, ConnectionCount=None, Description=None, FlowId=None, FlowSize=None, Name=None, Parameters=None, Percentage=None):
 		"""Finds and retrieves appLibFlow data from the server.
 

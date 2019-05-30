@@ -230,6 +230,23 @@ class CustomTopology(Base):
 	def SysIdInc(self, value):
 		self._set_attribute('sysIdInc', value)
 
+	def update(self, CapRouterId=None, EnableHostname=None, Enabled=None, HostNamePrefix=None, InterfaceMetric=None, StartSysId=None, SysIdInc=None):
+		"""Updates a child instance of customTopology on the server.
+
+		Args:
+			CapRouterId (str): NOT DEFINED
+			EnableHostname (bool): NOT DEFINED
+			Enabled (bool): NOT DEFINED
+			HostNamePrefix (str): NOT DEFINED
+			InterfaceMetric (number): NOT DEFINED
+			StartSysId (str): NOT DEFINED
+			SysIdInc (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CapRouterId=None, EnableHostname=None, Enabled=None, HostNamePrefix=None, InterfaceMetric=None, StartSysId=None, SysIdInc=None):
 		"""Adds a new customTopology node on the server and retrieves it in this instance.
 

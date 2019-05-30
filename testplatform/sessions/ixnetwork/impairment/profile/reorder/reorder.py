@@ -80,3 +80,17 @@ class Reorder(Base):
 	@SkipCount.setter
 	def SkipCount(self, value):
 		self._set_attribute('skipCount', value)
+
+	def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
+		"""Updates a child instance of reorder on the server.
+
+		Args:
+			ClusterSize (number): Number of packets to reorder on each occurrence.
+			Enabled (bool): If true, periodically reorder received packets.
+			PercentRate (number): How often to reorder packets.
+			SkipCount (number): How many packets to skip before sending the reordered packets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

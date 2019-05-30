@@ -168,3 +168,22 @@ class FortyGigLan(Base):
 	@TxIgnoreRxLinkFaults.setter
 	def TxIgnoreRxLinkFaults(self, value):
 		self._set_attribute('txIgnoreRxLinkFaults', value)
+
+	def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+		"""Updates a child instance of fortyGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
+			EnablePPM (bool): If true, enables the portsppm.
+			EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+			FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			TransmitClocking (str(external|internal|recovered)): Allows to select the transmit clocing options.
+			TxIgnoreRxLinkFaults (bool): Tx ignore Rx link fault.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

@@ -176,6 +176,26 @@ class MplsTp(Base):
 	def Y1731ChannelType(self, value):
 		self._set_attribute('y1731ChannelType', value)
 
+	def update(self, ApsChannelType=None, BfdCcChannelType=None, DelayManagementChannelType=None, EnableHighPerformanceMode=None, Enabled=None, FaultManagementChannelType=None, LossMeasurementChannelType=None, OnDemandCvChannelType=None, PwStatusChannelType=None, Y1731ChannelType=None):
+		"""Updates a child instance of mplsTp on the server.
+
+		Args:
+			ApsChannelType (str): This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
+			BfdCcChannelType (str): This signifies the BFD Continuity Check Channel Type in hexadecimal format.
+			DelayManagementChannelType (str): This signifies the Delay Measurement Channel Type in hexadecimal format.
+			EnableHighPerformanceMode (bool): This signifies select the checkbox to enable high performance mode.
+			Enabled (bool): This signifies that the mplsTp protocol is enabled.
+			FaultManagementChannelType (str): This signifies the Fault Management Channel Type in hexadecimal format.
+			LossMeasurementChannelType (str): This signifies the Loss Measurement Channel Type in hexadecimal format.
+			OnDemandCvChannelType (str): This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
+			PwStatusChannelType (str): This signifies the Pseudowire Status Channel Type.
+			Y1731ChannelType (str): This signifies the Y.1731 Channel Type in hexadecimal format.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Start(self):
 		"""Executes the start operation on the server.
 

@@ -126,6 +126,20 @@ class OfSwitchQueues(Base):
 		"""
 		return self._get_attribute('switchIndex')
 
+	def update(self, Name=None):
+		"""Updates a child instance of ofSwitchQueues on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, MaxRate=None, MinRate=None, ParentPort=None, QueueId=None, QueueProperty=None, SwitchIndex=None):
 		"""Base class infrastructure that gets a list of ofSwitchQueues device ids encapsulated by this object.
 

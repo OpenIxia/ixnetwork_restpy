@@ -345,6 +345,42 @@ class TestConfig(Base):
 	def TestTrafficType(self, value):
 		self._set_attribute('testTrafficType', value)
 
+	def update(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayAfterFailover=None, DelayBeforeFailover=None, DeleteFlowsAtStartup=None, DpDpConvergenceFactorScale=None, DpDpConvergenceTime=None, EnableCpDpPassFail=None, EnableDpDpPassFail=None, EnableMinFrameSize=None, FailureMode=None, FailureType=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, LoadRateValue=None, MaxRandomFrameSize=None, MinRandomFrameSize=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, SecondaryRxPort=None, TestTrafficType=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			CpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+			CpDpConvergenceTime (number): Indicates the convergence time.
+			CustomFramesizeValue (number): Sets the custom frame size value.
+			CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Specifies the custom load unit.
+			DelayAfterFailover (number): Sets the delay after failover.
+			DelayBeforeFailover (number): Sets the delay before failover.
+			DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup.
+			DpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+			DpDpConvergenceTime (number): Indicates the convergence time.
+			EnableCpDpPassFail (bool): Enables the CP DP pass fail.
+			EnableDpDpPassFail (bool): Enables the DP DP pass fail
+			EnableMinFrameSize (bool): If true, enables minimum frame size.
+			FailureMode (str(delPrimaryFlow|modifyRxPort)): Sets the failure mode.
+			FailureType (str(proactive)): Sets the type of failure.
+			ForceContinuosTraffic (bool): Forces continuous traffic.
+			FrameSizeMode (str(increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			Gap (number): The gap in transmission of frames.
+			LoadRateValue (number): The value of the load rate.
+			MaxRandomFrameSize (number): The maximum random frame size to be sent.
+			MinRandomFrameSize (number): The minimum random frame size to be sent.
+			Numtrials (number): The integer value that states the number of trials permitted.
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportConvergenceUnit (str(ms|ns|us)): The unit in which convergence will be reported.
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): The unit of rate for throughput.
+			SecondaryRxPort (number): Sets the secondary receiving Port.
+			TestTrafficType (str): It signifies the test traffic type value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

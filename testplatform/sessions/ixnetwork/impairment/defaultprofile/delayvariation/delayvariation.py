@@ -104,3 +104,19 @@ class DelayVariation(Base):
 	@Units.setter
 	def Units(self, value):
 		self._set_attribute('units', value)
+
+	def update(self, Distribution=None, Enabled=None, ExponentialMeanArrival=None, GaussianStandardDeviation=None, UniformSpread=None, Units=None):
+		"""Updates a child instance of delayVariation on the server.
+
+		Args:
+			Distribution (str(exponential|gaussian|kExponential|kGaussian|kUniform|uniform)): Specify the distribution of the random variation.
+			Enabled (bool): If true, randomly vary the packet delay.
+			ExponentialMeanArrival (number): Mean arrival time for the exponential distribution.
+			GaussianStandardDeviation (number): Standard deviation for the Gaussian distribution.
+			UniformSpread (number): Spread for the uniform distribution.
+			Units (str(kilometers|kKilometers|kMicroseconds|kMilliseconds|kSeconds|microseconds|milliseconds|seconds)): Specify the units for the value of the spread, standard deviation, or mean arrival time.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

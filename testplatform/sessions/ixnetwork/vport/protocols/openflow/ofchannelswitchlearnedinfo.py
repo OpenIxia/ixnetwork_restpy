@@ -283,6 +283,21 @@ class OfChannelSwitchLearnedInfo(Base):
 		"""
 		return self._get_attribute('sessionType')
 
+	def update(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, NumberOfAuxiliaryConnection=None, RemotePortNumber=None):
+		"""Updates a child instance of ofChannelSwitchLearnedInfo on the server.
+
+		Args:
+			AveragePacketInReplyDelay (number): This describes the average delay between Packet-In sent from Switch and reply received from Controller.
+			ConfiguredPacketInReplyCount (number): This describes the Packet-In sent from Switch from configured Packet-In Ranges.
+			ConfiguredPacketInSentCount (number): This describes the Packet-In reply received from Controller for Packet-In sent.
+			NumberOfAuxiliaryConnection (number): This describes the number of auxiliary connections.
+			RemotePortNumber (number): This describes the TCP port number of the remote end of the OF Channel.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, ActionsSupported=None, AveragePacketInReplyDelay=None, Capabilities=None, ConfigFlags=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, DataPathId=None, DataPathIdAsHex=None, FlowRate=None, GenerationId=None, LastErrorCode=None, LastErrorType=None, LocalIp=None, MaxBufferSize=None, MaxPacketInBytes=None, NegotiatedVersion=None, NumberOfAuxiliaryConnection=None, NumberOfErrorsSent=None, NumberOfPorts=None, NumberofTable=None, RemoteIp=None, RemotePortNumber=None, SessionType=None):
 		"""Finds and retrieves ofChannelSwitchLearnedInfo data from the server.
 

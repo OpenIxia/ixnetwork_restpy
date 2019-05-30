@@ -130,6 +130,24 @@ class RouteRange(Base):
 	def Step(self, value):
 		self._set_attribute('step', value)
 
+	def update(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+		"""Updates a child instance of routeRange on the server.
+
+		Args:
+			Enabled (bool): Enables the selected route range.
+			FirstRoute (str): The IPv6 address of the first route/network to be generated for this RIPng route range.
+			MaskWidth (number): The network mask to be used when generating routes This value indicates the number of bits, counting from the MSB (at the left end), that will comprise the network part of the IPv6 address. The remainder of the address will indicate the host part of the address. The default mask width is 64 bits.
+			Metric (number): The current metric cost to reach the destination. A value between 0 and 15. A value of 16 indicates that the destination is unreachable. (The RIPng Interface Metric is added to this value.)
+			NextHop (str): (For use in the Next Hop RTE.)The link-local IPv6 address of the next hop router. The value 0:0:0:0:0:0:0:0 indicates that the next hop router should be the originator of the RIPng route advertisement. (This router is the Next Hop.)
+			NumberOfRoute (number): The total number of routes to be included in this route range.
+			RouteTag (number): A route attribute advertised with a route: internal vs. external. For external routes, the route tag can be the AS from which the routes were learned or an arbitrary, assigned integer value.
+			Step (number): The increment step value to be used when creating additional routes/network addresses.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
 		"""Adds a new routeRange node on the server and retrieves it in this instance.
 

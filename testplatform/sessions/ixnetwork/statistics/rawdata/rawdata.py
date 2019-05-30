@@ -80,6 +80,18 @@ class RawData(Base):
 	def Path(self, value):
 		self._set_attribute('path', value)
 
+	def update(self, Enabled=None, Path=None):
+		"""Updates a child instance of rawData on the server.
+
+		Args:
+			Enabled (bool): NOT DEFINED
+			Path (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def StopCollection(self):
 		"""Executes the stopCollection operation on the server.
 

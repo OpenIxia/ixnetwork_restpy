@@ -873,6 +873,86 @@ class TestConfig(Base):
 	def UseMulticast(self, value):
 		self._set_attribute('useMulticast', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurdenFrameSize=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, Gap=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrementBurdenLoadUnit=None, IncrementLoadUnit=None, InitialBurdenIncrementLoadRate=None, InitialIncrementLoadRate=None, InitialRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, NumAddresses=None, NumIterations=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Rfc2889ordering=None, RouterAlert=None, StepBurdenIncrementLoadRate=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, SupportedTrafficTypes=None, TestTrafficType=None, TxDelay=None, UseMulticast=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): NOT DEFINED
+			BidirectionalOptionEnabled (bool): NOT DEFINED
+			BurdenFrameSize (number): NOT DEFINED
+			BurstSize (number): NOT DEFINED
+			CalculateJitter (bool): NOT DEFINED
+			CalculateLatency (bool): NOT DEFINED
+			CountRandomFrameSize (number): NOT DEFINED
+			DelayAfterTransmit (number): NOT DEFINED
+			Duration (number): NOT DEFINED
+			EnableDataIntegrity (bool): NOT DEFINED
+			EnableLayer1Rate (bool): NOT DEFINED
+			EnableLeaveGroup (bool): NOT DEFINED
+			EnableMinFrameSize (bool): NOT DEFINED
+			EnableMulticastQuerier (bool): NOT DEFINED
+			EnableOldStatsForReef (bool): NOT DEFINED
+			FloodedFramesEnabled (bool): NOT DEFINED
+			ForceRegenerate (bool): NOT DEFINED
+			FrameSizeMode (str(custom|customlist|increment|random)): NOT DEFINED
+			FramesizeList (list(str)): NOT DEFINED
+			Gap (number): NOT DEFINED
+			GroupCapacityGreaterThan (number): NOT DEFINED
+			GroupDistributionType (str(acrossHosts|acrossPorts)): NOT DEFINED
+			IgmpV1Timeout (number): NOT DEFINED
+			IgmpVersion (number): NOT DEFINED
+			Igmpv3MessageType (str(exclude|include)): NOT DEFINED
+			Igmpv3SourceAddrList (str): NOT DEFINED
+			IncrAddresses (number): NOT DEFINED
+			IncrementBurdenLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			IncrementLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): NOT DEFINED
+			InitialBurdenIncrementLoadRate (number): NOT DEFINED
+			InitialIncrementLoadRate (number): NOT DEFINED
+			InitialRate (str): NOT DEFINED
+			Ipv4Address (str): NOT DEFINED
+			Ipv6Address (str): NOT DEFINED
+			IsIPv6 (str): NOT DEFINED
+			IsMulticastAutomaticFrameData (str): NOT DEFINED
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): NOT DEFINED
+			JoinLeaveWaitTime (number): NOT DEFINED
+			LatencyBins (str): NOT DEFINED
+			LatencyBinsEnabled (bool): NOT DEFINED
+			LatencyType (str(cutThrough|storeForward)): NOT DEFINED
+			LoadInitialRate (number): NOT DEFINED
+			LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): NOT DEFINED
+			MapType (str): NOT DEFINED
+			MaxIncrementFrameSize (number): NOT DEFINED
+			MaxIncrementLoadRate (number): NOT DEFINED
+			MaxRandomFrameSize (number): NOT DEFINED
+			MinIncrementFrameSize (number): NOT DEFINED
+			MinRandomFrameSize (number): NOT DEFINED
+			MldVersion (number): NOT DEFINED
+			NumAddresses (number): NOT DEFINED
+			NumIterations (number): NOT DEFINED
+			Numtrials (number): NOT DEFINED
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): NOT DEFINED
+			PortDelayValue (number): NOT DEFINED
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportSequenceError (bool): NOT DEFINED
+			ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): NOT DEFINED
+			Rfc2889ordering (str(val2889Ordering)): NOT DEFINED
+			RouterAlert (bool): NOT DEFINED
+			StepBurdenIncrementLoadRate (number): NOT DEFINED
+			StepIncrementFrameSize (number): NOT DEFINED
+			StepIncrementLoadRate (number): NOT DEFINED
+			SupportedTrafficTypes (str): NOT DEFINED
+			TestTrafficType (str): NOT DEFINED
+			TxDelay (number): NOT DEFINED
+			UseMulticast (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

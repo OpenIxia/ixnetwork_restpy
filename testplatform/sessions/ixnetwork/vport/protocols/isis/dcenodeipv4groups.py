@@ -178,6 +178,28 @@ class DceNodeIpv4Groups(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, IncludeIpv4Groups=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUnicastScrIpv4sPerMulicastIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
+		"""Updates a child instance of dceNodeIpv4Groups on the server.
+
+		Args:
+			IncludeIpv4Groups (bool): If true, includes IPv4 groups for this Network Range.
+			InterGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast IPv4 between one or more node groups.
+			IntraGroupUnicastIpv4Increment (str): The IPv4 address format of the Unicast MAC within a node group.
+			MulticastAddressNodeStep (str): The Multicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+			MulticastIpv4Count (number): The number of Multicast IPv4 addresses.
+			MulticastIpv4Step (str): The incremental value of Multicast IPv4 address.
+			NoOfUnicastScrIpv4sPerMulicastIpv4 (number): The number of Unicast Source for each Multicast IPv4 address.
+			SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
+			StartMulticastIpv4 (str): The IP address format of the starting Multicast IPv4 address.
+			StartUnicastSourceIpv4 (str): The IPv4 address format of the starting Unicast Source IPv4.
+			UnicastAddressNodeStep (str): The Unicast IPv4 address that configures the increment across the Network Range simulated RBridges.
+			VlanId (number): The VLAN ID of the enabled Multicast IPv4 Range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, IncludeIpv4Groups=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastAddressNodeStep=None, MulticastIpv4Count=None, MulticastIpv4Step=None, NoOfUnicastScrIpv4sPerMulicastIpv4=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, UnicastAddressNodeStep=None, VlanId=None):
 		"""Adds a new dceNodeIpv4Groups node on the server and retrieves it in this instance.
 

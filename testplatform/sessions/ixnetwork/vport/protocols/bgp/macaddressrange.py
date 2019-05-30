@@ -211,6 +211,30 @@ class MacAddressRange(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of macAddressRange on the server.
+
+		Args:
+			EnableVlan (bool): If enabled, VLANs will be created and associated with the MAC addresses. The default is disabled.
+			Enabled (bool): Enables the MAC address range.
+			IncrementVlan (bool): If enabled, each additional VLAN in the range will be incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
+			IncrementVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If enabled, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
+			IncremetVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If enabled, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
+			MacCount (number): The number of MAC addresses to be created for this range. A 4-byte unsigned integer. The default is 1.
+			MacCountPerL2Site (number): Signifies the count of MAC values per L2 site
+			MacIncrement (bool): If enabled, each additional MAC Address in this range of addresses will be incremented by 00 00 00 00 00 01.
+			SkipVlanIdZero (bool): If enabled, the VLAN ID with zero value will be ignored.
+			StartMacAddress (str): The first 6-byte MAC address in the range of MAC addresses. The default is 00 00 00 00 00 00.
+			Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
+			VlanCount (number): The number of VLANs created.
+			VlanId (str): The ID for the first VLAN in a range of VLANs. An 2-byte unsigned integer. The valid range is 0 to 4095. The default is 0.
+			VlanPriority (str): The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
 		"""Adds a new macAddressRange node on the server and retrieves it in this instance.
 

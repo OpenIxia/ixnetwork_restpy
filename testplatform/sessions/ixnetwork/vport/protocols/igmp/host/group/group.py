@@ -156,6 +156,25 @@ class Group(Base):
 	def UpdateRequired(self, value):
 		self._set_attribute('updateRequired', value)
 
+	def update(self, EnablePacking=None, Enabled=None, GroupCount=None, GroupFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None, UpdateRequired=None):
+		"""Updates a child instance of group on the server.
+
+		Args:
+			EnablePacking (bool): If enabled, this option controls how many multicast records and sources will be included in each listener report for this group range.
+			Enabled (bool): Enables the use of the group range in the IGMP simulation.
+			GroupCount (number): Specifies the set of IPv4 multicast addresses in the group range.
+			GroupFrom (str): The IP address of the first member of the group (multicast address).
+			IncrementStep (number): The value used to increment the IP address for each additional member of the group.
+			RecordsPerFrame (number): If the user wants a specified number of records to be sent in each frame, packing should be enabled (enablePacking is true), and the number of records indicated with the recordsPerFrame option.
+			SourceMode (str(include|exclude)): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
+			SourcesPerRecord (number): The number of multicast sources that will be included in each listener report for this group range.
+			UpdateRequired (bool): Notifies the user that the changes made to the IGMP configuration of the source IP addresses for this group range need to be reflected.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnablePacking=None, Enabled=None, GroupCount=None, GroupFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None, UpdateRequired=None):
 		"""Adds a new group node on the server and retrieves it in this instance.
 

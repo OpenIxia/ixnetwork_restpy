@@ -72,6 +72,18 @@ class UserDefinedAfiSafi(Base):
 	def Safi(self, value):
 		self._set_attribute('safi', value)
 
+	def update(self, Afi=None, Safi=None):
+		"""Updates a child instance of userDefinedAfiSafi on the server.
+
+		Args:
+			Afi (number): The 2 byte AFI value.
+			Safi (number): The 1 byte SAFI value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Afi=None, Safi=None):
 		"""Adds a new userDefinedAfiSafi node on the server and retrieves it in this instance.
 

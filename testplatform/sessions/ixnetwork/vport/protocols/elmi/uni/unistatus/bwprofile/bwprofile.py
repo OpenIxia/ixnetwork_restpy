@@ -274,6 +274,36 @@ class BwProfile(Base):
 	def UserPriorityBits111(self, value):
 		self._set_attribute('userPriorityBits111', value)
 
+	def update(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+		"""Updates a child instance of bwProfile on the server.
+
+		Args:
+			CbsMagnitude (number): It signifies one octet field. Default is 1.
+			CbsMultiplier (number): It signifies one octet field. Default is 1.
+			Cf (bool): If enabled, Coupling Flag is set to 1. Default is 0.
+			CirMagnitude (number): It signifies one octet field. Default is 1.
+			CirMultiplier (number): It signifies two octet field. Default is 1.
+			Cm (bool): If enabled, Colored Mode Flag is 1. Default is false.
+			EbsMagnitude (number): It signifies one octet field. Default is 1.
+			EbsMultiplier (number): It signifies one octet field. Default is 1.
+			EirMagnitude (number): It signifies one octet field. Default is 1.
+			EirMultiplier (number): It signifies two octet field. Default is 1.
+			Enabled (bool): If enabled, bandwidth profile is in effect for the EVC.
+			PerCos (bool): If enabled, Per CoS Flag shows user_priority bit values as significant and the value is set to 1. If the value is set to 0, the user_priority bit values as ignored and not processed. Default is 0.
+			UserPriorityBits000 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1. Default is 0.
+			UserPriorityBits001 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1. Default is 0.
+			UserPriorityBits010 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1. Default is 0.
+			UserPriorityBits011 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1. Default is 0.
+			UserPriorityBits100 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1. Default is 0.
+			UserPriorityBits101 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1. Default is 0.
+			UserPriorityBits110 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1. Default is 0.
+			UserPriorityBits111 (bool): If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1. Default is 0.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
 		"""Adds a new bwProfile node on the server and retrieves it in this instance.
 

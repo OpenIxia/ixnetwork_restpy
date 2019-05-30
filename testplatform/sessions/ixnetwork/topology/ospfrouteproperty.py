@@ -333,6 +333,21 @@ class OspfRouteProperty(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, IncludeBIERInfo=None, Name=None):
+		"""Updates a child instance of ospfRouteProperty on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			IncludeBIERInfo (bool): Include BIER Info
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, Name=None):
 		"""Finds and retrieves ospfRouteProperty data from the server.
 

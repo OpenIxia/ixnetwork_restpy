@@ -203,6 +203,24 @@ class Dhcpv4server(Base):
 		"""
 		return self._get_attribute('useRapidCommit')
 
+	def update(self, ConnectedVia=None, Multiplier=None, Name=None, PoolCount=None, StackedLayers=None):
+		"""Updates a child instance of dhcpv4server on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			PoolCount (number): number of DHCP pools a single server has
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, Multiplier=None, Name=None, PoolCount=None, StackedLayers=None):
 		"""Adds a new dhcpv4server node on the server and retrieves it in this instance.
 

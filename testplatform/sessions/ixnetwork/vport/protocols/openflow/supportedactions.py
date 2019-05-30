@@ -176,3 +176,25 @@ class SupportedActions(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, Enqueue=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, Output=None, StripVlanHeader=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of supportedActions on the server.
+
+		Args:
+			Enqueue (bool): Indicates that the supported action of the switch includes Output to queue.
+			EthernetDestination (bool): Indicates that the supported action of the switch includes setting Ethernet destination address.
+			EthernetSource (bool): Indicates that the supported action of the switch includes setting Ethernet source address.
+			IpDscp (bool): Indicates that the supported action of the switch includes setting IP ToS, DSCP field, 6 bits.
+			Ipv4Destination (bool): Indicates that the supported action of the switch includes setting IP destination address.
+			Ipv4Source (bool): Indicates that the supported action of the switch includes setting IP source address.
+			Output (bool): Indicates that the supported action of the switch includes Output to switch port.
+			StripVlanHeader (bool): Indicates that the supported action of the switch includes stripping the 802.1q header.
+			TransportDestination (bool): Indicates that the supported action of the switch includes setting TCP/UDP destination port.
+			TransportSource (bool): Indicates that the supported action of the switch includes setting TCP/UDP source port.
+			VlanId (bool): Indicates that the supported action of the switch includes setting the 802.1q VLAN id.
+			VlanPriority (bool): Indicates that the supported action of the switch includes setting the 802.1q priority.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

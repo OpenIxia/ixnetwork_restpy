@@ -70,6 +70,19 @@ class CustomNetworkTopologyLinks(Base):
 	def LinkNodeSystemId(self, value):
 		self._set_attribute('linkNodeSystemId', value)
 
+	def update(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
+		"""Updates a child instance of customNetworkTopologyLinks on the server.
+
+		Args:
+			Enabled (bool): NOT DEFINED
+			LinkMetric (number): NOT DEFINED
+			LinkNodeSystemId (str): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
 		"""Adds a new customNetworkTopologyLinks node on the server and retrieves it in this instance.
 

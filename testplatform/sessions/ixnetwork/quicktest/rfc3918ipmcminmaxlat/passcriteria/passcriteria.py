@@ -309,6 +309,39 @@ class PassCriteria(Base):
 	def SeqErrorsThresholdValue(self, value):
 		self._set_attribute('seqErrorsThresholdValue', value)
 
+	def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+		"""Updates a child instance of passCriteria on the server.
+
+		Args:
+			DataErrorThresholdMode (str(average|maximum)): The data error calculated for the threshold mode.
+			DataErrorThresholdValue (number): The interger value for the threshold data error.
+			EnableDataIntegrityPassFail (bool): If true, the data integrity pass /fail criteria is set.
+			EnableFrameLossPassFail (bool): If true, the frame loss pass fail criteria is set.
+			EnableLatencyPassFail (bool): If true, enables latency at which trails pass or fail.
+			EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determines whether the trial passed or failed.
+			EnableRatePassFail (bool): If true, enables the rate of pass or failure of the trial.
+			EnableSequenceErrorsPassFail (bool): If true, the sequence errors for the pass and fail criteria is set.
+			EnableStandardDeviationPassFail (bool): If true, enables standard deviation in the pass or failure of the trial.
+			LatencyThresholdMode (str(average|maximum)): The threshold mode for the latency.
+			LatencyThresholdScale (str(ms|ns|us)): The latency threshold scale value.
+			LatencyThresholdValue (number): The latency threshold value of the test.
+			LatencyVarThresholdMode (str(average|maximum)): The latency variation threshold mode.
+			LatencyVariationThresholdScale (str(ms|ns|us)): The scale by which the latency variation threshold is measured.
+			LatencyVariationThresholdValue (number): The value by which the variation in latency threshold is measured.
+			LossThresholdMode (str(average|maximum)): The loss threshold mode.
+			LossThresholdValue (number): The threshold value by which loss can be determined.
+			PassCriteriaLoadRateMode (str(average|minimum)): The Pass Criteria per trial rate at which the DUT should be able to transmit and receive, expressed as a percentage of the maximum theoretical line speed or in terms of frames per second.
+			PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The load rate scale for the Pass Criteria per trial.
+			PassCriteriaLoadRateValue (number): The load rate value for the Pass Criteria per trial.
+			PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+			SeqErrorsThresholdMode (str(average|maximum)): The recorded sequence error in the threshold mode.
+			SeqErrorsThresholdValue (number): The threshold value of the sequence errors.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

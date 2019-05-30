@@ -204,6 +204,29 @@ class SpbTopologyRange(Base):
 	def SpSourceId(self, value):
 		self._set_attribute('spSourceId', value)
 
+	def update(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+		"""Updates a child instance of spbTopologyRange on the server.
+
+		Args:
+			AuxMcidConfigName (str): The auxiliary MCID configuration name.
+			AuxMcidSignature (str): The auxiliary MCID signature.
+			BridgePriority (number): The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
+			CistExternalRootCost (number): The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
+			CistRootIdentiifer (str): Bridge identifier of the CIST root bridge.
+			EnableVbit (bool): If true, activates the V bit.
+			Enabled (bool): If true, the topology range will be part of the simulated network.
+			LinkMetric (number): The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
+			McidConfigName (str): The MCID configuration name.
+			McidSignature (str): The MCID signature.
+			NoOfPorts (number): The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
+			PortIdentifier (number): The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
+			SpSourceId (number): The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
 		"""Adds a new spbTopologyRange node on the server and retrieves it in this instance.
 

@@ -108,6 +108,17 @@ class Parameter(Base):
 		"""
 		return self._get_attribute('name')
 
+	def update(self, CurrentValue=None):
+		"""Updates a child instance of parameter on the server.
+
+		Args:
+			CurrentValue (str): Parameter UI Display Value
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, AvailableChoices=None, CurrentValue=None, CustomDefaultValue=None, DefaultValue=None, IsReadOnly=None, MaxValue=None, MinValue=None, Name=None):
 		"""Finds and retrieves parameter data from the server.
 

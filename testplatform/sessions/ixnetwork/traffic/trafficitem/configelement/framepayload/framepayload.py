@@ -68,3 +68,16 @@ class FramePayload(Base):
 	@Type.setter
 	def Type(self, value):
 		self._set_attribute('type', value)
+
+	def update(self, CustomPattern=None, CustomRepeat=None, Type=None):
+		"""Updates a child instance of framePayload on the server.
+
+		Args:
+			CustomPattern (str): If Frame Payload type is Custom, then this attribute specifies a string in hex format.
+			CustomRepeat (bool): If true, Custom Pattern is repeated.
+			Type (str(CJPAT|CRPAT|custom|decrementByte|decrementWord|incrementByte|incrementWord|random)): The types of Frame Payload.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

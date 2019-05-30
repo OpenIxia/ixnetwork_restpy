@@ -127,6 +127,20 @@ class CfmBridge(Base):
 		"""
 		return self._get_attribute('sendCcm')
 
+	def update(self, Name=None):
+		"""Updates a child instance of cfmBridge on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, EnableOptionalTlvValidation=None, ReceiveCcm=None, SendCcm=None):
 		"""Base class infrastructure that gets a list of cfmBridge device ids encapsulated by this object.
 

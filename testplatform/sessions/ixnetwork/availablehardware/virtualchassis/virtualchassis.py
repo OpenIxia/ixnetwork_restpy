@@ -131,3 +131,17 @@ class VirtualChassis(Base):
 	@StartTxDelay.setter
 	def StartTxDelay(self, value):
 		self._set_attribute('startTxDelay', value)
+
+	def update(self, EnableLicenseCheck=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
+		"""Updates a child instance of virtualChassis on the server.
+
+		Args:
+			EnableLicenseCheck (bool): Enables license check on port connect
+			LicenseServer (str): The address of the license server
+			NtpServer (str): The address of the NTP server
+			StartTxDelay (str): The delay amount for transmit
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

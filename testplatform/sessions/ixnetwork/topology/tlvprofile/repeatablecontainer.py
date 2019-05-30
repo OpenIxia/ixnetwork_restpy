@@ -71,6 +71,18 @@ class RepeatableContainer(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
+	def update(self, IsEnabled=None, Name=None):
+		"""Updates a child instance of repeatableContainer on the server.
+
+		Args:
+			IsEnabled (bool): Enables/disables this field
+			Name (str): Name of the tlv
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, IsEnabled=None, Name=None):
 		"""Finds and retrieves repeatableContainer data from the server.
 

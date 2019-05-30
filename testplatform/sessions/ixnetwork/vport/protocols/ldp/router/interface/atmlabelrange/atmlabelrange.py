@@ -82,6 +82,20 @@ class AtmLabelRange(Base):
 	def MinVpi(self, value):
 		self._set_attribute('minVpi', value)
 
+	def update(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
+		"""Updates a child instance of atmLabelRange on the server.
+
+		Args:
+			MaxVci (number): The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
+			MaxVpi (number): The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
+			MinVci (number): The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
+			MinVpi (number): The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
 		"""Adds a new atmLabelRange node on the server and retrieves it in this instance.
 

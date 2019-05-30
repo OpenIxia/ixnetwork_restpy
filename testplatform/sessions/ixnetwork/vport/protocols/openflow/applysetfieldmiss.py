@@ -476,3 +476,50 @@ class ApplySetFieldMiss(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of applySetFieldMiss on the server.
+
+		Args:
+			ArpDestinationHardwareAddress (bool): If selected, Apply Set Field Miss for ARP Destination Hardware Address is supported.
+			ArpDestinationIpv4Address (bool): If selected, Apply Set Field Miss for ARP Destination IPv4 Address is supported.
+			ArpOpcode (bool): If selected, Apply Set Field Miss for ARP Opcode is supported.
+			ArpSourceHardwareAddress (bool): If selected, Apply Set Field Miss for ARP Source Hardware Address is supported.
+			ArpSourceIpv4Address (bool): If selected, Apply Set Field Miss for ARP Source IPv4 Address is supported.
+			EthernetDestination (bool): If selected, Apply Set Field Miss for Ethernet Destination is supported.
+			EthernetSource (bool): If selected, Apply Set Field Miss for Ethernet Source is supported.
+			EthernetType (bool): If selected, Apply Set Field Miss for Ethernet Type is supported.
+			IcmpCode (bool): If selected, Apply Set Field Miss for ICMP Code is supported.
+			IcmpType (bool): If selected, Apply Set Field Miss for ICMP Type is supported.
+			Icmpv6Code (bool): If selected, Apply Set Field Miss for ICMPv6 Code is supported.
+			Icmpv6Type (bool): If selected, Apply Set Field Miss for ICMPv6 Type is supported.
+			IpDscp (bool): If selected, Apply Set Field Miss for IP DSCP is supported.
+			IpEcn (bool): If selected, Apply Set Field Miss for IP ECN is supported.
+			IpProtocol (bool): If selected, Apply Set Field Miss for IP Protocol is supported.
+			Ipv4Destination (bool): If selected, Apply Set Field Miss for IPv4 Destination is supported.
+			Ipv4Source (bool): If selected, Apply Set Field Miss for IPv4 Source is supported.
+			Ipv6Destination (bool): If selected, Apply Set Field Miss for IPv6 Destination is supported.
+			Ipv6ExtHeader (bool): If selected, Apply Set Field Miss for IPv6 Ext Header is supported.
+			Ipv6FlowLabel (bool): If selected, Apply Set Field Miss for IPv6 Flow Label is supported.
+			Ipv6NdSll (bool): If selected, Apply Set Field Miss for IPv6 ND SLL is supported.
+			Ipv6NdTarget (bool): If selected, Apply Set Field Miss for IPv6 ND Target is supported.
+			Ipv6NdTll (bool): If selected, Apply Set Field Miss for IPv6 ND TLL is supported.
+			Ipv6Source (bool): If selected, Apply Set Field Miss for IPv6 Source is supported.
+			MplsBos (bool): If selected, Apply Set Field Miss for MPLS BoS is supported.
+			MplsLabel (bool): If selected, Apply Set Field Miss for MPLS Label is supported.
+			MplsTc (bool): If selected, Apply Set Field Miss for MPLS TC is supported.
+			PbbIsid (bool): If selected, Apply Set Field Miss for PBB ISID is supported.
+			SctpDestination (bool): If selected, Apply Set Field Miss for SCTP Destination is supported.
+			SctpSource (bool): If selected, Apply Set Field Miss for SCTP Source is supported.
+			TcpDestination (bool): If selected, Apply Set Field Miss for TCP Destination is supported.
+			TcpSource (bool): If selected, Apply Set Field Miss for TCP Source is supported.
+			TunnelId (bool): If selected, Apply Set Field Miss for Tunnel ID is supported.
+			UdpDestination (bool): If selected, Apply Set Field Miss for UDP Destination is supported.
+			UdpSource (bool): If selected, Apply Set Field Miss for UDP Source is supported.
+			VlanId (bool): If selected, Apply Set Field Miss for VLAN ID is supported.
+			VlanPriority (bool): If selected, Apply Set Field Miss for VLAN Priority is supported.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

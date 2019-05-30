@@ -444,3 +444,45 @@ class NovusHundredGigLan(Base):
 	@UseANResults.setter
 	def UseANResults(self, value):
 		self._set_attribute('useANResults', value)
+
+	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+		"""Updates a child instance of novusHundredGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			BadBlocksNumber (number): NOT DEFINED
+			EnableAutoNegotiation (bool): NOT DEFINED
+			EnablePPM (bool): If true, enables the portsppm.
+			EnableRsFec (bool): NOT DEFINED
+			EnableRsFecStats (bool): NOT DEFINED
+			EnabledFlowControl (bool): NOT DEFINED
+			FirecodeAdvertise (bool): NOT DEFINED
+			FirecodeForceOff (bool): NOT DEFINED
+			FirecodeForceOn (bool): NOT DEFINED
+			FirecodeRequest (bool): NOT DEFINED
+			FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+			ForceDisableFEC (bool): NOT DEFINED
+			GoodBlocksNumber (number): NOT DEFINED
+			IeeeL1Defaults (bool): NOT DEFINED
+			LaserOn (bool): NOT DEFINED
+			LinkTraining (bool): NOT DEFINED
+			LoopContinuously (bool): NOT DEFINED
+			LoopCountNumber (number): NOT DEFINED
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			RsFecAdvertise (bool): NOT DEFINED
+			RsFecForceOn (bool): NOT DEFINED
+			RsFecRequest (bool): NOT DEFINED
+			SendSetsMode (str(alternate|typeAOnly|typeBOnly)): NOT DEFINED
+			Speed (str(speed100g|speed10g|speed25g|speed40g|speed50g)): NOT DEFINED
+			StartErrorInsertion (bool): NOT DEFINED
+			TxIgnoreRxLinkFaults (bool): NOT DEFINED
+			TypeAOrderedSets (str(localFault|remoteFault)): NOT DEFINED
+			TypeBOrderedSets (str(localFault|remoteFault)): NOT DEFINED
+			UseANResults (bool): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

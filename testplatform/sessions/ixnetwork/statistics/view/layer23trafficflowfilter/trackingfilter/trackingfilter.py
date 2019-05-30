@@ -70,6 +70,19 @@ class TrackingFilter(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Operator=None, TrackingFilterId=None, Value=None):
+		"""Updates a child instance of trackingFilter on the server.
+
+		Args:
+			Operator (str(isAnyOf|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isInAnyRange|isNoneOf|isSmaller)): The logical operation to be performed.
+			TrackingFilterId (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+			Value (list(str)): Value of the object
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Operator=None, TrackingFilterId=None, Value=None):
 		"""Adds a new trackingFilter node on the server and retrieves it in this instance.
 

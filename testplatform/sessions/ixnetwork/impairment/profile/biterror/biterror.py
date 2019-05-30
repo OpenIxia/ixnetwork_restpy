@@ -80,3 +80,17 @@ class BitError(Base):
 	@SkipStartOctets.setter
 	def SkipStartOctets(self, value):
 		self._set_attribute('skipStartOctets', value)
+
+	def update(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
+		"""Updates a child instance of bitError on the server.
+
+		Args:
+			Enabled (bool): If true, periodically introduce bit errors.
+			LogRate (number): If logRate is n, error one out of 10^n bits.
+			SkipEndOctets (number): Number of octets to skip at the end of each packet when erroring bits.
+			SkipStartOctets (number): Number of octets to skip at the start of each packet when erroring bits.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

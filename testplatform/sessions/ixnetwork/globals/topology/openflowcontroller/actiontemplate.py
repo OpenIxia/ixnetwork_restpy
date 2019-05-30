@@ -90,6 +90,18 @@ class ActionTemplate(Base):
 	def SavedInVersion(self, value):
 		self._set_attribute('savedInVersion', value)
 
+	def update(self, Name=None, SavedInVersion=None):
+		"""Updates a child instance of actionTemplate on the server.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SavedInVersion (str): The cpf version of the session
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Name=None, SavedInVersion=None):
 		"""Adds a new actionTemplate node on the server and retrieves it in this instance.
 

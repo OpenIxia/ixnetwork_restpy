@@ -513,6 +513,56 @@ class TestConfig(Base):
 	def UsePercentOffsets(self, value):
 		self._set_attribute('usePercentOffsets', value)
 
+	def update(self, AmountOfTraffic=None, BurstSize=None, CongestNumFrames=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, Duration=None, EnableBpPassFail=None, EnableHolbPassFail=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, ForceRegenerate=None, FrameSizeMode=None, Framesize=None, FramesizeList=None, LoadRateList=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinRandomFrameSize=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RateSelect=None, ReportSequenceError=None, Resolution=None, StaggeredStart=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UsePercentOffsets=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			AmountOfTraffic (str(duration|numFrames)): The amount of traffic.
+			BurstSize (number): The number of packets that are sent in a burst.
+			CongestNumFrames (number): The number of frames that are congested.
+			CountRandomFrameSize (number): If true, frame sizes are counted at random.
+			CustomLoadUnit (str(percentMaxRate)): Specifies the custom load unit.
+			DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
+			Duration (number): sec
+			EnableBpPassFail (bool): If true, BP Pass/Fail criterion is enabled.
+			EnableHolbPassFail (bool): If true, HOLB Pass/Fail criterion is enabled.
+			EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
+			EnableOldStatsForReef (bool): If true, allows to get the old statistics for reef load module.
+			ForceRegenerate (bool): Initiates a forced regeneration.
+			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			Framesize (number): Bytes
+			FramesizeList (list(str)): List containing the frame sizes used in the test.
+			LoadRateList (str): The rate list of the load item.
+			LoadType (str(custom)): The type of the payload setting.
+			MapType (str): The POS traffic map type.
+			MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
+			MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+			MinFpsRate (number): The rate at which minimum frames are sent per second.
+			MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
+			MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+			MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
+			Numtrials (number): Defines how many times each frame size will be tested.
+			PercentMaxRate (number): The percentage of the maximum rate that is specified.
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): Sets the port delay unit in which it will be measured
+			PortDelayValue (number): Sets the port delay value
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			RateSelect (str(fpsRate|kbpsRate|percentMaxRate)): Selects the rate list.
+			ReportSequenceError (bool): Reports sequence errors in the test result.
+			Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+			StaggeredStart (bool): Starts test with a stagger.
+			StepIncrementFrameSize (number): The step to increment the frame size.
+			SupportedTrafficTypes (str): The traffic types supported.
+			Tolerance (number): The level of acceptable threshold.
+			TrafficType (str(burstyLoading|constantLoading)): The test based on the traffic type.
+			TxDelay (number): The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
+			UsePercentOffsets (bool): Uses percentage offset value.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

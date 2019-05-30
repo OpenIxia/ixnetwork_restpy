@@ -153,6 +153,27 @@ class Field(Base):
 		"""
 		return self._get_attribute('value')
 
+	def update(self, Description=None, Encoding=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, Size=None, SizeType=None):
+		"""Updates a child instance of field on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Description (str): Description of the tlv
+			Encoding (str(bool|decimal|fcid|float|hex|ipv4|ipv6|mac|string|varLenHex)): Encoding of the tlv value, any change will result in the value being reset
+			IsEditable (bool): Indicates whether this is editable or not
+			IsRepeatable (bool): Flag indicating whether this is repeatable or not
+			IsRequired (bool): Flag indicating whether this is required or not
+			Name (str): Name of the tlv
+			Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
+			SizeType (str(bit|byte)): Size type of the tlv value, any change will result in the value being reset
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Description=None, Encoding=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, Size=None, SizeType=None):
 		"""Adds a new field node on the server and retrieves it in this instance.
 

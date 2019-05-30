@@ -276,6 +276,35 @@ class Interface(Base):
 	def TxInterval(self, value):
 		self._set_attribute('txInterval', value)
 
+	def update(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			EchoConfigureSrcIp (bool): If true, allows the user to configure the source IP address of the Echo Message, using echoSrcIpv4Address or echoSrcIpv6Address.
+			EchoInterval (number): This option indicates the desired interval between BFD echo packets.
+			EchoSrcIpv4Address (str): Sets the IPv4 echo source address.
+			EchoSrcIpv6Address (str): Sets the IPv6 echo source address.
+			EchoTimeout (number): The interval, in microseconds, that the interface waits for a response to the last Echo packet sent out.
+			EchoTxInterval (number): The minimum interval, in microseconds, that the interface would like to use when transmitting BFD Echo packets.
+			EnableCtrlPlaneIndependent (bool): Set to 1 if the local system's BFD implementation is independent of the control plane.
+			EnableDemandMode (bool): Enables demand mode. 1 indicates demand mode enabled, and 0 indicates demand mode disabled.
+			Enabled (bool): Enables the use of the simulated interface.
+			FlapTxInterval (number): BFD sessions will flap every flapTxIntvs. (default = 0)
+			InterfaceId (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This is a local ID and is unique per router.
+			InterfaceIndex (number): The assigned protocol interface ID for this BFD interface.
+			InterfaceType (str): The type of interface to be selected for this BFD interface.
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)): The interfaces that are associated with the selected interface type.
+			IpDifferentiatedServiceField (number): Sets the TOS byte for IP Differentiated Service Field
+			MinRxInterval (number): This option indicates the desired minimum interval between received BFD control packets.
+			Multiplier (number): Multiplier * intv defines the timeout period. (default = 3)
+			PollInterval (number): If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
+			TxInterval (number): This option indicates the desired interval between transmitted BFD control packets.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

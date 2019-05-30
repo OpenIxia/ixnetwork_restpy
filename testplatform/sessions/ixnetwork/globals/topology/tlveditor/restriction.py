@@ -58,6 +58,18 @@ class Restriction(Base):
 	def SingleValue(self, value):
 		self._set_attribute('singleValue', value)
 
+	def update(self, Enum=None, SingleValue=None):
+		"""Updates a child instance of restriction on the server.
+
+		Args:
+			Enum (str): Internal enumeration type to be used as value options
+			SingleValue (bool): Restricts the field to single value pattern without overlays
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enum=None, SingleValue=None):
 		"""Adds a new restriction node on the server and retrieves it in this instance.
 

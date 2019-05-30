@@ -70,6 +70,19 @@ class SpbOutsideLinks(Base):
 	def LinkedRid(self, value):
 		self._set_attribute('linkedRid', value)
 
+	def update(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
+		"""Updates a child instance of spbOutsideLinks on the server.
+
+		Args:
+			ConnectionCol (number): Signifies the connection between the columns.
+			ConnectionRow (number): Signifies the connection between the rows.
+			LinkedRid (str): Signifies the link between R identifier.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
 		"""Adds a new spbOutsideLinks node on the server and retrieves it in this instance.
 

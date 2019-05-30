@@ -301,6 +301,21 @@ class PceBasicSrSyncLspUpdateParams(Base):
 		"""
 		return self._get_attribute('ttl')
 
+	def update(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None):
+		"""Updates a child instance of pceBasicSrSyncLspUpdateParams on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+			NumberOfMetricSubObjects (number): Value that indicates the number of Metric Objects to be configured.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None):
 		"""Finds and retrieves pceBasicSrSyncLspUpdateParams data from the server.
 

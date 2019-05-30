@@ -154,6 +154,23 @@ class Lagportstaticlag(Base):
 		"""
 		return self._get_attribute('status')
 
+	def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+		"""Updates a child instance of lagportstaticlag on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
+			Multiplier (number): Number of layer instances per parent instance (multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
 		"""Adds a new lagportstaticlag node on the server and retrieves it in this instance.
 

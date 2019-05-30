@@ -94,6 +94,21 @@ class TargetPeer(Base):
 	def Md5Key(self, value):
 		self._set_attribute('md5Key', value)
 
+	def update(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+		"""Updates a child instance of targetPeer on the server.
+
+		Args:
+			Authentication (str(null|md5)): The cryptographic authentication type used by the targeted peer; one of: NULL (no authentication) or MD5. When MD5 is used, an md5Key must be configured by the user.
+			Enabled (bool): Enables the use of this targeted peer.
+			InitiateTargetedHello (bool): If true, the target peer is set a hello message exclusively.
+			IpAddress (str): The IP address of the targeted peer.
+			Md5Key (str): Used with MD5 authentication. A user-defined string; maximum = 255 characters.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
 		"""Adds a new targetPeer node on the server and retrieves it in this instance.
 

@@ -44,3 +44,14 @@ class UmhTarget(Base):
 	@TargetList.setter
 	def TargetList(self, value):
 		self._set_attribute('targetList', value)
+
+	def update(self, TargetList=None):
+		"""Updates a child instance of umhTarget on the server.
+
+		Args:
+			TargetList (list(dict(arg1:str[asNumber2|as|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a route target to be exported while advertising UMH routes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

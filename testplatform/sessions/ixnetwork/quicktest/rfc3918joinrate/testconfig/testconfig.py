@@ -1209,6 +1209,114 @@ class TestConfig(Base):
 	def TxDelay(self, value):
 		self._set_attribute('txDelay', value)
 
+	def update(self, ApplyMode=None, AssignGroupType=None, AvgPassFailMode=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CountRandomFrameSize=None, CustomLoadUnit=None, DelayAfterTransmit=None, DelayMode=None, Duration=None, EnableDataIntegrity=None, EnableDropLink=None, EnableGroupJoinRatePassFail=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastLearning=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, FirstMulticastDestMACAddress=None, FloodedFramesEnabled=None, FloodedFramesProcessing=None, FloodedFramesTemp=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, Gap=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, GroupJoinRatePassFailValue=None, GroupJoinRateValidationFpsRate=None, GroupJoinRateValidationRate=None, GroupJoinRateValidationRateUnit=None, GroupsDistribution=None, GroupsList=None, GroupsMode=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncMulticastDestMACAddress=None, IncPortMACAddress=None, InitialBinaryLoadIntegerValues=None, InitialRate=None, InitialStepJoinRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadInitialRate=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxBinaryLoadIntegerValue=None, MaxIncrementFrameSize=None, MaxIncrementGroups=None, MaxRandomFrameSize=None, MaxStepJoinRate=None, MinBinaryLoadIntegerValues=None, MinIncrementFrameSize=None, MinIncrementGroups=None, MinPassFailMode=None, MinRandomFrameSize=None, MixedClassMulticast=None, MldVersion=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortDownTime=None, PortMACAddress=None, ProtocolItem=None, ReportSequenceError=None, RouterAlert=None, ShowDetailedBinaryResults=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementGroups=None, StepLoadUnit=None, StepStepJoinRate=None, StepTolerance=None, SupportedTrafficTypes=None, TestTrafficType=None, TxDelay=None):
+		"""Updates a child instance of testConfig on the server.
+
+		Args:
+			ApplyMode (str): NOT DEFINED
+			AssignGroupType (str(accumulated|distributed)): NOT DEFINED
+			AvgPassFailMode (bool): NOT DEFINED
+			BidirectionalOptionEnabled (bool): NOT DEFINED
+			BinaryBackoff (number): NOT DEFINED
+			BinaryFrameLossUnit (str(%)): NOT DEFINED
+			BinaryLoadUnit (str(fpsRate|percentMaxRate)): NOT DEFINED
+			BinaryResolution (number): NOT DEFINED
+			BinarySearchType (str(linear)): NOT DEFINED
+			BinaryTolerance (number): NOT DEFINED
+			BurstSize (number): NOT DEFINED
+			CalculateJitter (bool): NOT DEFINED
+			CalculateLatency (bool): NOT DEFINED
+			CountRandomFrameSize (number): NOT DEFINED
+			CustomLoadUnit (str(fpsRate|percentMaxRate)): NOT DEFINED
+			DelayAfterTransmit (number): NOT DEFINED
+			DelayMode (str(average|min)): NOT DEFINED
+			Duration (number): NOT DEFINED
+			EnableDataIntegrity (bool): NOT DEFINED
+			EnableDropLink (bool): NOT DEFINED
+			EnableGroupJoinRatePassFail (bool): NOT DEFINED
+			EnableLeaveGroup (bool): NOT DEFINED
+			EnableMinFrameSize (bool): NOT DEFINED
+			EnableMulticastLearning (bool): NOT DEFINED
+			EnableMulticastQuerier (bool): NOT DEFINED
+			EnableOldStatsForReef (bool): NOT DEFINED
+			FirstMulticastDestMACAddress (str): NOT DEFINED
+			FloodedFramesEnabled (bool): NOT DEFINED
+			FloodedFramesProcessing (bool): NOT DEFINED
+			FloodedFramesTemp (str): NOT DEFINED
+			ForceRegenerate (bool): NOT DEFINED
+			FrameSizeMode (str(custom|customlist|increment|random)): NOT DEFINED
+			FramesizeList (list(str)): NOT DEFINED
+			Gap (number): NOT DEFINED
+			GroupCapacityGreaterThan (number): NOT DEFINED
+			GroupDistributionType (str(acrossHosts|acrossPorts)): NOT DEFINED
+			GroupJoinRatePassFailValue (number): NOT DEFINED
+			GroupJoinRateValidationFpsRate (str): NOT DEFINED
+			GroupJoinRateValidationRate (number): NOT DEFINED
+			GroupJoinRateValidationRateUnit (str(fpsRate|percentMaxRate)): NOT DEFINED
+			GroupsDistribution (str(accumulated|distributedPerHost|distributedPerPort)): NOT DEFINED
+			GroupsList (list(str)): NOT DEFINED
+			GroupsMode (str(custom|increment|unchanged)): NOT DEFINED
+			IgmpV1Timeout (number): NOT DEFINED
+			IgmpVersion (number): NOT DEFINED
+			Igmpv3MessageType (str(exclude|include)): NOT DEFINED
+			Igmpv3SourceAddrList (str): NOT DEFINED
+			IncMulticastDestMACAddress (str): NOT DEFINED
+			IncPortMACAddress (str): NOT DEFINED
+			InitialBinaryLoadIntegerValues (number): NOT DEFINED
+			InitialRate (str): NOT DEFINED
+			InitialStepJoinRate (number): NOT DEFINED
+			Ipv4Address (str): NOT DEFINED
+			Ipv6Address (str): NOT DEFINED
+			IsIPv6 (str): NOT DEFINED
+			IsMulticastAutomaticFrameData (str): NOT DEFINED
+			JoinLeaveMultiplier (number): NOT DEFINED
+			JoinLeaveRate (number): NOT DEFINED
+			JoinLeaveWaitTime (number): NOT DEFINED
+			LatencyBins (str): NOT DEFINED
+			LatencyBinsEnabled (bool): NOT DEFINED
+			LatencyType (str(cutThrough|storeForward)): NOT DEFINED
+			LoadInitialRate (number): NOT DEFINED
+			LoadRateList (str): NOT DEFINED
+			LoadType (str(binary|custom|step|unchanged)): NOT DEFINED
+			LoadUnit (str(fpsRate|percentMaxRate)): NOT DEFINED
+			MapType (str): NOT DEFINED
+			MaxBinaryLoadIntegerValue (number): NOT DEFINED
+			MaxIncrementFrameSize (number): NOT DEFINED
+			MaxIncrementGroups (number): NOT DEFINED
+			MaxRandomFrameSize (number): NOT DEFINED
+			MaxStepJoinRate (number): NOT DEFINED
+			MinBinaryLoadIntegerValues (number): NOT DEFINED
+			MinIncrementFrameSize (number): NOT DEFINED
+			MinIncrementGroups (number): NOT DEFINED
+			MinPassFailMode (bool): NOT DEFINED
+			MinRandomFrameSize (number): NOT DEFINED
+			MixedClassMulticast (str): NOT DEFINED
+			MldVersion (number): NOT DEFINED
+			Numtrials (number): NOT DEFINED
+			PortDelayEnabled (bool): NOT DEFINED
+			PortDelayUnit (str(bytes|nanoseconds)): NOT DEFINED
+			PortDelayValue (number): NOT DEFINED
+			PortDownTime (number): NOT DEFINED
+			PortMACAddress (str): NOT DEFINED
+			ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+			ReportSequenceError (bool): NOT DEFINED
+			RouterAlert (bool): NOT DEFINED
+			ShowDetailedBinaryResults (bool): NOT DEFINED
+			StepFrameLossUnit (str(%)): NOT DEFINED
+			StepIncrementFrameSize (number): NOT DEFINED
+			StepIncrementGroups (number): NOT DEFINED
+			StepLoadUnit (str(fpsRate|percentMaxRate)): NOT DEFINED
+			StepStepJoinRate (number): NOT DEFINED
+			StepTolerance (number): NOT DEFINED
+			SupportedTrafficTypes (str): NOT DEFINED
+			TestTrafficType (str): NOT DEFINED
+			TxDelay (number): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def Apply(self):
 		"""Executes the apply operation on the server.
 

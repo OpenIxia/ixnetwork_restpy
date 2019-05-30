@@ -305,6 +305,23 @@ class OspfPseudoRouter(Base):
 		"""
 		return self._get_attribute('vFlag')
 
+	def update(self, EnableSegmentRouting=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None):
+		"""Updates a child instance of ospfPseudoRouter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			EnableSegmentRouting (bool): Enable Segment Routing
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			SRAlgorithmCount (number): SR Algorithm Count
+			SrgbRangeCount (number): SRGB Range Count
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, Count=None, DescriptiveName=None, EnableSegmentRouting=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None):
 		"""Finds and retrieves ospfPseudoRouter data from the server.
 

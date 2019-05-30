@@ -94,6 +94,21 @@ class NetTopologyHubNSpoke(Base):
 	def NumberOfSecondLevelSpokes(self, value):
 		self._set_attribute('numberOfSecondLevelSpokes', value)
 
+	def update(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+		"""Updates a child instance of netTopologyHubNSpoke on the server.
+
+		Args:
+			EnableLevel2Spokes (bool): Enable Level 2 Spokes
+			IncludeEntryPoint (bool): if true, entry node belongs to ring topology, otherwise it is outside of ring
+			LinkMultiplier (number): number of links between two nodes
+			NumberOfFirstLevelSpokes (number): Number of First Level Spokes
+			NumberOfSecondLevelSpokes (number): Number of Second Level Spokes
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
 		"""Adds a new netTopologyHubNSpoke node on the server and retrieves it in this instance.
 

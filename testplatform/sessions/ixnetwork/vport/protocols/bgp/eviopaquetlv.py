@@ -70,6 +70,19 @@ class EviOpaqueTlv(Base):
 	def Value(self, value):
 		self._set_attribute('value', value)
 
+	def update(self, Length=None, Type=None, Value=None):
+		"""Updates a child instance of eviOpaqueTlv on the server.
+
+		Args:
+			Length (number): The length of the TLV.
+			Type (number): The type of TLV.
+			Value (str): The value of the TLV.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Length=None, Type=None, Value=None):
 		"""Adds a new eviOpaqueTlv node on the server and retrieves it in this instance.
 

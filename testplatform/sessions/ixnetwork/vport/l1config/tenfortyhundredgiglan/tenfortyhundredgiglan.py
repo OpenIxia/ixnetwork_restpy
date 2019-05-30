@@ -336,3 +336,36 @@ class TenFortyHundredGigLan(Base):
 	@TypeBOrderedSets.setter
 	def TypeBOrderedSets(self, value):
 		self._set_attribute('typeBOrderedSets', value)
+
+	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
+		"""Updates a child instance of tenFortyHundredGigLan on the server.
+
+		Args:
+			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
+			BadBlocksNumber (number): NOT DEFINED
+			EnableAutoNegotiation (bool): NOT DEFINED
+			EnablePPM (bool): If true, enables the portsppm.
+			EnableRsFec (bool): NOT DEFINED
+			EnableRsFecStats (bool): NOT DEFINED
+			EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+			FlowControlDirectedAddress (str): NOT DEFINED
+			GoodBlocksNumber (number): NOT DEFINED
+			IeeeL1Defaults (bool): NOT DEFINED
+			LaserOn (bool): NOT DEFINED
+			LinkTraining (bool): NOT DEFINED
+			LoopContinuously (bool): NOT DEFINED
+			LoopCountNumber (number): NOT DEFINED
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			LoopbackMode (str(internalLoopback|lineLoopback|none)): NOT DEFINED
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+			SendSetsMode (str(alternate|typeAOnly|typeBOnly)): NOT DEFINED
+			Speed (str(speed100g|speed10g|speed25g|speed40g|speed50g)): The speed of the lan
+			StartErrorInsertion (bool): NOT DEFINED
+			TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+			TypeAOrderedSets (str(localFault|remoteFault)): NOT DEFINED
+			TypeBOrderedSets (str(localFault|remoteFault)): NOT DEFINED
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

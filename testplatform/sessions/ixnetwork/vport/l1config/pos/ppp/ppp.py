@@ -329,3 +329,37 @@ class Ppp(Base):
 	@UseMagicNumber.setter
 	def UseMagicNumber(self, value):
 		self._set_attribute('useMagicNumber', value)
+
+	def update(self, ConfigurationRetries=None, EnableAccmNegotiation=None, EnableIpV4=None, EnableIpV6=None, EnableLqm=None, EnableMpls=None, EnableOsi=None, Enabled=None, LocalIpAddress=None, LocalIpV6IdType=None, LocalIpV6Iid=None, LocalIpV6MacBasedIid=None, LocalIpV6NegotiationMode=None, LqmReportInterval=None, PeerIpV6IdType=None, PeerIpV6Iid=None, PeerIpV6MacBasedIid=None, PeerIpV6NegotiationMode=None, RetryTimeout=None, RxAlignment=None, RxMaxReceiveUnit=None, TxAlignment=None, TxMaxReceiveUnit=None, UseMagicNumber=None):
+		"""Updates a child instance of ppp on the server.
+
+		Args:
+			ConfigurationRetries (number): The number of additional PPP configuration requests to send before beginning the termination process (if the peer is not properly acknowledging them). The default is 9 requests.
+			EnableAccmNegotiation (bool): Enables negotiation of Asynchronous Control Character Mask (ACCM).
+			EnableIpV4 (bool): Enables the IPv4 Network Control Protocol (IPCP).
+			EnableIpV6 (bool): Enables the IPv6 Network Control Protocol (IPCP).
+			EnableLqm (bool): Enables Link Quality Monitoring (LQM) on the link.
+			EnableMpls (bool): Enables MPLS on the link.
+			EnableOsi (bool): Enables the Open System Interconnection (OSI) Network Layer Control Protocol (OSINLCP).
+			Enabled (bool): If true, enables PPP for the POS port.
+			LocalIpAddress (str): The local port's requested IPv4 address. This address is sent by the local peer to the remote peer, as a Configuration Option in an IPCP Configuration Request packet. The default is 0.0.0.1.
+			LocalIpV6IdType (str(ipV6|lastNegotiated|macBased|random)): The type of Interface Identifier (IID). It is a Configuration Options sent in the Configuration Request packet. A globally unique, non-zero Interface Identifier is preferred.
+			LocalIpV6Iid (str): (a 64-bit/8-octet value) The IPv6 Interface Identifier. It MUST be unique on the link.
+			LocalIpV6MacBasedIid (str): (a 48-bit/6-octet value) The MAC Interface Identifier. It MUST be unique on the link.
+			LocalIpV6NegotiationMode (str(localMay|localMust|peerMust)): Before the negotiation of the Interface Identifier (IID), the node chooses a tentative Interface Identifier.
+			LqmReportInterval (number): The number of seconds between Link Quality Monitoring (LQM) reports.
+			PeerIpV6IdType (str(ipV6|lastNegotiated|macBased|random)): The type of Interface Identifier (IID). It is a Configuration Options sent in the Configuration Request packet. A globally unique, non-zero Interface Identifier is preferred.
+			PeerIpV6Iid (str): (a 64-bit/8-octet value) The IPv6 Interface Identifier. It MUST be unique on the link.
+			PeerIpV6MacBasedIid (str): (a 48-bit/6-octet value) The MAC Interface Identifier. It MUST be unique on the link.
+			PeerIpV6NegotiationMode (str(localMust|peerMay|peerMust)): Before the negotiation of the Interface Identifier (IID), the node chooses a tentative Interface Identifier.
+			RetryTimeout (number): The time, in seconds, between retransmissions of successive configuration or termination requests. The default is 8 seconds.
+			RxAlignment (number): The byte alignment desired for Receive, in bytes. The default is 0 bytes.
+			RxMaxReceiveUnit (number): The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
+			TxAlignment (number): The byte alignment desired for Transmit, in bytes. The default is 0 bytes.
+			TxMaxReceiveUnit (number): The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
+			UseMagicNumber (bool): If enabled, magic number handling is enabled for negotiation and usage. The magic number is used primarily to detect looped connections.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

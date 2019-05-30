@@ -84,6 +84,19 @@ class Interface(Base):
 	def Interfaces(self, value):
 		self._set_attribute('interfaces', value)
 
+	def update(self, DutMacAddress=None, Enabled=None, Interfaces=None):
+		"""Updates a child instance of interface on the server.
+
+		Args:
+			DutMacAddress (str): This signifies the MAC address of the DUT.
+			Enabled (bool): This signifies the enablement of the use of this interface for the simulated router.
+			Interfaces (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): This signifies the Interface that has been assigned for this range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DutMacAddress=None, Enabled=None, Interfaces=None):
 		"""Adds a new interface node on the server and retrieves it in this instance.
 

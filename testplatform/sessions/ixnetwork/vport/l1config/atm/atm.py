@@ -200,3 +200,27 @@ class Atm(Base):
 	@TransmitClocking.setter
 	def TransmitClocking(self, value):
 		self._set_attribute('transmitClocking', value)
+
+	def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, TransmitClocking=None):
+		"""Updates a child instance of atm on the server.
+
+		Args:
+			C2Expected (number): The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
+			C2Tx (number): The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
+			CellHeader (str(nni|uni)): user/network-to-network interface
+			CosetActive (bool): CRC + Exclusive OR Operation
+			CrcSize (str(crc16|crc32)): Choose the type of Cyclic Redundancy Check to be used.
+			DataScrambling (bool): If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
+			EnablePPM (bool): If true, enables the portsppm.
+			FillerCell (str(idle|unassigned)): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
+			InterfaceType (str(oc12|oc3|stm1|stm4)): The interface type for ATM.
+			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+			PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
+			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+			ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
+			TransmitClocking (str(external|internal|recovered)): The options for the transmit clock.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

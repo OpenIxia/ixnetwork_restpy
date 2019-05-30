@@ -166,6 +166,27 @@ class DceMulticastIpv6GroupRange(Base):
 	def VlanId(self, value):
 		self._set_attribute('vlanId', value)
 
+	def update(self, Enabled=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastIpv6Count=None, MulticastIpv6Step=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, Topology=None, UnicastSourcesPerMulticastIpv6=None, VlanId=None):
+		"""Updates a child instance of dceMulticastIpv6GroupRange on the server.
+
+		Args:
+			Enabled (bool): If true, enables the Multicast IPv6 Group Range for a particular DCE ISIS route range. (default = false)
+			InterGroupUnicastIpv6Increment (str): The IPv6 address format of the Unicast IPv6 between one or more node groups. (default = 0:0)
+			IntraGroupUnicastIpv6Increment (str): The IPv6 address format of the Unicast IPv6 within a node group.
+			MulticastIpv6Count (number): The number of Multicast IPv6 addresses.
+			MulticastIpv6Step (str): The incremental value of Multicast IPv6 address.
+			SourceGroupMapping (str(fullyMeshed|oneToOne|manualMapping)): The Source Group mapping type.
+			StartMulticastIpv6 (str): The IP address format of the starting Multicast IPv6 address.
+			StartUnicastSourceIpv6 (str): The IPv6 address format of the starting Unicast Source IPv6.
+			Topology (number): The topology identifier to which the corresponding IPv6 belongs.
+			UnicastSourcesPerMulticastIpv6 (number): The number of Unicast Source for each Multicast IPv6 address.
+			VlanId (number): The VLAN ID of the enabled Multicast IPv6 Group Range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, Enabled=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastIpv6Count=None, MulticastIpv6Step=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, Topology=None, UnicastSourcesPerMulticastIpv6=None, VlanId=None):
 		"""Adds a new dceMulticastIpv6GroupRange node on the server and retrieves it in this instance.
 

@@ -411,6 +411,34 @@ class Field(Base):
 	def ValueType(self, value):
 		self._set_attribute('valueType', value)
 
+	def update(self, ActiveFieldChoice=None, Auto=None, CountValue=None, FieldValue=None, FixedBits=None, FullMesh=None, MaxValue=None, MinValue=None, OnTheFlyMask=None, OptionalEnabled=None, RandomMask=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, TrackingEnabled=None, ValueList=None, ValueType=None):
+		"""Updates a child instance of field on the server.
+
+		Args:
+			ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
+			Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
+			CountValue (str): It is used to get the count value of the field.
+			FieldValue (str): An alphanumeric string that returns the value of the field.
+			FixedBits (str): Sets all the fields to a constant specified size.
+			FullMesh (bool): If true, Full Mesh is enabled.
+			MaxValue (str): 
+			MinValue (str): 
+			OnTheFlyMask (str): 
+			OptionalEnabled (bool): If true, the optional field can accept values.
+			RandomMask (str): Select to use random mask bit values.
+			Seed (str): Select to use seed.
+			SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+			StartValue (str): Specifies the initial value of increment or decrement.
+			StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
+			TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
+			ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+			ValueType (str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)): It is used to select a particular value type.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
 		"""Finds and retrieves field data from the server.
 

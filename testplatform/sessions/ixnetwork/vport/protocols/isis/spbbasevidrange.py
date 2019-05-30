@@ -132,6 +132,23 @@ class SpbBaseVidRange(Base):
 	def EnableUseFlagBit(self, value):
 		self._set_attribute('enableUseFlagBit', value)
 
+	def update(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
+		"""Updates a child instance of spbBaseVidRange on the server.
+
+		Args:
+			BMacAddress (str): The B-MAC address. The default value is the System ID of the router.
+			BVlanPriority (number): The user priority of the Base VLAN tag.
+			BVlanTpId (number): The tag priority identifier for base VLAN.
+			BaseVid (number): The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
+			EctAlgorithmType (number): The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
+			EnableAutoBmacEnabled (bool): If true, enables auto base MAC address.
+			EnableUseFlagBit (bool): If set to true, allows to use flag bit.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
 		"""Adds a new spbBaseVidRange node on the server and retrieves it in this instance.
 

@@ -102,6 +102,19 @@ class DrillDown(Base):
 	def TargetRowIndex(self, value):
 		self._set_attribute('targetRowIndex', value)
 
+	def update(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
+		"""Updates a child instance of drillDown on the server.
+
+		Args:
+			TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
+			TargetRowFilter (str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+			TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
 		"""Adds a new drillDown node on the server and retrieves it in this instance.
 

@@ -56,3 +56,15 @@ class TableModificationTriggerAttributes(Base):
 	@Config.setter
 	def Config(self, value):
 		self._set_attribute('config', value)
+
+	def update(self, AllTables=None, Config=None):
+		"""Updates a child instance of tableModificationTriggerAttributes on the server.
+
+		Args:
+			AllTables (bool): To apply the change to all tables.
+			Config (number): 2.Type the value of the Config.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())

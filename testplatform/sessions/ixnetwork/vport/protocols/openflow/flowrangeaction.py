@@ -238,6 +238,33 @@ class FlowRangeAction(Base):
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
 
+	def update(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of flowRangeAction on the server.
+
+		Args:
+			EthDestination (str): Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
+			EthSource (str): Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
+			IpDscp (number): Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
+			Ipv4Destination (str): Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
+			Ipv4Source (str): Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
+			MaxByteLength (number): Indicates the maximum length in bytes.
+			OutputPort (number): Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
+			QueueId (number): Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
+			TransportDestination (number): Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
+			TransportSource (number): Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
+			TypeOfAction (str(none|output|enqueue|setVlanId|setVlanPriority|stripVlanHeader|setEthernetSrc|setEthernetDst|setIpv4TosBits|setIpv4SrcAddress|setIpv4DstAddress|setTransportSource|setTransportDestination|setVendorAction)): Indicates the action type associated with this Flow Range.
+			TypeOfOutPort (str(ofppManual|ofppAll|ofppController|ofppInPort|ofppLocal|ofppNormal|ofppFlood)): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
+			VendorData (str): Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+			VendorDataLength (number): Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+			VendorId (number): Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
+			VlanId (number): Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
+			VlanPriority (number): Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
 		"""Adds a new flowRangeAction node on the server and retrieves it in this instance.
 

@@ -64,6 +64,20 @@ class VpnParameter(Base):
 	def UseVpnParameters(self, value):
 		self._set_attribute('useVpnParameters', value)
 
+	def update(self, UseVpnParameters=None):
+		"""Updates a child instance of vpnParameter on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, UseVpnParameters=None):
 		"""Adds a new vpnParameter node on the server and retrieves it in this instance.
 

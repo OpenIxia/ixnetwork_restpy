@@ -29,12 +29,13 @@ class StatViewAssistant(object):
             view_names.append(view.Caption)
         return view_names
 
-    def __init__(self, IxNetwork, ViewName, Timeout=180):
+    def __init__(self, IxNetwork, ViewName, Timeout=180, LocalCsvStorage=None):
         """
         Args:
             IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
             ViewName (str): The name of a statistics view, supports regex
             Timeoout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
+            LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. The path must exist and will not be created.
         """
         assert(isinstance(IxNetwork, Ixnetwork))
         self._IxNetwork = IxNetwork
@@ -43,6 +44,7 @@ class StatViewAssistant(object):
         self._Statistics = IxNetwork.Statistics
         self._View = None
         self._Timeout = Timeout
+        self._LocalCsvStorage = LocalCsvStorage
         self.ClearRowFilters()
         self._is_view_ready
 
@@ -55,7 +57,7 @@ class StatViewAssistant(object):
         self._Statistics.CsvSnapshot.CsvName = 'ixnetwork.restpy.%s' % csv_name
         self._Statistics.CsvSnapshot.Views = self._View
         self._Statistics.CsvSnapshot.TakeCsvSnapshot()
-        return self._IxNetwork._connection._get_file(self._IxNetwork.href, '%s.csv' % self._Statistics.CsvSnapshot.CsvName)
+        return self._IxNetwork._connection._get_file(self._IxNetwork.href, '%s.csv' % self._Statistics.CsvSnapshot.CsvName, local_directory=self._LocalCsvStorage)
 
     @property
     def _is_view_ready(self):
@@ -185,23 +187,31 @@ class StatViewAssistant(object):
         else:
             return False
 
-    def DrillDownOptions(self):
+    def DrillDownOptions(self, TargetIndex=0):
         """Use one of the following available drill down options as the input to the DrillDown method
         
+        Args:
+            TargetIndex (int): in order to return drill down options the target row index must be specified
+
         Returns:
             list(str): A list of available drill down options
         """
-        drill_down = self._View.Drilldown.Find()
+        drill_down = self._View.DrillDown.find()
+        drill_down.TargetRowIndex = TargetIndex
         return drill_down.AvailableDrillDownOptions
 
-    def TargetRowFilters(self):
+    def TargetRowFilters(self, TargetIndex=0):
         """Use one of the following available target row filters as the input to the DrillDown method
         
+        Args:
+            TargetIndex (int): in order to return drill down options the target row index must be specified
+            
         Returns:
             list(str): A list of available target row filters
         """
-        drill_down = self._View.Drilldown.Find()
-        return drill_down.TargetRowFilters
+        drill_down = self._View.DrillDown.find()
+        drill_down.TargetRowIndex = TargetIndex
+        return drill_down.AvailableTargetRowFilters.find()
 
     def Drilldown(self, TargetRowIndex, DrillDownOption, TargetRowFilter):
         """Drilldown on an existing view to get a new StatViewAssistant
@@ -214,12 +224,12 @@ class StatViewAssistant(object):
         Returns:
             obj(ixnetwork_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
         """
-        drill_down = self._View.Drilldown.Find()
+        drill_down = self._View.DrillDown.find()
         drill_down.TargetRowIndex = TargetRowIndex
         drill_down.TargetDrillDownOption = DrillDownOption
         drill_down.TargetRowFilter = TargetRowFilter
         drill_down.DoDrillDown()
-        return StatViewAssistant('User Defined Statistics')
+        return StatViewAssistant(self._IxNetwork, 'User Defined Statistics')
 
     def __str__(self):
         """Return a string with all the rows in the current view

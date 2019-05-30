@@ -105,6 +105,20 @@ class IxVmCard(Base):
 	def ManagementIp(self, value):
 		self._set_attribute('managementIp', value)
 
+	def update(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
+		"""Updates a child instance of ixVmCard on the server.
+
+		Args:
+			CardId (str): Represents slot on the chassis
+			CardName (str): Represents the card name
+			KeepAliveTimeout (number): Represents the keepalive timeout
+			ManagementIp (str): Represents the management Ip
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
 		"""Adds a new ixVmCard node on the server and retrieves it in this instance.
 

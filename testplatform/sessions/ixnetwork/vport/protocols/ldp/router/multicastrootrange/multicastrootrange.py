@@ -131,6 +131,21 @@ class MulticastRootRange(Base):
 	def RootAddressCount(self, value):
 		self._set_attribute('rootAddressCount', value)
 
+	def update(self, ContinuousIncrOpaqueValuesAcrossRoot=None, LspCount=None, RootAddrStep=None, RootAddress=None, RootAddressCount=None):
+		"""Updates a child instance of multicastRootRange on the server.
+
+		Args:
+			ContinuousIncrOpaqueValuesAcrossRoot (bool): Signifies the continuous incremented opaque values across root.
+			LspCount (number): Signifies the count of LSP.
+			RootAddrStep (str): The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
+			RootAddress (str): The root address of the multicast LSP.
+			RootAddressCount (number): The root address count for this Multicast FEC range.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, ContinuousIncrOpaqueValuesAcrossRoot=None, LspCount=None, RootAddrStep=None, RootAddress=None, RootAddressCount=None):
 		"""Adds a new multicastRootRange node on the server and retrieves it in this instance.
 

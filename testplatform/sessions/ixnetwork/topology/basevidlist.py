@@ -170,6 +170,21 @@ class BaseVidList(Base):
 		"""
 		return self._get_attribute('useFlagBit')
 
+	def update(self, IsidCount=None, Name=None):
+		"""Updates a child instance of baseVidList on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			IsidCount (number): ISID Count(multiplier)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, BaseVid=None, BaseVlanPriority=None, Bmac=None, BmacSameAsSystemId=None, BvlanTpid=None, EctAlgorithm=None, TopologyId=None, UseFlagBit=None):
 		"""Base class infrastructure that gets a list of baseVidList device ids encapsulated by this object.
 

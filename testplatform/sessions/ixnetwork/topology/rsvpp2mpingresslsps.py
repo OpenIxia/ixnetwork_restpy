@@ -632,6 +632,26 @@ class RsvpP2mpIngressLsps(Base):
 		"""
 		return self._get_attribute('usingHeadendIp')
 
+	def update(self, DelayLspSwitchOver=None, IngressP2mpSubLspRanges=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfRroSubObjects=None, TypeP2mpId=None):
+		"""Updates a child instance of rsvpP2mpIngressLsps on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			DelayLspSwitchOver (bool): Delay LSP switch over
+			IngressP2mpSubLspRanges (number): Number of P2MP Ingress Sub LSPs configured per RSVP-TE P2MP Ingress LSP
+			LspSwitchOverDelayTime (number): LSP Switch Over Delay timer (sec)
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfDetourSubObjects (number): Number Of Detour Sub-Objects
+			NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+			TypeP2mpId (str(iP|p2MPId)): P2MP ID Type
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def get_device_ids(self, PortNames=None, Active=None, AutoGenerateSessionName=None, BackupLspId=None, BandwidthProtectionDesired=None, EnableFastReroute=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeConnectedIpOnTop=None, IncludeHeadIpAtBottom=None, InsertIPv6ExplicitNull=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspId=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, P2mpIdAsNumber=None, P2mpIdIp=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIpv4=None, SourceIpv6=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
 		"""Base class infrastructure that gets a list of rsvpP2mpIngressLsps device ids encapsulated by this object.
 

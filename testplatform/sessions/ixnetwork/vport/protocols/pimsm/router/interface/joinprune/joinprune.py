@@ -288,6 +288,36 @@ class JoinPrune(Base):
 	def SptSwitchoverInterval(self, value):
 		self._set_attribute('sptSwitchoverInterval', value)
 
+	def update(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+		"""Updates a child instance of joinPrune on the server.
+
+		Args:
+			DiscardRegisterStates (bool): If checked, the Learned Join States sent by the RP (DUT) in response to this specific Register Message will be discarded - and will not be displayed in the table of the Register Range window.
+			Enabled (bool): Enables the use of this join/prune.
+			EnabledDataMdt (bool): If enabled, pimsmLearnedDataMdt will be available. (default = disabled)
+			FlapEnabled (bool): Enables emulated flapping of this multicast group range. NOTE: Flapping is not supported for the Switchover (*, G) -> (S, G) range type.
+			FlapInterval (number): Defines the join/prune flapping interval.
+			GroupAddress (str): An IPv4 or IPv6 address used with the group mask to create a range of multicast addresses.
+			GroupCount (number): The number of multicast group addresses to be included in the multicast group range. The maximum number of valid possible addresses depends on the values for the group address and the group mask width.
+			GroupMappingMode (str(fullyMeshed|oneToOne)): Sets the type of mapping that occurs when routes are advertised. This only applies for (S, G) and switchover types for MGR and is meaningful for RR.
+			GroupMaskWidth (number): The number of bits in the mask applied to the group address. (The masked bits in the group address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type.
+			GroupRange (str(rp|g|sg|sptSwitchOver|registerTriggeredSg)): The multicast group range type.
+			NumRegToReceivePerSg (number): If rangeType is set to pimsmJoinsPrunesTypeRegisterTriggeredSG, then this is the count of register messages received that will trigger transmission of a (S,G) message. (default = 10)
+			PackGroupsEnabled (bool): If enabled, multiple groups can be included within a single packet.
+			PruneSourceAddress (str): ONLY used for (*,G) Type to send (S,G,rpt) Prune Messages. (Multicast addresses are invalid.)
+			PruneSourceCount (number): The number of prune source addresses to be included. The maximum number of valid possible addresses depends on the values for the source address and the source mask width. The default value is 0. ONLY used for (*,G) type to send (S,G,rpt) prune messages.
+			PruneSourceMaskWidth (number): The number of bits in the mask applied to the prune source address. (The masked bits in the prune source address form the address prefix.)
+			RpAddress (str): The IP address of the Rendezvous Point (RP) router.
+			SourceAddress (str): The Multicast Source Address. Used for (S,G) Type and (S,G, rpt) only. (Multicast addresses are invalid.)
+			SourceCount (number): The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values for the source address and the source mask width.
+			SourceMaskWidth (number): The number of bits in the mask applied to the source address. (The masked bits in the source address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type. Used for (S,G) Type and (S,G, rpt) only.
+			SptSwitchoverInterval (number): The time interval (in seconds) allowed for the switch from using the RP tree to using a Source-specific tree - from (*,G) to (S,G). The default value is 0.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
 	def add(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
 		"""Adds a new joinPrune node on the server and retrieves it in this instance.
 

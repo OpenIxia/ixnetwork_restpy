@@ -200,3 +200,27 @@ class L2MacVlanRange(Base):
 	@VlanPriority.setter
 	def VlanPriority(self, value):
 		self._set_attribute('vlanPriority', value)
+
+	def update(self, Count=None, EnableRepeatMac=None, EnableSameVlan=None, EnableVlan=None, Enabled=None, FirstVlanId=None, IncrementVlanMode=None, IncremetVlanMode=None, SkipVlanIdZero=None, StartMac=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+		"""Updates a child instance of l2MacVlanRange on the server.
+
+		Args:
+			Count (number): If Enable VLAN is enabled, this it the number of MAC address/VLAN combinations that will be created. If Enabled VLAN is not enabled, this is the number of MAC addresses that will be created.
+			EnableRepeatMac (bool): If enabled, and the count is greater than 1, the same address value will be repeated for all MAC addresses.
+			EnableSameVlan (bool): If enabled, all MAC addresses in the range will be associated with the same VLAN ID. If enabled, all MAC addresses in the range will be associated with different VLAN IDs, where the VLAN IDs will be automatically incremented.
+			EnableVlan (bool): Enables the MAC/VLAN range.
+			Enabled (bool): Enables the Layer 2 MAC/VLAN address range.
+			FirstVlanId (number): The VLAN ID for the first VLAN in the MAC/VLAN range.
+			IncrementVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If true, each additional VLAN in the range is incremented to create unique VLAN IDs.
+			IncremetVlanMode (str(noIncrement|parallelIncrement|innerFirst|outerFirst)): If true, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1.
+			SkipVlanIdZero (bool): Skip the value of vlad id, if the vlan id value is equal to zero.
+			StartMac (str): The first MAC address in the MAC range.
+			Tpid (str): Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).
+			VlanCount (number): The number of VLANs created.
+			VlanId (str): The identifier for the first VLAN in the range.
+			VlanPriority (str): The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
