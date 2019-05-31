@@ -139,11 +139,23 @@ class Connection(object):
 
     def _print_request(self, method, url, payload=None):
         if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
-            logging.getLogger(__name__).debug('%s %s %s' % (method, url, payload))
+            data = ''
+            if payload is not None:
+                data = payload[0:128]
+                if len(payload) > 128:
+                    data += ' ...'
+            logging.getLogger(__name__).debug('%s %s %s' % (method, url, data))
     
     def _print_response(self, response):
         if self._trace == Connection.TRACE_REQUEST_RESPONSE:
-            logging.getLogger(__name__).debug('%s %s %s' % (response.status_code, response.reason, response.raw.data))
+            data = ''
+            if response.status_code >= 400:
+                data = response.raw.data
+            else:
+                data = response.raw.data[0:128]
+            if len(response.raw.data) > 128:
+                data += ' ...'
+            logging.getLogger(__name__).debug('%s %s %s' % (response.status_code, response.reason, data))
     
     def _info(self, message):
         logging.getLogger(__name__).info(message)
@@ -194,7 +206,7 @@ class Connection(object):
     def _put_file(self, url, local_filename, remote_filename=None):
         headers = self._headers
         if remote_filename is None:
-            remote_filename = local_filename
+            remote_filename = os.path.basename(local_filename)
         url = '%s/files?filename=%s' % (url, remote_filename)
         connection, url = self._normalize_url(url)
         with open(local_filename, 'rb') as fid:
