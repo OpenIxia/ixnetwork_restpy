@@ -33,8 +33,8 @@ class TestPlatform(Base):
 
     Args:  
         ip_address (str): the ip address of the test tool platform that requests will be made to
-        rest_port (number): the ip port of the test tool platform that the server is listening on
-        platform (str[windows|linux|connection_manager]): connecting to a windows platform will start with an http scheme, a linux platform will start with an https scheme, a connection_manager with an https scheme
+        rest_port (number): the ip port of the test tool platform that the server is listening on. Defaults are linux|connection_manager:443, windows:11009
+        platform (str[windows|linux|connection_manager]): DEPRECATED. This will be determined by the Connection class.
         log_file_name (str): the name of the log file that trace logging will be written to, if omitted it will be written to the console
         ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
     
@@ -43,7 +43,7 @@ class TestPlatform(Base):
     """
     _SDM_NAME = None
 
-    def __init__(self, ip_address, rest_port=443, platform='windows', log_file_name=None, ignore_env_proxy=False):
+    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False):
         super(TestPlatform, self).__init__(None)
         self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy)
         self._set_default_href()

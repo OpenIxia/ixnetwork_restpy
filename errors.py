@@ -55,6 +55,13 @@ class IxNetworkError(Exception):
         return self.message
 
 
+class ConnectionError(IxNetworkError):
+    """Connection attempt has failed
+    """
+    def __init__(self, response):
+        super(ConnectionError, self).__init__(response)
+
+
 class AsyncOperationError(IxNetworkError):
     """Operation has failed
     """

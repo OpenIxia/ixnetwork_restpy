@@ -26,7 +26,8 @@ import time
 import json
 import logging
 import pkg_resources
-from requests import Session
+from requests import Session, request
+from requests.exceptions import ConnectTimeout
 from io import BufferedReader
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.files import Files
@@ -44,13 +45,17 @@ class Connection(object):
     TRACE_NONE = 'none'
     TRACE_REQUEST = 'request'
     TRACE_REQUEST_RESPONSE = 'request_response'
-
-    def __init__(self, hostname, rest_port=443, platform='windows', log_file_name=None, ignore_env_proxy=False):
+    PLATFORMS = {
+        'Jetty': 'linux',
+        'SelfHost': 'windows',
+        'Microsoft-HTTPAPI/2.0': 'connection_manager'
+    }
+    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False):
         """ Set the connection parameters to a rest server
 
         Args:
             hostname (str): hostname or ip address
-            rest_port (int, optional, default=443): the rest port of the server
+            rest_port (int, optional): the rest port of the server
             platform (str): 
             log_file_name (str):
             ignore_env_proxy (bool):
@@ -68,16 +73,6 @@ class Connection(object):
         self._rest_port = rest_port
         self._verify_cert = False
         self._scheme = 'https'
-        self._platform = platform
-        if self._platform == 'windows':
-            self._scheme = 'http'
-        self._session = Session()
-
-        if ignore_env_proxy is True:
-            self._session.proxies.update({
-                'http': None,
-                'https': None
-            })
 
         # setup logging to both console and file if requested
         self._trace = Connection.TRACE_NONE
@@ -96,6 +91,46 @@ class Connection(object):
                 logging.getLogger(__name__).info('using ixnetwork-restpy version %s' % pkg_resources.get_distribution("ixnetwork-restpy").version)
             except Exception as e:
                 logging.getLogger(__name__).warn("ixnetwork-restpy not installed using pip, unable to determine version")
+
+        self._determine_test_tool_platform(platform)
+
+        if self._platform == 'windows':
+            self._scheme = 'http'
+        self._session = Session()
+
+        if ignore_env_proxy is True:
+            self._session.proxies.update({
+                'http': None,
+                'https': None
+            })
+
+    def _determine_test_tool_platform(self, platform):
+        self._info('The package will automatically determine the test tool platform and rest_port using the %s address...' % self._hostname)
+        if platform is not None:
+            self._warn('The `platform` parameter is deprecated and the value `%s` will be ignored.' % platform)
+        self._platform = None
+        rest_ports = [443, 11009]
+        if self._rest_port is not None:
+            rest_ports.insert(0, self._rest_port)
+        for scheme in ['http', 'https']:
+            for rest_port in rest_ports:
+                try:
+                    url = '%s://%s:%s/api/v1/auth/session' % (scheme, self._hostname, rest_port)
+                    payload = json.dumps({'username': '', 'password': ''})
+                    headers = {'content-type': 'application/json'}
+                    response = request('POST', url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
+                    if response.status_code in [401, 403, 200]:
+                        for server in Connection.PLATFORMS:
+                            if server in response.headers['server']:
+                                self._platform = Connection.PLATFORMS[server]
+                                self._rest_port = rest_port
+                                self._info('Connection established to `%s:%s on %s`' % (self._hostname, self._rest_port, self._platform))
+                                return
+                    else:
+                        raise Exception()
+                except Exception:
+                    self._info('Unable to connect to test tool at %s://%s:%s.' % (scheme, self._hostname, rest_port))
+        raise ConnectionError('Unable to connect to %s. Check the ip address and consider using the rest_port parameter.' % self._hostname)
 
     @property
     def trace(self):
