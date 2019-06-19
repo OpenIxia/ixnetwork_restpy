@@ -113,8 +113,8 @@ class Connection(object):
         rest_ports = [443, 11009]
         if self._rest_port is not None:
             rest_ports.insert(0, self._rest_port)
-        for scheme in ['http', 'https']:
-            for rest_port in rest_ports:
+        for rest_port in rest_ports:
+            for scheme in ['http', 'https']:
                 try:
                     url = '%s://%s:%s/api/v1/auth/session' % (scheme, self._hostname, rest_port)
                     payload = json.dumps({'username': '', 'password': ''})
@@ -125,7 +125,7 @@ class Connection(object):
                             if server in response.headers['server']:
                                 self._platform = Connection.PLATFORMS[server]
                                 self._rest_port = rest_port
-                                self._info('Connection established to `%s:%s on %s`' % (self._hostname, self._rest_port, self._platform))
+                                self._info('Connection established to `%s://%s:%s on %s`' % (scheme, self._hostname, self._rest_port, self._platform))
                                 return
                     else:
                         raise Exception()
