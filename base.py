@@ -100,6 +100,15 @@ class Base(object):
         return self._get_attribute('href')
 
     @property
+    def parent(self):
+        """The parent object of the current object
+        
+        Returns: 
+            obj(Base): The parent object of the current object or None if there is no parent for this object
+        """
+        return self._parent
+
+    @property
     def _properties(self):
         return self._object_properties[self._index]
 
