@@ -46,10 +46,22 @@ class TestPlatform(Base):
     def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False):
         super(TestPlatform, self).__init__(None)
         self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy)
+        self._uid = ''
         self._set_default_href()
          
     def _set_default_href(self, href='/api/v1'):
-        self._set_properties({'href': href}, clear=True)
+        properties = {
+            'href': href,
+            'apiKey': self._connection.x_api_key,
+            'username': self._uid,
+            'trace': self._connection.trace,
+            'platform': self._connection.platform,
+            'scheme': self._connection._scheme,
+            'hostname': self._connection.hostname,
+            'restPort': self._connection.rest_port,
+            'logFilename': self._connection.log_file_name
+        }
+        self._set_properties(properties, clear=True)
 
     def Authenticate(self, uid, pwd):
         """Set the X-Api-Key by authenticating against the connected TestPlatform
@@ -69,6 +81,7 @@ class TestPlatform(Base):
         self._set_default_href('/api/v1/auth/session')
         response = self._execute(None, payload={'username': uid, 'password': pwd})
         self.ApiKey = response['apiKey']
+        self._uid = uid
         self._set_default_href()
 
     @property
@@ -78,7 +91,7 @@ class TestPlatform(Base):
         Returns:
             str(none|request|request_response): Enables tracing of the connection transport request and responses
         """
-        return self._connection.trace
+        return self._get_attribute('trace')
     @Trace.setter
     def Trace(self, trace):
         self._connection.trace = trace
@@ -90,10 +103,64 @@ class TestPlatform(Base):
         Returns:
             bool
         """
-        return self._connection.x_api_key
+        return self._get_attribute('apiKey')
     @ApiKey.setter
     def ApiKey(self, value):
         self._connection.x_api_key = value
+
+    @property
+    def Username(self):
+        """Returns the name of the user that was authenticated
+        
+        Returns:
+            str
+        """
+        return self._get_attribute('username')
+
+    @property
+    def Platform(self):
+        """Returns the 
+        
+        Returns:
+            str(windows|linux|connection_manager)
+        """
+        return self._get_attribute('platform')
+
+    @property
+    def Hostname(self):
+        """Returns the hostname of the server that requests are being submitted to
+        
+        Returns:
+            str
+        """
+        return self._get_attribute('hostname')
+
+    @property
+    def RestPort(self):
+        """Returns the rest port of the server that requests are being submitted to
+        
+        Returns:
+            int
+        """
+        return self._connection.rest_port
+
+    @property
+    def Scheme(self):
+        """Returns whether or not the requests are being submitted using the https scheme
+        
+        Returns:
+            bool
+        """
+        return self._get_attribute('scheme')
+
+    @property
+    def LogFilename(self):
+        """Returns the name of the log file
+        
+        Returns:
+            str
+        """
+        return self._get_attribute('logFilename')
 
     @property
     def Sessions(self):

@@ -73,6 +73,7 @@ class Connection(object):
         self._rest_port = rest_port
         self._verify_cert = False
         self._scheme = 'https'
+        self._log_file_name = log_file_name
 
         # setup logging to both console and file if requested
         self._trace = Connection.TRACE_NONE
@@ -145,6 +146,26 @@ class Connection(object):
             logging.getLogger(__name__).setLevel(logging.INFO)
         if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
             logging.getLogger(__name__).setLevel(logging.DEBUG)
+
+    @property
+    def platform(self):
+        return self._platform
+
+    @property
+    def hostname(self):
+        return self._hostname
+
+    @property
+    def rest_port(self):
+        return self._rest_port
+
+    @property
+    def scheme(self):
+        return self._scheme
+
+    @property
+    def log_file_name(self):
+        return self._log_file_name
 
     @property
     def x_api_key(self):
