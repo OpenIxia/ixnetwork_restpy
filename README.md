@@ -1,5 +1,6 @@
 # IxNetwork REST API Client
 This package is an IxNetwork object oriented pure python client package over a REST transport.  
+To get started [browse the class and samples documentation here](https://openixia.github.io/ixnetwork_restpy/index.html).
 
 ## What's New!
 - The following is a summary of major changes. 
