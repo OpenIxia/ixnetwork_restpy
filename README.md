@@ -4,7 +4,9 @@ To get started [browse the class and samples documentation here](https://openixi
 
 ## What's New!
 - The following is a summary of major changes. 
-- Jun 2019 - 1.0.33
+- Jun 2019 - 1.0.34
+  - samples and api reference moved from package to online at https://openixia.github.io/ixnetwork_restpy/index.html
+  - .tar.gz source distribution in addition to .whl
   - Simplified TestPlatform constructor automatically determines platform and rest_port
 - May 2019 - 1.0.31
   - StatViewAssistant class allows alternate csv download storage to be specified
@@ -53,20 +55,17 @@ To get started [browse the class and samples documentation here](https://openixi
     - `IxNetwork.Vport.find(ConnectionState='connectedLinkUp')` uses regex on the server to find and return all vports whose state is **connectedLinkUp**
 
 ### Documentation
-- documentation is inlined in all generated classes  
-  - documentation is also available via a static documentation browser distributed with the package under the docs folder
-  - there is no need to connect to a running instance of IxNetwork to get API documentation
+- documentation is inlined in all generated classes and also [available online](https://openixia.github.io/ixnetwork_restpy/index.html)
 
 ### Samples
-- samples are distributed with the package under the tests folder
-- these samples are also used to sanity test the package before posting it to pypi
+- samples are distributed with the package under the samples folder
 
 ## Limitations
 - python support >= 2.7, 3.x
-- IxNetwork support >= 8.42
+- IxNetwork support >= 8.52
 
 ## Getting Started
-Install the package (**pip install -U ixnetwork-restpy**) and review the samples under ixnetwork_restpy/tests/...  
+Install the package (**pip install -U ixnetwork-restpy**) and review the samples under ixnetwork_restpy/samples/...  
 
 The samples demonstrate how to do the following:
 - create a **TestPlatform**
@@ -74,7 +73,7 @@ The samples demonstrate how to do the following:
 - get the root **Ixnetwork** object of the hierarchy
 - add virtual ports, topologies, traffic
 
-Finally visit the [OpenIxia IxNetwork restpy site](https://github.com/OpenIxia/IxNetwork/tree/master/RestPy) for  in depth end-to-end samples that demonstrate the following:
+Finally visit the [OpenIxia IxNetwork restpy site](https://github.com/OpenIxia/IxNetwork/tree/master/RestPy) for in depth end-to-end samples that demonstrate the following:
 - building a configuration
     - from scratch
     - from an existing IxNetwork configuration
