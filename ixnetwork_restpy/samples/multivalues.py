@@ -26,6 +26,10 @@ ipv4.Address.Single('6.6.6.6')
 ipv4.info(ipv4.Address)
 assert(ipv4.Address.Pattern == '6.6.6.6')
 
+# add overlays
+ipv4.Address.Overlay(3, '1.2.3.4')
+ipv4.Address.Overlay(6, '4.3.2.1')
+
 # set increment multivalue
 ipv4.Address.Increment(start_value='7.7.7.7', step_value='8.8.8.8')
 ipv4.info(ipv4.Address)

@@ -1,15 +1,12 @@
-import io
 import os
-import sys
-from shutil import rmtree
 from setuptools import setup
 
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(base_dir, 'README.md'), 'rb') as fid:
-    long_description = '\n' + fid.read()
-with open(os.path.join(base_dir, 'version.txt'), 'rb') as fid:
+with open(os.path.join(base_dir, 'README.md')) as fid:
+    long_description = fid.read()
+with open(os.path.join(base_dir, 'version.txt')) as fid:
     version_number = fid.read()
 
 setup(
@@ -20,7 +17,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/OpenIxia/ixnetwork_restpy',
     author='Keysight ISG IxNetwork team',
-    author_email='ixnetwork@keysight.com',
+    author_email='andy.balogh@keysight.com',
     license='MIT',
     classifiers=[
                 'Development Status :: 5 - Production/Stable',
@@ -34,4 +31,6 @@ setup(
     packages=['ixnetwork_restpy'],
     include_package_data=True,
     python_requires='>=2.7, <4',
-    install_requires=['requests'])
+    install_requires=['requests'],
+	tests_require=['mock']
+)

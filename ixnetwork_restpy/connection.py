@@ -74,6 +74,7 @@ class Connection(object):
         self._verify_cert = False
         self._scheme = 'https'
         self._log_file_name = log_file_name
+        self._session = Session()
 
         # setup logging to both console and file if requested
         self._trace = Connection.TRACE_NONE
@@ -97,7 +98,6 @@ class Connection(object):
 
         if self._platform == 'windows':
             self._scheme = 'http'
-        self._session = Session()
 
         if ignore_env_proxy is True:
             self._session.proxies.update({
@@ -119,7 +119,7 @@ class Connection(object):
                     url = '%s://%s:%s/api/v1/auth/session' % (scheme, self._hostname, rest_port)
                     payload = json.dumps({'username': '', 'password': ''})
                     headers = {'content-type': 'application/json'}
-                    response = request('POST', url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
+                    response = self._request(method='POST', url=url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
                     if response.status_code in [401, 403, 200]:
                         for server in Connection.PLATFORMS:
                             if server in response.headers['server']:
@@ -129,7 +129,7 @@ class Connection(object):
                                 return
                     else:
                         raise Exception()
-                except Exception:
+                except Exception as e:
                     self._info('Unable to connect to test tool at %s://%s:%s.' % (scheme, self._hostname, rest_port))
         raise ConnectionError('Unable to connect to %s. Check the ip address and consider using the rest_port parameter.' % self._hostname)
 
@@ -174,6 +174,9 @@ class Connection(object):
     @x_api_key.setter
     def x_api_key(self, value):
         self._headers[Connection.X_API_KEY] = value
+
+    def _request(self, **kwargs):
+        return self._session.request(**kwargs)
 
     def _read(self, url):
         return self._send_recv('GET', url)
@@ -229,11 +232,6 @@ class Connection(object):
         
         path_start = url.find('://') + 3
         url = '%s%s' % (url[0:path_start], url[path_start:].replace('//', '/'))
-        if self._platform != 'connection_manager' and url.endswith('sessions') is False:
-            if '?' in url:
-                url = '%s&deprecated=true' % url
-            else:
-                url = '%s?deprecated=true' % url
         return (connection, url)
 
     def _get_file(self, url, remote_filename, remote_directory=None, local_filename=None, local_directory=None):
@@ -310,7 +308,7 @@ class Connection(object):
                 data = payload
 
         self._print_request(method, url, None if isinstance(payload, Files) else data)
-        response = self._session.request(method, url, data=data, headers=headers, verify=self._verify_cert, allow_redirects=False)
+        response = self._request(method=method, url=url, data=data, headers=headers, verify=self._verify_cert, allow_redirects=False)
         self._print_response(response)
         
         if str(response.status_code).startswith('3'):
