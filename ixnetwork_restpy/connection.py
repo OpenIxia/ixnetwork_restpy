@@ -121,6 +121,8 @@ class Connection(object):
                     headers = {'content-type': 'application/json'}
                     response = self._request(method='POST', url=url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
                     if response.status_code in [401, 403, 200]:
+                        if 'server' not in response.headers:
+                            response.headers['server'] = 'Jetty'
                         for server in Connection.PLATFORMS:
                             if server in response.headers['server']:
                                 self._platform = Connection.PLATFORMS[server]
