@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -197,7 +199,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Ipv6Srh(self):
-		"""Advertise IPv6 SID
+		"""DEPRECATED Advertise IPv6 SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -206,7 +208,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LFlag(self):
-		"""Local Flag
+		"""DEPRECATED Local Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -215,7 +217,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LabelRangeSize(self):
-		"""Maximum Set Identifier
+		"""DEPRECATED Maximum Set Identifier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -224,7 +226,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LabelStart(self):
-		"""Label Start
+		"""DEPRECATED Label Start
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -233,7 +235,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LocalSystemID(self):
-		"""System ID
+		"""DEPRECATED System ID
 
 		Returns:
 			list(str)
@@ -242,7 +244,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Metric(self):
-		"""Route Metric
+		"""DEPRECATED Route Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -251,7 +253,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def NFlag(self):
-		"""Nodal prefix flag
+		"""DEPRECATED Nodal prefix flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -260,7 +262,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -272,7 +274,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def PFlag(self):
-		"""No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
+		"""DEPRECATED No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -281,7 +283,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def RFlag(self):
-		"""Redistribution flag
+		"""DEPRECATED Redistribution flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -290,7 +292,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Redistribution(self):
-		"""Redistribution
+		"""DEPRECATED Redistribution
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -299,7 +301,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def RouteOrigin(self):
-		"""Route Origin
+		"""DEPRECATED Route Origin
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -308,7 +310,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def SIDIndexLabel(self):
-		"""SID/Index/Label
+		"""DEPRECATED SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -317,7 +319,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def SubDomainId(self):
-		"""Sub Domain Id
+		"""DEPRECATED Sub Domain Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -326,7 +328,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def VFlag(self):
-		"""Value Flag
+		"""DEPRECATED Value Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

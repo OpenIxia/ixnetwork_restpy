@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -407,7 +409,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics.
+		"""DEPRECATED Sets the latency bins statistics.
 
 		Returns:
 			str
@@ -419,7 +421,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics.
+		"""DEPRECATED Enables the latency bins statistics.
 
 		Returns:
 			bool
@@ -431,7 +433,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadRateList(self):
-		"""Enter the Load Rate List.
+		"""DEPRECATED Enter the Load Rate List.
 
 		Returns:
 			str
@@ -443,7 +445,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""The type of the payload setting.
+		"""DEPRECATED The type of the payload setting.
 
 		Returns:
 			str(binary|increment)
@@ -455,7 +457,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadUnit(self):
-		"""The load unit value of test configuration.
+		"""DEPRECATED The load unit value of test configuration.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -467,7 +469,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""The mapping type.
+		"""DEPRECATED The mapping type.
 
 		Returns:
 			str
@@ -479,7 +481,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxBinaryLoadRate(self):
-		"""The upper bound of the iteration rates for each frame size during a binary search.
+		"""DEPRECATED The upper bound of the iteration rates for each frame size during a binary search.
 
 		Returns:
 			number
@@ -491,7 +493,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""The maximum incremental value of the frame size.
+		"""DEPRECATED The maximum incremental value of the frame size.
 
 		Returns:
 			number
@@ -503,7 +505,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementLoadRate(self):
-		"""The maximum incremental value of the load rate.
+		"""DEPRECATED The maximum incremental value of the load rate.
 
 		Returns:
 			number
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""The maximum random frame size to be sent.
+		"""DEPRECATED The maximum random frame size to be sent.
 
 		Returns:
 			number
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def MinBinaryLoadRate(self):
-		"""The lower bound of the iteration rates for each frame size during a binary search.
+		"""DEPRECATED The lower bound of the iteration rates for each frame size during a binary search.
 
 		Returns:
 			number
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""The minimum random frame size to be sent.
+		"""DEPRECATED The minimum random frame size to be sent.
 
 		Returns:
 			number
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementLoadRate(self):
-		"""The minimum incremental value of load rate.
+		"""DEPRECATED The minimum incremental value of load rate.
 
 		Returns:
 			number
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""The minimum random frame size to be sent.
+		"""DEPRECATED The minimum random frame size to be sent.
 
 		Returns:
 			number
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""Defines how many times each frame size will be tested.
+		"""DEPRECATED Defines how many times each frame size will be tested.
 
 		Returns:
 			number
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured.
+		"""DEPRECATED Sets the port delay unit in which it will be measured.
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value.
+		"""DEPRECATED Sets the port delay value.
 
 		Returns:
 			number
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDownTime(self):
-		"""The time interval during the port is down.
+		"""DEPRECATED The time interval during the port is down.
 
 		Returns:
 			number
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def ShowDetailedBinaryResults(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def StaggeredStart(self):
-		"""If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
+		"""DEPRECATED If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
 
 		Returns:
 			bool
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""The incremental step value of the frame size.
+		"""DEPRECATED The incremental step value of the frame size.
 
 		Returns:
 			number
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementLoadRate(self):
-		"""The step incremental value of the load rate.
+		"""DEPRECATED The step incremental value of the load rate.
 
 		Returns:
 			number
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""The traffic types supported.
+		"""DEPRECATED The traffic types supported.
 
 		Returns:
 			str
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def TargetValue(self):
-		"""The value of the statistic that determines the success of the test.
+		"""DEPRECATED The value of the statistic that determines the success of the test.
 
 		Returns:
 			str
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def TrafficType(self):
-		"""Specify the type of the traffic of the test configuration.
+		"""DEPRECATED Specify the type of the traffic of the test configuration.
 
 		Returns:
 			str(burstyLoading|constantLoading)
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""Signifies the transmission delay time.
+		"""DEPRECATED Signifies the transmission delay time.
 
 		Returns:
 			number

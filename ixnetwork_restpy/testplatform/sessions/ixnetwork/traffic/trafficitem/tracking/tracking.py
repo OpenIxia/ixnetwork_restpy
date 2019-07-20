@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +37,7 @@ class Tracking(Base):
 
 	@property
 	def Egress(self):
-		"""An instance of the Egress class.
+		"""An instance of the DEPRECATED Egress class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.egress.Egress)
@@ -72,7 +74,7 @@ class Tracking(Base):
 
 	@property
 	def AvailableTrackBy(self):
-		"""Returns list of available tracking field ids
+		"""DEPRECATED Returns list of available tracking field ids
 
 		Returns:
 			list(str)
@@ -81,7 +83,7 @@ class Tracking(Base):
 
 	@property
 	def AvailableTrackByInfos(self):
-		"""Returns list of tracking fields with id/displayname
+		"""DEPRECATED Returns list of tracking fields with id/displayname
 
 		Returns:
 			list(dict(arg1:str,arg2:str))
@@ -90,7 +92,7 @@ class Tracking(Base):
 
 	@property
 	def FieldWidth(self):
-		"""Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
+		"""DEPRECATED Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			str(eightBits|sixteenBits|thirtyTwoBits|twentyFourBits)
@@ -102,7 +104,7 @@ class Tracking(Base):
 
 	@property
 	def Offset(self):
-		"""Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
+		"""DEPRECATED Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			number
@@ -114,7 +116,7 @@ class Tracking(Base):
 
 	@property
 	def OneToOneMesh(self):
-		"""If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
+		"""DEPRECATED If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
 
 		Returns:
 			bool
@@ -126,7 +128,7 @@ class Tracking(Base):
 
 	@property
 	def ProtocolOffset(self):
-		"""Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
+		"""DEPRECATED Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			str
@@ -138,7 +140,7 @@ class Tracking(Base):
 
 	@property
 	def TrackBy(self):
-		"""Specifies the tracking option by which the Flows of a Traffic Item are tracked.
+		"""DEPRECATED Specifies the tracking option by which the Flows of a Traffic Item are tracked.
 
 		Returns:
 			list(str)
@@ -150,7 +152,7 @@ class Tracking(Base):
 
 	@property
 	def Values(self):
-		"""Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
+		"""DEPRECATED Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			list(str)

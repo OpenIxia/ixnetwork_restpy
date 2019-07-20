@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -443,7 +445,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics
+		"""DEPRECATED Sets the latency bins statistics
 
 		Returns:
 			str
@@ -455,7 +457,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics
+		"""DEPRECATED Enables the latency bins statistics
 
 		Returns:
 			bool
@@ -467,7 +469,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""The type of latency.
+		"""DEPRECATED The type of latency.
 
 		Returns:
 			str(cutThrough|storeForward)
@@ -479,7 +481,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadInitialRate(self):
-		"""loadInitialRate.
+		"""DEPRECATED loadInitialRate.
 
 		Returns:
 			number
@@ -491,7 +493,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""The type of load used to modify the variable parameter value.
+		"""DEPRECATED The type of load used to modify the variable parameter value.
 
 		Returns:
 			str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)
@@ -503,7 +505,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadUnit(self):
-		"""The load unit value.
+		"""DEPRECATED The load unit value.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""The test configuration map type.
+		"""DEPRECATED The test configuration map type.
 
 		Returns:
 			str
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""The integer that states the maximum amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the maximum amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""The integer that states the maximum random amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the maximum random amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""The integer that states the minimum amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the minimum amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""The integer that states the minimum random amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the minimum random amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def MldVersion(self):
-		"""It signifies the MLD version.
+		"""DEPRECATED It signifies the MLD version.
 
 		Returns:
 			number
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def NumAddresses(self):
-		"""It signifies the number address.
+		"""DEPRECATED It signifies the number address.
 
 		Returns:
 			number
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def NumIterations(self):
-		"""The integer value for the number of iterations.
+		"""DEPRECATED The integer value for the number of iterations.
 
 		Returns:
 			number
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""Defines how many times each frame size will be tested.
+		"""DEPRECATED Defines how many times each frame size will be tested.
 
 		Returns:
 			number
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured
+		"""DEPRECATED Sets the port delay unit in which it will be measured
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value
+		"""DEPRECATED Sets the port delay value
 
 		Returns:
 			number
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""Reports sequence errors in the test result.
+		"""DEPRECATED Reports sequence errors in the test result.
 
 		Returns:
 			bool
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""Report identifying the unit for measuring the throughput rate in frames per second.
+		"""DEPRECATED Report identifying the unit for measuring the throughput rate in frames per second.
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def RouterAlert(self):
-		"""Sets the IP header Send Router Alert bit.
+		"""DEPRECATED Sets the IP header Send Router Alert bit.
 
 		Returns:
 			bool
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""The step to increment the frame size.
+		"""DEPRECATED The step to increment the frame size.
 
 		Returns:
 			number
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""The list of supported traffic types.
+		"""DEPRECATED The list of supported traffic types.
 
 		Returns:
 			str
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def TestTrafficType(self):
-		"""Test based on the type of traffic endpoint to be configured.
+		"""DEPRECATED Test based on the type of traffic endpoint to be configured.
 
 		Returns:
 			str
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""Specifies the amount of delay after every transmit.
+		"""DEPRECATED Specifies the amount of delay after every transmit.
 
 		Returns:
 			number

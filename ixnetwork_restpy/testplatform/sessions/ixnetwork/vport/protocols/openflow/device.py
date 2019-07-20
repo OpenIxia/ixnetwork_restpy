@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -137,7 +139,7 @@ class Device(Base):
 
 	@property
 	def Version(self):
-		"""Indicates the current version of the Openflow protocol implemented.
+		"""DEPRECATED Indicates the current version of the Openflow protocol implemented.
 
 		Returns:
 			str(1.0.0)

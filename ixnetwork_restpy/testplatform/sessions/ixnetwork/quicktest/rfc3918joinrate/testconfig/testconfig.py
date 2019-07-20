@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -755,7 +757,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -767,7 +769,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(cutThrough|storeForward)
@@ -779,7 +781,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadInitialRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -791,7 +793,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadRateList(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -803,7 +805,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(binary|custom|step|unchanged)
@@ -815,7 +817,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(fpsRate|percentMaxRate)
@@ -827,7 +829,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -839,7 +841,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxBinaryLoadIntegerValue(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -851,7 +853,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -863,7 +865,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementGroups(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -875,7 +877,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -887,7 +889,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxStepJoinRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -899,7 +901,7 @@ class TestConfig(Base):
 
 	@property
 	def MinBinaryLoadIntegerValues(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -911,7 +913,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -923,7 +925,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementGroups(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -935,7 +937,7 @@ class TestConfig(Base):
 
 	@property
 	def MinPassFailMode(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -947,7 +949,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -959,7 +961,7 @@ class TestConfig(Base):
 
 	@property
 	def MixedClassMulticast(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -971,7 +973,7 @@ class TestConfig(Base):
 
 	@property
 	def MldVersion(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -983,7 +985,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -995,7 +997,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1007,7 +1009,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -1019,7 +1021,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1031,7 +1033,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDownTime(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1043,7 +1045,7 @@ class TestConfig(Base):
 
 	@property
 	def PortMACAddress(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -1055,7 +1057,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -1067,7 +1069,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1079,7 +1081,7 @@ class TestConfig(Base):
 
 	@property
 	def RouterAlert(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1091,7 +1093,7 @@ class TestConfig(Base):
 
 	@property
 	def ShowDetailedBinaryResults(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1103,7 +1105,7 @@ class TestConfig(Base):
 
 	@property
 	def StepFrameLossUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(%)
@@ -1115,7 +1117,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1127,7 +1129,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementGroups(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1139,7 +1141,7 @@ class TestConfig(Base):
 
 	@property
 	def StepLoadUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(fpsRate|percentMaxRate)
@@ -1151,7 +1153,7 @@ class TestConfig(Base):
 
 	@property
 	def StepStepJoinRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1163,7 +1165,7 @@ class TestConfig(Base):
 
 	@property
 	def StepTolerance(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1175,7 +1177,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -1187,7 +1189,7 @@ class TestConfig(Base):
 
 	@property
 	def TestTrafficType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -1199,7 +1201,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number

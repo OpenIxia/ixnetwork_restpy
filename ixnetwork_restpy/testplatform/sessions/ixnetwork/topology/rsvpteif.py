@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -140,7 +142,7 @@ class RsvpteIf(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -152,7 +154,7 @@ class RsvpteIf(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -161,7 +163,7 @@ class RsvpteIf(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -170,7 +172,7 @@ class RsvpteIf(Base):
 
 	@property
 	def DutIp(self):
-		"""DUT IP
+		"""DEPRECATED DUT IP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -179,7 +181,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""Enable BFD Registration
+		"""DEPRECATED Enable BFD Registration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -188,7 +190,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableBundleMessageSending(self):
-		"""Enable Bundle Message Sending
+		"""DEPRECATED Enable Bundle Message Sending
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -197,7 +199,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableBundleMessageThresholdTimer(self):
-		"""Enable Bundle Message Threshold Timer
+		"""DEPRECATED Enable Bundle Message Threshold Timer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -206,7 +208,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableGracefulRestartHelperMode(self):
-		"""Enable Helper-Mode
+		"""DEPRECATED Enable Helper-Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -215,7 +217,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableGracefulRestartRestartingMode(self):
-		"""Enable Restarting-Mode
+		"""DEPRECATED Enable Restarting-Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -224,7 +226,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableHelloExtension(self):
-		"""Enable Hello Extension
+		"""DEPRECATED Enable Hello Extension
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -233,7 +235,7 @@ class RsvpteIf(Base):
 
 	@property
 	def EnableRefreshReduction(self):
-		"""Enable Refresh Reduction
+		"""DEPRECATED Enable Refresh Reduction
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -242,7 +244,7 @@ class RsvpteIf(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -251,7 +253,7 @@ class RsvpteIf(Base):
 
 	@property
 	def GenerateSequenceNumberBasedOnRealTime(self):
-		"""Generate Sequence Number Based on Real Time
+		"""DEPRECATED Generate Sequence Number Based on Real Time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -260,7 +262,7 @@ class RsvpteIf(Base):
 
 	@property
 	def HandshakeRequired(self):
-		"""Handshake Required
+		"""DEPRECATED Handshake Required
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -269,7 +271,7 @@ class RsvpteIf(Base):
 
 	@property
 	def HelloInterval(self):
-		"""Hello Interval (ms)
+		"""DEPRECATED Hello Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -278,7 +280,7 @@ class RsvpteIf(Base):
 
 	@property
 	def HelloTimeoutMultiplier(self):
-		"""Hello Timeout Multiplier
+		"""DEPRECATED Hello Timeout Multiplier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -287,7 +289,7 @@ class RsvpteIf(Base):
 
 	@property
 	def InitialSequenceNumber(self):
-		"""Initial Sequence Number
+		"""DEPRECATED Initial Sequence Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -296,7 +298,7 @@ class RsvpteIf(Base):
 
 	@property
 	def LabelReqRefCount(self):
-		"""Number of Label Req in RSVP-TE DG
+		"""DEPRECATED Number of Label Req in RSVP-TE DG
 
 		Returns:
 			number
@@ -308,7 +310,7 @@ class RsvpteIf(Base):
 
 	@property
 	def LabelSpaceEnd(self):
-		"""Label Space End
+		"""DEPRECATED Label Space End
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -317,7 +319,7 @@ class RsvpteIf(Base):
 
 	@property
 	def LabelSpaceStart(self):
-		"""Label Space Start
+		"""DEPRECATED Label Space Start
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -326,7 +328,7 @@ class RsvpteIf(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -338,7 +340,7 @@ class RsvpteIf(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -350,7 +352,7 @@ class RsvpteIf(Base):
 
 	@property
 	def NumberOfRestarts(self):
-		"""Number of Restarts
+		"""DEPRECATED Number of Restarts
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -359,7 +361,7 @@ class RsvpteIf(Base):
 
 	@property
 	def OurIp(self):
-		"""Local IP
+		"""DEPRECATED Local IP
 
 		Returns:
 			list(str)
@@ -368,7 +370,7 @@ class RsvpteIf(Base):
 
 	@property
 	def RecoveryTime(self):
-		"""Recovery Time (ms)
+		"""DEPRECATED Recovery Time (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -377,7 +379,7 @@ class RsvpteIf(Base):
 
 	@property
 	def RestartStartTime(self):
-		"""Restart Start Time (ms)
+		"""DEPRECATED Restart Start Time (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -386,7 +388,7 @@ class RsvpteIf(Base):
 
 	@property
 	def RestartUpTime(self):
-		"""Restart Up Time (ms)
+		"""DEPRECATED Restart Up Time (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -395,7 +397,7 @@ class RsvpteIf(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -404,7 +406,7 @@ class RsvpteIf(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -416,7 +418,7 @@ class RsvpteIf(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -425,7 +427,7 @@ class RsvpteIf(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -434,7 +436,7 @@ class RsvpteIf(Base):
 
 	@property
 	def SummaryRefreshInterval(self):
-		"""Summary Refresh Interval (ms)
+		"""DEPRECATED Summary Refresh Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -443,7 +445,7 @@ class RsvpteIf(Base):
 
 	@property
 	def UseSameAuthenticationKeyForPeer(self):
-		"""Use Same Authentication Key for Peer
+		"""DEPRECATED Use Same Authentication Key for Peer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -452,7 +454,7 @@ class RsvpteIf(Base):
 
 	@property
 	def UsingGatewayIp(self):
-		"""Using Gateway IP
+		"""DEPRECATED Using Gateway IP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

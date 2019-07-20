@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -311,7 +313,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics.
+		"""DEPRECATED Sets the latency bins statistics.
 
 		Returns:
 			str
@@ -323,7 +325,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics.
+		"""DEPRECATED Enables the latency bins statistics.
 
 		Returns:
 			bool
@@ -335,7 +337,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""The type of latency.
+		"""DEPRECATED The type of latency.
 
 		Returns:
 			str(cutThrough|mef|storeForward)
@@ -347,7 +349,7 @@ class TestConfig(Base):
 
 	@property
 	def LearnSnoopConfig(self):
-		"""The learned snoop configuration.
+		"""DEPRECATED The learned snoop configuration.
 
 		Returns:
 			bool
@@ -359,7 +361,7 @@ class TestConfig(Base):
 
 	@property
 	def NoOfFrames(self):
-		"""The number of frames sent.
+		"""DEPRECATED The number of frames sent.
 
 		Returns:
 			str
@@ -371,7 +373,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""This signifies the Number of trials.
+		"""DEPRECATED This signifies the Number of trials.
 
 		Returns:
 			number
@@ -383,7 +385,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -395,7 +397,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured.
+		"""DEPRECATED Sets the port delay unit in which it will be measured.
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -407,7 +409,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value.
+		"""DEPRECATED Sets the port delay value.
 
 		Returns:
 			number
@@ -419,7 +421,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -431,7 +433,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""If true, the sequence error, if found, is reported.
+		"""DEPRECATED If true, the sequence error, if found, is reported.
 
 		Returns:
 			bool
@@ -443,7 +445,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""The unit of rate for throughput.
+		"""DEPRECATED The unit of rate for throughput.
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -455,7 +457,7 @@ class TestConfig(Base):
 
 	@property
 	def Rfc2889ordering(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(noOrdering|unchanged|val2889Ordering)
@@ -467,7 +469,7 @@ class TestConfig(Base):
 
 	@property
 	def ServiceIterations(self):
-		"""Number of service iterations.
+		"""DEPRECATED Number of service iterations.
 
 		Returns:
 			str
@@ -479,7 +481,7 @@ class TestConfig(Base):
 
 	@property
 	def ServicesList(self):
-		"""The list of service.
+		"""DEPRECATED The list of service.
 
 		Returns:
 			str
@@ -491,7 +493,7 @@ class TestConfig(Base):
 
 	@property
 	def SkipDefaultPassFailEvaluation(self):
-		"""If true, it skips the default pass fail evaluation.
+		"""DEPRECATED If true, it skips the default pass fail evaluation.
 
 		Returns:
 			bool
@@ -503,7 +505,7 @@ class TestConfig(Base):
 
 	@property
 	def StaggeredStart(self):
-		"""Staggered start of traffic.
+		"""DEPRECATED Staggered start of traffic.
 
 		Returns:
 			bool
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def TestTrafficType(self):
-		"""It gives the test traffic type.
+		"""DEPRECATED It gives the test traffic type.
 
 		Returns:
 			str
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def TransmitMode(self):
-		"""The transmit mode for this traffic item.
+		"""DEPRECATED The transmit mode for this traffic item.
 
 		Returns:
 			str(noFrames|useDuration)
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""The minimum delay between successive packets.
+		"""DEPRECATED The minimum delay between successive packets.
 
 		Returns:
 			number

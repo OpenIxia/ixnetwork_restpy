@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -143,7 +145,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -155,7 +157,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -164,7 +166,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -173,7 +175,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableBfdMplsLearnedLsp(self):
-		"""If selected, BFD MPLS is enabled.
+		"""DEPRECATED If selected, BFD MPLS is enabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -182,7 +184,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableFec128Advertisement(self):
-		"""If selected, FEC128 P2P-PW app type is enabled in SAC TLV.
+		"""DEPRECATED If selected, FEC128 P2P-PW app type is enabled in SAC TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -191,7 +193,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableFec129Advertisement(self):
-		"""If selected, FEC129 P2P-PW app type is enabled in SAC TLV.
+		"""DEPRECATED If selected, FEC129 P2P-PW app type is enabled in SAC TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -200,7 +202,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableGracefulRestart(self):
-		"""If selected, LDP Graceful Restart is enabled on this Ixia-emulated LDP Router.
+		"""DEPRECATED If selected, LDP Graceful Restart is enabled on this Ixia-emulated LDP Router.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -209,7 +211,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableIpv4Advertisement(self):
-		"""If selected, IPv4-Prefix LSP app type is enabled in SAC TLV.
+		"""DEPRECATED If selected, IPv4-Prefix LSP app type is enabled in SAC TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -218,7 +220,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableIpv6Advertisement(self):
-		"""If selected, IPv6-Prefix LSP app type is enabled in SAC TLV.
+		"""DEPRECATED If selected, IPv6-Prefix LSP app type is enabled in SAC TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -227,7 +229,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableLspPingLearnedLsp(self):
-		"""If selected, LSP Ping is enabled for learned LSPs.
+		"""DEPRECATED If selected, LSP Ping is enabled for learned LSPs.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -236,7 +238,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def EnableP2MPCapability(self):
-		"""If selected, LDP Router is P2MP capable.
+		"""DEPRECATED If selected, LDP Router is P2MP capable.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -245,7 +247,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -254,7 +256,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def IgnoreStateAdvertisementControlCapability(self):
-		"""If selected, LDP Router ignores SAC TLV it receives.
+		"""DEPRECATED If selected, LDP Router ignores SAC TLV it receives.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -263,7 +265,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def IncludeSac(self):
-		"""Select to include 'State Advertisement Control Capability' TLV in Initialization message and Capability message
+		"""DEPRECATED Select to include 'State Advertisement Control Capability' TLV in Initialization message and Capability message
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -272,7 +274,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def KeepAliveHoldTime(self):
-		"""The period of time, in seconds, between KEEP-ALIVE messages sent to the DUT.
+		"""DEPRECATED The period of time, in seconds, between KEEP-ALIVE messages sent to the DUT.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -281,7 +283,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def KeepAliveInterval(self):
-		"""The frequency, in seconds, at which IxNetwork sends KEEP-ALIVE requests.
+		"""DEPRECATED The frequency, in seconds, at which IxNetwork sends KEEP-ALIVE requests.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -290,7 +292,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def LdpVersion(self):
-		"""Version of LDP. When RFC 5036 is chosen, LDP version is version 1. When draft-pdutta-mpls-ldp-adj-capability-00 is chosen, LDP version is version 2
+		"""DEPRECATED Version of LDP. When RFC 5036 is chosen, LDP version is version 1. When draft-pdutta-mpls-ldp-adj-capability-00 is chosen, LDP version is version 2
 
 		Returns:
 			str(version1|version2)
@@ -302,7 +304,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def LeafRangesCountV4(self):
-		"""The number of Leaf Ranges configured for this LDP router
+		"""DEPRECATED The number of Leaf Ranges configured for this LDP router
 
 		Returns:
 			number
@@ -314,7 +316,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""Router ID
+		"""DEPRECATED Router ID
 
 		Returns:
 			list(str)
@@ -323,7 +325,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -335,7 +337,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -347,7 +349,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def ReconnectTime(self):
-		"""Reconnect Time ms
+		"""DEPRECATED Reconnect Time ms
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -356,7 +358,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def RecoveryTime(self):
-		"""The restarting LSR advertises the amount of time that it will retain its MPLS forwarding state.
+		"""DEPRECATED The restarting LSR advertises the amount of time that it will retain its MPLS forwarding state.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -365,7 +367,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def RootRangesCountV4(self):
-		"""The number of Root Ranges configured for this LDP router
+		"""DEPRECATED The number of Root Ranges configured for this LDP router
 
 		Returns:
 			number
@@ -377,7 +379,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the LDP session state
+		"""DEPRECATED Logs additional information about the LDP session state
 
 		Returns:
 			list(str[lDP_STATE_INITIALIZED|lDP_STATE_MULTIPLE_PEERS|lDP_STATE_NON_EXISTENT|lDP_STATE_OPENREC|lDP_STATE_OPENSENT|lDP_STATE_OPERATIONAL|none])
@@ -386,7 +388,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def SessionPreference(self):
-		"""The transport connection preference of the LDP router that is conveyed in Dual-stack capability TLV included in LDP Hello message.
+		"""DEPRECATED The transport connection preference of the LDP router that is conveyed in Dual-stack capability TLV included in LDP Hello message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -395,7 +397,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -404,7 +406,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -416,7 +418,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -425,7 +427,7 @@ class LdpBasicRouter(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

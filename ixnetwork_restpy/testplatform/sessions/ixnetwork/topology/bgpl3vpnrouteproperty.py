@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -814,7 +816,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def UseAsUmhRoutes(self):
-		"""Use As UMH Routes
+		"""DEPRECATED Use As UMH Routes
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -823,7 +825,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def UseTraditionalNlri(self):
-		"""Use Traditional NLRI
+		"""DEPRECATED Use Traditional NLRI
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -832,7 +834,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def Weight(self):
-		"""Weight
+		"""DEPRECATED Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

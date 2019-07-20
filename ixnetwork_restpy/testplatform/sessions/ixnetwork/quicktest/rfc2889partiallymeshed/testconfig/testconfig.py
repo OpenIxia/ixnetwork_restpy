@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics
+		"""DEPRECATED Sets the latency bins statistics
 
 		Returns:
 			str
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics
+		"""DEPRECATED Enables the latency bins statistics
 
 		Returns:
 			bool
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""The type of latency required by the DUT to forward frames.
+		"""DEPRECATED The type of latency required by the DUT to forward frames.
 
 		Returns:
 			str(cutThrough|storeForward)
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadRateList(self):
-		"""Enters the Load Rate List.
+		"""DEPRECATED Enters the Load Rate List.
 
 		Returns:
 			str
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""The type of the payload setting.
+		"""DEPRECATED The type of the payload setting.
 
 		Returns:
 			str(binary|combo|custom|quickSearch|step|unchanged)
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""The mapping type.
+		"""DEPRECATED The mapping type.
 
 		Returns:
 			str
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxBinaryLoadRate(self):
-		"""Specifies the maximum rate of the binary algorithm.
+		"""DEPRECATED Specifies the maximum rate of the binary algorithm.
 
 		Returns:
 			number
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxComboLoadRate(self):
-		"""The maximum combination load rate.
+		"""DEPRECATED The maximum combination load rate.
 
 		Returns:
 			number
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""The integer that states the maximum amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the maximum amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxQuickSearchLoadRate(self):
-		"""Sets the maximum QuickSearch load rate
+		"""DEPRECATED Sets the maximum QuickSearch load rate
 
 		Returns:
 			number
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""The integer that states the maximum random amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the maximum random amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxStepLoadRate(self):
-		"""The maximum step value of the load rate.
+		"""DEPRECATED The maximum step value of the load rate.
 
 		Returns:
 			number
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def MinBinaryLoadRate(self):
-		"""Specifies the minimum rate of the binary algorithm.
+		"""DEPRECATED Specifies the minimum rate of the binary algorithm.
 
 		Returns:
 			number
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def MinComboLoadRate(self):
-		"""The minimum combination load rate.
+		"""DEPRECATED The minimum combination load rate.
 
 		Returns:
 			number
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def MinFpsRate(self):
-		"""The rate at which minimum frames are sent per second.
+		"""DEPRECATED The rate at which minimum frames are sent per second.
 
 		Returns:
 			number
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""The integer that states the minimum amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the minimum amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def MinKbpsRate(self):
-		"""The rate at which minimum frames are sent per kbps.
+		"""DEPRECATED The rate at which minimum frames are sent per kbps.
 
 		Returns:
 			number
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def MinQuickSearchLoadRate(self):
-		"""Sets the minum Quick Search load rate
+		"""DEPRECATED Sets the minum Quick Search load rate
 
 		Returns:
 			number
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""The integer that states the minimum random amount to which the frame size can be incremented.
+		"""DEPRECATED The integer that states the minimum random amount to which the frame size can be incremented.
 
 		Returns:
 			number
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""The integer value that states the number of trials permitted.
+		"""DEPRECATED The integer value that states the number of trials permitted.
 
 		Returns:
 			number
@@ -755,7 +757,7 @@ class TestConfig(Base):
 
 	@property
 	def PercentMaxRate(self):
-		"""The maximum percentage rate.
+		"""DEPRECATED The maximum percentage rate.
 
 		Returns:
 			number
@@ -767,7 +769,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -779,7 +781,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured
+		"""DEPRECATED Sets the port delay unit in which it will be measured
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -791,7 +793,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value
+		"""DEPRECATED Sets the port delay value
 
 		Returns:
 			number
@@ -803,7 +805,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -815,7 +817,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchFrameLossUnit(self):
-		"""Sets the quick search frame loss unit
+		"""DEPRECATED Sets the quick search frame loss unit
 
 		Returns:
 			str(%)
@@ -827,7 +829,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchLoadUnit(self):
-		"""Sets the quick search load unit
+		"""DEPRECATED Sets the quick search load unit
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -839,7 +841,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchResolution(self):
-		"""Sets the quick search resolution
+		"""DEPRECATED Sets the quick search resolution
 
 		Returns:
 			number
@@ -851,7 +853,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchSearchType(self):
-		"""Sets the quick search type
+		"""DEPRECATED Sets the quick search type
 
 		Returns:
 			str(linear|perFlow|perPort|perTrafficItem)
@@ -863,7 +865,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchTolerance(self):
-		"""Sets the quick search tolerance
+		"""DEPRECATED Sets the quick search tolerance
 
 		Returns:
 			number
@@ -875,7 +877,7 @@ class TestConfig(Base):
 
 	@property
 	def RateSelect(self):
-		"""The rate selected.
+		"""DEPRECATED The rate selected.
 
 		Returns:
 			str(fpsRate|kbpsRate|percentMaxRate)
@@ -887,7 +889,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""Reports sequence errors in the test result.
+		"""DEPRECATED Reports sequence errors in the test result.
 
 		Returns:
 			bool
@@ -899,7 +901,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""The unit of rate for throughput.
+		"""DEPRECATED The unit of rate for throughput.
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -911,7 +913,7 @@ class TestConfig(Base):
 
 	@property
 	def Resolution(self):
-		"""Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+		"""DEPRECATED Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
 
 		Returns:
 			number
@@ -923,7 +925,7 @@ class TestConfig(Base):
 
 	@property
 	def Rfc2889ordering(self):
-		"""If true, indicates frame ordering by Rfc2889.
+		"""DEPRECATED If true, indicates frame ordering by Rfc2889.
 
 		Returns:
 			str(noOrdering|unchanged|val2889Ordering)
@@ -935,7 +937,7 @@ class TestConfig(Base):
 
 	@property
 	def SendFullyMeshed(self):
-		"""Indicates the source group mapping type used for sending data.
+		"""DEPRECATED Indicates the source group mapping type used for sending data.
 
 		Returns:
 			bool
@@ -947,7 +949,7 @@ class TestConfig(Base):
 
 	@property
 	def ShowDetailedBinaryResults(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -959,7 +961,7 @@ class TestConfig(Base):
 
 	@property
 	def StepComboLoadRate(self):
-		"""The step value of combination load rate.
+		"""DEPRECATED The step value of combination load rate.
 
 		Returns:
 			number
@@ -971,7 +973,7 @@ class TestConfig(Base):
 
 	@property
 	def StepFrameLossUnit(self):
-		"""The step frame loss unit for traffic
+		"""DEPRECATED The step frame loss unit for traffic
 
 		Returns:
 			str(%|frames)
@@ -983,7 +985,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""The incremental step value of the frame size.
+		"""DEPRECATED The incremental step value of the frame size.
 
 		Returns:
 			number
@@ -995,7 +997,7 @@ class TestConfig(Base):
 
 	@property
 	def StepLoadUnit(self):
-		"""Specifies the step rate of the load unit.
+		"""DEPRECATED Specifies the step rate of the load unit.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -1007,7 +1009,7 @@ class TestConfig(Base):
 
 	@property
 	def StepStepLoadRate(self):
-		"""The maximum step value of the load rate.
+		"""DEPRECATED The maximum step value of the load rate.
 
 		Returns:
 			number
@@ -1019,7 +1021,7 @@ class TestConfig(Base):
 
 	@property
 	def StepTolerance(self):
-		"""The step value of the tolerance level.
+		"""DEPRECATED The step value of the tolerance level.
 
 		Returns:
 			number
@@ -1031,7 +1033,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""The traffic types supported.
+		"""DEPRECATED The traffic types supported.
 
 		Returns:
 			str
@@ -1043,7 +1045,7 @@ class TestConfig(Base):
 
 	@property
 	def Tolerance(self):
-		"""The value set for the tolerance level.
+		"""DEPRECATED The value set for the tolerance level.
 
 		Returns:
 			number
@@ -1055,7 +1057,7 @@ class TestConfig(Base):
 
 	@property
 	def TrafficType(self):
-		"""It signifies the traffic type for the protocol. Possible values include:
+		"""DEPRECATED It signifies the traffic type for the protocol. Possible values include:
 
 		Returns:
 			str(burstyLoading|constantLoading)
@@ -1067,7 +1069,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""Specifies the amount of delay after every transmit.
+		"""DEPRECATED Specifies the amount of delay after every transmit.
 
 		Returns:
 			number
@@ -1079,7 +1081,7 @@ class TestConfig(Base):
 
 	@property
 	def UsePercentOffsets(self):
-		"""Uses percentage offset value.
+		"""DEPRECATED Uses percentage offset value.
 
 		Returns:
 			bool

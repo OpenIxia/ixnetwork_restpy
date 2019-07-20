@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +37,7 @@ class SequenceChecking(Base):
 
 	@property
 	def AdvancedSequenceThreshold(self):
-		"""Checks the sequence.
+		"""DEPRECATED Checks the sequence.
 
 		Returns:
 			number
@@ -47,7 +49,7 @@ class SequenceChecking(Base):
 
 	@property
 	def Enabled(self):
-		"""If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
+		"""DEPRECATED If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
 
 		Returns:
 			bool
@@ -59,7 +61,7 @@ class SequenceChecking(Base):
 
 	@property
 	def SequenceMode(self):
-		"""The mode to conduct sequence checking.
+		"""DEPRECATED The mode to conduct sequence checking.
 
 		Returns:
 			str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)

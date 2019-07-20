@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -170,7 +172,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiRsvpTunnelCount(self):
-		"""The total count of the S-PMSI RSVP Tunnel Count.
+		"""DEPRECATED The total count of the S-PMSI RSVP Tunnel Count.
 
 		Returns:
 			number
@@ -182,7 +184,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiRsvpTunnelId(self):
-		"""The first Tunnel ID value in the range of Tunnel IDs.
+		"""DEPRECATED The first Tunnel ID value in the range of Tunnel IDs.
 
 		Returns:
 			number
@@ -194,7 +196,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiRsvpTunnelIdStep(self):
-		"""Indicates the P2MP ID. This accepts only integer values.
+		"""DEPRECATED Indicates the P2MP ID. This accepts only integer values.
 
 		Returns:
 			number
@@ -206,7 +208,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiTrafficGroupId(self):
-		"""Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+		"""DEPRECATED Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -218,7 +220,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiTunnelCount(self):
-		"""Signifies the SPMSI tunnel count
+		"""DEPRECATED Signifies the SPMSI tunnel count
 
 		Returns:
 			number
@@ -230,7 +232,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SendTriggeredSourceActiveAdRoute(self):
-		"""If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
+		"""DEPRECATED If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
 
 		Returns:
 			bool
@@ -242,7 +244,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SetLeafInformationRequiredBit(self):
-		"""his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
+		"""DEPRECATED his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
 
 		Returns:
 			bool
@@ -254,7 +256,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceAddressCount(self):
-		"""The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values of the Source Address and the Source Mask Width.
+		"""DEPRECATED The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values of the Source Address and the Source Mask Width.
 
 		Returns:
 			number
@@ -266,7 +268,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceGroupMapping(self):
-		"""Indicates the source group mapping.
+		"""DEPRECATED Indicates the source group mapping.
 
 		Returns:
 			str(fullyMeshed|oneToOne)
@@ -278,7 +280,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceMaskWidth(self):
-		"""The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
+		"""DEPRECATED The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
 
 		Returns:
 			number
@@ -290,7 +292,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def StartGroupAddress(self):
-		"""The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
+		"""DEPRECATED The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
 
 		Returns:
 			str
@@ -302,7 +304,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def StartSourceAddress(self):
-		"""The first IPv4 or IPv6 source address to be included in this Register message.
+		"""DEPRECATED The first IPv4 or IPv6 source address to be included in this Register message.
 
 		Returns:
 			str
@@ -314,7 +316,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def TuunelType(self):
-		"""the tunnel type.
+		"""DEPRECATED the tunnel type.
 
 		Returns:
 			str()
@@ -326,7 +328,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def UseUpstreamAssignedLabel(self):
-		"""Indicates whether upstream label as configured be used or not. If this field is false, then MPLS Assigned Upstream Label and MPLS Assigned Upstream Label Step fields are disabled.
+		"""DEPRECATED Indicates whether upstream label as configured be used or not. If this field is false, then MPLS Assigned Upstream Label and MPLS Assigned Upstream Label Step fields are disabled.
 
 		Returns:
 			bool

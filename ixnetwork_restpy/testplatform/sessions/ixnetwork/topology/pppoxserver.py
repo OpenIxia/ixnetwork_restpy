@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -417,7 +419,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ClientBaseIID(self):
-		"""Obsolete - use clientIID instead.
+		"""DEPRECATED Obsolete - use clientIID instead.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -426,7 +428,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ClientBaseIp(self):
-		"""The base IP address to be used when creating PPP client addresses. This property is used as an incrementor for the 'clientIpIncr' property
+		"""DEPRECATED The base IP address to be used when creating PPP client addresses. This property is used as an incrementor for the 'clientIpIncr' property
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -435,7 +437,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ClientIID(self):
-		"""The base IPv6CP (RFC5072) interface identifier for the PPP client. Used in conjunction with 'clientIIDIncr' as its incrementor. Valid for IPv6 only. The identifier is used in assigned global and local scope addresses created after negotiation.
+		"""DEPRECATED The base IPv6CP (RFC5072) interface identifier for the PPP client. Used in conjunction with 'clientIIDIncr' as its incrementor. Valid for IPv6 only. The identifier is used in assigned global and local scope addresses created after negotiation.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -444,7 +446,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ClientIIDIncr(self):
-		"""Client IPv6CP interface identifier increment, used in conjuction with the base identifier
+		"""DEPRECATED Client IPv6CP interface identifier increment, used in conjuction with the base identifier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -453,7 +455,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ClientIpIncr(self):
-		"""The incrementor for the clientBaseIp property address when multiple PPP addresses are created.
+		"""DEPRECATED The incrementor for the clientBaseIp property address when multiple PPP addresses are created.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -462,7 +464,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -474,7 +476,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -483,7 +485,7 @@ class Pppoxserver(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -492,7 +494,7 @@ class Pppoxserver(Base):
 
 	@property
 	def DnsServerList(self):
-		"""DNS server list separacted by semicolon
+		"""DEPRECATED DNS server list separacted by semicolon
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -501,7 +503,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EchoReqInterval(self):
-		"""Keep alive interval, in seconds
+		"""DEPRECATED Keep alive interval, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -510,7 +512,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EnableDnsRa(self):
-		"""Enable RDNSS routing advertisments
+		"""DEPRECATED Enable RDNSS routing advertisments
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -519,7 +521,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EnableEchoReq(self):
-		"""?
+		"""DEPRECATED ?
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -528,7 +530,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EnableEchoRsp(self):
-		"""?
+		"""DEPRECATED ?
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -537,7 +539,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EnableMaxPayload(self):
-		"""Enables PPP Max Payload tag
+		"""DEPRECATED Enables PPP Max Payload tag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -546,7 +548,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EndpointDiscNegotiation(self):
-		"""Enable Endpoint Discriminator Negotiation
+		"""DEPRECATED Enable Endpoint Discriminator Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -555,7 +557,7 @@ class Pppoxserver(Base):
 
 	@property
 	def EndpointDiscriminatorClass(self):
-		"""Endpoint Discriminator for PPP
+		"""DEPRECATED Endpoint Discriminator for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -564,7 +566,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -573,7 +575,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Ipv6AddrPrefixLen(self):
-		"""Address prefix length. The difference between the address and pool prefix lengths determine the size of the IPv6 IP pool
+		"""DEPRECATED Address prefix length. The difference between the address and pool prefix lengths determine the size of the IPv6 IP pool
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -582,7 +584,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Ipv6PoolPrefix(self):
-		"""Pool prefix for the IPv6 IP pool.
+		"""DEPRECATED Pool prefix for the IPv6 IP pool.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -591,7 +593,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Ipv6PoolPrefixLen(self):
-		"""Pool prefix length. The difference between the address and pool prefix lengths determine the size of the IPv6 IP pool
+		"""DEPRECATED Pool prefix length. The difference between the address and pool prefix lengths determine the size of the IPv6 IP pool
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -600,7 +602,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpAccm(self):
-		"""Async-Control-Character-Map
+		"""DEPRECATED Async-Control-Character-Map
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -609,7 +611,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpEnableAccm(self):
-		"""Enable Async-Control-Character-Map
+		"""DEPRECATED Enable Async-Control-Character-Map
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -618,7 +620,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpMaxFailure(self):
-		"""Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
+		"""DEPRECATED Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -627,7 +629,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpRetries(self):
-		"""Number of LCP retries
+		"""DEPRECATED Number of LCP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -636,7 +638,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpStartDelay(self):
-		"""Delay time in milliseconds to wait before sending LCP Config Request packet
+		"""DEPRECATED Delay time in milliseconds to wait before sending LCP Config Request packet
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -645,7 +647,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpTermRetries(self):
-		"""Number of LCP Termination Retries
+		"""DEPRECATED Number of LCP Termination Retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -654,7 +656,7 @@ class Pppoxserver(Base):
 
 	@property
 	def LcpTimeout(self):
-		"""Timeout for LCP phase, in seconds
+		"""DEPRECATED Timeout for LCP phase, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -663,7 +665,7 @@ class Pppoxserver(Base):
 
 	@property
 	def MlpppIPAddress(self):
-		"""The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
+		"""DEPRECATED The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -672,7 +674,7 @@ class Pppoxserver(Base):
 
 	@property
 	def MlpppMACAddress(self):
-		"""The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
+		"""DEPRECATED The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -681,7 +683,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Mrru(self):
-		"""Max Receive Reconstructed Unit for PPP
+		"""DEPRECATED Max Receive Reconstructed Unit for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -690,7 +692,7 @@ class Pppoxserver(Base):
 
 	@property
 	def MrruNegotiation(self):
-		"""Enable MRRU Negotiation
+		"""DEPRECATED Enable MRRU Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -699,7 +701,7 @@ class Pppoxserver(Base):
 
 	@property
 	def MruNegotiation(self):
-		"""Enable MRU Negotiation
+		"""DEPRECATED Enable MRU Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -708,7 +710,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Mtu(self):
-		"""Max Transmit Unit for PPP
+		"""DEPRECATED Max Transmit Unit for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -717,7 +719,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -729,7 +731,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -741,7 +743,7 @@ class Pppoxserver(Base):
 
 	@property
 	def NcpRetries(self):
-		"""Number of NCP retries
+		"""DEPRECATED Number of NCP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -750,7 +752,7 @@ class Pppoxserver(Base):
 
 	@property
 	def NcpTimeout(self):
-		"""Timeout for NCP phase, in seconds
+		"""DEPRECATED Timeout for NCP phase, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -759,7 +761,7 @@ class Pppoxserver(Base):
 
 	@property
 	def NcpType(self):
-		"""IP address type (IPv4 or IPv6) for Network Control Protocol
+		"""DEPRECATED IP address type (IPv4 or IPv6) for Network Control Protocol
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -768,7 +770,7 @@ class Pppoxserver(Base):
 
 	@property
 	def PppoxServerGlobalAndPortData(self):
-		"""Global and Port Settings
+		"""DEPRECATED Global and Port Settings
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -777,7 +779,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerBaseIID(self):
-		"""Obsolete - use serverIID instead.
+		"""DEPRECATED Obsolete - use serverIID instead.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -786,7 +788,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerBaseIp(self):
-		"""The base IP address to be used when create PPP server addresses. This property is used in conjunction with the 'IPv4 Server IP Increment By' property.
+		"""DEPRECATED The base IP address to be used when create PPP server addresses. This property is used in conjunction with the 'IPv4 Server IP Increment By' property.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -795,7 +797,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerDnsOptions(self):
-		"""The server DNS options.
+		"""DEPRECATED The server DNS options.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -804,7 +806,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerIID(self):
-		"""The base IPv6CP (RFC5072) interface identifier for the PPP server, used in conjunction with 'serverIIDIncr' as incrementor. Valid for IPv6 only.
+		"""DEPRECATED The base IPv6CP (RFC5072) interface identifier for the PPP server, used in conjunction with 'serverIIDIncr' as incrementor. Valid for IPv6 only.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -813,7 +815,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerIIDIncr(self):
-		"""Server IPv6CP interface identifier increment, used in conjuction with the base identifier
+		"""DEPRECATED Server IPv6CP interface identifier increment, used in conjuction with the base identifier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -822,7 +824,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerIpIncr(self):
-		"""Server IP increment, used in conjuction with 'IPv4 Server IP' property
+		"""DEPRECATED Server IP increment, used in conjuction with 'IPv4 Server IP' property
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -831,7 +833,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerNcpOptions(self):
-		"""Specifies the NCP configuration mode.
+		"""DEPRECATED Specifies the NCP configuration mode.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -840,7 +842,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerNetmask(self):
-		"""The netmask that the server will assign to the client when the Server Netmask Options parameter is set to Supply Netmask.
+		"""DEPRECATED The netmask that the server will assign to the client when the Server Netmask Options parameter is set to Supply Netmask.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -849,7 +851,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerNetmaskOptions(self):
-		"""The server netmask option.
+		"""DEPRECATED The server netmask option.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -858,7 +860,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerPrimaryDnsAddress(self):
-		"""The primary DNS server address that the server will assign to the client when the Server DNS Options parameter is set to either Supply Primary and Secondary or Supply Primary Only.
+		"""DEPRECATED The primary DNS server address that the server will assign to the client when the Server DNS Options parameter is set to either Supply Primary and Secondary or Supply Primary Only.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -867,7 +869,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSecondaryDnsAddress(self):
-		"""The secondary DNS server address that the server will assign to the client when the Server DNS Options parameter is set to Supply Primary and Secondary.
+		"""DEPRECATED The secondary DNS server address that the server will assign to the client when the Server DNS Options parameter is set to Supply Primary and Secondary.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -876,7 +878,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalDslTypeTlv(self):
-		"""DSL-Type TLV to be inserted in PPPoE VSA Tag.
+		"""DEPRECATED DSL-Type TLV to be inserted in PPPoE VSA Tag.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -885,7 +887,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalIWF(self):
-		"""This parameter enables or disables the insertion of sub-option 0xFE (signaling of interworked sessions) into the DSL tag in PADO and PADS packets.
+		"""DEPRECATED This parameter enables or disables the insertion of sub-option 0xFE (signaling of interworked sessions) into the DSL tag in PADO and PADS packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -894,7 +896,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalLoopChar(self):
-		"""This parameter enables or disables the insertion of sub-options 0x81 and 0x82 into the DSL tag in PADO and PADS packets.
+		"""DEPRECATED This parameter enables or disables the insertion of sub-options 0x81 and 0x82 into the DSL tag in PADO and PADS packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -903,7 +905,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalLoopEncapsulation(self):
-		"""This parameter enables or disables the insertion of sub-option 0x90 into the DSL tag in PADO and PADS packets.
+		"""DEPRECATED This parameter enables or disables the insertion of sub-option 0x90 into the DSL tag in PADO and PADS packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -912,7 +914,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalLoopId(self):
-		"""This parameter enables or disables the insertion of sub-options 0x01 and 0x02 (Remote ID and Circuit ID) into the DSL tag in PADO and PADS packets.
+		"""DEPRECATED This parameter enables or disables the insertion of sub-options 0x01 and 0x02 (Remote ID and Circuit ID) into the DSL tag in PADO and PADS packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -921,7 +923,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerSignalPonTypeTlv(self):
-		"""PON-Type TLV to be inserted in PPPoE VSA Tag.
+		"""DEPRECATED PON-Type TLV to be inserted in PPPoE VSA Tag.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -930,7 +932,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerV6NcpOptions(self):
-		"""Specifies the NCP configuration mode.
+		"""DEPRECATED Specifies the NCP configuration mode.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -939,7 +941,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerWinsOptions(self):
-		"""The WINS server discovery mode.
+		"""DEPRECATED The WINS server discovery mode.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -948,7 +950,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerWinsPrimaryAddress(self):
-		"""The primary WINS server address that the server will assign to the client when the Server WINS Options parameter is set to either Supply Primary and Secondary or Supply Primary Only.
+		"""DEPRECATED The primary WINS server address that the server will assign to the client when the Server WINS Options parameter is set to either Supply Primary and Secondary or Supply Primary Only.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -957,7 +959,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServerWinsSecondaryAddress(self):
-		"""The secondary WINS server address that the server will assign to the client when the Server WINS Options parameter is set to Supply Primary and Secondary.
+		"""DEPRECATED The secondary WINS server address that the server will assign to the client when the Server WINS Options parameter is set to Supply Primary and Secondary.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -966,7 +968,7 @@ class Pppoxserver(Base):
 
 	@property
 	def ServiceName(self):
-		"""Access Concentrator Service Name - this option is only available for PPP servers.
+		"""DEPRECATED Access Concentrator Service Name - this option is only available for PPP servers.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -975,7 +977,7 @@ class Pppoxserver(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -984,7 +986,7 @@ class Pppoxserver(Base):
 
 	@property
 	def SessionsCount(self):
-		"""Number of PPP clients a single server can accept (multiplier)
+		"""DEPRECATED Number of PPP clients a single server can accept (multiplier)
 
 		Returns:
 			number
@@ -996,7 +998,7 @@ class Pppoxserver(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -1008,7 +1010,7 @@ class Pppoxserver(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -1017,7 +1019,7 @@ class Pppoxserver(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

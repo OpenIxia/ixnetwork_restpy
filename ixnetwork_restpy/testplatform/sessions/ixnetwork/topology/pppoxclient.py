@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -647,7 +649,7 @@ class Pppoxclient(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -659,7 +661,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -668,7 +670,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DataLink(self):
-		"""A one-byte field included with sub-option 0x90.
+		"""DEPRECATED A one-byte field included with sub-option 0x90.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -677,7 +679,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -686,7 +688,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredIpv4Addresses(self):
-		"""The discovered IPv4 addresses.
+		"""DEPRECATED The discovered IPv4 addresses.
 
 		Returns:
 			list(str)
@@ -695,7 +697,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredIpv6Addresses(self):
-		"""The discovered IPv6 addresses.
+		"""DEPRECATED The discovered IPv6 addresses.
 
 		Returns:
 			list(str)
@@ -704,7 +706,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredMacs(self):
-		"""The discovered remote MAC address.
+		"""DEPRECATED The discovered remote MAC address.
 
 		Returns:
 			list(str)
@@ -713,7 +715,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredRemoteSessionIds(self):
-		"""Remote session ID.
+		"""DEPRECATED Remote session ID.
 
 		Returns:
 			list(number)
@@ -722,7 +724,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredRemoteTunnelIds(self):
-		"""Remote tunnel ID.
+		"""DEPRECATED Remote tunnel ID.
 
 		Returns:
 			list(number)
@@ -731,7 +733,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredSessionIds(self):
-		"""The negotiated session ID.
+		"""DEPRECATED The negotiated session ID.
 
 		Returns:
 			list(number)
@@ -740,7 +742,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredTunnelIPs(self):
-		"""The discovered remote tunnel IP.
+		"""DEPRECATED The discovered remote tunnel IP.
 
 		Returns:
 			list(str)
@@ -749,7 +751,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DiscoveredTunnelIds(self):
-		"""The negotiated tunnel ID.
+		"""DEPRECATED The negotiated tunnel ID.
 
 		Returns:
 			list(number)
@@ -758,7 +760,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DomainList(self):
-		"""Configure domain group settings
+		"""DEPRECATED Configure domain group settings
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -767,7 +769,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DslTypeTlv(self):
-		"""DSL Type to be advertised in PPPoE VSA Tag. For undefined DSL type user has to select User-defined DSL Type.
+		"""DEPRECATED DSL Type to be advertised in PPPoE VSA Tag. For undefined DSL type user has to select User-defined DSL Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -776,7 +778,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EchoReqInterval(self):
-		"""Keep alive interval, in seconds
+		"""DEPRECATED Keep alive interval, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -785,7 +787,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableDomainGroups(self):
-		"""Enable domain groups
+		"""DEPRECATED Enable domain groups
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -794,7 +796,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableEchoReq(self):
-		"""?
+		"""DEPRECATED ?
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -803,7 +805,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableEchoRsp(self):
-		"""?
+		"""DEPRECATED ?
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -812,7 +814,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableHostUniq(self):
-		"""Enables PPPoE Host-Uniq tag
+		"""DEPRECATED Enables PPPoE Host-Uniq tag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -821,7 +823,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableMaxPayload(self):
-		"""Enables PPPoE Max Payload tag
+		"""DEPRECATED Enables PPPoE Max Payload tag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -830,7 +832,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EnableRedial(self):
-		"""If checked, PPPoE redial is enabled
+		"""DEPRECATED If checked, PPPoE redial is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -839,7 +841,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Encaps1(self):
-		"""A one-byte field included with sub-option 0x90.
+		"""DEPRECATED A one-byte field included with sub-option 0x90.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -848,7 +850,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Encaps2(self):
-		"""A one-byte field included with sub-option 0x90.
+		"""DEPRECATED A one-byte field included with sub-option 0x90.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -857,7 +859,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EndpointDiscNegotiation(self):
-		"""Enable Endpoint Discriminator Negotiation
+		"""DEPRECATED Enable Endpoint Discriminator Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -866,7 +868,7 @@ class Pppoxclient(Base):
 
 	@property
 	def EndpointDiscriminatorClass(self):
-		"""Endpoint Discriminator for PPP
+		"""DEPRECATED Endpoint Discriminator for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -875,7 +877,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -884,7 +886,7 @@ class Pppoxclient(Base):
 
 	@property
 	def HostUniq(self):
-		"""Indicates Host-Uniq Tag
+		"""DEPRECATED Indicates Host-Uniq Tag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -893,7 +895,7 @@ class Pppoxclient(Base):
 
 	@property
 	def HostUniqLength(self):
-		"""Host-Uniq Length, in bytes
+		"""DEPRECATED Host-Uniq Length, in bytes
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -902,7 +904,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpAccm(self):
-		"""Async-Control-Character-Map
+		"""DEPRECATED Async-Control-Character-Map
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -911,7 +913,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpEnableAccm(self):
-		"""Enable Async-Control-Character-Map
+		"""DEPRECATED Enable Async-Control-Character-Map
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -920,7 +922,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpMaxFailure(self):
-		"""Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
+		"""DEPRECATED Number of Configure-Nak packets sent without sending a Configure-Ack before assuming that configuration is not converging. Any further Configure-Nak packets for peer requested options are converted to Configure-Reject packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -929,7 +931,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpRetries(self):
-		"""Number of LCP retries
+		"""DEPRECATED Number of LCP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -938,7 +940,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpStartDelay(self):
-		"""Delay time in milliseconds to wait before sending LCP Config Request packet
+		"""DEPRECATED Delay time in milliseconds to wait before sending LCP Config Request packet
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -947,7 +949,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpTermRetries(self):
-		"""Number of LCP Termination Retries
+		"""DEPRECATED Number of LCP Termination Retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -956,7 +958,7 @@ class Pppoxclient(Base):
 
 	@property
 	def LcpTimeout(self):
-		"""Timeout for LCP phase, in seconds
+		"""DEPRECATED Timeout for LCP phase, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -965,7 +967,7 @@ class Pppoxclient(Base):
 
 	@property
 	def MaxPayload(self):
-		"""Max Payload
+		"""DEPRECATED Max Payload
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -974,7 +976,7 @@ class Pppoxclient(Base):
 
 	@property
 	def MlpppIPAddress(self):
-		"""The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
+		"""DEPRECATED The IP address used in the ML-PPP endpoint discriminator option of the LCP configure request sent by PPP clients
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -983,7 +985,7 @@ class Pppoxclient(Base):
 
 	@property
 	def MlpppMACAddress(self):
-		"""The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
+		"""DEPRECATED The MAC addresses are automatically derived from the local MAC address. An address in this class contains an IEEE 802.1 MAC address is canonical (802.3) format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -992,7 +994,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Mrru(self):
-		"""Max Receive Reconstructed Unit for PPP
+		"""DEPRECATED Max Receive Reconstructed Unit for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1001,7 +1003,7 @@ class Pppoxclient(Base):
 
 	@property
 	def MrruNegotiation(self):
-		"""Enable MRRU Negotiation
+		"""DEPRECATED Enable MRRU Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1010,7 +1012,7 @@ class Pppoxclient(Base):
 
 	@property
 	def MruNegotiation(self):
-		"""Enable MRU Negotiation
+		"""DEPRECATED Enable MRU Negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1019,7 +1021,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Mtu(self):
-		"""Max Transmit Unit for PPP
+		"""DEPRECATED Max Transmit Unit for PPP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1028,7 +1030,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -1040,7 +1042,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -1052,7 +1054,7 @@ class Pppoxclient(Base):
 
 	@property
 	def NcpRetries(self):
-		"""Number of NCP retries
+		"""DEPRECATED Number of NCP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1061,7 +1063,7 @@ class Pppoxclient(Base):
 
 	@property
 	def NcpTimeout(self):
-		"""Timeout for NCP phase, in seconds
+		"""DEPRECATED Timeout for NCP phase, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1070,7 +1072,7 @@ class Pppoxclient(Base):
 
 	@property
 	def NcpType(self):
-		"""IP address type (IPv4 or IPv6) for Network Control Protocol
+		"""DEPRECATED IP address type (IPv4 or IPv6) for Network Control Protocol
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1079,7 +1081,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PadiRetries(self):
-		"""Number of PADI Retries
+		"""DEPRECATED Number of PADI Retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1088,7 +1090,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PadiTimeout(self):
-		"""Timeout for PADI no response, in seconds
+		"""DEPRECATED Timeout for PADI no response, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1097,7 +1099,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PadrRetries(self):
-		"""Number of PADR Retries
+		"""DEPRECATED Number of PADR Retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1106,7 +1108,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PadrTimeout(self):
-		"""Timeout for PADR no response, in seconds
+		"""DEPRECATED Timeout for PADR no response, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1115,7 +1117,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PapPassword(self):
-		"""Password when PAP Authentication is being used
+		"""DEPRECATED Password when PAP Authentication is being used
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1124,7 +1126,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PapUser(self):
-		"""User name when PAP Authentication is being used
+		"""DEPRECATED User name when PAP Authentication is being used
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1133,7 +1135,7 @@ class Pppoxclient(Base):
 
 	@property
 	def PonTypeTlv(self):
-		"""PON Type to be advertised in PPPoE VSA Tag. For undefined PON type user has to select User-defined PON Type.
+		"""DEPRECATED PON Type to be advertised in PPPoE VSA Tag. For undefined PON type user has to select User-defined PON Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1142,7 +1144,7 @@ class Pppoxclient(Base):
 
 	@property
 	def RedialMax(self):
-		"""Maximum number of PPPoE redials
+		"""DEPRECATED Maximum number of PPPoE redials
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1151,7 +1153,7 @@ class Pppoxclient(Base):
 
 	@property
 	def RedialTimeout(self):
-		"""PPPoE redial timeout, in seconds
+		"""DEPRECATED PPPoE redial timeout, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1160,7 +1162,7 @@ class Pppoxclient(Base):
 
 	@property
 	def ServiceName(self):
-		"""Access Concentrator Service Name - this option is only available for PPP servers.
+		"""DEPRECATED Access Concentrator Service Name - this option is only available for PPP servers.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1169,7 +1171,7 @@ class Pppoxclient(Base):
 
 	@property
 	def ServiceOptions(self):
-		"""Indicates PPPoE service retrieval mode
+		"""DEPRECATED Indicates PPPoE service retrieval mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1178,7 +1180,7 @@ class Pppoxclient(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the session state
+		"""DEPRECATED Logs additional information about the session state
 
 		Returns:
 			list(str[cLS_CFG_REJ_AUTH|cLS_CHAP_PEER_DET_FAIL|cLS_CHAP_PEER_RESP_BAD|cLS_CODE_REJ_IPCP|cLS_CODE_REJ_IPV6CP|cLS_CODE_REJ_LCP|cLS_ERR_PPP_NO_BUF|cLS_ERR_PPP_SEND_PKT|cLS_LINK_DISABLE|cLS_LOC_IPADDR_BROADCAST|cLS_LOC_IPADDR_CLASS_E|cLS_LOC_IPADDR_INVAL_ACKS_0|cLS_LOC_IPADDR_INVAL_ACKS_DIFF|cLS_LOC_IPADDR_LOOPBACK|cLS_LOC_IPADDR_PEER_MATCH_LOC|cLS_LOC_IPADDR_PEER_NO_GIVE|cLS_LOC_IPADDR_PEER_NO_HELP|cLS_LOC_IPADDR_PEER_NO_TAKE|cLS_LOC_IPADDR_PEER_REJ|cLS_LOOPBACK_DETECT|cLS_NO_NCP|cLS_NONE|cLS_PAP_BAD_PASSWD|cLS_PEER_DISCONNECTED|cLS_PEER_DISCONNECTED_NEGO|cLS_PEER_IPADDR_MATCH_LOC|cLS_PEER_IPADDR_PEER_NO_SET|cLS_PPOE_AC_SYSTEM_ERROR|cLS_PPOE_GENERIC_ERROR|cLS_PPP_DISABLE|cLS_PPPOE_NO_HOST_UNIQ|cLS_PPPOE_PADI_TIMEOUT|cLS_PPPOE_PADO_TIMEOUT|cLS_PPPOE_PADR_TIMEOUT|cLS_PROTO_REJ_IPCP|cLS_PROTO_REJ_IPv6CP|cLS_TIMEOUT_CHAP_CHAL|cLS_TIMEOUT_CHAP_RESP|cLS_TIMEOUT_IPCP_CFG_REQ|cLS_TIMEOUT_IPV6CP_CFG_REQ|cLS_TIMEOUT_IPV6CP_RA|cLS_TIMEOUT_LCP_CFG_REQ|cLS_TIMEOUT_LCP_ECHO_REQ|cLS_TIMEOUT_PAP_AUTH_REQ|cLS_TUN_AUTH_FAILED|cLS_TUN_NO_RESOURCES|cLS_TUN_TIMEOUT_ICRQ|cLS_TUN_TIMEOUT_SCCRQ|cLS_TUN_VENDOR_SPECIFIC_ERR])
@@ -1187,7 +1189,7 @@ class Pppoxclient(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -1196,7 +1198,7 @@ class Pppoxclient(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -1208,7 +1210,7 @@ class Pppoxclient(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -1217,7 +1219,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -1226,7 +1228,7 @@ class Pppoxclient(Base):
 
 	@property
 	def UnlimitedRedialAttempts(self):
-		"""If checked, PPPoE unlimited redial attempts is enabled
+		"""DEPRECATED If checked, PPPoE unlimited redial attempts is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1235,7 +1237,7 @@ class Pppoxclient(Base):
 
 	@property
 	def UserDefinedDslType(self):
-		"""User Defined DSL-Type Value.
+		"""DEPRECATED User Defined DSL-Type Value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1244,7 +1246,7 @@ class Pppoxclient(Base):
 
 	@property
 	def UserDefinedPonType(self):
-		"""User Defined PON-Type Value.
+		"""DEPRECATED User Defined PON-Type Value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

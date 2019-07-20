@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,7 +125,7 @@ class OpenFlowController(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -135,7 +137,7 @@ class OpenFlowController(Base):
 
 	@property
 	def ControllerLocalIp(self):
-		"""The local IP address of the interface. This field is auto-populated and cannot be changed.
+		"""DEPRECATED The local IP address of the interface. This field is auto-populated and cannot be changed.
 
 		Returns:
 			list(str)
@@ -144,7 +146,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -153,7 +155,7 @@ class OpenFlowController(Base):
 
 	@property
 	def DelFlowsAtStartup(self):
-		"""If selected, Controller sends an OpenFlow delete message (for all wild card entries) at start-up. This deletes all existing flows in the DUT.
+		"""DEPRECATED If selected, Controller sends an OpenFlow delete message (for all wild card entries) at start-up. This deletes all existing flows in the DUT.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -162,7 +164,7 @@ class OpenFlowController(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -171,7 +173,7 @@ class OpenFlowController(Base):
 
 	@property
 	def DirectoryName(self):
-		"""Location of Directory in Client where the Certificate and Key Files are available
+		"""DEPRECATED Location of Directory in Client where the Certificate and Key Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -180,7 +182,7 @@ class OpenFlowController(Base):
 
 	@property
 	def EchoInterval(self):
-		"""The periodic interval in seconds at which the Interface sends Echo Request Packets.
+		"""DEPRECATED The periodic interval in seconds at which the Interface sends Echo Request Packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -189,7 +191,7 @@ class OpenFlowController(Base):
 
 	@property
 	def EchoTimeOut(self):
-		"""If selected, the echo request times out when they have been sent for a specified number of times, or when the time value specified has lapsed, but no response is received
+		"""DEPRECATED If selected, the echo request times out when they have been sent for a specified number of times, or when the time value specified has lapsed, but no response is received
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -198,7 +200,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -207,7 +209,7 @@ class OpenFlowController(Base):
 
 	@property
 	def FeatRequestTimeout(self):
-		"""The inactive time in milliseconds after which the feature request will timeout.
+		"""DEPRECATED The inactive time in milliseconds after which the feature request will timeout.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -216,7 +218,7 @@ class OpenFlowController(Base):
 
 	@property
 	def FeatureRquestTimeoutAction(self):
-		"""Specify the action to be performed when a feature request times out. The options are: 1) Re-send Feature Request 2) Terminate Connection
+		"""DEPRECATED Specify the action to be performed when a feature request times out. The options are: 1) Re-send Feature Request 2) Terminate Connection
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -225,7 +227,7 @@ class OpenFlowController(Base):
 
 	@property
 	def FileCaCertificate(self):
-		"""Browse and upload a CA Certificate file for TLS session.
+		"""DEPRECATED Browse and upload a CA Certificate file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -234,7 +236,7 @@ class OpenFlowController(Base):
 
 	@property
 	def FileCertificate(self):
-		"""Browse and upload the certificate file for TLS session.
+		"""DEPRECATED Browse and upload the certificate file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -243,7 +245,7 @@ class OpenFlowController(Base):
 
 	@property
 	def FilePrivKey(self):
-		"""Browse and upload the private key file for TLS session.
+		"""DEPRECATED Browse and upload the private key file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -252,7 +254,7 @@ class OpenFlowController(Base):
 
 	@property
 	def InstallFlowForLLDP(self):
-		"""If selected, the controller sends add flow to each connected switch in such a way that each switch forwards LLDP packet to all other connected switches.
+		"""DEPRECATED If selected, the controller sends add flow to each connected switch in such a way that each switch forwards LLDP packet to all other connected switches.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -261,7 +263,7 @@ class OpenFlowController(Base):
 
 	@property
 	def InstallLLDPFlow(self):
-		"""If selected, LLDP Flow is installed.
+		"""DEPRECATED If selected, LLDP Flow is installed.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -270,7 +272,7 @@ class OpenFlowController(Base):
 
 	@property
 	def LLDPDestinactionMac(self):
-		"""Specify the LLDP Destination MAC address.
+		"""DEPRECATED Specify the LLDP Destination MAC address.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -279,7 +281,7 @@ class OpenFlowController(Base):
 
 	@property
 	def LldpDstMacAddress(self):
-		"""The destination MAC Address for the LLDP packet.
+		"""DEPRECATED The destination MAC Address for the LLDP packet.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -288,7 +290,7 @@ class OpenFlowController(Base):
 
 	@property
 	def ModeOfConnection(self):
-		"""The mode of connection used for the Interface. Options include: 1) Active 2) Passive 3) Mixed
+		"""DEPRECATED The mode of connection used for the Interface. Options include: 1) Active 2) Passive 3) Mixed
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -297,7 +299,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -309,7 +311,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -321,7 +323,7 @@ class OpenFlowController(Base):
 
 	@property
 	def NumberOfChannels(self):
-		"""Total number of OpenFlow channels to be added for this protocol interface.
+		"""DEPRECATED Total number of OpenFlow channels to be added for this protocol interface.
 
 		Returns:
 			number
@@ -333,7 +335,7 @@ class OpenFlowController(Base):
 
 	@property
 	def PeriodicEcho(self):
-		"""If selected, the Interface sends echo requests periodically to keep the OpenFlow session connected.
+		"""DEPRECATED If selected, the Interface sends echo requests periodically to keep the OpenFlow session connected.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -342,7 +344,7 @@ class OpenFlowController(Base):
 
 	@property
 	def PeriodicLLDP(self):
-		"""If selected, the interface sends LLDP packets periodically to discover new links.
+		"""DEPRECATED If selected, the interface sends LLDP packets periodically to discover new links.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -351,7 +353,7 @@ class OpenFlowController(Base):
 
 	@property
 	def PeriodicLLDPInterval(self):
-		"""The periodic interval in milliseconds at which the Interface sends LLDP packets.
+		"""DEPRECATED The periodic interval in milliseconds at which the Interface sends LLDP packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -360,7 +362,7 @@ class OpenFlowController(Base):
 
 	@property
 	def ResponseTimeout(self):
-		"""The time in milliseconds after which the trigger request times out, if no response is received
+		"""DEPRECATED The time in milliseconds after which the trigger request times out, if no response is received
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -369,7 +371,7 @@ class OpenFlowController(Base):
 
 	@property
 	def SendPortFeatureAtStartup(self):
-		"""If selected, port Description request is sent when the connection is established
+		"""DEPRECATED If selected, port Description request is sent when the connection is established
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -378,7 +380,7 @@ class OpenFlowController(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -387,7 +389,7 @@ class OpenFlowController(Base):
 
 	@property
 	def SetAsyncConfig(self):
-		"""Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
+		"""DEPRECATED Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
 
 		Returns:
 			bool
@@ -399,7 +401,7 @@ class OpenFlowController(Base):
 
 	@property
 	def SetSwitchConfig(self):
-		"""Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
+		"""DEPRECATED Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
 
 		Returns:
 			bool
@@ -411,7 +413,7 @@ class OpenFlowController(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -423,7 +425,7 @@ class OpenFlowController(Base):
 
 	@property
 	def StartupEmptyTableFeatureRequest(self):
-		"""If selected, the Table Feature Request is sent at start up.
+		"""DEPRECATED If selected, the Table Feature Request is sent at start up.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -432,7 +434,7 @@ class OpenFlowController(Base):
 
 	@property
 	def StartupFeatureRequest(self):
-		"""If selected, port feature request is sent when the connection is established.
+		"""DEPRECATED If selected, port feature request is sent when the connection is established.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -441,7 +443,7 @@ class OpenFlowController(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -450,7 +452,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -459,7 +461,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TcpPort(self):
-		"""Specify the TCP port for this interface
+		"""DEPRECATED Specify the TCP port for this interface
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -468,7 +470,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TimeoutOption(self):
-		"""The types of timeout options supported. Choose one of the following: 1) Multiplier 2) Timeout Value
+		"""DEPRECATED The types of timeout options supported. Choose one of the following: 1) Multiplier 2) Timeout Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -477,7 +479,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TimeoutOptionValue(self):
-		"""The value specified for the selected Timeout option.
+		"""DEPRECATED The value specified for the selected Timeout option.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -486,7 +488,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TlsVersion(self):
-		"""TLS version selection
+		"""DEPRECATED TLS version selection
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -495,7 +497,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TriggerLldp(self):
-		"""If selected, LLDP is triggered
+		"""DEPRECATED If selected, LLDP is triggered
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -504,7 +506,7 @@ class OpenFlowController(Base):
 
 	@property
 	def TypeOfConnection(self):
-		"""The type of connection used for the Interface. Options include: 1) TCP 2) TLS
+		"""DEPRECATED The type of connection used for the Interface. Options include: 1) TCP 2) TLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -513,7 +515,7 @@ class OpenFlowController(Base):
 
 	@property
 	def Version(self):
-		"""Implementation Version
+		"""DEPRECATED Implementation Version
 
 		Returns:
 			number
@@ -522,7 +524,7 @@ class OpenFlowController(Base):
 
 	@property
 	def VersionSupported(self):
-		"""Indicates the supported OpenFlow version number.
+		"""DEPRECATED Indicates the supported OpenFlow version number.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -371,7 +373,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics.
+		"""DEPRECATED Sets the latency bins statistics.
 
 		Returns:
 			str
@@ -383,7 +385,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics.
+		"""DEPRECATED Enables the latency bins statistics.
 
 		Returns:
 			bool
@@ -395,7 +397,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""The latency type, either Cut Through or Store and Forward.
+		"""DEPRECATED The latency type, either Cut Through or Store and Forward.
 
 		Returns:
 			str(cutThrough|storeForward)
@@ -407,7 +409,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""The latency type, either Cut Through or Store and Forward.
+		"""DEPRECATED The latency type, either Cut Through or Store and Forward.
 
 		Returns:
 			str(step)
@@ -419,7 +421,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadUnitLabel(self):
-		"""Signifies the load unit label
+		"""DEPRECATED Signifies the load unit label
 
 		Returns:
 			str
@@ -431,7 +433,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""The map type.
+		"""DEPRECATED The map type.
 
 		Returns:
 			str
@@ -443,7 +445,7 @@ class TestConfig(Base):
 
 	@property
 	def NumFrames(self):
-		"""Number of frames.
+		"""DEPRECATED Number of frames.
 
 		Returns:
 			number
@@ -455,7 +457,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""Number of trials.
+		"""DEPRECATED Number of trials.
 
 		Returns:
 			number
@@ -467,7 +469,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -479,7 +481,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured.
+		"""DEPRECATED Sets the port delay unit in which it will be measured.
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -491,7 +493,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value
+		"""DEPRECATED Sets the port delay value
 
 		Returns:
 			number
@@ -503,7 +505,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""Specifies to include the types of sequence errors in the results, such as Small.
+		"""DEPRECATED Specifies to include the types of sequence errors in the results, such as Small.
 
 		Returns:
 			bool
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""The throughput rate unit.
+		"""DEPRECATED The throughput rate unit.
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def Runmode(self):
-		"""The running mode.
+		"""DEPRECATED The running mode.
 
 		Returns:
 			str(duration|noframes)
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def StaggeredStart(self):
-		"""Enable a staggered start to traffic transmit.
+		"""DEPRECATED Enable a staggered start to traffic transmit.
 
 		Returns:
 			bool
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""The supported traffic types.
+		"""DEPRECATED The supported traffic types.
 
 		Returns:
 			str
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def TestType(self):
-		"""Signifies the test type
+		"""DEPRECATED Signifies the test type
 
 		Returns:
 			str(downstreamOnly|upstreamDownstream|upstreamOnly)
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def TestTypeTemp(self):
-		"""Signifies the temporary test type
+		"""DEPRECATED Signifies the temporary test type
 
 		Returns:
 			str(downstreamOnly|upstreamDownstream|upstreamOnly)
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def TestTypeTemp2(self):
-		"""Signifies the second termorary version of test type
+		"""DEPRECATED Signifies the second termorary version of test type
 
 		Returns:
 			str(downstreamOnly|upstreamDownstream|upstreamOnly)
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def TrafficType(self):
-		"""The type of traffic to be transmitted.
+		"""DEPRECATED The type of traffic to be transmitted.
 
 		Returns:
 			str(burstyLoading|constantLoading)
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""The delay in transmission.
+		"""DEPRECATED The delay in transmission.
 
 		Returns:
 			number
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamGrain(self):
-		"""The upstream traffic grain type.
+		"""DEPRECATED The upstream traffic grain type.
 
 		Returns:
 			str(coarse|fine)
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixAdd(self):
-		"""Adds IMIX upstream.
+		"""DEPRECATED Adds IMIX upstream.
 
 		Returns:
 			str
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixData(self):
-		"""Signifies the data of upstream IMIX
+		"""DEPRECATED Signifies the data of upstream IMIX
 
 		Returns:
 			str
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixDataQoS(self):
-		"""Signifies the quality of service for upstream IMIX data
+		"""DEPRECATED Signifies the quality of service for upstream IMIX data
 
 		Returns:
 			bool
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixDelete(self):
-		"""Deletes upstream IMIX
+		"""DEPRECATED Deletes upstream IMIX
 
 		Returns:
 			str
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixDistribution(self):
-		"""Signifies the distribution of upstream IMIX
+		"""DEPRECATED Signifies the distribution of upstream IMIX
 
 		Returns:
 			str(bwpercentage|weight)
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixEnabled(self):
-		"""If true, enables upstream IMIX
+		"""DEPRECATED If true, enables upstream IMIX
 
 		Returns:
 			bool
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamImixTemplates(self):
-		"""Signifies the upstream IMIX templates.
+		"""DEPRECATED Signifies the upstream IMIX templates.
 
 		Returns:
 			str(cisco|imix|ipsec|ipv6|none|quadmodal|standard|tcp|tolly|trimodal)
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamInitialStepLoadRate(self):
-		"""Signifies upstream initial step load rate
+		"""DEPRECATED Signifies upstream initial step load rate
 
 		Returns:
 			number
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamLoadType(self):
-		"""Signifies upstream load type
+		"""DEPRECATED Signifies upstream load type
 
 		Returns:
 			str(step)
@@ -755,7 +757,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamStepLoadUnit(self):
-		"""Signifies upstream step load unit.
+		"""DEPRECATED Signifies upstream step load unit.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -767,7 +769,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamStepStepLoadRate(self):
-		"""Signifies the upstream step load rate
+		"""DEPRECATED Signifies the upstream step load rate
 
 		Returns:
 			str
@@ -779,7 +781,7 @@ class TestConfig(Base):
 
 	@property
 	def UpstreamStepTolerance(self):
-		"""Signifies upstream step tolerance value
+		"""DEPRECATED Signifies upstream step tolerance value
 
 		Returns:
 			number

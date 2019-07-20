@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -131,7 +133,7 @@ class Topology(Base):
 
 	@property
 	def Vports(self):
-		"""Virtual port information.
+		"""DEPRECATED Virtual port information.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport])

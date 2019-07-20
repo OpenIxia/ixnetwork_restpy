@@ -4,7 +4,7 @@ To get started [browse the class and samples documentation here](https://openixi
 
 ## What's New!
 - The following is a summary of major changes. 
-- Jun 2019 - 1.0.35
+- Jul 2019 - 1.0.37
   - unit tests
   - samples and api reference moved from package to online at https://openixia.github.io/ixnetwork_restpy/index.html
   - .tar.gz source distribution in addition to .whl

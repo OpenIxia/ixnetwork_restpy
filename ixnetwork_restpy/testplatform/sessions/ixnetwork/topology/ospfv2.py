@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -169,7 +171,7 @@ class Ospfv2(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -181,7 +183,7 @@ class Ospfv2(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -190,7 +192,7 @@ class Ospfv2(Base):
 
 	@property
 	def DeadInterval(self):
-		"""Dead Interval
+		"""DEPRECATED Dead Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -199,7 +201,7 @@ class Ospfv2(Base):
 
 	@property
 	def Dedicated1Plus1(self):
-		"""This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
+		"""DEPRECATED This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -208,7 +210,7 @@ class Ospfv2(Base):
 
 	@property
 	def Dedicated1To1(self):
-		"""This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
+		"""DEPRECATED This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +219,7 @@ class Ospfv2(Base):
 
 	@property
 	def DemandCircuit(self):
-		"""Option bit 7
+		"""DEPRECATED Option bit 7
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -226,7 +228,7 @@ class Ospfv2(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -235,7 +237,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnLinkProtection(self):
-		"""This enables the link protection on the OSPF link between two mentioned interfaces.
+		"""DEPRECATED This enables the link protection on the OSPF link between two mentioned interfaces.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -244,7 +246,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnableAdjSID(self):
-		"""Enable Adj SID
+		"""DEPRECATED Enable Adj SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -253,7 +255,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""Enable BFD Registration
+		"""DEPRECATED Enable BFD Registration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -262,7 +264,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnableFast2wayConvergence(self):
-		"""Enable 2-way Adj Fast Convergence
+		"""DEPRECATED Enable 2-way Adj Fast Convergence
 
 		Returns:
 			bool
@@ -274,7 +276,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnableFastHello(self):
-		"""Enable Fast Hello
+		"""DEPRECATED Enable Fast Hello
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -283,7 +285,7 @@ class Ospfv2(Base):
 
 	@property
 	def EnableSRLG(self):
-		"""This enables the SRLG on the OSPF link between two mentioned interfaces.
+		"""DEPRECATED This enables the SRLG on the OSPF link between two mentioned interfaces.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -292,7 +294,7 @@ class Ospfv2(Base):
 
 	@property
 	def Enhanced(self):
-		"""This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
+		"""DEPRECATED This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -301,7 +303,7 @@ class Ospfv2(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -310,7 +312,7 @@ class Ospfv2(Base):
 
 	@property
 	def ExternalAttribute(self):
-		"""Option bit 4
+		"""DEPRECATED Option bit 4
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -319,7 +321,7 @@ class Ospfv2(Base):
 
 	@property
 	def ExternalCapability(self):
-		"""Option bit 1
+		"""DEPRECATED Option bit 1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -328,7 +330,7 @@ class Ospfv2(Base):
 
 	@property
 	def ExtraTraffic(self):
-		"""This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
+		"""DEPRECATED This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -337,7 +339,7 @@ class Ospfv2(Base):
 
 	@property
 	def HelloInterval(self):
-		"""Hello Interval
+		"""DEPRECATED Hello Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -346,7 +348,7 @@ class Ospfv2(Base):
 
 	@property
 	def HelloMultiplier(self):
-		"""Hello Multiplier
+		"""DEPRECATED Hello Multiplier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -355,7 +357,7 @@ class Ospfv2(Base):
 
 	@property
 	def LFlag(self):
-		"""Local/Global Flag
+		"""DEPRECATED Local/Global Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -364,7 +366,7 @@ class Ospfv2(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""Router ID
+		"""DEPRECATED Router ID
 
 		Returns:
 			list(str)
@@ -373,7 +375,7 @@ class Ospfv2(Base):
 
 	@property
 	def MaxMtu(self):
-		"""Max MTU Value
+		"""DEPRECATED Max MTU Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -382,7 +384,7 @@ class Ospfv2(Base):
 
 	@property
 	def Md5Key(self):
-		"""MD5 Key
+		"""DEPRECATED MD5 Key
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -391,7 +393,7 @@ class Ospfv2(Base):
 
 	@property
 	def Md5KeyId(self):
-		"""MD5 Key ID
+		"""DEPRECATED MD5 Key ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -400,7 +402,7 @@ class Ospfv2(Base):
 
 	@property
 	def Metric(self):
-		"""Routing Metric
+		"""DEPRECATED Routing Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -409,7 +411,7 @@ class Ospfv2(Base):
 
 	@property
 	def MulticastCapability(self):
-		"""Option bit 2
+		"""DEPRECATED Option bit 2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -418,7 +420,7 @@ class Ospfv2(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -430,7 +432,7 @@ class Ospfv2(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -442,7 +444,7 @@ class Ospfv2(Base):
 
 	@property
 	def NeighborIp(self):
-		"""Neighbor IP when connected network is Point to Multipoint
+		"""DEPRECATED Neighbor IP when connected network is Point to Multipoint
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -451,7 +453,7 @@ class Ospfv2(Base):
 
 	@property
 	def NetworkType(self):
-		"""Network Type
+		"""DEPRECATED Network Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -460,7 +462,7 @@ class Ospfv2(Base):
 
 	@property
 	def NssaCapability(self):
-		"""Option bit 3
+		"""DEPRECATED Option bit 3
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -469,7 +471,7 @@ class Ospfv2(Base):
 
 	@property
 	def OpaqueLsaForwarded(self):
-		"""Option bit 6
+		"""DEPRECATED Option bit 6
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -478,7 +480,7 @@ class Ospfv2(Base):
 
 	@property
 	def OspfIfaceState(self):
-		"""Logs additional information about the Interface State
+		"""DEPRECATED Logs additional information about the Interface State
 
 		Returns:
 			list(str[backup|down|dr|drOther|pointToPoint|unrecognized|waiting])
@@ -487,7 +489,7 @@ class Ospfv2(Base):
 
 	@property
 	def OspfNeighborState(self):
-		"""Logs additional information about the Neighbor State
+		"""DEPRECATED Logs additional information about the Neighbor State
 
 		Returns:
 			list(str[attempt|down|exchange|exStart|full|init|loading|multiNeighbor|none|twoWay])
@@ -496,7 +498,7 @@ class Ospfv2(Base):
 
 	@property
 	def Priority(self):
-		"""Priority (when DR/BDR)
+		"""DEPRECATED Priority (when DR/BDR)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -505,7 +507,7 @@ class Ospfv2(Base):
 
 	@property
 	def Reserved40(self):
-		"""This is a Protection Scheme with value 0x40.
+		"""DEPRECATED This is a Protection Scheme with value 0x40.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -514,7 +516,7 @@ class Ospfv2(Base):
 
 	@property
 	def Reserved80(self):
-		"""This is a Protection Scheme with value 0x80.
+		"""DEPRECATED This is a Protection Scheme with value 0x80.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -523,7 +525,7 @@ class Ospfv2(Base):
 
 	@property
 	def SFlag(self):
-		"""Set Flag
+		"""DEPRECATED Set Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -532,7 +534,7 @@ class Ospfv2(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the session state
+		"""DEPRECATED Logs additional information about the session state
 
 		Returns:
 			list(str[ifaceSessInfoAllNbrIn2Way|ifaceSessInfoAllNbrInattempt|ifaceSessInfoAllNbrInDown|ifaceSessInfoAllNbrInExchange|ifaceSessInfoAllNbrInExStart|ifaceSessInfoAllNbrInInit|ifaceSessInfoAllNbrInLoading|ifaceSessInfoFsmNotStarted|ifaceSessInfoSameNbrId|iPAddressNotRcvd|none])
@@ -541,7 +543,7 @@ class Ospfv2(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -550,7 +552,7 @@ class Ospfv2(Base):
 
 	@property
 	def Shared(self):
-		"""This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
+		"""DEPRECATED This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -559,7 +561,7 @@ class Ospfv2(Base):
 
 	@property
 	def SrlgCount(self):
-		"""This field value shows how many SRLG Value columns would be there in the GUI.
+		"""DEPRECATED This field value shows how many SRLG Value columns would be there in the GUI.
 
 		Returns:
 			number
@@ -571,7 +573,7 @@ class Ospfv2(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -583,7 +585,7 @@ class Ospfv2(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -592,7 +594,7 @@ class Ospfv2(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -601,7 +603,7 @@ class Ospfv2(Base):
 
 	@property
 	def SuppressHello(self):
-		"""Suppress Hello for BGP-LS
+		"""DEPRECATED Suppress Hello for BGP-LS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -610,7 +612,7 @@ class Ospfv2(Base):
 
 	@property
 	def TypeAreaId(self):
-		"""Area ID Type
+		"""DEPRECATED Area ID Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -619,7 +621,7 @@ class Ospfv2(Base):
 
 	@property
 	def TypeOfServiceRouting(self):
-		"""Option bit 0
+		"""DEPRECATED Option bit 0
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -628,7 +630,7 @@ class Ospfv2(Base):
 
 	@property
 	def Unprotected(self):
-		"""This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
+		"""DEPRECATED This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -637,7 +639,7 @@ class Ospfv2(Base):
 
 	@property
 	def Unused(self):
-		"""Option bit 7
+		"""DEPRECATED Option bit 7
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -646,7 +648,7 @@ class Ospfv2(Base):
 
 	@property
 	def VFlag(self):
-		"""Value/Index Flag
+		"""DEPRECATED Value/Index Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -655,7 +657,7 @@ class Ospfv2(Base):
 
 	@property
 	def ValidateRxMtu(self):
-		"""Validate Received MTU
+		"""DEPRECATED Validate Received MTU
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -664,7 +666,7 @@ class Ospfv2(Base):
 
 	@property
 	def Weight(self):
-		"""Weight
+		"""DEPRECATED Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

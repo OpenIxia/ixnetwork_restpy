@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,7 +61,7 @@ class MldQuerier(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -71,7 +73,7 @@ class MldQuerier(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -80,7 +82,7 @@ class MldQuerier(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -89,7 +91,7 @@ class MldQuerier(Base):
 
 	@property
 	def DiscardLearntInfo(self):
-		"""Discard Learned Info
+		"""DEPRECATED Discard Learned Info
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -98,7 +100,7 @@ class MldQuerier(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -107,7 +109,7 @@ class MldQuerier(Base):
 
 	@property
 	def GeneralQueryInterval(self):
-		"""General Query Interval in seconds
+		"""DEPRECATED General Query Interval in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -116,7 +118,7 @@ class MldQuerier(Base):
 
 	@property
 	def GeneralQueryResponseInterval(self):
-		"""General Query Response Interval in milliseconds
+		"""DEPRECATED General Query Response Interval in milliseconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -125,7 +127,7 @@ class MldQuerier(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -137,7 +139,7 @@ class MldQuerier(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -149,7 +151,7 @@ class MldQuerier(Base):
 
 	@property
 	def ProxyQuerier(self):
-		"""Enable Proxy Querier
+		"""DEPRECATED Enable Proxy Querier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -158,7 +160,7 @@ class MldQuerier(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""Robustness Variable
+		"""DEPRECATED Robustness Variable
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -167,7 +169,7 @@ class MldQuerier(Base):
 
 	@property
 	def RouterAlert(self):
-		"""Router Alert
+		"""DEPRECATED Router Alert
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -176,7 +178,7 @@ class MldQuerier(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the session state
+		"""DEPRECATED Logs additional information about the session state
 
 		Returns:
 			list(str[noIfaceUp|up])
@@ -185,7 +187,7 @@ class MldQuerier(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -194,7 +196,7 @@ class MldQuerier(Base):
 
 	@property
 	def SpecificQueryResponseInterval(self):
-		"""Specific Query Response Interval in milliseconds
+		"""DEPRECATED Specific Query Response Interval in milliseconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -203,7 +205,7 @@ class MldQuerier(Base):
 
 	@property
 	def SpecificQueryTransmissionCount(self):
-		"""Specific Query Transmission Count
+		"""DEPRECATED Specific Query Transmission Count
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -212,7 +214,7 @@ class MldQuerier(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -224,7 +226,7 @@ class MldQuerier(Base):
 
 	@property
 	def StartupQueryCount(self):
-		"""Startup Query Count
+		"""DEPRECATED Startup Query Count
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -233,7 +235,7 @@ class MldQuerier(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -242,7 +244,7 @@ class MldQuerier(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -251,7 +253,7 @@ class MldQuerier(Base):
 
 	@property
 	def SupportElection(self):
-		"""Support Election
+		"""DEPRECATED Support Election
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -260,7 +262,7 @@ class MldQuerier(Base):
 
 	@property
 	def SupportOlderVersionHost(self):
-		"""Support Older Version Host
+		"""DEPRECATED Support Older Version Host
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -269,7 +271,7 @@ class MldQuerier(Base):
 
 	@property
 	def SupportOlderVersionQuerier(self):
-		"""Support Older Version Querier
+		"""DEPRECATED Support Older Version Querier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -278,7 +280,7 @@ class MldQuerier(Base):
 
 	@property
 	def VersionType(self):
-		"""Version
+		"""DEPRECATED Version
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

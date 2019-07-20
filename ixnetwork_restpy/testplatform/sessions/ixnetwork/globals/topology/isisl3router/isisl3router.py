@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -228,7 +230,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6AdjSIDSubTlvType(self):
-		"""This specifies the type of SRv6 Adjacency-SID sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 Adjacency-SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -237,7 +239,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6CapabilitiesSubTlvType(self):
-		"""This specifies the type of SRv6 Capabilities sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 Capabilities sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -246,7 +248,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6EndSidSubTlvType(self):
-		"""This specifies the type of SRv6 End SID sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 End SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -255,7 +257,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6EndXSidSubTlvType(self):
-		"""This specifies the type of SRv6 End.X SID sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 End.X SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -264,7 +266,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6LANAdjSIDSubTlvType(self):
-		"""This specifies the type of SRv6 LAN Adjacency-SID sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 LAN Adjacency-SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -273,7 +275,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6LanEndXSidSubTlvType(self):
-		"""This specifies the type of SRv6 LAN End.X SID sub-TLV
+		"""DEPRECATED This specifies the type of SRv6 LAN End.X SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -282,7 +284,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6NodeSIDTlvType(self):
-		"""This specifies the type of SRv6 Node SID TLV
+		"""DEPRECATED This specifies the type of SRv6 Node SID TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -291,7 +293,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6SidLocatorTlvType(self):
-		"""SRv6 SID Locator Tlv Type
+		"""DEPRECATED SRv6 SID Locator Tlv Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

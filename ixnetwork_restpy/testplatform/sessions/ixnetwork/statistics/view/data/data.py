@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -174,7 +176,7 @@ class Data(Base):
 
 	@property
 	def RowValues(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			dict(arg1:list[list[list[str]]])
@@ -183,7 +185,7 @@ class Data(Base):
 
 	@property
 	def Timestamp(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number
@@ -192,7 +194,7 @@ class Data(Base):
 
 	@property
 	def TotalPages(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number
@@ -201,7 +203,7 @@ class Data(Base):
 
 	@property
 	def TotalRows(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number

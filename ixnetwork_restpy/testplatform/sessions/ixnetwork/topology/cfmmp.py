@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -204,7 +206,7 @@ class CfmMp(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -216,7 +218,7 @@ class CfmMp(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -225,7 +227,7 @@ class CfmMp(Base):
 
 	@property
 	def DataTlvLength(self):
-		"""Data TLV Length
+		"""DEPRECATED Data TLV Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -234,7 +236,7 @@ class CfmMp(Base):
 
 	@property
 	def DataTlvValue(self):
-		"""Data TLV Value
+		"""DEPRECATED Data TLV Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -243,7 +245,7 @@ class CfmMp(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -252,7 +254,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableAutoLb(self):
-		"""Enable Auto LB
+		"""DEPRECATED Enable Auto LB
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -261,7 +263,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableAutoLt(self):
-		"""Enable Auto LT
+		"""DEPRECATED Enable Auto LT
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -270,7 +272,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableDataTlv(self):
-		"""Enable Data TLV
+		"""DEPRECATED Enable Data TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -279,7 +281,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableInterfaceStatusTlv(self):
-		"""Enable Interface Status TLV
+		"""DEPRECATED Enable Interface Status TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -288,7 +290,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableOrganizationSpecificTlv(self):
-		"""Enable Organization Specific TLV
+		"""DEPRECATED Enable Organization Specific TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -297,7 +299,7 @@ class CfmMp(Base):
 
 	@property
 	def EnablePortStatusTlv(self):
-		"""Enable Port Status TLV
+		"""DEPRECATED Enable Port Status TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -306,7 +308,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableSenderIdTlv(self):
-		"""Enable Sender ID TLV
+		"""DEPRECATED Enable Sender ID TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -315,7 +317,7 @@ class CfmMp(Base):
 
 	@property
 	def EnableVlan(self):
-		"""Enable VLAN
+		"""DEPRECATED Enable VLAN
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -324,7 +326,7 @@ class CfmMp(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -333,7 +335,7 @@ class CfmMp(Base):
 
 	@property
 	def IncludeTLVinCCM(self):
-		"""Include Custom TLV in CCM
+		"""DEPRECATED Include Custom TLV in CCM
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -342,7 +344,7 @@ class CfmMp(Base):
 
 	@property
 	def IncludeTLVinLBM(self):
-		"""Include Custom TLV in LBM
+		"""DEPRECATED Include Custom TLV in LBM
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -351,7 +353,7 @@ class CfmMp(Base):
 
 	@property
 	def IncludeTLVinLBR(self):
-		"""Include Custom TLV in LBR
+		"""DEPRECATED Include Custom TLV in LBR
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -360,7 +362,7 @@ class CfmMp(Base):
 
 	@property
 	def IncludeTLVinLTM(self):
-		"""Include Custom TLV in LTM
+		"""DEPRECATED Include Custom TLV in LTM
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -369,7 +371,7 @@ class CfmMp(Base):
 
 	@property
 	def IncludeTLVinLTR(self):
-		"""Include Custom TLV in LTR
+		"""DEPRECATED Include Custom TLV in LTR
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -378,7 +380,7 @@ class CfmMp(Base):
 
 	@property
 	def LbAllRemoteMeps(self):
-		"""LB All Remote MEPS
+		"""DEPRECATED LB All Remote MEPS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -387,7 +389,7 @@ class CfmMp(Base):
 
 	@property
 	def LbDestinationMacAddress(self):
-		"""LB Destination MAC Address
+		"""DEPRECATED LB Destination MAC Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -396,7 +398,7 @@ class CfmMp(Base):
 
 	@property
 	def LbmPriority(self):
-		"""LBM Priority
+		"""DEPRECATED LBM Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -405,7 +407,7 @@ class CfmMp(Base):
 
 	@property
 	def LtAllRemoteMeps(self):
-		"""LT All Remote MEPS
+		"""DEPRECATED LT All Remote MEPS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -414,7 +416,7 @@ class CfmMp(Base):
 
 	@property
 	def LtDestinationMacAddress(self):
-		"""LT Destination MAC Address
+		"""DEPRECATED LT Destination MAC Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -423,7 +425,7 @@ class CfmMp(Base):
 
 	@property
 	def LtmPriority(self):
-		"""LTM Priority
+		"""DEPRECATED LTM Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -432,7 +434,7 @@ class CfmMp(Base):
 
 	@property
 	def MacAddress(self):
-		"""MAC Address
+		"""DEPRECATED MAC Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -441,7 +443,7 @@ class CfmMp(Base):
 
 	@property
 	def ManagementAddress(self):
-		"""Management Address
+		"""DEPRECATED Management Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -450,7 +452,7 @@ class CfmMp(Base):
 
 	@property
 	def ManagementAddressDomain(self):
-		"""Management Address Domain
+		"""DEPRECATED Management Address Domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -459,7 +461,7 @@ class CfmMp(Base):
 
 	@property
 	def ManagementAddressDomainLength(self):
-		"""Management Address Domain Length
+		"""DEPRECATED Management Address Domain Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -468,7 +470,7 @@ class CfmMp(Base):
 
 	@property
 	def ManagementAddressLength(self):
-		"""Management Address Length
+		"""DEPRECATED Management Address Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -477,7 +479,7 @@ class CfmMp(Base):
 
 	@property
 	def MdMegLevel(self):
-		"""MD/MEG Level
+		"""DEPRECATED MD/MEG Level
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -486,7 +488,7 @@ class CfmMp(Base):
 
 	@property
 	def MdMegLevelIndex(self):
-		"""MD/MEG Level Index
+		"""DEPRECATED MD/MEG Level Index
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -495,7 +497,7 @@ class CfmMp(Base):
 
 	@property
 	def MdNameFormat(self):
-		"""CCI Interval
+		"""DEPRECATED CCI Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -504,7 +506,7 @@ class CfmMp(Base):
 
 	@property
 	def MepId(self):
-		"""MEP ID
+		"""DEPRECATED MEP ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -513,7 +515,7 @@ class CfmMp(Base):
 
 	@property
 	def MipId(self):
-		"""MIP ID
+		"""DEPRECATED MIP ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -522,7 +524,7 @@ class CfmMp(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -534,7 +536,7 @@ class CfmMp(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -546,7 +548,7 @@ class CfmMp(Base):
 
 	@property
 	def OrganizationSpecificTlvLength(self):
-		"""Organization Specific TLV Length
+		"""DEPRECATED Organization Specific TLV Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -555,7 +557,7 @@ class CfmMp(Base):
 
 	@property
 	def OverrideVlanPriority(self):
-		"""Override V-LAN Priority
+		"""DEPRECATED Override V-LAN Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -564,7 +566,7 @@ class CfmMp(Base):
 
 	@property
 	def Rdi(self):
-		"""RDI (Auto Update)
+		"""DEPRECATED RDI (Auto Update)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -573,7 +575,7 @@ class CfmMp(Base):
 
 	@property
 	def SVlanId(self):
-		"""S-VLAN ID
+		"""DEPRECATED S-VLAN ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -582,7 +584,7 @@ class CfmMp(Base):
 
 	@property
 	def SVlanPriority(self):
-		"""S-VLAN Priority
+		"""DEPRECATED S-VLAN Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -591,7 +593,7 @@ class CfmMp(Base):
 
 	@property
 	def SVlanTpid(self):
-		"""S-VLAN TPID
+		"""DEPRECATED S-VLAN TPID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -600,7 +602,7 @@ class CfmMp(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -609,7 +611,7 @@ class CfmMp(Base):
 
 	@property
 	def ShortMaName(self):
-		"""Short MA Name
+		"""DEPRECATED Short MA Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -618,7 +620,7 @@ class CfmMp(Base):
 
 	@property
 	def ShortMaNameFormat(self):
-		"""Short MA Name Format
+		"""DEPRECATED Short MA Name Format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -627,7 +629,7 @@ class CfmMp(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -639,7 +641,7 @@ class CfmMp(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -648,7 +650,7 @@ class CfmMp(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -657,7 +659,7 @@ class CfmMp(Base):
 
 	@property
 	def Type(self):
-		"""Type
+		"""DEPRECATED Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -666,7 +668,7 @@ class CfmMp(Base):
 
 	@property
 	def VlanStacking(self):
-		"""VLAN Stacking
+		"""DEPRECATED VLAN Stacking
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

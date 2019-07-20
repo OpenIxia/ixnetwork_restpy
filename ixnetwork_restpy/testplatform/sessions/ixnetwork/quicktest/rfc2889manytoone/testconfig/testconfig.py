@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(cutThrough|storeForward)
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadRateList(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(binary|combo|custom|quickSearch|step|unchanged)
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxBinaryLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxComboLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxQuickSearchLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxStepLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def MinBinaryLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def MinComboLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def MinFpsRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def MinKbpsRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def MinQuickSearchLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -755,7 +757,7 @@ class TestConfig(Base):
 
 	@property
 	def PercentMaxRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -767,7 +769,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -779,7 +781,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -791,7 +793,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -803,7 +805,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -815,7 +817,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchFrameLossUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(%)
@@ -827,7 +829,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchLoadUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -839,7 +841,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchResolution(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -851,7 +853,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchSearchType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(linear|perFlow|perPort|perTrafficItem)
@@ -863,7 +865,7 @@ class TestConfig(Base):
 
 	@property
 	def QuickSearchTolerance(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -875,7 +877,7 @@ class TestConfig(Base):
 
 	@property
 	def RateSelect(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(fpsRate|kbpsRate|percentMaxRate)
@@ -887,7 +889,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -899,7 +901,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -911,7 +913,7 @@ class TestConfig(Base):
 
 	@property
 	def Resolution(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -923,7 +925,7 @@ class TestConfig(Base):
 
 	@property
 	def Rfc2889ordering(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(noOrdering|unchanged|val2889Ordering)
@@ -935,7 +937,7 @@ class TestConfig(Base):
 
 	@property
 	def SendFullyMeshed(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -947,7 +949,7 @@ class TestConfig(Base):
 
 	@property
 	def ShowDetailedBinaryResults(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -959,7 +961,7 @@ class TestConfig(Base):
 
 	@property
 	def StepComboLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -971,7 +973,7 @@ class TestConfig(Base):
 
 	@property
 	def StepFrameLossUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(%|frames)
@@ -983,7 +985,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -995,7 +997,7 @@ class TestConfig(Base):
 
 	@property
 	def StepLoadUnit(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -1007,7 +1009,7 @@ class TestConfig(Base):
 
 	@property
 	def StepStepLoadRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1019,7 +1021,7 @@ class TestConfig(Base):
 
 	@property
 	def StepTolerance(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1031,7 +1033,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -1043,7 +1045,7 @@ class TestConfig(Base):
 
 	@property
 	def Tolerance(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1055,7 +1057,7 @@ class TestConfig(Base):
 
 	@property
 	def TrafficType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(burstyLoading|constantLoading)
@@ -1067,7 +1069,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1079,7 +1081,7 @@ class TestConfig(Base):
 
 	@property
 	def UsePercentOffsets(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool

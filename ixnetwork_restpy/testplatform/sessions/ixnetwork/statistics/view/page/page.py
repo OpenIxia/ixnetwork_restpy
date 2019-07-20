@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class Page(Base):
-	"""The Page class encapsulates a required page node in the ixnetwork hierarchy.
+	"""The DEPRECATED Page class encapsulates a required page node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the Page property from a parent instance.
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
@@ -35,7 +37,7 @@ class Page(Base):
 
 	@property
 	def Egress(self):
-		"""An instance of the Egress class.
+		"""An instance of the DEPRECATED Egress class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress)
@@ -186,7 +188,7 @@ class Page(Base):
 
 	@property
 	def RowValues(self):
-		"""All statistics values in a row.
+		"""DEPRECATED All statistics values in a row.
 
 		Returns:
 			dict(arg1:list[list[list[str]]])
@@ -195,7 +197,7 @@ class Page(Base):
 
 	@property
 	def Timestamp(self):
-		"""Describes the date and time of the event.
+		"""DEPRECATED Describes the date and time of the event.
 
 		Returns:
 			number
@@ -204,7 +206,7 @@ class Page(Base):
 
 	@property
 	def TotalPages(self):
-		"""The total number of statistics pages.
+		"""DEPRECATED The total number of statistics pages.
 
 		Returns:
 			number
@@ -213,7 +215,7 @@ class Page(Base):
 
 	@property
 	def TotalRows(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number

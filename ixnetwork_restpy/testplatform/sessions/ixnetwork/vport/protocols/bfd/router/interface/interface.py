@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -170,7 +172,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceId(self):
-		"""This is a local ID and is unique per router.
+		"""DEPRECATED This is a local ID and is unique per router.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -182,7 +184,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""The assigned protocol interface ID for this BFD interface.
+		"""DEPRECATED The assigned protocol interface ID for this BFD interface.
 
 		Returns:
 			number
@@ -194,7 +196,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceType(self):
-		"""The type of interface to be selected for this BFD interface.
+		"""DEPRECATED The type of interface to be selected for this BFD interface.
 
 		Returns:
 			str
@@ -206,7 +208,7 @@ class Interface(Base):
 
 	@property
 	def Interfaces(self):
-		"""The interfaces that are associated with the selected interface type.
+		"""DEPRECATED The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -218,7 +220,7 @@ class Interface(Base):
 
 	@property
 	def IpDifferentiatedServiceField(self):
-		"""Sets the TOS byte for IP Differentiated Service Field
+		"""DEPRECATED Sets the TOS byte for IP Differentiated Service Field
 
 		Returns:
 			number
@@ -230,7 +232,7 @@ class Interface(Base):
 
 	@property
 	def MinRxInterval(self):
-		"""This option indicates the desired minimum interval between received BFD control packets.
+		"""DEPRECATED This option indicates the desired minimum interval between received BFD control packets.
 
 		Returns:
 			number
@@ -242,7 +244,7 @@ class Interface(Base):
 
 	@property
 	def Multiplier(self):
-		"""Multiplier * intv defines the timeout period. (default = 3)
+		"""DEPRECATED Multiplier * intv defines the timeout period. (default = 3)
 
 		Returns:
 			number
@@ -254,7 +256,7 @@ class Interface(Base):
 
 	@property
 	def PollInterval(self):
-		"""If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
+		"""DEPRECATED If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
 
 		Returns:
 			number
@@ -266,7 +268,7 @@ class Interface(Base):
 
 	@property
 	def TxInterval(self):
-		"""This option indicates the desired interval between transmitted BFD control packets.
+		"""DEPRECATED This option indicates the desired interval between transmitted BFD control packets.
 
 		Returns:
 			number

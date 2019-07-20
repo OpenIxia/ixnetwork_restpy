@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +37,7 @@ class Aggregation(Base):
 
 	@property
 	def ActivePort(self):
-		"""Deprecated. Use activePorts instead.
+		"""DEPRECATED Deprecated. Use activePorts instead.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port)
@@ -44,7 +46,7 @@ class Aggregation(Base):
 
 	@property
 	def ActivePorts(self):
-		"""All active ports from Resource Group.
+		"""DEPRECATED All active ports from Resource Group.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port])
@@ -53,7 +55,7 @@ class Aggregation(Base):
 
 	@property
 	def AvailableModes(self):
-		"""Gets the supported resource group modes.
+		"""DEPRECATED Gets the supported resource group modes.
 
 		Returns:
 			list(str[atlasEightByFiftyGigFanOut|atlasFourByOneHundredGigFanOut|atlasOneByFourHundredGigNonFanOut|atlasTwoByTwoHundredGigNonFanOut|dualMode|eightByTenGigFanOut|fortyGig|fortyGigCapturePlayback|fortyGigFanOut|fortyGigNonFanOut|fourByTenGigFanOut|fourByTwentyFiveGigNonFanOut|hundredGigCapturePlayback|hundredGigNonFanOut|incompatibleMode|krakenFourByFiftyGigFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|normal|novusFourByTenGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusHundredGigNonFanOut|novusOneByFortyGigNonFanOut|novusTwoByFiftyGigNonFanOut|oneByFiftyGigNonFanOut|oneByTenGigFanOut|singleMode|tenGig|threeByTenGigFanOut|twoByTwentyFiveGigNonFanOut])
@@ -62,7 +64,7 @@ class Aggregation(Base):
 
 	@property
 	def Mode(self):
-		"""Resource Group mode.
+		"""DEPRECATED Resource Group mode.
 
 		Returns:
 			str(atlasEightByFiftyGigFanOut|atlasFourByOneHundredGigFanOut|atlasOneByFourHundredGigNonFanOut|atlasTwoByTwoHundredGigNonFanOut|dualMode|eightByTenGigFanOut|fortyGig|fortyGigCapturePlayback|fortyGigFanOut|fortyGigNonFanOut|fourByTenGigFanOut|fourByTwentyFiveGigNonFanOut|hundredGigCapturePlayback|hundredGigNonFanOut|incompatibleMode|krakenFourByFiftyGigFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|normal|novusFourByTenGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusHundredGigNonFanOut|novusOneByFortyGigNonFanOut|novusTwoByFiftyGigNonFanOut|oneByFiftyGigNonFanOut|oneByTenGigFanOut|singleMode|tenGig|threeByTenGigFanOut|twoByTwentyFiveGigNonFanOut)
@@ -74,7 +76,7 @@ class Aggregation(Base):
 
 	@property
 	def ResourcePorts(self):
-		"""All ports from Resource Group.
+		"""DEPRECATED All ports from Resource Group.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port])

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -181,7 +183,7 @@ class NetconfClient(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -193,7 +195,7 @@ class NetconfClient(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -202,7 +204,7 @@ class NetconfClient(Base):
 
 	@property
 	def DecryptedCapture(self):
-		"""This specifies whether SSH packets for this session will be captured and stored on client in decrypted form.
+		"""DEPRECATED This specifies whether SSH packets for this session will be captured and stored on client in decrypted form.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -211,7 +213,7 @@ class NetconfClient(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -220,7 +222,7 @@ class NetconfClient(Base):
 
 	@property
 	def EnablePassphrase(self):
-		"""If the Private Key was passphrase protected, this should be enabled to allow configuration of passphrase used.
+		"""DEPRECATED If the Private Key was passphrase protected, this should be enabled to allow configuration of passphrase used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -229,7 +231,7 @@ class NetconfClient(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -238,7 +240,7 @@ class NetconfClient(Base):
 
 	@property
 	def FetchSchemaInfo(self):
-		"""This specifies whether a get-schema operation will be performed after capability exchange
+		"""DEPRECATED This specifies whether a get-schema operation will be performed after capability exchange
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -247,7 +249,7 @@ class NetconfClient(Base):
 
 	@property
 	def LogCleanUpOption(self):
-		"""Debug Log Clean Up
+		"""DEPRECATED Debug Log Clean Up
 
 		Returns:
 			str(clean|notClean)
@@ -259,7 +261,7 @@ class NetconfClient(Base):
 
 	@property
 	def LogFileAge(self):
-		"""This field determines how old logs to be deleted.
+		"""DEPRECATED This field determines how old logs to be deleted.
 
 		Returns:
 			number
@@ -271,7 +273,7 @@ class NetconfClient(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -283,7 +285,7 @@ class NetconfClient(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -295,7 +297,7 @@ class NetconfClient(Base):
 
 	@property
 	def NetconfSessionState(self):
-		"""Shows the current state of the Netconf SSH Session. None - Not started. Initialized - Configuration has reached the port and TCP connect is on-going. Connecting - SSH Connect is in process. Authenticating - The SSH session is authenticating with the DUT using user/password or Key-based authentication. Open Channel - SSH session is established and SSH Channel is being opened on which data will be sent. Requesting Subsystem - Netconf Subsystem is being requested on top of SSH channel. Ready - The SSH session is in Ready state and waiting for Netconf data to be exchanged. Note that this does not mean that NETCONF is in Up state. That is reached only after Netconf Capabilities are negotiated and there is at least one matching Netconf version (1.0 or 1.1) supported on both client and server. Reconnecting - The TCP connection is broken with DUT and the client is trying to reconnect via TCP with the server.
+		"""DEPRECATED Shows the current state of the Netconf SSH Session. None - Not started. Initialized - Configuration has reached the port and TCP connect is on-going. Connecting - SSH Connect is in process. Authenticating - The SSH session is authenticating with the DUT using user/password or Key-based authentication. Open Channel - SSH session is established and SSH Channel is being opened on which data will be sent. Requesting Subsystem - Netconf Subsystem is being requested on top of SSH channel. Ready - The SSH session is in Ready state and waiting for Netconf data to be exchanged. Note that this does not mean that NETCONF is in Up state. That is reached only after Netconf Capabilities are negotiated and there is at least one matching Netconf version (1.0 or 1.1) supported on both client and server. Reconnecting - The TCP connection is broken with DUT and the client is trying to reconnect via TCP with the server.
 
 		Returns:
 			list(str[authenticating|connecting|initialized|none|openingChannel|ready|reconnecting|requestingSubsystem])
@@ -304,7 +306,7 @@ class NetconfClient(Base):
 
 	@property
 	def NumberOfCommandSnippetsPerClient(self):
-		"""Number of Command Snippets per client.Maximum 100 are allowed per client.
+		"""DEPRECATED Number of Command Snippets per client.Maximum 100 are allowed per client.
 
 		Returns:
 			number
@@ -316,7 +318,7 @@ class NetconfClient(Base):
 
 	@property
 	def OutputDirectory(self):
-		"""Location of Directory in Client where the decrypted capture, if enabled, and server replies, if enabled, will be stored.
+		"""DEPRECATED Location of Directory in Client where the decrypted capture, if enabled, and server replies, if enabled, will be stored.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -325,7 +327,7 @@ class NetconfClient(Base):
 
 	@property
 	def Passphrase(self):
-		"""The passphrase with which the Private Key was additionally protected during generation. For multiple clients and assymetric passphrases( which cannot be expressed easily as a pattern) please explore File option in Master Row Pattern Editor by putting the file namesin a .csv and pulling those values into the column cells.
+		"""DEPRECATED The passphrase with which the Private Key was additionally protected during generation. For multiple clients and assymetric passphrases( which cannot be expressed easily as a pattern) please explore File option in Master Row Pattern Editor by putting the file namesin a .csv and pulling those values into the column cells.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -334,7 +336,7 @@ class NetconfClient(Base):
 
 	@property
 	def Password(self):
-		"""Password for Username/Password mode.
+		"""DEPRECATED Password for Username/Password mode.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -343,7 +345,7 @@ class NetconfClient(Base):
 
 	@property
 	def PortNumber(self):
-		"""The TCP Port Number the Netconf Server is listening on to which to connect.
+		"""DEPRECATED The TCP Port Number the Netconf Server is listening on to which to connect.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -352,7 +354,7 @@ class NetconfClient(Base):
 
 	@property
 	def PrivateKeyDirectory(self):
-		"""Directory containing Private Key file for this session.
+		"""DEPRECATED Directory containing Private Key file for this session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -361,7 +363,7 @@ class NetconfClient(Base):
 
 	@property
 	def PrivateKeyFileName(self):
-		"""File containing Private Key.(e.g. generated using ssh_keygen) . For multiple clients and assymetric key file names( which cannot be expressed easily as a pattern) please explore File option in Master Row Pattern Editor by putting the file namesin a .csv and pulling those values into the column cells.
+		"""DEPRECATED File containing Private Key.(e.g. generated using ssh_keygen) . For multiple clients and assymetric key file names( which cannot be expressed easily as a pattern) please explore File option in Master Row Pattern Editor by putting the file namesin a .csv and pulling those values into the column cells.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -370,7 +372,7 @@ class NetconfClient(Base):
 
 	@property
 	def SaveReplyXML(self):
-		"""If this is enabled, Hellos and replies to commands sent via Command Snippets or global command (such as 'get') by the Netconf Server will be stored in the Output Directoryin current run folder/Replies. Any RPC errors recieved will be stored in a separate Error directory for convenience of debugging error scenarios.This option can be enabled even when a session is already up in which case the replies will be saved from that point of time.
+		"""DEPRECATED If this is enabled, Hellos and replies to commands sent via Command Snippets or global command (such as 'get') by the Netconf Server will be stored in the Output Directoryin current run folder/Replies. Any RPC errors recieved will be stored in a separate Error directory for convenience of debugging error scenarios.This option can be enabled even when a session is already up in which case the replies will be saved from that point of time.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -379,7 +381,7 @@ class NetconfClient(Base):
 
 	@property
 	def SchemaOutputDirectory(self):
-		"""Location of Directory in Client where the retrieved modules will be stored.
+		"""DEPRECATED Location of Directory in Client where the retrieved modules will be stored.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -388,7 +390,7 @@ class NetconfClient(Base):
 
 	@property
 	def SendCloseOnStop(self):
-		"""This specifies whether a <close-session> message will be sent on stopping this client
+		"""DEPRECATED This specifies whether a <close-session> message will be sent on stopping this client
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -397,7 +399,7 @@ class NetconfClient(Base):
 
 	@property
 	def ServerIpv4Address(self):
-		"""Specify the IPv4 address of the DUT to which the Netconf Server should connect.
+		"""DEPRECATED Specify the IPv4 address of the DUT to which the Netconf Server should connect.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -406,7 +408,7 @@ class NetconfClient(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -415,7 +417,7 @@ class NetconfClient(Base):
 
 	@property
 	def SshAuthenticationMechanism(self):
-		"""The authentication mechanism for connecting to Netconf Server.
+		"""DEPRECATED The authentication mechanism for connecting to Netconf Server.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -424,7 +426,7 @@ class NetconfClient(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -436,7 +438,7 @@ class NetconfClient(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -445,7 +447,7 @@ class NetconfClient(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -454,7 +456,7 @@ class NetconfClient(Base):
 
 	@property
 	def UserName(self):
-		"""Username for Username/Password mode and also used for Key-based Authentication as the username.
+		"""DEPRECATED Username for Username/Password mode and also used for Key-based Authentication as the username.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

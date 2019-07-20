@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -108,7 +110,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceId(self):
-		"""The local ID associated with the interface, which is unique per router.
+		"""DEPRECATED The local ID associated with the interface, which is unique per router.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -120,7 +122,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""The assigned protocol interface ID for this EIGRP interface.
+		"""DEPRECATED The assigned protocol interface ID for this EIGRP interface.
 
 		Returns:
 			number
@@ -132,7 +134,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceType(self):
-		"""The type of interface to be selected for this EIGRP interface.
+		"""DEPRECATED The type of interface to be selected for this EIGRP interface.
 
 		Returns:
 			str
@@ -144,7 +146,7 @@ class Interface(Base):
 
 	@property
 	def Interfaces(self):
-		"""The interfaces that are associated with the selected interface type.
+		"""DEPRECATED The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -156,7 +158,7 @@ class Interface(Base):
 
 	@property
 	def Load(self):
-		"""The amount of load on the link. The valid range is 0 to 255. (default = 0)
+		"""DEPRECATED The amount of load on the link. The valid range is 0 to 255. (default = 0)
 
 		Returns:
 			number
@@ -168,7 +170,7 @@ class Interface(Base):
 
 	@property
 	def MaxTlvPerPacket(self):
-		"""The maximum number of TLVs that will be packed into a single Update packet, taking MTU into consideration. The valid range is 0-255. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. (default = 30)
+		"""DEPRECATED The maximum number of TLVs that will be packed into a single Update packet, taking MTU into consideration. The valid range is 0-255. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. (default = 30)
 
 		Returns:
 			number
@@ -180,7 +182,7 @@ class Interface(Base):
 
 	@property
 	def Mtu(self):
-		"""The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
+		"""DEPRECATED The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
 
 		Returns:
 			number
@@ -192,7 +194,7 @@ class Interface(Base):
 
 	@property
 	def Reliability(self):
-		"""The reliability factor. The valid range is 0 to 255. (default =255, which means 100% reliable)
+		"""DEPRECATED The reliability factor. The valid range is 0 to 255. (default =255, which means 100% reliable)
 
 		Returns:
 			number
@@ -204,7 +206,7 @@ class Interface(Base):
 
 	@property
 	def SplitHorizon(self):
-		"""Split Horizon is a method for omitting routes learned from a neighbor in update messages to that same neighbor. This enables or disables poison reverse.
+		"""DEPRECATED Split Horizon is a method for omitting routes learned from a neighbor in update messages to that same neighbor. This enables or disables poison reverse.
 
 		Returns:
 			bool

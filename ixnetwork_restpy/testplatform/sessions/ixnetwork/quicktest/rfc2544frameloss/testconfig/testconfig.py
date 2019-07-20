@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -515,7 +517,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBins(self):
-		"""Sets the latency bins statistics.
+		"""DEPRECATED Sets the latency bins statistics.
 
 		Returns:
 			str
@@ -527,7 +529,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyBinsEnabled(self):
-		"""Enables the latency bins statistics.
+		"""DEPRECATED Enables the latency bins statistics.
 
 		Returns:
 			bool
@@ -539,7 +541,7 @@ class TestConfig(Base):
 
 	@property
 	def LatencyType(self):
-		"""The type of latency.
+		"""DEPRECATED The type of latency.
 
 		Returns:
 			str(cutThrough|forwardingDelay|mef|storeForward)
@@ -551,7 +553,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadRateList(self):
-		"""Enters the Load Rate List.
+		"""DEPRECATED Enters the Load Rate List.
 
 		Returns:
 			str
@@ -563,7 +565,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadType(self):
-		"""The type of the payload setting.
+		"""DEPRECATED The type of the payload setting.
 
 		Returns:
 			str(step)
@@ -575,7 +577,7 @@ class TestConfig(Base):
 
 	@property
 	def LoadUnit(self):
-		"""The load unit value.
+		"""DEPRECATED The load unit value.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -587,7 +589,7 @@ class TestConfig(Base):
 
 	@property
 	def MapType(self):
-		"""The mapping type.
+		"""DEPRECATED The mapping type.
 
 		Returns:
 			str
@@ -599,7 +601,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementFrameSize(self):
-		"""The maximum incremental value of the frame size.
+		"""DEPRECATED The maximum incremental value of the frame size.
 
 		Returns:
 			number
@@ -611,7 +613,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementIpv4Ratio(self):
-		"""Sets the maximum increment value for the ipv4 ratio
+		"""DEPRECATED Sets the maximum increment value for the ipv4 ratio
 
 		Returns:
 			str
@@ -623,7 +625,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementIpv6Ratio(self):
-		"""Sets the maximum increment value for the ipv6 ratio
+		"""DEPRECATED Sets the maximum increment value for the ipv6 ratio
 
 		Returns:
 			str
@@ -635,7 +637,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxIncrementLoadRate(self):
-		"""The maximum incremental value of the load rate.
+		"""DEPRECATED The maximum incremental value of the load rate.
 
 		Returns:
 			number
@@ -647,7 +649,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomFrameSize(self):
-		"""The maximum random frame size to be sent.
+		"""DEPRECATED The maximum random frame size to be sent.
 
 		Returns:
 			number
@@ -659,7 +661,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomIpv4Ratio(self):
-		"""Sets the maximum radom value for the ipv4 ratio
+		"""DEPRECATED Sets the maximum radom value for the ipv4 ratio
 
 		Returns:
 			str
@@ -671,7 +673,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomIpv6Ratio(self):
-		"""Sets the maximum random value for the ipv6 ratio
+		"""DEPRECATED Sets the maximum random value for the ipv6 ratio
 
 		Returns:
 			str
@@ -683,7 +685,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxRandomLoadRate(self):
-		"""The maximum random value of the load rate.
+		"""DEPRECATED The maximum random value of the load rate.
 
 		Returns:
 			number
@@ -695,7 +697,7 @@ class TestConfig(Base):
 
 	@property
 	def MaxStepLoadRate(self):
-		"""The maximum step value of the load rate.
+		"""DEPRECATED The maximum step value of the load rate.
 
 		Returns:
 			number
@@ -707,7 +709,7 @@ class TestConfig(Base):
 
 	@property
 	def MinFpsRate(self):
-		"""The rate at which minimum frames are sent per second.
+		"""DEPRECATED The rate at which minimum frames are sent per second.
 
 		Returns:
 			number
@@ -719,7 +721,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementFrameSize(self):
-		"""The minimum incremental value of the frame size.
+		"""DEPRECATED The minimum incremental value of the frame size.
 
 		Returns:
 			number
@@ -731,7 +733,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementIpv4Ratio(self):
-		"""Sets the minimum increment value for the ipv4 ratio
+		"""DEPRECATED Sets the minimum increment value for the ipv4 ratio
 
 		Returns:
 			str
@@ -743,7 +745,7 @@ class TestConfig(Base):
 
 	@property
 	def MinIncrementIpv6Ratio(self):
-		"""Sets the minimum increment value for the ipv6 ratio
+		"""DEPRECATED Sets the minimum increment value for the ipv6 ratio
 
 		Returns:
 			str
@@ -755,7 +757,7 @@ class TestConfig(Base):
 
 	@property
 	def MinKbpsRate(self):
-		"""The rate at which minimum frames are sent per kbps.
+		"""DEPRECATED The rate at which minimum frames are sent per kbps.
 
 		Returns:
 			number
@@ -767,7 +769,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomFrameSize(self):
-		"""The minimum random frame size to be sent.
+		"""DEPRECATED The minimum random frame size to be sent.
 
 		Returns:
 			number
@@ -779,7 +781,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomIpv4Ratio(self):
-		"""Sets the minimum random value for the ipv4 ratio
+		"""DEPRECATED Sets the minimum random value for the ipv4 ratio
 
 		Returns:
 			str
@@ -791,7 +793,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomIpv6Ratio(self):
-		"""Sets the minimum random value for the ipv6 ratio
+		"""DEPRECATED Sets the minimum random value for the ipv6 ratio
 
 		Returns:
 			str
@@ -803,7 +805,7 @@ class TestConfig(Base):
 
 	@property
 	def MinRandomLoadRate(self):
-		"""The maximum random value of the load rate.
+		"""DEPRECATED The maximum random value of the load rate.
 
 		Returns:
 			number
@@ -815,7 +817,7 @@ class TestConfig(Base):
 
 	@property
 	def MinStepLoadRate(self):
-		"""The minimum step value of load rate.
+		"""DEPRECATED The minimum step value of load rate.
 
 		Returns:
 			number
@@ -827,7 +829,7 @@ class TestConfig(Base):
 
 	@property
 	def NumFrames(self):
-		"""The number of frames sent.
+		"""DEPRECATED The number of frames sent.
 
 		Returns:
 			number
@@ -839,7 +841,7 @@ class TestConfig(Base):
 
 	@property
 	def Numtrials(self):
-		"""The integer value that states the number of trials permitted.
+		"""DEPRECATED The integer value that states the number of trials permitted.
 
 		Returns:
 			number
@@ -851,7 +853,7 @@ class TestConfig(Base):
 
 	@property
 	def PeakLoadingReplicationCount(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -863,7 +865,7 @@ class TestConfig(Base):
 
 	@property
 	def PerTrafficResults(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -875,7 +877,7 @@ class TestConfig(Base):
 
 	@property
 	def PercentMaxRate(self):
-		"""The maximum percentage rate.
+		"""DEPRECATED The maximum percentage rate.
 
 		Returns:
 			number
@@ -887,7 +889,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayEnabled(self):
-		"""Enables the port delay.
+		"""DEPRECATED Enables the port delay.
 
 		Returns:
 			bool
@@ -899,7 +901,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayUnit(self):
-		"""Sets the port delay unit in which it will be measured
+		"""DEPRECATED Sets the port delay unit in which it will be measured
 
 		Returns:
 			str(bytes|nanoseconds)
@@ -911,7 +913,7 @@ class TestConfig(Base):
 
 	@property
 	def PortDelayValue(self):
-		"""Sets the port delay value.
+		"""DEPRECATED Sets the port delay value.
 
 		Returns:
 			number
@@ -923,7 +925,7 @@ class TestConfig(Base):
 
 	@property
 	def ProtocolItem(self):
-		"""Protocol Items
+		"""DEPRECATED Protocol Items
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
@@ -935,7 +937,7 @@ class TestConfig(Base):
 
 	@property
 	def RandomLoadUnit(self):
-		"""The random values of the load unit.
+		"""DEPRECATED The random values of the load unit.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -947,7 +949,7 @@ class TestConfig(Base):
 
 	@property
 	def RateSelect(self):
-		"""The rate selected.
+		"""DEPRECATED The rate selected.
 
 		Returns:
 			str(fpsRate|kbpsRate|percentMaxRate)
@@ -959,7 +961,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportSequenceError(self):
-		"""Reports sequence errors in the test result.
+		"""DEPRECATED Reports sequence errors in the test result.
 
 		Returns:
 			bool
@@ -971,7 +973,7 @@ class TestConfig(Base):
 
 	@property
 	def ReportTputRateUnit(self):
-		"""The unit of rate for throughput.
+		"""DEPRECATED The unit of rate for throughput.
 
 		Returns:
 			str(gbps|gBps|kbps|kBps|mbps|mBps)
@@ -983,7 +985,7 @@ class TestConfig(Base):
 
 	@property
 	def Resolution(self):
-		"""Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+		"""DEPRECATED Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
 
 		Returns:
 			number
@@ -995,7 +997,7 @@ class TestConfig(Base):
 
 	@property
 	def Rfc2544ImixDataQoS(self):
-		"""If true, it uses the same frame data qos
+		"""DEPRECATED If true, it uses the same frame data qos
 
 		Returns:
 			bool
@@ -1007,7 +1009,7 @@ class TestConfig(Base):
 
 	@property
 	def Rfc2889ordering(self):
-		"""If true, indicates frame ordering by Rfc2889.
+		"""DEPRECATED If true, indicates frame ordering by Rfc2889.
 
 		Returns:
 			str(noOrdering|peakLoading|unchanged|val2889Ordering)
@@ -1019,7 +1021,7 @@ class TestConfig(Base):
 
 	@property
 	def Runmode(self):
-		"""Specifies the number of frames that IxNetwork sends from each port in running mode.
+		"""DEPRECATED Specifies the number of frames that IxNetwork sends from each port in running mode.
 
 		Returns:
 			str(duration|noframes)
@@ -1031,7 +1033,7 @@ class TestConfig(Base):
 
 	@property
 	def SendFullyMeshed(self):
-		"""Indicates the source group mapping type used for sending data.
+		"""DEPRECATED Indicates the source group mapping type used for sending data.
 
 		Returns:
 			bool
@@ -1043,7 +1045,7 @@ class TestConfig(Base):
 
 	@property
 	def ShowDetailedBinaryResults(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -1055,7 +1057,7 @@ class TestConfig(Base):
 
 	@property
 	def StaggeredStart(self):
-		"""Starts test with a stagger.
+		"""DEPRECATED Starts test with a stagger.
 
 		Returns:
 			bool
@@ -1067,7 +1069,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementFrameSize(self):
-		"""The incremental step value of the frame size.
+		"""DEPRECATED The incremental step value of the frame size.
 
 		Returns:
 			number
@@ -1079,7 +1081,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementIpv4Ratio(self):
-		"""The step in which the ipv4 ratio loop is incremented
+		"""DEPRECATED The step in which the ipv4 ratio loop is incremented
 
 		Returns:
 			str
@@ -1091,7 +1093,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementIpv6Ratio(self):
-		"""The step in which the ipv6 ratio loop is incremented
+		"""DEPRECATED The step in which the ipv6 ratio loop is incremented
 
 		Returns:
 			str
@@ -1103,7 +1105,7 @@ class TestConfig(Base):
 
 	@property
 	def StepIncrementLoadRate(self):
-		"""The step incremental value of the load rate.
+		"""DEPRECATED The step incremental value of the load rate.
 
 		Returns:
 			number
@@ -1115,7 +1117,7 @@ class TestConfig(Base):
 
 	@property
 	def StepLoadRateFormula(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -1127,7 +1129,7 @@ class TestConfig(Base):
 
 	@property
 	def StepLoadUnit(self):
-		"""Specifies the step rate of the load unit.
+		"""DEPRECATED Specifies the step rate of the load unit.
 
 		Returns:
 			str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
@@ -1139,7 +1141,7 @@ class TestConfig(Base):
 
 	@property
 	def StepStepLoadRate(self):
-		"""The incremental step value of load rate.
+		"""DEPRECATED The incremental step value of load rate.
 
 		Returns:
 			number
@@ -1151,7 +1153,7 @@ class TestConfig(Base):
 
 	@property
 	def StepTiLoss(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1163,7 +1165,7 @@ class TestConfig(Base):
 
 	@property
 	def StepTolerance(self):
-		"""The step value of the tolerance level.
+		"""DEPRECATED The step value of the tolerance level.
 
 		Returns:
 			number
@@ -1175,7 +1177,7 @@ class TestConfig(Base):
 
 	@property
 	def SupportedTrafficTypes(self):
-		"""The traffic types supported.
+		"""DEPRECATED The traffic types supported.
 
 		Returns:
 			str
@@ -1187,7 +1189,7 @@ class TestConfig(Base):
 
 	@property
 	def Tolerance(self):
-		"""The value set for the tolerance level.
+		"""DEPRECATED The value set for the tolerance level.
 
 		Returns:
 			number
@@ -1199,7 +1201,7 @@ class TestConfig(Base):
 
 	@property
 	def TrafficType(self):
-		"""The test based on the traffic type.
+		"""DEPRECATED The test based on the traffic type.
 
 		Returns:
 			str(burstyLoading|constantLoading)
@@ -1211,7 +1213,7 @@ class TestConfig(Base):
 
 	@property
 	def TxDelay(self):
-		"""Specifies the amount of delay after every transmit.
+		"""DEPRECATED Specifies the amount of delay after every transmit.
 
 		Returns:
 			number
@@ -1223,7 +1225,7 @@ class TestConfig(Base):
 
 	@property
 	def UnchangedValueList(self):
-		"""The number of unchanged sessions.
+		"""DEPRECATED The number of unchanged sessions.
 
 		Returns:
 			str
@@ -1235,7 +1237,7 @@ class TestConfig(Base):
 
 	@property
 	def UseTiLoss(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str

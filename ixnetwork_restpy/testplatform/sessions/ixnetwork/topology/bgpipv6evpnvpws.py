@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -289,7 +291,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -301,7 +303,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -310,7 +312,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -319,7 +321,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableAggregatorId(self):
-		"""Enable Aggregator ID
+		"""DEPRECATED Enable Aggregator ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -328,7 +330,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableAsPathSegments(self):
-		"""Enable AS Path Segments
+		"""DEPRECATED Enable AS Path Segments
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -337,7 +339,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableAtomicAggregate(self):
-		"""Enable Atomic Aggregate
+		"""DEPRECATED Enable Atomic Aggregate
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -346,7 +348,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableBMacSecondLabel(self):
-		"""Enable B MAC Second Label
+		"""DEPRECATED Enable B MAC Second Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -355,7 +357,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableCluster(self):
-		"""Enable Cluster
+		"""DEPRECATED Enable Cluster
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -364,7 +366,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableCommunity(self):
-		"""Enable Community
+		"""DEPRECATED Enable Community
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -373,7 +375,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableExtendedCommunity(self):
-		"""Enable Extended Community
+		"""DEPRECATED Enable Extended Community
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -382,7 +384,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableL3TargetOnlyForRouteType5(self):
-		"""Enable L3 Target only for Route Type 5
+		"""DEPRECATED Enable L3 Target only for Route Type 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -391,7 +393,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableL3vniTargetList(self):
-		"""Enable L3 Target List
+		"""DEPRECATED Enable L3 Target List
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -400,7 +402,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableLocalPreference(self):
-		"""Enable Local Preference
+		"""DEPRECATED Enable Local Preference
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -409,7 +411,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableMultiExitDiscriminator(self):
-		"""Enable Multi Exit
+		"""DEPRECATED Enable Multi Exit
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -418,7 +420,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableNextHop(self):
-		"""Enable Next Hop
+		"""DEPRECATED Enable Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -427,7 +429,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableOrigin(self):
-		"""Enable Origin
+		"""DEPRECATED Enable Origin
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -436,7 +438,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EnableOriginatorId(self):
-		"""Enable Originator ID
+		"""DEPRECATED Enable Originator ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -445,7 +447,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -454,7 +456,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EsiType(self):
-		"""ESI Type
+		"""DEPRECATED ESI Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -463,7 +465,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def EsiValue(self):
-		"""ESI Value
+		"""DEPRECATED ESI Value
 
 		Returns:
 			list(str)
@@ -472,7 +474,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def ImportRtListSameAsExportRtList(self):
-		"""Import RT List Same As Export RT List
+		"""DEPRECATED Import RT List Same As Export RT List
 
 		Returns:
 			bool
@@ -484,7 +486,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def IncludePmsiTunnelAttribute(self):
-		"""Include PMSI Tunnel Attribute
+		"""DEPRECATED Include PMSI Tunnel Attribute
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -493,7 +495,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Ipv4NextHop(self):
-		"""IPv4 Next Hop
+		"""DEPRECATED IPv4 Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -502,7 +504,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Ipv6NextHop(self):
-		"""IPv6 Next Hop
+		"""DEPRECATED IPv6 Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -511,7 +513,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def L3vniImportRtListSameAsL3vniExportRtList(self):
-		"""L3 Import RT List Same As L3 Export RT List
+		"""DEPRECATED L3 Import RT List Same As L3 Export RT List
 
 		Returns:
 			bool
@@ -523,7 +525,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def LocalPreference(self):
-		"""Local Preference
+		"""DEPRECATED Local Preference
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -532,7 +534,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def MultiExitDiscriminator(self):
-		"""Multi Exit
+		"""DEPRECATED Multi Exit
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -541,7 +543,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def MulticastTunnelType(self):
-		"""Multicast Tunnel Type
+		"""DEPRECATED Multicast Tunnel Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -550,7 +552,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -562,7 +564,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -574,7 +576,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NoOfASPathSegmentsPerRouteRange(self):
-		"""Number Of AS Path Segments Per Route Range
+		"""DEPRECATED Number Of AS Path Segments Per Route Range
 
 		Returns:
 			number
@@ -586,7 +588,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NoOfClusters(self):
-		"""Number of Clusters
+		"""DEPRECATED Number of Clusters
 
 		Returns:
 			number
@@ -598,7 +600,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NoOfCommunities(self):
-		"""Number of Communities
+		"""DEPRECATED Number of Communities
 
 		Returns:
 			number
@@ -610,7 +612,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NoOfExtendedCommunity(self):
-		"""Number of Extended Communities
+		"""DEPRECATED Number of Extended Communities
 
 		Returns:
 			number
@@ -622,7 +624,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NumBroadcastDomainV6(self):
-		"""The number of broadcast domain to be configured under EVI
+		"""DEPRECATED The number of broadcast domain to be configured under EVI
 
 		Returns:
 			number
@@ -634,7 +636,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NumRtInExportRouteTargetList(self):
-		"""Number of RTs in Export Route Target List(multiplier)
+		"""DEPRECATED Number of RTs in Export Route Target List(multiplier)
 
 		Returns:
 			number
@@ -646,7 +648,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NumRtInImportRouteTargetList(self):
-		"""Number of RTs in Import Route Target List(multiplier)
+		"""DEPRECATED Number of RTs in Import Route Target List(multiplier)
 
 		Returns:
 			number
@@ -658,7 +660,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NumRtInL3vniExportRouteTargetList(self):
-		"""Number of RTs in L3 Export Route Target List(multiplier)
+		"""DEPRECATED Number of RTs in L3 Export Route Target List(multiplier)
 
 		Returns:
 			number
@@ -670,7 +672,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def NumRtInL3vniImportRouteTargetList(self):
-		"""Number of RTs in L3 Import Route Target List(multiplier)
+		"""DEPRECATED Number of RTs in L3 Import Route Target List(multiplier)
 
 		Returns:
 			number
@@ -682,7 +684,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Origin(self):
-		"""Origin
+		"""DEPRECATED Origin
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -691,7 +693,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def OriginatingRouterIpv4(self):
-		"""Configures Originating Router IP address in IPv4 Address format
+		"""DEPRECATED Configures Originating Router IP address in IPv4 Address format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -700,7 +702,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def OriginatingRouterIpv6(self):
-		"""Configures Originating Router IP address in IPv6 Address format
+		"""DEPRECATED Configures Originating Router IP address in IPv6 Address format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -709,7 +711,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def OriginatorId(self):
-		"""Originator ID
+		"""DEPRECATED Originator ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -718,7 +720,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def OverridePeerAsSetMode(self):
-		"""Override Peer AS# Set Mode
+		"""DEPRECATED Override Peer AS# Set Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -727,7 +729,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def PmsiTunnelIDv4(self):
-		"""PMSI Tunnel ID
+		"""DEPRECATED PMSI Tunnel ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -736,7 +738,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def PmsiTunnelIDv6(self):
-		"""PMSI Tunnel ID
+		"""DEPRECATED PMSI Tunnel ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -745,7 +747,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def RdEvi(self):
-		"""RD EVI
+		"""DEPRECATED RD EVI
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -754,7 +756,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def RdIpAddress(self):
-		"""RD IP Addresses
+		"""DEPRECATED RD IP Addresses
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -763,7 +765,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -772,7 +774,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def SetNextHop(self):
-		"""Set Next Hop
+		"""DEPRECATED Set Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -781,7 +783,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def SetNextHopIpType(self):
-		"""Set Next Hop IP Type
+		"""DEPRECATED Set Next Hop IP Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -790,7 +792,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -802,7 +804,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -811,7 +813,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -820,7 +822,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def UpstreamDownstreamAssignedMplsLabel(self):
-		"""Upstream/Downstream Assigned MPLS Label
+		"""DEPRECATED Upstream/Downstream Assigned MPLS Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -829,7 +831,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def UseIpv4MappedIpv6Address(self):
-		"""Use IPv4 Mapped IPv6 Address
+		"""DEPRECATED Use IPv4 Mapped IPv6 Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -838,7 +840,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def UseUpstreamDownstreamAssignedMplsLabel(self):
-		"""Use Upstream/Downstream Assigned MPLS Label
+		"""DEPRECATED Use Upstream/Downstream Assigned MPLS Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

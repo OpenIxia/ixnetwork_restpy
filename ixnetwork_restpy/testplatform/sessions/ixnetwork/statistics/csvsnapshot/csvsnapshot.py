@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -119,7 +121,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def NextGenRefreshBeforeSnapshot(self):
-		"""nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
+		"""DEPRECATED nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
 
 		Returns:
 			bool
@@ -131,7 +133,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def OpenViewer(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -143,7 +145,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotSettingsName(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -152,7 +154,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotViewContents(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(allPages|currentPage)
@@ -164,7 +166,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotViewCsvGenerationMode(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(appendCSVFile|newCSVFile|overwriteCSVFile)
@@ -176,7 +178,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def Views(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=view])

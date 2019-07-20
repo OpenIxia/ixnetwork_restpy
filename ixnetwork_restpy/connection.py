@@ -349,6 +349,8 @@ class Connection(object):
                         return async_status['result']
                     else:
                         return None
+                elif state in ['ERROR', 'EXCEPTION']:
+                    raise ServerError(response)
                 elif self._platform == 'connection_manager':
                     if async_status['state'] == 'ACTIVE':
                         return response.json()

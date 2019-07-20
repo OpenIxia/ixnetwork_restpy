@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -166,7 +168,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Ipv6Srh(self):
-		"""Advertise IPv6 SID
+		"""DEPRECATED Advertise IPv6 SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -175,7 +177,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Ipv6VFlag(self):
-		"""Value Flag
+		"""DEPRECATED Value Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -184,7 +186,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -196,7 +198,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def NetworkAddress(self):
-		"""Prefixes of the simulated IPv6 network
+		"""DEPRECATED Prefixes of the simulated IPv6 network
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -205,7 +207,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Prefix(self):
-		"""Prefix Length
+		"""DEPRECATED Prefix Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -214,7 +216,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def RangeSize(self):
-		"""Range Size
+		"""DEPRECATED Range Size
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -223,7 +225,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def SIDIndexLabel(self):
-		"""SID/Index/Label
+		"""DEPRECATED SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

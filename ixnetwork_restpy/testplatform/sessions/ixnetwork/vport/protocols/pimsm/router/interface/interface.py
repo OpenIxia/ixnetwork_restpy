@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -338,7 +340,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceId(self):
-		"""The identifier for this PIM-SM Interface.
+		"""DEPRECATED The identifier for this PIM-SM Interface.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -350,7 +352,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""The assigned protocol interface ID for this PIM-SM interface.
+		"""DEPRECATED The assigned protocol interface ID for this PIM-SM interface.
 
 		Returns:
 			number
@@ -362,7 +364,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceType(self):
-		"""The type of interface to be selected for this PIM-SM interface.
+		"""DEPRECATED The type of interface to be selected for this PIM-SM interface.
 
 		Returns:
 			str
@@ -374,7 +376,7 @@ class Interface(Base):
 
 	@property
 	def Interfaces(self):
-		"""The interfaces that are associated with the selected interface type.
+		"""DEPRECATED The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -386,7 +388,7 @@ class Interface(Base):
 
 	@property
 	def IsRefreshRpSetComplete(self):
-		"""If enabled, shows the desired set of RPs.
+		"""DEPRECATED If enabled, shows the desired set of RPs.
 
 		Returns:
 			bool
@@ -395,7 +397,7 @@ class Interface(Base):
 
 	@property
 	def LanPruneDelay(self):
-		"""The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface.The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
+		"""DEPRECATED The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface.The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
 
 		Returns:
 			number
@@ -407,7 +409,7 @@ class Interface(Base):
 
 	@property
 	def LanPruneDelayTBit(self):
-		"""If enabled, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression.
+		"""DEPRECATED If enabled, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression.
 
 		Returns:
 			bool
@@ -419,7 +421,7 @@ class Interface(Base):
 
 	@property
 	def LearnSelectedRpSet(self):
-		"""If enabled, this displays only the best RP per group (member of selected RP set).
+		"""DEPRECATED If enabled, this displays only the best RP per group (member of selected RP set).
 
 		Returns:
 			bool
@@ -431,7 +433,7 @@ class Interface(Base):
 
 	@property
 	def OverrideInterval(self):
-		"""The delay interval, in milliseconds, for randomizing the transmission time for override messages, which are used when scheduling a delayed Join message. This is part of the LAN Prune Delay option included in Hello messages. The valid range is 100 to 7FFF msec. (default = 2500)
+		"""DEPRECATED The delay interval, in milliseconds, for randomizing the transmission time for override messages, which are used when scheduling a delayed Join message. This is part of the LAN Prune Delay option included in Hello messages. The valid range is 100 to 7FFF msec. (default = 2500)
 
 		Returns:
 			number
@@ -443,7 +445,7 @@ class Interface(Base):
 
 	@property
 	def SendBiDirCapableOption(self):
-		"""If enabled, sets the bidirectional PIM-SM flag bit (=1), per IETF DRAFT draft-ietf-pim-bidir-04.
+		"""DEPRECATED If enabled, sets the bidirectional PIM-SM flag bit (=1), per IETF DRAFT draft-ietf-pim-bidir-04.
 
 		Returns:
 			bool
@@ -455,7 +457,7 @@ class Interface(Base):
 
 	@property
 	def SendGenIdOption(self):
-		"""Enables the send generation ID option.
+		"""DEPRECATED Enables the send generation ID option.
 
 		Returns:
 			bool
@@ -467,7 +469,7 @@ class Interface(Base):
 
 	@property
 	def SendHelloLanPruneDelayOption(self):
-		"""If set, the LAN Prune propagation delay is enabled for this interface, as indicated in the pruneDelay option. The option is indicated in Hello messages from the interface. (default = true)
+		"""DEPRECATED If set, the LAN Prune propagation delay is enabled for this interface, as indicated in the pruneDelay option. The option is indicated in Hello messages from the interface. (default = true)
 
 		Returns:
 			bool
@@ -479,7 +481,7 @@ class Interface(Base):
 
 	@property
 	def ShowSelectedRpSetOnly(self):
-		"""If enabled, this displays only the best RP per group (member of selected RP set).
+		"""DEPRECATED If enabled, this displays only the best RP per group (member of selected RP set).
 
 		Returns:
 			bool
@@ -491,7 +493,7 @@ class Interface(Base):
 
 	@property
 	def SupportUnicastBootstrap(self):
-		"""If enabled, this supports the sending and processing of Unicast bootstrap messages.
+		"""DEPRECATED If enabled, this supports the sending and processing of Unicast bootstrap messages.
 
 		Returns:
 			bool
@@ -503,7 +505,7 @@ class Interface(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""DEPRECATED The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -515,7 +517,7 @@ class Interface(Base):
 
 	@property
 	def TriggeredHelloDelay(self):
-		"""The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
+		"""DEPRECATED The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
 
 		Returns:
 			number
@@ -527,7 +529,7 @@ class Interface(Base):
 
 	@property
 	def UpstreamNeighbor(self):
-		"""The IP address of the upstream neighbor.
+		"""DEPRECATED The IP address of the upstream neighbor.
 
 		Returns:
 			str

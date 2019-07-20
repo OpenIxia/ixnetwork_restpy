@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -98,7 +100,7 @@ class Querier(Base):
 
 	@property
 	def InterfaceId(self):
-		"""The interface associated with the IGMP querier. The interface must be previously configured.
+		"""DEPRECATED The interface associated with the IGMP querier. The interface must be previously configured.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -110,7 +112,7 @@ class Querier(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""The assigned protocol interface ID for this SM interface.
+		"""DEPRECATED The assigned protocol interface ID for this SM interface.
 
 		Returns:
 			number
@@ -122,7 +124,7 @@ class Querier(Base):
 
 	@property
 	def InterfaceType(self):
-		"""Indicates the type of network for the interface.
+		"""DEPRECATED Indicates the type of network for the interface.
 
 		Returns:
 			str
@@ -134,7 +136,7 @@ class Querier(Base):
 
 	@property
 	def Interfaces(self):
-		"""The interfaces that are associated with the selected interface type.
+		"""DEPRECATED The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -146,7 +148,7 @@ class Querier(Base):
 
 	@property
 	def IsQuerier(self):
-		"""If true, this IGMP entity is a querier.
+		"""DEPRECATED If true, this IGMP entity is a querier.
 
 		Returns:
 			bool
@@ -155,7 +157,7 @@ class Querier(Base):
 
 	@property
 	def IsRefreshComplete(self):
-		"""If true, the querier information is current.
+		"""DEPRECATED If true, the querier information is current.
 
 		Returns:
 			bool
@@ -164,7 +166,7 @@ class Querier(Base):
 
 	@property
 	def QuerierAddress(self):
-		"""The querier IP address.
+		"""DEPRECATED The querier IP address.
 
 		Returns:
 			str
@@ -173,7 +175,7 @@ class Querier(Base):
 
 	@property
 	def QuerierWorkingVersion(self):
-		"""The querier working IGMP version.
+		"""DEPRECATED The querier working IGMP version.
 
 		Returns:
 			number
@@ -182,7 +184,7 @@ class Querier(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""Defines the subnet vulnerability to lost packets. IGMP can recover from robustness variable minus 1 lost IGMP packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+		"""DEPRECATED Defines the subnet vulnerability to lost packets. IGMP can recover from robustness variable minus 1 lost IGMP packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
 
 		Returns:
 			number
@@ -194,7 +196,7 @@ class Querier(Base):
 
 	@property
 	def RouterAlert(self):
-		"""If true, sets the Send Router Alert bit in the IP header.
+		"""DEPRECATED If true, sets the Send Router Alert bit in the IP header.
 
 		Returns:
 			bool
@@ -206,7 +208,7 @@ class Querier(Base):
 
 	@property
 	def SqResponseInterval(self):
-		"""The maximum amount of time in seconds that the IGMP querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+		"""DEPRECATED The maximum amount of time in seconds that the IGMP querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
 
 		Returns:
 			number
@@ -218,7 +220,7 @@ class Querier(Base):
 
 	@property
 	def SqTransmissionCount(self):
-		"""Indicates the total number of specific Query messagessent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+		"""DEPRECATED Indicates the total number of specific Query messagessent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
 
 		Returns:
 			number
@@ -230,7 +232,7 @@ class Querier(Base):
 
 	@property
 	def StartupQueryCount(self):
-		"""The number of general query messages sent at startup. The default startup query count is 2.
+		"""DEPRECATED The number of general query messages sent at startup. The default startup query count is 2.
 
 		Returns:
 			number
@@ -242,7 +244,7 @@ class Querier(Base):
 
 	@property
 	def SupportElection(self):
-		"""If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+		"""DEPRECATED If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
 
 		Returns:
 			bool
@@ -254,7 +256,7 @@ class Querier(Base):
 
 	@property
 	def SupportOlderVersionHost(self):
-		"""If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+		"""DEPRECATED If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
 
 		Returns:
 			bool
@@ -266,7 +268,7 @@ class Querier(Base):
 
 	@property
 	def SupportOlderVersionQuerier(self):
-		"""If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+		"""DEPRECATED If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
 
 		Returns:
 			bool
@@ -278,7 +280,7 @@ class Querier(Base):
 
 	@property
 	def Version(self):
-		"""Sets the version for the IGMP querier.
+		"""DEPRECATED Sets the version for the IGMP querier.
 
 		Returns:
 			str(igmpv1|igmpv2|igmpv3)

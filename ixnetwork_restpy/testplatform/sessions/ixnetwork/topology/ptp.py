@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -202,7 +204,7 @@ class Ptp(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -214,7 +216,7 @@ class Ptp(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -223,7 +225,7 @@ class Ptp(Base):
 
 	@property
 	def CumulativeScaledRateOffset(self):
-		"""Cumulative Scaled Rate Offset field set in the gPTP FollowUp TLV
+		"""DEPRECATED Cumulative Scaled Rate Offset field set in the gPTP FollowUp TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +234,7 @@ class Ptp(Base):
 
 	@property
 	def CurrentUtcOffset(self):
-		"""Set announced Current UTC Offset (seconds)
+		"""DEPRECATED Set announced Current UTC Offset (seconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -241,7 +243,7 @@ class Ptp(Base):
 
 	@property
 	def CustomClockId(self):
-		"""Use the ClockIdentity configured in the next column instead of MAC based generated one
+		"""DEPRECATED Use the ClockIdentity configured in the next column instead of MAC based generated one
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +252,7 @@ class Ptp(Base):
 
 	@property
 	def DelayMechanism(self):
-		"""Clock delay mechanism
+		"""DEPRECATED Clock delay mechanism
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -259,7 +261,7 @@ class Ptp(Base):
 
 	@property
 	def DelayReqDropRate(self):
-		"""Percentage rate of the dropped (P)DelayReq messages
+		"""DEPRECATED Percentage rate of the dropped (P)DelayReq messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +270,7 @@ class Ptp(Base):
 
 	@property
 	def DelayReqOffset(self):
-		"""Percentage of the agreed (P)DelayReq Inter-arrival time to schedule between two subsequent DelayReq messages
+		"""DEPRECATED Percentage of the agreed (P)DelayReq Inter-arrival time to schedule between two subsequent DelayReq messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -277,7 +279,7 @@ class Ptp(Base):
 
 	@property
 	def DelayReqResidenceTime(self):
-		"""Residence time of (P)DelayReq messages through an associated one-step end-to-end transparent clock inserted in the correction field of (P)DelayReq messages sent by this clock
+		"""DEPRECATED Residence time of (P)DelayReq messages through an associated one-step end-to-end transparent clock inserted in the correction field of (P)DelayReq messages sent by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -286,7 +288,7 @@ class Ptp(Base):
 
 	@property
 	def DelayReqSpread(self):
-		"""Distribute (P)DelayReq messages in an interval around the targeted Inter-arrival mean time (expressed as a % of targeted mean)
+		"""DEPRECATED Distribute (P)DelayReq messages in an interval around the targeted Inter-arrival mean time (expressed as a % of targeted mean)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -295,7 +297,7 @@ class Ptp(Base):
 
 	@property
 	def DelayRespDropRate(self):
-		"""Percentage rate of the dropped DelayResp messages
+		"""DEPRECATED Percentage rate of the dropped DelayResp messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -304,7 +306,7 @@ class Ptp(Base):
 
 	@property
 	def DelayRespReceiptTimeout(self):
-		"""DelayResponse Receipt Timeout in seconds
+		"""DEPRECATED DelayResponse Receipt Timeout in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -313,7 +315,7 @@ class Ptp(Base):
 
 	@property
 	def DelayRespResidenceTime(self):
-		"""Residence time of DelayReq messages through an associated two-step end-to-end transparent clock inserted in the correction field of DelayResp messages sent by this clock, or the residence time of PdelayResp messages through an associated one-step end-to-end transparent clock inserted in the correction field of PdelayResp messages sent by this clock
+		"""DEPRECATED Residence time of DelayReq messages through an associated two-step end-to-end transparent clock inserted in the correction field of DelayResp messages sent by this clock, or the residence time of PdelayResp messages through an associated one-step end-to-end transparent clock inserted in the correction field of PdelayResp messages sent by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -322,7 +324,7 @@ class Ptp(Base):
 
 	@property
 	def DelayResponseDelay(self):
-		"""Additional delay introduced in the DelayResp message (nanoseconds)
+		"""DEPRECATED Additional delay introduced in the DelayResp message (nanoseconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -331,7 +333,7 @@ class Ptp(Base):
 
 	@property
 	def DelayResponseDelayInsertionRate(self):
-		"""Percentage rate of the DelayResp messages in which the delay is introduced
+		"""DEPRECATED Percentage rate of the DelayResp messages in which the delay is introduced
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -340,7 +342,7 @@ class Ptp(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -349,7 +351,7 @@ class Ptp(Base):
 
 	@property
 	def Domain(self):
-		"""PTP Domain
+		"""DEPRECATED PTP Domain
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -358,7 +360,7 @@ class Ptp(Base):
 
 	@property
 	def DropMalformed(self):
-		"""Drop packets that for which fields like Domain, message rates, Clock Class, Clock Accuracy and Offset Scaled Log Variance are not respecting strict G8275.1 imposed intervals
+		"""DEPRECATED Drop packets that for which fields like Domain, message rates, Clock Class, Clock Accuracy and Offset Scaled Log Variance are not respecting strict G8275.1 imposed intervals
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -367,7 +369,7 @@ class Ptp(Base):
 
 	@property
 	def DropSignalReqAnnounce(self):
-		"""Select this check box to drop any Signal Request that contains Announce TLV
+		"""DEPRECATED Select this check box to drop any Signal Request that contains Announce TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -376,7 +378,7 @@ class Ptp(Base):
 
 	@property
 	def DropSignalReqDelayResp(self):
-		"""Select this check box to drop any Signal Request that contains DelayResp TLV
+		"""DEPRECATED Select this check box to drop any Signal Request that contains DelayResp TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -385,7 +387,7 @@ class Ptp(Base):
 
 	@property
 	def DropSignalReqSync(self):
-		"""Select this check box to drop any Signal Request that contains Sync TLV
+		"""DEPRECATED Select this check box to drop any Signal Request that contains Sync TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -394,7 +396,7 @@ class Ptp(Base):
 
 	@property
 	def EnableNegativeTesting(self):
-		"""Enable Negative Conformance Test
+		"""DEPRECATED Enable Negative Conformance Test
 
 		Returns:
 			bool
@@ -406,7 +408,7 @@ class Ptp(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -415,7 +417,7 @@ class Ptp(Base):
 
 	@property
 	def FollowUpBadCrcRate(self):
-		"""Percentage rate of the bad crc FollowUp messages
+		"""DEPRECATED Percentage rate of the bad crc FollowUp messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -424,7 +426,7 @@ class Ptp(Base):
 
 	@property
 	def FollowUpDelay(self):
-		"""Additional delay introduced in the FollowUp message timestamp (ns)
+		"""DEPRECATED Additional delay introduced in the FollowUp message timestamp (ns)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -433,7 +435,7 @@ class Ptp(Base):
 
 	@property
 	def FollowUpDelayInsertionRate(self):
-		"""Percentage rate of the FollowUp messages in which the delay is introduced
+		"""DEPRECATED Percentage rate of the FollowUp messages in which the delay is introduced
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -442,7 +444,7 @@ class Ptp(Base):
 
 	@property
 	def FollowUpDropRate(self):
-		"""Percentage rate of the dropped FollowUp messages
+		"""DEPRECATED Percentage rate of the dropped FollowUp messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -451,7 +453,7 @@ class Ptp(Base):
 
 	@property
 	def FollowUpResidenceTime(self):
-		"""Master to slave residence of Sync messages through an associated two-step transparent clock inserted in the correction field of FollowUp messages sent by this clock
+		"""DEPRECATED Master to slave residence of Sync messages through an associated two-step transparent clock inserted in the correction field of FollowUp messages sent by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -460,7 +462,7 @@ class Ptp(Base):
 
 	@property
 	def Frequency(self):
-		"""Frequency(N)
+		"""DEPRECATED Frequency(N)
 
 		Returns:
 			number
@@ -472,7 +474,7 @@ class Ptp(Base):
 
 	@property
 	def GmTimeBaseIndicator(self):
-		"""GM Time Base Indicator field set in the gPTP FollowUp TLV
+		"""DEPRECATED GM Time Base Indicator field set in the gPTP FollowUp TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -481,7 +483,7 @@ class Ptp(Base):
 
 	@property
 	def GrandmasterIdentity(self):
-		"""Defines the ClockIdentity of the Grandmaster behind this device
+		"""DEPRECATED Defines the ClockIdentity of the Grandmaster behind this device
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -490,7 +492,7 @@ class Ptp(Base):
 
 	@property
 	def GrantDelayRespDurationInterval(self):
-		"""Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for DelayResp messages
+		"""DEPRECATED Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for DelayResp messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -499,7 +501,7 @@ class Ptp(Base):
 
 	@property
 	def GrantSyncDurationInterval(self):
-		"""Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for Sync messages
+		"""DEPRECATED Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for Sync messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -508,7 +510,7 @@ class Ptp(Base):
 
 	@property
 	def GrantUnicastDurationInterval(self):
-		"""Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV
+		"""DEPRECATED Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -517,7 +519,7 @@ class Ptp(Base):
 
 	@property
 	def HandleAnnounceTlv(self):
-		"""Send and respond to Announce TLV unicast requests in signal messages.
+		"""DEPRECATED Send and respond to Announce TLV unicast requests in signal messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -526,7 +528,7 @@ class Ptp(Base):
 
 	@property
 	def HandleCancelTlv(self):
-		"""Send and respond to Cancel TLV unicast requests in signal messages
+		"""DEPRECATED Send and respond to Cancel TLV unicast requests in signal messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -535,7 +537,7 @@ class Ptp(Base):
 
 	@property
 	def LastGmPhaseChange(self):
-		"""Last GM Phase Change nanoseconds set in the gPTP FollowUp TLV
+		"""DEPRECATED Last GM Phase Change nanoseconds set in the gPTP FollowUp TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -544,7 +546,7 @@ class Ptp(Base):
 
 	@property
 	def LearnPortId(self):
-		"""Slave learns Master Port ID
+		"""DEPRECATED Slave learns Master Port ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -553,7 +555,7 @@ class Ptp(Base):
 
 	@property
 	def LogAnnounceInterval(self):
-		"""The log mean time interval between successive Announce messages
+		"""DEPRECATED The log mean time interval between successive Announce messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -562,7 +564,7 @@ class Ptp(Base):
 
 	@property
 	def LogDelayReqInterval(self):
-		"""The log mean time interval between successive (P)DelayReq messages
+		"""DEPRECATED The log mean time interval between successive (P)DelayReq messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -571,7 +573,7 @@ class Ptp(Base):
 
 	@property
 	def LogSyncInterval(self):
-		"""The log mean time interval between successive Sync messages
+		"""DEPRECATED The log mean time interval between successive Sync messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -580,7 +582,7 @@ class Ptp(Base):
 
 	@property
 	def MasterClockId(self):
-		"""Displays the Clock ID of the directly connected master port (might not necessarily be the Grandmaster of the system). If simulating a Boundary port it will show the configured Clock ID of the emulated Grandmaster.
+		"""DEPRECATED Displays the Clock ID of the directly connected master port (might not necessarily be the Grandmaster of the system). If simulating a Boundary port it will show the configured Clock ID of the emulated Grandmaster.
 
 		Returns:
 			list(obj(ixnetwork_restpy.multivalue.Multivalue))
@@ -589,7 +591,7 @@ class Ptp(Base):
 
 	@property
 	def MasterCount(self):
-		"""The total number of Unicast masters to be used for this slave
+		"""DEPRECATED The total number of Unicast masters to be used for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -598,7 +600,7 @@ class Ptp(Base):
 
 	@property
 	def MasterIpAddress(self):
-		"""Defines the base address to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -607,7 +609,7 @@ class Ptp(Base):
 
 	@property
 	def MasterIpIncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -616,7 +618,7 @@ class Ptp(Base):
 
 	@property
 	def MasterIpv6Address(self):
-		"""Defines the base address to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -625,7 +627,7 @@ class Ptp(Base):
 
 	@property
 	def MasterIpv6IncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -634,7 +636,7 @@ class Ptp(Base):
 
 	@property
 	def MasterMacAddress(self):
-		"""Defines the base address to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -643,7 +645,7 @@ class Ptp(Base):
 
 	@property
 	def MasterMacIncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this slave
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -652,7 +654,7 @@ class Ptp(Base):
 
 	@property
 	def MulticastAddress(self):
-		"""The destination multicast address for G8275.1: non-forwardable (01:80:C2:00:00:0E, recommended) or forwardable (01:1B:19:00:00:00)
+		"""DEPRECATED The destination multicast address for G8275.1: non-forwardable (01:80:C2:00:00:0E, recommended) or forwardable (01:1B:19:00:00:00)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -661,7 +663,7 @@ class Ptp(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -673,7 +675,7 @@ class Ptp(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -685,7 +687,7 @@ class Ptp(Base):
 
 	@property
 	def NanosecondsPerSecond(self):
-		"""The number of nanoseconds the emulated clock should effectively count for one second of hardware ticks
+		"""DEPRECATED The number of nanoseconds the emulated clock should effectively count for one second of hardware ticks
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -694,7 +696,7 @@ class Ptp(Base):
 
 	@property
 	def NotSlave(self):
-		"""When enabled for Master clocks it prevents a G8275.1 port from going into Slave state, by ignoring Announce messages
+		"""DEPRECATED When enabled for Master clocks it prevents a G8275.1 port from going into Slave state, by ignoring Announce messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -703,7 +705,7 @@ class Ptp(Base):
 
 	@property
 	def NumberOFMsgs(self):
-		"""Messages Count
+		"""DEPRECATED Messages Count
 
 		Returns:
 			number
@@ -715,7 +717,7 @@ class Ptp(Base):
 
 	@property
 	def OffsetScaledLogVariance(self):
-		"""Static Offset Scaled Log Variance of this clock
+		"""DEPRECATED Static Offset Scaled Log Variance of this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -724,7 +726,7 @@ class Ptp(Base):
 
 	@property
 	def OneWay(self):
-		"""Do not send Delay Requests
+		"""DEPRECATED Do not send Delay Requests
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -733,7 +735,7 @@ class Ptp(Base):
 
 	@property
 	def PDelayFollowUpDelay(self):
-		"""Additional delay introduced in the PdelayResp FollowUp message (ns)
+		"""DEPRECATED Additional delay introduced in the PdelayResp FollowUp message (ns)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -742,7 +744,7 @@ class Ptp(Base):
 
 	@property
 	def PDelayFollowUpDelayInsertionRate(self):
-		"""Percentage rate of the PdelayResp FollowUp messages in which the delay is introduced
+		"""DEPRECATED Percentage rate of the PdelayResp FollowUp messages in which the delay is introduced
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -751,7 +753,7 @@ class Ptp(Base):
 
 	@property
 	def PDelayFollowUpDropRate(self):
-		"""Percentage rate of the dropped PdelayResp FollowUp messages
+		"""DEPRECATED Percentage rate of the dropped PdelayResp FollowUp messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -760,7 +762,7 @@ class Ptp(Base):
 
 	@property
 	def PDelayFollowUpResidenceTime(self):
-		"""Total residence time of PdelayReq and PdelayResp messagews through an associated two-step end-to-end transparent clock inserted in the correction field of PdelayRespFollowUp messages sent by this clock
+		"""DEPRECATED Total residence time of PdelayReq and PdelayResp messagews through an associated two-step end-to-end transparent clock inserted in the correction field of PdelayRespFollowUp messages sent by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -769,7 +771,7 @@ class Ptp(Base):
 
 	@property
 	def PathTraceTLV(self):
-		"""If selected, the master will append a Path Trace TLV to Announce messages
+		"""DEPRECATED If selected, the master will append a Path Trace TLV to Announce messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -778,7 +780,7 @@ class Ptp(Base):
 
 	@property
 	def PortNumber(self):
-		"""Port number
+		"""DEPRECATED Port number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -787,7 +789,7 @@ class Ptp(Base):
 
 	@property
 	def Priority1(self):
-		"""PTP priority1.
+		"""DEPRECATED PTP priority1.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -796,7 +798,7 @@ class Ptp(Base):
 
 	@property
 	def Priority2(self):
-		"""PTP priority2
+		"""DEPRECATED PTP priority2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -805,7 +807,7 @@ class Ptp(Base):
 
 	@property
 	def Profile(self):
-		"""The profile used by this clock
+		"""DEPRECATED The profile used by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -814,7 +816,7 @@ class Ptp(Base):
 
 	@property
 	def PtpState(self):
-		"""Displays the current PTP State
+		"""DEPRECATED Displays the current PTP State
 
 		Returns:
 			list(str[disabled|faulty|grandmaster|initializing|listening|master|passive|preMaster|slave|transparentGrandmaster|transparentMaster|uncalibrated])
@@ -823,7 +825,7 @@ class Ptp(Base):
 
 	@property
 	def RenewalInvited(self):
-		"""Set the Renewal Invited flag in Grant Unicast Transmission TLV
+		"""DEPRECATED Set the Renewal Invited flag in Grant Unicast Transmission TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -832,7 +834,7 @@ class Ptp(Base):
 
 	@property
 	def RequestAttempts(self):
-		"""How many succesive requests a slave can request before entering into holddown
+		"""DEPRECATED How many succesive requests a slave can request before entering into holddown
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -841,7 +843,7 @@ class Ptp(Base):
 
 	@property
 	def RequestHolddown(self):
-		"""Time between succesive requests if denied/timeout for Signal Request
+		"""DEPRECATED Time between succesive requests if denied/timeout for Signal Request
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -850,7 +852,7 @@ class Ptp(Base):
 
 	@property
 	def RequestInterval(self):
-		"""Time between succesive requests if denied/timeout for Signal Request
+		"""DEPRECATED Time between succesive requests if denied/timeout for Signal Request
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -859,7 +861,7 @@ class Ptp(Base):
 
 	@property
 	def ReverseSync(self):
-		"""As a slave, periodically send Reverse Sync messages with recovered clock. As a master, calculate the Offset of the Slave reported time to master time
+		"""DEPRECATED As a slave, periodically send Reverse Sync messages with recovered clock. As a master, calculate the Offset of the Slave reported time to master time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -868,7 +870,7 @@ class Ptp(Base):
 
 	@property
 	def ReverseSyncIntervalPercent(self):
-		"""The percentage of incoming Sync interval to use for Reverse Sync interval
+		"""DEPRECATED The percentage of incoming Sync interval to use for Reverse Sync interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -877,7 +879,7 @@ class Ptp(Base):
 
 	@property
 	def Role(self):
-		"""The desired role of this clock (Masters may become Slave as per BMCA)
+		"""DEPRECATED The desired role of this clock (Masters may become Slave as per BMCA)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -886,7 +888,7 @@ class Ptp(Base):
 
 	@property
 	def RxCalibration(self):
-		"""The amount of time (in ns) that the Receive side timestamp needs to be offset to allow for error
+		"""DEPRECATED The amount of time (in ns) that the Receive side timestamp needs to be offset to allow for error
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -895,7 +897,7 @@ class Ptp(Base):
 
 	@property
 	def ScaledLastGmFreqChange(self):
-		"""Scaled Last GM Freq Change field set in the gPTP FollowUp TLV
+		"""DEPRECATED Scaled Last GM Freq Change field set in the gPTP FollowUp TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -904,7 +906,7 @@ class Ptp(Base):
 
 	@property
 	def SendMulticastAnnounce(self):
-		"""Send multicast Announce messages
+		"""DEPRECATED Send multicast Announce messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -913,7 +915,7 @@ class Ptp(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the session state
+		"""DEPRECATED Logs additional information about the session state
 
 		Returns:
 			list(str[announceReceiptTimeout|delayRespReceiptTimeout|g82651Layer|g82751ClockAccuracy|g82751ClockClass|g82751Domain|g82751Layer|g82751LogVariance|g82751Priority1|g82751Rates|g82751VLANs|gPTPLayer|handleAnnounceTlvUnckecked|multipleP2PResponses|noAnnounce|none|p2PMixedMode|pathTraceDropAnnounce|signalAnnounceTimeout|signalDelayRespTimeout|signalIntervalGrantDelayRespDuration|signalIntervalGrantDuration|signalIntervalGrantSyncDuration|signalSyncTimeout|syncReceiptTimeout|syncReceiptTimeoutgPTP])
@@ -922,7 +924,7 @@ class Ptp(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -931,7 +933,7 @@ class Ptp(Base):
 
 	@property
 	def SignalInterval(self):
-		"""Time between Signal Request messages, in seconds
+		"""DEPRECATED Time between Signal Request messages, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -940,7 +942,7 @@ class Ptp(Base):
 
 	@property
 	def SignalUnicastHandling(self):
-		"""Signal unicast handling
+		"""DEPRECATED Signal unicast handling
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -949,7 +951,7 @@ class Ptp(Base):
 
 	@property
 	def SimulateBoundary(self):
-		"""Simulate a Grandmaster port behind this clock acting as a Boundary clock
+		"""DEPRECATED Simulate a Grandmaster port behind this clock acting as a Boundary clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -958,7 +960,7 @@ class Ptp(Base):
 
 	@property
 	def SimulateTransparent(self):
-		"""Simulate a transparent clock in front of this master clock.
+		"""DEPRECATED Simulate a transparent clock in front of this master clock.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -967,7 +969,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveCount(self):
-		"""The total number of Unicast slaves to be used for this master.
+		"""DEPRECATED The total number of Unicast slaves to be used for this master.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -976,7 +978,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveIpAddress(self):
-		"""Defines the base address to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -985,7 +987,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveIpIncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -994,7 +996,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveIpv6Address(self):
-		"""Defines the base address to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1003,7 +1005,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveIpv6IncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1012,7 +1014,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveMacAddress(self):
-		"""Defines the base address to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the base address to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1021,7 +1023,7 @@ class Ptp(Base):
 
 	@property
 	def SlaveMacIncrementBy(self):
-		"""Defines the increment to be used for enumerating all the addresses for this master
+		"""DEPRECATED Defines the increment to be used for enumerating all the addresses for this master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1030,7 +1032,7 @@ class Ptp(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -1042,7 +1044,7 @@ class Ptp(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -1051,7 +1053,7 @@ class Ptp(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -1060,7 +1062,7 @@ class Ptp(Base):
 
 	@property
 	def StepMode(self):
-		"""Clock step mode
+		"""DEPRECATED Clock step mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1069,7 +1071,7 @@ class Ptp(Base):
 
 	@property
 	def StepsRemoved(self):
-		"""The Steps Removed field advertised in Announce Messages, representing the number of hops between this emulated Boundary clock and the Grandmaster clock (including it). Valid values: 0 to 65,535
+		"""DEPRECATED The Steps Removed field advertised in Announce Messages, representing the number of hops between this emulated Boundary clock and the Grandmaster clock (including it). Valid values: 0 to 65,535
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1078,7 +1080,7 @@ class Ptp(Base):
 
 	@property
 	def StrictGrant(self):
-		"""If selected, the master will not grant values that are above maximum offered values
+		"""DEPRECATED If selected, the master will not grant values that are above maximum offered values
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1087,7 +1089,7 @@ class Ptp(Base):
 
 	@property
 	def SyncDropRate(self):
-		"""Percentage rate of the dropped Sync messages
+		"""DEPRECATED Percentage rate of the dropped Sync messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1096,7 +1098,7 @@ class Ptp(Base):
 
 	@property
 	def SyncReceiptTimeout(self):
-		"""The number of seconds that have to pass without receipt of an Sync message to trigger timeout
+		"""DEPRECATED The number of seconds that have to pass without receipt of an Sync message to trigger timeout
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1105,7 +1107,7 @@ class Ptp(Base):
 
 	@property
 	def SyncReceiptTimeoutgPTP(self):
-		"""The number of Sync Intervals that have to pass without receipt of an Sync message to trigger timeout
+		"""DEPRECATED The number of Sync Intervals that have to pass without receipt of an Sync message to trigger timeout
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1114,7 +1116,7 @@ class Ptp(Base):
 
 	@property
 	def SyncResidenceTime(self):
-		"""Master to slave residence time of Sync messages through an associated one-step transparent clock inserted in the correction field of Sync messages sent by this clock
+		"""DEPRECATED Master to slave residence time of Sync messages through an associated one-step transparent clock inserted in the correction field of Sync messages sent by this clock
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1123,7 +1125,7 @@ class Ptp(Base):
 
 	@property
 	def TimeSource(self):
-		"""Time source for the PTP device
+		"""DEPRECATED Time source for the PTP device
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1132,7 +1134,7 @@ class Ptp(Base):
 
 	@property
 	def TimestampOffset(self):
-		"""The initial offset added to the local clock when starting the session
+		"""DEPRECATED The initial offset added to the local clock when starting the session
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1141,7 +1143,7 @@ class Ptp(Base):
 
 	@property
 	def TxCalibration(self):
-		"""The amount of time (in ns) that the transmit timestamp of one step messages (Sync, PdelayResp) needs to be adjusted for error
+		"""DEPRECATED The amount of time (in ns) that the transmit timestamp of one step messages (Sync, PdelayResp) needs to be adjusted for error
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1150,7 +1152,7 @@ class Ptp(Base):
 
 	@property
 	def TxTwoStepCalibration(self):
-		"""The amount of time (in ns) that the read transmit timestamp of sent messages (two-step Sync, DelayReq, PdelayReq, two-step PdelayResp) needs to be adjusted for error
+		"""DEPRECATED The amount of time (in ns) that the read transmit timestamp of sent messages (two-step Sync, DelayReq, PdelayReq, two-step PdelayResp) needs to be adjusted for error
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1159,7 +1161,7 @@ class Ptp(Base):
 
 	@property
 	def UpdateTime(self):
-		"""Clocks in Slave role will correct their time based on received Sync messages
+		"""DEPRECATED Clocks in Slave role will correct their time based on received Sync messages
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

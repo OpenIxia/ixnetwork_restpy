@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,7 +74,7 @@ class AvailableHardware(Base):
 
 	@property
 	def IsOffChassis(self):
-		"""If true, the Hardware Manager is Off Chassis.
+		"""DEPRECATED If true, the Hardware Manager is Off Chassis.
 
 		Returns:
 			bool
@@ -84,7 +86,7 @@ class AvailableHardware(Base):
 
 	@property
 	def OffChassisHwM(self):
-		"""Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
+		"""DEPRECATED Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
 
 		Returns:
 			str

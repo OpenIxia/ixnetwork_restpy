@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -163,7 +165,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
 
 	@property
 	def TrafficItemFilterId(self):
-		"""Selected traffic flow detective filter from the availableTrafficItemFilter list.
+		"""DEPRECATED Selected traffic flow detective filter from the availableTrafficItemFilter list.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter)
@@ -175,7 +177,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
 
 	@property
 	def TrafficItemFilterIds(self):
-		"""Selected traffic item filters from the availableTrafficItemFilter list.
+		"""DEPRECATED Selected traffic item filters from the availableTrafficItemFilter list.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter])

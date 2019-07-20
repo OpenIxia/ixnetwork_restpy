@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class Egress(Base):
-	"""The Egress class encapsulates a required egress node in the ixnetwork hierarchy.
+	"""The DEPRECATED Egress class encapsulates a required egress node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the Egress property from a parent instance.
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.

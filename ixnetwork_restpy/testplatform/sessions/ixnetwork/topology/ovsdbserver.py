@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,7 +52,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -62,7 +64,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def ConnectionType(self):
-		"""Connection should use TCP or TLS
+		"""DEPRECATED Connection should use TCP or TLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -71,7 +73,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -80,7 +82,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -89,7 +91,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def DirectoryName(self):
-		"""Location of Directory in Client where the Certificate and Key Files are available
+		"""DEPRECATED Location of Directory in Client where the Certificate and Key Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -98,7 +100,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -107,7 +109,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def FileCaCertificate(self):
-		"""CA Certificate File
+		"""DEPRECATED CA Certificate File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -116,7 +118,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def FileCertificate(self):
-		"""Certificate File
+		"""DEPRECATED Certificate File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -125,7 +127,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def FilePrivKey(self):
-		"""Private Key File
+		"""DEPRECATED Private Key File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -134,7 +136,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def ManagerCount(self):
-		"""Number of Managers the OVSDB Server will initiate connections to
+		"""DEPRECATED Number of Managers the OVSDB Server will initiate connections to
 
 		Returns:
 			number
@@ -146,7 +148,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -158,7 +160,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -170,7 +172,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def OvsdbSchema(self):
-		"""Database schema
+		"""DEPRECATED Database schema
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -179,7 +181,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def PseudoConnectedTo(self):
-		"""GUI-only connection
+		"""DEPRECATED GUI-only connection
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -191,7 +193,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def PseudoMultiplier(self):
-		"""Multiplier for GUI-only connection
+		"""DEPRECATED Multiplier for GUI-only connection
 
 		Returns:
 			number
@@ -200,7 +202,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def ServerTcpPort(self):
-		"""Specify the TCP port for the Server
+		"""DEPRECATED Specify the TCP port for the Server
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -209,7 +211,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -218,7 +220,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -230,7 +232,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -239,7 +241,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -248,7 +250,7 @@ class Ovsdbserver(Base):
 
 	@property
 	def Vxlan(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)

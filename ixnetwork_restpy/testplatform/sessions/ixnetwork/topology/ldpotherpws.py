@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -180,7 +182,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def AutoPeerID(self):
-		"""If selected, LDP Peer IP would be taken from LDP router's peer configuration.
+		"""DEPRECATED If selected, LDP Peer IP would be taken from LDP router's peer configuration.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -189,7 +191,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def AutoPeerId(self):
-		"""If selected, LDP Peer IP would be taken from LDP router's peer configuration.
+		"""DEPRECATED If selected, LDP Peer IP would be taken from LDP router's peer configuration.
 
 		Returns:
 			bool
@@ -201,7 +203,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def BfdPwCV(self):
-		"""BFD PW-ACH CV
+		"""DEPRECATED BFD PW-ACH CV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -210,7 +212,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def BfdUdpCV(self):
-		"""BFD IP/UDP CV
+		"""DEPRECATED BFD IP/UDP CV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -219,7 +221,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CAS(self):
-		"""CAS Value
+		"""DEPRECATED CAS Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -228,7 +230,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CBitEnabled(self):
-		"""If selected, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
+		"""DEPRECATED If selected, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -237,7 +239,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CEMOption(self):
-		"""The value of the CEM option
+		"""DEPRECATED The value of the CEM option
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -246,7 +248,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CEMOptionPresent(self):
-		"""If selected, indicates that a CEM option is present
+		"""DEPRECATED If selected, indicates that a CEM option is present
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -255,7 +257,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CEMPayLoadEnable(self):
-		"""If selected, indicates that there is a Circuit Emulation Service over MPLS (CEM) payload
+		"""DEPRECATED If selected, indicates that there is a Circuit Emulation Service over MPLS (CEM) payload
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -264,7 +266,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def CEMPayload(self):
-		"""The length of the CEM payload (in bytes)
+		"""DEPRECATED The length of the CEM payload (in bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -273,7 +275,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -285,7 +287,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -294,7 +296,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def DescEnabled(self):
-		"""If selected, indicates that an optional Interface Description is present
+		"""DEPRECATED If selected, indicates that an optional Interface Description is present
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -303,7 +305,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Description(self):
-		"""An optional user-defined Interface Description. It may be used with ALL VC types. Valid length is 0 to 80 octets
+		"""DEPRECATED An optional user-defined Interface Description. It may be used with ALL VC types. Valid length is 0 to 80 octets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -312,7 +314,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -321,7 +323,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def DownInterval(self):
-		"""Time interval for which the PW status will remain down
+		"""DEPRECATED Time interval for which the PW status will remain down
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -330,7 +332,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def DownStart(self):
-		"""The duration in time after session becomes up and a notification message being sent to make the session down
+		"""DEPRECATED The duration in time after session becomes up and a notification message being sent to make the session down
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -339,7 +341,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def EnableCCCVNegotiation(self):
-		"""If selected, indicates that CCCV Negotiation is enabled
+		"""DEPRECATED If selected, indicates that CCCV Negotiation is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -348,7 +350,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def EnablePWStatus(self):
-		"""If selected, this enables the use of PW Status TLV in notification messages to notify the PW status
+		"""DEPRECATED If selected, this enables the use of PW Status TLV in notification messages to notify the PW status
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -357,7 +359,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -366,7 +368,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Frequency(self):
-		"""Configures the frequency of the payload type
+		"""DEPRECATED Configures the frequency of the payload type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -375,7 +377,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def GroupId(self):
-		"""A user-defined 32-bit value used to identify a group of VCs
+		"""DEPRECATED A user-defined 32-bit value used to identify a group of VCs
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -384,7 +386,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IfaceType(self):
-		"""The 15-bit VC Type used in the VC FEC element.It depends on the Layer 2 protocol used on the interface
+		"""DEPRECATED The 15-bit VC Type used in the VC FEC element.It depends on the Layer 2 protocol used on the interface
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -393,7 +395,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IncludeRTPHeader(self):
-		"""If selected, indicates that RTP Header is present
+		"""DEPRECATED If selected, indicates that RTP Header is present
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -402,7 +404,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IncludeSSRC(self):
-		"""Click to enable SSRC
+		"""DEPRECATED Click to enable SSRC
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -411,7 +413,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IncludeTDMBitrate(self):
-		"""If selected, indicates that TDM Bitrate is present
+		"""DEPRECATED If selected, indicates that TDM Bitrate is present
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -420,7 +422,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IncludeTDMOption(self):
-		"""Include TDM Option
+		"""DEPRECATED Include TDM Option
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -429,7 +431,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def IncludeTDMPayload(self):
-		"""If selected, indicates that TDM Payload is present
+		"""DEPRECATED If selected, indicates that TDM Payload is present
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -438,7 +440,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Ipv6PeerId(self):
-		"""The 128-bit IPv6 address of the LDP Peer.
+		"""DEPRECATED The 128-bit IPv6 address of the LDP Peer.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -447,7 +449,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def LSPPingCV(self):
-		"""LSP Ping CV
+		"""DEPRECATED LSP Ping CV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -456,7 +458,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Label(self):
-		"""Label
+		"""DEPRECATED Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -465,7 +467,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""Router ID
+		"""DEPRECATED Router ID
 
 		Returns:
 			list(str)
@@ -474,7 +476,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def MaxATMCells(self):
-		"""The Maximum number of ATM Cells which may be concatenated and sent in a single MPLS frame
+		"""DEPRECATED The Maximum number of ATM Cells which may be concatenated and sent in a single MPLS frame
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -483,7 +485,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Mtu(self):
-		"""The 2-octet value for the maximum Transmission Unit (MTU).
+		"""DEPRECATED The 2-octet value for the maximum Transmission Unit (MTU).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -492,7 +494,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -504,7 +506,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -516,7 +518,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def PWACHCC(self):
-		"""PW-ACH CC
+		"""DEPRECATED PW-ACH CC
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -525,7 +527,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def PWStatusCode(self):
-		"""PW Status Code to be sent when to transition to down state if PW Status Send Notification is enabled
+		"""DEPRECATED PW Status Code to be sent when to transition to down state if PW Status Send Notification is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -534,7 +536,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def PayloadType(self):
-		"""Configures the pay load type
+		"""DEPRECATED Configures the pay load type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -543,7 +545,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def PeerId(self):
-		"""The 32-bit IPv4 address of the LDP Peer.
+		"""DEPRECATED The 32-bit IPv4 address of the LDP Peer.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -552,7 +554,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def PwStatusSendNotification(self):
-		"""If selected, it signifies whether to send a notification message with a PW status for the corresponding PW
+		"""DEPRECATED If selected, it signifies whether to send a notification message with a PW status for the corresponding PW
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -561,7 +563,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def RepeatCount(self):
-		"""The number of times to repeat the Up/Down status of the PW. '0' means keep toggling the Up/Down state indefinitely.
+		"""DEPRECATED The number of times to repeat the Up/Down status of the PW. '0' means keep toggling the Up/Down state indefinitely.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -570,7 +572,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def RouterAlertCC(self):
-		"""Router Alert CC
+		"""DEPRECATED Router Alert CC
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -579,7 +581,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def SP(self):
-		"""SP Value
+		"""DEPRECATED SP Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -588,7 +590,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def SSRC(self):
-		"""SSRC Value
+		"""DEPRECATED SSRC Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -597,7 +599,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -606,7 +608,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -618,7 +620,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -627,7 +629,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -636,7 +638,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def TDMBitrate(self):
-		"""The value of the TDM bitrate
+		"""DEPRECATED The value of the TDM bitrate
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -645,7 +647,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def TDMDataSize(self):
-		"""The total size of the TDM data
+		"""DEPRECATED The total size of the TDM data
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -654,7 +656,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def TimestampMode(self):
-		"""Timestamp Mode
+		"""DEPRECATED Timestamp Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -663,7 +665,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def UpInterval(self):
-		"""Time Interval for which the PW status will remain in Up state before transitioning again to Down state.
+		"""DEPRECATED Time Interval for which the PW status will remain in Up state before transitioning again to Down state.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -672,7 +674,7 @@ class Ldpotherpws(Base):
 
 	@property
 	def VCIDStart(self):
-		"""The value of the VC ID
+		"""DEPRECATED The value of the VC ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

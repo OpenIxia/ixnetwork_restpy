@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -204,7 +206,7 @@ class Vxlan(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -216,7 +218,7 @@ class Vxlan(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -225,7 +227,7 @@ class Vxlan(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -234,7 +236,7 @@ class Vxlan(Base):
 
 	@property
 	def EnableStaticInfo(self):
-		"""If true, VXLAN will use unicast entries for VTEP information instead of multicast learning.
+		"""DEPRECATED If true, VXLAN will use unicast entries for VTEP information instead of multicast learning.
 
 		Returns:
 			bool
@@ -246,7 +248,7 @@ class Vxlan(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -255,7 +257,7 @@ class Vxlan(Base):
 
 	@property
 	def ExternalLearning(self):
-		"""If true, VXLAN will use information received from another protocol which will handle the learning mechanism.
+		"""DEPRECATED If true, VXLAN will use information received from another protocol which will handle the learning mechanism.
 
 		Returns:
 			bool
@@ -267,7 +269,7 @@ class Vxlan(Base):
 
 	@property
 	def Ipv4_multicast(self):
-		"""IPv4 Multicast Address.
+		"""DEPRECATED IPv4 Multicast Address.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -276,7 +278,7 @@ class Vxlan(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -288,7 +290,7 @@ class Vxlan(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -300,7 +302,7 @@ class Vxlan(Base):
 
 	@property
 	def OvsdbConnectorMultiplier(self):
-		"""Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
+		"""DEPRECATED Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
 
 		Returns:
 			number
@@ -312,7 +314,7 @@ class Vxlan(Base):
 
 	@property
 	def RunningMode(self):
-		"""There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
+		"""DEPRECATED There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
 
 		Returns:
 			str(none|ovsdbControllerBfdStack|ovsdbStack)
@@ -324,7 +326,7 @@ class Vxlan(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -333,7 +335,7 @@ class Vxlan(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -345,7 +347,7 @@ class Vxlan(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -354,7 +356,7 @@ class Vxlan(Base):
 
 	@property
 	def StaticInfoCount(self):
-		"""number of unicast VTEP
+		"""DEPRECATED number of unicast VTEP
 
 		Returns:
 			number
@@ -366,7 +368,7 @@ class Vxlan(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -375,7 +377,7 @@ class Vxlan(Base):
 
 	@property
 	def Vni(self):
-		"""VXLAN Network Identifier.
+		"""DEPRECATED VXLAN Network Identifier.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

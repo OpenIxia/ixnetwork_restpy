@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -612,7 +614,7 @@ class Mp(Base):
 
 	@property
 	def DmmPriority(self):
-		"""Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
+		"""DEPRECATED Sets the priority for DM Messages. This priority will be used only for periodic DMMs. The default is 0. Min: 0 Max: 7
 
 		Returns:
 			number
@@ -624,7 +626,7 @@ class Mp(Base):
 
 	@property
 	def EnableAisRx(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -636,7 +638,7 @@ class Mp(Base):
 
 	@property
 	def EnableAutoDm(self):
-		"""If true, enables the automatic sending of DM Messages.
+		"""DEPRECATED If true, enables the automatic sending of DM Messages.
 
 		Returns:
 			bool
@@ -648,7 +650,7 @@ class Mp(Base):
 
 	@property
 	def EnableAutoLb(self):
-		"""If true, enables the automatic sending of Loopback messages.
+		"""DEPRECATED If true, enables the automatic sending of Loopback messages.
 
 		Returns:
 			bool
@@ -660,7 +662,7 @@ class Mp(Base):
 
 	@property
 	def EnableAutoLm(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -672,7 +674,7 @@ class Mp(Base):
 
 	@property
 	def EnableAutoLt(self):
-		"""If true, enables the automatic sending of Link Trace messages.
+		"""DEPRECATED If true, enables the automatic sending of Link Trace messages.
 
 		Returns:
 			bool
@@ -684,7 +686,7 @@ class Mp(Base):
 
 	@property
 	def EnableLckRx(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -696,7 +698,7 @@ class Mp(Base):
 
 	@property
 	def EnableLmCounterUpdate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -708,7 +710,7 @@ class Mp(Base):
 
 	@property
 	def EnableTstRx(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -720,7 +722,7 @@ class Mp(Base):
 
 	@property
 	def Enabled(self):
-		"""If true, the MP is enabled.
+		"""DEPRECATED If true, the MP is enabled.
 
 		Returns:
 			bool
@@ -732,7 +734,7 @@ class Mp(Base):
 
 	@property
 	def InterRemoteMepRxIncrementStep(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -744,7 +746,7 @@ class Mp(Base):
 
 	@property
 	def InterRemoteMepTxIncrementStep(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -756,7 +758,7 @@ class Mp(Base):
 
 	@property
 	def LbmPriority(self):
-		"""Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
+		"""DEPRECATED Sets the priority for Loopback Messages. This priority will be used only for periodic LBMs. The default is 0. Min: 0 Max: 7
 
 		Returns:
 			number
@@ -768,7 +770,7 @@ class Mp(Base):
 
 	@property
 	def LckEnableUnicastMac(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -780,7 +782,7 @@ class Mp(Base):
 
 	@property
 	def LckInterval(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(oneSec|oneMin)
@@ -792,7 +794,7 @@ class Mp(Base):
 
 	@property
 	def LckMode(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(auto|start|stop)
@@ -804,7 +806,7 @@ class Mp(Base):
 
 	@property
 	def LckPriority(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -816,7 +818,7 @@ class Mp(Base):
 
 	@property
 	def LckSupportAisGeneration(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -828,7 +830,7 @@ class Mp(Base):
 
 	@property
 	def LckUnicastMac(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -840,7 +842,7 @@ class Mp(Base):
 
 	@property
 	def LmAllRemoteMeps(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -852,7 +854,7 @@ class Mp(Base):
 
 	@property
 	def LmDestinationMacAddress(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -864,7 +866,7 @@ class Mp(Base):
 
 	@property
 	def LmMethod(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(singleEnded|dualEnded)
@@ -876,7 +878,7 @@ class Mp(Base):
 
 	@property
 	def LmmPriority(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -888,7 +890,7 @@ class Mp(Base):
 
 	@property
 	def LmrPriority(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -900,7 +902,7 @@ class Mp(Base):
 
 	@property
 	def LmrRxFcf(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -912,7 +914,7 @@ class Mp(Base):
 
 	@property
 	def LmrRxFcfStep(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -924,7 +926,7 @@ class Mp(Base):
 
 	@property
 	def LtmPriority(self):
-		"""Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
+		"""DEPRECATED Sets the priority for Link Trace Messages. This priority will be used only for periodic LTMs. The default is 0. Min: 0 Max: 7
 
 		Returns:
 			number
@@ -936,7 +938,7 @@ class Mp(Base):
 
 	@property
 	def MacAddress(self):
-		"""The MAC address of the MP.
+		"""DEPRECATED The MAC address of the MP.
 
 		Returns:
 			str
@@ -948,7 +950,7 @@ class Mp(Base):
 
 	@property
 	def ManagementAddress(self):
-		"""Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
+		"""DEPRECATED Sets the MP management address. Input type is HEX (0-255 byte). Default is 01 02 03 03 04 05.
 
 		Returns:
 			str
@@ -960,7 +962,7 @@ class Mp(Base):
 
 	@property
 	def ManagementAddressDomain(self):
-		"""Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
+		"""DEPRECATED Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
 
 		Returns:
 			str
@@ -972,7 +974,7 @@ class Mp(Base):
 
 	@property
 	def ManagementAddressDomainLength(self):
-		"""Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
+		"""DEPRECATED Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
 
 		Returns:
 			number
@@ -984,7 +986,7 @@ class Mp(Base):
 
 	@property
 	def ManagementAddressLength(self):
-		"""Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
+		"""DEPRECATED Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
 
 		Returns:
 			number
@@ -996,7 +998,7 @@ class Mp(Base):
 
 	@property
 	def MdLevel(self):
-		"""The MD level of the MP. The MD level must be previously configured.
+		"""DEPRECATED The MD level of the MP. The MD level must be previously configured.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=mdLevel)
@@ -1008,7 +1010,7 @@ class Mp(Base):
 
 	@property
 	def MegId(self):
-		"""The MEG identifier of the MP. This is for use with ITU-T Y.1731.
+		"""DEPRECATED The MEG identifier of the MP. This is for use with ITU-T Y.1731.
 
 		Returns:
 			str
@@ -1020,7 +1022,7 @@ class Mp(Base):
 
 	@property
 	def MegIdFormat(self):
-		"""The MEG identifier format.
+		"""DEPRECATED The MEG identifier format.
 
 		Returns:
 			str(iccBasedFormat|primaryVid|characterString|2octetInteger|rfc2685VpnId)
@@ -1032,7 +1034,7 @@ class Mp(Base):
 
 	@property
 	def MepId(self):
-		"""The MEP identifier.
+		"""DEPRECATED The MEP identifier.
 
 		Returns:
 			number
@@ -1044,7 +1046,7 @@ class Mp(Base):
 
 	@property
 	def MipId(self):
-		"""The MIP identifier.
+		"""DEPRECATED The MIP identifier.
 
 		Returns:
 			number
@@ -1056,7 +1058,7 @@ class Mp(Base):
 
 	@property
 	def MpType(self):
-		"""Sets the MP type.
+		"""DEPRECATED Sets the MP type.
 
 		Returns:
 			str(mip|mep)
@@ -1068,7 +1070,7 @@ class Mp(Base):
 
 	@property
 	def OrganizationSpecificTlvLength(self):
-		"""Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
+		"""DEPRECATED Sets the length of the organizational specific TLV field. Default is 4. Min: 4 Max: 1500
 
 		Returns:
 			number
@@ -1080,7 +1082,7 @@ class Mp(Base):
 
 	@property
 	def OrganizationSpecificTlvValue(self):
-		"""Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
+		"""DEPRECATED Sets the value of the organizational specific TLV field. This attribute will take Hex value. Default is NULL.
 
 		Returns:
 			str
@@ -1092,7 +1094,7 @@ class Mp(Base):
 
 	@property
 	def OverrideVlanPriority(self):
-		"""If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
+		"""DEPRECATED If true, overrides the set VLAN priority for this bridge, and uses the advanced settings instead.
 
 		Returns:
 			bool
@@ -1104,7 +1106,7 @@ class Mp(Base):
 
 	@property
 	def Rdi(self):
-		"""The Remote Defect Identification.
+		"""DEPRECATED The Remote Defect Identification.
 
 		Returns:
 			str(auto|on|off)
@@ -1116,7 +1118,7 @@ class Mp(Base):
 
 	@property
 	def ShortMaName(self):
-		"""Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
+		"""DEPRECATED Sets the Short MA name. The format is determined in shortMaNameFormat. This is used with IEEE 802.1ag.
 
 		Returns:
 			str
@@ -1128,7 +1130,7 @@ class Mp(Base):
 
 	@property
 	def ShortMaNameFormat(self):
-		"""Sets the Short MA Name format.
+		"""DEPRECATED Sets the Short MA Name format.
 
 		Returns:
 			str(primaryVid|characterString|2octetInteger|rfc2685VpnId)
@@ -1140,7 +1142,7 @@ class Mp(Base):
 
 	@property
 	def TstEnableUnicastMac(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1152,7 +1154,7 @@ class Mp(Base):
 
 	@property
 	def TstIncrPacketLength(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1164,7 +1166,7 @@ class Mp(Base):
 
 	@property
 	def TstIncrPacketLengthStep(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1176,7 +1178,7 @@ class Mp(Base):
 
 	@property
 	def TstInitialPatternValue(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1188,7 +1190,7 @@ class Mp(Base):
 
 	@property
 	def TstInterval(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1200,7 +1202,7 @@ class Mp(Base):
 
 	@property
 	def TstMode(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(start|stop)
@@ -1212,7 +1214,7 @@ class Mp(Base):
 
 	@property
 	def TstOverwriteSequenceNumber(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -1224,7 +1226,7 @@ class Mp(Base):
 
 	@property
 	def TstPacketLength(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1236,7 +1238,7 @@ class Mp(Base):
 
 	@property
 	def TstPatternType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(nullSignalWithoutCrc32|nullSignalWithCrc32|prbs2311WithoutCrc32|prbs2311WithCrc32)
@@ -1248,7 +1250,7 @@ class Mp(Base):
 
 	@property
 	def TstPriority(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1260,7 +1262,7 @@ class Mp(Base):
 
 	@property
 	def TstSequenceNumber(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -1272,7 +1274,7 @@ class Mp(Base):
 
 	@property
 	def TstTestType(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(inService|outOfService)
@@ -1284,7 +1286,7 @@ class Mp(Base):
 
 	@property
 	def TstUnicastMac(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -1296,7 +1298,7 @@ class Mp(Base):
 
 	@property
 	def Ttl(self):
-		"""Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
+		"""DEPRECATED Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
 
 		Returns:
 			number
@@ -1308,7 +1310,7 @@ class Mp(Base):
 
 	@property
 	def Vlan(self):
-		"""Assigns a VLAN to the MP. The VLAN must be previously configured.
+		"""DEPRECATED Assigns a VLAN to the MP. The VLAN must be previously configured.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=vlans)

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,7 +102,7 @@ class Ere(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -112,7 +114,7 @@ class Ere(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -121,7 +123,7 @@ class Ere(Base):
 
 	@property
 	def DelayMeasurementId(self):
-		"""Delay Measurement ID.
+		"""DEPRECATED Delay Measurement ID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -130,7 +132,7 @@ class Ere(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -139,7 +141,7 @@ class Ere(Base):
 
 	@property
 	def DummyBytesLength(self):
-		"""Dummy Bytes Length.
+		"""DEPRECATED Dummy Bytes Length.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -148,7 +150,7 @@ class Ere(Base):
 
 	@property
 	def ElementId(self):
-		"""Element ID
+		"""DEPRECATED Element ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -157,7 +159,7 @@ class Ere(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -166,7 +168,7 @@ class Ere(Base):
 
 	@property
 	def EventId(self):
-		"""Event ID
+		"""DEPRECATED Event ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -175,7 +177,7 @@ class Ere(Base):
 
 	@property
 	def EventSeqNum(self):
-		"""Event Sequence Number.
+		"""DEPRECATED Event Sequence Number.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -184,7 +186,7 @@ class Ere(Base):
 
 	@property
 	def EventType(self):
-		"""Event Type
+		"""DEPRECATED Event Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -193,7 +195,7 @@ class Ere(Base):
 
 	@property
 	def MessageType(self):
-		"""Message Type
+		"""DEPRECATED Message Type
 
 		Returns:
 			str(eventIndication|onewayDelayMeasurement|realTimeControlData|remoteMemoryAccess|remoteReset)
@@ -205,7 +207,7 @@ class Ere(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -217,7 +219,7 @@ class Ere(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -229,7 +231,7 @@ class Ere(Base):
 
 	@property
 	def NumberOfFaultSubObjects(self):
-		"""Number Of Fault/Notify.
+		"""DEPRECATED Number Of Fault/Notify.
 
 		Returns:
 			number
@@ -241,7 +243,7 @@ class Ere(Base):
 
 	@property
 	def ReadWriteType(self):
-		"""Read/Write Type
+		"""DEPRECATED Read/Write Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +252,7 @@ class Ere(Base):
 
 	@property
 	def RemoteResetId(self):
-		"""Remote Reset ID
+		"""DEPRECATED Remote Reset ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -259,7 +261,7 @@ class Ere(Base):
 
 	@property
 	def ResActType(self):
-		"""Reserved Action Type.
+		"""DEPRECATED Reserved Action Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +270,7 @@ class Ere(Base):
 
 	@property
 	def ReservedEventType(self):
-		"""Reserved Event Type.
+		"""DEPRECATED Reserved Event Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -277,7 +279,7 @@ class Ere(Base):
 
 	@property
 	def ReservedResetCode(self):
-		"""Reserved Reset Code.
+		"""DEPRECATED Reserved Reset Code.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -286,7 +288,7 @@ class Ere(Base):
 
 	@property
 	def ResetCodeOp(self):
-		"""Reset Code Op
+		"""DEPRECATED Reset Code Op
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -295,7 +297,7 @@ class Ere(Base):
 
 	@property
 	def RmaAction(self):
-		"""RMA Action Type
+		"""DEPRECATED RMA Action Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -304,7 +306,7 @@ class Ere(Base):
 
 	@property
 	def RmaDataLength(self):
-		"""Number of bytes to be read/written from/to remote node.
+		"""DEPRECATED Number of bytes to be read/written from/to remote node.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -313,7 +315,7 @@ class Ere(Base):
 
 	@property
 	def RtcDataLength(self):
-		"""Size of RTC data that will be included in the eCPRI message.
+		"""DEPRECATED Size of RTC data that will be included in the eCPRI message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -322,7 +324,7 @@ class Ere(Base):
 
 	@property
 	def SeqId(self):
-		"""Sequence ID.
+		"""DEPRECATED Sequence ID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -331,7 +333,7 @@ class Ere(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -340,7 +342,7 @@ class Ere(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -352,7 +354,7 @@ class Ere(Base):
 
 	@property
 	def StartingRmaId(self):
-		"""Identifier of the request message used by the Initiator to match the corresponding response message.
+		"""DEPRECATED Identifier of the request message used by the Initiator to match the corresponding response message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -361,7 +363,7 @@ class Ere(Base):
 
 	@property
 	def StartingRtcId(self):
-		"""RTC ID of the eRE/eREC.
+		"""DEPRECATED RTC ID of the eRE/eREC.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -370,7 +372,7 @@ class Ere(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -379,7 +381,7 @@ class Ere(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -388,7 +390,7 @@ class Ere(Base):
 
 	@property
 	def Timestamp(self):
-		"""Timestamp as defined.
+		"""DEPRECATED Timestamp as defined.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -397,7 +399,7 @@ class Ere(Base):
 
 	@property
 	def VendorSpecificPayloadLength(self):
-		"""Size of vendor specific payload
+		"""DEPRECATED Size of vendor specific payload
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

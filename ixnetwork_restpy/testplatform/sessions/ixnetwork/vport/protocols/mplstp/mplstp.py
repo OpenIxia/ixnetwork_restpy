@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,7 +51,7 @@ class MplsTp(Base):
 
 	@property
 	def ApsChannelType(self):
-		"""This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -61,7 +63,7 @@ class MplsTp(Base):
 
 	@property
 	def BfdCcChannelType(self):
-		"""This signifies the BFD Continuity Check Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the BFD Continuity Check Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -73,7 +75,7 @@ class MplsTp(Base):
 
 	@property
 	def DelayManagementChannelType(self):
-		"""This signifies the Delay Measurement Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the Delay Measurement Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -85,7 +87,7 @@ class MplsTp(Base):
 
 	@property
 	def EnableHighPerformanceMode(self):
-		"""This signifies select the checkbox to enable high performance mode.
+		"""DEPRECATED This signifies select the checkbox to enable high performance mode.
 
 		Returns:
 			bool
@@ -97,7 +99,7 @@ class MplsTp(Base):
 
 	@property
 	def Enabled(self):
-		"""This signifies that the mplsTp protocol is enabled.
+		"""DEPRECATED This signifies that the mplsTp protocol is enabled.
 
 		Returns:
 			bool
@@ -109,7 +111,7 @@ class MplsTp(Base):
 
 	@property
 	def FaultManagementChannelType(self):
-		"""This signifies the Fault Management Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the Fault Management Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -121,7 +123,7 @@ class MplsTp(Base):
 
 	@property
 	def LossMeasurementChannelType(self):
-		"""This signifies the Loss Measurement Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the Loss Measurement Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -133,7 +135,7 @@ class MplsTp(Base):
 
 	@property
 	def OnDemandCvChannelType(self):
-		"""This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
 
 		Returns:
 			str
@@ -145,7 +147,7 @@ class MplsTp(Base):
 
 	@property
 	def PwStatusChannelType(self):
-		"""This signifies the Pseudowire Status Channel Type.
+		"""DEPRECATED This signifies the Pseudowire Status Channel Type.
 
 		Returns:
 			str
@@ -157,7 +159,7 @@ class MplsTp(Base):
 
 	@property
 	def RunningState(self):
-		"""This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
+		"""DEPRECATED This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -166,7 +168,7 @@ class MplsTp(Base):
 
 	@property
 	def Y1731ChannelType(self):
-		"""This signifies the Y.1731 Channel Type in hexadecimal format.
+		"""DEPRECATED This signifies the Y.1731 Channel Type in hexadecimal format.
 
 		Returns:
 			str

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -274,7 +276,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -286,7 +288,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -295,7 +297,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -304,7 +306,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Dhcp4Broadcast(self):
-		"""If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
+		"""DEPRECATED If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -313,7 +315,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Dhcp4GatewayAddress(self):
-		"""Configures the Manual Gateway IP Address for the DHCPv4 Client.
+		"""DEPRECATED Configures the Manual Gateway IP Address for the DHCPv4 Client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -322,7 +324,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Dhcp4GatewayMac(self):
-		"""Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv4 Client session.
+		"""DEPRECATED Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv4 Client session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -331,7 +333,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Dhcp4ServerAddress(self):
-		"""The address of the DHCP server from which the subnet will accept IP addresses.
+		"""DEPRECATED The address of the DHCP server from which the subnet will accept IP addresses.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -340,7 +342,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Dhcp4UseFirstServer(self):
-		"""If enabled, the subnet accepts the IP addresses offered by the first server to respond with an offer of IP addresses.
+		"""DEPRECATED If enabled, the subnet accepts the IP addresses offered by the first server to respond with an offer of IP addresses.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -349,7 +351,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def DiscoveredAddresses(self):
-		"""The discovered IPv4 addresses.
+		"""DEPRECATED The discovered IPv4 addresses.
 
 		Returns:
 			list(str)
@@ -358,7 +360,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def DiscoveredGateways(self):
-		"""The discovered gateway IPv4 addresses.
+		"""DEPRECATED The discovered gateway IPv4 addresses.
 
 		Returns:
 			list(str)
@@ -367,7 +369,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def DiscoveredPrefix(self):
-		"""The discovered IPv4 prefix length.
+		"""DEPRECATED The discovered IPv4 prefix length.
 
 		Returns:
 			list(number)
@@ -376,7 +378,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -385,7 +387,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -397,7 +399,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -409,7 +411,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def RenewTimer(self):
-		"""The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
+		"""DEPRECATED The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -418,7 +420,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Logs additional information about the session state
+		"""DEPRECATED Logs additional information about the session state
 
 		Returns:
 			list(str[arpFailed|discoverTimeout|excessiveTlvs|none|rebindTimeout|relayDown|renewTimeout|requestTimeout])
@@ -427,7 +429,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -436,7 +438,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -448,7 +450,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -457,7 +459,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -466,7 +468,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def UseRapidCommit(self):
-		"""Enables DHCP clients to negotiate leases with rapid commit.
+		"""DEPRECATED Enables DHCP clients to negotiate leases with rapid commit.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

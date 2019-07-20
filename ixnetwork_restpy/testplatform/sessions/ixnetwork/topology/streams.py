@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,7 +65,7 @@ class Streams(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -75,7 +77,7 @@ class Streams(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -84,7 +86,7 @@ class Streams(Base):
 
 	@property
 	def DataFramePriority(self):
-		"""data frame priority of tagged data stream
+		"""DEPRECATED data frame priority of tagged data stream
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -93,7 +95,7 @@ class Streams(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -102,7 +104,7 @@ class Streams(Base):
 
 	@property
 	def DestinationMac(self):
-		"""Destination MAC
+		"""DEPRECATED Destination MAC
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -111,7 +113,7 @@ class Streams(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -120,7 +122,7 @@ class Streams(Base):
 
 	@property
 	def MaxFrameSize(self):
-		"""maximum frame size that talker will produce
+		"""DEPRECATED maximum frame size that talker will produce
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -129,7 +131,7 @@ class Streams(Base):
 
 	@property
 	def MaxIntervalFrames(self):
-		"""Maximum number of frames that the talker may transmit in one class measurement interval
+		"""DEPRECATED Maximum number of frames that the talker may transmit in one class measurement interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -138,7 +140,7 @@ class Streams(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -150,7 +152,7 @@ class Streams(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -162,7 +164,7 @@ class Streams(Base):
 
 	@property
 	def PerFrameOverhead(self):
-		"""Per Frame Overhead (Bytes)
+		"""DEPRECATED Per Frame Overhead (Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -171,7 +173,7 @@ class Streams(Base):
 
 	@property
 	def PortTcMaxLatency(self):
-		"""maximum latency that is introduced by talker
+		"""DEPRECATED maximum latency that is introduced by talker
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -180,7 +182,7 @@ class Streams(Base):
 
 	@property
 	def Rank(self):
-		"""Rank of the stream
+		"""DEPRECATED Rank of the stream
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -189,7 +191,7 @@ class Streams(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -198,7 +200,7 @@ class Streams(Base):
 
 	@property
 	def SourceMac(self):
-		"""Source MAC
+		"""DEPRECATED Source MAC
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -207,7 +209,7 @@ class Streams(Base):
 
 	@property
 	def SrClass(self):
-		"""Derived SR Class
+		"""DEPRECATED Derived SR Class
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -216,7 +218,7 @@ class Streams(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -228,7 +230,7 @@ class Streams(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -237,7 +239,7 @@ class Streams(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -246,7 +248,7 @@ class Streams(Base):
 
 	@property
 	def StreamId(self):
-		"""64 bit stream ID after concatenation of 48 bit source MAC and 16 bit Unique ID
+		"""DEPRECATED 64 bit stream ID after concatenation of 48 bit source MAC and 16 bit Unique ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -255,7 +257,7 @@ class Streams(Base):
 
 	@property
 	def StreamName(self):
-		"""User friendly name for 64 bit stream ID
+		"""DEPRECATED User friendly name for 64 bit stream ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -264,7 +266,7 @@ class Streams(Base):
 
 	@property
 	def UniqueId(self):
-		"""16 bit unsigned integer value to distinguish among multiple streams sourced by same talker
+		"""DEPRECATED 16 bit unsigned integer value to distinguish among multiple streams sourced by same talker
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -273,7 +275,7 @@ class Streams(Base):
 
 	@property
 	def VlanId(self):
-		"""VLAN ID
+		"""DEPRECATED VLAN ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

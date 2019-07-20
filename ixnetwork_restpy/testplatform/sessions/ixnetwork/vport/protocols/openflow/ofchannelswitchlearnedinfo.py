@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,7 +74,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def AveragePacketInReplyDelay(self):
-		"""This describes the average delay between Packet-In sent from Switch and reply received from Controller.
+		"""DEPRECATED This describes the average delay between Packet-In sent from Switch and reply received from Controller.
 
 		Returns:
 			number
@@ -84,7 +86,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def Capabilities(self):
-		"""This describes the OF Channel capabilities of the switch.
+		"""DEPRECATED This describes the OF Channel capabilities of the switch.
 
 		Returns:
 			str
@@ -93,7 +95,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def ConfigFlags(self):
-		"""This describes the Flags for fragmentation handling.
+		"""DEPRECATED This describes the Flags for fragmentation handling.
 
 		Returns:
 			str
@@ -102,7 +104,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def ConfiguredPacketInReplyCount(self):
-		"""This describes the Packet-In sent from Switch from configured Packet-In Ranges.
+		"""DEPRECATED This describes the Packet-In sent from Switch from configured Packet-In Ranges.
 
 		Returns:
 			number
@@ -114,7 +116,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def ConfiguredPacketInSentCount(self):
-		"""This describes the Packet-In reply received from Controller for Packet-In sent.
+		"""DEPRECATED This describes the Packet-In reply received from Controller for Packet-In sent.
 
 		Returns:
 			number
@@ -126,7 +128,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def DataPathId(self):
-		"""This describes the datapath ID of the switch.
+		"""DEPRECATED This describes the datapath ID of the switch.
 
 		Returns:
 			str
@@ -135,7 +137,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def DataPathIdAsHex(self):
-		"""This describes the datapath ID, in hexadecimal format, of the switch.
+		"""DEPRECATED This describes the datapath ID, in hexadecimal format, of the switch.
 
 		Returns:
 			str
@@ -144,7 +146,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def FlowRate(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -153,7 +155,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def GenerationId(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -162,7 +164,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LastErrorCode(self):
-		"""This describes the code for the last error received.
+		"""DEPRECATED This describes the code for the last error received.
 
 		Returns:
 			str
@@ -171,7 +173,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LastErrorType(self):
-		"""This describes the type of error for the last error received.
+		"""DEPRECATED This describes the type of error for the last error received.
 
 		Returns:
 			str
@@ -180,7 +182,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LocalIp(self):
-		"""This describes the local IP address of the switch.
+		"""DEPRECATED This describes the local IP address of the switch.
 
 		Returns:
 			str
@@ -189,7 +191,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def MaxBufferSize(self):
-		"""This describes the maximum number of packets that can be stored in the buffer of the switch at a time.
+		"""DEPRECATED This describes the maximum number of packets that can be stored in the buffer of the switch at a time.
 
 		Returns:
 			number
@@ -198,7 +200,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def MaxPacketInBytes(self):
-		"""This describes the max amount of data to be sent in the Packet-In message.
+		"""DEPRECATED This describes the max amount of data to be sent in the Packet-In message.
 
 		Returns:
 			number
@@ -207,7 +209,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NegotiatedVersion(self):
-		"""This describes the OpenFlow version supported by this configuration.
+		"""DEPRECATED This describes the OpenFlow version supported by this configuration.
 
 		Returns:
 			number
@@ -216,7 +218,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberOfAuxiliaryConnection(self):
-		"""This describes the number of auxiliary connections.
+		"""DEPRECATED This describes the number of auxiliary connections.
 
 		Returns:
 			number
@@ -228,7 +230,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberOfErrorsSent(self):
-		"""This describes the number of errors received by the switch.
+		"""DEPRECATED This describes the number of errors received by the switch.
 
 		Returns:
 			number
@@ -237,7 +239,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberOfPorts(self):
-		"""This describes the number of ports in the switch.
+		"""DEPRECATED This describes the number of ports in the switch.
 
 		Returns:
 			number
@@ -246,7 +248,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberofTable(self):
-		"""This describes the number of tables in the switch.
+		"""DEPRECATED This describes the number of tables in the switch.
 
 		Returns:
 			number
@@ -255,7 +257,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def RemoteIp(self):
-		"""This describes the IP address of the remote end of the OF Channel.
+		"""DEPRECATED This describes the IP address of the remote end of the OF Channel.
 
 		Returns:
 			str
@@ -264,7 +266,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def RemotePortNumber(self):
-		"""This describes the TCP port number of the remote end of the OF Channel.
+		"""DEPRECATED This describes the TCP port number of the remote end of the OF Channel.
 
 		Returns:
 			number
@@ -276,7 +278,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def SessionType(self):
-		"""This describes the type of OpenFlow session.
+		"""DEPRECATED This describes the type of OpenFlow session.
 
 		Returns:
 			str

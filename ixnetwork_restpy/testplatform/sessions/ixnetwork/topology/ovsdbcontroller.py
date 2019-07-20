@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,7 +75,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -85,7 +87,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ConnectionType(self):
-		"""Connection should use TCP or TLS
+		"""DEPRECATED Connection should use TCP or TLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -94,7 +96,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ControllerTcpPort(self):
-		"""Specify the TCP port for the Controller
+		"""DEPRECATED Specify the TCP port for the Controller
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -103,7 +105,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -112,7 +114,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -121,7 +123,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def DirectoryName(self):
-		"""Location of Directory in Client where the Certificate and Key Files are available
+		"""DEPRECATED Location of Directory in Client where the Certificate and Key Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -130,7 +132,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def DumpdbDirectoryName(self):
-		"""Location of Directory in Client where the DumpDb Files are available
+		"""DEPRECATED Location of Directory in Client where the DumpDb Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -139,7 +141,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def EnableLogging(self):
-		"""If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
+		"""DEPRECATED If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
 
 		Returns:
 			bool
@@ -151,7 +153,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def EnableOvsdbServerIp(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -160,7 +162,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorCode(self):
-		"""Error Code
+		"""DEPRECATED Error Code
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -169,7 +171,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorDesc(self):
-		"""Description of Error occured
+		"""DEPRECATED Description of Error occured
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +180,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorLogDirectoryName(self):
-		"""Location of Directory in Client where the ErrorLog Files are available
+		"""DEPRECATED Location of Directory in Client where the ErrorLog Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -187,7 +189,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorLogicalSwitchName(self):
-		"""Error occured for this Logical Switch Name
+		"""DEPRECATED Error occured for this Logical Switch Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -196,7 +198,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorPhysicalSwitchName(self):
-		"""Error occured for this Physical Switch Name
+		"""DEPRECATED Error occured for this Physical Switch Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -205,7 +207,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ErrorTimeStamp(self):
-		"""Time Stamp at which Last Error occurred
+		"""DEPRECATED Time Stamp at which Last Error occurred
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -214,7 +216,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -223,7 +225,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def FileCaCertificate(self):
-		"""CA Certificate File
+		"""DEPRECATED CA Certificate File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +234,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def FileCertificate(self):
-		"""Certificate File
+		"""DEPRECATED Certificate File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -241,7 +243,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def FileHWGatewayCertificate(self):
-		"""HW Gateway Certificate File
+		"""DEPRECATED HW Gateway Certificate File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +252,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def FilePrivKey(self):
-		"""Private Key File
+		"""DEPRECATED Private Key File
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -259,7 +261,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def HSCConfiguration(self):
-		"""Each VTEP has its own Hardware Switch Controller.
+		"""DEPRECATED Each VTEP has its own Hardware Switch Controller.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +270,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def LatestDumpDbFileNames(self):
-		"""Api to fetch latest DumpDb Files
+		"""DEPRECATED Api to fetch latest DumpDb Files
 
 		Returns:
 			str
@@ -280,7 +282,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def LatestErrorFileNames(self):
-		"""Api to fetch latest Error Files
+		"""DEPRECATED Api to fetch latest Error Files
 
 		Returns:
 			str
@@ -292,7 +294,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -304,7 +306,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -316,7 +318,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def OvsdbSchema(self):
-		"""Database schema
+		"""DEPRECATED Database schema
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -325,7 +327,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def OvsdbServerIp(self):
-		"""The IP address of the DUT or Ovs Server.
+		"""DEPRECATED The IP address of the DUT or Ovs Server.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -334,7 +336,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoConnectedTo(self):
-		"""GUI-only connection
+		"""DEPRECATED GUI-only connection
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -346,7 +348,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoConnectedToBfd(self):
-		"""GUI-only connection
+		"""DEPRECATED GUI-only connection
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -358,7 +360,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoConnectedToVxlanReplicator(self):
-		"""GUI-only connection
+		"""DEPRECATED GUI-only connection
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -370,7 +372,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoMultiplier(self):
-		"""Multiplier for GUI-only connection
+		"""DEPRECATED Multiplier for GUI-only connection
 
 		Returns:
 			number
@@ -379,7 +381,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoMultiplierBfd(self):
-		"""Multiplier for GUI-only connection
+		"""DEPRECATED Multiplier for GUI-only connection
 
 		Returns:
 			number
@@ -388,7 +390,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def PseudoMultiplierVxlanReplicator(self):
-		"""Multiplier for GUI-only connection
+		"""DEPRECATED Multiplier for GUI-only connection
 
 		Returns:
 			number
@@ -397,7 +399,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Role(self):
-		"""The role of the OVSDB Controller.
+		"""DEPRECATED The role of the OVSDB Controller.
 
 		Returns:
 			list(str[master|none|slave])
@@ -406,7 +408,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ServerAddDeleteConnectionError(self):
-		"""API to retrieve error occured while Adding/ Deleting Server
+		"""DEPRECATED API to retrieve error occured while Adding/ Deleting Server
 
 		Returns:
 			str
@@ -418,7 +420,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ServerAddDeleteStatus(self):
-		"""Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
+		"""DEPRECATED Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
 
 		Returns:
 			str
@@ -427,7 +429,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def ServerConnectionIp(self):
-		"""The IP address of the DUT or Ovs Server which needs to be Added/Deleted.
+		"""DEPRECATED The IP address of the DUT or Ovs Server which needs to be Added/Deleted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -436,7 +438,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -445,7 +447,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -457,7 +459,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -466,7 +468,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -475,7 +477,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def TableNames(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -484,7 +486,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def TimeOut(self):
-		"""Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
+		"""DEPRECATED Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
 
 		Returns:
 			number
@@ -496,7 +498,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def VerifyHWGatewayCertificate(self):
-		"""Verify HW Gateway Certificate
+		"""DEPRECATED Verify HW Gateway Certificate
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -505,7 +507,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def VerifyPeerCertificate(self):
-		"""Verify Peer Certificate
+		"""DEPRECATED Verify Peer Certificate
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -514,7 +516,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def Vxlan(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -526,7 +528,7 @@ class Ovsdbcontroller(Base):
 
 	@property
 	def VxlanReplicator(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)

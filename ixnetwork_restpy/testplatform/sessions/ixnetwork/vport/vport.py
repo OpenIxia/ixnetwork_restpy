@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -308,7 +310,7 @@ class Vport(Base):
 
 	@property
 	def State(self):
-		"""The virtual port state.
+		"""DEPRECATED The virtual port state.
 
 		Returns:
 			str(busy|down|unassigned|up|versionMismatch)
@@ -317,7 +319,7 @@ class Vport(Base):
 
 	@property
 	def StateDetail(self):
-		"""This attribute describes the state of the port.
+		"""DEPRECATED This attribute describes the state of the port.
 
 		Returns:
 			str(busy|cpuNotReady|idle|inActive|l1ConfigFailed|protocolsNotSupported|versionMismatched|waitingForCPUStatus)
@@ -326,7 +328,7 @@ class Vport(Base):
 
 	@property
 	def TransmitIgnoreLinkStatus(self):
-		"""If true, the port ingores the link status when transmitting data.
+		"""DEPRECATED If true, the port ingores the link status when transmitting data.
 
 		Returns:
 			bool
@@ -338,7 +340,7 @@ class Vport(Base):
 
 	@property
 	def TxGapControlMode(self):
-		"""This object controls the Gap Control mode of the port.
+		"""DEPRECATED This object controls the Gap Control mode of the port.
 
 		Returns:
 			str(averageMode|fixedMode)
@@ -350,7 +352,7 @@ class Vport(Base):
 
 	@property
 	def TxMode(self):
-		"""The transmit mode.
+		"""DEPRECATED The transmit mode.
 
 		Returns:
 			str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)
@@ -362,7 +364,7 @@ class Vport(Base):
 
 	@property
 	def Type(self):
-		"""The type of port selection.
+		"""DEPRECATED The type of port selection.
 
 		Returns:
 			str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)
@@ -374,7 +376,7 @@ class Vport(Base):
 
 	@property
 	def ValidTxModes(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			list(str[interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse])

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -400,7 +402,7 @@ class Bridge(Base):
 
 	@property
 	def AisInterval(self):
-		"""The interval between AIS messages sent from this CFM bridge.
+		"""DEPRECATED The interval between AIS messages sent from this CFM bridge.
 
 		Returns:
 			str(oneSec|oneMin)
@@ -412,7 +414,7 @@ class Bridge(Base):
 
 	@property
 	def AllowCfmMaidFormatsInY1731(self):
-		"""If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
+		"""DEPRECATED If true, allows to use CFM's MD Name types and Short MA Name types when the Operation Mode is Y.1731.
 
 		Returns:
 			bool
@@ -424,7 +426,7 @@ class Bridge(Base):
 
 	@property
 	def BridgeId(self):
-		"""The bridge MAC address.
+		"""DEPRECATED The bridge MAC address.
 
 		Returns:
 			str
@@ -436,7 +438,7 @@ class Bridge(Base):
 
 	@property
 	def DelayLearnedErrorString(self):
-		"""(read only) The learned error string for the delay measurement.
+		"""DEPRECATED (read only) The learned error string for the delay measurement.
 
 		Returns:
 			str
@@ -445,7 +447,7 @@ class Bridge(Base):
 
 	@property
 	def EnableAis(self):
-		"""If true, enables the use of AIS messages.
+		"""DEPRECATED If true, enables the use of AIS messages.
 
 		Returns:
 			bool
@@ -457,7 +459,7 @@ class Bridge(Base):
 
 	@property
 	def EnableOutOfSequenceDetection(self):
-		"""If true, enables the detection of out of sequence CCM messages.
+		"""DEPRECATED If true, enables the detection of out of sequence CCM messages.
 
 		Returns:
 			bool
@@ -469,7 +471,7 @@ class Bridge(Base):
 
 	@property
 	def Enabled(self):
-		"""If true, enables the CFM bridge.
+		"""DEPRECATED If true, enables the CFM bridge.
 
 		Returns:
 			bool
@@ -481,7 +483,7 @@ class Bridge(Base):
 
 	@property
 	def Encapsulation(self):
-		"""Sets the encapsulation type for the bridge.
+		"""DEPRECATED Sets the encapsulation type for the bridge.
 
 		Returns:
 			str(ethernet|llcSnap)
@@ -493,7 +495,7 @@ class Bridge(Base):
 
 	@property
 	def EtherType(self):
-		"""Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
+		"""DEPRECATED Selects the ether type for the bridge. The options are 0x8902 and 0x88E6.
 
 		Returns:
 			number
@@ -505,7 +507,7 @@ class Bridge(Base):
 
 	@property
 	def Function(self):
-		"""Determines the CFM function when operationMode is set to Y.1731.
+		"""DEPRECATED Determines the CFM function when operationMode is set to Y.1731.
 
 		Returns:
 			str(faultManagement|performanceMeasurement)
@@ -517,7 +519,7 @@ class Bridge(Base):
 
 	@property
 	def GarbageCollectTime(self):
-		"""Integer value denotes the interval for holding the expired database. Default 10 seconds.
+		"""DEPRECATED Integer value denotes the interval for holding the expired database. Default 10 seconds.
 
 		Returns:
 			number
@@ -529,7 +531,7 @@ class Bridge(Base):
 
 	@property
 	def IsAisLearnedInfoRefreshed(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -538,7 +540,7 @@ class Bridge(Base):
 
 	@property
 	def IsCcmLearnedInfoRefreshed(self):
-		"""(read only) If true, the CCM learned information is current.
+		"""DEPRECATED (read only) If true, the CCM learned information is current.
 
 		Returns:
 			bool
@@ -547,7 +549,7 @@ class Bridge(Base):
 
 	@property
 	def IsDelayLearnedConfigMep(self):
-		"""(read only) If true, indicates if the configured MEP for the delay measurement was found.
+		"""DEPRECATED (read only) If true, indicates if the configured MEP for the delay measurement was found.
 
 		Returns:
 			bool
@@ -556,7 +558,7 @@ class Bridge(Base):
 
 	@property
 	def IsDelayLearnedPacketSent(self):
-		"""(read only) If true, indicates the delay packet was sent.
+		"""DEPRECATED (read only) If true, indicates the delay packet was sent.
 
 		Returns:
 			bool
@@ -565,7 +567,7 @@ class Bridge(Base):
 
 	@property
 	def IsDelayMeasurementLearnedInfoRefreshed(self):
-		"""(read only) If true, the learned delay information is current.
+		"""DEPRECATED (read only) If true, the learned delay information is current.
 
 		Returns:
 			bool
@@ -574,7 +576,7 @@ class Bridge(Base):
 
 	@property
 	def IsLbLearnedConfigMep(self):
-		"""(read only) If true, indicates if the configured MEP for the loopback measurement was found.
+		"""DEPRECATED (read only) If true, indicates if the configured MEP for the loopback measurement was found.
 
 		Returns:
 			bool
@@ -583,7 +585,7 @@ class Bridge(Base):
 
 	@property
 	def IsLbLearnedPacketSent(self):
-		"""(read only) If true, indicates the loopback packet was sent.
+		"""DEPRECATED (read only) If true, indicates the loopback packet was sent.
 
 		Returns:
 			bool
@@ -592,7 +594,7 @@ class Bridge(Base):
 
 	@property
 	def IsLckLearnedInfoRefreshed(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -601,7 +603,7 @@ class Bridge(Base):
 
 	@property
 	def IsLinkTraceLearnedInfoRefreshed(self):
-		"""(read only) If true, the learned link trace information is current.
+		"""DEPRECATED (read only) If true, the learned link trace information is current.
 
 		Returns:
 			bool
@@ -610,7 +612,7 @@ class Bridge(Base):
 
 	@property
 	def IsLoopbackLearnedInfoRefreshed(self):
-		"""(read only) If true, the learned loopback information is current.
+		"""DEPRECATED (read only) If true, the learned loopback information is current.
 
 		Returns:
 			bool
@@ -619,7 +621,7 @@ class Bridge(Base):
 
 	@property
 	def IsLossMeasurementLearnedInfoPacketSent(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -628,7 +630,7 @@ class Bridge(Base):
 
 	@property
 	def IsLossMeasurementLearnedInfoRefreshed(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -637,7 +639,7 @@ class Bridge(Base):
 
 	@property
 	def IsLtLearnedConfigMep(self):
-		"""(read only) If true, indicates if the configured MEP for the link trace measurement was found.
+		"""DEPRECATED (read only) If true, indicates if the configured MEP for the link trace measurement was found.
 
 		Returns:
 			bool
@@ -646,7 +648,7 @@ class Bridge(Base):
 
 	@property
 	def IsLtLearnedPacketSent(self):
-		"""(read only) If true, indicates the link trace packet was sent.
+		"""DEPRECATED (read only) If true, indicates the link trace packet was sent.
 
 		Returns:
 			bool
@@ -655,7 +657,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeCcmLearnedInfoRefreshed(self):
-		"""(read only) If true, the learned PBB-TE CCM information is current.
+		"""DEPRECATED (read only) If true, the learned PBB-TE CCM information is current.
 
 		Returns:
 			bool
@@ -664,7 +666,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeDelayLearnedConfigMep(self):
-		"""(read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
+		"""DEPRECATED (read only) If true, indicates if the configured MEP for the PBB-TE delay measurement was found.
 
 		Returns:
 			bool
@@ -673,7 +675,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeDelayLearnedInfoRefreshed(self):
-		"""(read only) If true, the learned PBB-TE delay information is current.
+		"""DEPRECATED (read only) If true, the learned PBB-TE delay information is current.
 
 		Returns:
 			bool
@@ -682,7 +684,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeDelayLearnedPacketSent(self):
-		"""(read only) If true, indicates the PBB-TE delay packet was sent.
+		"""DEPRECATED (read only) If true, indicates the PBB-TE delay packet was sent.
 
 		Returns:
 			bool
@@ -691,7 +693,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeLbLearnedConfigMep(self):
-		"""(read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
+		"""DEPRECATED (read only) If true, indicates if the configured MEP for the PBB-TE loopback measurement was found.
 
 		Returns:
 			bool
@@ -700,7 +702,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeLbLearnedInfoRefreshed(self):
-		"""(read only) If true, the PBB-TE learned loopback information is current.
+		"""DEPRECATED (read only) If true, the PBB-TE learned loopback information is current.
 
 		Returns:
 			bool
@@ -709,7 +711,7 @@ class Bridge(Base):
 
 	@property
 	def IsPbbTeLbLearnedPacketSent(self):
-		"""(read only) If true, indicates the PBB-TE loopback packet was sent.
+		"""DEPRECATED (read only) If true, indicates the PBB-TE loopback packet was sent.
 
 		Returns:
 			bool
@@ -718,7 +720,7 @@ class Bridge(Base):
 
 	@property
 	def IsPeriodicOamLearnedInfoRefreshed(self):
-		"""If true, the periodic OAM learned information is up-to-date.
+		"""DEPRECATED If true, the periodic OAM learned information is up-to-date.
 
 		Returns:
 			bool
@@ -727,7 +729,7 @@ class Bridge(Base):
 
 	@property
 	def IsTstLearnedInfoRefreshed(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -736,7 +738,7 @@ class Bridge(Base):
 
 	@property
 	def LbLearnedErrorString(self):
-		"""(read only) The learned error string for the loopback measurement.
+		"""DEPRECATED (read only) The learned error string for the loopback measurement.
 
 		Returns:
 			str
@@ -745,7 +747,7 @@ class Bridge(Base):
 
 	@property
 	def LossMeasurementLearnedInfoErrorString(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str
@@ -754,7 +756,7 @@ class Bridge(Base):
 
 	@property
 	def LtLearnedErrorString(self):
-		"""(read only) The learned error string for the link trace measurement.
+		"""DEPRECATED (read only) The learned error string for the link trace measurement.
 
 		Returns:
 			str
@@ -763,7 +765,7 @@ class Bridge(Base):
 
 	@property
 	def OperationMode(self):
-		"""Selects the type of CFM to enable.
+		"""DEPRECATED Selects the type of CFM to enable.
 
 		Returns:
 			str(cfm|y1731|pbbTe)
@@ -775,7 +777,7 @@ class Bridge(Base):
 
 	@property
 	def PbbTeDelayLearnedErrorString(self):
-		"""(read only) The learned error string for the PBB-TE delay measurement.
+		"""DEPRECATED (read only) The learned error string for the PBB-TE delay measurement.
 
 		Returns:
 			str
@@ -784,7 +786,7 @@ class Bridge(Base):
 
 	@property
 	def PbbTeLbLearnedErrorString(self):
-		"""(read only) The learned error string for the PBB-TE loopback measurement.
+		"""DEPRECATED (read only) The learned error string for the PBB-TE loopback measurement.
 
 		Returns:
 			str
@@ -793,7 +795,7 @@ class Bridge(Base):
 
 	@property
 	def UserBvlan(self):
-		"""Sets the bridge filter for PBB-TE learned information for the VLAN.
+		"""DEPRECATED Sets the bridge filter for PBB-TE learned information for the VLAN.
 
 		Returns:
 			str(noVlanId|vlanId|allVlanId)
@@ -805,7 +807,7 @@ class Bridge(Base):
 
 	@property
 	def UserBvlanId(self):
-		"""Sets the PBB-TE VLAN identifier for filtering learned information.
+		"""DEPRECATED Sets the PBB-TE VLAN identifier for filtering learned information.
 
 		Returns:
 			number
@@ -817,7 +819,7 @@ class Bridge(Base):
 
 	@property
 	def UserBvlanPriority(self):
-		"""Sets the PBB-TE VLAN priority for filtering learned information.
+		"""DEPRECATED Sets the PBB-TE VLAN priority for filtering learned information.
 
 		Returns:
 			number
@@ -829,7 +831,7 @@ class Bridge(Base):
 
 	@property
 	def UserBvlanTpId(self):
-		"""Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+		"""DEPRECATED Sets the PBB-TE VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
 
 		Returns:
 			str
@@ -841,7 +843,7 @@ class Bridge(Base):
 
 	@property
 	def UserCvlan(self):
-		"""Sets the bridge filter for learned information for a single VLAN.
+		"""DEPRECATED Sets the bridge filter for learned information for a single VLAN.
 
 		Returns:
 			str(noVlanId|vlanId|allVlanId)
@@ -853,7 +855,7 @@ class Bridge(Base):
 
 	@property
 	def UserCvlanId(self):
-		"""Sets the single VLAN identifier for filtering learned information.
+		"""DEPRECATED Sets the single VLAN identifier for filtering learned information.
 
 		Returns:
 			number
@@ -865,7 +867,7 @@ class Bridge(Base):
 
 	@property
 	def UserCvlanPriority(self):
-		"""Sets the single VLAN priority for filtering learned information.
+		"""DEPRECATED Sets the single VLAN priority for filtering learned information.
 
 		Returns:
 			number
@@ -877,7 +879,7 @@ class Bridge(Base):
 
 	@property
 	def UserCvlanTpId(self):
-		"""Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+		"""DEPRECATED Sets the single VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
 
 		Returns:
 			str
@@ -889,7 +891,7 @@ class Bridge(Base):
 
 	@property
 	def UserDelayMethod(self):
-		"""Sets the type of delay method to use.
+		"""DEPRECATED Sets the type of delay method to use.
 
 		Returns:
 			str(oneWay|twoWay)
@@ -901,7 +903,7 @@ class Bridge(Base):
 
 	@property
 	def UserDelayType(self):
-		"""Sets the type of delay measurement to use.
+		"""DEPRECATED Sets the type of delay measurement to use.
 
 		Returns:
 			str(dm|dvm)
@@ -913,7 +915,7 @@ class Bridge(Base):
 
 	@property
 	def UserDstMacAddress(self):
-		"""Filters on the destination MAC address specified.
+		"""DEPRECATED Filters on the destination MAC address specified.
 
 		Returns:
 			str
@@ -925,7 +927,7 @@ class Bridge(Base):
 
 	@property
 	def UserDstMepId(self):
-		"""Sets the MEP identifier for use with userSelectDstMepById.
+		"""DEPRECATED Sets the MEP identifier for use with userSelectDstMepById.
 
 		Returns:
 			number
@@ -937,7 +939,7 @@ class Bridge(Base):
 
 	@property
 	def UserDstType(self):
-		"""The user destination type.
+		"""DEPRECATED The user destination type.
 
 		Returns:
 			str(mepMac|mepId|mepMacAll|mepIdAll)
@@ -949,7 +951,7 @@ class Bridge(Base):
 
 	@property
 	def UserLearnedInfoTimeOut(self):
-		"""The interval in millisecond for the learned record to timeout. Default: 5000.
+		"""DEPRECATED The interval in millisecond for the learned record to timeout. Default: 5000.
 
 		Returns:
 			number
@@ -961,7 +963,7 @@ class Bridge(Base):
 
 	@property
 	def UserLossMethod(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			str(dualEnded|singleEnded)
@@ -973,7 +975,7 @@ class Bridge(Base):
 
 	@property
 	def UserMdLevel(self):
-		"""Filters on the specified MD level.
+		"""DEPRECATED Filters on the specified MD level.
 
 		Returns:
 			str(0|1|2|3|4|5|6|7|allMd)
@@ -985,7 +987,7 @@ class Bridge(Base):
 
 	@property
 	def UserPbbTeDelayMethod(self):
-		"""Sets the PBB-TE type of delay method to use.
+		"""DEPRECATED Sets the PBB-TE type of delay method to use.
 
 		Returns:
 			str(twoWay|oneWay)
@@ -997,7 +999,7 @@ class Bridge(Base):
 
 	@property
 	def UserPbbTeDelayType(self):
-		"""Sets the PBB-TE type of delay measurement to use.
+		"""DEPRECATED Sets the PBB-TE type of delay measurement to use.
 
 		Returns:
 			str(dm|dvm)
@@ -1009,7 +1011,7 @@ class Bridge(Base):
 
 	@property
 	def UserPeriodicOamType(self):
-		"""Sets the type of periodic OAM.
+		"""DEPRECATED Sets the type of periodic OAM.
 
 		Returns:
 			str(linkTrace|loopback|delayMeasurement|lossMeasurement)
@@ -1021,7 +1023,7 @@ class Bridge(Base):
 
 	@property
 	def UserSelectDstMepById(self):
-		"""If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
+		"""DEPRECATED If true, filters on the MEP by destination MEP identifier rather than by the MAC address. The MEP identifier is set in userDstMepId.
 
 		Returns:
 			bool
@@ -1033,7 +1035,7 @@ class Bridge(Base):
 
 	@property
 	def UserSelectSrcMepById(self):
-		"""If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
+		"""DEPRECATED If true, filters on the MEP by source MEP identifier rather than by the MAC address. The MEP identifier is set in userSrcMepId.
 
 		Returns:
 			bool
@@ -1045,7 +1047,7 @@ class Bridge(Base):
 
 	@property
 	def UserSendType(self):
-		"""Filters on the the send type.
+		"""DEPRECATED Filters on the the send type.
 
 		Returns:
 			str(unicast|multicast)
@@ -1057,7 +1059,7 @@ class Bridge(Base):
 
 	@property
 	def UserShortMaName(self):
-		"""Filters on the specified Short MA Name.
+		"""DEPRECATED Filters on the specified Short MA Name.
 
 		Returns:
 			str
@@ -1069,7 +1071,7 @@ class Bridge(Base):
 
 	@property
 	def UserShortMaNameFormat(self):
-		"""Filters on the Short MA Name Format.
+		"""DEPRECATED Filters on the Short MA Name Format.
 
 		Returns:
 			str(allFormats|primaryVid|characterString|twoOctetInteger|rfc2685VpnId)
@@ -1081,7 +1083,7 @@ class Bridge(Base):
 
 	@property
 	def UserSrcMacAddress(self):
-		"""Filters on the specified source MAC address.
+		"""DEPRECATED Filters on the specified source MAC address.
 
 		Returns:
 			str
@@ -1093,7 +1095,7 @@ class Bridge(Base):
 
 	@property
 	def UserSrcMepId(self):
-		"""Sets the MEP identifier for use with userSelectSrcMepById.
+		"""DEPRECATED Sets the MEP identifier for use with userSelectSrcMepById.
 
 		Returns:
 			number
@@ -1105,7 +1107,7 @@ class Bridge(Base):
 
 	@property
 	def UserSrcType(self):
-		"""The user source type.
+		"""DEPRECATED The user source type.
 
 		Returns:
 			str(mepMac|mepId|mepMacAll|mepIdAll)
@@ -1117,7 +1119,7 @@ class Bridge(Base):
 
 	@property
 	def UserSvlan(self):
-		"""Sets the bridge filter for learned information for a stacked VLAN.
+		"""DEPRECATED Sets the bridge filter for learned information for a stacked VLAN.
 
 		Returns:
 			str(noVlanId|vlanId|allVlanId)
@@ -1129,7 +1131,7 @@ class Bridge(Base):
 
 	@property
 	def UserSvlanId(self):
-		"""Sets the stacked VLAN identifier for filtering learned information.
+		"""DEPRECATED Sets the stacked VLAN identifier for filtering learned information.
 
 		Returns:
 			number
@@ -1141,7 +1143,7 @@ class Bridge(Base):
 
 	@property
 	def UserSvlanPriority(self):
-		"""Sets the stacked VLAN priority for filtering learned information.
+		"""DEPRECATED Sets the stacked VLAN priority for filtering learned information.
 
 		Returns:
 			number
@@ -1153,7 +1155,7 @@ class Bridge(Base):
 
 	@property
 	def UserSvlanTpId(self):
-		"""Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
+		"""DEPRECATED Sets the stacked VLAN TPID for filtering learned information. One of 0x8100, 0x9100, 0x9200, or 0x88A8.
 
 		Returns:
 			str
@@ -1165,7 +1167,7 @@ class Bridge(Base):
 
 	@property
 	def UserTransactionId(self):
-		"""The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
+		"""DEPRECATED The transaction identifier for the LTM packet if the configured MEP not found. Default: 1.
 
 		Returns:
 			number
@@ -1177,7 +1179,7 @@ class Bridge(Base):
 
 	@property
 	def UserTtlInterval(self):
-		"""Time to live value, in seconds. Default is 64.
+		"""DEPRECATED Time to live value, in seconds. Default is 64.
 
 		Returns:
 			number
@@ -1189,7 +1191,7 @@ class Bridge(Base):
 
 	@property
 	def UserUsabilityOption(self):
-		"""User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
+		"""DEPRECATED User Option, one of Manual, One-to-One, One-to-All, All-to-One, All-to-All.
 
 		Returns:
 			str(manual|oneToOne|oneToAll|allToOne|allToAll)

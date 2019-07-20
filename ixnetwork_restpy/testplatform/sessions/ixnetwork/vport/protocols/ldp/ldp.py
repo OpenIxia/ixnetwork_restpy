@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,7 +75,7 @@ class Ldp(Base):
 
 	@property
 	def EnableLabelExchangeOverLsp(self):
-		"""Enables the ability to exchange labels over LSP for VPNs.
+		"""DEPRECATED Enables the ability to exchange labels over LSP for VPNs.
 
 		Returns:
 			bool
@@ -85,7 +87,7 @@ class Ldp(Base):
 
 	@property
 	def EnableVpnLabelExchangeOverLsp(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool
@@ -97,7 +99,7 @@ class Ldp(Base):
 
 	@property
 	def Enabled(self):
-		"""Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
+		"""DEPRECATED Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
 
 		Returns:
 			bool
@@ -109,7 +111,7 @@ class Ldp(Base):
 
 	@property
 	def HelloHoldTime(self):
-		"""One of the timers associated with maintaining adjacencies based on hello messages.
+		"""DEPRECATED One of the timers associated with maintaining adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -121,7 +123,7 @@ class Ldp(Base):
 
 	@property
 	def HelloInterval(self):
-		"""One of the timers associated with maintaining adjacencies based on hello messages.
+		"""DEPRECATED One of the timers associated with maintaining adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -133,7 +135,7 @@ class Ldp(Base):
 
 	@property
 	def KeepAliveHoldTime(self):
-		"""One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+		"""DEPRECATED One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
 
 		Returns:
 			number
@@ -145,7 +147,7 @@ class Ldp(Base):
 
 	@property
 	def KeepAliveInterval(self):
-		"""One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+		"""DEPRECATED One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
 
 		Returns:
 			number
@@ -157,7 +159,7 @@ class Ldp(Base):
 
 	@property
 	def P2mpCapabilityParam(self):
-		"""The P2MP capability parameter value in hexadecimal.
+		"""DEPRECATED The P2MP capability parameter value in hexadecimal.
 
 		Returns:
 			number
@@ -169,7 +171,7 @@ class Ldp(Base):
 
 	@property
 	def P2mpFecType(self):
-		"""The MLDP P2MP FEC type value in hexadecimal.
+		"""DEPRECATED The MLDP P2MP FEC type value in hexadecimal.
 
 		Returns:
 			number
@@ -181,7 +183,7 @@ class Ldp(Base):
 
 	@property
 	def RunningState(self):
-		"""The current state of the LDP server.
+		"""DEPRECATED The current state of the LDP server.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -190,7 +192,7 @@ class Ldp(Base):
 
 	@property
 	def TargetedHelloInterval(self):
-		"""One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+		"""DEPRECATED One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -202,7 +204,7 @@ class Ldp(Base):
 
 	@property
 	def TargetedHoldTime(self):
-		"""One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+		"""DEPRECATED One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -214,7 +216,7 @@ class Ldp(Base):
 
 	@property
 	def UseTransportLabelsForMplsOam(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool

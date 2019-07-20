@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +38,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def ArpViaInterface(self):
-		"""If true, ARP request is conveyed through an Interface.
+		"""DEPRECATED If true, ARP request is conveyed through an Interface.
 
 		Returns:
 			bool
@@ -48,7 +50,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomEtherHeaderLength(self):
-		"""Specifies the Custom Header length in bytes.
+		"""DEPRECATED Specifies the Custom Header length in bytes.
 
 		Returns:
 			number
@@ -60,7 +62,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomEtherHeaderValue(self):
-		"""Specifies the Custom ether Header value.
+		"""DEPRECATED Specifies the Custom ether Header value.
 
 		Returns:
 			str
@@ -72,7 +74,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomEtherType(self):
-		"""Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the custom Ether Type. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -84,7 +86,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomIpHeaderLength(self):
-		"""Specifies the custom Header length in bytes.
+		"""DEPRECATED Specifies the custom Header length in bytes.
 
 		Returns:
 			number
@@ -96,7 +98,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomIpHeaderValue(self):
-		"""Specifies the Custom Header value.
+		"""DEPRECATED Specifies the Custom Header value.
 
 		Returns:
 			str
@@ -108,7 +110,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def CustomIpProtocol(self):
-		"""Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the custom IP Protocol for the Source Traffic Endpoints. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -120,7 +122,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def DestinationPort(self):
-		"""Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the transport destination port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -132,7 +134,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def EnableMacInMac(self):
-		"""Enables the PBB-specific fields.
+		"""DEPRECATED Enables the PBB-specific fields.
 
 		Returns:
 			bool
@@ -144,7 +146,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def EnableVlan(self):
-		"""If enabled, VLAN is available.
+		"""DEPRECATED If enabled, VLAN is available.
 
 		Returns:
 			bool
@@ -156,7 +158,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def EtherType(self):
-		"""Specifies the Ether Type to be used.
+		"""DEPRECATED Specifies the Ether Type to be used.
 
 		Returns:
 			str(custom|ipv4|ipv6|mplsUnicast)
@@ -168,7 +170,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def GatewayMac(self):
-		"""Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the Gateway MAC address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -180,7 +182,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def IpAddress(self):
-		"""Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the IPv4 address of the Source Traffic Endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -192,7 +194,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def IpMask(self):
-		"""Specifies the Mask value.
+		"""DEPRECATED Specifies the Mask value.
 
 		Returns:
 			number
@@ -204,7 +206,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def IpProtocol(self):
-		"""Specifies the IP Protocol to be used.
+		"""DEPRECATED Specifies the IP Protocol to be used.
 
 		Returns:
 			str(custom|tcp|udp)
@@ -216,7 +218,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def IpTos(self):
-		"""Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the Terms of Service of the IP Protocol. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -228,7 +230,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv4Dscp(self):
-		"""Specifies value of Ipv4 DSCP field.
+		"""DEPRECATED Specifies value of Ipv4 DSCP field.
 
 		Returns:
 			str
@@ -240,7 +242,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv4Ecn(self):
-		"""Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
+		"""DEPRECATED Specifies the IPv4 ECN field, which is actually the last 2 bits of ToS field.
 
 		Returns:
 			str
@@ -252,7 +254,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6Address(self):
-		"""Specifies the IPv6 address to be used in the traffic endpoint.
+		"""DEPRECATED Specifies the IPv6 address to be used in the traffic endpoint.
 
 		Returns:
 			str
@@ -264,7 +266,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6AddressMask(self):
-		"""Specifies the mask of IPv6 address
+		"""DEPRECATED Specifies the mask of IPv6 address
 
 		Returns:
 			number
@@ -276,7 +278,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6CustomHeaderLength(self):
-		"""Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
+		"""DEPRECATED Specifies the IPv6 custom header length. This indicates the number of bytes in the field IPv6 custom header Value.
 
 		Returns:
 			number
@@ -288,7 +290,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6CustomHeaderValue(self):
-		"""Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
+		"""DEPRECATED Specifies the IPv6 custom header value. This is populated with hexadecimal byte string containing the protocol header content.
 
 		Returns:
 			str
@@ -300,7 +302,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6CustomNextHeader(self):
-		"""Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
+		"""DEPRECATED Specifies the custom IPv6 Next header. This has dependency on the field IPv6 Next Header which should be set to custom. It actually specifies the protocol type of header, the actual content and length of protocol header is specified in other fields. Using this custom header, user can send any other protocol header except TCP/UDP.
 
 		Returns:
 			str
@@ -312,7 +314,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6Dscp(self):
-		"""Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
+		"""DEPRECATED Specifies the IPv6 DSCP field. This is the set of first 6 bits of the ToS field.
 
 		Returns:
 			str
@@ -324,7 +326,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6Ecn(self):
-		"""Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
+		"""DEPRECATED Specifies the IPv6 ECN field, which is actually the last 2 bits of ToS field.
 
 		Returns:
 			str
@@ -336,7 +338,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6FlowLabel(self):
-		"""Specifies the IPv6 flow label field.
+		"""DEPRECATED Specifies the IPv6 flow label field.
 
 		Returns:
 			str
@@ -348,7 +350,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Ipv6NextHeader(self):
-		"""Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
+		"""DEPRECATED Specifies the IPv6 Next header. It can be TCP, UDP or a custom header.
 
 		Returns:
 			str(custom|tcp|udp)
@@ -360,7 +362,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MacAddress(self):
-		"""Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the MAC Address of the source traffic endpoint. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -372,7 +374,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsInnerMacSource(self):
-		"""Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
+		"""DEPRECATED Specifies the Inner MAC source of MPLS. Applicable when the MPLS payload type is ethernet.
 
 		Returns:
 			str
@@ -384,7 +386,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsInnerVlanId(self):
-		"""Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
+		"""DEPRECATED Specifies the inner VLAN ID. Applicable when the MPLS payload type is ethernet.
 
 		Returns:
 			str
@@ -396,7 +398,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsInnerVlanPriority(self):
-		"""Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
+		"""DEPRECATED Specifies the Inner VLAN priority. Applicable when the MPLS payload type is ethernet.
 
 		Returns:
 			str
@@ -408,7 +410,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsLabel(self):
-		"""Value of the MPLS label field.
+		"""DEPRECATED Value of the MPLS label field.
 
 		Returns:
 			str
@@ -420,7 +422,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsLabelStackSize(self):
-		"""Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
+		"""DEPRECATED Specifies the MPLS label stack size. Indicates the number of MPLS tage that are appended. Can take a max of 3.
 
 		Returns:
 			number
@@ -432,7 +434,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsPayloadType(self):
-		"""Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
+		"""DEPRECATED Specifies the payload type in MPLS. Can be IPv4/IPv6 (L3) or Ethernet (L2).
 
 		Returns:
 			str(ethernet|ipv4|ipv6)
@@ -444,7 +446,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def MplsTrafficClass(self):
-		"""Specifies the MPLS traffic class.
+		"""DEPRECATED Specifies the MPLS traffic class.
 
 		Returns:
 			str
@@ -456,7 +458,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def Name(self):
-		"""Specifies the name of the Traffic endpoint.
+		"""DEPRECATED Specifies the name of the Traffic endpoint.
 
 		Returns:
 			str
@@ -468,7 +470,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbDestinamtionMac(self):
-		"""Specifies the B-Destination MAC.
+		"""DEPRECATED Specifies the B-Destination MAC.
 
 		Returns:
 			str
@@ -480,7 +482,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbEtherType(self):
-		"""Specifies the B-Ether Type.
+		"""DEPRECATED Specifies the B-Ether Type.
 
 		Returns:
 			str(bEtherType8100|bEtherType88A8|bEtherType88E7|bEtherType9100|bEtherType9200)
@@ -492,7 +494,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbIsId(self):
-		"""Value of the PBB I-SID field.
+		"""DEPRECATED Value of the PBB I-SID field.
 
 		Returns:
 			str
@@ -504,7 +506,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbSourceMac(self):
-		"""Specifies the B-Source MAC.
+		"""DEPRECATED Specifies the B-Source MAC.
 
 		Returns:
 			str
@@ -516,7 +518,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbVlanId(self):
-		"""Specifies the B-VLAN ID.
+		"""DEPRECATED Specifies the B-VLAN ID.
 
 		Returns:
 			str
@@ -528,7 +530,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def PbbVlanPcp(self):
-		"""Specifies the B-VLAN priority.
+		"""DEPRECATED Specifies the B-VLAN priority.
 
 		Returns:
 			str
@@ -540,7 +542,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def ProtocolInterface(self):
-		"""Specifies the name of the protocol interface being used for this OpenFlow configuration.
+		"""DEPRECATED Specifies the name of the protocol interface being used for this OpenFlow configuration.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -552,7 +554,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def RangeSize(self):
-		"""Specifies the size of the traffic range.
+		"""DEPRECATED Specifies the size of the traffic range.
 
 		Returns:
 			number
@@ -564,7 +566,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def SourcePort(self):
-		"""Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -576,7 +578,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def UdpDestination(self):
-		"""Value of the UDP destination field.
+		"""DEPRECATED Value of the UDP destination field.
 
 		Returns:
 			str
@@ -588,7 +590,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def UdpSource(self):
-		"""Value of the UDP source field.
+		"""DEPRECATED Value of the UDP source field.
 
 		Returns:
 			str
@@ -600,7 +602,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def VlanCount(self):
-		"""Specifies the VLAN Count.
+		"""DEPRECATED Specifies the VLAN Count.
 
 		Returns:
 			number
@@ -612,7 +614,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def VlanId(self):
-		"""Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the VLAN ID. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str
@@ -624,7 +626,7 @@ class TrafficEndPoint(Base):
 
 	@property
 	def VlanPriority(self):
-		"""Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
+		"""DEPRECATED Specifies the VLAN Priority. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
 
 		Returns:
 			str

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,7 +76,7 @@ class Host(Base):
 
 	@property
 	def InterfaceId(self):
-		"""This is a local ID and is unique per router.
+		"""DEPRECATED This is a local ID and is unique per router.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -86,7 +88,7 @@ class Host(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""The assigned protocol interface ID for this IGMP interface.
+		"""DEPRECATED The assigned protocol interface ID for this IGMP interface.
 
 		Returns:
 			number
@@ -98,7 +100,7 @@ class Host(Base):
 
 	@property
 	def InterfaceType(self):
-		"""The type of interface to be selected for this IGMP interface.
+		"""DEPRECATED The type of interface to be selected for this IGMP interface.
 
 		Returns:
 			str
@@ -110,7 +112,7 @@ class Host(Base):
 
 	@property
 	def Interfaces(self):
-		"""The interfaces that are associated with the selected interface type.
+		"""DEPRECATED The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -122,7 +124,7 @@ class Host(Base):
 
 	@property
 	def ReportFreq(self):
-		"""When the mode is report to all unsolicited, this is the frequency in seconds with unsolicited messages are generated.
+		"""DEPRECATED When the mode is report to all unsolicited, this is the frequency in seconds with unsolicited messages are generated.
 
 		Returns:
 			number
@@ -134,7 +136,7 @@ class Host(Base):
 
 	@property
 	def RespToQueryImmediately(self):
-		"""If enabled, the state machine will ignore the value specified in the maximum response delay in the membership query message, assume that the delay is always 0 seconds, and immediately responds to the query by sending a report.
+		"""DEPRECATED If enabled, the state machine will ignore the value specified in the maximum response delay in the membership query message, assume that the delay is always 0 seconds, and immediately responds to the query by sending a report.
 
 		Returns:
 			bool
@@ -146,7 +148,7 @@ class Host(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -158,7 +160,7 @@ class Host(Base):
 
 	@property
 	def RouterAlert(self):
-		"""Sets the IP header Send Router Alert bit.
+		"""DEPRECATED Sets the IP header Send Router Alert bit.
 
 		Returns:
 			bool
@@ -170,7 +172,7 @@ class Host(Base):
 
 	@property
 	def SqResponseMode(self):
-		"""If enabled, responds to Group-Specific Query messages. This query message is sent by a multicast router so it can learn about the multicast reception state, concerning one multicast address, for each of the neighboring interfaces; for example, when member leaves a group.
+		"""DEPRECATED If enabled, responds to Group-Specific Query messages. This query message is sent by a multicast router so it can learn about the multicast reception state, concerning one multicast address, for each of the neighboring interfaces; for example, when member leaves a group.
 
 		Returns:
 			bool
@@ -182,7 +184,7 @@ class Host(Base):
 
 	@property
 	def SuppressReports(self):
-		"""Suppress generation of V3 reports on receipt of v1/v2 reports having common groups. If enabled, it indicates that a host/group member will allow its IGMPv3 Membership Record to be suppressed by a membership report for Version 1 or 2. The suppression will only be for group reports received from another port.
+		"""DEPRECATED Suppress generation of V3 reports on receipt of v1/v2 reports having common groups. If enabled, it indicates that a host/group member will allow its IGMPv3 Membership Record to be suppressed by a membership report for Version 1 or 2. The suppression will only be for group reports received from another port.
 
 		Returns:
 			bool
@@ -194,7 +196,7 @@ class Host(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""This object contains the traffic group information configured in the trafficGroup object.
+		"""DEPRECATED This object contains the traffic group information configured in the trafficGroup object.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -206,7 +208,7 @@ class Host(Base):
 
 	@property
 	def UpResponseMode(self):
-		"""Report to all unsolicited-causes each simulated host to automatically send full memberships messages at regular intervals.
+		"""DEPRECATED Report to all unsolicited-causes each simulated host to automatically send full memberships messages at regular intervals.
 
 		Returns:
 			bool
@@ -218,7 +220,7 @@ class Host(Base):
 
 	@property
 	def Version(self):
-		"""Sets the IGMP version number that is to be simulated on the host: 1, 2, or 3.
+		"""DEPRECATED Sets the IGMP version number that is to be simulated on the host: 1, 2, or 3.
 
 		Returns:
 			str(igmpv1|igmpv2|igmpv3)

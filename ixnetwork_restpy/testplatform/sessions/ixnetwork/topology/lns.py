@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -96,7 +98,7 @@ class Lns(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -108,7 +110,7 @@ class Lns(Base):
 
 	@property
 	def ControlMsgsRetryCounter(self):
-		"""Number of L2TP retries
+		"""DEPRECATED Number of L2TP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -117,7 +119,7 @@ class Lns(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -126,7 +128,7 @@ class Lns(Base):
 
 	@property
 	def CredentialsCount(self):
-		"""Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
+		"""DEPRECATED Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
 
 		Returns:
 			number
@@ -138,7 +140,7 @@ class Lns(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -147,7 +149,7 @@ class Lns(Base):
 
 	@property
 	def EnableControlChecksum(self):
-		"""If checked, UDP checksum is enabled on control plane packets
+		"""DEPRECATED If checked, UDP checksum is enabled on control plane packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -156,7 +158,7 @@ class Lns(Base):
 
 	@property
 	def EnableDataChecksum(self):
-		"""If checked, UDP checksum is enabled on data plane packets
+		"""DEPRECATED If checked, UDP checksum is enabled on data plane packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -165,7 +167,7 @@ class Lns(Base):
 
 	@property
 	def EnableExcludeHdlc(self):
-		"""If checked, HDLC header is not encoded in the L2TP packets.
+		"""DEPRECATED If checked, HDLC header is not encoded in the L2TP packets.
 
 		Returns:
 			bool
@@ -177,7 +179,7 @@ class Lns(Base):
 
 	@property
 	def EnableHelloRequest(self):
-		"""If checked, L2TP hello request is enabled
+		"""DEPRECATED If checked, L2TP hello request is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -186,7 +188,7 @@ class Lns(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -195,7 +197,7 @@ class Lns(Base):
 
 	@property
 	def FramingCapability(self):
-		"""Designates sync or async framing
+		"""DEPRECATED Designates sync or async framing
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -204,7 +206,7 @@ class Lns(Base):
 
 	@property
 	def HelloRequestInterval(self):
-		"""Timeout for L2TP hello request, in seconds
+		"""DEPRECATED Timeout for L2TP hello request, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -213,7 +215,7 @@ class Lns(Base):
 
 	@property
 	def InitRetransmitInterval(self):
-		"""The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
+		"""DEPRECATED The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -222,7 +224,7 @@ class Lns(Base):
 
 	@property
 	def LacHostName(self):
-		"""This is the hostname used in authentication.
+		"""DEPRECATED This is the hostname used in authentication.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -231,7 +233,7 @@ class Lns(Base):
 
 	@property
 	def LacSecret(self):
-		"""L2TP secret to be used in authentication
+		"""DEPRECATED L2TP secret to be used in authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,7 +242,7 @@ class Lns(Base):
 
 	@property
 	def LnsHostName(self):
-		"""L2TP hostname sent by Ixia port when acting as LNS
+		"""DEPRECATED L2TP hostname sent by Ixia port when acting as LNS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -249,7 +251,7 @@ class Lns(Base):
 
 	@property
 	def MaxRetransmitInterval(self):
-		"""The maximum amount of time that can elapse for receiving a reply for a control message.
+		"""DEPRECATED The maximum amount of time that can elapse for receiving a reply for a control message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -258,7 +260,7 @@ class Lns(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -270,7 +272,7 @@ class Lns(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -282,7 +284,7 @@ class Lns(Base):
 
 	@property
 	def NoCallTimeout(self):
-		"""Timeout for no call establishment, in seconds
+		"""DEPRECATED Timeout for no call establishment, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -291,7 +293,7 @@ class Lns(Base):
 
 	@property
 	def OffsetByte(self):
-		"""L2TP offset byte. Applicable only if offset bit is set.
+		"""DEPRECATED L2TP offset byte. Applicable only if offset bit is set.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -300,7 +302,7 @@ class Lns(Base):
 
 	@property
 	def OffsetLength(self):
-		"""L2TP offset length in bytes. Applicable only if offset bit set.
+		"""DEPRECATED L2TP offset length in bytes. Applicable only if offset bit set.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -309,7 +311,7 @@ class Lns(Base):
 
 	@property
 	def ReceiveWindowSize(self):
-		"""L2TP Receive Window Size
+		"""DEPRECATED L2TP Receive Window Size
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -318,7 +320,7 @@ class Lns(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -327,7 +329,7 @@ class Lns(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -339,7 +341,7 @@ class Lns(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -348,7 +350,7 @@ class Lns(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -357,7 +359,7 @@ class Lns(Base):
 
 	@property
 	def TunnelAuthentication(self):
-		"""Enables or disables L2TP tunnel authentication
+		"""DEPRECATED Enables or disables L2TP tunnel authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -366,7 +368,7 @@ class Lns(Base):
 
 	@property
 	def UdpDestinationPort(self):
-		"""UDP port to employ for tunneling destinations
+		"""DEPRECATED UDP port to employ for tunneling destinations
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -375,7 +377,7 @@ class Lns(Base):
 
 	@property
 	def UdpSourcePort(self):
-		"""UDP port to employ for tunneling sources
+		"""DEPRECATED UDP port to employ for tunneling sources
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -384,7 +386,7 @@ class Lns(Base):
 
 	@property
 	def UseHiddenAVPs(self):
-		"""If checked, Attribute Value Pair hiding is enabled
+		"""DEPRECATED If checked, Attribute Value Pair hiding is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -393,7 +395,7 @@ class Lns(Base):
 
 	@property
 	def UseLengthBitInPayload(self):
-		"""If checked, length bit is set in L2TP data packets.
+		"""DEPRECATED If checked, length bit is set in L2TP data packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -402,7 +404,7 @@ class Lns(Base):
 
 	@property
 	def UseOffsetBitInPayload(self):
-		"""If checked, offset bit is enabled in L2TP data packets
+		"""DEPRECATED If checked, offset bit is enabled in L2TP data packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -411,7 +413,7 @@ class Lns(Base):
 
 	@property
 	def UseSequenceNoInPayload(self):
-		"""If checked, sequence bit is set in L2TP data packets.
+		"""DEPRECATED If checked, sequence bit is set in L2TP data packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

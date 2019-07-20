@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -168,7 +170,7 @@ class Lan(Base):
 
 	@property
 	def IncremetVlanMode(self):
-		"""If true, enables the use of multiple VLANs, which are incremented for each additional VLAN per VC. The default increment is 1.
+		"""DEPRECATED If true, enables the use of multiple VLANs, which are incremented for each additional VLAN per VC. The default increment is 1.
 
 		Returns:
 			str(noIncrement|parallelIncrement|innerFirst|outerFirst)
@@ -180,7 +182,7 @@ class Lan(Base):
 
 	@property
 	def Mac(self):
-		"""The first MAC address in the range.
+		"""DEPRECATED The first MAC address in the range.
 
 		Returns:
 			str
@@ -192,7 +194,7 @@ class Lan(Base):
 
 	@property
 	def MacRangeMode(self):
-		"""Indicates the available MAC range mode.
+		"""DEPRECATED Indicates the available MAC range mode.
 
 		Returns:
 			str(normal|bundled)
@@ -204,7 +206,7 @@ class Lan(Base):
 
 	@property
 	def NumberOfVcs(self):
-		"""The total number of VCs in this mode.
+		"""DEPRECATED The total number of VCs in this mode.
 
 		Returns:
 			number
@@ -216,7 +218,7 @@ class Lan(Base):
 
 	@property
 	def SiteId(self):
-		"""The value of the site identifier (ID). The valid range is 0 to 4,294,967,295. The default is 0.
+		"""DEPRECATED The value of the site identifier (ID). The valid range is 0 to 4,294,967,295. The default is 0.
 
 		Returns:
 			number
@@ -228,7 +230,7 @@ class Lan(Base):
 
 	@property
 	def SkipVlanIdZero(self):
-		"""Skip the value of vlad id, if the vlan id value is equal to zero.
+		"""DEPRECATED Skip the value of vlad id, if the vlan id value is equal to zero.
 
 		Returns:
 			bool
@@ -240,7 +242,7 @@ class Lan(Base):
 
 	@property
 	def Tpid(self):
-		"""Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
+		"""DEPRECATED Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
 
 		Returns:
 			str
@@ -252,7 +254,7 @@ class Lan(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""DEPRECATED The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -264,7 +266,7 @@ class Lan(Base):
 
 	@property
 	def VlanCount(self):
-		"""The number of VLANs created.
+		"""DEPRECATED The number of VLANs created.
 
 		Returns:
 			number
@@ -276,7 +278,7 @@ class Lan(Base):
 
 	@property
 	def VlanId(self):
-		"""The identifier for the first VLAN in the range.
+		"""DEPRECATED The identifier for the first VLAN in the range.
 
 		Returns:
 			str
@@ -288,7 +290,7 @@ class Lan(Base):
 
 	@property
 	def VlanPriority(self):
-		"""The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+		"""DEPRECATED The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
 
 		Returns:
 			str

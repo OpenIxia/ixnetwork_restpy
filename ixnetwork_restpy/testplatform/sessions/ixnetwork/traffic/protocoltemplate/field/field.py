@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +37,7 @@ class Field(Base):
 
 	@property
 	def __id__(self):
-		"""An alphanumeric string that defines the internal field ID.
+		"""DEPRECATED An alphanumeric string that defines the internal field ID.
 
 		Returns:
 			str
@@ -44,7 +46,7 @@ class Field(Base):
 
 	@property
 	def DisplayName(self):
-		"""It is used to get the name of the particular field as available in the protocol template.
+		"""DEPRECATED It is used to get the name of the particular field as available in the protocol template.
 
 		Returns:
 			str
@@ -53,7 +55,7 @@ class Field(Base):
 
 	@property
 	def FieldTypeId(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -62,7 +64,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""It is used to get the length of the field in bits.
+		"""DEPRECATED It is used to get the length of the field in bits.
 
 		Returns:
 			number
@@ -71,7 +73,7 @@ class Field(Base):
 
 	@property
 	def Trackable(self):
-		"""The trackable fields.
+		"""DEPRECATED The trackable fields.
 
 		Returns:
 			bool

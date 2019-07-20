@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -436,7 +438,7 @@ class DotOneX(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -448,7 +450,7 @@ class DotOneX(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -457,7 +459,7 @@ class DotOneX(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -466,7 +468,7 @@ class DotOneX(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -475,7 +477,7 @@ class DotOneX(Base):
 
 	@property
 	def FastInnerMethod(self):
-		"""FAST Inner Method
+		"""DEPRECATED FAST Inner Method
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -484,7 +486,7 @@ class DotOneX(Base):
 
 	@property
 	def FastProMode(self):
-		"""FAST Provision Mode
+		"""DEPRECATED FAST Provision Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -493,7 +495,7 @@ class DotOneX(Base):
 
 	@property
 	def Faststateless(self):
-		"""FAST Stateless Resume
+		"""DEPRECATED FAST Stateless Resume
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -502,7 +504,7 @@ class DotOneX(Base):
 
 	@property
 	def HostAuthMode(self):
-		"""Host Authentication Mode
+		"""DEPRECATED Host Authentication Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -511,7 +513,7 @@ class DotOneX(Base):
 
 	@property
 	def HostCert(self):
-		"""The Peer certificate to be used by the host
+		"""DEPRECATED The Peer certificate to be used by the host
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -520,7 +522,7 @@ class DotOneX(Base):
 
 	@property
 	def HostKey(self):
-		"""The private key certificate to be used by the host
+		"""DEPRECATED The private key certificate to be used by the host
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -529,7 +531,7 @@ class DotOneX(Base):
 
 	@property
 	def HostName(self):
-		"""Credential of the host for authentication
+		"""DEPRECATED Credential of the host for authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -538,7 +540,7 @@ class DotOneX(Base):
 
 	@property
 	def HostPwd(self):
-		"""Password of the host for authentication
+		"""DEPRECATED Password of the host for authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -547,7 +549,7 @@ class DotOneX(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -559,7 +561,7 @@ class DotOneX(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -571,7 +573,7 @@ class DotOneX(Base):
 
 	@property
 	def ParentEth(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -583,7 +585,7 @@ class DotOneX(Base):
 
 	@property
 	def PeerCert(self):
-		"""The Peer certificate to be used
+		"""DEPRECATED The Peer certificate to be used
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -592,7 +594,7 @@ class DotOneX(Base):
 
 	@property
 	def PrivateKey(self):
-		"""The private key certificate to be used
+		"""DEPRECATED The private key certificate to be used
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -601,7 +603,7 @@ class DotOneX(Base):
 
 	@property
 	def Protocol(self):
-		"""protocol for authentication
+		"""DEPRECATED protocol for authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -610,7 +612,7 @@ class DotOneX(Base):
 
 	@property
 	def RunTimeCertGen(self):
-		"""Generate Certificate during Run time. Configure details in Global parameters. Common Name will be User Name. Certificate and Key file names will be generated based on corresponding Client User name. Eg: If Client User name is IxiaUser1 then Certificate File will be IxiaUser1.pem, Key File will be IxiaUser1_key.pem, CA certificate File will be root.pem
+		"""DEPRECATED Generate Certificate during Run time. Configure details in Global parameters. Common Name will be User Name. Certificate and Key file names will be generated based on corresponding Client User name. Eg: If Client User name is IxiaUser1 then Certificate File will be IxiaUser1.pem, Key File will be IxiaUser1_key.pem, CA certificate File will be root.pem
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -619,7 +621,7 @@ class DotOneX(Base):
 
 	@property
 	def SendCACertOnly(self):
-		"""Use this option to send CA Certificate only to Port. Eg: For PEAPv0/v1 case there is no need to send User Certificate to port.
+		"""DEPRECATED Use this option to send CA Certificate only to Port. Eg: For PEAPv0/v1 case there is no need to send User Certificate to port.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -628,7 +630,7 @@ class DotOneX(Base):
 
 	@property
 	def SessionInfo(self):
-		"""Current 802.1x session state: Log Off - Supplicant has been sent EAPOL-Logoff message. Stopped - Supplicant disconnected succesfully. Authenticating - Supplicant is being authenticated. but negotiation didn't complete yet. Held - Supplicant ignores and discards all EAPOL packets. Authenticated - Authenticator has successfully authenticated the Supplicant. Restart - Supplicant is entered Restart state. Force Authentication - This state is entered because DUT's portControl is set to force-authorized. Force UnAuthentication - This state is entered because DUT's portControl is set to force-unauthorized. Unconfigured - Supplicant Unconfigured state. Configured - Supplicant initilize state. Authentication Failure - Supplicant's authentication failed. CA Cert Load Failed - Supplicant's unable to load CA certificate. Failed To Load Certificate/Key - Failed to load certificate or certificate key. Invalid EAP - Invalid EAP. Generic EAP Failure - Generic EAP Failure.
+		"""DEPRECATED Current 802.1x session state: Log Off - Supplicant has been sent EAPOL-Logoff message. Stopped - Supplicant disconnected succesfully. Authenticating - Supplicant is being authenticated. but negotiation didn't complete yet. Held - Supplicant ignores and discards all EAPOL packets. Authenticated - Authenticator has successfully authenticated the Supplicant. Restart - Supplicant is entered Restart state. Force Authentication - This state is entered because DUT's portControl is set to force-authorized. Force UnAuthentication - This state is entered because DUT's portControl is set to force-unauthorized. Unconfigured - Supplicant Unconfigured state. Configured - Supplicant initilize state. Authentication Failure - Supplicant's authentication failed. CA Cert Load Failed - Supplicant's unable to load CA certificate. Failed To Load Certificate/Key - Failed to load certificate or certificate key. Invalid EAP - Invalid EAP. Generic EAP Failure - Generic EAP Failure.
 
 		Returns:
 			list(str[acquired|authenticated|authenticating|configured|connecting|disconnected|eapFailure|forceAuth|forceUnAuth|genFailure|held|initFailure|invalidFailure|loadFailure|logoff|restart|unconfigured])
@@ -637,7 +639,7 @@ class DotOneX(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -646,7 +648,7 @@ class DotOneX(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -658,7 +660,7 @@ class DotOneX(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -667,7 +669,7 @@ class DotOneX(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -676,7 +678,7 @@ class DotOneX(Base):
 
 	@property
 	def TlsVersion(self):
-		"""TLS version selecction
+		"""DEPRECATED TLS version selecction
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -685,7 +687,7 @@ class DotOneX(Base):
 
 	@property
 	def UserName(self):
-		"""Credential of the user for authentication
+		"""DEPRECATED Credential of the user for authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -694,7 +696,7 @@ class DotOneX(Base):
 
 	@property
 	def UserPwd(self):
-		"""Password of the user for authentication
+		"""DEPRECATED Password of the user for authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -703,7 +705,7 @@ class DotOneX(Base):
 
 	@property
 	def VerifyPeer(self):
-		"""Verifies the provided peer certificate
+		"""DEPRECATED Verifies the provided peer certificate
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -712,7 +714,7 @@ class DotOneX(Base):
 
 	@property
 	def WaitId(self):
-		"""When enabled, the supplicant does not send the initial EAPOL Start message. Instead, it waits for the authenticator (the DUT) to send an EAPOL Request / Identity message.
+		"""DEPRECATED When enabled, the supplicant does not send the initial EAPOL Start message. Instead, it waits for the authenticator (the DUT) to send an EAPOL Request / Identity message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

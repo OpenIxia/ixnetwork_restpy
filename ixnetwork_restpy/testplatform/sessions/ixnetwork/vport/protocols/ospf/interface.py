@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -613,7 +615,7 @@ class Interface(Base):
 
 	@property
 	def ProtocolInterface(self):
-		"""The name of the defined interface entry from which IP address and mask are extracted for this interface.
+		"""DEPRECATED The name of the defined interface entry from which IP address and mask are extracted for this interface.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -625,7 +627,7 @@ class Interface(Base):
 
 	@property
 	def ShowExternal(self):
-		"""Enables the use of External routes on this interface.
+		"""DEPRECATED Enables the use of External routes on this interface.
 
 		Returns:
 			bool
@@ -637,7 +639,7 @@ class Interface(Base):
 
 	@property
 	def ShowNssa(self):
-		"""Enables the use of Not So Stubby Area routes on this interface.
+		"""DEPRECATED Enables the use of Not So Stubby Area routes on this interface.
 
 		Returns:
 			bool
@@ -649,7 +651,7 @@ class Interface(Base):
 
 	@property
 	def TeAdminGroup(self):
-		"""Assignment of traffic engineering administrative group numbers to the interface.
+		"""DEPRECATED Assignment of traffic engineering administrative group numbers to the interface.
 
 		Returns:
 			str
@@ -661,7 +663,7 @@ class Interface(Base):
 
 	@property
 	def TeEnable(self):
-		"""Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
+		"""DEPRECATED Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
 
 		Returns:
 			bool
@@ -673,7 +675,7 @@ class Interface(Base):
 
 	@property
 	def TeMaxBandwidth(self):
-		"""The maximum bandwidth that can possibly be used on this link in this direction.
+		"""DEPRECATED The maximum bandwidth that can possibly be used on this link in this direction.
 
 		Returns:
 			number
@@ -685,7 +687,7 @@ class Interface(Base):
 
 	@property
 	def TeMetricLevel(self):
-		"""The user-assigned link metric for traffic engineering.
+		"""DEPRECATED The user-assigned link metric for traffic engineering.
 
 		Returns:
 			number
@@ -697,7 +699,7 @@ class Interface(Base):
 
 	@property
 	def TeResMaxBandwidth(self):
-		"""If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+		"""DEPRECATED If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
 
 		Returns:
 			number
@@ -709,7 +711,7 @@ class Interface(Base):
 
 	@property
 	def TeUnreservedBwPriority(self):
-		"""The amount of bandwidth not yet reserved at each of the eight priority levels.
+		"""DEPRECATED The amount of bandwidth not yet reserved at each of the eight priority levels.
 
 		Returns:
 			dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number)
@@ -721,7 +723,7 @@ class Interface(Base):
 
 	@property
 	def ValidateReceivedMtuSize(self):
-		"""If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
+		"""DEPRECATED If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
 
 		Returns:
 			bool

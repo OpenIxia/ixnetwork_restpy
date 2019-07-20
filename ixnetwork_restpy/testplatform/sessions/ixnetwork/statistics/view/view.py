@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -344,7 +346,7 @@ class View(Base):
 
 	@property
 	def Page(self):
-		"""An instance of the Page class.
+		"""An instance of the DEPRECATED Page class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.page.Page)
@@ -372,7 +374,7 @@ class View(Base):
 
 	@property
 	def AutoRefresh(self):
-		"""If true, automatically refreshes the statistics values. Default = true
+		"""DEPRECATED If true, automatically refreshes the statistics values. Default = true
 
 		Returns:
 			bool
@@ -384,7 +386,7 @@ class View(Base):
 
 	@property
 	def AutoUpdate(self):
-		"""If true, automatically refreshes the statistics values. Default = true
+		"""DEPRECATED If true, automatically refreshes the statistics values. Default = true
 
 		Returns:
 			bool
@@ -396,7 +398,7 @@ class View(Base):
 
 	@property
 	def AvailableStatsSelectorColumns(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			list(str)
@@ -405,7 +407,7 @@ class View(Base):
 
 	@property
 	def Caption(self):
-		"""This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
+		"""DEPRECATED This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
 
 		Returns:
 			str
@@ -417,7 +419,7 @@ class View(Base):
 
 	@property
 	def CsvFileName(self):
-		"""Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
+		"""DEPRECATED Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
 
 		Returns:
 			str
@@ -429,7 +431,7 @@ class View(Base):
 
 	@property
 	def EnableCsvLogging(self):
-		"""If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
+		"""DEPRECATED If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
 
 		Returns:
 			bool
@@ -441,7 +443,7 @@ class View(Base):
 
 	@property
 	def Enabled(self):
-		"""If true, enables the view that is created from the tcl script.
+		"""DEPRECATED If true, enables the view that is created from the tcl script.
 
 		Returns:
 			bool
@@ -453,7 +455,7 @@ class View(Base):
 
 	@property
 	def EnabledStatsSelectorColumns(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			list(str)
@@ -465,7 +467,7 @@ class View(Base):
 
 	@property
 	def PageTimeout(self):
-		"""The statistics view page is timed out based on the time specified. default = 25,000 ms
+		"""DEPRECATED The statistics view page is timed out based on the time specified. default = 25,000 ms
 
 		Returns:
 			number
@@ -477,7 +479,7 @@ class View(Base):
 
 	@property
 	def ReadOnly(self):
-		"""The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
+		"""DEPRECATED The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
 
 		Returns:
 			bool
@@ -486,7 +488,7 @@ class View(Base):
 
 	@property
 	def TimeSeries(self):
-		"""If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
+		"""DEPRECATED If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
 
 		Returns:
 			bool
@@ -498,7 +500,7 @@ class View(Base):
 
 	@property
 	def TreeViewNodeName(self):
-		"""Displays the name of the tree view node.
+		"""DEPRECATED Displays the name of the tree view node.
 
 		Returns:
 			str
@@ -510,7 +512,7 @@ class View(Base):
 
 	@property
 	def Type(self):
-		"""The type of view the user wants to create from tcl.
+		"""DEPRECATED The type of view the user wants to create from tcl.
 
 		Returns:
 			str(layer23NextGenProtocol|layer23ProtocolAuthAccess|layer23ProtocolPort|layer23ProtocolRouting|layer23ProtocolStack|layer23TrafficFlow|layer23TrafficFlowDetective|layer23TrafficItem|layer23TrafficPort|layer47AppLibraryTraffic|sVReadOnly)
@@ -522,7 +524,7 @@ class View(Base):
 
 	@property
 	def TypeDescription(self):
-		"""If true, desribes the type
+		"""DEPRECATED If true, desribes the type
 
 		Returns:
 			str
@@ -531,7 +533,7 @@ class View(Base):
 
 	@property
 	def ViewCategory(self):
-		"""Returns the category of the view based on the type of statistics displayed by the view.
+		"""DEPRECATED Returns the category of the view based on the type of statistics displayed by the view.
 
 		Returns:
 			str(ClassicProtocol|L23Traffic|L47Traffic|Mixed|NextGenProtocol|PerSession|Unknown)
@@ -540,7 +542,7 @@ class View(Base):
 
 	@property
 	def Visible(self):
-		"""If true, displays the custom created tcl SVs in the SV tree under TCL Views node.
+		"""DEPRECATED If true, displays the custom created tcl SVs in the SV tree under TCL Views node.
 
 		Returns:
 			bool

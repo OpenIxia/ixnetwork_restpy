@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -254,7 +256,7 @@ class MacPools(Base):
 
 	@property
 	def UseVlans(self):
-		"""Flag to determine whether VLANs are enabled
+		"""DEPRECATED Flag to determine whether VLANs are enabled
 
 		Returns:
 			bool
@@ -266,7 +268,7 @@ class MacPools(Base):
 
 	@property
 	def VlanCount(self):
-		"""Number of active VLANs
+		"""DEPRECATED Number of active VLANs
 
 		Returns:
 			number

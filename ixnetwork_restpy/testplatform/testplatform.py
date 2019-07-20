@@ -29,26 +29,34 @@ from ixnetwork_restpy.errors import NotFoundError
 class TestPlatform(Base):
     """TestPlatform class
 
-    Top level access to an IxNetwork test tool platform (Linux API Server, Windows GUI, ConnectionManager)
-
-    Args:  
-        ip_address (str): the ip address of the test tool platform that requests will be made to
-        rest_port (number): the ip port of the test tool platform that the server is listening on. Defaults are linux|connection_manager:443, windows:11009
-        platform (str[windows|linux|connection_manager]): DEPRECATED. This will be determined by the Connection class.
-        log_file_name (str): the name of the log file that trace logging will be written to, if omitted it will be written to the console
-        ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
-    
-    Raises:
-        obj(ixnetwork_restpy.errors.ConnectionError)
+    The TestPlatform class is the only class that can be instantiated directly.  
+    The package is constructed in an hierarchical format so as a result any child resources are accessed by through class properties.
+    Class properties will return an iterable child container of that class.
+    If the class is system managed or user managed it will have a find() method which can be used to retrieve the resources from the server otherwise the one and only one resource will be retrieved from the server.
     """
     _SDM_NAME = None
 
     def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False):
+        """TestPlatform constructor
+
+        Establishes an initial connection to an IxNetwork test tool platform. 
+        Currently supported platforms are Linux API Server, Windows GUI and ConnectionManager.
+
+        Args:  
+            ip_address (str): the ip address of the test tool platform that requests will be made to
+            rest_port (number): the ip port of the test tool platform that the server is listening on. Defaults are linux|connection_manager:443, windows:11009
+            platform (str[windows|linux|connection_manager]): DEPRECATED. This will be determined by the Connection class.
+            log_file_name (str): the name of the log file that trace logging will be written to, if omitted it will be written to the console
+            ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
+
+        Raises:
+            obj(ixnetwork_restpy.errors.ConnectionError)
+        """
         super(TestPlatform, self).__init__(None)
         self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy)
         self._uid = ''
         self._set_default_href()
-         
+
     def _set_default_href(self, href='/api/v1'):
         properties = {
             'href': href,
@@ -65,7 +73,7 @@ class TestPlatform(Base):
 
     def Authenticate(self, uid, pwd):
         """Set the X-Api-Key by authenticating against the connected TestPlatform
-        
+
         Args:
             uid (str): The userid to be authenticated
             pwd (str): The password to be authenticated
@@ -73,25 +81,23 @@ class TestPlatform(Base):
         Raises:
             UnauthorizedError: Access is unauthorized
             ServerError: The server has encountered an uncategorized error condition
-
-        Example:
-            test_platform = TestPlatform('127.0.0.1')
-            test_platform.Authenticate('admin', 'admin')
          """
         self._set_default_href('/api/v1/auth/session')
         response = self._execute(None, payload={'username': uid, 'password': pwd})
         self.ApiKey = response['apiKey']
         self._uid = uid
         self._set_default_href()
+        return self.ApiKey
 
     @property
     def Trace(self):
         """Trace http transactions to console
-        
+
         Returns:
             str(none|request|request_response): Enables tracing of the connection transport request and responses
         """
         return self._get_attribute('trace')
+
     @Trace.setter
     def Trace(self, trace):
         self._connection.trace = trace
@@ -99,11 +105,12 @@ class TestPlatform(Base):
     @property
     def ApiKey(self):
         """Set the X-Api-Key for authorizing transactions instead of using the authenticate method
-        
+
         Returns:
             bool
         """
         return self._get_attribute('apiKey')
+
     @ApiKey.setter
     def ApiKey(self, value):
         self._connection.x_api_key = value
@@ -111,7 +118,7 @@ class TestPlatform(Base):
     @property
     def Username(self):
         """Returns the name of the user that was authenticated
-        
+
         Returns:
             str
         """
@@ -119,8 +126,8 @@ class TestPlatform(Base):
 
     @property
     def Platform(self):
-        """Returns the 
-        
+        """Returns the platform type of the server
+
         Returns:
             str(windows|linux|connection_manager)
         """
@@ -129,7 +136,7 @@ class TestPlatform(Base):
     @property
     def Hostname(self):
         """Returns the hostname of the server that requests are being submitted to
-        
+
         Returns:
             str
         """
@@ -138,7 +145,7 @@ class TestPlatform(Base):
     @property
     def RestPort(self):
         """Returns the rest port of the server that requests are being submitted to
-        
+
         Returns:
             int
         """
@@ -147,7 +154,7 @@ class TestPlatform(Base):
     @property
     def Scheme(self):
         """Returns whether or not the requests are being submitted using the https scheme
-        
+
         Returns:
             bool
         """
@@ -156,7 +163,7 @@ class TestPlatform(Base):
     @property
     def LogFilename(self):
         """Returns the name of the log file
-        
+
         Returns:
             str
         """
@@ -171,3 +178,4 @@ class TestPlatform(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.sessions import Sessions
         return Sessions(self)
+        

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -133,7 +135,7 @@ class PccGroup(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -145,7 +147,7 @@ class PccGroup(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -154,7 +156,7 @@ class PccGroup(Base):
 
 	@property
 	def DeadInterval(self):
-		"""This is the time interval, after the expiration of which, a PCEP peer declares the session down if no PCEP message has been received.
+		"""DEPRECATED This is the time interval, after the expiration of which, a PCEP peer declares the session down if no PCEP message has been received.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -163,7 +165,7 @@ class PccGroup(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -172,7 +174,7 @@ class PccGroup(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -181,7 +183,7 @@ class PccGroup(Base):
 
 	@property
 	def KeepaliveInterval(self):
-		"""Frequency/Time Interval of sending PCEP messages to keep the session active.
+		"""DEPRECATED Frequency/Time Interval of sending PCEP messages to keep the session active.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -190,7 +192,7 @@ class PccGroup(Base):
 
 	@property
 	def MD5Key(self):
-		"""A value to be used as the secret MD5 Key.
+		"""DEPRECATED A value to be used as the secret MD5 Key.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -199,7 +201,7 @@ class PccGroup(Base):
 
 	@property
 	def MaxInitiatedLspPerInterval(self):
-		"""Maximum number of messages can be sent per interval.
+		"""DEPRECATED Maximum number of messages can be sent per interval.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -208,7 +210,7 @@ class PccGroup(Base):
 
 	@property
 	def MaxLspsPerPcInitiate(self):
-		"""Controls the maximum number of LSPs that can be present in a PCInitiate message.
+		"""DEPRECATED Controls the maximum number of LSPs that can be present in a PCInitiate message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +219,7 @@ class PccGroup(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -229,7 +231,7 @@ class PccGroup(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -241,7 +243,7 @@ class PccGroup(Base):
 
 	@property
 	def PcReplyLspsPerPcc(self):
-		"""Controls the maximum number of PCE LSPs that can be send as PATH Response.
+		"""DEPRECATED Controls the maximum number of PCE LSPs that can be send as PATH Response.
 
 		Returns:
 			number
@@ -253,7 +255,7 @@ class PccGroup(Base):
 
 	@property
 	def PccIpv4Address(self):
-		"""IPv4 address of the PCC. This column is greyed out in case of PCEv6.
+		"""DEPRECATED IPv4 address of the PCC. This column is greyed out in case of PCEv6.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -262,7 +264,7 @@ class PccGroup(Base):
 
 	@property
 	def PceInitiatedLspsPerPcc(self):
-		"""Controls the maximum number of PCE LSPs that can be Initiated per PCC.
+		"""DEPRECATED Controls the maximum number of PCE LSPs that can be Initiated per PCC.
 
 		Returns:
 			number
@@ -274,7 +276,7 @@ class PccGroup(Base):
 
 	@property
 	def PcePpagTLVType(self):
-		"""PPAG TLV Type specifies PCE's capability of interpreting this type of PPAG TLV
+		"""DEPRECATED PPAG TLV Type specifies PCE's capability of interpreting this type of PPAG TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -283,7 +285,7 @@ class PccGroup(Base):
 
 	@property
 	def RateControl(self):
-		"""The rate control is an optional feature associated with PCE initiated LSP.
+		"""DEPRECATED The rate control is an optional feature associated with PCE initiated LSP.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -292,7 +294,7 @@ class PccGroup(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -301,7 +303,7 @@ class PccGroup(Base):
 
 	@property
 	def SrPceCapability(self):
-		"""The SR PCE Capability TLV is an optional TLV associated with the OPEN Object to exchange SR capability of PCEP speakers.
+		"""DEPRECATED The SR PCE Capability TLV is an optional TLV associated with the OPEN Object to exchange SR capability of PCEP speakers.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -310,7 +312,7 @@ class PccGroup(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -322,7 +324,7 @@ class PccGroup(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -331,7 +333,7 @@ class PccGroup(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

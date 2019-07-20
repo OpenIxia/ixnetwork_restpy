@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -170,7 +172,7 @@ class Host(Base):
 
 	@property
 	def ProtocolInterface(self):
-		"""The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+		"""DEPRECATED The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
@@ -182,7 +184,7 @@ class Host(Base):
 
 	@property
 	def ReportFreq(self):
-		"""Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
+		"""DEPRECATED Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
 
 		Returns:
 			number
@@ -194,7 +196,7 @@ class Host(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			number
@@ -206,7 +208,7 @@ class Host(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""DEPRECATED The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -218,7 +220,7 @@ class Host(Base):
 
 	@property
 	def Version(self):
-		"""Sets the MLD version number that is to be simulated on the host: 1 or 2.
+		"""DEPRECATED Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
 		Returns:
 			str(version1|version2)

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,7 +51,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableBgpOverLsp(self):
-		"""Enables the ability to exchange labels over LSP for VPNs.
+		"""DEPRECATED Enables the ability to exchange labels over LSP for VPNs.
 
 		Returns:
 			bool
@@ -61,7 +63,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableControlLspInitiationRate(self):
-		"""Controls the LSP initiation rate.
+		"""DEPRECATED Controls the LSP initiation rate.
 
 		Returns:
 			bool
@@ -73,7 +75,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableShowTimeValue(self):
-		"""If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
+		"""DEPRECATED If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
 
 		Returns:
 			bool
@@ -85,7 +87,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableVpnLabelExchangeOverLsp(self):
-		"""If true, enables VPN label exchange over LSP
+		"""DEPRECATED If true, enables VPN label exchange over LSP
 
 		Returns:
 			bool
@@ -97,7 +99,7 @@ class Rsvp(Base):
 
 	@property
 	def Enabled(self):
-		"""Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
+		"""DEPRECATED Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
 
 		Returns:
 			bool
@@ -109,7 +111,7 @@ class Rsvp(Base):
 
 	@property
 	def MaxLspInitiationsPerSec(self):
-		"""The maximum number of LSP Initiations sent per second.
+		"""DEPRECATED The maximum number of LSP Initiations sent per second.
 
 		Returns:
 			number
@@ -121,7 +123,7 @@ class Rsvp(Base):
 
 	@property
 	def RunningState(self):
-		"""The current running state of the RSVP server.
+		"""DEPRECATED The current running state of the RSVP server.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -130,7 +132,7 @@ class Rsvp(Base):
 
 	@property
 	def UseTransportLabelsForMplsOam(self):
-		"""NOT DEFINED
+		"""DEPRECATED NOT DEFINED
 
 		Returns:
 			bool

@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +37,7 @@ class Table(Base):
 
 	@property
 	def Col(self):
-		"""An instance of the Col class.
+		"""An instance of the DEPRECATED Col class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col.Col)
@@ -49,7 +51,7 @@ class Table(Base):
 
 	@property
 	def Actions(self):
-		"""The list of actions allowed on the learned information table
+		"""DEPRECATED The list of actions allowed on the learned information table
 
 		Returns:
 			list(str)
@@ -58,7 +60,7 @@ class Table(Base):
 
 	@property
 	def Columns(self):
-		"""The list of columns in the learned information table
+		"""DEPRECATED The list of columns in the learned information table
 
 		Returns:
 			list(str)
@@ -67,7 +69,7 @@ class Table(Base):
 
 	@property
 	def Type(self):
-		"""Description of the learned information type
+		"""DEPRECATED Description of the learned information type
 
 		Returns:
 			str
@@ -76,7 +78,7 @@ class Table(Base):
 
 	@property
 	def Values(self):
-		"""A list of rows of learned information values
+		"""DEPRECATED A list of rows of learned information values
 
 		Returns:
 			list(list[str])

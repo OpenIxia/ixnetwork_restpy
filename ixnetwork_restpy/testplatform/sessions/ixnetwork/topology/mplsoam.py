@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -86,7 +88,7 @@ class MplsOam(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -98,7 +100,7 @@ class MplsOam(Base):
 
 	@property
 	def ControlChannel(self):
-		"""This signifies the communication control channel
+		"""DEPRECATED This signifies the communication control channel
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -107,7 +109,7 @@ class MplsOam(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -116,7 +118,7 @@ class MplsOam(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -125,7 +127,7 @@ class MplsOam(Base):
 
 	@property
 	def DestinationAddressIpv4(self):
-		"""The destination IPv4 Address
+		"""DEPRECATED The destination IPv4 Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -134,7 +136,7 @@ class MplsOam(Base):
 
 	@property
 	def DownstreamAddressType(self):
-		"""This signifies the address Type of the downstream traffic
+		"""DEPRECATED This signifies the address Type of the downstream traffic
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -143,7 +145,7 @@ class MplsOam(Base):
 
 	@property
 	def DownstreamInterfaceAddressNumbered(self):
-		"""This signifies the interface address of the downstream traffic in IPv4 format
+		"""DEPRECATED This signifies the interface address of the downstream traffic in IPv4 format
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -152,7 +154,7 @@ class MplsOam(Base):
 
 	@property
 	def DownstreamInterfaceAddressUnnumbered(self):
-		"""This signifies the interface address of the downstream traffic
+		"""DEPRECATED This signifies the interface address of the downstream traffic
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -161,7 +163,7 @@ class MplsOam(Base):
 
 	@property
 	def DownstreamIpAddress(self):
-		"""This signifies the IPv4/IPv6 address of the downstream traffic
+		"""DEPRECATED This signifies the IPv4/IPv6 address of the downstream traffic
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -170,7 +172,7 @@ class MplsOam(Base):
 
 	@property
 	def EchoRequestInterval(self):
-		"""This signifies the minimum interval, in milliseconds, between received Echo packets that this interface is capable of supporting
+		"""DEPRECATED This signifies the minimum interval, in milliseconds, between received Echo packets that this interface is capable of supporting
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -179,7 +181,7 @@ class MplsOam(Base):
 
 	@property
 	def EchoResponseTimeout(self):
-		"""This signifies the minimum timeout interval, in milliseconds, between received Echo packets
+		"""DEPRECATED This signifies the minimum timeout interval, in milliseconds, between received Echo packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -188,7 +190,7 @@ class MplsOam(Base):
 
 	@property
 	def EnableDSIflag(self):
-		"""This signifies the activation of the DS I Flag
+		"""DEPRECATED This signifies the activation of the DS I Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -197,7 +199,7 @@ class MplsOam(Base):
 
 	@property
 	def EnableDownstreamMappingTlv(self):
-		"""This signifies the enable of the downstream mapping TLV
+		"""DEPRECATED This signifies the enable of the downstream mapping TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -206,7 +208,7 @@ class MplsOam(Base):
 
 	@property
 	def EnableDsNflag(self):
-		"""This signifies the activation of the DS N Flag
+		"""DEPRECATED This signifies the activation of the DS N Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -215,7 +217,7 @@ class MplsOam(Base):
 
 	@property
 	def EnableFecValidation(self):
-		"""Selection of the check box enables FEC validation
+		"""DEPRECATED Selection of the check box enables FEC validation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -224,7 +226,7 @@ class MplsOam(Base):
 
 	@property
 	def EnablePeriodicPing(self):
-		"""If true, the router is pinged at regular intervals
+		"""DEPRECATED If true, the router is pinged at regular intervals
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -233,7 +235,7 @@ class MplsOam(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -242,7 +244,7 @@ class MplsOam(Base):
 
 	@property
 	def FlapTxIntervals(self):
-		"""This signifies the number of seconds between route flaps for BFD. A value of zero means no flapping
+		"""DEPRECATED This signifies the number of seconds between route flaps for BFD. A value of zero means no flapping
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -251,7 +253,7 @@ class MplsOam(Base):
 
 	@property
 	def IncludePadTlv(self):
-		"""If true, includes Pad TLV in triggered ping
+		"""DEPRECATED If true, includes Pad TLV in triggered ping
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -260,7 +262,7 @@ class MplsOam(Base):
 
 	@property
 	def IncludeVendorEnterpriseNumbeTlv(self):
-		"""If true, include the TLV number of the vendor, in triggered ping
+		"""DEPRECATED If true, include the TLV number of the vendor, in triggered ping
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -269,7 +271,7 @@ class MplsOam(Base):
 
 	@property
 	def LocalRouterId(self):
-		"""The MPLOAM Router ID value, in IPv4 format.
+		"""DEPRECATED The MPLOAM Router ID value, in IPv4 format.
 
 		Returns:
 			list(str)
@@ -278,7 +280,7 @@ class MplsOam(Base):
 
 	@property
 	def MinRxInterval(self):
-		"""This signifies the minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting
+		"""DEPRECATED This signifies the minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -287,7 +289,7 @@ class MplsOam(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -299,7 +301,7 @@ class MplsOam(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -311,7 +313,7 @@ class MplsOam(Base):
 
 	@property
 	def PadTlvFirstOctet(self):
-		"""This signifies the selection of the first octet of the Pad TLV
+		"""DEPRECATED This signifies the selection of the first octet of the Pad TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -320,7 +322,7 @@ class MplsOam(Base):
 
 	@property
 	def PadTlvLength(self):
-		"""This signifies the specification of the length of the Pad TLV
+		"""DEPRECATED This signifies the specification of the length of the Pad TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -329,7 +331,7 @@ class MplsOam(Base):
 
 	@property
 	def ReplyMode(self):
-		"""This signifies the selection of the mode of reply
+		"""DEPRECATED This signifies the selection of the mode of reply
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -338,7 +340,7 @@ class MplsOam(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -347,7 +349,7 @@ class MplsOam(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -359,7 +361,7 @@ class MplsOam(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -368,7 +370,7 @@ class MplsOam(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -377,7 +379,7 @@ class MplsOam(Base):
 
 	@property
 	def TimeoutMultiplier(self):
-		"""This signifies the negotiated transmit interval, multiplied by this value, provides the detection time for the interface
+		"""DEPRECATED This signifies the negotiated transmit interval, multiplied by this value, provides the detection time for the interface
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -386,7 +388,7 @@ class MplsOam(Base):
 
 	@property
 	def TxInterval(self):
-		"""This signifies the minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Control packets
+		"""DEPRECATED This signifies the minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Control packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -395,7 +397,7 @@ class MplsOam(Base):
 
 	@property
 	def VendorEnterpriseNumber(self):
-		"""This signifies the specification of the enterprise number of the vendor
+		"""DEPRECATED This signifies the specification of the enterprise number of the vendor
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

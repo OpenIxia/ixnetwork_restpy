@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -136,7 +138,7 @@ class NetworkRange(Base):
 
 	@property
 	def GridOutsideLinks(self):
-		"""Sets up the outside links between an ISIS grid and another ISIS grid.
+		"""DEPRECATED Sets up the outside links between an ISIS grid and another ISIS grid.
 
 		Returns:
 			list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))
@@ -148,7 +150,7 @@ class NetworkRange(Base):
 
 	@property
 	def HostNamePrefix(self):
-		"""Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
+		"""DEPRECATED Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
 
 		Returns:
 			str
@@ -160,7 +162,7 @@ class NetworkRange(Base):
 
 	@property
 	def InterfaceIps(self):
-		"""The interface IP information for the simulated network.
+		"""DEPRECATED The interface IP information for the simulated network.
 
 		Returns:
 			list(dict(arg1:str[ipAny|ipv4|ipv6],arg2:str,arg3:number))
@@ -172,7 +174,7 @@ class NetworkRange(Base):
 
 	@property
 	def InterfaceMetric(self):
-		"""The metric cost associated with this emulated ISIS router.
+		"""DEPRECATED The metric cost associated with this emulated ISIS router.
 
 		Returns:
 			number
@@ -184,7 +186,7 @@ class NetworkRange(Base):
 
 	@property
 	def Ipv6MtMetric(self):
-		"""This metric is same as the Interface Metric. If enabled, it allows you to enter data.
+		"""DEPRECATED This metric is same as the Interface Metric. If enabled, it allows you to enter data.
 
 		Returns:
 			number
@@ -196,7 +198,7 @@ class NetworkRange(Base):
 
 	@property
 	def LinkType(self):
-		"""The type of network link for this emulated ISIS router.
+		"""DEPRECATED The type of network link for this emulated ISIS router.
 
 		Returns:
 			str(pointToPoint|broadcast)
@@ -208,7 +210,7 @@ class NetworkRange(Base):
 
 	@property
 	def NoOfCols(self):
-		"""The number of columns in the simulated grid. (default = 3)
+		"""DEPRECATED The number of columns in the simulated grid. (default = 3)
 
 		Returns:
 			number
@@ -220,7 +222,7 @@ class NetworkRange(Base):
 
 	@property
 	def NoOfRows(self):
-		"""The number of rows in the simulated grid. (default = 3)
+		"""DEPRECATED The number of rows in the simulated grid. (default = 3)
 
 		Returns:
 			number
@@ -232,7 +234,7 @@ class NetworkRange(Base):
 
 	@property
 	def RouterId(self):
-		"""The router ID for the first emulated ISIS router in this network range.
+		"""DEPRECATED The router ID for the first emulated ISIS router in this network range.
 
 		Returns:
 			str
@@ -244,7 +246,7 @@ class NetworkRange(Base):
 
 	@property
 	def RouterIdIncrement(self):
-		"""The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+		"""DEPRECATED The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
 
 		Returns:
 			str
@@ -256,7 +258,7 @@ class NetworkRange(Base):
 
 	@property
 	def TePaths(self):
-		"""Adds a Traffic Engineering (TE) Path to the list.
+		"""DEPRECATED Adds a Traffic Engineering (TE) Path to the list.
 
 		Returns:
 			list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))
@@ -268,7 +270,7 @@ class NetworkRange(Base):
 
 	@property
 	def UseWideMetric(self):
-		"""Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
+		"""DEPRECATED Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
 		Returns:
 			bool

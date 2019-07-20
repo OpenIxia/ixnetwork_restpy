@@ -1,3 +1,5 @@
+# MIT LICENSE
+#
 # Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -82,7 +84,7 @@ class Ipv6sr(Base):
 
 	@property
 	def ConnectedVia(self):
-		"""List of layers this layer used to connect to the wire
+		"""DEPRECATED List of layers this layer used to connect to the wire
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -94,7 +96,7 @@ class Ipv6sr(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
 
 		Returns:
 			number
@@ -103,7 +105,7 @@ class Ipv6sr(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
 
 		Returns:
 			str
@@ -112,7 +114,7 @@ class Ipv6sr(Base):
 
 	@property
 	def Errors(self):
-		"""A list of errors that have occurred
+		"""DEPRECATED A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -121,7 +123,7 @@ class Ipv6sr(Base):
 
 	@property
 	def FirstSegment(self):
-		"""Count of enabled SID List -1
+		"""DEPRECATED Count of enabled SID List -1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -130,7 +132,7 @@ class Ipv6sr(Base):
 
 	@property
 	def Multiplier(self):
-		"""Number of layer instances per parent instance (multiplier)
+		"""DEPRECATED Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -142,7 +144,7 @@ class Ipv6sr(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -154,7 +156,7 @@ class Ipv6sr(Base):
 
 	@property
 	def NumberSegments(self):
-		"""Maximum available index of the Segments List in SRH header (0 Based Index)
+		"""DEPRECATED Maximum available index of the Segments List in SRH header (0 Based Index)
 
 		Returns:
 			number
@@ -166,7 +168,7 @@ class Ipv6sr(Base):
 
 	@property
 	def OamFlag(self):
-		"""Indicates that this packet will be Operations And Management
+		"""DEPRECATED Indicates that this packet will be Operations And Management
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -175,7 +177,7 @@ class Ipv6sr(Base):
 
 	@property
 	def OuterDestAddr(self):
-		"""Controlled by Segments Left, index from enabled SID List
+		"""DEPRECATED Controlled by Segments Left, index from enabled SID List
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -184,7 +186,7 @@ class Ipv6sr(Base):
 
 	@property
 	def OuterSrcAddr(self):
-		"""Outer IPv6 Source Address
+		"""DEPRECATED Outer IPv6 Source Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -193,7 +195,7 @@ class Ipv6sr(Base):
 
 	@property
 	def ProtectedFlag(self):
-		"""Set when the packet has been rerouted through FRR mechanism by an SR endpoint node
+		"""DEPRECATED Set when the packet has been rerouted through FRR mechanism by an SR endpoint node
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -202,7 +204,7 @@ class Ipv6sr(Base):
 
 	@property
 	def SID0(self):
-		"""Segment Item Address
+		"""DEPRECATED Segment Item Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -211,7 +213,7 @@ class Ipv6sr(Base):
 
 	@property
 	def SIDEnable0(self):
-		"""Enable This Segment
+		"""DEPRECATED Enable This Segment
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -220,7 +222,7 @@ class Ipv6sr(Base):
 
 	@property
 	def SegmentsLeft(self):
-		"""Segments Left (0 Based Index)
+		"""DEPRECATED Segments Left (0 Based Index)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -229,7 +231,7 @@ class Ipv6sr(Base):
 
 	@property
 	def SessionStatus(self):
-		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -238,7 +240,7 @@ class Ipv6sr(Base):
 
 	@property
 	def StackedLayers(self):
-		"""List of secondary (many to one) child layer protocols
+		"""DEPRECATED List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -250,7 +252,7 @@ class Ipv6sr(Base):
 
 	@property
 	def StateCounts(self):
-		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -259,7 +261,7 @@ class Ipv6sr(Base):
 
 	@property
 	def Status(self):
-		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -268,7 +270,7 @@ class Ipv6sr(Base):
 
 	@property
 	def TunnelDescription(self):
-		"""Tunnel Description
+		"""DEPRECATED Tunnel Description
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -277,7 +279,7 @@ class Ipv6sr(Base):
 
 	@property
 	def UseAsIngress(self):
-		"""Use This Device As Ingress
+		"""DEPRECATED Use This Device As Ingress
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
