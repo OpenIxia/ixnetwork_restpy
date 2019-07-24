@@ -349,16 +349,8 @@ class Connection(object):
                         return async_status['result']
                     else:
                         return None
-                elif state in ['ERROR', 'EXCEPTION']:
-                    raise ServerError(response)
-                elif self._platform == 'connection_manager':
-                    if async_status['state'] == 'ACTIVE':
-                        return response.json()
-                    time.sleep(3)
-                    base_url, state_url = self._normalize_url(async_status['links'][0]['href'])
-                    self._print_request('GET', state_url)
-                    response = self._session.request('GET', state_url, headers=headers, verify=self._verify_cert)
-                    self._print_response(response)
+                elif state == 'ACTIVE' and self._platform == 'connection_manager':
+                    return response.json()
                 elif async_status['message'] is not None and 'API CONTENTION' in async_status['message']:
                     raise ResourceInUseError(response)
                 else:

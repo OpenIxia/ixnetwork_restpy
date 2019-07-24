@@ -32,5 +32,6 @@ setup(
     include_package_data=True,
     python_requires='>=2.7, <4',
     install_requires=['requests'],
-	tests_require=['mock']
+	tests_require=['mock'],
+	test_suite='ixnetwork_restpy.tests'
 )
