@@ -349,9 +349,9 @@ class Connection(object):
                         return async_status['result']
                     else:
                         return None
-                elif state == 'ACTIVE' and self._platform == 'connection_manager':
+                elif self._platform == 'connection_manager' and state in ['ACTIVE', 'STOPPED']:
                     return response.json()
-                elif async_status['message'] is not None and 'API CONTENTION' in async_status['message']:
+                elif 'message' in async_status.keys() and async_status['message'] is not None and 'API CONTENTION' in async_status['message']:
                     raise ResourceInUseError(response)
                 else:
                     raise ServerError(response) 
