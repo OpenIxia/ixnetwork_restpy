@@ -496,7 +496,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1493,7 +1493,7 @@ class TestConfig(Base):
 			FixedLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): Signifies the fixed load unit.
 			ForceRegenerate (bool): Initiates a forced regeneration.
 			FrameLossUnit (str): Signifies the unit for frame loss for test configuration.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
 			FramesPerBurstGap (number): The number of frames to be sent after each burst.
 			Framesize (str): Custom Step frame size.
 			FramesizeFixedValue (number): It signifies the frame size fixed value.

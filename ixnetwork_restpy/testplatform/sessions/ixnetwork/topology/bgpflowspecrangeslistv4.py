@@ -92,6 +92,20 @@ class BgpFlowSpecRangesListV4(Base):
 		return BgpExtendedCommunitiesList(self)
 
 	@property
+	def BgpLargeCommunitiesList(self):
+		"""An instance of the BgpLargeCommunitiesList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist.BgpLargeCommunitiesList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist import BgpLargeCommunitiesList
+		return BgpLargeCommunitiesList(self)
+
+	@property
 	def Active(self):
 		"""Activate/Deactivate Configuration
 
@@ -165,7 +179,7 @@ class BgpFlowSpecRangesListV4(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -174,7 +188,7 @@ class BgpFlowSpecRangesListV4(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -279,6 +293,15 @@ class BgpFlowSpecRangesListV4(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('enableExtendedCommunity')
+
+	@property
+	def EnableLargeCommunities(self):
+		"""Enable Large Communities Attribute
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableLargeCommunities')
 
 	@property
 	def EnableLocalPreference(self):
@@ -539,6 +562,18 @@ class BgpFlowSpecRangesListV4(Base):
 		self._set_attribute('noOfExtendedCommunity', value)
 
 	@property
+	def NoOfLargeCommunities(self):
+		"""Number of Large Communities (Should be in the range 1-32)
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('noOfLargeCommunities')
+	@NoOfLargeCommunities.setter
+	def NoOfLargeCommunities(self, value):
+		self._set_attribute('noOfLargeCommunities', value)
+
+	@property
 	def NumberOfFlows(self):
 		"""Number of Flows in a Flow Range
 
@@ -700,7 +735,7 @@ class BgpFlowSpecRangesListV4(Base):
 		"""
 		return self._get_attribute('trafficRate')
 
-	def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+	def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
 		"""Updates a child instance of bgpFlowSpecRangesListV4 on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
@@ -712,13 +747,14 @@ class BgpFlowSpecRangesListV4(Base):
 			NoOfClusters (number): Number of Clusters
 			NoOfCommunities (number): Number of Communities
 			NoOfExtendedCommunity (number): Number of Extended Communities
+			NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AsSetMode=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, DestPortMatch=None, DestPrefixLengthV4=None, DestPrefixV4=None, DscpMatch=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableDestPrefixV4=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRedirect=None, EnableSourcePrefixV4=None, EnableTrafficAction=None, EnableTrafficMarketing=None, EnableTrafficMarking=None, EnableTrafficRate=None, FlowSpecName=None, FragmentMatch=None, IcmpCodeMatch=None, IcmpTypeMatch=None, Ip=None, IpPacketLenMatch=None, IpProto=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, NumberOfFlows=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PortMatch=None, RedirectCBit=None, RedirectExtCommunityType=None, Redirectnexthop=None, SetNextHop=None, SetNextHopIpType=None, SourcePortMatch=None, SourcePrefixLengthV4=None, SourcePrefixV4=None, TcpFlagsMatch=None, TerminalAction=None, TrafficActionSample=None, TrafficDscp=None, TrafficRate=None):
+	def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AsSetMode=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, DestPortMatch=None, DestPrefixLengthV4=None, DestPrefixV4=None, DscpMatch=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableDestPrefixV4=None, EnableExtendedCommunity=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRedirect=None, EnableSourcePrefixV4=None, EnableTrafficAction=None, EnableTrafficMarketing=None, EnableTrafficMarking=None, EnableTrafficRate=None, FlowSpecName=None, FragmentMatch=None, IcmpCodeMatch=None, IcmpTypeMatch=None, Ip=None, IpPacketLenMatch=None, IpProto=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, NumberOfFlows=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PortMatch=None, RedirectCBit=None, RedirectExtCommunityType=None, Redirectnexthop=None, SetNextHop=None, SetNextHopIpType=None, SourcePortMatch=None, SourcePrefixLengthV4=None, SourcePrefixV4=None, TcpFlagsMatch=None, TerminalAction=None, TrafficActionSample=None, TrafficDscp=None, TrafficRate=None):
 		"""Base class infrastructure that gets a list of bgpFlowSpecRangesListV4 device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -744,6 +780,7 @@ class BgpFlowSpecRangesListV4(Base):
 			EnableCommunity (str): optional regex of enableCommunity
 			EnableDestPrefixV4 (str): optional regex of enableDestPrefixV4
 			EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
+			EnableLargeCommunities (str): optional regex of enableLargeCommunities
 			EnableLocalPreference (str): optional regex of enableLocalPreference
 			EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
 			EnableNextHop (str): optional regex of enableNextHop
@@ -792,19 +829,3 @@ class BgpFlowSpecRangesListV4(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

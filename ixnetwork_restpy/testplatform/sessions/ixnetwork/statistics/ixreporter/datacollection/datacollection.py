@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class DataCollection(Base):
-	"""The DataCollection class encapsulates a required dataCollection node in the ixnetwork hierarchy.
+	"""The DEPRECATED DataCollection class encapsulates a required dataCollection node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the DataCollection property from a parent instance.
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
@@ -37,7 +37,7 @@ class DataCollection(Base):
 
 	@property
 	def Enable(self):
-		"""If it is true, enables collection of data
+		"""DEPRECATED If it is true, enables collection of data
 
 		Returns:
 			bool
@@ -49,7 +49,7 @@ class DataCollection(Base):
 
 	@property
 	def LastRunId(self):
-		"""Specifies the identifier for last run.
+		"""DEPRECATED Specifies the identifier for last run.
 
 		Returns:
 			number

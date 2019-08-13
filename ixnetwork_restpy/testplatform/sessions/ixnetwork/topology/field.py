@@ -38,7 +38,7 @@ class Field(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -71,7 +71,7 @@ class Field(Base):
 		"""The encoding of the field in bytes.
 
 		Returns:
-			str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
+			str(iPv4|iPv6|mAC|mACVLAN|decimal|hex|aTM|mACSiteId|mACVLANSiteId|debug|fCID|unknown|hex8WithSpaces|bool|string|float|floatEng|hex8WithColons|mACMAC|decimalFixed2|varLenHex|decimalSigned8)
 		"""
 		return self._get_attribute('encoding')
 	@Encoding.setter
@@ -167,7 +167,7 @@ class Field(Base):
 		"""The size types/data unit of the field.
 
 		Returns:
-			str(bit|byte)
+			str(byte|bit)
 		"""
 		return self._get_attribute('sizeType')
 	@SizeType.setter
@@ -191,7 +191,7 @@ class Field(Base):
 
 		Args:
 			Description (str): Description of the field.
-			Encoding (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): The encoding of the field in bytes.
+			Encoding (str(iPv4|iPv6|mAC|mACVLAN|decimal|hex|aTM|mACSiteId|mACVLANSiteId|debug|fCID|unknown|hex8WithSpaces|bool|string|float|floatEng|hex8WithColons|mACMAC|decimalFixed2|varLenHex|decimalSigned8)): The encoding of the field in bytes.
 			Enum (str): Internal enumeration type used to restrict possible field values.
 			IsEditable (bool): Information on the requirement of the field.
 			IsEnabled (bool): Enables disables the field.
@@ -199,7 +199,7 @@ class Field(Base):
 			Name (str): Name of packet field
 			SingleValue (bool): If true the field can only be configured with a single value pattern.
 			Size (number): The size of the field in bytes.
-			SizeType (str(bit|byte)): The size types/data unit of the field.
+			SizeType (str(byte|bit)): The size types/data unit of the field.
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
@@ -211,7 +211,7 @@ class Field(Base):
 
 		Args:
 			Description (str): Description of the field.
-			Encoding (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): The encoding of the field in bytes.
+			Encoding (str(iPv4|iPv6|mAC|mACVLAN|decimal|hex|aTM|mACSiteId|mACVLANSiteId|debug|fCID|unknown|hex8WithSpaces|bool|string|float|floatEng|hex8WithColons|mACMAC|decimalFixed2|varLenHex|decimalSigned8)): The encoding of the field in bytes.
 			Enum (str): Internal enumeration type used to restrict possible field values.
 			IsEditable (bool): Information on the requirement of the field.
 			IsEnabled (bool): Enables disables the field.
@@ -219,7 +219,7 @@ class Field(Base):
 			Name (str): Name of packet field
 			SingleValue (bool): If true the field can only be configured with a single value pattern.
 			Size (number): The size of the field in bytes.
-			SizeType (str(bit|byte)): The size types/data unit of the field.
+			SizeType (str(byte|bit)): The size types/data unit of the field.
 
 		Returns:
 			self: This instance with all currently retrieved field data using find and the newly added field data available through an iterator or index
@@ -245,10 +245,10 @@ class Field(Base):
 		By default the find method takes no parameters and will retrieve all field data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 			Description (str): Description of the field.
 			DisplayName (str): Display name used by GUI.
-			Encoding (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): The encoding of the field in bytes.
+			Encoding (str(iPv4|iPv6|mAC|mACVLAN|decimal|hex|aTM|mACSiteId|mACVLANSiteId|debug|fCID|unknown|hex8WithSpaces|bool|string|float|floatEng|hex8WithColons|mACMAC|decimalFixed2|varLenHex|decimalSigned8)): The encoding of the field in bytes.
 			Enum (str): Internal enumeration type used to restrict possible field values.
 			IsEditable (bool): Information on the requirement of the field.
 			IsEnabled (bool): Enables disables the field.
@@ -256,7 +256,7 @@ class Field(Base):
 			Name (str): Name of packet field
 			SingleValue (bool): If true the field can only be configured with a single value pattern.
 			Size (number): The size of the field in bytes.
-			SizeType (str(bit|byte)): The size types/data unit of the field.
+			SizeType (str(byte|bit)): The size types/data unit of the field.
 
 		Returns:
 			self: This instance with matching field data retrieved from the server available through an iterator or index
@@ -297,19 +297,3 @@ class Field(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

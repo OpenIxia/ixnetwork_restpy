@@ -74,7 +74,7 @@ class RsvpP2PEgressLsps(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -83,7 +83,7 @@ class RsvpP2PEgressLsps(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -128,7 +128,7 @@ class RsvpP2PEgressLsps(Base):
 
 	@property
 	def InitialLspSelfPingDropCount(self):
-		"""Initial LSP Self Ping Drop Count.
+		"""Initial LSP Self Ping Drop Count. Number of times Egress LSP will drop LSP Self Ping Message before forwarding it back.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -137,7 +137,7 @@ class RsvpP2PEgressLsps(Base):
 
 	@property
 	def IpTTLDecrementCount(self):
-		"""IP TTL Decrement Count.
+		"""IP TTL Decrement Count. IP TTL limits the lifespan or lifetime of IP Packet in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -164,7 +164,7 @@ class RsvpP2PEgressLsps(Base):
 
 	@property
 	def LspSelfPingIPDSCP(self):
-		"""LSP Self Ping IP DSCP.
+		"""LSP Self Ping IP DSCP. IP DSCP classifies the way an IP packet is routed in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -303,22 +303,6 @@ class RsvpP2PEgressLsps(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.

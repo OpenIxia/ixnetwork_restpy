@@ -36,8 +36,17 @@ class Iptv(Base):
 		super(Iptv, self).__init__(parent)
 
 	@property
+	def CombinedLeaveJoin(self):
+		"""If enabled, Leave for current group and join for next group gets merged in a single multicast packet
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('combinedLeaveJoin')
+
+	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +55,7 @@ class Iptv(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -205,13 +214,14 @@ class Iptv(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+	def get_device_ids(self, PortNames=None, CombinedLeaveJoin=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
 		"""Base class infrastructure that gets a list of iptv device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
 		Args:
 			PortNames (str): optional regex of port names
+			CombinedLeaveJoin (str): optional regex of combinedLeaveJoin
 			EnableGeneralQueryResponse (str): optional regex of enableGeneralQueryResponse
 			EnableGroupSpecificQueryResponse (str): optional regex of enableGroupSpecificQueryResponse
 			JoinLatencyThreshold (str): optional regex of joinLatencyThreshold
@@ -233,22 +243,6 @@ class Iptv(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def StartIptv(self, *args, **kwargs):
 		"""Executes the startIptv operation on the server.

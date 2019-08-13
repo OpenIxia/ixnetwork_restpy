@@ -23,6 +23,128 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
+class ECpriRec(Base):
+	"""The ECpriRec class encapsulates a required eCpriRec node in the ixnetwork hierarchy.
+
+	An instance of the class can be obtained by accessing the ECpriRec property from a parent instance.
+	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+
+	_SDM_NAME = 'eCpriRec'
+
+	def __init__(self, parent):
+		super(ECpriRec, self).__init__(parent)
+
+	@property
+	def Count(self):
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('count')
+
+	@property
+	def DescriptiveName(self):
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+
+		Returns:
+			str
+		"""
+		return self._get_attribute('descriptiveName')
+
+	@property
+	def ECpriProtocolRevision(self):
+		"""eCPRI protocol revision to be used by all eCPRI messages.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriProtocolRevision')
+
+	@property
+	def ECpriUdpDestinationPort(self):
+		"""UDP Destination port to be used by all eCPRI messages in this port.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriUdpDestinationPort')
+
+	@property
+	def EcpriProtocolRevision(self):
+		"""DEPRECATED eCPRI protocol revision to be used by all eCPRI messages.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ecpriProtocolRevision')
+
+	@property
+	def EcpriUdpDestinationPort(self):
+		"""DEPRECATED UDP Destination port to be used by all eCPRI messages in this port.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ecpriUdpDestinationPort')
+
+	@property
+	def Name(self):
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+
+		Returns:
+			str
+		"""
+		return self._get_attribute('name')
+	@Name.setter
+	def Name(self, value):
+		self._set_attribute('name', value)
+
+	@property
+	def RowNames(self):
+		"""DEPRECATED Name of rows
+
+		Returns:
+			list(str)
+		"""
+		return self._get_attribute('rowNames')
+
+	def update(self, Name=None):
+		"""Updates a child instance of eCpriRec on the server.
+
+		This method has some named parameters with a type: obj (Multivalue).
+		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+
+		Args:
+			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		self._update(locals())
+
+	def get_device_ids(self, PortNames=None, ECpriProtocolRevision=None, ECpriUdpDestinationPort=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
+		"""Base class infrastructure that gets a list of eCpriRec device ids encapsulated by this object.
+
+		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+
+		Args:
+			PortNames (str): optional regex of port names
+			ECpriProtocolRevision (str): optional regex of eCpriProtocolRevision
+			ECpriUdpDestinationPort (str): optional regex of eCpriUdpDestinationPort
+			EcpriProtocolRevision (str): optional regex of ecpriProtocolRevision
+			EcpriUdpDestinationPort (str): optional regex of ecpriUdpDestinationPort
+
+		Returns:
+			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+
+		Raises:
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		return self._get_ngpf_device_ids(locals())
+
+
 class EcpriRec(Base):
 	"""The EcpriRec class encapsulates a required ecpriRec node in the ixnetwork hierarchy.
 
@@ -37,7 +159,7 @@ class EcpriRec(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +168,7 @@ class EcpriRec(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -54,8 +176,26 @@ class EcpriRec(Base):
 		return self._get_attribute('descriptiveName')
 
 	@property
-	def EcpriProtocolRevision(self):
+	def ECpriProtocolRevision(self):
 		"""eCPRI protocol revision to be used by all eCPRI messages.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriProtocolRevision')
+
+	@property
+	def ECpriUdpDestinationPort(self):
+		"""UDP Destination port to be used by all eCPRI messages in this port.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriUdpDestinationPort')
+
+	@property
+	def EcpriProtocolRevision(self):
+		"""DEPRECATED eCPRI protocol revision to be used by all eCPRI messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -64,7 +204,7 @@ class EcpriRec(Base):
 
 	@property
 	def EcpriUdpDestinationPort(self):
-		"""UDP Destination port to be used by all eCPRI messages in this port.
+		"""DEPRECATED UDP Destination port to be used by all eCPRI messages in this port.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -73,7 +213,7 @@ class EcpriRec(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -85,7 +225,7 @@ class EcpriRec(Base):
 
 	@property
 	def RowNames(self):
-		"""Name of rows
+		"""DEPRECATED Name of rows
 
 		Returns:
 			list(str)
@@ -106,13 +246,15 @@ class EcpriRec(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
+	def get_device_ids(self, PortNames=None, ECpriProtocolRevision=None, ECpriUdpDestinationPort=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
 		"""Base class infrastructure that gets a list of ecpriRec device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
 		Args:
 			PortNames (str): optional regex of port names
+			ECpriProtocolRevision (str): optional regex of eCpriProtocolRevision
+			ECpriUdpDestinationPort (str): optional regex of eCpriUdpDestinationPort
 			EcpriProtocolRevision (str): optional regex of ecpriProtocolRevision
 			EcpriUdpDestinationPort (str): optional regex of ecpriUdpDestinationPort
 
@@ -123,19 +265,3 @@ class EcpriRec(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

@@ -74,7 +74,7 @@ class RsvpP2mpEgressLsps(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -83,7 +83,7 @@ class RsvpP2mpEgressLsps(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -281,7 +281,7 @@ class RsvpP2mpEgressLsps(Base):
 		"""P2MP ID Type
 
 		Returns:
-			str(iP|p2MPId)
+			str(p2MPId|iP)
 		"""
 		return self._get_attribute('typeP2mpId')
 	@TypeP2mpId.setter
@@ -297,7 +297,7 @@ class RsvpP2mpEgressLsps(Base):
 		Args:
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
-			TypeP2mpId (str(iP|p2MPId)): P2MP ID Type
+			TypeP2mpId (str(p2MPId|iP)): P2MP ID Type
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
@@ -336,22 +336,6 @@ class RsvpP2mpEgressLsps(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GraftSubLsp(self, *args, **kwargs):
 		"""Executes the graftSubLsp operation on the server.

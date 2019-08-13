@@ -23,30 +23,50 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class DefaultStacks(Base):
-	"""The DefaultStacks class encapsulates a required defaultStacks node in the ixnetwork hierarchy.
+class FramePreemption(Base):
+	"""The FramePreemption class encapsulates a required framePreemption node in the ixnetwork hierarchy.
 
-	An instance of the class can be obtained by accessing the DefaultStacks property from a parent instance.
+	An instance of the class can be obtained by accessing the FramePreemption property from a parent instance.
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
 	"""
 
-	_SDM_NAME = 'defaultStacks'
+	_SDM_NAME = 'framePreemption'
 
 	def __init__(self, parent):
-		super(DefaultStacks, self).__init__(parent)
+		super(FramePreemption, self).__init__(parent)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
+	@property
+	def IsFramePreemptionEnabled(self):
+		"""
 
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
+		Returns:
+			bool
+		"""
+		return self._get_attribute('isFramePreemptionEnabled')
+	@IsFramePreemptionEnabled.setter
+	def IsFramePreemptionEnabled(self, value):
+		self._set_attribute('isFramePreemptionEnabled', value)
+
+	@property
+	def IsSmdVREnabled(self):
+		"""
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('isSmdVREnabled')
+	@IsSmdVREnabled.setter
+	def IsSmdVREnabled(self, value):
+		self._set_attribute('isSmdVREnabled', value)
+
+	def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
+		"""Updates a child instance of framePreemption on the server.
+
+		Args:
+			IsFramePreemptionEnabled (bool): 
+			IsSmdVREnabled (bool): 
 
 		Raises:
-			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+		self._update(locals())

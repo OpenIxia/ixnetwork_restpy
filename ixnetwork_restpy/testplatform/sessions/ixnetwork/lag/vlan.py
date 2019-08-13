@@ -37,7 +37,7 @@ class Vlan(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +46,7 @@ class Vlan(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -113,8 +113,8 @@ class Vlan(Base):
 		By default the find method takes no parameters and will retrieve all vlan data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:

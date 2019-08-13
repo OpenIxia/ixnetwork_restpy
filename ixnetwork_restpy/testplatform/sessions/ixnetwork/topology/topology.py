@@ -52,7 +52,7 @@ class Topology(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -115,7 +115,7 @@ class Topology(Base):
 
 	@property
 	def PortsStateCount(self):
-		"""State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other
+		"""State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other, arg5:busy, arg6:unassigned
 
 		Returns:
 			dict(arg1:number,arg2:number,arg3:number,arg4:number)
@@ -190,13 +190,13 @@ class Topology(Base):
 		By default the find method takes no parameters and will retrieve all topology data from the server.
 
 		Args:
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			Note (str): Any Note about the Topology
 			PortCount (number): Number of /vports or /lags assigned (including unmapped ports)
 			Ports (list(str[None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport])): Logical port information.
-			PortsStateCount (dict(arg1:number,arg2:number,arg3:number,arg4:number)): State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other
+			PortsStateCount (dict(arg1:number,arg2:number,arg3:number,arg4:number)): State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other, arg5:busy, arg6:unassigned
 			Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 			Vports (list(str[None|/api/v1/sessions/1/ixnetwork/vport])): Virtual port information.
 

@@ -272,7 +272,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -293,7 +293,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -350,7 +350,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableLspSelfPing(self):
-		"""DEPRECATED If selected, LSP Self Ping is enabled for learned LSPs.
+		"""DEPRECATED If enabled, Ingress LSP will use LSP Self Ping procedure to verify that forwarding state has been installed on all downstream nodes.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -524,7 +524,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IpDSCPofLspSelfPing(self):
-		"""DEPRECATED IP DSCP of LSP Self Ping.
+		"""DEPRECATED IP DSCP of LSP Self Ping. IP DSCP classifies the way an IP packet is routed in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -533,7 +533,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IpTTLofLspSelfPing(self):
-		"""DEPRECATED IP TTL of LSP Self Ping.
+		"""DEPRECATED IP TTL of LSP Self Ping. IP TTL limits the lifespan or lifetime of IP Packet in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -605,7 +605,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSelfPingRetryCount(self):
-		"""DEPRECATED LSP Self Ping Retry Count.
+		"""DEPRECATED LSP Self Ping Retry Count. Maximum number of times LSP Self Ping Message will be Transmitted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -653,7 +653,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def MaximumPacketSize(self):
-		"""DEPRECATED Maximum Packet Size
+		"""DEPRECATED Maximum Packet Size (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -662,7 +662,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def MinimumPolicedUnit(self):
-		"""DEPRECATED Minimum Policed Unit
+		"""DEPRECATED Minimum Policed Unit (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -746,7 +746,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PeakDataRate(self):
-		"""DEPRECATED Peak Data Rate
+		"""DEPRECATED Peak Data Rate (in Bytes per seconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -956,7 +956,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TokenBucketRate(self):
-		"""DEPRECATED Token Bucket Rate
+		"""DEPRECATED Token Bucket Rate (in Bytes per seconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -965,7 +965,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TokenBucketSize(self):
-		"""DEPRECATED Token Bucket Size
+		"""DEPRECATED Token Bucket Size (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1104,22 +1104,6 @@ class RsvpP2PIngressLsps(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def InitiatePathReoptimization(self, *args, **kwargs):
 		"""Executes the initiatePathReoptimization operation on the server.

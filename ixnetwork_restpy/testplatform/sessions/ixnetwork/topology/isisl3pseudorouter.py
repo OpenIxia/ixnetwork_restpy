@@ -64,6 +64,34 @@ class IsisL3PseudoRouter(Base):
 		return IPv6PseudoNodeRoutes(self)
 
 	@property
+	def IsisPseudoMultiTopologyValuesList(self):
+		"""An instance of the IsisPseudoMultiTopologyValuesList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist.IsisPseudoMultiTopologyValuesList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist import IsisPseudoMultiTopologyValuesList
+		return IsisPseudoMultiTopologyValuesList(self)
+
+	@property
+	def IsisPseudoSRv6LocatorEntryList(self):
+		"""An instance of the IsisPseudoSRv6LocatorEntryList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6locatorentrylist.IsisPseudoSRv6LocatorEntryList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6locatorentrylist import IsisPseudoSRv6LocatorEntryList
+		return IsisPseudoSRv6LocatorEntryList(self)._select()
+
+	@property
 	def IsisSRAlgorithmList(self):
 		"""An instance of the IsisSRAlgorithmList class.
 
@@ -115,6 +143,15 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('active')
 
 	@property
+	def AdvertiseNodeMsd(self):
+		"""Advertise Node MSD
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseNodeMsd')
+
+	@property
 	def AdvertiseSRLB(self):
 		"""Enables advertisement of Segment Routing Local Block (SRLB) Sub-Tlv in Router Capability Tlv
 
@@ -125,7 +162,7 @@ class IsisL3PseudoRouter(Base):
 
 	@property
 	def AdvertiseSidAsLocator(self):
-		"""If enabled, then the configured IPv6 Node SID gets advertised as a reachable IPv6 prefix
+		"""DEPRECATED If enabled, then the configured IPv6 Node SID gets advertised as a reachable IPv6 prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -152,7 +189,7 @@ class IsisL3PseudoRouter(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -188,7 +225,7 @@ class IsisL3PseudoRouter(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -233,7 +270,7 @@ class IsisL3PseudoRouter(Base):
 
 	@property
 	def EnableSR(self):
-		"""DEPRECATED Enable Segment Routing
+		"""DEPRECATED This enables SR MPLS on all the simulated ISIS router(s)
 
 		Returns:
 			bool
@@ -280,6 +317,24 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('function')
 
 	@property
+	def IncludeMaxSlMsd(self):
+		"""DEPRECATED If set, then Include Maximum Segment Left MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaxSlMsd')
+
+	@property
+	def IncludeMaximumEndDMsd(self):
+		"""DEPRECATED If set, then include Maximum End D MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumEndDMsd')
+
+	@property
 	def IncludeMaximumEndDSrhTLV(self):
 		"""DEPRECATED If set, then include Maximum End D SRH TLV in SRv6 capability
 
@@ -287,6 +342,15 @@ class IsisL3PseudoRouter(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('includeMaximumEndDSrhTLV')
+
+	@property
+	def IncludeMaximumEndPopMsd(self):
+		"""DEPRECATED If set, then include Max-End-Pop-MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumEndPopMsd')
 
 	@property
 	def IncludeMaximumEndPopSrhTLV(self):
@@ -307,6 +371,15 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('includeMaximumSLTLV')
 
 	@property
+	def IncludeMaximumTEncapMsd(self):
+		"""DEPRECATED If set, then include Maximum T.Encap MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumTEncapMsd')
+
+	@property
 	def IncludeMaximumTEncapSrhTLV(self):
 		"""DEPRECATED If set, then include Maximum T.Encap SRH TLV in SRv6 capability
 
@@ -314,6 +387,15 @@ class IsisL3PseudoRouter(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('includeMaximumTEncapSrhTLV')
+
+	@property
+	def IncludeMaximumTInsertMsd(self):
+		"""DEPRECATED If set, then include Maximum T.Insert MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumTInsertMsd')
 
 	@property
 	def IncludeMaximumTInsertSrhTLV(self):
@@ -379,6 +461,18 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('lFlag')
 
 	@property
+	def LocatorCount(self):
+		"""DEPRECATED Locator Count
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('locatorCount')
+	@LocatorCount.setter
+	def LocatorCount(self, value):
+		self._set_attribute('locatorCount', value)
+
+	@property
 	def LocatorPrefixLength(self):
 		"""DEPRECATED Locator Prefix Length
 
@@ -406,6 +500,24 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('maxEndD')
 
 	@property
+	def MaxEndDMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxEndDMsd')
+
+	@property
+	def MaxEndPopMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxEndPopMsd')
+
+	@property
 	def MaxEndPopSrh(self):
 		"""DEPRECATED This field specifies the maximum number of SIDs in the top SRH in an SRH stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
 
@@ -424,8 +536,17 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('maxSL')
 
 	@property
+	def MaxSlMsd(self):
+		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxSlMsd')
+
+	@property
 	def MaxTEncap(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
+		"""DEPRECATED This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -440,6 +561,27 @@ class IsisL3PseudoRouter(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('maxTInsert')
+
+	@property
+	def MaxTInsertMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxTInsertMsd')
+
+	@property
+	def MtCount(self):
+		"""DEPRECATED MT Count
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('mtCount')
+	@MtCount.setter
+	def MtCount(self, value):
+		self._set_attribute('mtCount', value)
 
 	@property
 	def NFlag(self):
@@ -472,13 +614,13 @@ class IsisL3PseudoRouter(Base):
 		return self._get_attribute('nodePrefix')
 
 	@property
-	def OFlagOfSRv6CapTlv(self):
+	def OFlagOfSRv6Cap(self):
 		"""DEPRECATED If set, it indicates that this packet is an operations and management (OAM) packet.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
-		return self._get_attribute('oFlagOfSRv6CapTlv')
+		return self._get_attribute('oFlagOfSRv6Cap')
 
 	@property
 	def PFlag(self):
@@ -631,6 +773,24 @@ class IsisL3PseudoRouter(Base):
 		self._set_attribute('sRGBRangeCount', value)
 
 	@property
+	def SRv6NodePrefix(self):
+		"""DEPRECATED This is an IPv6 Node prefix for the SRv6 router
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sRv6NodePrefix')
+
+	@property
+	def SRv6NodePrefixLength(self):
+		"""DEPRECATED This is the prefix length of the SRv6 node prefix
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sRv6NodePrefixLength')
+
+	@property
 	def SrlbDescriptorCount(self):
 		"""DEPRECATED Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
@@ -669,14 +829,16 @@ class IsisL3PseudoRouter(Base):
 		"""
 		return self._get_attribute('vFlag')
 
-	def update(self, EnableSR=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+	def update(self, EnableSR=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
 		"""Updates a child instance of isisL3PseudoRouter on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
 
 		Args:
-			EnableSR (bool): Enable Segment Routing
+			EnableSR (bool): This enables SR MPLS on all the simulated ISIS router(s)
+			LocatorCount (number): Locator Count
+			MtCount (number): MT Count
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			SRAlgorithmCount (number): SR Algorithm Count
 			SRGBRangeCount (number): SRGB Range Count
@@ -687,16 +849,18 @@ class IsisL3PseudoRouter(Base):
 		"""
 		self._update(locals())
 
-	def find(self, Count=None, DescriptiveName=None, EnableSR=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+	def find(self, Count=None, DescriptiveName=None, EnableSR=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
 		"""Finds and retrieves isisL3PseudoRouter data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve isisL3PseudoRouter data from the server.
 		By default the find method takes no parameters and will retrieve all isisL3PseudoRouter data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
-			EnableSR (bool): Enable Segment Routing
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+			EnableSR (bool): This enables SR MPLS on all the simulated ISIS router(s)
+			LocatorCount (number): Locator Count
+			MtCount (number): MT Count
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			SRAlgorithmCount (number): SR Algorithm Count
 			SRGBRangeCount (number): SRGB Range Count
@@ -725,7 +889,7 @@ class IsisL3PseudoRouter(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, AdvertiseSRLB=None, AdvertiseSidAsLocator=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, EFlag=None, EFlagOfSRv6CapTlv=None, Enable=None, EnableMTIPv6=None, EnableWMforTEinNetworkGroup=None, EnableWideMetric=None, Funcflags=None, Function=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertSrhTLV=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6MTMetric=None, Ipv6NodePrefix=None, Ipv6Srh=None, LFlag=None, LocatorPrefixLength=None, Mask=None, MaxEndD=None, MaxEndPopSrh=None, MaxSL=None, MaxTEncap=None, MaxTInsert=None, NFlag=None, NodePrefix=None, OFlagOfSRv6CapTlv=None, PFlag=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SrlbFlags=None, TERouterId=None, VFlag=None):
+	def get_device_ids(self, PortNames=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSidAsLocator=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, EFlag=None, EFlagOfSRv6CapTlv=None, Enable=None, EnableMTIPv6=None, EnableWMforTEinNetworkGroup=None, EnableWideMetric=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6MTMetric=None, Ipv6NodePrefix=None, Ipv6Srh=None, LFlag=None, LocatorPrefixLength=None, Mask=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsert=None, MaxTInsertMsd=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, PFlag=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, TERouterId=None, VFlag=None):
 		"""Base class infrastructure that gets a list of isisL3PseudoRouter device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -733,6 +897,7 @@ class IsisL3PseudoRouter(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
+			AdvertiseNodeMsd (str): optional regex of advertiseNodeMsd
 			AdvertiseSRLB (str): optional regex of advertiseSRLB
 			AdvertiseSidAsLocator (str): optional regex of advertiseSidAsLocator
 			Algorithm (str): optional regex of algorithm
@@ -748,10 +913,15 @@ class IsisL3PseudoRouter(Base):
 			EnableWideMetric (str): optional regex of enableWideMetric
 			Funcflags (str): optional regex of funcflags
 			Function (str): optional regex of function
+			IncludeMaxSlMsd (str): optional regex of includeMaxSlMsd
+			IncludeMaximumEndDMsd (str): optional regex of includeMaximumEndDMsd
 			IncludeMaximumEndDSrhTLV (str): optional regex of includeMaximumEndDSrhTLV
+			IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
 			IncludeMaximumEndPopSrhTLV (str): optional regex of includeMaximumEndPopSrhTLV
 			IncludeMaximumSLTLV (str): optional regex of includeMaximumSLTLV
+			IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
 			IncludeMaximumTEncapSrhTLV (str): optional regex of includeMaximumTEncapSrhTLV
+			IncludeMaximumTInsertMsd (str): optional regex of includeMaximumTInsertMsd
 			IncludeMaximumTInsertSrhTLV (str): optional regex of includeMaximumTInsertSrhTLV
 			Ipv4Flag (str): optional regex of ipv4Flag
 			Ipv6Flag (str): optional regex of ipv6Flag
@@ -762,13 +932,17 @@ class IsisL3PseudoRouter(Base):
 			LocatorPrefixLength (str): optional regex of locatorPrefixLength
 			Mask (str): optional regex of mask
 			MaxEndD (str): optional regex of maxEndD
+			MaxEndDMsd (str): optional regex of maxEndDMsd
+			MaxEndPopMsd (str): optional regex of maxEndPopMsd
 			MaxEndPopSrh (str): optional regex of maxEndPopSrh
 			MaxSL (str): optional regex of maxSL
+			MaxSlMsd (str): optional regex of maxSlMsd
 			MaxTEncap (str): optional regex of maxTEncap
 			MaxTInsert (str): optional regex of maxTInsert
+			MaxTInsertMsd (str): optional regex of maxTInsertMsd
 			NFlag (str): optional regex of nFlag
 			NodePrefix (str): optional regex of nodePrefix
-			OFlagOfSRv6CapTlv (str): optional regex of oFlagOfSRv6CapTlv
+			OFlagOfSRv6Cap (str): optional regex of oFlagOfSRv6Cap
 			PFlag (str): optional regex of pFlag
 			PrefixLength (str): optional regex of prefixLength
 			RFlag (str): optional regex of rFlag
@@ -783,6 +957,8 @@ class IsisL3PseudoRouter(Base):
 			SBit (str): optional regex of sBit
 			SBitForSRv6Cap (str): optional regex of sBitForSRv6Cap
 			SIDIndexLabel (str): optional regex of sIDIndexLabel
+			SRv6NodePrefix (str): optional regex of sRv6NodePrefix
+			SRv6NodePrefixLength (str): optional regex of sRv6NodePrefixLength
 			SrlbFlags (str): optional regex of srlbFlags
 			TERouterId (str): optional regex of tERouterId
 			VFlag (str): optional regex of vFlag
@@ -794,22 +970,6 @@ class IsisL3PseudoRouter(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.

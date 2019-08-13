@@ -382,7 +382,7 @@ class BgpIPRouteProperty(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -391,7 +391,7 @@ class BgpIPRouteProperty(Base):
 
 	@property
 	def Delay(self):
-		"""Delay
+		"""Delay in Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -400,7 +400,7 @@ class BgpIPRouteProperty(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -1012,8 +1012,8 @@ class BgpIPRouteProperty(Base):
 			AdvertiseAsBgp3107Sr (bool): Will cause this route to be sent as BGP 3107 SR MPLS SAFI route
 			AdvertiseAsRfc8277 (bool): Will cause this route to be sent as RFC 8277 MPLS SAFI route
 			AsPathASString (list(str)): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
 			NoOfClusters (number): Number of Clusters
@@ -1178,36 +1178,20 @@ class BgpIPRouteProperty(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('ageoutroutes', payload=payload, response_object=None)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
 	def GenerateIpv6Routes(self, *args, **kwargs):
 		"""Executes the generateIpv6Routes operation on the server.
 
 		Generate Primary and Duplicate Routes with advanced prefix length distribution options.
 
-		generateIpv6Routes(Arg2:number, Arg3:number, Arg4:number, Arg5:string, Arg6:string, Arg7:enum, Arg8:enum, Arg9:href, Arg10:number, Arg11:number, Arg12:bool, Arg13:bool, Arg14:string, Arg15:string, Arg16:string)list
+		DEPRECATED generateIpv6Routes(Arg2:number, Arg3:number, Arg4:number, Arg5:string, Arg6:string, Arg7:enum, Arg8:enum, Arg9:href, Arg10:number, Arg11:number, Arg12:bool, Arg13:bool, Arg14:string, Arg15:string, Arg16:string)list
 			Args:
 				args[0] is Arg2 (number): Number of Primary Routes per Device.
 				args[1] is Arg3 (number): Percentage to Duplicate Primary Routes per Device.
 				args[2] is Arg4 (number): Number of Routes per Route Range.
 				args[3] is Arg5 (str): Network Address Start Value.
 				args[4] is Arg6 (str): Network Address Step Value.
-				args[5] is Arg7 (str(custom|even|exponential|fixed|internet|random)): Prefix Length Distribution Type.
-				args[6] is Arg8 (str(perDevice|perPort|perTopology)): Prefix Length Distribution Scope.
+				args[5] is Arg7 (str(fixed|random|even|exponential|internet|custom)): Prefix Length Distribution Type.
+				args[6] is Arg8 (str(perTopology|perDevice|perPort)): Prefix Length Distribution Scope.
 				args[7] is Arg9 (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
 				args[8] is Arg10 (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
 				args[9] is Arg11 (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
@@ -1234,15 +1218,15 @@ class BgpIPRouteProperty(Base):
 
 		Generate Primary and Duplicate Routes with advanced prefix length distribution options.
 
-		generateRoutes(Arg2:number, Arg3:number, Arg4:number, Arg5:string, Arg6:string, Arg7:enum, Arg8:enum, Arg9:href, Arg10:number, Arg11:number, Arg12:bool, Arg13:bool, Arg14:string, Arg15:string, Arg16:string)list
+		DEPRECATED generateRoutes(Arg2:number, Arg3:number, Arg4:number, Arg5:string, Arg6:string, Arg7:enum, Arg8:enum, Arg9:href, Arg10:number, Arg11:number, Arg12:bool, Arg13:bool, Arg14:string, Arg15:string, Arg16:string)list
 			Args:
 				args[0] is Arg2 (number): Number of Primary Routes per Device.
 				args[1] is Arg3 (number): Percentage to Duplicate Primary Routes per Device.
 				args[2] is Arg4 (number): Number of Routes per Route Range.
 				args[3] is Arg5 (str): Network Address Start Value.
 				args[4] is Arg6 (str): Network Address Step Value.
-				args[5] is Arg7 (str(custom|even|exponential|fixed|internet|random)): Prefix Length Distribution Type.
-				args[6] is Arg8 (str(perDevice|perPort|perTopology)): Prefix Length Distribution Scope.
+				args[5] is Arg7 (str(fixed|random|even|exponential|internet|custom)): Prefix Length Distribution Type.
+				args[6] is Arg8 (str(perTopology|perDevice|perPort)): Prefix Length Distribution Scope.
 				args[7] is Arg9 (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
 				args[8] is Arg10 (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
 				args[9] is Arg11 (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
@@ -1269,13 +1253,28 @@ class BgpIPRouteProperty(Base):
 
 		Import IPv4 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
 
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
 		importBgpRoutes(Arg2:enum, Arg3:bool, Arg4:enum, Arg5:enum, Arg6:href)list
 			Args:
-				args[0] is Arg2 (str(replicate|roundRobin)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+				args[0] is Arg2 (str(roundRobin|replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
 				args[1] is Arg3 (bool): Import only the best routes (provided route file has this information).
 				args[2] is Arg4 (str(overwriteTestersAddress|preserveFromFile)): Option for setting Next Hop modification type.
-				args[3] is Arg5 (str(cisco|csv|juniper)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+				args[3] is Arg5 (str(csv|juniper|cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
 				args[4] is Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
+
+			Returns:
+				list(str): ID to associate each asynchronous action invocation.
+
+		DEPRECATED importBgpRoutes(Arg2:enum, Arg3:bool, Arg4:enum, Arg5:enum, Arg6:href, Arg7:number)list
+			Args:
+				args[0] is Arg2 (str(roundRobin|replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+				args[1] is Arg3 (bool): Import only the best routes (provided route file has this information).
+				args[2] is Arg4 (str(overwriteTestersAddress|preserveFromFile)): Option for setting Next Hop modification type.
+				args[3] is Arg5 (str(csv|juniper|cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+				args[4] is Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
+				args[5] is Arg7 (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
 
 			Returns:
 				list(str): ID to associate each asynchronous action invocation.
@@ -1292,7 +1291,7 @@ class BgpIPRouteProperty(Base):
 	def ReadvertiseRoutes(self, *args, **kwargs):
 		"""Executes the readvertiseRoutes operation on the server.
 
-		Re-advertise Aged out OSPF Routes in a Route Range
+		Re-advertise Aged out BGP Routes in a Route Range
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:

@@ -66,7 +66,7 @@ class SupportedInstruction(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -182,7 +182,7 @@ class SupportedInstruction(Base):
 		By default the find method takes no parameters and will retrieve all supportedInstruction data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 			Description (str): Description of the TLV prototype.
 			IsEditable (bool): Information on the requirement of the field.
 			IsRepeatable (bool): Information if the field can be multiplied in the tlv definition.
@@ -211,19 +211,3 @@ class SupportedInstruction(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._read(href)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

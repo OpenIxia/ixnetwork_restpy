@@ -45,6 +45,15 @@ class TransmissionDistribution(Base):
 		return self._get_attribute('availableDistributions')
 
 	@property
+	def AvailableDistributionsSet(self):
+		"""Returns user friendly list of distribution fields
+
+		Returns:
+			list(dict(arg1:str,arg2:str))
+		"""
+		return self._get_attribute('availableDistributionsSet')
+
+	@property
 	def Distributions(self):
 		"""Indicates the predefined size distribution based on size and weight.
 
@@ -76,7 +85,7 @@ class TransmissionDistribution(Base):
 		"""
 		self._update(locals())
 
-	def find(self, AvailableDistributions=None, Distributions=None, DistributionsDisplayNames=None):
+	def find(self, AvailableDistributions=None, AvailableDistributionsSet=None, Distributions=None, DistributionsDisplayNames=None):
 		"""Finds and retrieves transmissionDistribution data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve transmissionDistribution data from the server.
@@ -84,6 +93,7 @@ class TransmissionDistribution(Base):
 
 		Args:
 			AvailableDistributions (list(str)): Indicates the available transmission distributions for the traffic streams.
+			AvailableDistributionsSet (list(dict(arg1:str,arg2:str))): Returns user friendly list of distribution fields
 			Distributions (list(str)): Indicates the predefined size distribution based on size and weight.
 			DistributionsDisplayNames (list(str)): Returns user friendly list of distribution fields
 

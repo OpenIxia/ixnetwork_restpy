@@ -132,8 +132,17 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('active')
 
 	@property
+	def AdvIPv6Prefix(self):
+		"""DEPRECATED Advertise IPv6 Prefix
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advIPv6Prefix')
+
+	@property
 	def Algorithm(self):
-		"""Algorithm
+		"""DEPRECATED Algorithm
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -142,7 +151,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def ConfigureSIDIndexLabel(self):
-		"""Configure SID/Index/Label
+		"""DEPRECATED Configure SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -151,7 +160,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -159,8 +168,17 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('count')
 
 	@property
+	def DBitInsideSRv6SidTLV(self):
+		"""DEPRECATED When the SID is leaked from level-2 to level-1, the D bit MUST be set. Otherwise, this bit MUST be clear.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('dBitInsideSRv6SidTLV')
+
+	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -169,7 +187,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def EFlag(self):
-		"""Explicit NULL flag
+		"""DEPRECATED Explicit NULL flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -177,8 +195,26 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('eFlag')
 
 	@property
+	def Funcflags(self):
+		"""DEPRECATED This is the function flags
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('funcflags')
+
+	@property
+	def Function(self):
+		"""DEPRECATED This specifies endpoint function codes
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('function')
+
+	@property
 	def IncludeBIERInfo(self):
-		"""Include BIER Info
+		"""DEPRECATED Include BIER Info
 
 		Returns:
 			bool
@@ -190,12 +226,21 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def IncludeBSLObject(self):
-		"""If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
+		"""DEPRECATED If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('includeBSLObject')
+
+	@property
+	def Ipv6SID(self):
+		"""DEPRECATED This refers to the IPv6 SID that is being used to reach the advertised IPv6 Prefix
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ipv6SID')
 
 	@property
 	def Ipv6Srh(self):
@@ -300,6 +345,15 @@ class IsisL3RouteProperty(Base):
 		return self._get_attribute('redistribution')
 
 	@property
+	def ReservedInsideFlagsOfSRv6SidTLV(self):
+		"""DEPRECATED This is the reserved field (part of Flags field of SRv6 SID TLV)
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('reservedInsideFlagsOfSRv6SidTLV')
+
+	@property
 	def RouteOrigin(self):
 		"""DEPRECATED Route Origin
 
@@ -357,8 +411,8 @@ class IsisL3RouteProperty(Base):
 		By default the find method takes no parameters and will retrieve all isisL3RouteProperty data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			IncludeBIERInfo (bool): Include BIER Info
 			LocalSystemID (list(str)): System ID
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -386,7 +440,7 @@ class IsisL3RouteProperty(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, IncludeBSLObject=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
+	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, AdvIPv6Prefix=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBitInsideSRv6SidTLV=None, EFlag=None, Funcflags=None, Function=None, IncludeBSLObject=None, Ipv6SID=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, ReservedInsideFlagsOfSRv6SidTLV=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
 		"""Base class infrastructure that gets a list of isisL3RouteProperty device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -399,10 +453,15 @@ class IsisL3RouteProperty(Base):
 			BIERBitStringLength (str): optional regex of BIERBitStringLength
 			IPA (str): optional regex of IPA
 			Active (str): optional regex of active
+			AdvIPv6Prefix (str): optional regex of advIPv6Prefix
 			Algorithm (str): optional regex of algorithm
 			ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+			DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
 			EFlag (str): optional regex of eFlag
+			Funcflags (str): optional regex of funcflags
+			Function (str): optional regex of function
 			IncludeBSLObject (str): optional regex of includeBSLObject
+			Ipv6SID (str): optional regex of ipv6SID
 			Ipv6Srh (str): optional regex of ipv6Srh
 			LFlag (str): optional regex of lFlag
 			LabelRangeSize (str): optional regex of labelRangeSize
@@ -412,6 +471,7 @@ class IsisL3RouteProperty(Base):
 			PFlag (str): optional regex of pFlag
 			RFlag (str): optional regex of rFlag
 			Redistribution (str): optional regex of redistribution
+			ReservedInsideFlagsOfSRv6SidTLV (str): optional regex of reservedInsideFlagsOfSRv6SidTLV
 			RouteOrigin (str): optional regex of routeOrigin
 			SIDIndexLabel (str): optional regex of sIDIndexLabel
 			SubDomainId (str): optional regex of subDomainId
@@ -477,22 +537,6 @@ class IsisL3RouteProperty(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('ageoutroutes', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def ReadvertiseRoutes(self, *args, **kwargs):
 		"""Executes the readvertiseRoutes operation on the server.

@@ -40,7 +40,7 @@ class Results(Base):
 		"""Current actions
 
 		Returns:
-			list(dict(arg1:str,arg2:str[AgingTable|ApplyFlowGroups|CheckingForAvailableStats|CheckingLicense|ClearingStats|CollectingStats|DropLink|frameLossCriteriaNotMet|HoldDown|InitializingTest|IterationStart|LicenseFailed|LicenseVerified|None|NoRibInConvergenceStopping|SendingLearningFrames|SetTestConfiguration|SetupStatisticsCollection|StartingTraffic|TestEnded|TestStarted|ThresholdReachedStopping|TransmittingComplete|TransmittingFrames|WaitAfterFailover|WaitBeforeFailover|WaitingAfterLearningFramesSent|WaitingBeforeSendingTraffic|WaitingForDelayBetweenIterations|WaitingForPorts|WaitingForStats|WaitingTrafficToStop]))
+			list(dict(arg1:str,arg2:str[AgingTable|ApplyFlowGroups|CheckingForAvailableStats|CheckingLicense|ClearingStats|CollectingStats|DropLink|frameLossCriteriaNotMet|HoldDown|InitializingTest|IterationStart|LicenseFailed|LicenseVerified|None|NoRibInConvergenceStopping|ReleasingResources|SendingLearningFrames|SetTestConfiguration|SetupStatisticsCollection|StartingTraffic|TestEnded|TestStarted|ThresholdReachedStopping|TransmittingComplete|TransmittingFrames|WaitAfterFailover|WaitBeforeFailover|WaitingAfterLearningFramesSent|WaitingBeforeSendingTraffic|WaitingForDelayBetweenIterations|WaitingForPorts|WaitingForStats|WaitingTrafficToStop]))
 		"""
 		return self._get_attribute('currentActions')
 

@@ -127,7 +127,7 @@ class Field(Base):
 
 	@property
 	def FieldValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -139,7 +139,7 @@ class Field(Base):
 
 	@property
 	def FixedBits(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -150,8 +150,17 @@ class Field(Base):
 		self._set_attribute('fixedBits', value)
 
 	@property
-	def FullMesh(self):
+	def FormattedFieldValue(self):
+		"""DEPRECATED 
+
+		Returns:
+			str
 		"""
+		return self._get_attribute('formattedFieldValue')
+
+	@property
+	def FullMesh(self):
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -163,7 +172,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number
@@ -172,7 +181,7 @@ class Field(Base):
 
 	@property
 	def Level(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -181,7 +190,7 @@ class Field(Base):
 
 	@property
 	def MaxValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -193,7 +202,7 @@ class Field(Base):
 
 	@property
 	def MinValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -205,7 +214,7 @@ class Field(Base):
 
 	@property
 	def Name(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -214,7 +223,7 @@ class Field(Base):
 
 	@property
 	def Offset(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number
@@ -223,7 +232,7 @@ class Field(Base):
 
 	@property
 	def OffsetFromRoot(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			number
@@ -232,7 +241,7 @@ class Field(Base):
 
 	@property
 	def OnTheFlyMask(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -244,7 +253,7 @@ class Field(Base):
 
 	@property
 	def Optional(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -253,7 +262,7 @@ class Field(Base):
 
 	@property
 	def OptionalEnabled(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -265,7 +274,7 @@ class Field(Base):
 
 	@property
 	def RandomMask(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -277,7 +286,7 @@ class Field(Base):
 
 	@property
 	def RateVaried(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -286,7 +295,7 @@ class Field(Base):
 
 	@property
 	def ReadOnly(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -295,7 +304,7 @@ class Field(Base):
 
 	@property
 	def RequiresUdf(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -304,7 +313,7 @@ class Field(Base):
 
 	@property
 	def Seed(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -316,7 +325,7 @@ class Field(Base):
 
 	@property
 	def SingleValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -328,7 +337,7 @@ class Field(Base):
 
 	@property
 	def StartValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -340,7 +349,7 @@ class Field(Base):
 
 	@property
 	def StepValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -351,8 +360,17 @@ class Field(Base):
 		self._set_attribute('stepValue', value)
 
 	@property
-	def SupportsNonRepeatableRandom(self):
+	def SupportsAuto(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
 		"""
+		return self._get_attribute('supportsAuto')
+
+	@property
+	def SupportsNonRepeatableRandom(self):
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -361,7 +379,7 @@ class Field(Base):
 
 	@property
 	def SupportsOnTheFlyMask(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -369,8 +387,17 @@ class Field(Base):
 		return self._get_attribute('supportsOnTheFlyMask')
 
 	@property
-	def TrackingEnabled(self):
+	def SupportsRepeatableRandomRange(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
 		"""
+		return self._get_attribute('supportsRepeatableRandomRange')
+
+	@property
+	def TrackingEnabled(self):
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -382,7 +409,7 @@ class Field(Base):
 
 	@property
 	def ValueFormat(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
@@ -391,7 +418,7 @@ class Field(Base):
 
 	@property
 	def ValueList(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			list(str)
@@ -403,7 +430,7 @@ class Field(Base):
 
 	@property
 	def ValueType(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)
@@ -441,7 +468,7 @@ class Field(Base):
 		"""
 		self._update(locals())
 
-	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
+	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
 		"""Finds and retrieves field data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve field data from the server.
@@ -459,6 +486,7 @@ class Field(Base):
 			FieldTypeId (str): 
 			FieldValue (str): 
 			FixedBits (str): 
+			FormattedFieldValue (str): 
 			FullMesh (bool): 
 			Length (number): 
 			Level (bool): 
@@ -478,8 +506,10 @@ class Field(Base):
 			SingleValue (str): 
 			StartValue (str): 
 			StepValue (str): 
+			SupportsAuto (bool): 
 			SupportsNonRepeatableRandom (bool): 
 			SupportsOnTheFlyMask (bool): 
+			SupportsRepeatableRandomRange (bool): 
 			TrackingEnabled (bool): 
 			ValueFormat (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): 
 			ValueList (list(str)): 

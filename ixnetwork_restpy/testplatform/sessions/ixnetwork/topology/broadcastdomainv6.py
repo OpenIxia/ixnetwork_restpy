@@ -68,6 +68,24 @@ class BroadcastDomainV6(Base):
 		return self._get_attribute('adRouteLabel')
 
 	@property
+	def AdvSrv6SidInIgp(self):
+		"""Advertise SRv6 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6SidInIgp')
+
+	@property
+	def AdvertiseSRv6SID(self):
+		"""Advertise SRv6 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6SID')
+
+	@property
 	def BVlanId(self):
 		"""B VLAN ID
 
@@ -96,7 +114,7 @@ class BroadcastDomainV6(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -105,7 +123,7 @@ class BroadcastDomainV6(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -209,6 +227,51 @@ class BroadcastDomainV6(Base):
 		return self._get_attribute('senderAddressPRootNodeAddress')
 
 	@property
+	def Srv6SidFlags(self):
+		"""SRv6 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidFlags')
+
+	@property
+	def Srv6SidLoc(self):
+		"""SRv6 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLoc')
+
+	@property
+	def Srv6SidLocLen(self):
+		"""SRv6 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocLen')
+
+	@property
+	def Srv6SidLocMetric(self):
+		"""SRv6 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocMetric')
+
+	@property
+	def Srv6SidReserved(self):
+		"""SRv6 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReserved')
+
+	@property
 	def UsebVlan(self):
 		"""Use B-VLAN
 
@@ -236,7 +299,7 @@ class BroadcastDomainV6(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, GroupAddress=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None):
+	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvertiseSRv6SID=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, GroupAddress=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None, Srv6SidFlags=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None):
 		"""Base class infrastructure that gets a list of broadcastDomainV6 device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -245,6 +308,8 @@ class BroadcastDomainV6(Base):
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
 			AdRouteLabel (str): optional regex of adRouteLabel
+			AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
+			AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
 			BVlanId (str): optional regex of bVlanId
 			BVlanPriority (str): optional regex of bVlanPriority
 			BVlanTpid (str): optional regex of bVlanTpid
@@ -256,6 +321,11 @@ class BroadcastDomainV6(Base):
 			RsvpP2mpIdAsNumber (str): optional regex of rsvpP2mpIdAsNumber
 			RsvpTunnelId (str): optional regex of rsvpTunnelId
 			SenderAddressPRootNodeAddress (str): optional regex of senderAddressPRootNodeAddress
+			Srv6SidFlags (str): optional regex of srv6SidFlags
+			Srv6SidLoc (str): optional regex of srv6SidLoc
+			Srv6SidLocLen (str): optional regex of srv6SidLocLen
+			Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+			Srv6SidReserved (str): optional regex of srv6SidReserved
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters
@@ -285,22 +355,6 @@ class BroadcastDomainV6(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('advertiseAliasing', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def WithdrawAliasing(self, *args, **kwargs):
 		"""Executes the withdrawAliasing operation on the server.

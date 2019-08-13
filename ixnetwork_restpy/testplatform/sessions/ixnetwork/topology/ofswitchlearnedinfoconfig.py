@@ -37,7 +37,7 @@ class OFSwitchLearnedInfoConfig(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +46,7 @@ class OFSwitchLearnedInfoConfig(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -82,7 +82,7 @@ class OFSwitchLearnedInfoConfig(Base):
 		"""Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
 
 		Returns:
-			str(oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NORMAL|outPortCustom)
+			str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|oFPP_ANY|outPortCustom)
 		"""
 		return self._get_attribute('flowStatOutPortMode')
 	@FlowStatOutPortMode.setter
@@ -143,7 +143,7 @@ class OFSwitchLearnedInfoConfig(Base):
 		Args:
 			FlowStatOutGroupMode (str(oFPGALL|oFPGANY|outGroupCustom)): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
 			FlowStatOutGroupValue (number): If Out Group is Custom/Manual, type the output group value in the box provided
-			FlowStatOutPortMode (str(oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NORMAL|outPortCustom)): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
+			FlowStatOutPortMode (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|oFPP_ANY|outPortCustom)): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
 			FlowStatOutPortValue (number): If Out Port is Custom/Manual, type the output port value.
 			FlowStatTableIdMode (str(tableIdAllTables|tableIdCustom)): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
 			FlowStatTableIdValue (number): If Table ID is Custom/ Manual, type the Table ID Number
@@ -153,19 +153,3 @@ class OFSwitchLearnedInfoConfig(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

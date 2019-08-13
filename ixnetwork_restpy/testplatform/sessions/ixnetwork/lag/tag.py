@@ -47,7 +47,7 @@ class Tag(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class Tag(Base):
 		By default the find method takes no parameters and will retrieve all tag data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 			Enabled (bool): Enables/disables tags
 			Name (str): specifies the name of the tag the entity will be part of
 

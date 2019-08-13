@@ -121,32 +121,32 @@ class Pppoxclient(Base):
 		return Dhcpv6client(self)
 
 	@property
-	def EcpriRec(self):
-		"""An instance of the EcpriRec class.
+	def ECpriRe(self):
+		"""An instance of the ECpriRe class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.EcpriRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import EcpriRec
-		return EcpriRec(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire import ECpriRe
+		return ECpriRe(self)
 
 	@property
-	def Ere(self):
-		"""An instance of the Ere class.
+	def ECpriRec(self):
+		"""An instance of the ECpriRec class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere.Ere)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere import Ere
-		return Ere(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import ECpriRec
+		return ECpriRec(self)
 
 	@property
 	def Geneve(self):
@@ -385,6 +385,20 @@ class Pppoxclient(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan import Vxlan
 		return Vxlan(self)
+
+	@property
+	def Vxlanv6(self):
+		"""An instance of the Vxlanv6 class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6.Vxlanv6)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6 import Vxlanv6
+		return Vxlanv6(self)
 
 	@property
 	def AcMatchMac(self):
@@ -661,7 +675,7 @@ class Pppoxclient(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -679,7 +693,7 @@ class Pppoxclient(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -1304,8 +1318,8 @@ class Pppoxclient(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			DiscoveredIpv4Addresses (list(str)): The discovered IPv4 addresses.
 			DiscoveredIpv6Addresses (list(str)): The discovered IPv6 addresses.
 			DiscoveredMacs (list(str)): The discovered remote MAC address.
@@ -1509,22 +1523,6 @@ class Pppoxclient(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('closeIpv6cp', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def OpenIpcp(self, *args, **kwargs):
 		"""Executes the openIpcp operation on the server.

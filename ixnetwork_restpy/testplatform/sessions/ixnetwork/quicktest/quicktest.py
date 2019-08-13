@@ -330,6 +330,20 @@ class QuickTest(Base):
 		return L2tpRateCpf(self)
 
 	@property
+	def LnsCpfCapacity(self):
+		"""An instance of the LnsCpfCapacity class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity.lnscpfcapacity.LnsCpfCapacity)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity.lnscpfcapacity import LnsCpfCapacity
+		return LnsCpfCapacity(self)
+
+	@property
 	def OpenFlowFailoverPerformance(self):
 		"""An instance of the OpenFlowFailoverPerformance class.
 
@@ -426,6 +440,20 @@ class QuickTest(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf.pppoxratecpf import PppoxRateCpf
 		return PppoxRateCpf(self)
+
+	@property
+	def PppoxRateCpfServerCapacity(self):
+		"""An instance of the PppoxRateCpfServerCapacity class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity.pppoxratecpfservercapacity.PppoxRateCpfServerCapacity)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity.pppoxratecpfservercapacity import PppoxRateCpfServerCapacity
+		return PppoxRateCpfServerCapacity(self)
 
 	@property
 	def PtpBestMasterSelection(self):

@@ -50,6 +50,20 @@ class HighLevelStream(Base):
 		return FramePayload(self)._select()
 
 	@property
+	def FramePreemption(self):
+		"""An instance of the FramePreemption class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption.FramePreemption)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import FramePreemption
+		return FramePreemption(self)._select()
+
+	@property
 	def FrameRate(self):
 		"""An instance of the FrameRate class.
 

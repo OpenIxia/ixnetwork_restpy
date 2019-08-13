@@ -209,6 +209,24 @@ class BgpIPv6EvpnVpws(Base):
 		return self._get_attribute('adRouteLabel')
 
 	@property
+	def AdvSrv6SidInIgp(self):
+		"""Advertise SRv6 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6SidInIgp')
+
+	@property
+	def AdvSrv6SidInIgpPMSI(self):
+		"""Advertise SRv6 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6SidInIgpPMSI')
+
+	@property
 	def AdvertiseL3vniSeparately(self):
 		"""Advertise L3 Route Separately
 
@@ -216,6 +234,24 @@ class BgpIPv6EvpnVpws(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('advertiseL3vniSeparately')
+
+	@property
+	def AdvertiseSRv6SID(self):
+		"""Advertise SRv6 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6SID')
+
+	@property
+	def AdvertiseSRv6SIDPMSI(self):
+		"""Advertise SRv6 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6SIDPMSI')
 
 	@property
 	def AggregatorAs(self):
@@ -303,7 +339,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -312,7 +348,7 @@ class BgpIPv6EvpnVpws(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -791,6 +827,96 @@ class BgpIPv6EvpnVpws(Base):
 		return self._get_attribute('setNextHopIpType')
 
 	@property
+	def Srv6SidFlags(self):
+		"""DEPRECATED SRv6 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidFlags')
+
+	@property
+	def Srv6SidFlagsPMSI(self):
+		"""DEPRECATED SRv6 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidFlagsPMSI')
+
+	@property
+	def Srv6SidLoc(self):
+		"""DEPRECATED SRv6 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLoc')
+
+	@property
+	def Srv6SidLocLen(self):
+		"""DEPRECATED SRv6 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocLen')
+
+	@property
+	def Srv6SidLocLenPMSI(self):
+		"""DEPRECATED SRv6 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocLenPMSI')
+
+	@property
+	def Srv6SidLocMetric(self):
+		"""DEPRECATED SRv6 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocMetric')
+
+	@property
+	def Srv6SidLocMetricPMSI(self):
+		"""DEPRECATED SRv6 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocMetricPMSI')
+
+	@property
+	def Srv6SidLocPMSI(self):
+		"""DEPRECATED SRv6 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocPMSI')
+
+	@property
+	def Srv6SidReserved(self):
+		"""DEPRECATED SRv6 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReserved')
+
+	@property
+	def Srv6SidReservedPMSI(self):
+		"""DEPRECATED SRv6 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReservedPMSI')
+
+	@property
 	def StackedLayers(self):
 		"""DEPRECATED List of secondary (many to one) child layer protocols
 
@@ -920,8 +1046,8 @@ class BgpIPv6EvpnVpws(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			EsiValue (list(str)): ESI Value
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
@@ -965,7 +1091,7 @@ class BgpIPv6EvpnVpws(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvertiseL3vniSeparately=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigOriginatingRouterIp=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, Origin=None, OriginatingRouterIpv4=None, OriginatingRouterIpv6=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdEvi=None, RdIpAddress=None, SetNextHop=None, SetNextHopIpType=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
+	def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvSrv6SidInIgpPMSI=None, AdvertiseL3vniSeparately=None, AdvertiseSRv6SID=None, AdvertiseSRv6SIDPMSI=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigOriginatingRouterIp=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, Origin=None, OriginatingRouterIpv4=None, OriginatingRouterIpv6=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdEvi=None, RdIpAddress=None, SetNextHop=None, SetNextHopIpType=None, Srv6SidFlags=None, Srv6SidFlagsPMSI=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocLenPMSI=None, Srv6SidLocMetric=None, Srv6SidLocMetricPMSI=None, Srv6SidLocPMSI=None, Srv6SidReserved=None, Srv6SidReservedPMSI=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
 		"""Base class infrastructure that gets a list of bgpIPv6EvpnVpws device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -974,7 +1100,11 @@ class BgpIPv6EvpnVpws(Base):
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
 			AdRouteLabel (str): optional regex of adRouteLabel
+			AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
+			AdvSrv6SidInIgpPMSI (str): optional regex of advSrv6SidInIgpPMSI
 			AdvertiseL3vniSeparately (str): optional regex of advertiseL3vniSeparately
+			AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
+			AdvertiseSRv6SIDPMSI (str): optional regex of advertiseSRv6SIDPMSI
 			AggregatorAs (str): optional regex of aggregatorAs
 			AggregatorId (str): optional regex of aggregatorId
 			AsSetMode (str): optional regex of asSetMode
@@ -1015,6 +1145,16 @@ class BgpIPv6EvpnVpws(Base):
 			RdIpAddress (str): optional regex of rdIpAddress
 			SetNextHop (str): optional regex of setNextHop
 			SetNextHopIpType (str): optional regex of setNextHopIpType
+			Srv6SidFlags (str): optional regex of srv6SidFlags
+			Srv6SidFlagsPMSI (str): optional regex of srv6SidFlagsPMSI
+			Srv6SidLoc (str): optional regex of srv6SidLoc
+			Srv6SidLocLen (str): optional regex of srv6SidLocLen
+			Srv6SidLocLenPMSI (str): optional regex of srv6SidLocLenPMSI
+			Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+			Srv6SidLocMetricPMSI (str): optional regex of srv6SidLocMetricPMSI
+			Srv6SidLocPMSI (str): optional regex of srv6SidLocPMSI
+			Srv6SidReserved (str): optional regex of srv6SidReserved
+			Srv6SidReservedPMSI (str): optional regex of srv6SidReservedPMSI
 			UpstreamDownstreamAssignedMplsLabel (str): optional regex of upstreamDownstreamAssignedMplsLabel
 			UseIpv4MappedIpv6Address (str): optional regex of useIpv4MappedIpv6Address
 			UseUpstreamDownstreamAssignedMplsLabel (str): optional regex of useUpstreamDownstreamAssignedMplsLabel
@@ -1026,22 +1166,6 @@ class BgpIPv6EvpnVpws(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.

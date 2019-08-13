@@ -150,7 +150,7 @@ class Ptp(Base):
 		"""AVNU Mode
 
 		Returns:
-			str(aVNU_GPTP|aVNU_NA)
+			str(aVNU_NA|aVNU_GPTP)
 		"""
 		return self._get_attribute('avnuMode')
 	@AvnuMode.setter
@@ -216,7 +216,7 @@ class Ptp(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -231,6 +231,15 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('cumulativeScaledRateOffset')
+
+	@property
+	def CurrentLocalOffset(self):
+		"""DEPRECATED Offset in seconds of Local Time from grandmaster PTP time.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('currentLocalOffset')
 
 	@property
 	def CurrentUtcOffset(self):
@@ -249,6 +258,33 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('customClockId')
+
+	@property
+	def DaylightSaving(self):
+		"""DEPRECATED Daylight Saving Occurence.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('daylightSaving')
+
+	@property
+	def DefaultSystemFrameRateDenominator(self):
+		"""DEPRECATED Default System Frame Rate Denominator
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('defaultSystemFrameRateDenominator')
+
+	@property
+	def DefaultSystemFrameRateNumerator(self):
+		"""DEPRECATED Default System Frame Rate Numerator
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('defaultSystemFrameRateNumerator')
 
 	@property
 	def DelayMechanism(self):
@@ -342,7 +378,7 @@ class Ptp(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -414,6 +450,15 @@ class Ptp(Base):
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
 		"""
 		return self._get_attribute('errors')
+
+	@property
+	def FolderPath(self):
+		"""DEPRECATED Folder To Store Log Files
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('folderPath')
 
 	@property
 	def FollowUpBadCrcRate(self):
@@ -536,6 +581,15 @@ class Ptp(Base):
 		return self._get_attribute('handleCancelTlv')
 
 	@property
+	def JumpSeconds(self):
+		"""DEPRECATED The size of the next discontinuity, in seconds, of Local Time. A value of zero indicates that no discontinuity is expected.A positive value indicates that the discontinuity will cause the currentLocalOffset to increase.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('jumpSeconds')
+
+	@property
 	def LastGmPhaseChange(self):
 		"""DEPRECATED Last GM Phase Change nanoseconds set in the gPTP FollowUp TLV
 
@@ -543,6 +597,15 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('lastGmPhaseChange')
+
+	@property
+	def LeapSecondJump(self):
+		"""DEPRECATED The reason for the forthcoming discontinuity of currentLocalOffset indicated by timeOfNextJump.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('leapSecondJump')
 
 	@property
 	def LearnPortId(self):
@@ -563,6 +626,18 @@ class Ptp(Base):
 		return self._get_attribute('logAnnounceInterval')
 
 	@property
+	def LogCleanUpOption(self):
+		"""DEPRECATED Debug Log Clean Up
+
+		Returns:
+			str(notClean|clean)
+		"""
+		return self._get_attribute('logCleanUpOption')
+	@LogCleanUpOption.setter
+	def LogCleanUpOption(self, value):
+		self._set_attribute('logCleanUpOption', value)
+
+	@property
 	def LogDelayReqInterval(self):
 		"""DEPRECATED The log mean time interval between successive (P)DelayReq messages
 
@@ -570,6 +645,36 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('logDelayReqInterval')
+
+	@property
+	def LogFileAge(self):
+		"""DEPRECATED This field determines how old logs to be deleted.
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('logFileAge')
+	@LogFileAge.setter
+	def LogFileAge(self, value):
+		self._set_attribute('logFileAge', value)
+
+	@property
+	def LogFuturePacketInfo(self):
+		"""DEPRECATED If this option is enabled PTP will write next packet information if a user defined offset limit crosses
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('logFuturePacketInfo')
+
+	@property
+	def LogManagementMsgInterval(self):
+		"""DEPRECATED The log mean time interval between successive Management messages
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('logManagementMsgInterval')
 
 	@property
 	def LogSyncInterval(self):
@@ -633,6 +738,15 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('masterIpv6IncrementBy')
+
+	@property
+	def MasterLockingStatus(self):
+		"""DEPRECATED Complementary information to clockClass
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('masterLockingStatus')
 
 	@property
 	def MasterMacAddress(self):
@@ -704,6 +818,15 @@ class Ptp(Base):
 		return self._get_attribute('notSlave')
 
 	@property
+	def NumRecords(self):
+		"""DEPRECATED Number Of Records To Be Logged if user defined offset limit crosses
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('numRecords')
+
+	@property
 	def NumberOFMsgs(self):
 		"""DEPRECATED Messages Count
 
@@ -714,6 +837,24 @@ class Ptp(Base):
 	@NumberOFMsgs.setter
 	def NumberOFMsgs(self, value):
 		self._set_attribute('numberOFMsgs', value)
+
+	@property
+	def OffsetBaseddebuggabilityEnabled(self):
+		"""DEPRECATED If this option is enabled PTP will write log if a user defined offset limit crosses
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('offsetBaseddebuggabilityEnabled')
+
+	@property
+	def OffsetLimit(self):
+		"""DEPRECATED User defined offset limit in nanosecond. When offset crosses this limit PTP will generate a Log
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('offsetLimit')
 
 	@property
 	def OffsetScaledLogVariance(self):
@@ -786,6 +927,15 @@ class Ptp(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('portNumber')
+
+	@property
+	def PreviousJamLocalOffset(self):
+		"""DEPRECATED The value of currentLocalOffset at the time of the previous Daily Jam event.If a discontinuity of Local Time occurs at the jam time, this parameter reflects the offset after the discontinuity.The default value shall be the current value of currentLocalOffset.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('previousJamLocalOffset')
 
 	@property
 	def Priority1(self):
@@ -1124,6 +1274,42 @@ class Ptp(Base):
 		return self._get_attribute('syncResidenceTime')
 
 	@property
+	def TimeAddressFlags(self):
+		"""DEPRECATED Indicates the intended SMPTE ST 12-1 flags.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('timeAddressFlags')
+
+	@property
+	def TimeOfNextJam(self):
+		"""DEPRECATED The value of the seconds portion of the PTP time corresponding to the next scheduled occurrence of the Daily Jam.If no Daily Jam is scheduled, the value of timeOfNextJam shall be zero.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('timeOfNextJam')
+
+	@property
+	def TimeOfNextJump(self):
+		"""DEPRECATED The value of the seconds portion of the grandmaster PTP time at the time that the next discontinuity of the currentLocalOffset will occur.The discontinuity occurs at the start of the second indicated.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('timeOfNextJump')
+
+	@property
+	def TimeOfPreviousJam(self):
+		"""DEPRECATED The value of the seconds portion of the PTP time corresponding to the previous occurrence of the Daily Jam.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('timeOfPreviousJam')
+
+	@property
 	def TimeSource(self):
 		"""DEPRECATED Time source for the PTP device
 
@@ -1168,17 +1354,19 @@ class Ptp(Base):
 		"""
 		return self._get_attribute('updateTime')
 
-	def update(self, AvnuMode=None, ConnectedVia=None, EnableNegativeTesting=None, Frequency=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
+	def update(self, AvnuMode=None, ConnectedVia=None, EnableNegativeTesting=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
 		"""Updates a child instance of ptp on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
 
 		Args:
-			AvnuMode (str(aVNU_GPTP|aVNU_NA)): AVNU Mode
+			AvnuMode (str(aVNU_NA|aVNU_GPTP)): AVNU Mode
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			EnableNegativeTesting (bool): Enable Negative Conformance Test
 			Frequency (number): Frequency(N)
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOFMsgs (number): Messages Count
@@ -1189,14 +1377,16 @@ class Ptp(Base):
 		"""
 		self._update(locals())
 
-	def add(self, AvnuMode=None, ConnectedVia=None, EnableNegativeTesting=None, Frequency=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
+	def add(self, AvnuMode=None, ConnectedVia=None, EnableNegativeTesting=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
 		"""Adds a new ptp node on the server and retrieves it in this instance.
 
 		Args:
-			AvnuMode (str(aVNU_GPTP|aVNU_NA)): AVNU Mode
+			AvnuMode (str(aVNU_NA|aVNU_GPTP)): AVNU Mode
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			EnableNegativeTesting (bool): Enable Negative Conformance Test
 			Frequency (number): Frequency(N)
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOFMsgs (number): Messages Count
@@ -1219,20 +1409,22 @@ class Ptp(Base):
 		"""
 		self._delete()
 
-	def find(self, AvnuMode=None, ConnectedVia=None, Count=None, DescriptiveName=None, EnableNegativeTesting=None, Errors=None, Frequency=None, Multiplier=None, Name=None, NumberOFMsgs=None, PtpState=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, AvnuMode=None, ConnectedVia=None, Count=None, DescriptiveName=None, EnableNegativeTesting=None, Errors=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, PtpState=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves ptp data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve ptp data from the server.
 		By default the find method takes no parameters and will retrieve all ptp data from the server.
 
 		Args:
-			AvnuMode (str(aVNU_GPTP|aVNU_NA)): AVNU Mode
+			AvnuMode (str(aVNU_NA|aVNU_GPTP)): AVNU Mode
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableNegativeTesting (bool): Enable Negative Conformance Test
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Frequency (number): Frequency(N)
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
+			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOFMsgs (number): Messages Count
@@ -1266,7 +1458,7 @@ class Ptp(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, AlternateMasterFlag=None, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, Bmca=None, ClockAccuracy=None, ClockClass=None, ClockIdentity=None, CommunicationMode=None, CumulativeScaledRateOffset=None, CurrentUtcOffset=None, CustomClockId=None, DelayMechanism=None, DelayReqDropRate=None, DelayReqOffset=None, DelayReqResidenceTime=None, DelayReqSpread=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayRespResidenceTime=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropMalformed=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, FollowUpResidenceTime=None, GmTimeBaseIndicator=None, GrandmasterIdentity=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, HandleAnnounceTlv=None, HandleCancelTlv=None, LastGmPhaseChange=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterClockId=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpv6Address=None, MasterIpv6IncrementBy=None, MasterMacAddress=None, MasterMacIncrementBy=None, MulticastAddress=None, NanosecondsPerSecond=None, NotSlave=None, OffsetScaledLogVariance=None, OneWay=None, PDelayFollowUpDelay=None, PDelayFollowUpDelayInsertionRate=None, PDelayFollowUpDropRate=None, PDelayFollowUpResidenceTime=None, PathTraceTLV=None, PortNumber=None, Priority1=None, Priority2=None, Profile=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ReverseSync=None, ReverseSyncIntervalPercent=None, Role=None, RxCalibration=None, ScaledLastGmFreqChange=None, SendMulticastAnnounce=None, SignalInterval=None, SignalUnicastHandling=None, SimulateBoundary=None, SimulateTransparent=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None, SlaveIpv6Address=None, SlaveIpv6IncrementBy=None, SlaveMacAddress=None, SlaveMacIncrementBy=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, SyncReceiptTimeoutgPTP=None, SyncResidenceTime=None, TimeSource=None, TimestampOffset=None, TxCalibration=None, TxTwoStepCalibration=None, UpdateTime=None):
+	def get_device_ids(self, PortNames=None, AlternateMasterFlag=None, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, Bmca=None, ClockAccuracy=None, ClockClass=None, ClockIdentity=None, CommunicationMode=None, CumulativeScaledRateOffset=None, CurrentLocalOffset=None, CurrentUtcOffset=None, CustomClockId=None, DaylightSaving=None, DefaultSystemFrameRateDenominator=None, DefaultSystemFrameRateNumerator=None, DelayMechanism=None, DelayReqDropRate=None, DelayReqOffset=None, DelayReqResidenceTime=None, DelayReqSpread=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayRespResidenceTime=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropMalformed=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, FolderPath=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, FollowUpResidenceTime=None, GmTimeBaseIndicator=None, GrandmasterIdentity=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, HandleAnnounceTlv=None, HandleCancelTlv=None, JumpSeconds=None, LastGmPhaseChange=None, LeapSecondJump=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogFuturePacketInfo=None, LogManagementMsgInterval=None, LogSyncInterval=None, MasterClockId=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpv6Address=None, MasterIpv6IncrementBy=None, MasterLockingStatus=None, MasterMacAddress=None, MasterMacIncrementBy=None, MulticastAddress=None, NanosecondsPerSecond=None, NotSlave=None, NumRecords=None, OffsetBaseddebuggabilityEnabled=None, OffsetLimit=None, OffsetScaledLogVariance=None, OneWay=None, PDelayFollowUpDelay=None, PDelayFollowUpDelayInsertionRate=None, PDelayFollowUpDropRate=None, PDelayFollowUpResidenceTime=None, PathTraceTLV=None, PortNumber=None, PreviousJamLocalOffset=None, Priority1=None, Priority2=None, Profile=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ReverseSync=None, ReverseSyncIntervalPercent=None, Role=None, RxCalibration=None, ScaledLastGmFreqChange=None, SendMulticastAnnounce=None, SignalInterval=None, SignalUnicastHandling=None, SimulateBoundary=None, SimulateTransparent=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None, SlaveIpv6Address=None, SlaveIpv6IncrementBy=None, SlaveMacAddress=None, SlaveMacIncrementBy=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, SyncReceiptTimeoutgPTP=None, SyncResidenceTime=None, TimeAddressFlags=None, TimeOfNextJam=None, TimeOfNextJump=None, TimeOfPreviousJam=None, TimeSource=None, TimestampOffset=None, TxCalibration=None, TxTwoStepCalibration=None, UpdateTime=None):
 		"""Base class infrastructure that gets a list of ptp device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1288,8 +1480,12 @@ class Ptp(Base):
 			ClockIdentity (str): optional regex of clockIdentity
 			CommunicationMode (str): optional regex of communicationMode
 			CumulativeScaledRateOffset (str): optional regex of cumulativeScaledRateOffset
+			CurrentLocalOffset (str): optional regex of currentLocalOffset
 			CurrentUtcOffset (str): optional regex of currentUtcOffset
 			CustomClockId (str): optional regex of customClockId
+			DaylightSaving (str): optional regex of daylightSaving
+			DefaultSystemFrameRateDenominator (str): optional regex of defaultSystemFrameRateDenominator
+			DefaultSystemFrameRateNumerator (str): optional regex of defaultSystemFrameRateNumerator
 			DelayMechanism (str): optional regex of delayMechanism
 			DelayReqDropRate (str): optional regex of delayReqDropRate
 			DelayReqOffset (str): optional regex of delayReqOffset
@@ -1305,6 +1501,7 @@ class Ptp(Base):
 			DropSignalReqAnnounce (str): optional regex of dropSignalReqAnnounce
 			DropSignalReqDelayResp (str): optional regex of dropSignalReqDelayResp
 			DropSignalReqSync (str): optional regex of dropSignalReqSync
+			FolderPath (str): optional regex of folderPath
 			FollowUpBadCrcRate (str): optional regex of followUpBadCrcRate
 			FollowUpDelay (str): optional regex of followUpDelay
 			FollowUpDelayInsertionRate (str): optional regex of followUpDelayInsertionRate
@@ -1317,10 +1514,14 @@ class Ptp(Base):
 			GrantUnicastDurationInterval (str): optional regex of grantUnicastDurationInterval
 			HandleAnnounceTlv (str): optional regex of handleAnnounceTlv
 			HandleCancelTlv (str): optional regex of handleCancelTlv
+			JumpSeconds (str): optional regex of jumpSeconds
 			LastGmPhaseChange (str): optional regex of lastGmPhaseChange
+			LeapSecondJump (str): optional regex of leapSecondJump
 			LearnPortId (str): optional regex of learnPortId
 			LogAnnounceInterval (str): optional regex of logAnnounceInterval
 			LogDelayReqInterval (str): optional regex of logDelayReqInterval
+			LogFuturePacketInfo (str): optional regex of logFuturePacketInfo
+			LogManagementMsgInterval (str): optional regex of logManagementMsgInterval
 			LogSyncInterval (str): optional regex of logSyncInterval
 			MasterClockId (str): optional regex of masterClockId
 			MasterCount (str): optional regex of masterCount
@@ -1328,11 +1529,15 @@ class Ptp(Base):
 			MasterIpIncrementBy (str): optional regex of masterIpIncrementBy
 			MasterIpv6Address (str): optional regex of masterIpv6Address
 			MasterIpv6IncrementBy (str): optional regex of masterIpv6IncrementBy
+			MasterLockingStatus (str): optional regex of masterLockingStatus
 			MasterMacAddress (str): optional regex of masterMacAddress
 			MasterMacIncrementBy (str): optional regex of masterMacIncrementBy
 			MulticastAddress (str): optional regex of multicastAddress
 			NanosecondsPerSecond (str): optional regex of nanosecondsPerSecond
 			NotSlave (str): optional regex of notSlave
+			NumRecords (str): optional regex of numRecords
+			OffsetBaseddebuggabilityEnabled (str): optional regex of offsetBaseddebuggabilityEnabled
+			OffsetLimit (str): optional regex of offsetLimit
 			OffsetScaledLogVariance (str): optional regex of offsetScaledLogVariance
 			OneWay (str): optional regex of oneWay
 			PDelayFollowUpDelay (str): optional regex of pDelayFollowUpDelay
@@ -1341,6 +1546,7 @@ class Ptp(Base):
 			PDelayFollowUpResidenceTime (str): optional regex of pDelayFollowUpResidenceTime
 			PathTraceTLV (str): optional regex of pathTraceTLV
 			PortNumber (str): optional regex of portNumber
+			PreviousJamLocalOffset (str): optional regex of previousJamLocalOffset
 			Priority1 (str): optional regex of priority1
 			Priority2 (str): optional regex of priority2
 			Profile (str): optional regex of profile
@@ -1372,6 +1578,10 @@ class Ptp(Base):
 			SyncReceiptTimeout (str): optional regex of syncReceiptTimeout
 			SyncReceiptTimeoutgPTP (str): optional regex of syncReceiptTimeoutgPTP
 			SyncResidenceTime (str): optional regex of syncResidenceTime
+			TimeAddressFlags (str): optional regex of timeAddressFlags
+			TimeOfNextJam (str): optional regex of timeOfNextJam
+			TimeOfNextJump (str): optional regex of timeOfNextJump
+			TimeOfPreviousJam (str): optional regex of timeOfPreviousJam
 			TimeSource (str): optional regex of timeSource
 			TimestampOffset (str): optional regex of timestampOffset
 			TxCalibration (str): optional regex of txCalibration
@@ -1385,22 +1595,6 @@ class Ptp(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GPtpSendSignaling(self, *args, **kwargs):
 		"""Executes the gPtpSendSignaling operation on the server.
@@ -1489,23 +1683,23 @@ class Ptp(Base):
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:
 
-		sendgPtpSignaling(Arg2:list, Arg3:enum, Arg4:enum, Arg5:enum, Arg6:bool, Arg7:bool)list
+		DEPRECATED sendgPtpSignaling(Arg2:list, Arg3:enum, Arg4:enum, Arg5:enum, Arg6:bool, Arg7:bool)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose PTP sessions are used as the source of the signaling messages.
-				args[1] is Arg3 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired linkDelayInterval
-				args[2] is Arg4 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired timeSyncInterval
-				args[3] is Arg5 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired announceInterval
+				args[1] is Arg3 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired linkDelayInterval
+				args[2] is Arg4 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired timeSyncInterval
+				args[3] is Arg5 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired announceInterval
 				args[4] is Arg6 (bool): computeNeighborRateRatio flag
 				args[5] is Arg7 (bool): computeNeighborPropDelay flag
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
-		sendgPtpSignaling(Arg2:enum, Arg3:enum, Arg4:enum, Arg5:bool, Arg6:bool)list
+		DEPRECATED sendgPtpSignaling(Arg2:enum, Arg3:enum, Arg4:enum, Arg5:bool, Arg6:bool)list
 			Args:
-				args[0] is Arg2 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired linkDelayInterval
-				args[1] is Arg3 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired timeSyncInterval
-				args[2] is Arg4 (str(doNotChange|initial|stop|v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|vneg1_2_per_second_|vneg2_4_per_second_|vneg3_8_per_second_|vneg4_16_per_second_|vneg5_32_per_second_|vneg6_64_per_second_|vneg7_128_per_second_|vneg8_256_per_second_|vneg9_512_per_second_)): Desired announceInterval
+				args[0] is Arg2 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired linkDelayInterval
+				args[1] is Arg3 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired timeSyncInterval
+				args[2] is Arg4 (str(v0_1_per_second_|v1_1_per_2_seconds_|v2_1_per_4_seconds_|v3_1_per_8_seconds_|v4_1_per_16_seconds_|v5_1_per_32_seconds_|v6_1_per_64_seconds_|v7_1_per_128_seconds_|v8_1_per_256_seconds_|v9_1_per_512_seconds_|initial|stop|doNotChange|vneg9_512_per_second_|vneg8_256_per_second_|vneg7_128_per_second_|vneg6_64_per_second_|vneg5_32_per_second_|vneg4_16_per_second_|vneg3_8_per_second_|vneg2_4_per_second_|vneg1_2_per_second_)): Desired announceInterval
 				args[3] is Arg5 (bool): computeNeighborRateRatio flag
 				args[4] is Arg6 (bool): computeNeighborPropDelay flag
 

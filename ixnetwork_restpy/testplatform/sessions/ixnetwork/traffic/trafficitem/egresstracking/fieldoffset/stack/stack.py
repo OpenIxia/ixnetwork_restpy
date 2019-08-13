@@ -152,6 +152,21 @@ class Stack(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('appendProtocol', payload=payload, response_object=None)
 
+	def GetValidProtocols(self):
+		"""Executes the getValidProtocols operation on the server.
+
+		Retrieves the list of recommended protocols that can be added on top of the current protocol.
+
+			Returns:
+				list(str): This exec returns an array containing: the name of the protocol, the reference of the protocol and the type of it (successor or ancestor)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		return self._execute('getValidProtocols', payload=payload, response_object=None)
+
 	def Insert(self, *args, **kwargs):
 		"""Executes the insert operation on the server.
 

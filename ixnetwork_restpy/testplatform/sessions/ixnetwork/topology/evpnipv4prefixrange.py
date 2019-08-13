@@ -144,6 +144,24 @@ class EvpnIPv4PrefixRange(Base):
 		return self._get_attribute('active')
 
 	@property
+	def AdvSrv6SidInIgp(self):
+		"""Advertise SRv6 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6SidInIgp')
+
+	@property
+	def AdvertiseSRv6SID(self):
+		"""Advertise SRv6 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6SID')
+
+	@property
 	def AggregatorAs(self):
 		"""Aggregator AS
 
@@ -172,7 +190,7 @@ class EvpnIPv4PrefixRange(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -181,7 +199,7 @@ class EvpnIPv4PrefixRange(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -464,6 +482,60 @@ class EvpnIPv4PrefixRange(Base):
 		"""
 		return self._get_attribute('setNextHopIpType')
 
+	@property
+	def Srv6SidFlags(self):
+		"""SRv6 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidFlags')
+
+	@property
+	def Srv6SidLoc(self):
+		"""SRv6 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLoc')
+
+	@property
+	def Srv6SidLocLen(self):
+		"""SRv6 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocLen')
+
+	@property
+	def Srv6SidLocMetric(self):
+		"""SRv6 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidLocMetric')
+
+	@property
+	def Srv6SidReserved(self):
+		"""SRv6 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReserved')
+
+	@property
+	def Srv6SidStep(self):
+		"""Route Range SRv6 SID Step
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidStep')
+
 	def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
 		"""Updates a child instance of evpnIPv4PrefixRange on the server.
 
@@ -516,8 +588,8 @@ class EvpnIPv4PrefixRange(Base):
 		By default the find method takes no parameters and will retrieve all evpnIPv4PrefixRange data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Ipv4Address (list(str)): IPv4 Address
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
@@ -548,7 +620,7 @@ class EvpnIPv4PrefixRange(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelMode=None, LabelStart=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, SetNextHop=None, SetNextHopIpType=None):
+	def get_device_ids(self, PortNames=None, Active=None, AdvSrv6SidInIgp=None, AdvertiseSRv6SID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelMode=None, LabelStart=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, SetNextHop=None, SetNextHopIpType=None, Srv6SidFlags=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None, Srv6SidStep=None):
 		"""Base class infrastructure that gets a list of evpnIPv4PrefixRange device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -556,6 +628,8 @@ class EvpnIPv4PrefixRange(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
+			AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
+			AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
 			AggregatorAs (str): optional regex of aggregatorAs
 			AggregatorId (str): optional regex of aggregatorId
 			AsSetMode (str): optional regex of asSetMode
@@ -582,6 +656,12 @@ class EvpnIPv4PrefixRange(Base):
 			OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
 			SetNextHop (str): optional regex of setNextHop
 			SetNextHopIpType (str): optional regex of setNextHopIpType
+			Srv6SidFlags (str): optional regex of srv6SidFlags
+			Srv6SidLoc (str): optional regex of srv6SidLoc
+			Srv6SidLocLen (str): optional regex of srv6SidLocLen
+			Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+			Srv6SidReserved (str): optional regex of srv6SidReserved
+			Srv6SidStep (str): optional regex of srv6SidStep
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters
@@ -590,22 +670,6 @@ class EvpnIPv4PrefixRange(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.

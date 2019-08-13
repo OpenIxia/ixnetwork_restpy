@@ -92,6 +92,20 @@ class Topology(Base):
 		return BgpIpv6Peer(self)._select()
 
 	@property
+	def BondedGRE(self):
+		"""An instance of the BondedGRE class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bondedgre.bondedgre.BondedGRE)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bondedgre.bondedgre import BondedGRE
+		return BondedGRE(self)._select()
+
+	@property
 	def CfmBridge(self):
 		"""An instance of the CfmBridge class.
 
@@ -104,20 +118,6 @@ class Topology(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cfmbridge.cfmbridge import CfmBridge
 		return CfmBridge(self)._select()
-
-	@property
-	def DefaultStacks(self):
-		"""An instance of the DefaultStacks class.
-
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.defaultstacks.defaultstacks.DefaultStacks)
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.defaultstacks.defaultstacks import DefaultStacks
-		return DefaultStacks(self)._select()
 
 	@property
 	def Dhcpv4client(self):
@@ -216,6 +216,34 @@ class Topology(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dotonex.dotonex import DotOneX
 		return DotOneX(self)._select()
+
+	@property
+	def ECpriRe(self):
+		"""An instance of the ECpriRe class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprire.ecprire.ECpriRe)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprire.ecprire import ECpriRe
+		return ECpriRe(self)._select()
+
+	@property
+	def ECpriRec(self):
+		"""An instance of the ECpriRec class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec.ECpriRec)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec import ECpriRec
+		return ECpriRec(self)._select()
 
 	@property
 	def EcpriRec(self):
@@ -874,6 +902,20 @@ class Topology(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlan.vxlan import Vxlan
 		return Vxlan(self)._select()
+
+	@property
+	def Vxlanv6(self):
+		"""An instance of the Vxlanv6 class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlanv6.vxlanv6.Vxlanv6)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlanv6.vxlanv6 import Vxlanv6
+		return Vxlanv6(self)._select()
 
 	@property
 	def ApplyOnTheFlyState(self):

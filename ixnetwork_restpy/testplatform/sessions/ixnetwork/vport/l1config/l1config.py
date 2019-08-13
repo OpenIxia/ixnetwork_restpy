@@ -50,8 +50,22 @@ class L1Config(Base):
 		return OAM(self)._select()
 
 	@property
+	def AresOneFourHundredGigLan(self):
+		"""An instance of the AresOneFourHundredGigLan class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.aresonefourhundredgiglan.aresonefourhundredgiglan.AresOneFourHundredGigLan)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.aresonefourhundredgiglan.aresonefourhundredgiglan import AresOneFourHundredGigLan
+		return AresOneFourHundredGigLan(self)._select()
+
+	@property
 	def AtlasFourHundredGigLan(self):
-		"""An instance of the AtlasFourHundredGigLan class.
+		"""An instance of the DEPRECATED AtlasFourHundredGigLan class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.atlasfourhundredgiglan.AtlasFourHundredGigLan)
@@ -146,6 +160,20 @@ class L1Config(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fortygiglan import FortyGigLan
 		return FortyGigLan(self)._select()
+
+	@property
+	def FramePreemption(self):
+		"""An instance of the FramePreemption class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.framepreemption.framepreemption.FramePreemption)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.framepreemption.framepreemption import FramePreemption
+		return FramePreemption(self)._select()
 
 	@property
 	def HundredGigLan(self):
@@ -278,7 +306,7 @@ class L1Config(Base):
 		"""Indicates the five types of ports for configuration to choose from.
 
 		Returns:
-			str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)
+			str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)
 		"""
 		return self._get_attribute('currentType')
 	@CurrentType.setter
@@ -289,7 +317,7 @@ class L1Config(Base):
 		"""Updates a child instance of l1Config on the server.
 
 		Args:
-			CurrentType (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): Indicates the five types of ports for configuration to choose from.
+			CurrentType (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): Indicates the five types of ports for configuration to choose from.
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition

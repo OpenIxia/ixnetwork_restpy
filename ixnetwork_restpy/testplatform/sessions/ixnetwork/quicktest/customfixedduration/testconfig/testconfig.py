@@ -484,7 +484,7 @@ class TestConfig(Base):
 		"""Specifies the framesize mode.
 
 		Returns:
-			str(custom|customlist|fixed|increment|random)
+			str(custom|fixed|increment|random|unchanged)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1396,7 +1396,7 @@ class TestConfig(Base):
 			FixedRate (number): Specifies the fixed rate.
 			ForceRegenerate (bool): If true, regenerates force.
 			FrameLossUnit (str): Specifies frame loss unit value.
-			FrameSizeMode (str(custom|customlist|fixed|increment|random)): Specifies the framesize mode.
+			FrameSizeMode (str(custom|fixed|increment|random|unchanged)): Specifies the framesize mode.
 			FramesPerBurstGap (number): Specifies the frames per burst gap.
 			Framesize (str): It signifies the frame size.
 			FramesizeFixedValue (number): It signifies the framesize fixed value.

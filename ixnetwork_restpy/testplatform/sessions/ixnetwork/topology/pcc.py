@@ -173,7 +173,7 @@ class Pcc(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -191,7 +191,7 @@ class Pcc(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -238,6 +238,24 @@ class Pcc(Base):
 		return self._get_attribute('keepaliveInterval')
 
 	@property
+	def LspInstantiationCapability(self):
+		"""DEPRECATED If Stateful PCE Capability is enabled then this control should be activated to set the LSP Instantiation capability in the Stateful PCE Capability TLV.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspInstantiationCapability')
+
+	@property
+	def LspUpdateCapability(self):
+		"""DEPRECATED If Stateful PCE Capability is enabled then this control should be activated to set the update capability in the Stateful PCE Capability TLV.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('lspUpdateCapability')
+
+	@property
 	def MD5Key(self):
 		"""DEPRECATED A value to be used as the secret MD5 Key.
 
@@ -245,6 +263,15 @@ class Pcc(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('mD5Key')
+
+	@property
+	def MaxLspPerPcReq(self):
+		"""DEPRECATED Max LSPs Per PCReq
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxLspPerPcReq')
 
 	@property
 	def MaxLspsPerPcRpt(self):
@@ -415,6 +442,24 @@ class Pcc(Base):
 		return self._get_attribute('srPceCapability')
 
 	@property
+	def Srv6MaxSL(self):
+		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) in the SRH.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6MaxSL')
+
+	@property
+	def Srv6PceCapability(self):
+		"""DEPRECATED The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type. This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6PceCapability')
+
+	@property
 	def StackedLayers(self):
 		"""DEPRECATED List of secondary (many to one) child layer protocols
 
@@ -524,8 +569,8 @@ class Pcc(Base):
 		Args:
 			Active_pre_established_lsps (number): 
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			ExpectedInitiatedLspsForTraffic (number): Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -561,7 +606,7 @@ class Pcc(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, ErrorValue=None, KeepaliveInterval=None, MD5Key=None, MaxLspsPerPcRpt=None, MaxReconnectInterval=None, MaxRequestedLspPerInterval=None, MaxSyncLspPerInterval=None, MaximumSidDepth=None, PccPpagTLVType=None, PceIpv4Address=None, RateControl=None, ReconnectInterval=None, ReturnInstantiationError=None, SrPceCapability=None, StateTimeoutInterval=None, TcpPort=None):
+	def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, ErrorValue=None, KeepaliveInterval=None, LspInstantiationCapability=None, LspUpdateCapability=None, MD5Key=None, MaxLspPerPcReq=None, MaxLspsPerPcRpt=None, MaxReconnectInterval=None, MaxRequestedLspPerInterval=None, MaxSyncLspPerInterval=None, MaximumSidDepth=None, PccPpagTLVType=None, PceIpv4Address=None, RateControl=None, ReconnectInterval=None, ReturnInstantiationError=None, SrPceCapability=None, Srv6MaxSL=None, Srv6PceCapability=None, StateTimeoutInterval=None, TcpPort=None):
 		"""Base class infrastructure that gets a list of pcc device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -574,7 +619,10 @@ class Pcc(Base):
 			DeadInterval (str): optional regex of deadInterval
 			ErrorValue (str): optional regex of errorValue
 			KeepaliveInterval (str): optional regex of keepaliveInterval
+			LspInstantiationCapability (str): optional regex of lspInstantiationCapability
+			LspUpdateCapability (str): optional regex of lspUpdateCapability
 			MD5Key (str): optional regex of mD5Key
+			MaxLspPerPcReq (str): optional regex of maxLspPerPcReq
 			MaxLspsPerPcRpt (str): optional regex of maxLspsPerPcRpt
 			MaxReconnectInterval (str): optional regex of maxReconnectInterval
 			MaxRequestedLspPerInterval (str): optional regex of maxRequestedLspPerInterval
@@ -586,6 +634,8 @@ class Pcc(Base):
 			ReconnectInterval (str): optional regex of reconnectInterval
 			ReturnInstantiationError (str): optional regex of returnInstantiationError
 			SrPceCapability (str): optional regex of srPceCapability
+			Srv6MaxSL (str): optional regex of srv6MaxSL
+			Srv6PceCapability (str): optional regex of srv6PceCapability
 			StateTimeoutInterval (str): optional regex of stateTimeoutInterval
 			TcpPort (str): optional regex of tcpPort
 
@@ -631,22 +681,6 @@ class Pcc(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearPccLearnedInfoInClient', payload=payload, response_object=None)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
 	def GetPccBasicAllSrLspLearnedInfo(self, *args, **kwargs):
 		"""Executes the getPccBasicAllSrLspLearnedInfo operation on the server.
 
@@ -680,6 +714,40 @@ class Pcc(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPccBasicAllSrLspLearnedInfo', payload=payload, response_object=None)
+
+	def GetPccBasicAllSrv6LspLearnedInfo(self, *args, **kwargs):
+		"""Executes the getPccBasicAllSrv6LspLearnedInfo operation on the server.
+
+		Gets Basic Information about All SRv6 LSPs learnt by this PCC.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPccBasicAllSrv6LspLearnedInfo()
+
+		getPccBasicAllSrv6LspLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPccBasicAllSrv6LspLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPccBasicAllSrv6LspLearnedInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPccBasicAllSrv6LspLearnedInfo', payload=payload, response_object=None)
 
 	def GetPccBasicSrPccRequestedLspLearnedInfo(self, *args, **kwargs):
 		"""Executes the getPccBasicSrPccRequestedLspLearnedInfo operation on the server.
@@ -783,6 +851,108 @@ class Pcc(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPccBasicSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
 
+	def GetPccBasicSrv6PccRequestedLspLearnedInfo(self, *args, **kwargs):
+		"""Executes the getPccBasicSrv6PccRequestedLspLearnedInfo operation on the server.
+
+		Gets Basic Information about SRv6 PCC Requested LSPs learnt by this PCC.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPccBasicSrv6PccRequestedLspLearnedInfo()
+
+		getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPccBasicSrv6PccRequestedLspLearnedInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPccBasicSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
+
+	def GetPccBasicSrv6PccSyncOrReportLspLearnedInfo(self, *args, **kwargs):
+		"""Executes the getPccBasicSrv6PccSyncOrReportLspLearnedInfo operation on the server.
+
+		Gets Basic Information about SRv6 PCC Sync/Report LSPs learnt by this PCC.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPccBasicSrv6PccSyncOrReportLspLearnedInfo()
+
+		getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPccBasicSrv6PccSyncOrReportLspLearnedInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPccBasicSrv6PccSyncOrReportLspLearnedInfo', payload=payload, response_object=None)
+
+	def GetPccBasicSrv6PceInitiatedLspLearnedInfo(self, *args, **kwargs):
+		"""Executes the getPccBasicSrv6PceInitiatedLspLearnedInfo operation on the server.
+
+		Gets Basic Information about SRv6 PCE Initiated LSPs learnt by this PCC.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPccBasicSrv6PceInitiatedLspLearnedInfo()
+
+		getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPccBasicSrv6PceInitiatedLspLearnedInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPccBasicSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+
 	def GetPccLearnedInfo(self, *args, **kwargs):
 		"""Executes the getPccLearnedInfo operation on the server.
 
@@ -816,6 +986,40 @@ class Pcc(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPccLearnedInfo', payload=payload, response_object=None)
+
+	def GetPccSrv6LearnedInfo(self, *args, **kwargs):
+		"""Executes the getPccSrv6LearnedInfo operation on the server.
+
+		Gets Detailed Information about All SRv6 LSPs learnt by this PCC.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPccSrv6LearnedInfo()
+
+		getPccSrv6LearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPccSrv6LearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPccSrv6LearnedInfo(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): ID to associate each async action invocation
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPccSrv6LearnedInfo', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.

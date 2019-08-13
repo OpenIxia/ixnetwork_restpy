@@ -254,6 +254,18 @@ class Traffic(Base):
 		self._set_attribute('detectMisdirectedOnAllPorts', value)
 
 	@property
+	def DisablePortLevelMisdirected(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('disablePortLevelMisdirected')
+	@DisablePortLevelMisdirected.setter
+	def DisablePortLevelMisdirected(self, value):
+		self._set_attribute('disablePortLevelMisdirected', value)
+
+	@property
 	def DisplayMplsCurrentLabelValue(self):
 		"""DEPRECATED Displays current label value for LSP Endpoints.
 
@@ -323,6 +335,18 @@ class Traffic(Base):
 		self._set_attribute('enableInstantaneousStatsSupport', value)
 
 	@property
+	def EnableLagAutoRate(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('enableLagAutoRate')
+	@EnableLagAutoRate.setter
+	def EnableLagAutoRate(self, value):
+		self._set_attribute('enableLagAutoRate', value)
+
+	@property
 	def EnableLagFlowBalancing(self):
 		"""DEPRECATED 
 
@@ -333,6 +357,30 @@ class Traffic(Base):
 	@EnableLagFlowBalancing.setter
 	def EnableLagFlowBalancing(self, value):
 		self._set_attribute('enableLagFlowBalancing', value)
+
+	@property
+	def EnableLagFlowFailoverMode(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('enableLagFlowFailoverMode')
+	@EnableLagFlowFailoverMode.setter
+	def EnableLagFlowFailoverMode(self, value):
+		self._set_attribute('enableLagFlowFailoverMode', value)
+
+	@property
+	def EnableLagRebalanceOnPortUp(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('enableLagRebalanceOnPortUp')
+	@EnableLagRebalanceOnPortUp.setter
+	def EnableLagRebalanceOnPortUp(self, value):
+		self._set_attribute('enableLagRebalanceOnPortUp', value)
 
 	@property
 	def EnableMinFrameSize(self):
@@ -646,7 +694,7 @@ class Traffic(Base):
 	def WaitTime(self, value):
 		self._set_attribute('waitTime', value)
 
-	def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisplayMplsCurrentLabelValue=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableInstantaneousStatsSupport=None, EnableLagFlowBalancing=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+	def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
 		"""Updates a child instance of traffic on the server.
 
 		Args:
@@ -660,12 +708,16 @@ class Traffic(Base):
 			DestMacRetryCount (number): The number of time to attempt to obtain the destination MAC address.
 			DestMacRetryDelay (number): The number of seconds to wait between attempts to obtain the destination MAC address.
 			DetectMisdirectedOnAllPorts (bool): 
+			DisablePortLevelMisdirected (bool): 
 			DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
 			EnableDataIntegrityCheck (bool): If true, enable data integrity check.
 			EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
 			EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
 			EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
+			EnableLagAutoRate (bool): 
 			EnableLagFlowBalancing (bool): 
+			EnableLagFlowFailoverMode (bool): 
+			EnableLagRebalanceOnPortUp (bool): 
 			EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
 			EnableMulticastScalingFactor (bool): If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
 			EnableSequenceChecking (bool): If true, this field enables sequence checking. The default is false.
@@ -742,18 +794,6 @@ class Traffic(Base):
 		"""
 		payload = { "Arg1": self.href }
 		return self._execute('applyStatefulTraffic', payload=payload, response_object=None)
-
-	def GenerateIfRequired(self):
-		"""Executes the generateIfRequired operation on the server.
-
-		causes regeneration of dirty traffic items
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('generateIfRequired', payload=payload, response_object=None)
 
 	def GetFrameCountForDuration(self, *args, **kwargs):
 		"""Executes the getFrameCountForDuration operation on the server.

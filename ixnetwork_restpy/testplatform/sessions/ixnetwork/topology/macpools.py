@@ -178,7 +178,7 @@ class MacPools(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -187,7 +187,7 @@ class MacPools(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -235,7 +235,7 @@ class MacPools(Base):
 
 	@property
 	def NumberOfAddresses(self):
-		"""Number of MAC addresses in the simulated MAC range
+		"""DEPRECATED Number of MAC addresses in the simulated MAC range
 
 		Returns:
 			number
@@ -246,8 +246,17 @@ class MacPools(Base):
 		self._set_attribute('numberOfAddresses', value)
 
 	@property
+	def NumberOfAddressesAsy(self):
+		"""DEPRECATED Number of MAC addresses in the simulated MAC range
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('numberOfAddressesAsy')
+
+	@property
 	def PrefixLength(self):
-		"""The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+		"""DEPRECATED The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -328,8 +337,8 @@ class MacPools(Base):
 		By default the find method takes no parameters and will retrieve all macPools data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			LastMacAddress (list(str)): Last Address of network addresses in the simulated MAC network range
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range
@@ -359,7 +368,7 @@ class MacPools(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, PrefixLength=None):
+	def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, NumberOfAddressesAsy=None, PrefixLength=None):
 		"""Base class infrastructure that gets a list of macPools device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -368,6 +377,7 @@ class MacPools(Base):
 			PortNames (str): optional regex of port names
 			EnableVlans (str): optional regex of enableVlans
 			Mac (str): optional regex of mac
+			NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
 			PrefixLength (str): optional regex of prefixLength
 
 		Returns:
@@ -377,22 +387,6 @@ class MacPools(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self):
 		"""Executes the start operation on the server.

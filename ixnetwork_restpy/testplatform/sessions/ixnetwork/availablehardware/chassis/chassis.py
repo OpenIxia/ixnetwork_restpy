@@ -75,6 +75,15 @@ class Chassis(Base):
 		self._set_attribute('chainTopology', value)
 
 	@property
+	def ChassisOSType(self):
+		"""
+
+		Returns:
+			str(linux|unknown|windows)
+		"""
+		return self._get_attribute('chassisOSType')
+
+	@property
 	def ChassisType(self):
 		"""The type of chassis.
 
@@ -251,7 +260,7 @@ class Chassis(Base):
 		"""
 		self._delete()
 
-	def find(self, CableLength=None, ChainTopology=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
+	def find(self, CableLength=None, ChainTopology=None, ChassisOSType=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
 		"""Finds and retrieves chassis data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve chassis data from the server.
@@ -260,6 +269,7 @@ class Chassis(Base):
 		Args:
 			CableLength (number): Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
 			ChainTopology (str(daisy|none|star)): The chain topology type. This must be defined on the master chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
+			ChassisOSType (str(linux|unknown|windows)): 
 			ChassisType (str): The type of chassis.
 			ChassisVersion (str): The version of the Chassis in use.
 			ConnectRetries (number): The number of time the client attempted to re-connect with the chassis. (read only)

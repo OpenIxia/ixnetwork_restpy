@@ -23,17 +23,17 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class Links(Base):
-	"""The Links class encapsulates a system managed links node in the ixnetwork hierarchy.
+class Link(Base):
+	"""The Link class encapsulates a required link node in the ixnetwork hierarchy.
 
-	An instance of the class can be obtained by accessing the Links property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	An instance of the class can be obtained by accessing the Link property from a parent instance.
+	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
 	"""
 
-	_SDM_NAME = 'links'
+	_SDM_NAME = 'link'
 
 	def __init__(self, parent):
-		super(Links, self).__init__(parent)
+		super(Link, self).__init__(parent)
 
 	@property
 	def Active(self):
@@ -45,17 +45,8 @@ class Links(Base):
 		return self._get_attribute('active')
 
 	@property
-	def BridgeId(self):
-		"""Bridge ID
-
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('bridgeId')
-
-	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -64,7 +55,7 @@ class Links(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -129,7 +120,7 @@ class Links(Base):
 		return self._get_attribute('toMpIndex')
 
 	def update(self, Name=None):
-		"""Updates a child instance of links on the server.
+		"""Updates a child instance of link on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
@@ -142,43 +133,8 @@ class Links(Base):
 		"""
 		self._update(locals())
 
-	def find(self, BridgeId=None, Count=None, DescriptiveName=None, Name=None):
-		"""Finds and retrieves links data from the server.
-
-		All named parameters support regex and can be used to selectively retrieve links data from the server.
-		By default the find method takes no parameters and will retrieve all links data from the server.
-
-		Args:
-			BridgeId (list(str)): Bridge ID
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-
-		Returns:
-			self: This instance with matching links data retrieved from the server available through an iterator or index
-
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
-
-	def read(self, href):
-		"""Retrieves a single instance of links data from the server.
-
-		Args:
-			href (str): An href to the instance to be retrieved
-
-		Returns:
-			self: This instance with the links data from the server available through an iterator or index
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
-
 	def get_device_ids(self, PortNames=None, Active=None, FromMp=None, FromMpIndex=None, LinkType=None, ToMp=None, ToMpIndex=None):
-		"""Base class infrastructure that gets a list of links device ids encapsulated by this object.
+		"""Base class infrastructure that gets a list of link device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -198,19 +154,3 @@ class Links(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

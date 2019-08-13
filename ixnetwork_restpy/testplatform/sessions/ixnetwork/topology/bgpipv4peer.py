@@ -548,7 +548,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV4Mdt(self):
-		"""IPv4 MDT
+		"""IPv4 BGP MDT: AFI = 1, SAFI = 66
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -566,7 +566,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV4MplsVpn(self):
-		"""DEPRECATED IPv4 MPLS VPN
+		"""DEPRECATED IPv4 MPLS VPN Capability: AFI=1,SAFI=128
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -575,7 +575,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV4Multicast(self):
-		"""DEPRECATED IPv4 Multicast
+		"""DEPRECATED IPv4 Multicast Capability: AFI=1,SAFI=2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -584,7 +584,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV4MulticastVpn(self):
-		"""DEPRECATED IPv4 Multicast VPN
+		"""DEPRECATED IP MCAST-VPN: AFI = 1, SAFI = 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -593,7 +593,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV4Unicast(self):
-		"""DEPRECATED IPv4 Unicast
+		"""DEPRECATED IPv4 Unicast Capability: AFI=1,SAFI=1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -611,7 +611,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV6MplsVpn(self):
-		"""DEPRECATED IPv6 MPLS VPN
+		"""DEPRECATED IPv6 MPLS VPN Capability: AFI=2,SAFI=128
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -620,7 +620,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV6Multicast(self):
-		"""DEPRECATED IPv6 Multicast
+		"""DEPRECATED IPv6 Multicast Capability: AFI=2,SAFI=2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -629,7 +629,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV6MulticastVpn(self):
-		"""DEPRECATED IPv6 Multicast VPN
+		"""DEPRECATED IP6 MCAST-VPN: AFI = 2, SAFI = 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -638,7 +638,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityIpV6Unicast(self):
-		"""DEPRECATED IPv6 Unicast
+		"""DEPRECATED IPv6 Unicast Capability: AFI=2,SAFI=1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -689,7 +689,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityLinkStateNonVpn(self):
-		"""DEPRECATED Link State Non-VPN
+		"""DEPRECATED Link State Non-VPN Capability: AFI=16388,SAFI=71
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -698,7 +698,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityRouteConstraint(self):
-		"""DEPRECATED Route Constraint
+		"""DEPRECATED Route Constraint Capability: AFI=1,SAFI=132
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -716,7 +716,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilitySRTEPoliciesV4(self):
-		"""DEPRECATED Enable IPv4 SR TE Policy Capability
+		"""DEPRECATED IPv4 SR TE Policy Capability: AFI=1,SAFI=73
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -725,7 +725,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilitySRTEPoliciesV6(self):
-		"""DEPRECATED Enable IPv6 SR TE Policy Capability
+		"""DEPRECATED IPv6 SR TE Policy Capability: AFI=2,SAFI=73
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -734,7 +734,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def CapabilityVpls(self):
-		"""DEPRECATED VPLS
+		"""DEPRECATED VPLS Capability: AFI = 25, SAFI = 65
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -743,7 +743,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Capabilityipv4UnicastFlowSpec(self):
-		"""DEPRECATED IPv4 Unicast Flow Spec
+		"""DEPRECATED IPv4 Unicast Flow Spec Capability: AFI=1,SAFI=133
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -752,7 +752,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Capabilityipv6UnicastFlowSpec(self):
-		"""DEPRECATED IPv6 Unicast Flow Spec
+		"""DEPRECATED IPv6 Unicast Flow Spec Capability: AFI=2,SAFI=133
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -782,7 +782,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -800,7 +800,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -932,7 +932,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Evpn(self):
-		"""DEPRECATED Check box for EVPN
+		"""DEPRECATED EVPN Capability: AFI = 25, SAFI = 70
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1133,7 +1133,7 @@ class BgpIpv4Peer(Base):
 		"""DEPRECATED IP-VRF-to-IP-VRF Model Type
 
 		Returns:
-			str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)
+			str(interfaceLess|interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB)
 		"""
 		return self._get_attribute('ipVrfToIpVrfType')
 	@IpVrfToIpVrfType.setter
@@ -1151,7 +1151,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv4MplsCapability(self):
-		"""DEPRECATED IPv4 MPLS Capability
+		"""DEPRECATED IPv4 MPLS Capability: AFI=1, SAFI=4
 
 		Returns:
 			bool
@@ -1163,7 +1163,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv4MulticastBgpMplsVpn(self):
-		"""DEPRECATED Check box for IPv4 Multicast BGP/MPLS VPN
+		"""DEPRECATED IP Multicast for BGP/MPLS IP VPN (UMH): AFI = 1, SAFI = 129
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1172,7 +1172,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv4MultipleMplsLabelsCapability(self):
-		"""DEPRECATED IPv4 Multiple MPLS Labels Capability
+		"""DEPRECATED IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
 
 		Returns:
 			bool
@@ -1202,7 +1202,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv6MplsCapability(self):
-		"""DEPRECATED IPv6 MPLS Capability
+		"""DEPRECATED IPv6 MPLS Capability: AFI=2, SAFI=4
 
 		Returns:
 			bool
@@ -1214,7 +1214,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv6MulticastBgpMplsVpn(self):
-		"""DEPRECATED Check box for IPv6 Multicast BGP/MPLS VPN
+		"""DEPRECATED IP6 Multicast for BGP/MPLS IP VPN (UMH): AFI = 2, SAFI = 129
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1223,7 +1223,7 @@ class BgpIpv4Peer(Base):
 
 	@property
 	def Ipv6MultipleMplsLabelsCapability(self):
-		"""DEPRECATED IPv6 Multiple MPLS Labels Capability
+		"""DEPRECATED IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
 
 		Returns:
 			bool
@@ -1687,11 +1687,11 @@ class BgpIpv4Peer(Base):
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			EnableEpeTraffic (bool): Enable EPE Traffic
 			EthernetSegmentsCountV4 (number): Number of Ethernet Segments
-			IpVrfToIpVrfType (str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)): IP-VRF-to-IP-VRF Model Type
-			Ipv4MplsCapability (bool): IPv4 MPLS Capability
-			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability
-			Ipv6MplsCapability (bool): IPv6 MPLS Capability
-			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability
+			IpVrfToIpVrfType (str(interfaceLess|interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+			Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
+			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
+			Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
+			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
 			MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
 			MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -1725,11 +1725,11 @@ class BgpIpv4Peer(Base):
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			EnableEpeTraffic (bool): Enable EPE Traffic
 			EthernetSegmentsCountV4 (number): Number of Ethernet Segments
-			IpVrfToIpVrfType (str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)): IP-VRF-to-IP-VRF Model Type
-			Ipv4MplsCapability (bool): IPv4 MPLS Capability
-			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability
-			Ipv6MplsCapability (bool): IPv6 MPLS Capability
-			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability
+			IpVrfToIpVrfType (str(interfaceLess|interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+			Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
+			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
+			Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
+			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
 			MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
 			MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -1777,16 +1777,16 @@ class BgpIpv4Peer(Base):
 			CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
 			CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableEpeTraffic (bool): Enable EPE Traffic
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			EthernetSegmentsCountV4 (number): Number of Ethernet Segments
-			IpVrfToIpVrfType (str(interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB|interfaceLess)): IP-VRF-to-IP-VRF Model Type
-			Ipv4MplsCapability (bool): IPv4 MPLS Capability
-			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability
-			Ipv6MplsCapability (bool): IPv6 MPLS Capability
-			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability
+			IpVrfToIpVrfType (str(interfaceLess|interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+			Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
+			Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
+			Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
+			Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
 			LocalIpv4Ver2 (list(str)): Local IP
 			LocalRouterID (list(str)): Router ID
 			MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
@@ -2102,22 +2102,6 @@ class BgpIpv4Peer(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GetADVPLSLearnedInfo(self, *args, **kwargs):
 		"""Executes the getADVPLSLearnedInfo operation on the server.

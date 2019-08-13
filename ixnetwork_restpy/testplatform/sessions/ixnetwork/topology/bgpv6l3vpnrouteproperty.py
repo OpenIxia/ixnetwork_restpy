@@ -168,7 +168,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def AdvSrv6SidInIgp(self):
-		"""Advertise SRv6 SID in IGP (ISIS)
+		"""Advertise SRv6 SID Locator in IGP (ISIS)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -267,7 +267,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -276,7 +276,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Delay(self):
-		"""Delay
+		"""Delay in Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -285,7 +285,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -812,6 +812,33 @@ class BgpV6L3VpnRouteProperty(Base):
 		return self._get_attribute('partialFlap')
 
 	@property
+	def SendSRv6SIDOptionalInfo(self):
+		"""If we need to advertise SRv6 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('sendSRv6SIDOptionalInfo')
+
+	@property
+	def Srv6EndpointBehavior(self):
+		"""SRv6 Endpoint Behavior field Value for all routes in this Route Range
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6EndpointBehavior')
+
+	@property
+	def Srv6SIDOptionalInformation(self):
+		"""SRv6 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SIDOptionalInformation')
+
+	@property
 	def Srv6SidFlags(self):
 		"""SRv6 SID Flags field Value for all route in this Route Range
 
@@ -840,7 +867,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidLocLen(self):
-		"""DEPRECATED SRv6 SID Locator Length
+		"""DEPRECATED SRv6 SID Locator Length to be advertised in IGP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -849,7 +876,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidLocMetric(self):
-		"""DEPRECATED SRv6 SID Locator Metric
+		"""DEPRECATED SRv6 SID Locator Metric for advertisement in IGP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -858,12 +885,30 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidReserved(self):
-		"""DEPRECATED SRv6 SID Reserved Value
+		"""DEPRECATED SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('srv6SidReserved')
+
+	@property
+	def Srv6SidReserved1(self):
+		"""DEPRECATED SRv6 SID Reserved1 Field for Service Information sub-TLV
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReserved1')
+
+	@property
+	def Srv6SidReserved2(self):
+		"""DEPRECATED SRv6 SID Reserved2 Field for Service Information sub-TLV
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6SidReserved2')
 
 	@property
 	def Srv6SidStep(self):
@@ -983,8 +1028,8 @@ class BgpV6L3VpnRouteProperty(Base):
 
 		Args:
 			AsPathASString (list(str)): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableIpv6Receiver (bool): Enable IPv6 Receiver
 			EnableIpv6Sender (bool): Enable IPv6 Sender
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1018,7 +1063,7 @@ class BgpV6L3VpnRouteProperty(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, OverridePeerAsSetMode=None, Active=None, AdvSrv6SidInIgp=None, AdvertiseNexthopAsV4=None, AggregatorAs=None, AggregatorId=None, AggregatorIdMode=None, AsNumSuffixRange=None, AsPathPerRoute=None, AsRandomSeed=None, AsSegDist=None, AsSetMode=None, Delay=None, DistinguisherAsNumber=None, DistinguisherAssignedNumber=None, DistinguisherIpAddress=None, DistinguisherType=None, Downtime=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableFlapping=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRandomAsPath=None, EnableSrv6Sid=None, EnableWeight=None, FlapFromRouteIndex=None, FlapToRouteIndex=None, IncludeRdInNextHopLength=None, IncludeSourceAsExtComm=None, IncludeVrfRouteImportExtComm=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelEnd=None, LabelMode=None, LabelSpaceId=None, LabelStart=None, LabelStep=None, LocalPreference=None, MaxASNumPerSegment=None, MaxNoOfASPathSegmentsPerRouteRange=None, MinASNumPerSegment=None, MinNoOfASPathSegmentsPerRouteRange=None, MultiExitDiscriminator=None, NextHopIPType=None, NextHopIncrementMode=None, NextHopType=None, Origin=None, OriginatorId=None, PackingFrom=None, PackingTo=None, PartialFlap=None, Srv6SidFlags=None, Srv6SidFuncAllocType=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None, Srv6SidStep=None, Uptime=None, UseAsUmhRoutes=None, UseTraditionalNlri=None, Weight=None):
+	def get_device_ids(self, PortNames=None, OverridePeerAsSetMode=None, Active=None, AdvSrv6SidInIgp=None, AdvertiseNexthopAsV4=None, AggregatorAs=None, AggregatorId=None, AggregatorIdMode=None, AsNumSuffixRange=None, AsPathPerRoute=None, AsRandomSeed=None, AsSegDist=None, AsSetMode=None, Delay=None, DistinguisherAsNumber=None, DistinguisherAssignedNumber=None, DistinguisherIpAddress=None, DistinguisherType=None, Downtime=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableFlapping=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRandomAsPath=None, EnableSrv6Sid=None, EnableWeight=None, FlapFromRouteIndex=None, FlapToRouteIndex=None, IncludeRdInNextHopLength=None, IncludeSourceAsExtComm=None, IncludeVrfRouteImportExtComm=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelEnd=None, LabelMode=None, LabelSpaceId=None, LabelStart=None, LabelStep=None, LocalPreference=None, MaxASNumPerSegment=None, MaxNoOfASPathSegmentsPerRouteRange=None, MinASNumPerSegment=None, MinNoOfASPathSegmentsPerRouteRange=None, MultiExitDiscriminator=None, NextHopIPType=None, NextHopIncrementMode=None, NextHopType=None, Origin=None, OriginatorId=None, PackingFrom=None, PackingTo=None, PartialFlap=None, SendSRv6SIDOptionalInfo=None, Srv6EndpointBehavior=None, Srv6SIDOptionalInformation=None, Srv6SidFlags=None, Srv6SidFuncAllocType=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None, Srv6SidReserved1=None, Srv6SidReserved2=None, Srv6SidStep=None, Uptime=None, UseAsUmhRoutes=None, UseTraditionalNlri=None, Weight=None):
 		"""Base class infrastructure that gets a list of bgpV6L3VpnRouteProperty device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1085,12 +1130,17 @@ class BgpV6L3VpnRouteProperty(Base):
 			PackingFrom (str): optional regex of packingFrom
 			PackingTo (str): optional regex of packingTo
 			PartialFlap (str): optional regex of partialFlap
+			SendSRv6SIDOptionalInfo (str): optional regex of sendSRv6SIDOptionalInfo
+			Srv6EndpointBehavior (str): optional regex of srv6EndpointBehavior
+			Srv6SIDOptionalInformation (str): optional regex of srv6SIDOptionalInformation
 			Srv6SidFlags (str): optional regex of srv6SidFlags
 			Srv6SidFuncAllocType (str): optional regex of srv6SidFuncAllocType
 			Srv6SidLoc (str): optional regex of srv6SidLoc
 			Srv6SidLocLen (str): optional regex of srv6SidLocLen
 			Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
 			Srv6SidReserved (str): optional regex of srv6SidReserved
+			Srv6SidReserved1 (str): optional regex of srv6SidReserved1
+			Srv6SidReserved2 (str): optional regex of srv6SidReserved2
 			Srv6SidStep (str): optional regex of srv6SidStep
 			Uptime (str): optional regex of uptime
 			UseAsUmhRoutes (str): optional regex of useAsUmhRoutes
@@ -1266,26 +1316,10 @@ class BgpV6L3VpnRouteProperty(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('enableIpv6Sender', payload=payload, response_object=None)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
 	def ReadvertiseRoutes(self, *args, **kwargs):
 		"""Executes the readvertiseRoutes operation on the server.
 
-		Re-advertise Aged out OSPF Routes in a Route Range
+		Re-advertise Aged out BGP Routes in a Route Range
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:

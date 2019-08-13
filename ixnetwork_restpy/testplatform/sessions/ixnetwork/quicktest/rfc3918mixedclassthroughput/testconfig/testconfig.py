@@ -556,7 +556,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1822,7 +1822,7 @@ class TestConfig(Base):
 			FloodedFramesEnabled (bool): Show Flooded Frames
 			ForceRegenerate (bool): Initiates a forced regeneration.
 			FrameLossUnit (str): The frame loss unit.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
 			FramesizeImixList (str): The list of frame size to be used
 			FramesizeList (list(str)): The list of frame sizes.
 			Gap (number): It signifies the gap value for the protocol.

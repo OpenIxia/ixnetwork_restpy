@@ -160,7 +160,7 @@ class TestConfig(Base):
 		"""
 
 		Returns:
-			str(fixed)
+			str(fixed|increment)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -178,6 +178,42 @@ class TestConfig(Base):
 	@Gap.setter
 	def Gap(self, value):
 		self._set_attribute('gap', value)
+
+	@property
+	def IncrementFramesizeFrom(self):
+		"""
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('incrementFramesizeFrom')
+	@IncrementFramesizeFrom.setter
+	def IncrementFramesizeFrom(self, value):
+		self._set_attribute('incrementFramesizeFrom', value)
+
+	@property
+	def IncrementFramesizeStep(self):
+		"""
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('incrementFramesizeStep')
+	@IncrementFramesizeStep.setter
+	def IncrementFramesizeStep(self, value):
+		self._set_attribute('incrementFramesizeStep', value)
+
+	@property
+	def IncrementFramesizeTo(self):
+		"""
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('incrementFramesizeTo')
+	@IncrementFramesizeTo.setter
+	def IncrementFramesizeTo(self, value):
+		self._set_attribute('incrementFramesizeTo', value)
 
 	@property
 	def IpRatioMode(self):
@@ -311,7 +347,7 @@ class TestConfig(Base):
 	def TrafficType(self, value):
 		self._set_attribute('trafficType', value)
 
-	def update(self, CalculateJitter=None, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
+	def update(self, CalculateJitter=None, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IncrementFramesizeFrom=None, IncrementFramesizeStep=None, IncrementFramesizeTo=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
 		"""Updates a child instance of testConfig on the server.
 
 		Args:
@@ -325,8 +361,11 @@ class TestConfig(Base):
 			FixedFrameSize (number): 
 			FloodedFramesEnabled (bool): 
 			ForceContinuosTraffic (bool): 
-			FrameSizeMode (str(fixed)): 
+			FrameSizeMode (str(fixed|increment)): 
 			Gap (number): 
+			IncrementFramesizeFrom (number): 
+			IncrementFramesizeStep (number): 
+			IncrementFramesizeTo (number): 
 			IpRatioMode (str(custom|fixed|increment|random)): 
 			Ipv4rate (number): 
 			Ipv6rate (number): 

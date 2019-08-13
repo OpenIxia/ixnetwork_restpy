@@ -67,9 +67,6 @@ class KrakenFourHundredGigLan(Base):
 			bool
 		"""
 		return self._get_attribute('enableAutoNegotiation')
-	@EnableAutoNegotiation.setter
-	def EnableAutoNegotiation(self, value):
-		self._set_attribute('enableAutoNegotiation', value)
 
 	@property
 	def EnablePPM(self):
@@ -232,9 +229,6 @@ class KrakenFourHundredGigLan(Base):
 			bool
 		"""
 		return self._get_attribute('linkTraining')
-	@LinkTraining.setter
-	def LinkTraining(self, value):
-		self._set_attribute('linkTraining', value)
 
 	@property
 	def LoopContinuously(self):
@@ -416,13 +410,12 @@ class KrakenFourHundredGigLan(Base):
 	def UseANResults(self, value):
 		self._set_attribute('useANResults', value)
 
-	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
 		"""Updates a child instance of krakenFourHundredGigLan on the server.
 
 		Args:
 			AutoInstrumentation (str(endOfFrame|floating)): The auto instrumentation mode.
 			BadBlocksNumber (number): NOT DEFINED
-			EnableAutoNegotiation (bool): NOT DEFINED
 			EnablePPM (bool): If true, enables the portsppm.
 			EnableRsFec (bool): NOT DEFINED
 			EnableRsFecStats (bool): NOT DEFINED
@@ -435,7 +428,6 @@ class KrakenFourHundredGigLan(Base):
 			ForceDisableFEC (bool): NOT DEFINED
 			GoodBlocksNumber (number): NOT DEFINED
 			LaserOn (bool): NOT DEFINED
-			LinkTraining (bool): NOT DEFINED
 			LoopContinuously (bool): NOT DEFINED
 			LoopCountNumber (number): NOT DEFINED
 			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.

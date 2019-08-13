@@ -37,7 +37,7 @@ class Ere(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +46,7 @@ class Ere(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -54,8 +54,26 @@ class Ere(Base):
 		return self._get_attribute('descriptiveName')
 
 	@property
-	def EcpriProtocolRevision(self):
+	def ECpriProtocolRevision(self):
 		"""eCPRI protocol revision to be used by all eCPRI messages.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriProtocolRevision')
+
+	@property
+	def ECpriUdpDestinationPort(self):
+		"""UDP Destination port to be used by all eCPRI messages in this port.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('eCpriUdpDestinationPort')
+
+	@property
+	def EcpriProtocolRevision(self):
+		"""DEPRECATED eCPRI protocol revision to be used by all eCPRI messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -64,7 +82,7 @@ class Ere(Base):
 
 	@property
 	def EcpriUdpDestinationPort(self):
-		"""UDP Destination port to be used by all eCPRI messages in this port.
+		"""DEPRECATED UDP Destination port to be used by all eCPRI messages in this port.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -73,7 +91,7 @@ class Ere(Base):
 
 	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -85,7 +103,7 @@ class Ere(Base):
 
 	@property
 	def RowNames(self):
-		"""Name of rows
+		"""DEPRECATED Name of rows
 
 		Returns:
 			list(str)
@@ -106,13 +124,15 @@ class Ere(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
+	def get_device_ids(self, PortNames=None, ECpriProtocolRevision=None, ECpriUdpDestinationPort=None, EcpriProtocolRevision=None, EcpriUdpDestinationPort=None):
 		"""Base class infrastructure that gets a list of ere device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
 		Args:
 			PortNames (str): optional regex of port names
+			ECpriProtocolRevision (str): optional regex of eCpriProtocolRevision
+			ECpriUdpDestinationPort (str): optional regex of eCpriUdpDestinationPort
 			EcpriProtocolRevision (str): optional regex of ecpriProtocolRevision
 			EcpriUdpDestinationPort (str): optional regex of ecpriUdpDestinationPort
 
@@ -123,19 +143,3 @@ class Ere(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

@@ -412,7 +412,7 @@ class TestConfig(Base):
 		"""NOT DEFINED
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1126,7 +1126,7 @@ class TestConfig(Base):
 			ForceRegenerate (bool): NOT DEFINED
 			FrameLossUnit (str): NOT DEFINED
 			FrameOrderingByRfc2889 (bool): NOT DEFINED
-			FrameSizeMode (str(custom|customlist|increment|random)): NOT DEFINED
+			FrameSizeMode (str(custom|fixed|increment|random)): NOT DEFINED
 			FramesPerBurstGap (number): NOT DEFINED
 			Framesize (number): Bytes
 			FramesizeList (list(str)): NOT DEFINED

@@ -256,7 +256,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -789,7 +789,7 @@ class TestConfig(Base):
 			FloodedFramesProcessing (bool): Flooded Frames Processing
 			FloodedFramesTemp (str): Flooded Frames Temp
 			ForceRegenerate (bool): If true, enables force regenerate.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
 			FramesizeList (list(str)): The list of the available frame sizes.
 			Gap (number): The gap in transmission of frames.
 			GroupCapacityGreaterThan (number): Indicates the value by which the group capacity is greater than.

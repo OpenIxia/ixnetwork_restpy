@@ -436,7 +436,7 @@ class TestConfig(Base):
 		"""The frame size mode of test configuration.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1260,7 +1260,7 @@ class TestConfig(Base):
 			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
 			ForceRegenerate (bool): If true, the test configuration is forcefully regenerated.
 			FrameLossUnit (str): The frame loss unit.
-			FrameSizeMode (str(custom|customlist|increment|random)): The frame size mode of test configuration.
+			FrameSizeMode (str(custom|fixed|increment|random)): The frame size mode of test configuration.
 			FramelossPercentValue (number): The frame loss percentage value.
 			FramesPerBurstGap (number): The frames per burst gap.
 			FramesizeList (list(str)): The frame size list of the test configuration.

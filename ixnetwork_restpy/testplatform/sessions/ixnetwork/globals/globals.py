@@ -50,6 +50,20 @@ class Globals(Base):
 		return AppErrors(self)
 
 	@property
+	def Diagnostics(self):
+		"""An instance of the Diagnostics class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics.Diagnostics)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics import Diagnostics
+		return Diagnostics(self)._select()
+
+	@property
 	def Interfaces(self):
 		"""An instance of the Interfaces class.
 
@@ -155,6 +169,15 @@ class Globals(Base):
 			str
 		"""
 		return self._get_attribute('buildNumber')
+
+	@property
+	def CommandArgs(self):
+		"""
+
+		Returns:
+			str
+		"""
+		return self._get_attribute('commandArgs')
 
 	@property
 	def ConfigFileName(self):

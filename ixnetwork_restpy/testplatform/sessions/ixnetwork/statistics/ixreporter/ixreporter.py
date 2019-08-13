@@ -37,7 +37,7 @@ class Ixreporter(Base):
 
 	@property
 	def DataCollection(self):
-		"""An instance of the DataCollection class.
+		"""An instance of the DEPRECATED DataCollection class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection.DataCollection)
@@ -51,7 +51,7 @@ class Ixreporter(Base):
 
 	@property
 	def ReportGeneration(self):
-		"""An instance of the ReportGeneration class.
+		"""An instance of the DEPRECATED ReportGeneration class.
 
 		Returns:
 			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration.ReportGeneration)

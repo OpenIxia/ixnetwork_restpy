@@ -79,7 +79,7 @@ class Ipv4(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -88,12 +88,30 @@ class Ipv4(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
 		"""
 		return self._get_attribute('descriptiveName')
+
+	@property
+	def GratarpTransmitCount(self):
+		"""Number of times GRATARP packet is sent per source IPv4 address.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('gratarpTransmitCount')
+
+	@property
+	def GratarpTransmitInterval(self):
+		"""Time interval to calculate next GRATARP packet transmission for each source IPv4 address.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('gratarpTransmitInterval')
 
 	@property
 	def Name(self):
@@ -115,6 +133,24 @@ class Ipv4(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('permanentMacForGateway')
+
+	@property
+	def RarpTransmitCount(self):
+		"""Number of times RARP packet is sent per source IPv4 address.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('rarpTransmitCount')
+
+	@property
+	def RarpTransmitInterval(self):
+		"""Time interval to calculate next RARP packet transmission for each source IPv4 address.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('rarpTransmitInterval')
 
 	@property
 	def ReSendArpOnLinkUp(self):
@@ -157,14 +193,18 @@ class Ipv4(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, PermanentMacForGateway=None, ReSendArpOnLinkUp=None, SuppressArpForDuplicateGateway=None):
+	def get_device_ids(self, PortNames=None, GratarpTransmitCount=None, GratarpTransmitInterval=None, PermanentMacForGateway=None, RarpTransmitCount=None, RarpTransmitInterval=None, ReSendArpOnLinkUp=None, SuppressArpForDuplicateGateway=None):
 		"""Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
 		Args:
 			PortNames (str): optional regex of port names
+			GratarpTransmitCount (str): optional regex of gratarpTransmitCount
+			GratarpTransmitInterval (str): optional regex of gratarpTransmitInterval
 			PermanentMacForGateway (str): optional regex of permanentMacForGateway
+			RarpTransmitCount (str): optional regex of rarpTransmitCount
+			RarpTransmitInterval (str): optional regex of rarpTransmitInterval
 			ReSendArpOnLinkUp (str): optional regex of reSendArpOnLinkUp
 			SuppressArpForDuplicateGateway (str): optional regex of suppressArpForDuplicateGateway
 
@@ -175,19 +215,3 @@ class Ipv4(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

@@ -64,6 +64,20 @@ class LearnedInfoUpdate(Base):
 		return PceBasicSrSyncLspUpdateParams(self)
 
 	@property
+	def PceBasicSrv6SyncLspUpdateParams(self):
+		"""An instance of the PceBasicSrv6SyncLspUpdateParams class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams.PceBasicSrv6SyncLspUpdateParams)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams import PceBasicSrv6SyncLspUpdateParams
+		return PceBasicSrv6SyncLspUpdateParams(self)
+
+	@property
 	def PceDetailedRsvpSyncLspUpdateParams(self):
 		"""An instance of the PceDetailedRsvpSyncLspUpdateParams class.
 
@@ -90,6 +104,20 @@ class LearnedInfoUpdate(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams import PceDetailedSrSyncLspUpdateParams
 		return PceDetailedSrSyncLspUpdateParams(self)
+
+	@property
+	def PceDetailedSrv6SyncLspUpdateParams(self):
+		"""An instance of the PceDetailedSrv6SyncLspUpdateParams class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams.PceDetailedSrv6SyncLspUpdateParams)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams import PceDetailedSrv6SyncLspUpdateParams
+		return PceDetailedSrv6SyncLspUpdateParams(self)
 
 	def find(self):
 		"""Finds and retrieves learnedInfoUpdate data from the server.
@@ -119,19 +147,3 @@ class LearnedInfoUpdate(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._read(href)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

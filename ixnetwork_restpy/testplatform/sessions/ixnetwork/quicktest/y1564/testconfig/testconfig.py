@@ -232,7 +232,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -571,7 +571,7 @@ class TestConfig(Base):
 			ForceRegenerate (bool): Initiates a forced regeneration.
 			FrameDataDetailedResults (bool): NOT DEFINED
 			FrameLossFramesMode (str): NOT DEFINED
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
 			Gap (number): The gap in transmission of frames.
 			GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
 			IsColorAware (bool): If true, it becomes aware of the color.

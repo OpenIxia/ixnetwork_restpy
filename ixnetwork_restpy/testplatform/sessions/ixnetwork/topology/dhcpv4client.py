@@ -65,32 +65,32 @@ class Dhcpv4client(Base):
 		return BgpIpv4Peer(self)
 
 	@property
-	def EcpriRec(self):
-		"""An instance of the EcpriRec class.
+	def ECpriRe(self):
+		"""An instance of the ECpriRe class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.EcpriRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import EcpriRec
-		return EcpriRec(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire import ECpriRe
+		return ECpriRe(self)
 
 	@property
-	def Ere(self):
-		"""An instance of the Ere class.
+	def ECpriRec(self):
+		"""An instance of the ECpriRec class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere.Ere)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere import Ere
-		return Ere(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import ECpriRec
+		return ECpriRec(self)
 
 	@property
 	def Geneve(self):
@@ -288,7 +288,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -297,7 +297,7 @@ class Dhcpv4client(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -526,8 +526,8 @@ class Dhcpv4client(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			DiscoveredAddresses (list(str)): The discovered IPv4 addresses.
 			DiscoveredGateways (list(str)): The discovered gateway IPv4 addresses.
 			DiscoveredPrefix (list(number)): The discovered IPv4 prefix length.
@@ -585,22 +585,6 @@ class Dhcpv4client(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Rebind(self, *args, **kwargs):
 		"""Executes the rebind operation on the server.

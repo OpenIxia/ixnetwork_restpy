@@ -37,18 +37,32 @@ class CfmBridge(Base):
 		super(CfmBridge, self).__init__(parent)
 
 	@property
-	def Connector(self):
-		"""An instance of the Connector class.
+	def AdvancedLearnedInfoOptions(self):
+		"""An instance of the AdvancedLearnedInfoOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector.Connector)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions.AdvancedLearnedInfoOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector import Connector
-		return Connector(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions import AdvancedLearnedInfoOptions
+		return AdvancedLearnedInfoOptions(self)._select()
+
+	@property
+	def CustomTLV(self):
+		"""An instance of the CustomTLV class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv.CustomTLV)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv import CustomTLV
+		return CustomTLV(self)._select()
 
 	@property
 	def LearnedInfo(self):
@@ -65,6 +79,20 @@ class CfmBridge(Base):
 		return LearnedInfo(self)
 
 	@property
+	def Link(self):
+		"""An instance of the Link class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link.Link)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link import Link
+		return Link(self)._select()
+
+	@property
 	def MdLevels(self):
 		"""An instance of the MdLevels class.
 
@@ -76,7 +104,21 @@ class CfmBridge(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mdlevels import MdLevels
-		return MdLevels(self)
+		return MdLevels(self)._select()
+
+	@property
+	def Mp(self):
+		"""An instance of the Mp class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mp.Mp)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mp import Mp
+		return Mp(self)._select()
 
 	@property
 	def Active(self):
@@ -88,13 +130,13 @@ class CfmBridge(Base):
 		return self._get_attribute('active')
 
 	@property
-	def BridgeId(self):
-		"""Bridge ID
+	def AllowCfmMaidFormatsinY1731(self):
+		"""Allow CFM MAID Formats in Y.1731
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
-		return self._get_attribute('bridgeId')
+		return self._get_attribute('allowCfmMaidFormatsinY1731')
 
 	@property
 	def ConnectedVia(self):
@@ -110,7 +152,7 @@ class CfmBridge(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -119,7 +161,7 @@ class CfmBridge(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -196,6 +238,54 @@ class CfmBridge(Base):
 		self._set_attribute('name', value)
 
 	@property
+	def NumberOfCustomTLVs(self):
+		"""DEPRECATED Number of Custom TLVs
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('numberOfCustomTLVs')
+	@NumberOfCustomTLVs.setter
+	def NumberOfCustomTLVs(self, value):
+		self._set_attribute('numberOfCustomTLVs', value)
+
+	@property
+	def NumberOfLinks(self):
+		"""DEPRECATED Number of Links
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('numberOfLinks')
+	@NumberOfLinks.setter
+	def NumberOfLinks(self, value):
+		self._set_attribute('numberOfLinks', value)
+
+	@property
+	def NumberOfMPs(self):
+		"""DEPRECATED Number of MPs
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('numberOfMPs')
+	@NumberOfMPs.setter
+	def NumberOfMPs(self, value):
+		self._set_attribute('numberOfMPs', value)
+
+	@property
+	def NumberOfMdLevels(self):
+		"""DEPRECATED Number of MD/MEG Levels
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('numberOfMdLevels')
+	@NumberOfMdLevels.setter
+	def NumberOfMdLevels(self, value):
+		self._set_attribute('numberOfMdLevels', value)
+
+	@property
 	def OperationMode(self):
 		"""DEPRECATED Operation Mode
 
@@ -243,7 +333,7 @@ class CfmBridge(Base):
 		"""
 		return self._get_attribute('status')
 
-	def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+	def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfCustomTLVs=None, NumberOfLinks=None, NumberOfMPs=None, NumberOfMdLevels=None, StackedLayers=None):
 		"""Updates a child instance of cfmBridge on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
@@ -253,6 +343,10 @@ class CfmBridge(Base):
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfCustomTLVs (number): Number of Custom TLVs
+			NumberOfLinks (number): Number of Links
+			NumberOfMPs (number): Number of MPs
+			NumberOfMdLevels (number): Number of MD/MEG Levels
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 
 		Raises:
@@ -260,13 +354,17 @@ class CfmBridge(Base):
 		"""
 		self._update(locals())
 
-	def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+	def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfCustomTLVs=None, NumberOfLinks=None, NumberOfMPs=None, NumberOfMdLevels=None, StackedLayers=None):
 		"""Adds a new cfmBridge node on the server and retrieves it in this instance.
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfCustomTLVs (number): Number of Custom TLVs
+			NumberOfLinks (number): Number of Links
+			NumberOfMPs (number): Number of MPs
+			NumberOfMdLevels (number): Number of MD/MEG Levels
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 
 		Returns:
@@ -286,7 +384,7 @@ class CfmBridge(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfCustomTLVs=None, NumberOfLinks=None, NumberOfMPs=None, NumberOfMdLevels=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves cfmBridge data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve cfmBridge data from the server.
@@ -294,11 +392,15 @@ class CfmBridge(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+			NumberOfCustomTLVs (number): Number of Custom TLVs
+			NumberOfLinks (number): Number of Links
+			NumberOfMPs (number): Number of MPs
+			NumberOfMdLevels (number): Number of MD/MEG Levels
 			SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 			StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
@@ -327,7 +429,7 @@ class CfmBridge(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, BridgeId=None, EnableOutOfSequenceCcmDetection=None, EncapsulationType=None, EtherType=None, GarbageCollectionTime=None, OperationMode=None):
+	def get_device_ids(self, PortNames=None, Active=None, AllowCfmMaidFormatsinY1731=None, EnableOutOfSequenceCcmDetection=None, EncapsulationType=None, EtherType=None, GarbageCollectionTime=None, OperationMode=None):
 		"""Base class infrastructure that gets a list of cfmBridge device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -335,7 +437,7 @@ class CfmBridge(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
-			BridgeId (str): optional regex of bridgeId
+			AllowCfmMaidFormatsinY1731 (str): optional regex of allowCfmMaidFormatsinY1731
 			EnableOutOfSequenceCcmDetection (str): optional regex of enableOutOfSequenceCcmDetection
 			EncapsulationType (str): optional regex of encapsulationType
 			EtherType (str): optional regex of etherType
@@ -353,7 +455,20 @@ class CfmBridge(Base):
 	def ClearAllLearnedInfo(self, *args, **kwargs):
 		"""Executes the clearAllLearnedInfo operation on the server.
 
-		Clears ALL Learned LSP Information By PCC Device.
+		Clear All Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		clearAllLearnedInfo()
+
+		clearAllLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		clearAllLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
 		clearAllLearnedInfo(Arg2:list)list
 			Args:
@@ -371,26 +486,23 @@ class CfmBridge(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
 	def GetAllLearnedInfo(self, *args, **kwargs):
 		"""Executes the getAllLearnedInfo operation on the server.
 
-		Please provide a proper help text here.
+		Get All Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getAllLearnedInfo()
+
+		getAllLearnedInfo(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getAllLearnedInfo(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
 		getAllLearnedInfo(Arg2:list)list
 			Args:
@@ -408,10 +520,44 @@ class CfmBridge(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
 
+	def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmAISDbLearnedInformation operation on the server.
+
+		Get Learned AIS Information
+
+		getCfmAISDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+
 	def GetCfmCcmLearnedInformation(self, *args, **kwargs):
 		"""Executes the getCfmCcmLearnedInformation operation on the server.
 
-		Please provide a proper help text here.
+		Get CCM Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getCfmCcmLearnedInformation()
+
+		getCfmCcmLearnedInformation(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getCfmCcmLearnedInformation(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
 
 		getCfmCcmLearnedInformation(Arg2:list)list
 			Args:
@@ -428,6 +574,192 @@ class CfmBridge(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmDMDbLearnedInformation operation on the server.
+
+		Get Learned DM Information
+
+		getCfmDMDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmLCKDbLearnedInformation operation on the server.
+
+		Get Learned LCK Information
+
+		getCfmLCKDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
+
+		Get LinkTrace Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getCfmLinkTraceDbLearnedInformation()
+
+		getCfmLinkTraceDbLearnedInformation(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getCfmLinkTraceDbLearnedInformation(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getCfmLinkTraceDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmLMDbLearnedInformation operation on the server.
+
+		Get Learned LM Information
+
+		getCfmLMDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmLoopbackDbLearnedInformation operation on the server.
+
+		Get LoopBack Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getCfmLoopbackDbLearnedInformation()
+
+		getCfmLoopbackDbLearnedInformation(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getCfmLoopbackDbLearnedInformation(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getCfmLoopbackDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
+		"""Executes the getCfmTSTDbLearnedInformation operation on the server.
+
+		Get Learned TST Information
+
+		getCfmTSTDbLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+
+	def GetPeriodicOAMLearnedInformation(self, *args, **kwargs):
+		"""Executes the getPeriodicOAMLearnedInformation operation on the server.
+
+		Get All Periodic Learned Info
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		getPeriodicOAMLearnedInformation()
+
+		getPeriodicOAMLearnedInformation(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		getPeriodicOAMLearnedInformation(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		getPeriodicOAMLearnedInformation(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+
+			Returns:
+				list(str): Please provide a proper description here.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getPeriodicOAMLearnedInformation', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.
@@ -459,7 +791,7 @@ class CfmBridge(Base):
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.
 
-		Start selected protocols.
+		Start CFM Bridge
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:
@@ -486,7 +818,7 @@ class CfmBridge(Base):
 	def Stop(self, *args, **kwargs):
 		"""Executes the stop operation on the server.
 
-		Stop selected protocols.
+		Stop CFM Bridge
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:

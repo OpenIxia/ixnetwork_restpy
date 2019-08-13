@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class ReportGeneration(Base):
-	"""The ReportGeneration class encapsulates a required reportGeneration node in the ixnetwork hierarchy.
+	"""The DEPRECATED ReportGeneration class encapsulates a required reportGeneration node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the ReportGeneration property from a parent instance.
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
@@ -37,7 +37,7 @@ class ReportGeneration(Base):
 
 	@property
 	def OutputFile(self):
-		"""Signifies the output file
+		"""DEPRECATED Signifies the output file
 
 		Returns:
 			str
@@ -49,7 +49,7 @@ class ReportGeneration(Base):
 
 	@property
 	def OutputType(self):
-		"""Signifies the output type
+		"""DEPRECATED Signifies the output type
 
 		Returns:
 			str(Html|Pdf)
@@ -61,7 +61,7 @@ class ReportGeneration(Base):
 
 	@property
 	def Template(self):
-		"""Signifies the template for IxReporter
+		"""DEPRECATED Signifies the template for IxReporter
 
 		Returns:
 			str
@@ -73,7 +73,7 @@ class ReportGeneration(Base):
 
 	@property
 	def TestRunId(self):
-		"""Signifies the identifier for the test run
+		"""DEPRECATED Signifies the identifier for the test run
 
 		Returns:
 			number

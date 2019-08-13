@@ -23,18 +23,18 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class EcpriChannelsRe(Base):
-	"""The EcpriChannelsRe class encapsulates a user managed ecpriChannelsRe node in the ixnetwork hierarchy.
+class ECpriRecRadioChannelsOrUsers(Base):
+	"""The ECpriRecRadioChannelsOrUsers class encapsulates a user managed eCpriRecRadioChannelsOrUsers node in the ixnetwork hierarchy.
 
-	An instance of the class can be obtained by accessing the EcpriChannelsRe property from a parent instance.
+	An instance of the class can be obtained by accessing the ECpriRecRadioChannelsOrUsers property from a parent instance.
 	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
 	The internal properties list can be managed by the user by using the add and remove methods.
 	"""
 
-	_SDM_NAME = 'ecpriChannelsRe'
+	_SDM_NAME = 'eCpriRecRadioChannelsOrUsers'
 
 	def __init__(self, parent):
-		super(EcpriChannelsRe, self).__init__(parent)
+		super(ECpriRecRadioChannelsOrUsers, self).__init__(parent)
 
 	@property
 	def CMacProperties(self):
@@ -103,7 +103,7 @@ class EcpriChannelsRe(Base):
 
 	@property
 	def ChannelId(self):
-		"""Identification of a Channel/User.
+		"""Identification of a Channel or User.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -112,7 +112,7 @@ class EcpriChannelsRe(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -121,7 +121,7 @@ class EcpriChannelsRe(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -130,10 +130,10 @@ class EcpriChannelsRe(Base):
 
 	@property
 	def MessageType(self):
-		"""Message Type
+		"""Message Type.
 
 		Returns:
-			str(bitSequence|genericDataTransfer|iQData)
+			str(iQData|bitSequence|genericDataTransfer)
 		"""
 		return self._get_attribute('messageType')
 	@MessageType.setter
@@ -162,22 +162,22 @@ class EcpriChannelsRe(Base):
 		return self._get_attribute('sequenceId')
 
 	@property
-	def UserDataLen(self):
-		"""How many bytes to be included as bit sequence of user data.
+	def UserDataLength(self):
+		"""The number bytes(0 to 255) to be included as bit sequence of user data.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
-		return self._get_attribute('userDataLen')
+		return self._get_attribute('userDataLength')
 
 	def update(self, MessageType=None, Name=None):
-		"""Updates a child instance of ecpriChannelsRe on the server.
+		"""Updates a child instance of eCpriRecRadioChannelsOrUsers on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
 
 		Args:
-			MessageType (str(bitSequence|genericDataTransfer|iQData)): Message Type
+			MessageType (str(iQData|bitSequence|genericDataTransfer)): Message Type.
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Raises:
@@ -186,14 +186,14 @@ class EcpriChannelsRe(Base):
 		self._update(locals())
 
 	def add(self, MessageType=None, Name=None):
-		"""Adds a new ecpriChannelsRe node on the server and retrieves it in this instance.
+		"""Adds a new eCpriRecRadioChannelsOrUsers node on the server and retrieves it in this instance.
 
 		Args:
-			MessageType (str(bitSequence|genericDataTransfer|iQData)): Message Type
+			MessageType (str(iQData|bitSequence|genericDataTransfer)): Message Type.
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
-			self: This instance with all currently retrieved ecpriChannelsRe data using find and the newly added ecpriChannelsRe data available through an iterator or index
+			self: This instance with all currently retrieved eCpriRecRadioChannelsOrUsers data using find and the newly added eCpriRecRadioChannelsOrUsers data available through an iterator or index
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
@@ -201,7 +201,7 @@ class EcpriChannelsRe(Base):
 		return self._create(locals())
 
 	def remove(self):
-		"""Deletes all the ecpriChannelsRe data in this instance from server.
+		"""Deletes all the eCpriRecRadioChannelsOrUsers data in this instance from server.
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
@@ -210,19 +210,19 @@ class EcpriChannelsRe(Base):
 		self._delete()
 
 	def find(self, Count=None, DescriptiveName=None, MessageType=None, Name=None):
-		"""Finds and retrieves ecpriChannelsRe data from the server.
+		"""Finds and retrieves eCpriRecRadioChannelsOrUsers data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve ecpriChannelsRe data from the server.
-		By default the find method takes no parameters and will retrieve all ecpriChannelsRe data from the server.
+		All named parameters support regex and can be used to selectively retrieve eCpriRecRadioChannelsOrUsers data from the server.
+		By default the find method takes no parameters and will retrieve all eCpriRecRadioChannelsOrUsers data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
-			MessageType (str(bitSequence|genericDataTransfer|iQData)): Message Type
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+			MessageType (str(iQData|bitSequence|genericDataTransfer)): Message Type.
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
-			self: This instance with matching ecpriChannelsRe data retrieved from the server available through an iterator or index
+			self: This instance with matching eCpriRecRadioChannelsOrUsers data retrieved from the server available through an iterator or index
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
@@ -230,13 +230,13 @@ class EcpriChannelsRe(Base):
 		return self._select(locals())
 
 	def read(self, href):
-		"""Retrieves a single instance of ecpriChannelsRe data from the server.
+		"""Retrieves a single instance of eCpriRecRadioChannelsOrUsers data from the server.
 
 		Args:
 			href (str): An href to the instance to be retrieved
 
 		Returns:
-			self: This instance with the ecpriChannelsRe data from the server available through an iterator or index
+			self: This instance with the eCpriRecRadioChannelsOrUsers data from the server available through an iterator or index
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
@@ -244,8 +244,8 @@ class EcpriChannelsRe(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, ChannelId=None, SequenceId=None, UserDataLen=None):
-		"""Base class infrastructure that gets a list of ecpriChannelsRe device ids encapsulated by this object.
+	def get_device_ids(self, PortNames=None, Active=None, ChannelId=None, SequenceId=None, UserDataLength=None):
+		"""Base class infrastructure that gets a list of eCpriRecRadioChannelsOrUsers device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -254,7 +254,7 @@ class EcpriChannelsRe(Base):
 			Active (str): optional regex of active
 			ChannelId (str): optional regex of channelId
 			SequenceId (str): optional regex of sequenceId
-			UserDataLen (str): optional regex of userDataLen
+			UserDataLength (str): optional regex of userDataLength
 
 		Returns:
 			list(int): A list of device ids that meets the regex criteria provided in the method parameters
@@ -263,22 +263,6 @@ class EcpriChannelsRe(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.

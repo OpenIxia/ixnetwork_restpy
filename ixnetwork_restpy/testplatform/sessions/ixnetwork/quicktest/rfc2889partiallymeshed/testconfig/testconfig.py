@@ -412,7 +412,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1126,7 +1126,7 @@ class TestConfig(Base):
 			ForceRegenerate (bool): Initiates a forced regeneration.
 			FrameLossUnit (str): The frame loss unit for traffic
 			FrameOrderingByRfc2889 (bool): If true, indicates frame ordering by Rfc2889.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
 			FramesPerBurstGap (number): Specifies the per burst gap.
 			Framesize (number): Bytes
 			FramesizeList (list(str)): The list of the available frame sizes.

@@ -244,7 +244,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|increment|random|unchanged)
+			str(custom|customlist|increment|random|unchanged)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -1056,6 +1056,18 @@ class TestConfig(Base):
 		self._set_attribute('showDetailedBinaryResults', value)
 
 	@property
+	def SpyderFramesizeList(self):
+		"""DEPRECATED 
+
+		Returns:
+			list(dict(arg1:number,arg2:str[None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=customImix|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=imix]))
+		"""
+		return self._get_attribute('spyderFramesizeList')
+	@SpyderFramesizeList.setter
+	def SpyderFramesizeList(self, value):
+		self._set_attribute('spyderFramesizeList', value)
+
+	@property
 	def StaggeredStart(self):
 		"""DEPRECATED Starts test with a stagger.
 
@@ -1247,7 +1259,7 @@ class TestConfig(Base):
 	def UseTiLoss(self, value):
 		self._set_attribute('useTiLoss', value)
 
-	def update(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CalibrateLatency=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, Grain=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, MinStepLoadRate=None, NumFrames=None, Numtrials=None, PeakLoadingReplicationCount=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, Runmode=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, StaggeredStart=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, StepLoadRateFormula=None, StepLoadUnit=None, StepStepLoadRate=None, StepTiLoss=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UseTiLoss=None):
+	def update(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CalibrateLatency=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, Grain=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, MinStepLoadRate=None, NumFrames=None, Numtrials=None, PeakLoadingReplicationCount=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, Runmode=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, SpyderFramesizeList=None, StaggeredStart=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, StepLoadRateFormula=None, StepLoadUnit=None, StepStepLoadRate=None, StepTiLoss=None, StepTolerance=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UseTiLoss=None):
 		"""Updates a child instance of testConfig on the server.
 
 		Args:
@@ -1268,7 +1280,7 @@ class TestConfig(Base):
 			EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
 			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
 			ForceRegenerate (bool): Initiates a forced regeneration.
-			FrameSizeMode (str(custom|increment|random|unchanged)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|customlist|increment|random|unchanged)): This attribute is the frame size mode for the Quad Gaussian.
 			FramesPerBurstGap (number): The number of frames to be sent after each burst.
 			Framesize (str): The frame size to be used.
 			FramesizeImixList (str): The list of the available lmix frame sizes.
@@ -1336,6 +1348,7 @@ class TestConfig(Base):
 			Runmode (str(duration|noframes)): Specifies the number of frames that IxNetwork sends from each port in running mode.
 			SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
 			ShowDetailedBinaryResults (bool): 
+			SpyderFramesizeList (list(dict(arg1:number,arg2:str[None|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=customImix|/api/v1/sessions/1/ixnetwork/quickTest?deepchild=imix]))): 
 			StaggeredStart (bool): Starts test with a stagger.
 			StepIncrementFrameSize (number): The incremental step value of the frame size.
 			StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented

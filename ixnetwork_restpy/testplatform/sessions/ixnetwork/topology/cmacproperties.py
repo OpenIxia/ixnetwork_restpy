@@ -153,6 +153,24 @@ class CMacProperties(Base):
 		return self._get_attribute('activeTs')
 
 	@property
+	def AdvSrv6L2SidInIgp(self):
+		"""Advertise SRv6 L2 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6L2SidInIgp')
+
+	@property
+	def AdvSrv6L3SidInIgp(self):
+		"""Advertise SRv6 L3 SID in IGP
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advSrv6L3SidInIgp')
+
+	@property
 	def AdvertiseIpv4Address(self):
 		"""Advertise IPv4 Address
 
@@ -169,6 +187,24 @@ class CMacProperties(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('advertiseIpv6Address')
+
+	@property
+	def AdvertiseSRv6L2SID(self):
+		"""Advertise SRv6 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6L2SID')
+
+	@property
+	def AdvertiseSRv6L3SID(self):
+		"""Enable SRv6 L3 SID
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseSRv6L3SID')
 
 	@property
 	def AggregatorAs(self):
@@ -199,7 +235,7 @@ class CMacProperties(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -208,7 +244,7 @@ class CMacProperties(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -582,6 +618,114 @@ class CMacProperties(Base):
 		return self._get_attribute('setNextHopIpType')
 
 	@property
+	def Srv6L2SidFlags(self):
+		"""SRv6 L2 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidFlags')
+
+	@property
+	def Srv6L2SidLoc(self):
+		"""SRv6 L2 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidLoc')
+
+	@property
+	def Srv6L2SidLocLen(self):
+		"""SRv6 L2 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidLocLen')
+
+	@property
+	def Srv6L2SidLocMetric(self):
+		"""SRv6 L2 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidLocMetric')
+
+	@property
+	def Srv6L2SidReserved(self):
+		"""SRv6 L2 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidReserved')
+
+	@property
+	def Srv6L2SidStep(self):
+		"""Route Range SRv6 SID Step
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L2SidStep')
+
+	@property
+	def Srv6L3SidFlags(self):
+		"""SRv6 L3 SID Flags Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidFlags')
+
+	@property
+	def Srv6L3SidLoc(self):
+		"""SRv6 L3 SID. It consists of Locator, Func and Args
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidLoc')
+
+	@property
+	def Srv6L3SidLocLen(self):
+		"""SRv6 L3 SID Locator Length
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidLocLen')
+
+	@property
+	def Srv6L3SidLocMetric(self):
+		"""SRv6 L3 SID Locator Metric
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidLocMetric')
+
+	@property
+	def Srv6L3SidReserved(self):
+		"""SRv6 L3 SID Reserved Value
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidReserved')
+
+	@property
+	def Srv6L3SidStep(self):
+		"""Route Range SRv6 SID Step
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6L3SidStep')
+
+	@property
 	def UseSameSequenceNumber(self):
 		"""Use Same Sequence Number
 
@@ -642,8 +786,8 @@ class CMacProperties(Base):
 		By default the find method takes no parameters and will retrieve all cMacProperties data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Mac (list(str)): MAC addresses of the devices
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
@@ -674,7 +818,7 @@ class CMacProperties(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, ActiveTs=None, AdvertiseIpv4Address=None, AdvertiseIpv6Address=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSecondLabel=None, EnableStickyStaticFlag=None, EnableUserDefinedSequenceNumber=None, EviId=None, FirstLabelStart=None, IncludeDefaultGatewayExtendedCommunity=None, Ipv4AddressPrefixLength=None, Ipv4NextHop=None, Ipv6AddressPrefixLength=None, Ipv6NextHop=None, LabelMode=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PeerAddress=None, SecondLabelStart=None, SequenceNumber=None, SetNextHop=None, SetNextHopIpType=None, UseSameSequenceNumber=None):
+	def get_device_ids(self, PortNames=None, Active=None, ActiveTs=None, AdvSrv6L2SidInIgp=None, AdvSrv6L3SidInIgp=None, AdvertiseIpv4Address=None, AdvertiseIpv6Address=None, AdvertiseSRv6L2SID=None, AdvertiseSRv6L3SID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSecondLabel=None, EnableStickyStaticFlag=None, EnableUserDefinedSequenceNumber=None, EviId=None, FirstLabelStart=None, IncludeDefaultGatewayExtendedCommunity=None, Ipv4AddressPrefixLength=None, Ipv4NextHop=None, Ipv6AddressPrefixLength=None, Ipv6NextHop=None, LabelMode=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PeerAddress=None, SecondLabelStart=None, SequenceNumber=None, SetNextHop=None, SetNextHopIpType=None, Srv6L2SidFlags=None, Srv6L2SidLoc=None, Srv6L2SidLocLen=None, Srv6L2SidLocMetric=None, Srv6L2SidReserved=None, Srv6L2SidStep=None, Srv6L3SidFlags=None, Srv6L3SidLoc=None, Srv6L3SidLocLen=None, Srv6L3SidLocMetric=None, Srv6L3SidReserved=None, Srv6L3SidStep=None, UseSameSequenceNumber=None):
 		"""Base class infrastructure that gets a list of cMacProperties device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -683,8 +827,12 @@ class CMacProperties(Base):
 			PortNames (str): optional regex of port names
 			Active (str): optional regex of active
 			ActiveTs (str): optional regex of activeTs
+			AdvSrv6L2SidInIgp (str): optional regex of advSrv6L2SidInIgp
+			AdvSrv6L3SidInIgp (str): optional regex of advSrv6L3SidInIgp
 			AdvertiseIpv4Address (str): optional regex of advertiseIpv4Address
 			AdvertiseIpv6Address (str): optional regex of advertiseIpv6Address
+			AdvertiseSRv6L2SID (str): optional regex of advertiseSRv6L2SID
+			AdvertiseSRv6L3SID (str): optional regex of advertiseSRv6L3SID
 			AggregatorAs (str): optional regex of aggregatorAs
 			AggregatorId (str): optional regex of aggregatorId
 			AsSetMode (str): optional regex of asSetMode
@@ -721,6 +869,18 @@ class CMacProperties(Base):
 			SequenceNumber (str): optional regex of sequenceNumber
 			SetNextHop (str): optional regex of setNextHop
 			SetNextHopIpType (str): optional regex of setNextHopIpType
+			Srv6L2SidFlags (str): optional regex of srv6L2SidFlags
+			Srv6L2SidLoc (str): optional regex of srv6L2SidLoc
+			Srv6L2SidLocLen (str): optional regex of srv6L2SidLocLen
+			Srv6L2SidLocMetric (str): optional regex of srv6L2SidLocMetric
+			Srv6L2SidReserved (str): optional regex of srv6L2SidReserved
+			Srv6L2SidStep (str): optional regex of srv6L2SidStep
+			Srv6L3SidFlags (str): optional regex of srv6L3SidFlags
+			Srv6L3SidLoc (str): optional regex of srv6L3SidLoc
+			Srv6L3SidLocLen (str): optional regex of srv6L3SidLocLen
+			Srv6L3SidLocMetric (str): optional regex of srv6L3SidLocMetric
+			Srv6L3SidReserved (str): optional regex of srv6L3SidReserved
+			Srv6L3SidStep (str): optional regex of srv6L3SidStep
 			UseSameSequenceNumber (str): optional regex of useSameSequenceNumber
 
 		Returns:
@@ -730,22 +890,6 @@ class CMacProperties(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def ReadvertiseCMac(self, *args, **kwargs):
 		"""Executes the readvertiseCMac operation on the server.

@@ -36,6 +36,18 @@ class Preferences(Base):
 		super(Preferences, self).__init__(parent)
 
 	@property
+	def ClientTraceLevel(self):
+		"""Set the IxNetwork Client side Log/Trace level
+
+		Returns:
+			str(debug|error|fatal|info|warn)
+		"""
+		return self._get_attribute('clientTraceLevel')
+	@ClientTraceLevel.setter
+	def ClientTraceLevel(self, value):
+		self._set_attribute('clientTraceLevel', value)
+
+	@property
 	def ConnectPortsOnLoadConfig(self):
 		"""If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
 
@@ -71,13 +83,36 @@ class Preferences(Base):
 	def RebootPortsOnConnect(self, value):
 		self._set_attribute('rebootPortsOnConnect', value)
 
-	def update(self, ConnectPortsOnLoadConfig=None, LatestConfigInDiagEnabled=None, RebootPortsOnConnect=None):
+	@property
+	def RecentChassisList(self):
+		"""List of recently used chassis
+
+		Returns:
+			list(str)
+		"""
+		return self._get_attribute('recentChassisList')
+	@RecentChassisList.setter
+	def RecentChassisList(self, value):
+		self._set_attribute('recentChassisList', value)
+
+	@property
+	def RecentFiles(self):
+		"""List of recently used files
+
+		Returns:
+			list(str)
+		"""
+		return self._get_attribute('recentFiles')
+
+	def update(self, ClientTraceLevel=None, ConnectPortsOnLoadConfig=None, LatestConfigInDiagEnabled=None, RebootPortsOnConnect=None, RecentChassisList=None):
 		"""Updates a child instance of preferences on the server.
 
 		Args:
+			ClientTraceLevel (str(debug|error|fatal|info|warn)): Set the IxNetwork Client side Log/Trace level
 			ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
 			LatestConfigInDiagEnabled (bool): 
 			RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
+			RecentChassisList (list(str)): List of recently used chassis
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition

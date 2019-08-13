@@ -48,15 +48,17 @@ class Connection(object):
     PLATFORMS = {
         'Jetty': 'linux',
         'SelfHost': 'windows',
+        'Kestrel': 'windows',
         'Microsoft-HTTPAPI/2.0': 'connection_manager'
     }
+
     def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False):
         """ Set the connection parameters to a rest server
 
         Args:
             hostname (str): hostname or ip address
             rest_port (int, optional): the rest port of the server
-            platform (str): 
+            platform (str):
             log_file_name (str):
             ignore_env_proxy (bool):
         """
@@ -94,10 +96,7 @@ class Connection(object):
             except Exception as e:
                 logging.getLogger(__name__).warn("ixnetwork-restpy not installed using pip, unable to determine version")
 
-        self._determine_test_tool_platform(platform)
-
-        if self._platform == 'windows':
-            self._scheme = 'http'
+        self._scheme = self._determine_test_tool_platform(platform)
 
         if ignore_env_proxy is True:
             self._session.proxies.update({
@@ -128,7 +127,7 @@ class Connection(object):
                                 self._platform = Connection.PLATFORMS[server]
                                 self._rest_port = rest_port
                                 self._info('Connection established to `%s://%s:%s on %s`' % (scheme, self._hostname, self._rest_port, self._platform))
-                                return
+                                return scheme
                     else:
                         raise Exception()
                 except Exception as e:
@@ -139,6 +138,7 @@ class Connection(object):
     def trace(self):
         """str: Trace all requests and responses."""
         return self._trace
+
     @trace.setter
     def trace(self, value):
         if value not in [Connection.TRACE_NONE, Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
@@ -173,6 +173,7 @@ class Connection(object):
     def x_api_key(self):
         """str: Get/Set the x-api-key header value."""
         return self._headers[Connection.X_API_KEY]
+
     @x_api_key.setter
     def x_api_key(self, value):
         self._headers[Connection.X_API_KEY] = value
@@ -206,18 +207,19 @@ class Connection(object):
                 if len(payload) > 128:
                     data += ' ...'
             logging.getLogger(__name__).debug('%s %s %s' % (method, url, data))
-    
+
     def _print_response(self, response):
-        if self._trace == Connection.TRACE_REQUEST_RESPONSE:
+        if self._trace == Connection.TRACE_REQUEST_RESPONSE \
+            and response.headers.get('content-length') \
+            and response.headers.get('content-type') \
+            and 'application/json' in response.headers['content-type']:
             data = ''
-            if response.status_code >= 400:
-                data = response.raw.data
+            if int(response.headers['content-length']) > 512:
+                data = '%s...' % response.content[0:512]
             else:
-                data = response.raw.data[0:128]
-            if len(response.raw.data) > 128:
-                data += ' ...'
+                data = response.content
             logging.getLogger(__name__).debug('%s %s %s' % (response.status_code, response.reason, data))
-    
+
     def _info(self, message):
         logging.getLogger(__name__).info(message)
 
@@ -231,7 +233,7 @@ class Connection(object):
         connection = '%s://%s:%s' % (self._scheme, self._hostname, self._rest_port)
         if url.startswith(self._scheme) == False:
             url = '%s/%s' % (connection, url.strip('/'))
-        
+
         path_start = url.find('://') + 3
         url = '%s%s' % (url[0:path_start], url[path_start:].replace('//', '/'))
         return (connection, url)
@@ -250,14 +252,14 @@ class Connection(object):
                 local_filename = os.path.join(local_directory, local_filename)
             local_filename = os.path.normpath(local_filename)
             try:
-                with open(local_filename, 'wb') as fid:
+                with open(os.path.normpath(local_filename), 'wb') as fid:
                     fid.write(response.content)
             except Exception as e:
                 self._info('cwd:%s filename:%s exception:%s' % (os.getcwd(), local_filename, e))
                 raise e
             return local_filename
         else:
-            self._process_response_status_code(response) 
+            self._process_response_status_code(response)
 
     def _put_file(self, url, local_filename, remote_filename=None):
         headers = self._headers
@@ -265,7 +267,7 @@ class Connection(object):
             remote_filename = os.path.basename(local_filename)
         url = '%s/files?filename=%s' % (url, remote_filename)
         connection, url = self._normalize_url(url)
-        with open(local_filename, 'rb') as fid:
+        with open(os.path.normpath(local_filename), 'rb') as fid:
             data = fid.read()
         response = self._session.request('POST', url, headers=headers, data=data, verify=self._verify_cert)
         if response.status_code == 201:
@@ -295,16 +297,16 @@ class Connection(object):
             if isinstance(payload, dict) or isinstance(payload, list):
                 headers['Content-Type'] = 'application/json'
                 data = json.dumps(payload)
-            elif isinstance(payload, Files):                          
+            elif isinstance(payload, Files):
                 headers['Content-Type'] = 'application/octet-stream'
-                if os.path.isfile(payload.file_path):
-                    with open(payload.file_path, 'rb') as fid:
+                data = ''
+                if payload.is_local_file is True and os.path.exists(os.path.normpath(payload.file_path)) is True:
+                    with open(os.path.normpath(payload.file_path), 'rb') as fid:
                         data = fid.read()
                 else:
                     response = self._session.request('GET', url.replace('filename=', 'filter='), headers=headers, verify=self._verify_cert, allow_redirects=False)
                     if response.status_code == 200:
                         return
-                    data = ''
             elif isinstance(payload, basestring):
                 headers['Content-Type'] = 'application/json'
                 data = payload

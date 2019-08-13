@@ -107,32 +107,32 @@ class Ipv4(Base):
 		return Dhcpv4server(self)
 
 	@property
-	def EcpriRec(self):
-		"""An instance of the EcpriRec class.
+	def ECpriRe(self):
+		"""An instance of the ECpriRe class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.EcpriRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire.ECpriRe)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import EcpriRec
-		return EcpriRec(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire import ECpriRe
+		return ECpriRe(self)
 
 	@property
-	def Ere(self):
-		"""An instance of the Ere class.
+	def ECpriRec(self):
+		"""An instance of the ECpriRec class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere.Ere)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec.ECpriRec)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ere import Ere
-		return Ere(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec import ECpriRec
+		return ECpriRec(self)
 
 	@property
 	def Geneve(self):
@@ -521,7 +521,7 @@ class Ipv4(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -530,12 +530,21 @@ class Ipv4(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
 		"""
 		return self._get_attribute('descriptiveName')
+
+	@property
+	def EnableGratarpRarp(self):
+		"""DEPRECATED Enables GRATARP or RARP packet transmission.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableGratarpRarp')
 
 	@property
 	def Errors(self):
@@ -554,6 +563,15 @@ class Ipv4(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('gatewayIp')
+
+	@property
+	def Ipv4GratarpRarp(self):
+		"""DEPRECATED Sends GRATARP or RARP packet.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('ipv4GratarpRarp')
 
 	@property
 	def ManualGatewayMac(self):
@@ -714,8 +732,8 @@ class Ipv4(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -749,7 +767,7 @@ class Ipv4(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Address=None, GatewayIp=None, ManualGatewayMac=None, Prefix=None, ResolveGateway=None):
+	def get_device_ids(self, PortNames=None, Address=None, EnableGratarpRarp=None, GatewayIp=None, Ipv4GratarpRarp=None, ManualGatewayMac=None, Prefix=None, ResolveGateway=None):
 		"""Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -757,7 +775,9 @@ class Ipv4(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			Address (str): optional regex of address
+			EnableGratarpRarp (str): optional regex of enableGratarpRarp
 			GatewayIp (str): optional regex of gatewayIp
+			Ipv4GratarpRarp (str): optional regex of ipv4GratarpRarp
 			ManualGatewayMac (str): optional regex of manualGatewayMac
 			Prefix (str): optional regex of prefix
 			ResolveGateway (str): optional regex of resolveGateway
@@ -880,6 +900,33 @@ class Ipv4(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('sendArpManual', payload=payload, response_object=None)
 
+	def SendGratArp(self, *args, **kwargs):
+		"""Executes the sendGratArp operation on the server.
+
+		Sends GRATARP request to specified source IP for selected IPv4 items.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		sendGratArp()
+
+		sendGratArp(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		sendGratArp(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('sendGratArp', payload=payload, response_object=None)
+
 	def SendPing(self, *args, **kwargs):
 		"""Executes the sendPing operation on the server.
 
@@ -919,6 +966,33 @@ class Ipv4(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('sendPing', payload=payload, response_object=None)
+
+	def SendRarp(self, *args, **kwargs):
+		"""Executes the sendRarp operation on the server.
+
+		Sends RARP request to specified source IP for selected IPv4 items.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		sendRarp()
+
+		sendRarp(SessionIndices:list)
+			Args:
+				args[0] is SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+
+		sendRarp(SessionIndices:string)
+			Args:
+				args[0] is SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('sendRarp', payload=payload, response_object=None)
 
 	def Start(self, *args, **kwargs):
 		"""Executes the start operation on the server.

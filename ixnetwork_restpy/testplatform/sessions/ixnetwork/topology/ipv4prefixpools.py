@@ -177,32 +177,32 @@ class Ipv4PrefixPools(Base):
 		return Connector(self)
 
 	@property
-	def EcpriChannelsRe(self):
-		"""An instance of the EcpriChannelsRe class.
+	def ECpriReRadioChannelsOrUsers(self):
+		"""An instance of the ECpriReRadioChannelsOrUsers class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre.EcpriChannelsRe)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers.ECpriReRadioChannelsOrUsers)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre import EcpriChannelsRe
-		return EcpriChannelsRe(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers import ECpriReRadioChannelsOrUsers
+		return ECpriReRadioChannelsOrUsers(self)
 
 	@property
-	def EcpriChannelsRec(self):
-		"""An instance of the EcpriChannelsRec class.
+	def ECpriRecRadioChannelsOrUsers(self):
+		"""An instance of the ECpriRecRadioChannelsOrUsers class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec.EcpriChannelsRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers.ECpriRecRadioChannelsOrUsers)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec import EcpriChannelsRec
-		return EcpriChannelsRec(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers import ECpriRecRadioChannelsOrUsers
+		return ECpriRecRadioChannelsOrUsers(self)
 
 	@property
 	def EvpnIPv4PrefixRange(self):
@@ -302,7 +302,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -311,7 +311,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -350,7 +350,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def NumberOfAddresses(self):
-		"""Number of host/network addresses in the simulated IPv4 host/network range
+		"""DEPRECATED Number of host/network addresses in the simulated IPv4 host/network range
 
 		Returns:
 			number
@@ -361,8 +361,17 @@ class Ipv4PrefixPools(Base):
 		self._set_attribute('numberOfAddresses', value)
 
 	@property
+	def NumberOfAddressesAsy(self):
+		"""DEPRECATED Number of host/network addresses in the simulated IPv4 host/network range
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('numberOfAddressesAsy')
+
+	@property
 	def PrefixAddrStep(self):
-		"""The difference between each address, and its next, in the IPv4 host/network range.
+		"""DEPRECATED The difference between each address, and its next, in the IPv4 host/network range.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -371,7 +380,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def PrefixLength(self):
-		"""The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+		"""DEPRECATED The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -427,8 +436,8 @@ class Ipv4PrefixPools(Base):
 
 		Args:
 			AddrStepSupported (bool): Indicates whether the Route Range provider allows route range address increment step of more than one
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			LastNetworkAddress (list(str)): Last Address of host/network address pool in the simulated IPv4 host/network range
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			NumberOfAddresses (number): Number of host/network addresses in the simulated IPv4 host/network range
@@ -456,7 +465,7 @@ class Ipv4PrefixPools(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, NetworkAddress=None, PrefixAddrStep=None, PrefixLength=None):
+	def get_device_ids(self, PortNames=None, NetworkAddress=None, NumberOfAddressesAsy=None, PrefixAddrStep=None, PrefixLength=None):
 		"""Base class infrastructure that gets a list of ipv4PrefixPools device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -464,6 +473,7 @@ class Ipv4PrefixPools(Base):
 		Args:
 			PortNames (str): optional regex of port names
 			NetworkAddress (str): optional regex of networkAddress
+			NumberOfAddressesAsy (str): optional regex of numberOfAddressesAsy
 			PrefixAddrStep (str): optional regex of prefixAddrStep
 			PrefixLength (str): optional regex of prefixLength
 
@@ -474,22 +484,6 @@ class Ipv4PrefixPools(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self):
 		"""Executes the start operation on the server.

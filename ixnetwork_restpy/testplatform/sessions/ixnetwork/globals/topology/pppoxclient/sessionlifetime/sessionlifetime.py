@@ -37,7 +37,7 @@ class SessionLifetime(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -46,7 +46,7 @@ class SessionLifetime(Base):
 
 	@property
 	def EnableLifetime(self):
-		"""Enable session lifetime
+		"""Enables session for lifetime.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -55,7 +55,7 @@ class SessionLifetime(Base):
 
 	@property
 	def EnableRestart(self):
-		"""Enable automatic session restart after stop at lifetime expiry
+		"""Enables automatic session restart after the stop at lifetime expiry.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -64,7 +64,7 @@ class SessionLifetime(Base):
 
 	@property
 	def MaxLifetime(self):
-		"""Maximum session lifetime (in seconds)
+		"""Maximum session lifetime (in seconds).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -73,7 +73,7 @@ class SessionLifetime(Base):
 
 	@property
 	def MaxRestarts(self):
-		"""Maximum number of times each session is automatically restarted
+		"""Maximum number of times each session is automatically restarted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -82,7 +82,7 @@ class SessionLifetime(Base):
 
 	@property
 	def MinLifetime(self):
-		"""Minimum session lifetime (in seconds)
+		"""Minimum session lifetime (in seconds).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -91,7 +91,7 @@ class SessionLifetime(Base):
 
 	@property
 	def RowNames(self):
-		"""name of rows.
+		"""Names of rows.
 
 		Returns:
 			list(str)
@@ -100,7 +100,7 @@ class SessionLifetime(Base):
 
 	@property
 	def UnlimitedRestarts(self):
-		"""Allow each session to always be automatically restarted
+		"""Allows each session to always be automatically restarted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -128,19 +128,3 @@ class SessionLifetime(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

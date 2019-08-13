@@ -49,7 +49,7 @@ class BgpEpePeerSetList(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -58,7 +58,7 @@ class BgpEpePeerSetList(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -127,7 +127,7 @@ class BgpEpePeerSetList(Base):
 		"""Local Label for Peer-Set
 
 		Returns:
-			str(index|sid)
+			str(sid|index)
 		"""
 		return self._get_attribute('sidIndex')
 	@SidIndex.setter
@@ -182,7 +182,7 @@ class BgpEpePeerSetList(Base):
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
 			Reserved (number): Reserved
-			SidIndex (str(index|sid)): Local Label for Peer-Set
+			SidIndex (str(sid|index)): Local Label for Peer-Set
 			SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
 			VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
 			Weight (number): Weight of SID for the purpose of load balancing
@@ -200,13 +200,13 @@ class BgpEpePeerSetList(Base):
 
 		Args:
 			BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
 			Reserved (number): Reserved
-			SidIndex (str(index|sid)): Local Label for Peer-Set
+			SidIndex (str(sid|index)): Local Label for Peer-Set
 			SidIndexValue (number): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
 			VBit (bool): V-Flag: Value flag. If set, then the SID carries a label value.
 			Weight (number): Weight of SID for the purpose of load balancing
@@ -250,19 +250,3 @@ class BgpEpePeerSetList(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

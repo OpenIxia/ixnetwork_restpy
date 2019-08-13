@@ -466,6 +466,15 @@ class View(Base):
 		self._set_attribute('enabledStatsSelectorColumns', value)
 
 	@property
+	def OnDemandRefreshView(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('onDemandRefreshView')
+
+	@property
 	def PageTimeout(self):
 		"""DEPRECATED The statistics view page is timed out based on the time specified. default = 25,000 ms
 
@@ -608,7 +617,7 @@ class View(Base):
 		"""
 		self._delete()
 
-	def find(self, AutoRefresh=None, AutoUpdate=None, AvailableStatsSelectorColumns=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, ReadOnly=None, TimeSeries=None, TreeViewNodeName=None, Type=None, TypeDescription=None, ViewCategory=None, Visible=None):
+	def find(self, AutoRefresh=None, AutoUpdate=None, AvailableStatsSelectorColumns=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, OnDemandRefreshView=None, PageTimeout=None, ReadOnly=None, TimeSeries=None, TreeViewNodeName=None, Type=None, TypeDescription=None, ViewCategory=None, Visible=None):
 		"""Finds and retrieves view data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve view data from the server.
@@ -623,6 +632,7 @@ class View(Base):
 			EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
 			Enabled (bool): If true, enables the view that is created from the tcl script.
 			EnabledStatsSelectorColumns (list(str)): NOT DEFINED
+			OnDemandRefreshView (bool): 
 			PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
 			ReadOnly (bool): The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
 			TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
@@ -655,6 +665,26 @@ class View(Base):
 		"""
 		return self._read(href)
 
+	def DoDrillDownByOption(self, *args, **kwargs):
+		"""Executes the doDrillDownByOption operation on the server.
+
+		doDrillDownByOption(Arg2:number, Arg3:string)href
+			Args:
+				args[0] is Arg2 (number): 
+				args[1] is Arg3 (str): 
+
+			Returns:
+				str(None): 
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('doDrillDownByOption', payload=payload, response_object=None)
+
 	def ExportData(self, *args, **kwargs):
 		"""Executes the exportData operation on the server.
 
@@ -675,6 +705,25 @@ class View(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('exportData', payload=payload, response_object=None)
+
+	def GetAvailableDrillDownOptions(self, *args, **kwargs):
+		"""Executes the getAvailableDrillDownOptions operation on the server.
+
+		getAvailableDrillDownOptions(Arg2:number)list
+			Args:
+				args[0] is Arg2 (number): 
+
+			Returns:
+				list(str): 
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('getAvailableDrillDownOptions', payload=payload, response_object=None)
 
 	def GetColumnValues(self, *args, **kwargs):
 		"""Executes the getColumnValues operation on the server.

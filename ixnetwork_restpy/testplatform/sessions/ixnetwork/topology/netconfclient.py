@@ -195,7 +195,7 @@ class NetconfClient(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -213,12 +213,21 @@ class NetconfClient(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
 		"""
 		return self._get_attribute('descriptiveName')
+
+	@property
+	def DoNotValidateServerResponse(self):
+		"""DEPRECATED If this option is enabled, the Netconf client will not parse server responses. Use this option to optimize memory usage in the client.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('doNotValidateServerResponse')
 
 	@property
 	def EnablePassphrase(self):
@@ -252,7 +261,7 @@ class NetconfClient(Base):
 		"""DEPRECATED Debug Log Clean Up
 
 		Returns:
-			str(clean|notClean)
+			str(notClean|clean)
 		"""
 		return self._get_attribute('logCleanUpOption')
 	@LogCleanUpOption.setter
@@ -471,7 +480,7 @@ class NetconfClient(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
 			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -488,7 +497,7 @@ class NetconfClient(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
 			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -520,10 +529,10 @@ class NetconfClient(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
-			LogCleanUpOption (str(clean|notClean)): Debug Log Clean Up
+			LogCleanUpOption (str(notClean|clean)): Debug Log Clean Up
 			LogFileAge (number): This field determines how old logs to be deleted.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -557,7 +566,7 @@ class NetconfClient(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, DecryptedCapture=None, EnablePassphrase=None, FetchSchemaInfo=None, OutputDirectory=None, Passphrase=None, Password=None, PortNumber=None, PrivateKeyDirectory=None, PrivateKeyFileName=None, SaveReplyXML=None, SchemaOutputDirectory=None, SendCloseOnStop=None, ServerIpv4Address=None, SshAuthenticationMechanism=None, UserName=None):
+	def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, DecryptedCapture=None, DoNotValidateServerResponse=None, EnablePassphrase=None, FetchSchemaInfo=None, OutputDirectory=None, Passphrase=None, Password=None, PortNumber=None, PrivateKeyDirectory=None, PrivateKeyFileName=None, SaveReplyXML=None, SchemaOutputDirectory=None, SendCloseOnStop=None, ServerIpv4Address=None, SshAuthenticationMechanism=None, UserName=None):
 		"""Base class infrastructure that gets a list of netconfClient device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -578,6 +587,7 @@ class NetconfClient(Base):
 			CapabilitiesWritableRunning (str): optional regex of capabilitiesWritableRunning
 			CapabilitiesXpath (str): optional regex of capabilitiesXpath
 			DecryptedCapture (str): optional regex of decryptedCapture
+			DoNotValidateServerResponse (str): optional regex of doNotValidateServerResponse
 			EnablePassphrase (str): optional regex of enablePassphrase
 			FetchSchemaInfo (str): optional regex of fetchSchemaInfo
 			OutputDirectory (str): optional regex of outputDirectory
@@ -682,22 +692,6 @@ class NetconfClient(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('executeCommandGet', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GetDecryptedCapture(self, *args, **kwargs):
 		"""Executes the getDecryptedCapture operation on the server.

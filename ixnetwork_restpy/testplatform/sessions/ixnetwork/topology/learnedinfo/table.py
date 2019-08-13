@@ -68,6 +68,15 @@ class Table(Base):
 		return self._get_attribute('columns')
 
 	@property
+	def RowCount(self):
+		"""DEPRECATED Number of rows in the learned information table
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('rowCount')
+
+	@property
 	def Type(self):
 		"""DEPRECATED Description of the learned information type
 
@@ -85,7 +94,7 @@ class Table(Base):
 		"""
 		return self._get_attribute('values')
 
-	def find(self, Actions=None, Columns=None, Type=None, Values=None):
+	def find(self, Actions=None, Columns=None, RowCount=None, Type=None, Values=None):
 		"""Finds and retrieves table data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve table data from the server.
@@ -94,6 +103,7 @@ class Table(Base):
 		Args:
 			Actions (list(str)): The list of actions allowed on the learned information table
 			Columns (list(str)): The list of columns in the learned information table
+			RowCount (number): Number of rows in the learned information table
 			Type (str): Description of the learned information type
 			Values (list(list[str])): A list of rows of learned information values
 
@@ -119,19 +129,3 @@ class Table(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._read(href)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

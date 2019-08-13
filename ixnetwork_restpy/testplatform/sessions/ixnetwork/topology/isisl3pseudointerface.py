@@ -36,6 +36,20 @@ class IsisL3PseudoInterface(Base):
 		super(IsisL3PseudoInterface, self).__init__(parent)
 
 	@property
+	def IsisPseudoMultiTopologyValuesList(self):
+		"""An instance of the IsisPseudoMultiTopologyValuesList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist.IsisPseudoMultiTopologyValuesList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist import IsisPseudoMultiTopologyValuesList
+		return IsisPseudoMultiTopologyValuesList(self)
+
+	@property
 	def IsisDcePseudoIfaceAttPoint1Config(self):
 		"""An instance of the IsisDcePseudoIfaceAttPoint1Config class.
 
@@ -90,6 +104,20 @@ class IsisL3PseudoInterface(Base):
 		"""
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config import IsisL3PseudoIfaceAttPoint2Config
 		return IsisL3PseudoIfaceAttPoint2Config(self)
+
+	@property
+	def IsisPseudoSRv6AdjSIDList(self):
+		"""An instance of the IsisPseudoSRv6AdjSIDList class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6adjsidlist.IsisPseudoSRv6AdjSIDList)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6adjsidlist import IsisPseudoSRv6AdjSIDList
+		return IsisPseudoSRv6AdjSIDList(self)._select()
 
 	@property
 	def IsisSpbPseudoIfaceAttPoint1Config(self):
@@ -171,6 +199,18 @@ class IsisL3PseudoInterface(Base):
 		return self._get_attribute('adjSID')
 
 	@property
+	def AdjSidCount(self):
+		"""Adj SID Count
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('adjSidCount')
+	@AdjSidCount.setter
+	def AdjSidCount(self, value):
+		self._set_attribute('adjSidCount', value)
+
+	@property
 	def AdministratorGroup(self):
 		"""Administrator Group
 
@@ -178,6 +218,15 @@ class IsisL3PseudoInterface(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('administratorGroup')
+
+	@property
+	def AdvertiseLinkMsd(self):
+		"""Advertise Link MSD
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('advertiseLinkMsd')
 
 	@property
 	def BFlag(self):
@@ -262,7 +311,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -289,7 +338,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -322,6 +371,15 @@ class IsisL3PseudoInterface(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('enableLinkProtection')
+
+	@property
+	def EnableMT(self):
+		"""Enable MT
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('enableMT')
 
 	@property
 	def EnableSRLG(self):
@@ -361,7 +419,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Funcflags(self):
-		"""This is the function flags
+		"""DEPRECATED This is the function flags
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -370,7 +428,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Function(self):
-		"""This specifies endpoint function codes
+		"""DEPRECATED This specifies endpoint function codes
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -378,8 +436,53 @@ class IsisL3PseudoInterface(Base):
 		return self._get_attribute('function')
 
 	@property
+	def IncludeMaxSlMsd(self):
+		"""DEPRECATED If set, then Include Maximum Segment Left MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaxSlMsd')
+
+	@property
+	def IncludeMaximumEndDMsd(self):
+		"""DEPRECATED If set, then include Maximum End D MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumEndDMsd')
+
+	@property
+	def IncludeMaximumEndPopMsd(self):
+		"""DEPRECATED If set, then include Max-End-Pop-MSD n SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumEndPopMsd')
+
+	@property
+	def IncludeMaximumTEncapMsd(self):
+		"""DEPRECATED If set, then include Maximum T.Encap MSD in SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumTEncapMsd')
+
+	@property
+	def IncludeMaximumTInsertMsd(self):
+		"""DEPRECATED If set, then include Maximum T.Insert MSDin SRv6 capability
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('includeMaximumTInsertMsd')
+
+	@property
 	def Ipv6SidValue(self):
-		"""IPv6 Adj SID
+		"""DEPRECATED IPv6 Adj SID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -388,7 +491,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def LFlag(self):
-		"""Local Flag, if set, then the value/index carried by the Adj-SID has local significance
+		"""DEPRECATED Local Flag, if set, then the value/index carried by the Adj-SID has local significance
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -397,7 +500,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def LinkType(self):
-		"""Link Type
+		"""DEPRECATED Link Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -406,7 +509,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxBandwidth_Bps(self):
-		"""Maximum Bandwidth (B/sec)
+		"""DEPRECATED Maximum Bandwidth (B/sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -414,8 +517,26 @@ class IsisL3PseudoInterface(Base):
 		return self._get_attribute('maxBandwidth_Bps')
 
 	@property
+	def MaxEndDMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxEndDMsd')
+
+	@property
+	def MaxEndPopMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxEndPopMsd')
+
+	@property
 	def MaxReservableBandwidth_Bps(self):
-		"""Maximum Reservable Bandwidth (B/sec)
+		"""DEPRECATED Maximum Reservable Bandwidth (B/sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -423,8 +544,35 @@ class IsisL3PseudoInterface(Base):
 		return self._get_attribute('maxReservableBandwidth_Bps')
 
 	@property
+	def MaxSlMsd(self):
+		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxSlMsd')
+
+	@property
+	def MaxTEncap(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxTEncap')
+
+	@property
+	def MaxTInsertMsd(self):
+		"""DEPRECATED This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('maxTInsertMsd')
+
+	@property
 	def MetricLevel(self):
-		"""Metric Level
+		"""DEPRECATED Metric Level
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -432,8 +580,17 @@ class IsisL3PseudoInterface(Base):
 		return self._get_attribute('metricLevel')
 
 	@property
+	def MtCount(self):
+		"""DEPRECATED MT Count
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('mtCount')
+
+	@property
 	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -445,7 +602,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def OverrideFFlag(self):
-		"""When false, then F flag value in the packet will be set TRUE/ FALSE depending on whether IPv6/ IPv4 stack is present beside ISIS respectively. When true, then F flag value will be the one as configured.
+		"""DEPRECATED When false, then F flag value in the packet will be set TRUE/ FALSE depending on whether IPv6/ IPv4 stack is present beside ISIS respectively. When true, then F flag value will be the one as configured.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -454,7 +611,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def PFlag(self):
-		"""Persistent flag: when set, this indicates that the Adj-SID value remains persistent across router restart and/or interface flap.
+		"""DEPRECATED Persistent flag: when set, this indicates that the Adj-SID value remains persistent across router restart and/or interface flap.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -463,7 +620,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Reserved0x40(self):
-		"""This is a Protection Scheme with value 0x40.
+		"""DEPRECATED This is a Protection Scheme with value 0x40.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -472,7 +629,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Reserved0x80(self):
-		"""This is a Protection Scheme with value 0x80.
+		"""DEPRECATED This is a Protection Scheme with value 0x80.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -481,7 +638,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def SFlag(self):
-		"""Set flag: when set, this indicates that the Adj-SID refers to a set of adjacencies
+		"""DEPRECATED Set flag: when set, this indicates that the Adj-SID refers to a set of adjacencies
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -490,7 +647,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Shared(self):
-		"""This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
+		"""DEPRECATED This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -499,7 +656,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def SrlgCount(self):
-		"""This field value shows how many SRLG Value columns would be there in the GUI.
+		"""DEPRECATED This field value shows how many SRLG Value columns would be there in the GUI.
 
 		Returns:
 			number
@@ -511,7 +668,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Srv6SidFlags(self):
-		"""This specifies the value of the SRv6 SID Flags
+		"""DEPRECATED This specifies the value of the SRv6 SID Flags
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -520,7 +677,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Unprotected(self):
-		"""This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
+		"""DEPRECATED This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -529,7 +686,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def VFlag(self):
-		"""Value Flag, if set, the Adjacency SID carries a value
+		"""DEPRECATED Value Flag, if set, the Adjacency SID carries a value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -538,20 +695,21 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Weight(self):
-		"""Weight
+		"""DEPRECATED Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('weight')
 
-	def update(self, Name=None, SrlgCount=None):
+	def update(self, AdjSidCount=None, Name=None, SrlgCount=None):
 		"""Updates a child instance of isisL3PseudoInterface on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
 
 		Args:
+			AdjSidCount (number): Adj SID Count
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
 
@@ -560,15 +718,17 @@ class IsisL3PseudoInterface(Base):
 		"""
 		self._update(locals())
 
-	def find(self, Count=None, DescriptiveName=None, Name=None, SrlgCount=None):
+	def find(self, AdjSidCount=None, Count=None, DescriptiveName=None, MtCount=None, Name=None, SrlgCount=None):
 		"""Finds and retrieves isisL3PseudoInterface data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve isisL3PseudoInterface data from the server.
 		By default the find method takes no parameters and will retrieve all isisL3PseudoInterface data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			AdjSidCount (number): Adj SID Count
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+			MtCount (number): MT Count
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
 
@@ -595,7 +755,7 @@ class IsisL3PseudoInterface(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, AdjSID=None, AdministratorGroup=None, BFlag=None, BandwidthPriority0_Bps=None, BandwidthPriority1_Bps=None, BandwidthPriority2_Bps=None, BandwidthPriority3_Bps=None, BandwidthPriority4_Bps=None, BandwidthPriority5_Bps=None, BandwidthPriority6_Bps=None, BandwidthPriority7_Bps=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, EnableAdjSID=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableSRLG=None, Enhanced=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, Ipv6SidValue=None, LFlag=None, LinkType=None, MaxBandwidth_Bps=None, MaxReservableBandwidth_Bps=None, MetricLevel=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, Unprotected=None, VFlag=None, Weight=None):
+	def get_device_ids(self, PortNames=None, AdjSID=None, AdministratorGroup=None, AdvertiseLinkMsd=None, BFlag=None, BandwidthPriority0_Bps=None, BandwidthPriority1_Bps=None, BandwidthPriority2_Bps=None, BandwidthPriority3_Bps=None, BandwidthPriority4_Bps=None, BandwidthPriority5_Bps=None, BandwidthPriority6_Bps=None, BandwidthPriority7_Bps=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, EnableAdjSID=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableSRLG=None, Enhanced=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, Ipv6SidValue=None, LFlag=None, LinkType=None, MaxBandwidth_Bps=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxReservableBandwidth_Bps=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, MetricLevel=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, Unprotected=None, VFlag=None, Weight=None):
 		"""Base class infrastructure that gets a list of isisL3PseudoInterface device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -604,6 +764,7 @@ class IsisL3PseudoInterface(Base):
 			PortNames (str): optional regex of port names
 			AdjSID (str): optional regex of adjSID
 			AdministratorGroup (str): optional regex of administratorGroup
+			AdvertiseLinkMsd (str): optional regex of advertiseLinkMsd
 			BFlag (str): optional regex of bFlag
 			BandwidthPriority0_Bps (str): optional regex of bandwidthPriority0_Bps
 			BandwidthPriority1_Bps (str): optional regex of bandwidthPriority1_Bps
@@ -618,17 +779,28 @@ class IsisL3PseudoInterface(Base):
 			EnableAdjSID (str): optional regex of enableAdjSID
 			EnableIPv6SID (str): optional regex of enableIPv6SID
 			EnableLinkProtection (str): optional regex of enableLinkProtection
+			EnableMT (str): optional regex of enableMT
 			EnableSRLG (str): optional regex of enableSRLG
 			Enhanced (str): optional regex of enhanced
 			ExtraTraffic (str): optional regex of extraTraffic
 			FFlag (str): optional regex of fFlag
 			Funcflags (str): optional regex of funcflags
 			Function (str): optional regex of function
+			IncludeMaxSlMsd (str): optional regex of includeMaxSlMsd
+			IncludeMaximumEndDMsd (str): optional regex of includeMaximumEndDMsd
+			IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
+			IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
+			IncludeMaximumTInsertMsd (str): optional regex of includeMaximumTInsertMsd
 			Ipv6SidValue (str): optional regex of ipv6SidValue
 			LFlag (str): optional regex of lFlag
 			LinkType (str): optional regex of linkType
 			MaxBandwidth_Bps (str): optional regex of maxBandwidth_Bps
+			MaxEndDMsd (str): optional regex of maxEndDMsd
+			MaxEndPopMsd (str): optional regex of maxEndPopMsd
 			MaxReservableBandwidth_Bps (str): optional regex of maxReservableBandwidth_Bps
+			MaxSlMsd (str): optional regex of maxSlMsd
+			MaxTEncap (str): optional regex of maxTEncap
+			MaxTInsertMsd (str): optional regex of maxTInsertMsd
 			MetricLevel (str): optional regex of metricLevel
 			OverrideFFlag (str): optional regex of overrideFFlag
 			PFlag (str): optional regex of pFlag
@@ -648,22 +820,6 @@ class IsisL3PseudoInterface(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self):
 		"""Executes the start operation on the server.

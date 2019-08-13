@@ -387,6 +387,29 @@ class Dhcpv6client(Base):
 		return TlvProfile(self)
 
 	@property
+	def Vxlanv6(self):
+		"""An instance of the Vxlanv6 class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6.Vxlanv6)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6 import Vxlanv6
+		return Vxlanv6(self)
+
+	@property
+	def ComputedIapdAddresses(self):
+		"""The computed IPv6 addresses.
+
+		Returns:
+			list(str)
+		"""
+		return self._get_attribute('computedIapdAddresses')
+
+	@property
 	def ConnectedVia(self):
 		"""DEPRECATED List of layers this layer used to connect to the wire
 
@@ -400,7 +423,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -418,7 +441,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -775,16 +798,17 @@ class Dhcpv6client(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DiscoveredAddresses=None, DiscoveredGateways=None, DiscoveredPrefix=None, DiscoveredPrefixLength=None, EnableStateless=None, Errors=None, MaxNoPerClient=None, Multiplier=None, Name=None, NoOfAddresses=None, NoOfPrefixes=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ComputedIapdAddresses=None, ConnectedVia=None, Count=None, DescriptiveName=None, DiscoveredAddresses=None, DiscoveredGateways=None, DiscoveredPrefix=None, DiscoveredPrefixLength=None, EnableStateless=None, Errors=None, MaxNoPerClient=None, Multiplier=None, Name=None, NoOfAddresses=None, NoOfPrefixes=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves dhcpv6client data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve dhcpv6client data from the server.
 		By default the find method takes no parameters and will retrieve all dhcpv6client data from the server.
 
 		Args:
+			ComputedIapdAddresses (list(str)): The computed IPv6 addresses.
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			DiscoveredAddresses (list(str)): The discovered IPv6 addresses.
 			DiscoveredGateways (list(str)): The discovered gateway IPv6 addresses.
 			DiscoveredPrefix (list(str)): The discovered IPv6 prefix.
@@ -857,22 +881,6 @@ class Dhcpv6client(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Rebind(self, *args, **kwargs):
 		"""Executes the rebind operation on the server.

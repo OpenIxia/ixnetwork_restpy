@@ -93,7 +93,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -102,7 +102,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -263,6 +263,15 @@ class Dhcpv6client(Base):
 		return self._get_attribute('dhcp6SolTimeout')
 
 	@property
+	def ImmediateResponse(self):
+		"""Enables DHCP client to send Request immediately after receiving Advertise irrespective of Initial Solicit Timeout.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('immediateResponse')
+
+	@property
 	def Name(self):
 		"""Name of NGPF element, guaranteed to be unique in Scenario
 
@@ -315,7 +324,7 @@ class Dhcpv6client(Base):
 		"""
 		self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Dhcp6EchoIAInfo=None, Dhcp6InfoReqMaxRc=None, Dhcp6InfoReqMaxRt=None, Dhcp6InfoReqTimeout=None, Dhcp6NsGw=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
+	def get_device_ids(self, PortNames=None, Dhcp6EchoIAInfo=None, Dhcp6InfoReqMaxRc=None, Dhcp6InfoReqMaxRt=None, Dhcp6InfoReqTimeout=None, Dhcp6NsGw=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, ImmediateResponse=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
 		"""Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -339,6 +348,7 @@ class Dhcpv6client(Base):
 			Dhcp6SolMaxRc (str): optional regex of dhcp6SolMaxRc
 			Dhcp6SolMaxRt (str): optional regex of dhcp6SolMaxRt
 			Dhcp6SolTimeout (str): optional regex of dhcp6SolTimeout
+			ImmediateResponse (str): optional regex of immediateResponse
 			RenewOnLinkUp (str): optional regex of renewOnLinkUp
 			SkipReleaseOnStop (str): optional regex of skipReleaseOnStop
 
@@ -349,19 +359,3 @@ class Dhcpv6client(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

@@ -191,32 +191,32 @@ class NetworkGroup(Base):
 		return DslPools(self)
 
 	@property
-	def EcpriChannelsRe(self):
-		"""An instance of the EcpriChannelsRe class.
+	def ECpriReRadioChannelsOrUsers(self):
+		"""An instance of the ECpriReRadioChannelsOrUsers class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre.EcpriChannelsRe)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers.ECpriReRadioChannelsOrUsers)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsre import EcpriChannelsRe
-		return EcpriChannelsRe(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers import ECpriReRadioChannelsOrUsers
+		return ECpriReRadioChannelsOrUsers(self)
 
 	@property
-	def EcpriChannelsRec(self):
-		"""An instance of the EcpriChannelsRec class.
+	def ECpriRecRadioChannelsOrUsers(self):
+		"""An instance of the ECpriRecRadioChannelsOrUsers class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec.EcpriChannelsRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers.ECpriRecRadioChannelsOrUsers)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprichannelsrec import EcpriChannelsRec
-		return EcpriChannelsRec(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers import ECpriRecRadioChannelsOrUsers
+		return ECpriRecRadioChannelsOrUsers(self)
 
 	@property
 	def EvpnIPv4PrefixRange(self):
@@ -430,7 +430,7 @@ class NetworkGroup(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -439,7 +439,7 @@ class NetworkGroup(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -525,8 +525,8 @@ class NetworkGroup(Base):
 		By default the find method takes no parameters and will retrieve all networkGroup data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Multiplier (number): Number of device instances per parent device instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
@@ -569,22 +569,6 @@ class NetworkGroup(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def Start(self):
 		"""Executes the start operation on the server.

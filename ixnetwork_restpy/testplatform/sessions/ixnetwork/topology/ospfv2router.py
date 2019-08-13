@@ -142,7 +142,7 @@ class Ospfv2Router(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -151,7 +151,7 @@ class Ospfv2Router(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -244,6 +244,15 @@ class Ospfv2Router(Base):
 			obj(ixnetwork_restpy.multivalue.Multivalue)
 		"""
 		return self._get_attribute('gracefulRestart')
+
+	@property
+	def HighPerfLearningModeForSR(self):
+		"""This option can be used to increase scale. When enabled then the minimum information required to generate traffic is stored instead of the entire LSA. For example, for SR traffic generation, sid, vflag, SRGB details are stored and label is calculated accordingly. Please note when this flag is enabled, we will not store any LSAs so Learned Info will not display any details. Currently this is supported for only SR opaque LSAs, other Opaque LSAs like BIER, Graceful Restart is not supported, also not supported for BGP-LS scenarios.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('highPerfLearningModeForSR')
 
 	@property
 	def InterFloodLsUpdateBurstGap(self):
@@ -530,8 +539,8 @@ class Ospfv2Router(Base):
 		By default the find method takes no parameters and will retrieve all ospfv2Router data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableBIER (bool): Enable BIER
 			EnableSegmentRouting (bool): Enable Segment Routing
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
@@ -570,7 +579,7 @@ class Ospfv2Router(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxLsUpdatesPerBurst=None, NpFlag=None, OobResyncBreakout=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, VFlag=None):
+	def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, GracefulRestart=None, HighPerfLearningModeForSR=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxLsUpdatesPerBurst=None, NpFlag=None, OobResyncBreakout=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, VFlag=None):
 		"""Base class infrastructure that gets a list of ospfv2Router device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -590,6 +599,7 @@ class Ospfv2Router(Base):
 			EFlag (str): optional regex of eFlag
 			EnableMappingServer (str): optional regex of enableMappingServer
 			GracefulRestart (str): optional regex of gracefulRestart
+			HighPerfLearningModeForSR (str): optional regex of highPerfLearningModeForSR
 			InterFloodLsUpdateBurstGap (str): optional regex of interFloodLsUpdateBurstGap
 			LFlag (str): optional regex of lFlag
 			LsaRefreshTime (str): optional regex of lsaRefreshTime
@@ -614,22 +624,6 @@ class Ospfv2Router(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def OspfStartRouter(self, *args, **kwargs):
 		"""Executes the ospfStartRouter operation on the server.

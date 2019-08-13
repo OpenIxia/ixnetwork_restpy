@@ -137,7 +137,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -164,7 +164,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -428,8 +428,8 @@ class OpenFlowChannel(Base):
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
 			ControllerIndex (list(str)): Parent Controller Index
 			ControllerName (str): Parent Controller Name
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			GroupsPerChannel (number): Number of Groups per Channel
 			LocalIp (list(str)): The local IP address of the interface. This field is auto-populated and cannot be changed.
@@ -494,22 +494,6 @@ class OpenFlowChannel(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GetAsynchronousConfiguration(self, *args, **kwargs):
 		"""Executes the getAsynchronousConfiguration operation on the server.
@@ -1038,7 +1022,7 @@ class OpenFlowChannel(Base):
 		sendGetQueueConfigRequest(Arg2:list, Arg3:enum, Arg4:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(mANUAL|oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NONE|oFPP_NORMAL|oFPP_TABLE)): Output Port Type
+				args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
 				args[2] is Arg4 (number): Port ID
 
 			Returns:
@@ -1149,7 +1133,7 @@ class OpenFlowChannel(Base):
 		sendGroupStatsRequest(Arg2:list, Arg3:enum, Arg4:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(manual|oFPG_ALL|oFPG_ANY)): Group ID Type
+				args[1] is Arg3 (str(oFPG_ALL|oFPG_ANY|manual)): Group ID Type
 				args[2] is Arg4 (number): Group ID
 
 			Returns:
@@ -1192,7 +1176,7 @@ class OpenFlowChannel(Base):
 		sendMeterConfigRequest(Arg2:list, Arg3:enum, Arg4:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(all|manual|oFPM_CONTROLLER|oFPM_SLOWPATH)): Meter ID Type
+				args[1] is Arg3 (str(oFPM_SLOWPATH|oFPM_CONTROLLER|all|manual)): Meter ID Type
 				args[2] is Arg4 (number): Meter ID
 
 			Returns:
@@ -1249,7 +1233,7 @@ class OpenFlowChannel(Base):
 		sendMeterStatRequest(Arg2:list, Arg3:enum, Arg4:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(all|manual|oFPM_CONTROLLER|oFPM_SLOWPATH)): Meter ID Type
+				args[1] is Arg3 (str(oFPM_SLOWPATH|oFPM_CONTROLLER|all|manual)): Meter ID Type
 				args[2] is Arg4 (number): Meter ID
 
 			Returns:
@@ -1360,7 +1344,7 @@ class OpenFlowChannel(Base):
 		sendPortStatsRequest(Arg2:list, Arg3:enum, Arg4:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(mANUAL|oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NONE|oFPP_NORMAL|oFPP_TABLE)): Output Port Type
+				args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
 				args[2] is Arg4 (number): Port ID
 
 			Returns:
@@ -1409,9 +1393,9 @@ class OpenFlowChannel(Base):
 		sendQueueStatsRequest(Arg2:list, Arg3:enum, Arg4:number, Arg5:enum, Arg6:number)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(mANUAL|oFPP_ALL|oFPP_ANY|oFPP_CONTROLLER|oFPP_FLOOD|oFPP_IN_PORT|oFPP_LOCAL|oFPP_NONE|oFPP_NORMAL|oFPP_TABLE)): Output Port Type
+				args[1] is Arg3 (str(oFPP_IN_PORT|oFPP_NORMAL|oFPP_FLOOD|oFPP_ALL|oFPP_CONTROLLER|oFPP_LOCAL|mANUAL|oFPP_TABLE|oFPP_NONE|oFPP_ANY)): Output Port Type
 				args[2] is Arg4 (number): Port ID
-				args[3] is Arg5 (str(manual|oFPQ_ALL)): Queue Type
+				args[3] is Arg5 (str(oFPQ_ALL|manual)): Queue Type
 				args[4] is Arg6 (number): Queue ID
 
 			Returns:

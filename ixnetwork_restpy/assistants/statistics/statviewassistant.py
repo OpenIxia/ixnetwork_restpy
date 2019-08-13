@@ -174,11 +174,14 @@ class StatViewAssistant(object):
         while time.time() - start < Timeout:
             match = True
             for row in self.Rows:
-                expression = '%s %s %s' % (row[ColumnName], Comparator, ConditionValue)
-                match = eval(expression)
-                if match is False:
+                if Comparator == StatViewAssistant.REGEX:
+                    match = re.match(ConditionValue, row[ColumnName])
+                else:
+                    expression = '%s %s %s' % (row[ColumnName], Comparator, ConditionValue)
+                    match = eval(expression)
+                if match is None or match is False:
                     break
-            if match is False:
+            if match is None or match is False:
                 time.sleep(CheckInterval)
             else:
                 return True

@@ -216,6 +216,18 @@ class BgpIpv4MVrf(Base):
 		return self._get_attribute('active')
 
 	@property
+	def AdvertiseIPMSIRoutes(self):
+		"""Enables I-PMSI Route Advertisement for MVPN (if True). Disables I-PMSI Route Advertisement for MVPN (if False). - Set to False when Enable TRM is Enabled (by deafult).
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('advertiseIPMSIRoutes')
+	@AdvertiseIPMSIRoutes.setter
+	def AdvertiseIPMSIRoutes(self, value):
+		self._set_attribute('advertiseIPMSIRoutes', value)
+
+	@property
 	def AutoConstructBitString(self):
 		"""Use BitString
 
@@ -256,7 +268,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -265,7 +277,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -292,7 +304,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def EnableTRM(self):
-		"""DEPRECATED Enable TRM
+		"""DEPRECATED Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
 
 		Returns:
 			bool
@@ -719,15 +731,16 @@ class BgpIpv4MVrf(Base):
 		"""
 		return self._get_attribute('version')
 
-	def update(self, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+	def update(self, AdvertiseIPMSIRoutes=None, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
 		"""Updates a child instance of bgpIpv4MVrf on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
 		The Multivalue class has the associated documentation that details the possible values for those named parameters.
 
 		Args:
+			AdvertiseIPMSIRoutes (bool): Enables I-PMSI Route Advertisement for MVPN (if True). Disables I-PMSI Route Advertisement for MVPN (if False). - Set to False when Enable TRM is Enabled (by deafult).
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			EnableTRM (bool): Enable TRM
+			EnableTRM (bool): Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -744,12 +757,13 @@ class BgpIpv4MVrf(Base):
 		"""
 		self._update(locals())
 
-	def add(self, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+	def add(self, AdvertiseIPMSIRoutes=None, ConnectedVia=None, EnableTRM=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
 		"""Adds a new bgpIpv4MVrf node on the server and retrieves it in this instance.
 
 		Args:
+			AdvertiseIPMSIRoutes (bool): Enables I-PMSI Route Advertisement for MVPN (if True). Disables I-PMSI Route Advertisement for MVPN (if False). - Set to False when Enable TRM is Enabled (by deafult).
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			EnableTRM (bool): Enable TRM
+			EnableTRM (bool): Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -778,18 +792,19 @@ class BgpIpv4MVrf(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv4=None, EnableTRM=None, Errors=None, ImportRtListSameAsExportRtList=None, LocalIpv4=None, LocalRouterID=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, AdvertiseIPMSIRoutes=None, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv4=None, EnableTRM=None, Errors=None, ImportRtListSameAsExportRtList=None, LocalIpv4=None, LocalRouterID=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
 		"""Finds and retrieves bgpIpv4MVrf data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve bgpIpv4MVrf data from the server.
 		By default the find method takes no parameters and will retrieve all bgpIpv4MVrf data from the server.
 
 		Args:
+			AdvertiseIPMSIRoutes (bool): Enables I-PMSI Route Advertisement for MVPN (if True). Disables I-PMSI Route Advertisement for MVPN (if False). - Set to False when Enable TRM is Enabled (by deafult).
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			DutIpv4 (list(str)): DUT IP
-			EnableTRM (bool): Enable TRM
+			EnableTRM (bool): Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			ImportRtListSameAsExportRtList (bool): Import RT List Same As Export RT List
 			LocalIpv4 (list(str)): Local IP
@@ -885,22 +900,6 @@ class BgpIpv4MVrf(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.

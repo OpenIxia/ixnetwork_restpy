@@ -112,7 +112,7 @@ class GenerateIpv6RoutesParams(Base):
 		"""Prefix Length Distribution Scope.
 
 		Returns:
-			str(perDevice|perPort|perTopology)
+			str(perTopology|perDevice|perPort)
 		"""
 		return self._get_attribute('prefixLengthDistributionScope')
 	@PrefixLengthDistributionScope.setter
@@ -124,7 +124,7 @@ class GenerateIpv6RoutesParams(Base):
 		"""Prefix Length Distribution Type.
 
 		Returns:
-			str(custom|even|exponential|fixed|internet|random)
+			str(fixed|random|even|exponential|internet|custom)
 		"""
 		return self._get_attribute('prefixLengthDistributionType')
 	@PrefixLengthDistributionType.setter
@@ -225,8 +225,8 @@ class GenerateIpv6RoutesParams(Base):
 			DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
 			NetworkAddressStart (str): Network Address Start Value.
 			NetworkAddressStep (str): Network Address Step Value.
-			PrefixLengthDistributionScope (str(perDevice|perPort|perTopology)): Prefix Length Distribution Scope.
-			PrefixLengthDistributionType (str(custom|even|exponential|fixed|internet|random)): Prefix Length Distribution Type.
+			PrefixLengthDistributionScope (str(perTopology|perDevice|perPort)): Prefix Length Distribution Scope.
+			PrefixLengthDistributionType (str(fixed|random|even|exponential|internet|custom)): Prefix Length Distribution Type.
 			PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
 			PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
 			PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
@@ -239,22 +239,6 @@ class GenerateIpv6RoutesParams(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GenerateIpv6Routes(self):
 		"""Executes the generateIpv6Routes operation on the server.

@@ -108,7 +108,7 @@ class Bfdv6Interface(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -117,7 +117,7 @@ class Bfdv6Interface(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -390,8 +390,8 @@ class Bfdv6Interface(Base):
 		Args:
 			AggregateBfdSession (bool): If enabled, all interfaces except on VNI 0 will be disabled and grayed-out.
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			LocalRouterId (list(str)): The BFD Router ID value, in IPv4 format.
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -501,14 +501,14 @@ class Bfdv6Interface(Base):
 		disableDemandMode(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		disableDemandMode(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -533,14 +533,14 @@ class Bfdv6Interface(Base):
 		enableDemandMode(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		enableDemandMode(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -553,22 +553,6 @@ class Bfdv6Interface(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('enableDemandMode', payload=payload, response_object=None)
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def GetLearnedInfo(self, *args, **kwargs):
 		"""Executes the getLearnedInfo operation on the server.
@@ -615,14 +599,14 @@ class Bfdv6Interface(Base):
 		initiatePoll(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		initiatePoll(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -674,14 +658,14 @@ class Bfdv6Interface(Base):
 		resumePDU(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		resumePDU(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -706,14 +690,14 @@ class Bfdv6Interface(Base):
 		setAdminDown(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		setAdminDown(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -738,14 +722,14 @@ class Bfdv6Interface(Base):
 		setAdminUp(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		setAdminUp(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -770,16 +754,16 @@ class Bfdv6Interface(Base):
 		setDiagnosticState(Arg2:list, Arg3:enum, Arg4:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
-				args[2] is Arg4 (str(administrativelyDown|concatenatedPathDown|controlDetectionTimeExpired|echoFunctionFailed|forwardingPlaneReset|neighbourSignaledSessionDown|pathDown|reserved|reverseConcatenatedPathDown)): Diagnostic Code
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
+				args[2] is Arg4 (str(controlDetectionTimeExpired|echoFunctionFailed|neighbourSignaledSessionDown|forwardingPlaneReset|pathDown|concatenatedPathDown|administrativelyDown|reverseConcatenatedPathDown|reserved)): Diagnostic Code
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		setDiagnosticState(Arg2:enum, Arg3:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
-				args[1] is Arg3 (str(administrativelyDown|concatenatedPathDown|controlDetectionTimeExpired|echoFunctionFailed|forwardingPlaneReset|neighbourSignaledSessionDown|pathDown|reserved|reverseConcatenatedPathDown)): Diagnostic Code
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
+				args[1] is Arg3 (str(controlDetectionTimeExpired|echoFunctionFailed|neighbourSignaledSessionDown|forwardingPlaneReset|pathDown|concatenatedPathDown|administrativelyDown|reverseConcatenatedPathDown|reserved)): Diagnostic Code
 
 			Returns:
 				list(str): ID to associate each async action invocation
@@ -858,14 +842,14 @@ class Bfdv6Interface(Base):
 		stopPDU(Arg2:list, Arg3:enum)list
 			Args:
 				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-				args[1] is Arg3 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[1] is Arg3 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation
 
 		stopPDU(Arg2:enum)list
 			Args:
-				args[0] is Arg2 (str(bfd|bgp|isis|ldp|ospf|ospfv3|pim|rsvp)): Session used by Protocol
+				args[0] is Arg2 (str(ospf|ospfv3|bgp|ldp|rsvp|isis|pim|bfd)): Session used by Protocol
 
 			Returns:
 				list(str): ID to associate each async action invocation

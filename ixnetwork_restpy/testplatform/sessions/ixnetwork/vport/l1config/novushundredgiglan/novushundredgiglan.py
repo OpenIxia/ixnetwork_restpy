@@ -263,9 +263,6 @@ class NovusHundredGigLan(Base):
 			bool
 		"""
 		return self._get_attribute('linkTraining')
-	@LinkTraining.setter
-	def LinkTraining(self, value):
-		self._set_attribute('linkTraining', value)
 
 	@property
 	def LoopContinuously(self):
@@ -447,7 +444,7 @@ class NovusHundredGigLan(Base):
 	def UseANResults(self, value):
 		self._set_attribute('useANResults', value)
 
-	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+	def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
 		"""Updates a child instance of novusHundredGigLan on the server.
 
 		Args:
@@ -467,7 +464,6 @@ class NovusHundredGigLan(Base):
 			GoodBlocksNumber (number): NOT DEFINED
 			IeeeL1Defaults (bool): NOT DEFINED
 			LaserOn (bool): NOT DEFINED
-			LinkTraining (bool): NOT DEFINED
 			LoopContinuously (bool): NOT DEFINED
 			LoopCountNumber (number): NOT DEFINED
 			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.

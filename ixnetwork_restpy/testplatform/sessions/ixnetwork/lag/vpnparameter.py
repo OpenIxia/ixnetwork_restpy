@@ -38,7 +38,7 @@ class VpnParameter(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -110,7 +110,7 @@ class VpnParameter(Base):
 		By default the find method takes no parameters and will retrieve all vpnParameter data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 			UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.
 
 		Returns:

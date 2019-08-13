@@ -196,7 +196,7 @@ class TransmissionControl(Base):
 		"""The Transmission Control types.
 
 		Returns:
-			str(auto|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)
+			str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)
 		"""
 		return self._get_attribute('type')
 	@Type.setter
@@ -220,7 +220,7 @@ class TransmissionControl(Base):
 			RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
 			StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
 			StartDelayUnits (str(bytes|nanoseconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
-			Type (str(auto|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)): The Transmission Control types.
+			Type (str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)): The Transmission Control types.
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition

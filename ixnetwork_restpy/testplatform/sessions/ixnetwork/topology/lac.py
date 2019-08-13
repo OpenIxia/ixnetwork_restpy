@@ -114,7 +114,7 @@ class Lac(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -123,7 +123,7 @@ class Lac(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -359,6 +359,18 @@ class Lac(Base):
 		return self._get_attribute('tunnelAuthentication')
 
 	@property
+	def TunnelsPerInterfaceMultiplier(self):
+		"""DEPRECATED Number of tunnels per interface (multiplier).
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('tunnelsPerInterfaceMultiplier')
+	@TunnelsPerInterfaceMultiplier.setter
+	def TunnelsPerInterfaceMultiplier(self, value):
+		self._set_attribute('tunnelsPerInterfaceMultiplier', value)
+
+	@property
 	def UdpDestinationPort(self):
 		"""DEPRECATED UDP port to employ for tunneling destinations
 
@@ -412,7 +424,7 @@ class Lac(Base):
 		"""
 		return self._get_attribute('useSequenceNoInPayload')
 
-	def update(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+	def update(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
 		"""Updates a child instance of lac on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
@@ -424,13 +436,14 @@ class Lac(Base):
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
 
-	def add(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+	def add(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
 		"""Adds a new lac node on the server and retrieves it in this instance.
 
 		Args:
@@ -439,6 +452,7 @@ class Lac(Base):
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
+			TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
 		Returns:
 			self: This instance with all currently retrieved lac data using find and the newly added lac data available through an iterator or index
@@ -457,7 +471,7 @@ class Lac(Base):
 		"""
 		self._delete()
 
-	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableExcludeHdlc=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+	def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableExcludeHdlc=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TunnelsPerInterfaceMultiplier=None):
 		"""Finds and retrieves lac data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve lac data from the server.
@@ -465,8 +479,8 @@ class Lac(Base):
 
 		Args:
 			ConnectedVia (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of layers this layer used to connect to the wire
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
 			Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
 			Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -475,6 +489,7 @@ class Lac(Base):
 			StackedLayers (list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])): List of secondary (many to one) child layer protocols
 			StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 			Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+			TunnelsPerInterfaceMultiplier (number): Number of tunnels per interface (multiplier).
 
 		Returns:
 			self: This instance with matching lac data retrieved from the server available through an iterator or index
@@ -540,22 +555,6 @@ class Lac(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def RestartDown(self, *args, **kwargs):
 		"""Executes the restartDown operation on the server.

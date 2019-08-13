@@ -189,6 +189,20 @@ class Ixnetwork(Base):
 		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport import Vport
 		return Vport(self)
 
+	@property
+	def Watch(self):
+		"""An instance of the Watch class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch.Watch)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch import Watch
+		return Watch(self)._select()
+
 	def ApplyITWizardConfiguration(self, *args, **kwargs):
 		"""Executes the applyITWizardConfiguration operation on the server.
 
@@ -377,49 +391,49 @@ class Ixnetwork(Base):
 	def CollectLogs(self, *args, **kwargs):
 		"""Executes the collectLogs operation on the server.
 
-		This command collects all of the IxNetwork logs and puts them in a .zip file.
+		This command collects all of the IxNetwork logs and puts them in a .zip file
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:
 
 		collectLogs(Arg1:href)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
 
 		collectLogs(Arg1:href, Arg2:list)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
-				args[1] is Arg2 (list(str[currentInstance|specificProfile])): The instance to collect logs for.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+				args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
 
 		collectLogs(Arg1:href, Arg2:list, Arg3:string)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command.
-				args[1] is Arg2 (list(str[currentInstance|specificProfile])): A valid enum as specified by the restriction.
-				args[2] is Arg3 (str): A string value.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+				args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+				args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
 
 		collectLogs(Arg1:href, Arg2:list, Arg3:string, Arg4:string)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A string value.
-				args[1] is Arg2 (list(str[currentInstance|specificProfile])): An enum value indicating the item to collect logs for.
-				args[2] is Arg3 (str): A string value.
-				args[3] is Arg4 (str): A string value.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+				args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+				args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
+				args[3] is Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
 
 		collectLogs(Arg1:href, Arg2:list, Arg3:string, Arg4:string, Arg5:string)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command.
-				args[1] is Arg2 (list(str[currentInstance|specificProfile])): A valid enum as specified by the restriction.
-				args[2] is Arg3 (str): A string value.
-				args[3] is Arg4 (str): A string value.
-				args[4] is Arg5 (str): A string value.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
+				args[1] is Arg2 (list(str[currentInstance|specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
+				args[2] is Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
+				args[3] is Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+				args[4] is Arg5 (str): End Date in format yyyy-M-d H:mm (2019-01-01 00:00)
 
 		collectLogs(Arg1:href, Arg2:string)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
 				args[1] is Arg2 (str): A string value.
 
 		collectLogs(Arg1:href, Arg2:string, Arg3:string)
 			Args:
-				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A writeTo file handle.
+				args[0] is Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
 				args[1] is Arg2 (str): A string value.
 				args[2] is Arg3 (str): A string value.
 
@@ -1219,6 +1233,8 @@ class Ixnetwork(Base):
 
 	def SaveCaptureFiles(self, *args, **kwargs):
 		"""Executes the saveCaptureFiles operation on the server.
+
+		Save existing capture files to a new user specified location
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:

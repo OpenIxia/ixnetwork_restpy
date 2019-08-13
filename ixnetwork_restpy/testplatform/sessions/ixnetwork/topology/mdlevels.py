@@ -24,10 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class MdLevels(Base):
-	"""The MdLevels class encapsulates a system managed mdLevels node in the ixnetwork hierarchy.
+	"""The MdLevels class encapsulates a required mdLevels node in the ixnetwork hierarchy.
 
 	An instance of the class can be obtained by accessing the MdLevels property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
 	"""
 
 	_SDM_NAME = 'mdLevels'
@@ -45,17 +45,8 @@ class MdLevels(Base):
 		return self._get_attribute('active')
 
 	@property
-	def BridgeId(self):
-		"""Bridge ID
-
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('bridgeId')
-
-	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -64,7 +55,7 @@ class MdLevels(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -110,19 +101,7 @@ class MdLevels(Base):
 	def Name(self, value):
 		self._set_attribute('name', value)
 
-	@property
-	def NumberOfMdLevels(self):
-		"""Number of MD Levels
-
-		Returns:
-			number
-		"""
-		return self._get_attribute('numberOfMdLevels')
-	@NumberOfMdLevels.setter
-	def NumberOfMdLevels(self, value):
-		self._set_attribute('numberOfMdLevels', value)
-
-	def update(self, Name=None, NumberOfMdLevels=None):
+	def update(self, Name=None):
 		"""Updates a child instance of mdLevels on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
@@ -130,48 +109,11 @@ class MdLevels(Base):
 
 		Args:
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-			NumberOfMdLevels (number): Number of MD Levels
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
-
-	def find(self, BridgeId=None, Count=None, DescriptiveName=None, Name=None, NumberOfMdLevels=None):
-		"""Finds and retrieves mdLevels data from the server.
-
-		All named parameters support regex and can be used to selectively retrieve mdLevels data from the server.
-		By default the find method takes no parameters and will retrieve all mdLevels data from the server.
-
-		Args:
-			BridgeId (list(str)): Bridge ID
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-			NumberOfMdLevels (number): Number of MD Levels
-
-		Returns:
-			self: This instance with matching mdLevels data retrieved from the server available through an iterator or index
-
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
-
-	def read(self, href):
-		"""Retrieves a single instance of mdLevels data from the server.
-
-		Args:
-			href (str): An href to the instance to be retrieved
-
-		Returns:
-			self: This instance with the mdLevels data from the server available through an iterator or index
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
 
 	def get_device_ids(self, PortNames=None, Active=None, MdMegLevel=None, MdName=None, MdNameFormat=None):
 		"""Base class infrastructure that gets a list of mdLevels device ids encapsulated by this object.
@@ -192,19 +134,3 @@ class MdLevels(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

@@ -64,7 +64,7 @@ class ImportBgpRoutesParams(Base):
 		"""Import routes file type. Route import may fail in file type is not matching with the file being imported.
 
 		Returns:
-			str(cisco|csv|juniper)
+			str(csv|juniper|cisco)
 		"""
 		return self._get_attribute('fileType')
 	@FileType.setter
@@ -88,43 +88,40 @@ class ImportBgpRoutesParams(Base):
 		"""Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
 
 		Returns:
-			str(replicate|roundRobin)
+			str(roundRobin|replicate)
 		"""
 		return self._get_attribute('routeDistributionType')
 	@RouteDistributionType.setter
 	def RouteDistributionType(self, value):
 		self._set_attribute('routeDistributionType', value)
 
-	def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None):
+	@property
+	def RouteLimit(self):
+		"""Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
+
+		Returns:
+			number
+		"""
+		return self._get_attribute('routeLimit')
+	@RouteLimit.setter
+	def RouteLimit(self, value):
+		self._set_attribute('routeLimit', value)
+
+	def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
 		"""Updates a child instance of importBgpRoutesParams on the server.
 
 		Args:
 			BestRoutes (bool): Import only the best routes (provided route file has this information).
 			DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
-			FileType (str(cisco|csv|juniper)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+			FileType (str(csv|juniper|cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
 			NextHop (str(overwriteTestersAddress|preserveFromFile)): Option for setting Next Hop modification type.
-			RouteDistributionType (str(replicate|roundRobin)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+			RouteDistributionType (str(roundRobin|replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+			RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
 	def ImportBgpRoutes(self):
 		"""Executes the importBgpRoutes operation on the server.

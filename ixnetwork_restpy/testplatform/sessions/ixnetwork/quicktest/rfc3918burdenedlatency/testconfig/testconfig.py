@@ -256,7 +256,7 @@ class TestConfig(Base):
 		"""NOT DEFINED
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -897,7 +897,7 @@ class TestConfig(Base):
 			EnableOldStatsForReef (bool): NOT DEFINED
 			FloodedFramesEnabled (bool): NOT DEFINED
 			ForceRegenerate (bool): NOT DEFINED
-			FrameSizeMode (str(custom|customlist|increment|random)): NOT DEFINED
+			FrameSizeMode (str(custom|fixed|increment|random)): NOT DEFINED
 			FramesizeList (list(str)): NOT DEFINED
 			Gap (number): NOT DEFINED
 			GroupCapacityGreaterThan (number): NOT DEFINED

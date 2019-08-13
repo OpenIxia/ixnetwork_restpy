@@ -219,6 +219,15 @@ class Vport(Base):
 		return self._get_attribute('isConnected')
 
 	@property
+	def IsFramePreemptionSupported(self):
+		"""
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('isFramePreemptionSupported')
+
+	@property
 	def IsMapped(self):
 		"""If true, this virtual port is mapped.
 
@@ -327,6 +336,42 @@ class Vport(Base):
 		return self._get_attribute('stateDetail')
 
 	@property
+	def TraceEnabled(self):
+		"""DEPRECATED Enables/Disables rpf port trace for this port
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('traceEnabled')
+	@TraceEnabled.setter
+	def TraceEnabled(self, value):
+		self._set_attribute('traceEnabled', value)
+
+	@property
+	def TraceLevel(self):
+		"""DEPRECATED PCPU Trace level
+
+		Returns:
+			str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)
+		"""
+		return self._get_attribute('traceLevel')
+	@TraceLevel.setter
+	def TraceLevel(self, value):
+		self._set_attribute('traceLevel', value)
+
+	@property
+	def TraceTag(self):
+		"""DEPRECATED PCPU Trace Tag
+
+		Returns:
+			str
+		"""
+		return self._get_attribute('traceTag')
+	@TraceTag.setter
+	def TraceTag(self, value):
+		self._set_attribute('traceTag', value)
+
+	@property
 	def TransmitIgnoreLinkStatus(self):
 		"""DEPRECATED If true, the port ingores the link status when transmitting data.
 
@@ -367,12 +412,24 @@ class Vport(Base):
 		"""DEPRECATED The type of port selection.
 
 		Returns:
-			str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)
+			str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)
 		"""
 		return self._get_attribute('type')
 	@Type.setter
 	def Type(self, value):
 		self._set_attribute('type', value)
+
+	@property
+	def UseGlobalSettings(self):
+		"""DEPRECATED Enables/Disables use of global settings instead of local settings on port
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('useGlobalSettings')
+	@UseGlobalSettings.setter
+	def UseGlobalSettings(self, value):
+		self._set_attribute('useGlobalSettings', value)
 
 	@property
 	def ValidTxModes(self):
@@ -383,7 +440,7 @@ class Vport(Base):
 		"""
 		return self._get_attribute('validTxModes')
 
-	def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None):
+	def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
 		"""Updates a child instance of vport on the server.
 
 		Args:
@@ -391,17 +448,21 @@ class Vport(Base):
 			IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
 			Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
 			RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
+			TraceEnabled (bool): Enables/Disables rpf port trace for this port
+			TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
+			TraceTag (str): PCPU Trace Tag
 			TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
 			TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
 			TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-			Type (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): The type of port selection.
+			Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
+			UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
 		Raises:
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		self._update(locals())
 
-	def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None):
+	def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
 		"""Adds a new vport node on the server and retrieves it in this instance.
 
 		Args:
@@ -409,10 +470,14 @@ class Vport(Base):
 			IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
 			Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
 			RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
+			TraceEnabled (bool): Enables/Disables rpf port trace for this port
+			TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
+			TraceTag (str): PCPU Trace Tag
 			TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
 			TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
 			TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-			Type (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): The type of port selection.
+			Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
+			UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
 		Returns:
 			self: This instance with all currently retrieved vport data using find and the newly added vport data available through an iterator or index
@@ -431,7 +496,7 @@ class Vport(Base):
 		"""
 		self._delete()
 
-	def find(self, ActualSpeed=None, AssignedTo=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, InternalId=None, IsAvailable=None, IsConnected=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Name=None, RxMode=None, State=None, StateDetail=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, ValidTxModes=None):
+	def find(self, ActualSpeed=None, AssignedTo=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Name=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
 		"""Finds and retrieves vport data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve vport data from the server.
@@ -447,6 +512,7 @@ class Vport(Base):
 			InternalId (number): For internal use.
 			IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
 			IsConnected (bool): If true, indicates that the port is connected.
+			IsFramePreemptionSupported (bool): 
 			IsMapped (bool): If true, this virtual port is mapped.
 			IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
 			IsVMPort (bool): If true the hardware connected to this vport is a virtual machine port
@@ -458,10 +524,14 @@ class Vport(Base):
 			RxMode (str(capture|captureAndMeasure|measure|packetImpairment)): The receive mode of the virtual port.
 			State (str(busy|down|unassigned|up|versionMismatch)): The virtual port state.
 			StateDetail (str(busy|cpuNotReady|idle|inActive|l1ConfigFailed|protocolsNotSupported|versionMismatched|waitingForCPUStatus)): This attribute describes the state of the port.
+			TraceEnabled (bool): Enables/Disables rpf port trace for this port
+			TraceLevel (str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)): PCPU Trace level
+			TraceTag (str): PCPU Trace Tag
 			TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
 			TxGapControlMode (str(averageMode|fixedMode)): This object controls the Gap Control mode of the port.
 			TxMode (str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)): The transmit mode.
-			Type (str(atlasFourHundredGigLan|atlasFourHundredGigLanFcoe|atm|ethernet|ethernetFcoe|ethernetImpairment|ethernetvm|fc|fortyGigLan|fortyGigLanFcoe|hundredGigLan|hundredGigLanFcoe|krakenFourHundredGigLan|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|pos|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|tenGigLan|tenGigLanFcoe|tenGigWan|tenGigWanFcoe)): The type of port selection.
+			Type (str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)): The type of port selection.
+			UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 			ValidTxModes (list(str[interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse])): 
 
 		Returns:
@@ -566,16 +636,27 @@ class Vport(Base):
 		payload = { "Arg1": self }
 		return self._execute('connectPort', payload=payload, response_object=None)
 
-	def ConnectPorts(self):
+	def ConnectPorts(self, *args, **kwargs):
 		"""Executes the connectPorts operation on the server.
 
 		Connect a list of ports.
+
+		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
+		The following correlates the modeling Signatures to the python *args variable length list:
+
+		connectPorts()
+
+		connectPorts(Arg2:bool)
+			Args:
+				args[0] is Arg2 (bool): a boolean indicating if ownership should be taken forcefully
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		payload = { "Arg1": self }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('connectPorts', payload=payload, response_object=None)
 
 	def EnableOAM(self, *args, **kwargs):
@@ -725,6 +806,18 @@ class Vport(Base):
 		"""
 		payload = { "Arg1": self.href }
 		return self._execute('refreshUnresolvedNeighbors', payload=payload, response_object=None)
+
+	def ReleaseCapturePorts(self):
+		"""Executes the releaseCapturePorts operation on the server.
+
+		Release capture buffer from a list of ports.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self }
+		return self._execute('releaseCapturePorts', payload=payload, response_object=None)
 
 	def ReleasePort(self):
 		"""Executes the releasePort operation on the server.

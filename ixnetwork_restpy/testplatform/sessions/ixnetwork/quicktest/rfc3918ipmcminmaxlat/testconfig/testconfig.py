@@ -256,7 +256,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -897,7 +897,7 @@ class TestConfig(Base):
 			FirstMulticastDestMACAddress (str): The first multicast destination MAC address.
 			FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
 			ForceRegenerate (bool): Initiates a forced regeneration.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian. The Quad Gaussian is the superposition of four Gaussian distributions.
 			FramesizeList (list(str)): The list of the available frame size.
 			Gap (number): The gap in transmission of frames.
 			GroupCapacityGreaterThan (number): The integer that distinguishes the group capacity that could be greater than the specified integer.

@@ -258,7 +258,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -267,7 +267,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def Delay(self):
-		"""Delay
+		"""Delay in Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -276,7 +276,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -902,8 +902,8 @@ class BgpL3VpnRouteProperty(Base):
 
 		Args:
 			AsPathASString (list(str)): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			EnableIpv4Receiver (bool): Enable IPv4 Receiver
 			EnableIpv4Sender (bool): Enable IPv4 Sender
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1122,26 +1122,10 @@ class BgpL3VpnRouteProperty(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('enableIpv4Sender', payload=payload, response_object=None)
 
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
 	def ReadvertiseRoutes(self, *args, **kwargs):
 		"""Executes the readvertiseRoutes operation on the server.
 
-		Re-advertise Aged out OSPF Routes in a Route Range
+		Re-advertise Aged out BGP Routes in a Route Range
 
 		The IxNetwork modeling infrastructure allows for multiple method Signatures with the same name while python does not.
 		The following correlates the modeling Signatures to the python *args variable length list:

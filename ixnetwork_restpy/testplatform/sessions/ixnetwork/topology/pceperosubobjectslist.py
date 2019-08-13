@@ -64,7 +64,7 @@ class PcepEroSubObjectsList(Base):
 
 	@property
 	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -73,7 +73,7 @@ class PcepEroSubObjectsList(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -264,6 +264,33 @@ class PcepEroSubObjectsList(Base):
 		return self._get_attribute('sidType')
 
 	@property
+	def Srv6FunctionCode(self):
+		"""Function Code is is the 16 bit field representing supported functions associated with SRv6 SIDs. This information is optional and included only for maintainability. Following function codes are currently defined - 0: Reserved 1: End Function 2: End.DX6 Function 3: End.DT6 Function 4: End.X Function
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6FunctionCode')
+
+	@property
+	def Srv6Identifier(self):
+		"""SRv6 Identifier is the 128 bit IPv6 addresses representing SRv6 segment.
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6Identifier')
+
+	@property
+	def Srv6NaiType(self):
+		"""The SRv6 NAI Type which indicates the interpretation for NAI (Node or Adjacency Identifier).
+
+		Returns:
+			obj(ixnetwork_restpy.multivalue.Multivalue)
+		"""
+		return self._get_attribute('srv6NaiType')
+
+	@property
 	def SubObjectType(self):
 		"""Using the Sub Object Type control user can configure which sub object needs to be included from the following options: Not Applicable IPv4 Prefix IPv6 Prefix AS Number.
 
@@ -311,8 +338,8 @@ class PcepEroSubObjectsList(Base):
 		By default the find method takes no parameters and will retrieve all pcepEroSubObjectsList data from the server.
 
 		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but maybe offers more context
+			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
@@ -338,7 +365,7 @@ class PcepEroSubObjectsList(Base):
 		"""
 		return self._read(href)
 
-	def get_device_ids(self, PortNames=None, Active=None, AsNumber=None, Bos=None, FBit=None, Ipv4NodeId=None, Ipv4Prefix=None, Ipv6NodeId=None, Ipv6Prefix=None, LocalInterfaceId=None, LocalIpv4Address=None, LocalIpv6Address=None, LocalNodeId=None, LooseHop=None, MplsLabel=None, NaiType=None, PrefixLength=None, RemoteInterfaceId=None, RemoteIpv4Address=None, RemoteIpv6Address=None, RemoteNodeId=None, Sid=None, SidType=None, SubObjectType=None, Tc=None, Ttl=None):
+	def get_device_ids(self, PortNames=None, Active=None, AsNumber=None, Bos=None, FBit=None, Ipv4NodeId=None, Ipv4Prefix=None, Ipv6NodeId=None, Ipv6Prefix=None, LocalInterfaceId=None, LocalIpv4Address=None, LocalIpv6Address=None, LocalNodeId=None, LooseHop=None, MplsLabel=None, NaiType=None, PrefixLength=None, RemoteInterfaceId=None, RemoteIpv4Address=None, RemoteIpv6Address=None, RemoteNodeId=None, Sid=None, SidType=None, Srv6FunctionCode=None, Srv6Identifier=None, Srv6NaiType=None, SubObjectType=None, Tc=None, Ttl=None):
 		"""Base class infrastructure that gets a list of pcepEroSubObjectsList device ids encapsulated by this object.
 
 		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -367,6 +394,9 @@ class PcepEroSubObjectsList(Base):
 			RemoteNodeId (str): optional regex of remoteNodeId
 			Sid (str): optional regex of sid
 			SidType (str): optional regex of sidType
+			Srv6FunctionCode (str): optional regex of srv6FunctionCode
+			Srv6Identifier (str): optional regex of srv6Identifier
+			Srv6NaiType (str): optional regex of srv6NaiType
 			SubObjectType (str): optional regex of subObjectType
 			Tc (str): optional regex of tc
 			Ttl (str): optional regex of ttl
@@ -378,19 +408,3 @@ class PcepEroSubObjectsList(Base):
 			ServerError: The server has encountered an uncategorized error condition
 		"""
 		return self._get_ngpf_device_ids(locals())
-
-	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-		fetchAndUpdateConfigFromCloud(Mode:string)
-			Args:
-				args[0] is Mode (str): 
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)

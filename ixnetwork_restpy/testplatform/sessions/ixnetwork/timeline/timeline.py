@@ -225,7 +225,7 @@ class Timeline(Base):
 
 		createTest(Arg2:enum, Arg3:enum)object
 			Args:
-				args[0] is Arg2 (str(rfc2544back2back|rfc2544frameLoss|rfc2544throughput|rfc2889addressCache|rfc2889addressRate|rfc3918joinLeaveDelay|rfc7747failover|rfc7747ribIn|trafficTest)): 
+				args[0] is Arg2 (str(rfc2544back2back|rfc2544frameLoss|rfc2544throughput|rfc2889addressCache|rfc2889addressRate|rfc3918joinLeaveDelay|rfc3918mixedClassThroughput|rfc7747failover|rfc7747ribIn|trafficTest)): 
 				args[1] is Arg3 (str(bfdv4Interface|bfdv6Interface|bgpBfdIpv4Ipv6Peer|bgpBfdIpv4Peer|bgpBfdIpv4PeerIpv4Pools|bgpBfdIpv6Peer|bgpBfdIpv6PeerIpv6Pools|bgpBfdMixedPeerPools|bgpIpv4Ipv6Peer|bgpIpv4Peer|bgpIpv4PeerIpv4Pools|bgpIpv6Peer|bgpIpv6PeerIpv6Pools|bgpMixedPeerPools|chainedIpv4|chainedIpv6|ethernetVlan|ipv4|ipv4IgmpHost|ipv4IgmpQuerierHost|ipv4ipv6|ipv6|ipv6MldHost|ipv6MldQuerierHost|none)): 
 
 			Returns:

@@ -184,7 +184,7 @@ class TestConfig(Base):
 		"""This attribute is the frame size mode for the Quad Gaussian.
 
 		Returns:
-			str(custom|customlist|increment|random)
+			str(custom|fixed|increment|random)
 		"""
 		return self._get_attribute('frameSizeMode')
 	@FrameSizeMode.setter
@@ -531,7 +531,7 @@ class TestConfig(Base):
 			EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
 			EnableOldStatsForReef (bool): If true, allows to get the old statistics for reef load module.
 			ForceRegenerate (bool): Initiates a forced regeneration.
-			FrameSizeMode (str(custom|customlist|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
+			FrameSizeMode (str(custom|fixed|increment|random)): This attribute is the frame size mode for the Quad Gaussian.
 			Framesize (number): Bytes
 			FramesizeList (list(str)): List containing the frame sizes used in the test.
 			LoadRateList (str): The rate list of the load item.

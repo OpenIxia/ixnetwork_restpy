@@ -127,7 +127,7 @@ class Field(Base):
 
 	@property
 	def FieldValue(self):
-		"""An alphanumeric string that returns the value of the field.
+		"""DEPRECATED An alphanumeric string that returns the value of the field.
 
 		Returns:
 			str
@@ -139,7 +139,7 @@ class Field(Base):
 
 	@property
 	def FixedBits(self):
-		"""Sets all the fields to a constant specified size.
+		"""DEPRECATED Sets all the fields to a constant specified size.
 
 		Returns:
 			str
@@ -150,8 +150,17 @@ class Field(Base):
 		self._set_attribute('fixedBits', value)
 
 	@property
+	def FormattedFieldValue(self):
+		"""DEPRECATED 
+
+		Returns:
+			str
+		"""
+		return self._get_attribute('formattedFieldValue')
+
+	@property
 	def FullMesh(self):
-		"""If true, Full Mesh is enabled.
+		"""DEPRECATED If true, Full Mesh is enabled.
 
 		Returns:
 			bool
@@ -163,7 +172,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""It is used to get the length of the field in bits.
+		"""DEPRECATED It is used to get the length of the field in bits.
 
 		Returns:
 			number
@@ -172,7 +181,7 @@ class Field(Base):
 
 	@property
 	def Level(self):
-		"""It is used to get the level of the field in bits.
+		"""DEPRECATED It is used to get the level of the field in bits.
 
 		Returns:
 			bool
@@ -181,7 +190,7 @@ class Field(Base):
 
 	@property
 	def MaxValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -193,7 +202,7 @@ class Field(Base):
 
 	@property
 	def MinValue(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -205,7 +214,7 @@ class Field(Base):
 
 	@property
 	def Name(self):
-		"""An alphanumeric string that returns the name of the field.
+		"""DEPRECATED An alphanumeric string that returns the name of the field.
 
 		Returns:
 			str
@@ -214,7 +223,7 @@ class Field(Base):
 
 	@property
 	def Offset(self):
-		"""It is used to get the position of the field in terms of number of bits.
+		"""DEPRECATED It is used to get the position of the field in terms of number of bits.
 
 		Returns:
 			number
@@ -223,7 +232,7 @@ class Field(Base):
 
 	@property
 	def OffsetFromRoot(self):
-		"""It is used to get the position of the field in terms of number of bits from the root packet.
+		"""DEPRECATED It is used to get the position of the field in terms of number of bits from the root packet.
 
 		Returns:
 			number
@@ -232,7 +241,7 @@ class Field(Base):
 
 	@property
 	def OnTheFlyMask(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			str
@@ -244,7 +253,7 @@ class Field(Base):
 
 	@property
 	def Optional(self):
-		"""A read-only field that accepts true/false to make the field optional.
+		"""DEPRECATED A read-only field that accepts true/false to make the field optional.
 
 		Returns:
 			bool
@@ -253,7 +262,7 @@ class Field(Base):
 
 	@property
 	def OptionalEnabled(self):
-		"""If true, the optional field can accept values.
+		"""DEPRECATED If true, the optional field can accept values.
 
 		Returns:
 			bool
@@ -265,7 +274,7 @@ class Field(Base):
 
 	@property
 	def RandomMask(self):
-		"""Select to use random mask bit values.
+		"""DEPRECATED Select to use random mask bit values.
 
 		Returns:
 			str
@@ -277,7 +286,7 @@ class Field(Base):
 
 	@property
 	def RateVaried(self):
-		"""It is used to get the varied rate of packet field.
+		"""DEPRECATED It is used to get the varied rate of packet field.
 
 		Returns:
 			bool
@@ -286,7 +295,7 @@ class Field(Base):
 
 	@property
 	def ReadOnly(self):
-		"""It is used to check whether particular field is readOnly or otherwise.
+		"""DEPRECATED It is used to check whether particular field is readOnly or otherwise.
 
 		Returns:
 			bool
@@ -295,7 +304,7 @@ class Field(Base):
 
 	@property
 	def RequiresUdf(self):
-		"""It is used to check whether UDF is required.
+		"""DEPRECATED It is used to check whether UDF is required.
 
 		Returns:
 			bool
@@ -304,7 +313,7 @@ class Field(Base):
 
 	@property
 	def Seed(self):
-		"""Select to use seed.
+		"""DEPRECATED Select to use seed.
 
 		Returns:
 			str
@@ -316,7 +325,7 @@ class Field(Base):
 
 	@property
 	def SingleValue(self):
-		"""If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+		"""DEPRECATED If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
 
 		Returns:
 			str
@@ -328,7 +337,7 @@ class Field(Base):
 
 	@property
 	def StartValue(self):
-		"""Specifies the initial value of increment or decrement.
+		"""DEPRECATED Specifies the initial value of increment or decrement.
 
 		Returns:
 			str
@@ -340,7 +349,7 @@ class Field(Base):
 
 	@property
 	def StepValue(self):
-		"""Specifies the value by which value will keep incrementing or decrementing.
+		"""DEPRECATED Specifies the value by which value will keep incrementing or decrementing.
 
 		Returns:
 			str
@@ -351,8 +360,17 @@ class Field(Base):
 		self._set_attribute('stepValue', value)
 
 	@property
+	def SupportsAuto(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('supportsAuto')
+
+	@property
 	def SupportsNonRepeatableRandom(self):
-		"""Indicates whether or not this type of stack supports non-repeatable random
+		"""DEPRECATED Indicates whether or not this type of stack supports non-repeatable random
 
 		Returns:
 			bool
@@ -361,7 +379,7 @@ class Field(Base):
 
 	@property
 	def SupportsOnTheFlyMask(self):
-		"""
+		"""DEPRECATED 
 
 		Returns:
 			bool
@@ -369,8 +387,17 @@ class Field(Base):
 		return self._get_attribute('supportsOnTheFlyMask')
 
 	@property
+	def SupportsRepeatableRandomRange(self):
+		"""DEPRECATED 
+
+		Returns:
+			bool
+		"""
+		return self._get_attribute('supportsRepeatableRandomRange')
+
+	@property
 	def TrackingEnabled(self):
-		"""If true, tracking is enabled on the particular field in flowTracking.
+		"""DEPRECATED If true, tracking is enabled on the particular field in flowTracking.
 
 		Returns:
 			bool
@@ -382,7 +409,7 @@ class Field(Base):
 
 	@property
 	def ValueFormat(self):
-		"""It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
+		"""DEPRECATED It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
 
 		Returns:
 			str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
@@ -391,7 +418,7 @@ class Field(Base):
 
 	@property
 	def ValueList(self):
-		"""If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+		"""DEPRECATED If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
 
 		Returns:
 			list(str)
@@ -403,7 +430,7 @@ class Field(Base):
 
 	@property
 	def ValueType(self):
-		"""It is used to select a particular value type.
+		"""DEPRECATED It is used to select a particular value type.
 
 		Returns:
 			str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)
@@ -441,7 +468,7 @@ class Field(Base):
 		"""
 		self._update(locals())
 
-	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
+	def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
 		"""Finds and retrieves field data from the server.
 
 		All named parameters support regex and can be used to selectively retrieve field data from the server.
@@ -459,6 +486,7 @@ class Field(Base):
 			FieldTypeId (str): 
 			FieldValue (str): An alphanumeric string that returns the value of the field.
 			FixedBits (str): Sets all the fields to a constant specified size.
+			FormattedFieldValue (str): 
 			FullMesh (bool): If true, Full Mesh is enabled.
 			Length (number): It is used to get the length of the field in bits.
 			Level (bool): It is used to get the level of the field in bits.
@@ -478,8 +506,10 @@ class Field(Base):
 			SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
 			StartValue (str): Specifies the initial value of increment or decrement.
 			StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
+			SupportsAuto (bool): 
 			SupportsNonRepeatableRandom (bool): Indicates whether or not this type of stack supports non-repeatable random
 			SupportsOnTheFlyMask (bool): 
+			SupportsRepeatableRandomRange (bool): 
 			TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
 			ValueFormat (str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)): It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
 			ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
