@@ -3,7 +3,12 @@ This package is an IxNetwork object oriented pure python client package over a R
 To get started [browse the class and samples documentation here](https://openixia.github.io/ixnetwork_restpy/index.html).
 
 ## What's New!
-- The following is a summary of major changes. 
+- Sep 2019 - 1.0.40
+  - support for IxNetwork 9.0 features
+  - documentation enhancements to display deprecated, readwrite properties, navigate from Rest API Browser to restpy documentation
+  - creation of **Linux API Server IxNetwork QuickTest Web** sessions
+  - slots support which will now raise an AttributeError when accessing non-existent properties 
+    - !!NOTE!! this may cause some script collateral
 - Jul 2019 - 1.0.37
   - unit tests
   - samples and api reference moved from package to online at https://openixia.github.io/ixnetwork_restpy/index.html

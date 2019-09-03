@@ -31,6 +31,7 @@ class L3Site(Base):
 	The internal properties list can be managed by the user by using the add and remove methods.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'l3Site'
 
 	def __init__(self, parent):

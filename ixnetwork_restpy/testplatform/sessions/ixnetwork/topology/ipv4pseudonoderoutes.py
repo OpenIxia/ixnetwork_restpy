@@ -30,6 +30,7 @@ class IPv4PseudoNodeRoutes(Base):
 	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'IPv4PseudoNodeRoutes'
 
 	def __init__(self, parent):

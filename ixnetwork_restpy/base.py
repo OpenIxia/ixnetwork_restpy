@@ -41,6 +41,8 @@ class Base(object):
     _index is the current pointer into the _object_properties
     _properties returns the current properties as dictated by _index
     """
+    __slots__ = ('_object_properties', '_connection', '_parent', '_index')
+    
     def __init__(self, parent):
         self._parent = parent
         if self._parent is not None:

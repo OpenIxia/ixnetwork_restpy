@@ -31,6 +31,7 @@ class EgressTracking(Base):
 	The internal properties list can be managed by the user by using the add and remove methods.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'egressTracking'
 
 	def __init__(self, parent):

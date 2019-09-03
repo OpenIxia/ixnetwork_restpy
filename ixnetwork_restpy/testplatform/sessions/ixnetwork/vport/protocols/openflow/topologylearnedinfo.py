@@ -30,6 +30,7 @@ class TopologyLearnedInfo(Base):
 	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'topologyLearnedInfo'
 
 	def __init__(self, parent):

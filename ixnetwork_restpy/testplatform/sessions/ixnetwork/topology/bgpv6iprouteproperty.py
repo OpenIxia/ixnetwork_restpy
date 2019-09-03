@@ -31,6 +31,7 @@ class BgpV6IPRouteProperty(Base):
 	The internal properties list can be managed by the user by using the add and remove methods.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'bgpV6IPRouteProperty'
 
 	def __init__(self, parent):

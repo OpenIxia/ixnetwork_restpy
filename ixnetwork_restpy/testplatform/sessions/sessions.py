@@ -68,7 +68,7 @@ class Sessions(Base):
         """The application type of the session
 
         Returns:
-            str
+            str(ixnetwork|quicktest)
         """
         return self._properties['applicationType']
     
@@ -100,7 +100,7 @@ class Sessions(Base):
         return self._properties['userName']
 
     def Start(self):
-        """Starts the session
+        """Starts a session resource
 
         Returns:
             None
@@ -111,7 +111,7 @@ class Sessions(Base):
                 self._set_properties(response, clear=True)
     
     def find(self, Id=None):
-        """Finds all child instances of Sessions on the server.
+        """Finds Sessions resources on the server and encapsulates the data in this instance.
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
@@ -119,6 +119,8 @@ class Sessions(Base):
         responses = self._connection._read('%s/%s' % (self._parent.href, self._SDM_NAME))
         self._clear()
         for response in responses:
+            if response['applicationType'] == 'ixnetwork':
+                response['applicationType'] = 'quicktest'
             if Id is not None:
                 if str(response['id']) == str(Id):
                     self._set_properties(response)
@@ -126,31 +128,47 @@ class Sessions(Base):
                 self._set_properties(response)
         return self
 
-    def add(self):
-        """Adds a new sessions node on the server and retrieves it in this instance.
+    def add(self, ApplicationType='ixnrest'):
+        """Adds a new sessions resource on the server and encapsulates the data in this instance.
+        Two types of sessions can be created, an ixnrest session or a quicktest web session.
+        The quicktest web session can only be created when the TestPlatform.Platform type is 'linux'
+
+        Args:
+            ApplicationType (str[ixnrest|quicktest]): The type of session to be started
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
         """
-        applicationType = 'ixnrest'
+        if ApplicationType == 'quicktest' and self.parent.Platform == 'linux':
+            applicationType = 'ixnetwork'
+        elif ApplicationType == 'ixnrest':
+            applicationType = 'ixnrest'
+        else:
+            raise ValueError('%s is not a supported SessionType' % ApplicationType)
+        ApplicationType = None
         self._create(locals())
+        if self._properties['applicationType'] == 'ixnetwork':
+            self._object_properties[self.index]['applicationType'] = 'quicktest'
         if self._connection._platform == 'linux':
             self.Start()
         return self
 
     def remove(self):
-        """Deletes all the sessions data in this instance from server.
+        """Deletes all the encapsulated sessions resources from the server.
 
         Raises:
             NotFoundError: The requested resource does not exist on the server
             ServerError: The server has encountered an uncategorized error condition
         """
         try:
-            self._execute('stop')
+            for properties in self._object_properties:
+                self._connection._execute('%s/operations/stop' % properties['href'], payload=None)
             self._delete()
         except IxNetworkError as e:
             if e._status_code not in [404, 405]:
                 raise e
+        finally:
+            self._clear()
     
     def GetObjectFromHref(self, href):
         """Given an href get the corresponding object

@@ -31,6 +31,7 @@ class Rfc7747ribIn(Base):
 	The internal properties list can be managed by the user by using the add and remove methods.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'rfc7747ribIn'
 
 	def __init__(self, parent):

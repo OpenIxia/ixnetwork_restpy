@@ -30,6 +30,7 @@ class ReportGeneration(Base):
 	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'reportGeneration'
 
 	def __init__(self, parent):

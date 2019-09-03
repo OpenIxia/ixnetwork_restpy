@@ -30,6 +30,7 @@ class RsvpEROSubObjectsList(Base):
 	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'rsvpEROSubObjectsList'
 
 	def __init__(self, parent):
@@ -197,6 +198,7 @@ class RsvpEroSubObjectsList(Base):
 	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
 	"""
 
+	__slots__ = ()
 	_SDM_NAME = 'rsvpEroSubObjectsList'
 
 	def __init__(self, parent):
