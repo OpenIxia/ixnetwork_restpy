@@ -106,7 +106,7 @@ class BondedGRE(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -115,7 +115,7 @@ class BondedGRE(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -124,7 +124,7 @@ class BondedGRE(Base):
 
 	@property
 	def DhcpIp(self):
-		"""DEPRECATED The discovered IPv4 addresses.
+		"""The discovered IPv4 addresses.
 
 		Returns:
 			list(str)
@@ -133,7 +133,7 @@ class BondedGRE(Base):
 
 	@property
 	def DslSyncRate(self):
-		"""DEPRECATED DSL Synchronization Rate is used to notify the HAAP about the downstream bandwidth of the DSL link.
+		"""DSL Synchronization Rate is used to notify the HAAP about the downstream bandwidth of the DSL link.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -142,7 +142,7 @@ class BondedGRE(Base):
 
 	@property
 	def ErrorCode(self):
-		"""DEPRECATED The HAAP uses the Error Code attribute to inform the HG of the error code. It depicts why the GRE Tunnel Setup Request is denied. The list of codes is as follows: 0: No Error. 1: The HAAP was not reachable over LTE during the GRE Tunnel Setup Request. 2: The HAAP was not reachable via DSL during the GRE Tunnel Setup Request. 3: The LTE GRE tunnel to the HAAP failed. 4: The DSL GRE tunnel to the HAAP failed. 5: The given DSL User ID is not allowed to use the GRE Tunnel Bonding service. 6: The given User Alias / User ID (Globally Unique Identifier (GUID) is not allowed to use the GRE Tunnel Bonding service. 7: The LTE and DSL User IDs do not match. 8: The HAAP denied the GRE Tunnel Setup Request because a bonding session with the same User ID already exists. 9: The HAAP denied the GRE Tunnel Setup Request because the user's CIN is not permitted. 10: The HAAP terminated a GRE Tunnel Bonding session for maintenance reasons. 11: There was a communication error between the HAAP and the management system during the LTE GRE Tunnel Setup Request. 12: There was a communication error between the HAAP and the management system during the DSL GRE Tunnel Setup Request.
+		"""The HAAP uses the Error Code attribute to inform the HG of the error code. It depicts why the GRE Tunnel Setup Request is denied. The list of codes is as follows: 0: No Error. 1: The HAAP was not reachable over LTE during the GRE Tunnel Setup Request. 2: The HAAP was not reachable via DSL during the GRE Tunnel Setup Request. 3: The LTE GRE tunnel to the HAAP failed. 4: The DSL GRE tunnel to the HAAP failed. 5: The given DSL User ID is not allowed to use the GRE Tunnel Bonding service. 6: The given User Alias / User ID (Globally Unique Identifier (GUID) is not allowed to use the GRE Tunnel Bonding service. 7: The LTE and DSL User IDs do not match. 8: The HAAP denied the GRE Tunnel Setup Request because a bonding session with the same User ID already exists. 9: The HAAP denied the GRE Tunnel Setup Request because the user's CIN is not permitted. 10: The HAAP terminated a GRE Tunnel Bonding session for maintenance reasons. 11: There was a communication error between the HAAP and the management system during the LTE GRE Tunnel Setup Request. 12: There was a communication error between the HAAP and the management system during the DSL GRE Tunnel Setup Request.
 
 		Returns:
 			list(number)
@@ -151,7 +151,7 @@ class BondedGRE(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -160,7 +160,7 @@ class BondedGRE(Base):
 
 	@property
 	def HomeGatewayInfo(self):
-		"""DEPRECATED Current Home Gateway session state: Unconfigured - The HG is in unconfigured state. Configured - The HG is in configured state. Partially Configured - Only one tunnel (DSL/LTE) is configured in the HG. Diagnostic Start: Bonding Tunnel - HG has entered in diagnostic mode to test the performance of the entire bonding tunnel. Diagnostic Start: DSL Tunnel - HG has entered in diagnostic mode to test the performance of the DSL bonding tunnel. Diagnostic Start: LTE Tunnel - HG has entered in diagnostic mode to test the performance of the LTE tunnel. Diagnostic End - End of diagnostic operation. DSL Link Failure - DSL Link has failed. LTE Link Failure - LTE Link has failed. Switching to DSL Tunnel - HG uses this attribute to inform the HAAP to use the DSL GRE tunnel only. Switching to DSL Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Switching to DSL Tunnel sent by HG. Overflowing to LTE Tunnel - HG uses this attribute to inform the HAAP that the LTE GRE tunnel can be used again. Overflowing to LTE Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Overflowing to LTE Tunnel sent by HG.
+		"""Current Home Gateway session state: Unconfigured - The HG is in unconfigured state. Configured - The HG is in configured state. Partially Configured - Only one tunnel (DSL/LTE) is configured in the HG. Diagnostic Start: Bonding Tunnel - HG has entered in diagnostic mode to test the performance of the entire bonding tunnel. Diagnostic Start: DSL Tunnel - HG has entered in diagnostic mode to test the performance of the DSL bonding tunnel. Diagnostic Start: LTE Tunnel - HG has entered in diagnostic mode to test the performance of the LTE tunnel. Diagnostic End - End of diagnostic operation. DSL Link Failure - DSL Link has failed. LTE Link Failure - LTE Link has failed. Switching to DSL Tunnel - HG uses this attribute to inform the HAAP to use the DSL GRE tunnel only. Switching to DSL Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Switching to DSL Tunnel sent by HG. Overflowing to LTE Tunnel - HG uses this attribute to inform the HAAP that the LTE GRE tunnel can be used again. Overflowing to LTE Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Overflowing to LTE Tunnel sent by HG.
 
 		Returns:
 			list(str[activeHello|bondingTunnel|configured|denied|diagEnd|dSLFail|dSLTunnel|established|establishing|helloPaused|idleHello|lTEFail|lTETunnel|overflowedToLTETunnel|overflowingToLTETunnel|partiallyConfigured|switchedToDSLTunnel|switchingToActiveHello|switchingToDSLTunnel|switchingToIdleHello|tearedDown|unconfigured|waitForLTE])
@@ -169,7 +169,7 @@ class BondedGRE(Base):
 
 	@property
 	def IdName(self):
-		"""DEPRECATED This is a 40-byte string value(Allowed upto 80 bytes). It is used as the identification of the HG in the operator's network.
+		"""This is a 40-byte string value(Allowed upto 80 bytes). It is used as the identification of the HG in the operator's network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +178,7 @@ class BondedGRE(Base):
 
 	@property
 	def Ipv6Prefix(self):
-		"""DEPRECATED IPv6 Prefix Assigned to Host
+		"""IPv6 Prefix Assigned to Host
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -187,7 +187,7 @@ class BondedGRE(Base):
 
 	@property
 	def Ipv6PrefixLen(self):
-		"""DEPRECATED IPv6 Prefix length
+		"""IPv6 Prefix length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -196,7 +196,7 @@ class BondedGRE(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -208,7 +208,7 @@ class BondedGRE(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -220,7 +220,7 @@ class BondedGRE(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -229,7 +229,7 @@ class BondedGRE(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -241,7 +241,7 @@ class BondedGRE(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -250,7 +250,7 @@ class BondedGRE(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -259,7 +259,7 @@ class BondedGRE(Base):
 
 	@property
 	def TunnelGrp(self):
-		"""DEPRECATED Displays the Mapping ID of the tunnel
+		"""Displays the Mapping ID of the tunnel
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +268,7 @@ class BondedGRE(Base):
 
 	@property
 	def TunnelType(self):
-		"""DEPRECATED Determines the Tunnel type to be used
+		"""Determines the Tunnel type to be used
 
 		Returns:
 			str(dsl|lte)

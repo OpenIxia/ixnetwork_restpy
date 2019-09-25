@@ -88,7 +88,7 @@ class Ldp(Base):
 
 	@property
 	def EnableVpnLabelExchangeOverLsp(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -100,7 +100,7 @@ class Ldp(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
+		"""Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
 
 		Returns:
 			bool
@@ -112,7 +112,7 @@ class Ldp(Base):
 
 	@property
 	def HelloHoldTime(self):
-		"""DEPRECATED One of the timers associated with maintaining adjacencies based on hello messages.
+		"""One of the timers associated with maintaining adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class Ldp(Base):
 
 	@property
 	def HelloInterval(self):
-		"""DEPRECATED One of the timers associated with maintaining adjacencies based on hello messages.
+		"""One of the timers associated with maintaining adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -136,7 +136,7 @@ class Ldp(Base):
 
 	@property
 	def KeepAliveHoldTime(self):
-		"""DEPRECATED One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+		"""One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
 
 		Returns:
 			number
@@ -148,7 +148,7 @@ class Ldp(Base):
 
 	@property
 	def KeepAliveInterval(self):
-		"""DEPRECATED One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+		"""One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
 
 		Returns:
 			number
@@ -160,7 +160,7 @@ class Ldp(Base):
 
 	@property
 	def P2mpCapabilityParam(self):
-		"""DEPRECATED The P2MP capability parameter value in hexadecimal.
+		"""The P2MP capability parameter value in hexadecimal.
 
 		Returns:
 			number
@@ -172,7 +172,7 @@ class Ldp(Base):
 
 	@property
 	def P2mpFecType(self):
-		"""DEPRECATED The MLDP P2MP FEC type value in hexadecimal.
+		"""The MLDP P2MP FEC type value in hexadecimal.
 
 		Returns:
 			number
@@ -184,7 +184,7 @@ class Ldp(Base):
 
 	@property
 	def RunningState(self):
-		"""DEPRECATED The current state of the LDP server.
+		"""The current state of the LDP server.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -193,7 +193,7 @@ class Ldp(Base):
 
 	@property
 	def TargetedHelloInterval(self):
-		"""DEPRECATED One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+		"""One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -205,7 +205,7 @@ class Ldp(Base):
 
 	@property
 	def TargetedHoldTime(self):
-		"""DEPRECATED One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+		"""One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
 
 		Returns:
 			number
@@ -217,7 +217,7 @@ class Ldp(Base):
 
 	@property
 	def UseTransportLabelsForMplsOam(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool

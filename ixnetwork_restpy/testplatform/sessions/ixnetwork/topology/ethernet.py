@@ -541,7 +541,7 @@ class Ethernet(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -550,7 +550,7 @@ class Ethernet(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -559,7 +559,7 @@ class Ethernet(Base):
 
 	@property
 	def EnableVlans(self):
-		"""DEPRECATED Enables VLANs for the sessions.
+		"""Enables VLANs for the sessions.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -568,7 +568,7 @@ class Ethernet(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -577,7 +577,7 @@ class Ethernet(Base):
 
 	@property
 	def Mac(self):
-		"""DEPRECATED MAC addresses of the devices
+		"""MAC addresses of the devices
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -586,7 +586,7 @@ class Ethernet(Base):
 
 	@property
 	def Mtu(self):
-		"""DEPRECATED Maximum transmission unit
+		"""Maximum transmission unit
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -595,7 +595,7 @@ class Ethernet(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -607,7 +607,7 @@ class Ethernet(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -619,7 +619,7 @@ class Ethernet(Base):
 
 	@property
 	def NotifyMACMove(self):
-		"""DEPRECATED Flag to determine if MAC move notification to be sent
+		"""Flag to determine if MAC move notification to be sent
 
 		Returns:
 			bool
@@ -631,7 +631,7 @@ class Ethernet(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -640,7 +640,7 @@ class Ethernet(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -652,7 +652,7 @@ class Ethernet(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -661,7 +661,7 @@ class Ethernet(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -682,7 +682,7 @@ class Ethernet(Base):
 
 	@property
 	def VlanCount(self):
-		"""DEPRECATED Number of active VLANs
+		"""Number of active VLANs
 
 		Returns:
 			number

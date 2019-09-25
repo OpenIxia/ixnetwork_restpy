@@ -597,7 +597,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV4MplsVpn(self):
-		"""DEPRECATED IPv4 MPLS VPN Capability: AFI=1,SAFI=128
+		"""IPv4 MPLS VPN Capability: AFI=1,SAFI=128
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -606,7 +606,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV4Multicast(self):
-		"""DEPRECATED IPv4 Multicast Capability: AFI=1,SAFI=2
+		"""IPv4 Multicast Capability: AFI=1,SAFI=2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -615,7 +615,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV4MulticastVpn(self):
-		"""DEPRECATED IP MCAST-VPN: AFI = 1, SAFI = 5
+		"""IP MCAST-VPN: AFI = 1, SAFI = 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -624,7 +624,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV4Unicast(self):
-		"""DEPRECATED IPv4 Unicast Capability: AFI=1,SAFI=1
+		"""IPv4 Unicast Capability: AFI=1,SAFI=1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -642,7 +642,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV6MplsVpn(self):
-		"""DEPRECATED IPv6 MPLS VPN Capability: AFI=2,SAFI=128
+		"""IPv6 MPLS VPN Capability: AFI=2,SAFI=128
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -651,7 +651,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV6Multicast(self):
-		"""DEPRECATED IPv6 Multicast Capability: AFI=2,SAFI=2
+		"""IPv6 Multicast Capability: AFI=2,SAFI=2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -660,7 +660,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV6MulticastVpn(self):
-		"""DEPRECATED IP6 MCAST-VPN: AFI = 2, SAFI = 5
+		"""IP6 MCAST-VPN: AFI = 2, SAFI = 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -669,7 +669,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpV6Unicast(self):
-		"""DEPRECATED IPv6 Unicast Capability: AFI=2,SAFI=1
+		"""IPv6 Unicast Capability: AFI=2,SAFI=1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -678,7 +678,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpv4MplsAddPath(self):
-		"""DEPRECATED IPv4 MPLS Add Path Capability
+		"""IPv4 MPLS Add Path Capability
 
 		Returns:
 			bool
@@ -690,7 +690,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpv4UnicastAddPath(self):
-		"""DEPRECATED Check box for IPv4 Unicast Add Path
+		"""Check box for IPv4 Unicast Add Path
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -699,7 +699,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpv6MplsAddPath(self):
-		"""DEPRECATED IPv6 MPLS Add Path Capability
+		"""IPv6 MPLS Add Path Capability
 
 		Returns:
 			bool
@@ -711,7 +711,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityIpv6UnicastAddPath(self):
-		"""DEPRECATED Check box for IPv6 Unicast Add Path
+		"""Check box for IPv6 Unicast Add Path
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -720,7 +720,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityLinkStateNonVpn(self):
-		"""DEPRECATED Link State Non-VPN Capability: AFI=16388,SAFI=71
+		"""Link State Non-VPN Capability: AFI=16388,SAFI=71
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -729,7 +729,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityNHEncodingCapabilities(self):
-		"""DEPRECATED Extended Next Hop Encoding Capability which needs to be used when advertising IPv4 or VPN-IPv4 routes over IPv6 Core
+		"""Extended Next Hop Encoding Capability which needs to be used when advertising IPv4 or VPN-IPv4 routes over IPv6 Core
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -738,7 +738,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityRouteConstraint(self):
-		"""DEPRECATED Route Constraint Capability: AFI=1,SAFI=132
+		"""Route Constraint Capability: AFI=1,SAFI=132
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -747,7 +747,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityRouteRefresh(self):
-		"""DEPRECATED Route Refresh
+		"""Route Refresh
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -756,7 +756,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilitySRTEPoliciesV4(self):
-		"""DEPRECATED IPv4 SR TE Policy Capability: AFI=1,SAFI=73
+		"""IPv4 SR TE Policy Capability: AFI=1,SAFI=73
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -765,7 +765,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilitySRTEPoliciesV6(self):
-		"""DEPRECATED IPv6 SR TE Policy Capability: AFI=2,SAFI=73
+		"""IPv6 SR TE Policy Capability: AFI=2,SAFI=73
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -774,7 +774,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CapabilityVpls(self):
-		"""DEPRECATED VPLS Capability: AFI = 25, SAFI = 65
+		"""VPLS Capability: AFI = 25, SAFI = 65
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -783,7 +783,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Capabilityipv4UnicastFlowSpec(self):
-		"""DEPRECATED IPv4 Unicast Flow Spec Capability: AFI=1,SAFI=133
+		"""IPv4 Unicast Flow Spec Capability: AFI=1,SAFI=133
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -792,7 +792,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Capabilityipv6UnicastFlowSpec(self):
-		"""DEPRECATED IPv6 Unicast Flow Spec Capability: AFI=2,SAFI=133
+		"""IPv6 Unicast Flow Spec Capability: AFI=2,SAFI=133
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -801,7 +801,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def ConfigureKeepaliveTimer(self):
-		"""DEPRECATED Configure Keepalive Timer
+		"""Configure Keepalive Timer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -822,7 +822,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CopyTtl(self):
-		"""DEPRECATED Copy TTL from customer packet to outer IPv6 header
+		"""Copy TTL from customer packet to outer IPv6 header
 
 		Returns:
 			bool
@@ -834,7 +834,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -843,7 +843,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def CustomSidType(self):
-		"""DEPRECATED moved to port data in bgp/srv6 Custom SID Type
+		"""moved to port data in bgp/srv6 Custom SID Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -852,7 +852,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -861,7 +861,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def DiscardIxiaGeneratedRoutes(self):
-		"""DEPRECATED Discard Ixia Generated Routes
+		"""Discard Ixia Generated Routes
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -870,7 +870,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def DowntimeInSec(self):
-		"""DEPRECATED Downtime in Seconds
+		"""Downtime in Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -879,7 +879,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def DutIp(self):
-		"""DEPRECATED DUT IP
+		"""DUT IP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -888,7 +888,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnSRv6DataPlane(self):
-		"""DEPRECATED Ingress Peer Supports SRv6 VPN
+		"""Ingress Peer Supports SRv6 VPN
 
 		Returns:
 			bool
@@ -900,7 +900,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Enable4ByteAs(self):
-		"""DEPRECATED Enable 4-Byte AS
+		"""Enable 4-Byte AS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -909,7 +909,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""DEPRECATED Enable BFD Registration
+		"""Enable BFD Registration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -918,7 +918,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableBgpId(self):
-		"""DEPRECATED Enable BGP ID
+		"""Enable BGP ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -927,7 +927,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableBgpIdSameAsRouterId(self):
-		"""DEPRECATED BGP ID Same as Router ID
+		"""BGP ID Same as Router ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -936,7 +936,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableBgpLsCommunity(self):
-		"""DEPRECATED Enable Community
+		"""Enable Community
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -945,7 +945,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableEpeTraffic(self):
-		"""DEPRECATED Enable EPE Traffic
+		"""Enable EPE Traffic
 
 		Returns:
 			bool
@@ -957,7 +957,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableGracefulRestart(self):
-		"""DEPRECATED Enable Graceful Restart
+		"""Enable Graceful Restart
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -966,7 +966,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableLlgr(self):
-		"""DEPRECATED Enable LLGR
+		"""Enable LLGR
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -975,7 +975,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EnableReducedEncapsulation(self):
-		"""DEPRECATED Enable Reduced Encapsulation in Data-Plane for SRv6
+		"""Enable Reduced Encapsulation in Data-Plane for SRv6
 
 		Returns:
 			bool
@@ -987,7 +987,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -996,7 +996,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def EthernetSegmentsCountV6(self):
-		"""DEPRECATED Number of Ethernet Segments
+		"""Number of Ethernet Segments
 
 		Returns:
 			number
@@ -1008,7 +1008,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Evpn(self):
-		"""DEPRECATED EVPN Capability: AFI = 25, SAFI = 70
+		"""EVPN Capability: AFI = 25, SAFI = 70
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1017,7 +1017,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterEvpn(self):
-		"""DEPRECATED Check box for EVPN filter
+		"""Check box for EVPN filter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1026,7 +1026,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV4Mpls(self):
-		"""DEPRECATED Filter IPv4 MPLS
+		"""Filter IPv4 MPLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1035,7 +1035,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV4MplsVpn(self):
-		"""DEPRECATED Filter IPv4 MPLS VPN
+		"""Filter IPv4 MPLS VPN
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1044,7 +1044,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV4Multicast(self):
-		"""DEPRECATED Filter IPv4 Multicast
+		"""Filter IPv4 Multicast
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1053,7 +1053,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV4MulticastVpn(self):
-		"""DEPRECATED Filter IPv4 Multicast VPN
+		"""Filter IPv4 Multicast VPN
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1062,7 +1062,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV4Unicast(self):
-		"""DEPRECATED Filter IPv4 Unicast
+		"""Filter IPv4 Unicast
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1071,7 +1071,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV6Mpls(self):
-		"""DEPRECATED Filter IPv6 MPLS
+		"""Filter IPv6 MPLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1080,7 +1080,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV6MplsVpn(self):
-		"""DEPRECATED Filter IPv6 MPLS VPN
+		"""Filter IPv6 MPLS VPN
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1089,7 +1089,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV6Multicast(self):
-		"""DEPRECATED Filter IPv6 Multicast
+		"""Filter IPv6 Multicast
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1098,7 +1098,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV6MulticastVpn(self):
-		"""DEPRECATED Filter IPv6 Multicast VPN
+		"""Filter IPv6 Multicast VPN
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1107,7 +1107,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpV6Unicast(self):
-		"""DEPRECATED Filter IPv6 Unicast
+		"""Filter IPv6 Unicast
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1116,7 +1116,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpv4MulticastBgpMplsVpn(self):
-		"""DEPRECATED Check box for IPv4 Multicast BGP/MPLS VPN filter
+		"""Check box for IPv4 Multicast BGP/MPLS VPN filter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1125,7 +1125,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpv4UnicastFlowSpec(self):
-		"""DEPRECATED Filter IPv4 Unicast Flow Spec
+		"""Filter IPv4 Unicast Flow Spec
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1134,7 +1134,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpv6MulticastBgpMplsVpn(self):
-		"""DEPRECATED Check box for IPv6 Multicast BGP/MPLS VPN filter
+		"""Check box for IPv6 Multicast BGP/MPLS VPN filter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1143,7 +1143,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterIpv6UnicastFlowSpec(self):
-		"""DEPRECATED Filter IPv6 Unicast Flow Spec
+		"""Filter IPv6 Unicast Flow Spec
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1152,7 +1152,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterLinkState(self):
-		"""DEPRECATED Filter Link State
+		"""Filter Link State
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1161,7 +1161,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterSRTEPoliciesV4(self):
-		"""DEPRECATED Enable IPv4 SR TE Policy Filter
+		"""Enable IPv4 SR TE Policy Filter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1170,7 +1170,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterSRTEPoliciesV6(self):
-		"""DEPRECATED Enable IPv6 SR TE Policy Filter
+		"""Enable IPv6 SR TE Policy Filter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1179,7 +1179,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def FilterVpls(self):
-		"""DEPRECATED Filter VPLS
+		"""Filter VPLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1188,7 +1188,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Flap(self):
-		"""DEPRECATED Flap
+		"""Flap
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1197,7 +1197,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def HoldTimer(self):
-		"""DEPRECATED Hold Timer
+		"""Hold Timer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1206,7 +1206,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def IpVrfToIpVrfType(self):
-		"""DEPRECATED IP-VRF-to-IP-VRF Model Type
+		"""IP-VRF-to-IP-VRF Model Type
 
 		Returns:
 			str(interfaceLess|interfacefullWithCorefacingIRB|interfacefullWithUnnumberedCorefacingIRB)
@@ -1218,7 +1218,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv4MplsAddPathMode(self):
-		"""DEPRECATED IPv4 MPLS Add Path Mode
+		"""IPv4 MPLS Add Path Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1227,7 +1227,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv4MplsCapability(self):
-		"""DEPRECATED IPv4 MPLS Capability: AFI=1, SAFI=4
+		"""IPv4 MPLS Capability: AFI=1, SAFI=4
 
 		Returns:
 			bool
@@ -1239,7 +1239,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv4MulticastBgpMplsVpn(self):
-		"""DEPRECATED IP Multicast for BGP/MPLS IP VPN (UMH): AFI = 1, SAFI = 129
+		"""IP Multicast for BGP/MPLS IP VPN (UMH): AFI = 1, SAFI = 129
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1248,7 +1248,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv4MultipleMplsLabelsCapability(self):
-		"""DEPRECATED IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
+		"""IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
 
 		Returns:
 			bool
@@ -1260,7 +1260,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv4UnicastAddPathMode(self):
-		"""DEPRECATED IPv4 Unicast Add Path Mode
+		"""IPv4 Unicast Add Path Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1269,7 +1269,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv6MplsAddPathMode(self):
-		"""DEPRECATED IPv6 MPLS Add Path Mode
+		"""IPv6 MPLS Add Path Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1278,7 +1278,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv6MplsCapability(self):
-		"""DEPRECATED IPv6 MPLS Capability: AFI=2, SAFI=4
+		"""IPv6 MPLS Capability: AFI=2, SAFI=4
 
 		Returns:
 			bool
@@ -1290,7 +1290,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv6MulticastBgpMplsVpn(self):
-		"""DEPRECATED IP6 Multicast for BGP/MPLS IP VPN (UMH): AFI = 2, SAFI = 129
+		"""IP6 Multicast for BGP/MPLS IP VPN (UMH): AFI = 2, SAFI = 129
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1299,7 +1299,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv6MultipleMplsLabelsCapability(self):
-		"""DEPRECATED IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
+		"""IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
 
 		Returns:
 			bool
@@ -1311,7 +1311,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ipv6UnicastAddPathMode(self):
-		"""DEPRECATED IPv6 Unicast Add Path Mode
+		"""IPv6 Unicast Add Path Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1320,7 +1320,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def IrbInterfaceLabel(self):
-		"""DEPRECATED Label to be used for Route Type 2 carrying IRB MAC and/or IRB IP in Route Type 2
+		"""Label to be used for Route Type 2 carrying IRB MAC and/or IRB IP in Route Type 2
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1329,7 +1329,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def IrbIpv6Address(self):
-		"""DEPRECATED IRB IPv6 Address
+		"""IRB IPv6 Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1338,7 +1338,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def KeepaliveTimer(self):
-		"""DEPRECATED Keepalive Timer
+		"""Keepalive Timer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1347,7 +1347,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def L3VPNEncapsulationType(self):
-		"""DEPRECATED L3VPN Traffic Encapsulation
+		"""L3VPN Traffic Encapsulation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1356,7 +1356,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def LocalAs2Bytes(self):
-		"""DEPRECATED Local AS# (2-Bytes)
+		"""Local AS# (2-Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1365,7 +1365,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def LocalAs4Bytes(self):
-		"""DEPRECATED Local AS# (4-Bytes)
+		"""Local AS# (4-Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1374,7 +1374,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def LocalIpv6Ver2(self):
-		"""DEPRECATED Local IP
+		"""Local IP
 
 		Returns:
 			list(str)
@@ -1383,7 +1383,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""DEPRECATED Router ID
+		"""Router ID
 
 		Returns:
 			list(str)
@@ -1392,7 +1392,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def MaxSidPerSrh(self):
-		"""DEPRECATED Max number of SIDs a SRH can have
+		"""Max number of SIDs a SRH can have
 
 		Returns:
 			number
@@ -1404,7 +1404,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Md5Key(self):
-		"""DEPRECATED MD5 Key
+		"""MD5 Key
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1413,7 +1413,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def ModeOfBfdOperations(self):
-		"""DEPRECATED Mode of BFD Operations
+		"""Mode of BFD Operations
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1422,7 +1422,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def MplsLabelsCountForIpv4MplsRoute(self):
-		"""DEPRECATED MPLS Labels Count For IPv4 MPLS Route
+		"""MPLS Labels Count For IPv4 MPLS Route
 
 		Returns:
 			number
@@ -1434,7 +1434,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def MplsLabelsCountForIpv6MplsRoute(self):
-		"""DEPRECATED MPLS Labels Count For IPv6 MPLS Route
+		"""MPLS Labels Count For IPv6 MPLS Route
 
 		Returns:
 			number
@@ -1446,7 +1446,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -1458,7 +1458,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -1470,7 +1470,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NoOfEpePeers(self):
-		"""DEPRECATED Number of EPE Peers
+		"""Number of EPE Peers
 
 		Returns:
 			number
@@ -1482,7 +1482,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NoOfExtendedCommunities(self):
-		"""DEPRECATED Number of Extended Communities
+		"""Number of Extended Communities
 
 		Returns:
 			number
@@ -1494,7 +1494,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NoOfUserDefinedAfiSafi(self):
-		"""DEPRECATED Count of User defined AFI SAFI
+		"""Count of User defined AFI SAFI
 
 		Returns:
 			number
@@ -1506,7 +1506,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumBgpLsId(self):
-		"""DEPRECATED BGP LS Instance ID
+		"""BGP LS Instance ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1515,7 +1515,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumBgpLsInstanceIdentifier(self):
-		"""DEPRECATED IGP Multi instance unique identifier. 0 is default single-instance IGP. (e.g. for OSPFv3 it is possible to separately run 4 instances of OSPFv3 with peer, one advertising v4 only, another v6 only and other 2 mcast v4 and v6 respectively) .
+		"""IGP Multi instance unique identifier. 0 is default single-instance IGP. (e.g. for OSPFv3 it is possible to separately run 4 instances of OSPFv3 with peer, one advertising v4 only, another v6 only and other 2 mcast v4 and v6 respectively) .
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1524,7 +1524,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumBgpUpdatesGeneratedPerIteration(self):
-		"""DEPRECATED Num BGP Updates Generated Per Iteration
+		"""Num BGP Updates Generated Per Iteration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1533,7 +1533,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumberFlowSpecRangeV4(self):
-		"""DEPRECATED Number of IPv4 Flow Spec Ranges
+		"""Number of IPv4 Flow Spec Ranges
 
 		Returns:
 			number
@@ -1545,7 +1545,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumberFlowSpecRangeV6(self):
-		"""DEPRECATED Number of IPv6 Flow Spec Ranges
+		"""Number of IPv6 Flow Spec Ranges
 
 		Returns:
 			number
@@ -1557,7 +1557,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def NumberSRTEPolicies(self):
-		"""DEPRECATED Count of SR TE Policies
+		"""Count of SR TE Policies
 
 		Returns:
 			number
@@ -1569,7 +1569,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def OperationalModel(self):
-		"""DEPRECATED Operational Model
+		"""Operational Model
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1578,7 +1578,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def RestartTime(self):
-		"""DEPRECATED Restart Time
+		"""Restart Time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1587,7 +1587,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def RoutersMacOrIrbMacAddress(self):
-		"""DEPRECATED Router's MAC/IRB MAC Address
+		"""Router's MAC/IRB MAC Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1596,7 +1596,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def SRGBRangeCount(self):
-		"""DEPRECATED SRGB Range Count
+		"""SRGB Range Count
 
 		Returns:
 			number
@@ -1608,7 +1608,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def SegmentLeftValue(self):
-		"""DEPRECATED Segment Left value to be used in top SRH. This zero index based value start from egress node.
+		"""Segment Left value to be used in top SRH. This zero index based value start from egress node.
 
 		Returns:
 			number
@@ -1620,7 +1620,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def SendIxiaSignatureWithRoutes(self):
-		"""DEPRECATED Send Ixia Signature With Routes
+		"""Send Ixia Signature With Routes
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1629,7 +1629,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[aSRoutingLoopErrorRx|attributeFlagErrorRx|attributesLengthErrorRx|authenticationFailureErrorRx|badBGPIdentifierErrorRx|badMessageLengthErrorRx|badMessageTypeErrorRx|badPeerASErrorRx|bGPHeaderErrorRx|bGPHeaderErrorTx|bGPHoldTimerExpiredErrorRx|bGPOpenPacketErrorRx|bGPStateMachineErrorRx|bGPUpdatePacketErrorRx|ceaseErrorRx|ceaseNotificationErrorTx|connectionNotsynchronizedErrorRx|holdtimeExpiredErrorTx|invalidASPathErrorRx|invalidNetworkFieldErrorRx|invalidNextHopAttributeErrorRx|invalidOriginAttributeErrorRx|malformedAttributeListErrorRx|missingWellKnownAttributeErrorRx|none|openPacketErrTx|optionalAttributeErrorRx|stateMachineErrorTx|unacceptableHoldTimeErrorRx|unrecognizedWellKnownAttributeErrorRx|unspecifiedErrorRx|unspecifiedErrorTx|unspecifiedSubcodeErrorRx|unsupportedOptionalParameterErrorRx|unsupportedversionNumberErrorRx|updatePacketErrorTx])
@@ -1638,7 +1638,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -1647,7 +1647,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6SidFlags(self):
-		"""DEPRECATED SRv6 SID Flags Value
+		"""SRv6 SID Flags Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1656,7 +1656,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6SidLoc(self):
-		"""DEPRECATED SRv6 SID. It consists of Locator, Func and Args
+		"""SRv6 SID. It consists of Locator, Func and Args
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1665,7 +1665,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6SidLocLen(self):
-		"""DEPRECATED SRv6 SID Locator Length
+		"""SRv6 SID Locator Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1674,7 +1674,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6SidLocMetric(self):
-		"""DEPRECATED SRv6 SID Locator Metric
+		"""SRv6 SID Locator Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1683,7 +1683,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6SidReserved(self):
-		"""DEPRECATED SRv6 SID Reserved Value
+		"""SRv6 SID Reserved Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1692,7 +1692,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Srv6Ttl(self):
-		"""DEPRECATED TTL value to be used in outer IPv6 header
+		"""TTL value to be used in outer IPv6 header
 
 		Returns:
 			number
@@ -1704,7 +1704,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -1716,7 +1716,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def StaleTime(self):
-		"""DEPRECATED Stale Time/ LLGR Stale Time
+		"""Stale Time/ LLGR Stale Time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1725,7 +1725,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -1734,7 +1734,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -1743,7 +1743,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def TcpWindowSizeInBytes(self):
-		"""DEPRECATED TCP Window Size (in bytes)
+		"""TCP Window Size (in bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1752,7 +1752,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Ttl(self):
-		"""DEPRECATED TTL
+		"""TTL
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1761,7 +1761,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def Type(self):
-		"""DEPRECATED Type
+		"""Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1770,7 +1770,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def UdpPortEndValue(self):
-		"""DEPRECATED UDP Port End Value
+		"""UDP Port End Value
 
 		Returns:
 			number
@@ -1782,7 +1782,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def UdpPortStartValue(self):
-		"""DEPRECATED UDP Port Start Value
+		"""UDP Port Start Value
 
 		Returns:
 			number
@@ -1794,7 +1794,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def UpdateInterval(self):
-		"""DEPRECATED Update Interval
+		"""Update Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1803,7 +1803,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def UptimeInSec(self):
-		"""DEPRECATED Uptime in Seconds
+		"""Uptime in Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1812,7 +1812,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def UseStaticPolicy(self):
-		"""DEPRECATED If enabled then SRTE policy will be advertised
+		"""If enabled then SRTE policy will be advertised
 
 		Returns:
 			bool
@@ -1824,7 +1824,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def VplsEnableNextHop(self):
-		"""DEPRECATED VPLS Enable Next Hop
+		"""VPLS Enable Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1833,7 +1833,7 @@ class BgpIpv6Peer(Base):
 
 	@property
 	def VplsNextHop(self):
-		"""DEPRECATED VPLS Next Hop
+		"""VPLS Next Hop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

@@ -269,7 +269,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -278,7 +278,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -287,7 +287,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Dscp(self):
-		"""DEPRECATED DSCP
+		"""DSCP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -296,7 +296,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def DutIpv4(self):
-		"""DEPRECATED DUT IP
+		"""DUT IP
 
 		Returns:
 			list(str)
@@ -305,7 +305,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def EnableTRM(self):
-		"""DEPRECATED Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
+		"""Enables Tenant Routed Multicast support in EVPN. Upon Enabling, - Advertise I-PMSI Routes will be disabled (by default). - Multicast Tunnel Type will be PIM-SSM (by default). - VRF Route Import Extended Community is sent with EVPN Route Type 2 & 5 (always).
 
 		Returns:
 			bool
@@ -317,7 +317,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Entropy(self):
-		"""DEPRECATED Entropy
+		"""Entropy
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -326,7 +326,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -335,7 +335,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def GroupAddress(self):
-		"""DEPRECATED Group Address
+		"""Group Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -344,7 +344,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def ImportRtListSameAsExportRtList(self):
-		"""DEPRECATED Import RT List Same As Export RT List
+		"""Import RT List Same As Export RT List
 
 		Returns:
 			bool
@@ -356,7 +356,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def IncludeBierPTAinLeafAD(self):
-		"""DEPRECATED Include Bier PTA in Leaf A-D
+		"""Include Bier PTA in Leaf A-D
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -365,7 +365,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def IncludePmsiTunnelAttribute(self):
-		"""DEPRECATED Include PMSI Tunnel Attribute
+		"""Include PMSI Tunnel Attribute
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -374,7 +374,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def LocalIpv4(self):
-		"""DEPRECATED Local IP
+		"""Local IP
 
 		Returns:
 			list(str)
@@ -383,7 +383,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""DEPRECATED Router ID
+		"""Router ID
 
 		Returns:
 			list(str)
@@ -392,7 +392,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastDistinguisherAs4Number(self):
-		"""DEPRECATED VMulticast Distinguisher AS4 Number
+		"""VMulticast Distinguisher AS4 Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -401,7 +401,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastDistinguisherAsNumber(self):
-		"""DEPRECATED VMulticast Distinguisher AS Number
+		"""VMulticast Distinguisher AS Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -410,7 +410,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastDistinguisherAssignedNumber(self):
-		"""DEPRECATED Multicast Distinguisher Assigned Number
+		"""Multicast Distinguisher Assigned Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -419,7 +419,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastDistinguisherIpAddress(self):
-		"""DEPRECATED Multicast Distinguisher IP Address
+		"""Multicast Distinguisher IP Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -428,7 +428,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastDistinguisherType(self):
-		"""DEPRECATED Multicast Distinguisher Type
+		"""Multicast Distinguisher Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -437,7 +437,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def MulticastTunnelType(self):
-		"""DEPRECATED Multicast Tunnel Type
+		"""Multicast Tunnel Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -446,7 +446,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -458,7 +458,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -470,7 +470,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def NextProtocol(self):
-		"""DEPRECATED Next Protocol
+		"""Next Protocol
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -479,7 +479,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def NumRtInExportRouteTargetList(self):
-		"""DEPRECATED Number of RTs in Export Route Target List(multiplier)
+		"""Number of RTs in Export Route Target List(multiplier)
 
 		Returns:
 			number
@@ -491,7 +491,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def NumRtInImportRouteTargetList(self):
-		"""DEPRECATED Number of RTs in Import Route Target List(multiplier)
+		"""Number of RTs in Import Route Target List(multiplier)
 
 		Returns:
 			number
@@ -503,7 +503,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def NumRtInUmhExportRouteTargetList(self):
-		"""DEPRECATED Number of RTs in Export Route Target List(multiplier)
+		"""Number of RTs in Export Route Target List(multiplier)
 
 		Returns:
 			number
@@ -515,7 +515,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def NumRtInUmhImportRouteTargetList(self):
-		"""DEPRECATED Number of RTs in Import Route Target List(multiplier)
+		"""Number of RTs in Import Route Target List(multiplier)
 
 		Returns:
 			number
@@ -527,7 +527,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Oam(self):
-		"""DEPRECATED OAM
+		"""OAM
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -536,7 +536,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def RootAddress(self):
-		"""DEPRECATED Root Address
+		"""Root Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -545,7 +545,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Rsv(self):
-		"""DEPRECATED Rsv
+		"""Rsv
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -554,7 +554,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def RsvpP2mpId(self):
-		"""DEPRECATED RSVP P2MP ID
+		"""RSVP P2MP ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -563,7 +563,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def RsvpP2mpIdAsNumber(self):
-		"""DEPRECATED RSVP P2MP ID as Number
+		"""RSVP P2MP ID as Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -572,7 +572,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def RsvpTunnelId(self):
-		"""DEPRECATED RSVP Tunnel ID
+		"""RSVP Tunnel ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -581,7 +581,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SameAsExportRT(self):
-		"""DEPRECATED Same As Export RT Attribute
+		"""Same As Export RT Attribute
 
 		Returns:
 			bool
@@ -593,7 +593,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SameAsImportRT(self):
-		"""DEPRECATED Same As Import RT Attribute
+		"""Same As Import RT Attribute
 
 		Returns:
 			bool
@@ -605,7 +605,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SenderAddressPRootNodeAddress(self):
-		"""DEPRECATED Sender Address/P-Root Node Address
+		"""Sender Address/P-Root Node Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -614,7 +614,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -623,7 +623,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SiCount(self):
-		"""DEPRECATED Set Identifier Range
+		"""Set Identifier Range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -632,7 +632,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SrLabelStart(self):
-		"""DEPRECATED SR Label Start
+		"""SR Label Start
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -641,7 +641,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SrLabelStep(self):
-		"""DEPRECATED SR Label Step
+		"""SR Label Step
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -650,7 +650,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -662,7 +662,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -671,7 +671,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -680,7 +680,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def SupportLeafADRoutesSending(self):
-		"""DEPRECATED Support Leaf A-D Routes Sending
+		"""Support Leaf A-D Routes Sending
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -689,7 +689,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def TrafficBfrId(self):
-		"""DEPRECATED Traffic BFR-Id
+		"""Traffic BFR-Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -698,7 +698,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def UpOrDownStreamAssignedLabel(self):
-		"""DEPRECATED Upstream/Downstream Assigned Label
+		"""Upstream/Downstream Assigned Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -707,7 +707,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def UseSameBfrIdInTraffic(self):
-		"""DEPRECATED Use Same BFR-Id in Traffic
+		"""Use Same BFR-Id in Traffic
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -716,7 +716,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def UseUpOrDownStreamAssigneLabel(self):
-		"""DEPRECATED Use Upstream/Downstream Assigned Label
+		"""Use Upstream/Downstream Assigned Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -725,7 +725,7 @@ class BgpIpv4MVrf(Base):
 
 	@property
 	def Version(self):
-		"""DEPRECATED Version
+		"""Version
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

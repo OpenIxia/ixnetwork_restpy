@@ -219,7 +219,7 @@ class NeighborRange(Base):
 
 	@property
 	def Authentication(self):
-		"""DEPRECATED Select the type of cryptographic authentication to be used for the BGP peers in this peer range.
+		"""Select the type of cryptographic authentication to be used for the BGP peers in this peer range.
 
 		Returns:
 			str(null|md5)
@@ -231,7 +231,7 @@ class NeighborRange(Base):
 
 	@property
 	def BfdModeOfOperation(self):
-		"""DEPRECATED Indicates whether to use a single-hop or a multi-hop mode of operation for the BFD session being created with a BGP peer.
+		"""Indicates whether to use a single-hop or a multi-hop mode of operation for the BFD session being created with a BGP peer.
 
 		Returns:
 			str(multiHop|singleHop)
@@ -243,7 +243,7 @@ class NeighborRange(Base):
 
 	@property
 	def BgpId(self):
-		"""DEPRECATED The BGP ID used in OPEN messages.
+		"""The BGP ID used in OPEN messages.
 
 		Returns:
 			str
@@ -255,7 +255,7 @@ class NeighborRange(Base):
 
 	@property
 	def DutIpAddress(self):
-		"""DEPRECATED The IP address of the DUT router.
+		"""The IP address of the DUT router.
 
 		Returns:
 			str
@@ -267,7 +267,7 @@ class NeighborRange(Base):
 
 	@property
 	def Enable4ByteAsNum(self):
-		"""DEPRECATED Enables the 4-byte Autonomous System (AS) number of the DUT/SUT.
+		"""Enables the 4-byte Autonomous System (AS) number of the DUT/SUT.
 
 		Returns:
 			bool
@@ -279,7 +279,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableActAsRestarted(self):
-		"""DEPRECATED Controls the operation of BGP Graceful Restart.
+		"""Controls the operation of BGP Graceful Restart.
 
 		Returns:
 			bool
@@ -291,7 +291,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""DEPRECATED Enables the BFD registration.
+		"""Enables the BFD registration.
 
 		Returns:
 			bool
@@ -303,7 +303,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableBgpId(self):
-		"""DEPRECATED The BGP ID used in OPEN messages.
+		"""The BGP ID used in OPEN messages.
 
 		Returns:
 			bool
@@ -315,7 +315,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableDiscardIxiaGeneratedRoutes(self):
-		"""DEPRECATED If true, enables the discard of Ixia generated routes
+		"""If true, enables the discard of Ixia generated routes
 
 		Returns:
 			bool
@@ -327,7 +327,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableGracefulRestart(self):
-		"""DEPRECATED Controls the operation of BGP Graceful Restart.
+		"""Controls the operation of BGP Graceful Restart.
 
 		Returns:
 			bool
@@ -339,7 +339,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableLinkFlap(self):
-		"""DEPRECATED If true, enables link flap
+		"""If true, enables link flap
 
 		Returns:
 			bool
@@ -351,7 +351,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableNextHop(self):
-		"""DEPRECATED Used for IPv4 traffic. Controls the use of the NEXT_HOP attribute. (default = disabled)
+		"""Used for IPv4 traffic. Controls the use of the NEXT_HOP attribute. (default = disabled)
 
 		Returns:
 			bool
@@ -363,7 +363,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableOptionalParameters(self):
-		"""DEPRECATED Controls how an OPEN is conducted in the presence of optional parameters.
+		"""Controls how an OPEN is conducted in the presence of optional parameters.
 
 		Returns:
 			bool
@@ -375,7 +375,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableSendIxiaSignatureWithRoutes(self):
-		"""DEPRECATED If true, enables sending of Ixia signature with routes
+		"""If true, enables sending of Ixia signature with routes
 
 		Returns:
 			bool
@@ -387,7 +387,7 @@ class NeighborRange(Base):
 
 	@property
 	def EnableStaggeredStart(self):
-		"""DEPRECATED Controls the staggering and period of initial start messages.
+		"""Controls the staggering and period of initial start messages.
 
 		Returns:
 			bool
@@ -399,7 +399,7 @@ class NeighborRange(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED Enables or disables simulation of the router.
+		"""Enables or disables simulation of the router.
 
 		Returns:
 			bool
@@ -411,7 +411,7 @@ class NeighborRange(Base):
 
 	@property
 	def Evpn(self):
-		"""DEPRECATED If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
+		"""If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
 
 		Returns:
 			bool
@@ -423,7 +423,7 @@ class NeighborRange(Base):
 
 	@property
 	def EvpnNextHopCount(self):
-		"""DEPRECATED It is used to replicate the traffic among the available Next Hops in Ingress Replication mode. Default value is 1. Minimum value is 1 and maximum value is 255.
+		"""It is used to replicate the traffic among the available Next Hops in Ingress Replication mode. Default value is 1. Minimum value is 1 and maximum value is 255.
 
 		Returns:
 			number
@@ -435,7 +435,7 @@ class NeighborRange(Base):
 
 	@property
 	def HoldTimer(self):
-		"""DEPRECATED The period of time between KEEP-ALIVE messages sent to the DUT.
+		"""The period of time between KEEP-ALIVE messages sent to the DUT.
 
 		Returns:
 			number
@@ -447,7 +447,7 @@ class NeighborRange(Base):
 
 	@property
 	def InterfaceStartIndex(self):
-		"""DEPRECATED The assigned protocol interface ID for this SM interface.
+		"""The assigned protocol interface ID for this SM interface.
 
 		Returns:
 			number
@@ -459,7 +459,7 @@ class NeighborRange(Base):
 
 	@property
 	def InterfaceType(self):
-		"""DEPRECATED The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
+		"""The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
 
 		Returns:
 			str
@@ -471,7 +471,7 @@ class NeighborRange(Base):
 
 	@property
 	def Interfaces(self):
-		"""DEPRECATED The interfaces that are associated with the selected interface type.
+		"""The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -483,7 +483,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4Mdt(self):
-		"""DEPRECATED Enables the use of this Data MDT range on the simulated interface.
+		"""Enables the use of this Data MDT range on the simulated interface.
 
 		Returns:
 			bool
@@ -495,7 +495,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4Mpls(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv4 MPLS address family.
+		"""If enabled, this BGP router/peer supports the IPv4 MPLS address family.
 
 		Returns:
 			bool
@@ -507,7 +507,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4MplsVpn(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
+		"""If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
 
 		Returns:
 			bool
@@ -519,7 +519,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4Multicast(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv4 multicast address family.
+		"""If enabled, this BGP router/peer supports the IPv4 multicast address family.
 
 		Returns:
 			bool
@@ -531,7 +531,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4MulticastVpn(self):
-		"""DEPRECATED If true, this BGP router/peer supports the IPv4 Multicast/VPN address family.
+		"""If true, this BGP router/peer supports the IPv4 Multicast/VPN address family.
 
 		Returns:
 			bool
@@ -543,7 +543,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV4Unicast(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv4 unicast address family.
+		"""If enabled, this BGP router/peer supports the IPv4 unicast address family.
 
 		Returns:
 			bool
@@ -555,7 +555,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV6Mpls(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv6 MPLS address family.
+		"""If enabled, this BGP router/peer supports the IPv6 MPLS address family.
 
 		Returns:
 			bool
@@ -567,7 +567,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV6MplsVpn(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv6 MPLS/VPN address family.
+		"""If enabled, this BGP router/peer supports the IPv6 MPLS/VPN address family.
 
 		Returns:
 			bool
@@ -579,7 +579,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV6Multicast(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv6 multicast address family.
+		"""If enabled, this BGP router/peer supports the IPv6 multicast address family.
 
 		Returns:
 			bool
@@ -591,7 +591,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV6MulticastVpn(self):
-		"""DEPRECATED If true, this BGP router/peer supports the IPv6 Multicast/VPN address family.
+		"""If true, this BGP router/peer supports the IPv6 Multicast/VPN address family.
 
 		Returns:
 			bool
@@ -603,7 +603,7 @@ class NeighborRange(Base):
 
 	@property
 	def IpV6Unicast(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports the IPv6 unicast address family.
+		"""If enabled, this BGP router/peer supports the IPv6 unicast address family.
 
 		Returns:
 			bool
@@ -615,7 +615,7 @@ class NeighborRange(Base):
 
 	@property
 	def IsAsbr(self):
-		"""DEPRECATED If true, it is ASBR
+		"""If true, it is ASBR
 
 		Returns:
 			bool
@@ -627,7 +627,7 @@ class NeighborRange(Base):
 
 	@property
 	def IsInterfaceLearnedInfoAvailable(self):
-		"""DEPRECATED If true, learned information is made avavilable.
+		"""If true, learned information is made avavilable.
 
 		Returns:
 			bool
@@ -636,7 +636,7 @@ class NeighborRange(Base):
 
 	@property
 	def IsLearnedInfoRefreshed(self):
-		"""DEPRECATED If true, learned information is refreshed.
+		"""If true, learned information is refreshed.
 
 		Returns:
 			bool
@@ -645,7 +645,7 @@ class NeighborRange(Base):
 
 	@property
 	def LinkFlapDownTime(self):
-		"""DEPRECATED Signifies the link flap down time
+		"""Signifies the link flap down time
 
 		Returns:
 			number
@@ -657,7 +657,7 @@ class NeighborRange(Base):
 
 	@property
 	def LinkFlapUpTime(self):
-		"""DEPRECATED Signifies the link flap up time
+		"""Signifies the link flap up time
 
 		Returns:
 			number
@@ -669,7 +669,7 @@ class NeighborRange(Base):
 
 	@property
 	def LocalAsNumber(self):
-		"""DEPRECATED (External only) The first AS Num assigned to the simulated neighbor router. May be set for external neighbors on any port type, but only Linux-based ports may set this for internal neighbors.
+		"""(External only) The first AS Num assigned to the simulated neighbor router. May be set for external neighbors on any port type, but only Linux-based ports may set this for internal neighbors.
 
 		Returns:
 			str
@@ -681,7 +681,7 @@ class NeighborRange(Base):
 
 	@property
 	def LocalIpAddress(self):
-		"""DEPRECATED The first IP address for the simulated neighbor routers and the number of routers.
+		"""The first IP address for the simulated neighbor routers and the number of routers.
 
 		Returns:
 			str
@@ -693,7 +693,7 @@ class NeighborRange(Base):
 
 	@property
 	def Md5Key(self):
-		"""DEPRECATED (Active only when MD5 is selected in the Authentication Type field.) (String) Enter a value to be used as a secret MD5 Key for authentication. The maximum length allowed is 255 characters.One MD5 key can be configured per BGP peer range. Sessions from all peers in this peer range will use this MD5 key if MD5 is enabled.
+		"""(Active only when MD5 is selected in the Authentication Type field.) (String) Enter a value to be used as a secret MD5 Key for authentication. The maximum length allowed is 255 characters.One MD5 key can be configured per BGP peer range. Sessions from all peers in this peer range will use this MD5 key if MD5 is enabled.
 
 		Returns:
 			str
@@ -705,7 +705,7 @@ class NeighborRange(Base):
 
 	@property
 	def NextHop(self):
-		"""DEPRECATED If enableNextHop is true, this is the IPv4 address used as the next hop. (default = 0.0.0.0)
+		"""If enableNextHop is true, this is the IPv4 address used as the next hop. (default = 0.0.0.0)
 
 		Returns:
 			str
@@ -717,7 +717,7 @@ class NeighborRange(Base):
 
 	@property
 	def NumUpdatesPerIteration(self):
-		"""DEPRECATED When the protocol server operates on older ports that do not possess a local processor, this tuning parameter controls how many UPDATE messages will be sent at a time. When many routers are being simulated on such a port, changing this value may help to increase or decrease performance. (default = 1)
+		"""When the protocol server operates on older ports that do not possess a local processor, this tuning parameter controls how many UPDATE messages will be sent at a time. When many routers are being simulated on such a port, changing this value may help to increase or decrease performance. (default = 1)
 
 		Returns:
 			number
@@ -729,7 +729,7 @@ class NeighborRange(Base):
 
 	@property
 	def RangeCount(self):
-		"""DEPRECATED The number of routers.
+		"""The number of routers.
 
 		Returns:
 			number
@@ -753,7 +753,7 @@ class NeighborRange(Base):
 
 	@property
 	def RestartTime(self):
-		"""DEPRECATED Controls the operation of BGP Graceful Restart.
+		"""Controls the operation of BGP Graceful Restart.
 
 		Returns:
 			number
@@ -765,7 +765,7 @@ class NeighborRange(Base):
 
 	@property
 	def StaggeredStartPeriod(self):
-		"""DEPRECATED Controls the staggering and period of initial start messages.
+		"""Controls the staggering and period of initial start messages.
 
 		Returns:
 			number
@@ -777,7 +777,7 @@ class NeighborRange(Base):
 
 	@property
 	def StaleTime(self):
-		"""DEPRECATED Controls the operation of BGP Graceful Restart.
+		"""Controls the operation of BGP Graceful Restart.
 
 		Returns:
 			number
@@ -789,7 +789,7 @@ class NeighborRange(Base):
 
 	@property
 	def TcpWindowSize(self):
-		"""DEPRECATED (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
+		"""(External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
 
 		Returns:
 			number
@@ -801,7 +801,7 @@ class NeighborRange(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""DEPRECATED The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -813,7 +813,7 @@ class NeighborRange(Base):
 
 	@property
 	def TtlValue(self):
-		"""DEPRECATED The limited number of iterations that a unit of data can experience before the data is discarded.
+		"""The limited number of iterations that a unit of data can experience before the data is discarded.
 
 		Returns:
 			number
@@ -825,7 +825,7 @@ class NeighborRange(Base):
 
 	@property
 	def Type(self):
-		"""DEPRECATED Indicates that the neighbor is either an internal or external router.
+		"""Indicates that the neighbor is either an internal or external router.
 
 		Returns:
 			str(internal|external)
@@ -837,7 +837,7 @@ class NeighborRange(Base):
 
 	@property
 	def UpdateInterval(self):
-		"""DEPRECATED The frequency with which UPDATE messages are sent to the DUT.
+		"""The frequency with which UPDATE messages are sent to the DUT.
 
 		Returns:
 			number
@@ -849,7 +849,7 @@ class NeighborRange(Base):
 
 	@property
 	def Vpls(self):
-		"""DEPRECATED If enabled, this BGP router/peer supports BGP VPLS per the Kompella draft.
+		"""If enabled, this BGP router/peer supports BGP VPLS per the Kompella draft.
 
 		Returns:
 			bool

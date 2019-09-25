@@ -92,7 +92,7 @@ class ECpriRec(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -104,7 +104,7 @@ class ECpriRec(Base):
 
 	@property
 	def RowNames(self):
-		"""DEPRECATED Name of rows
+		"""Name of rows
 
 		Returns:
 			list(str)
@@ -215,7 +215,7 @@ class EcpriRec(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -227,7 +227,7 @@ class EcpriRec(Base):
 
 	@property
 	def RowNames(self):
-		"""DEPRECATED Name of rows
+		"""Name of rows
 
 		Returns:
 			list(str)

@@ -140,7 +140,7 @@ class Field(Base):
 
 	@property
 	def FixedBits(self):
-		"""DEPRECATED Sets all the fields to a constant specified size.
+		"""Sets all the fields to a constant specified size.
 
 		Returns:
 			str
@@ -152,7 +152,7 @@ class Field(Base):
 
 	@property
 	def FormattedFieldValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -161,7 +161,7 @@ class Field(Base):
 
 	@property
 	def FullMesh(self):
-		"""DEPRECATED If true, Full Mesh is enabled.
+		"""If true, Full Mesh is enabled.
 
 		Returns:
 			bool
@@ -173,7 +173,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""DEPRECATED It is used to get the length of the field in bits.
+		"""It is used to get the length of the field in bits.
 
 		Returns:
 			number
@@ -182,7 +182,7 @@ class Field(Base):
 
 	@property
 	def Level(self):
-		"""DEPRECATED It is used to get the level of the field in bits.
+		"""It is used to get the level of the field in bits.
 
 		Returns:
 			bool
@@ -191,7 +191,7 @@ class Field(Base):
 
 	@property
 	def MaxValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -203,7 +203,7 @@ class Field(Base):
 
 	@property
 	def MinValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -215,7 +215,7 @@ class Field(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED An alphanumeric string that returns the name of the field.
+		"""An alphanumeric string that returns the name of the field.
 
 		Returns:
 			str
@@ -224,7 +224,7 @@ class Field(Base):
 
 	@property
 	def Offset(self):
-		"""DEPRECATED It is used to get the position of the field in terms of number of bits.
+		"""It is used to get the position of the field in terms of number of bits.
 
 		Returns:
 			number
@@ -233,7 +233,7 @@ class Field(Base):
 
 	@property
 	def OffsetFromRoot(self):
-		"""DEPRECATED It is used to get the position of the field in terms of number of bits from the root packet.
+		"""It is used to get the position of the field in terms of number of bits from the root packet.
 
 		Returns:
 			number
@@ -242,7 +242,7 @@ class Field(Base):
 
 	@property
 	def OnTheFlyMask(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -254,7 +254,7 @@ class Field(Base):
 
 	@property
 	def Optional(self):
-		"""DEPRECATED A read-only field that accepts true/false to make the field optional.
+		"""A read-only field that accepts true/false to make the field optional.
 
 		Returns:
 			bool
@@ -263,7 +263,7 @@ class Field(Base):
 
 	@property
 	def OptionalEnabled(self):
-		"""DEPRECATED If true, the optional field can accept values.
+		"""If true, the optional field can accept values.
 
 		Returns:
 			bool
@@ -275,7 +275,7 @@ class Field(Base):
 
 	@property
 	def RandomMask(self):
-		"""DEPRECATED Select to use random mask bit values.
+		"""Select to use random mask bit values.
 
 		Returns:
 			str
@@ -287,7 +287,7 @@ class Field(Base):
 
 	@property
 	def RateVaried(self):
-		"""DEPRECATED It is used to get the varied rate of packet field.
+		"""It is used to get the varied rate of packet field.
 
 		Returns:
 			bool
@@ -296,7 +296,7 @@ class Field(Base):
 
 	@property
 	def ReadOnly(self):
-		"""DEPRECATED It is used to check whether particular field is readOnly or otherwise.
+		"""It is used to check whether particular field is readOnly or otherwise.
 
 		Returns:
 			bool
@@ -305,7 +305,7 @@ class Field(Base):
 
 	@property
 	def RequiresUdf(self):
-		"""DEPRECATED It is used to check whether UDF is required.
+		"""It is used to check whether UDF is required.
 
 		Returns:
 			bool
@@ -314,7 +314,7 @@ class Field(Base):
 
 	@property
 	def Seed(self):
-		"""DEPRECATED Select to use seed.
+		"""Select to use seed.
 
 		Returns:
 			str
@@ -326,7 +326,7 @@ class Field(Base):
 
 	@property
 	def SingleValue(self):
-		"""DEPRECATED If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+		"""If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
 
 		Returns:
 			str
@@ -338,7 +338,7 @@ class Field(Base):
 
 	@property
 	def StartValue(self):
-		"""DEPRECATED Specifies the initial value of increment or decrement.
+		"""Specifies the initial value of increment or decrement.
 
 		Returns:
 			str
@@ -350,7 +350,7 @@ class Field(Base):
 
 	@property
 	def StepValue(self):
-		"""DEPRECATED Specifies the value by which value will keep incrementing or decrementing.
+		"""Specifies the value by which value will keep incrementing or decrementing.
 
 		Returns:
 			str
@@ -362,7 +362,7 @@ class Field(Base):
 
 	@property
 	def SupportsAuto(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -371,7 +371,7 @@ class Field(Base):
 
 	@property
 	def SupportsNonRepeatableRandom(self):
-		"""DEPRECATED Indicates whether or not this type of stack supports non-repeatable random
+		"""Indicates whether or not this type of stack supports non-repeatable random
 
 		Returns:
 			bool
@@ -380,7 +380,7 @@ class Field(Base):
 
 	@property
 	def SupportsOnTheFlyMask(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -389,7 +389,7 @@ class Field(Base):
 
 	@property
 	def SupportsRepeatableRandomRange(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -398,7 +398,7 @@ class Field(Base):
 
 	@property
 	def TrackingEnabled(self):
-		"""DEPRECATED If true, tracking is enabled on the particular field in flowTracking.
+		"""If true, tracking is enabled on the particular field in flowTracking.
 
 		Returns:
 			bool
@@ -410,7 +410,7 @@ class Field(Base):
 
 	@property
 	def ValueFormat(self):
-		"""DEPRECATED It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
+		"""It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
 
 		Returns:
 			str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
@@ -419,7 +419,7 @@ class Field(Base):
 
 	@property
 	def ValueList(self):
-		"""DEPRECATED If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+		"""If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
 
 		Returns:
 			list(str)
@@ -431,7 +431,7 @@ class Field(Base):
 
 	@property
 	def ValueType(self):
-		"""DEPRECATED It is used to select a particular value type.
+		"""It is used to select a particular value type.
 
 		Returns:
 			str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)

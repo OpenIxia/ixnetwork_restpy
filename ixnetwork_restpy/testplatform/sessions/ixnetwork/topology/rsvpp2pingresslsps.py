@@ -255,7 +255,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def BandwidthProtectionDesired(self):
-		"""DEPRECATED Bandwidth Protection Desired
+		"""Bandwidth Protection Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -264,7 +264,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ConfigureSyncLspObject(self):
-		"""DEPRECATED Include Objects
+		"""Include Objects
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -273,7 +273,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -282,7 +282,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def DelayLspSwitchOver(self):
-		"""DEPRECATED Delay LSP switch over
+		"""Delay LSP switch over
 
 		Returns:
 			bool
@@ -294,7 +294,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -303,7 +303,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def DoMBBOnApplyChanges(self):
-		"""DEPRECATED Do Make Before Break on Apply Changes
+		"""Do Make Before Break on Apply Changes
 
 		Returns:
 			bool
@@ -315,7 +315,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableBfdMpls(self):
-		"""DEPRECATED If selected, BFD MPLS is enabled.
+		"""If selected, BFD MPLS is enabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -324,7 +324,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableEro(self):
-		"""DEPRECATED Enable ERO
+		"""Enable ERO
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -333,7 +333,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableFastReroute(self):
-		"""DEPRECATED Enable Fast Reroute
+		"""Enable Fast Reroute
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -342,7 +342,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableLspPing(self):
-		"""DEPRECATED If selected, LSP Ping is enabled for learned LSPs.
+		"""If selected, LSP Ping is enabled for learned LSPs.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -351,7 +351,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnableLspSelfPing(self):
-		"""DEPRECATED If enabled, Ingress LSP will use LSP Self Ping procedure to verify that forwarding state has been installed on all downstream nodes.
+		"""If enabled, Ingress LSP will use LSP Self Ping procedure to verify that forwarding state has been installed on all downstream nodes.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -360,7 +360,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnablePathReOptimization(self):
-		"""DEPRECATED Enable Path Re-Optimization
+		"""Enable Path Re-Optimization
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -369,7 +369,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EnablePeriodicReEvaluationRequest(self):
-		"""DEPRECATED Enable Periodic Re-Evaluation Request
+		"""Enable Periodic Re-Evaluation Request
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -378,7 +378,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def EroSameAsPrimary(self):
-		"""DEPRECATED ERO Same As Primary
+		"""ERO Same As Primary
 
 		Returns:
 			bool
@@ -390,7 +390,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ExcludeAny(self):
-		"""DEPRECATED Exclude Any
+		"""Exclude Any
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -399,7 +399,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FacilityBackupDesired(self):
-		"""DEPRECATED Facility Backup Desired
+		"""Facility Backup Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -408,7 +408,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteBandwidth(self):
-		"""DEPRECATED Bandwidth (bps)
+		"""Bandwidth (bps)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -417,7 +417,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteExcludeAny(self):
-		"""DEPRECATED Exclude Any
+		"""Exclude Any
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -426,7 +426,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteHoldingPriority(self):
-		"""DEPRECATED Holding Priority
+		"""Holding Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -435,7 +435,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteIncludeAll(self):
-		"""DEPRECATED Include All
+		"""Include All
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -444,7 +444,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteIncludeAny(self):
-		"""DEPRECATED Include Any
+		"""Include Any
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -453,7 +453,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def FastRerouteSetupPriority(self):
-		"""DEPRECATED Setup Priority
+		"""Setup Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -462,7 +462,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def HoldingPriority(self):
-		"""DEPRECATED Holding Priority
+		"""Holding Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -471,7 +471,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def HopLimit(self):
-		"""DEPRECATED Hop Limit
+		"""Hop Limit
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -480,7 +480,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IncludeAll(self):
-		"""DEPRECATED Include All
+		"""Include All
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -489,7 +489,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IncludeAny(self):
-		"""DEPRECATED Include Any
+		"""Include Any
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -498,7 +498,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IncludeAssociation(self):
-		"""DEPRECATED Indicates whether Association will be included in a RSVP Sync LSP. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
+		"""Indicates whether Association will be included in a RSVP Sync LSP. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -507,7 +507,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def InitialDelegation(self):
-		"""DEPRECATED Initial Delegation
+		"""Initial Delegation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -516,7 +516,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def InsertIPv6ExplicitNull(self):
-		"""DEPRECATED Insert IPv6 explicit NULL
+		"""Insert IPv6 explicit NULL
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -525,7 +525,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IpDSCPofLspSelfPing(self):
-		"""DEPRECATED IP DSCP of LSP Self Ping. IP DSCP classifies the way an IP packet is routed in a network.
+		"""IP DSCP of LSP Self Ping. IP DSCP classifies the way an IP packet is routed in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -534,7 +534,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def IpTTLofLspSelfPing(self):
-		"""DEPRECATED IP TTL of LSP Self Ping. IP TTL limits the lifespan or lifetime of IP Packet in a network.
+		"""IP TTL of LSP Self Ping. IP TTL limits the lifespan or lifetime of IP Packet in a network.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -543,7 +543,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LabelRecordingDesired(self):
-		"""DEPRECATED Label Recording Desired
+		"""Label Recording Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -552,7 +552,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED Local IP
+		"""Local IP
 
 		Returns:
 			list(str)
@@ -561,7 +561,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LocalProtectionDesired(self):
-		"""DEPRECATED Local Protection Desired
+		"""Local Protection Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -570,7 +570,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspCount(self):
-		"""DEPRECATED LSP#
+		"""LSP#
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -579,7 +579,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspDelegationState(self):
-		"""DEPRECATED LSP Delegation State
+		"""LSP Delegation State
 
 		Returns:
 			list(str[delegated|delegationConfirmed|delegationRejected|delegationReturned|delegationRevoked|nonDelegated|none])
@@ -588,7 +588,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspId(self):
-		"""DEPRECATED LSP Id
+		"""LSP Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -597,7 +597,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspOperativeMode(self):
-		"""DEPRECATED The mode of LSP in which it is currently behaving.
+		"""The mode of LSP in which it is currently behaving.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -606,7 +606,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSelfPingRetryCount(self):
-		"""DEPRECATED LSP Self Ping Retry Count. Maximum number of times LSP Self Ping Message will be Transmitted.
+		"""LSP Self Ping Retry Count. Maximum number of times LSP Self Ping Message will be Transmitted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -615,7 +615,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSelfPingRetryInterval(self):
-		"""DEPRECATED LSP Self Ping Retry Interval (ms).
+		"""LSP Self Ping Retry Interval (ms).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -624,7 +624,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSelfPingSessionId(self):
-		"""DEPRECATED LSP Self Ping Session Id.
+		"""LSP Self Ping Session Id.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -633,7 +633,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSelfPingStatus(self):
-		"""DEPRECATED Logs additional information about the LSP Self Ping Status(Success/Timed Out)
+		"""Logs additional information about the LSP Self Ping Status(Success/Timed Out)
 
 		Returns:
 			list(str[none|success|timedOut])
@@ -642,7 +642,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def LspSwitchOverDelayTime(self):
-		"""DEPRECATED LSP Switch Over Delay timer (sec)
+		"""LSP Switch Over Delay timer (sec)
 
 		Returns:
 			number
@@ -654,7 +654,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def MaximumPacketSize(self):
-		"""DEPRECATED Maximum Packet Size (in Bytes)
+		"""Maximum Packet Size (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -663,7 +663,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def MinimumPolicedUnit(self):
-		"""DEPRECATED Minimum Policed Unit (in Bytes)
+		"""Minimum Policed Unit (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -672,7 +672,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -684,7 +684,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def NodeProtectionDesired(self):
-		"""DEPRECATED Node Protection Desired
+		"""Node Protection Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -693,7 +693,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def NumberOfDetourSubObjects(self):
-		"""DEPRECATED Number Of Detour Sub-Objects
+		"""Number Of Detour Sub-Objects
 
 		Returns:
 			number
@@ -705,7 +705,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def NumberOfEroSubObjects(self):
-		"""DEPRECATED Number Of ERO Sub-Objects
+		"""Number Of ERO Sub-Objects
 
 		Returns:
 			number
@@ -717,7 +717,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def NumberOfRroSubObjects(self):
-		"""DEPRECATED Number Of RRO Sub-Objects
+		"""Number Of RRO Sub-Objects
 
 		Returns:
 			number
@@ -729,7 +729,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def OneToOneBackupDesired(self):
-		"""DEPRECATED One To One Backup Desired
+		"""One To One Backup Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -738,7 +738,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PccIp(self):
-		"""DEPRECATED PCC IP
+		"""PCC IP
 
 		Returns:
 			list(str)
@@ -747,7 +747,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PeakDataRate(self):
-		"""DEPRECATED Peak Data Rate (in Bytes per seconds)
+		"""Peak Data Rate (in Bytes per seconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -756,7 +756,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PpagTLVType(self):
-		"""DEPRECATED PPAG TLV Type
+		"""PPAG TLV Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -765,7 +765,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PrefixLength(self):
-		"""DEPRECATED Prefix Length
+		"""Prefix Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -774,7 +774,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def PrependDutToEro(self):
-		"""DEPRECATED Prepend DUT to ERO
+		"""Prepend DUT to ERO
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -783,7 +783,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ProtectionLsp(self):
-		"""DEPRECATED Indicates whether Protection LSP Bit is On.
+		"""Indicates whether Protection LSP Bit is On.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -792,7 +792,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ReDelegationTimerStatus(self):
-		"""DEPRECATED Re-Delegation Timer Status
+		"""Re-Delegation Timer Status
 
 		Returns:
 			list(str[expired|none|notStarted|running|stopped])
@@ -801,7 +801,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ReEvaluationRequestInterval(self):
-		"""DEPRECATED Re-Evaluation Request Interval
+		"""Re-Evaluation Request Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -810,7 +810,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def RedelegationTimeoutInterval(self):
-		"""DEPRECATED The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
+		"""The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -819,7 +819,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def RefreshInterval(self):
-		"""DEPRECATED Refresh Interval (ms)
+		"""Refresh Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -828,7 +828,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def RemoteIp(self):
-		"""DEPRECATED Remote IP Address
+		"""Remote IP Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -837,7 +837,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def ResourceAffinities(self):
-		"""DEPRECATED Resource Affinities
+		"""Resource Affinities
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -846,7 +846,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SeStyleDesired(self):
-		"""DEPRECATED SE Style Desired
+		"""SE Style Desired
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -855,7 +855,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SendDetour(self):
-		"""DEPRECATED Send Detour
+		"""Send Detour
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -864,7 +864,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SendRro(self):
-		"""DEPRECATED Send RRO
+		"""Send RRO
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -873,7 +873,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SessionInformation(self):
-		"""DEPRECATED Logs additional information about the RSVP session state
+		"""Logs additional information about the RSVP session state
 
 		Returns:
 			list(str[lastErrLSPAdmissionControlFailure|lastErrLSPBadAdSpecValue|lastErrLSPBadExplicitRoute|lastErrLSPBadFlowspecValue|lastErrLSPBadInitialSubobject|lastErrLSPBadLooseNode|lastErrLSPBadStrictNode|lastErrLSPBadTSpecValue|lastErrLSPDelayBoundNotMet|lastErrLSPMPLSAllocationFailure|lastErrLSPMTUTooBig|lastErrLSPNonRSVPRouter|lastErrLSPNoRouteAvailable|lastErrLSPPathErr|lastErrLSPPathTearSent|lastErrLSPRequestedBandwidthUnavailable|lastErrLSPReservationTearReceived|lastErrLSPReservationTearSent|lastErrLSPReservationTimeout|lastErrLSPRoutingLoops|lastErrLSPRoutingProblem|lastErrLSPRSVPSystemError|lastErrLSPServiceConflict|lastErrLSPServiceUnsupported|lastErrLSPTrafficControlError|lastErrLSPTrafficControlSystemError|lastErrLSPTrafficOrganizationError|lastErrLSPTrafficServiceError|lastErrLSPUnknownObjectClass|lastErrLSPUnknownObjectCType|lastErrLSPUnsupportedL3PID|lSPAdmissionControlFailure|lSPBadAdSpecValue|lSPBadExplicitRoute|lSPBadFlowspecValue|lSPBadInitialSubobject|lSPBadLooseNode|lSPBadStrictNode|lSPBadTSpecValue|lSPDelayBoundNotMet|lSPMPLSAllocationFailure|lSPMTUTooBig|lSPNonRSVPRouter|lSPNoRouteAvailable|lSPPathErr|lSPPathTearSent|lSPRequestedBandwidthUnavailable|lSPReservationNotReceived|lSPReservationTearReceived|lSPReservationTearSent|lSPReservationTimeout|lSPRoutingLoops|lSPRoutingProblem|lSPRSVPSystemError|lSPServiceConflict|lSPServiceUnsupported|lSPTrafficControlError|lSPTrafficControlSystemError|lSPTrafficOrganizationError|lSPTrafficServiceError|lSPUnknownObjectClass|lSPUnknownObjectCType|lSPUnsupportedL3PID|mbbCompleted|mbbTriggered|none|noPathReceived|pCRepReceived|pCReqSent])
@@ -882,7 +882,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SessionName(self):
-		"""DEPRECATED Session Name
+		"""Session Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -891,7 +891,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SetupPriority(self):
-		"""DEPRECATED Setup Priority
+		"""Setup Priority
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -900,7 +900,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SourceIp(self):
-		"""DEPRECATED Source IP
+		"""Source IP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -909,7 +909,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def SourceIpv6(self):
-		"""DEPRECATED Source IPv6
+		"""Source IPv6
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -918,7 +918,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def StandbyMode(self):
-		"""DEPRECATED Indicates whether Standby LSP Bit is On.
+		"""Indicates whether Standby LSP Bit is On.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -927,7 +927,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def State(self):
-		"""DEPRECATED State
+		"""State
 
 		Returns:
 			list(str[down|none|notStarted|up])
@@ -936,7 +936,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TSpecSameAsPrimary(self):
-		"""DEPRECATED TSpec Same As Primary
+		"""TSpec Same As Primary
 
 		Returns:
 			bool
@@ -948,7 +948,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TimeoutMultiplier(self):
-		"""DEPRECATED Timeout Multiplier
+		"""Timeout Multiplier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -957,7 +957,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TokenBucketRate(self):
-		"""DEPRECATED Token Bucket Rate (in Bytes per seconds)
+		"""Token Bucket Rate (in Bytes per seconds)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -966,7 +966,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TokenBucketSize(self):
-		"""DEPRECATED Token Bucket Size (in Bytes)
+		"""Token Bucket Size (in Bytes)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -975,7 +975,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def TunnelId(self):
-		"""DEPRECATED Tunnel ID
+		"""Tunnel ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -984,7 +984,7 @@ class RsvpP2PIngressLsps(Base):
 
 	@property
 	def UsingHeadendIp(self):
-		"""DEPRECATED Using Headend IP
+		"""Using Headend IP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

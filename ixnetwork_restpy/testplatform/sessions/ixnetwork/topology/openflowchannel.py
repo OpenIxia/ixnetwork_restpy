@@ -120,7 +120,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def ControllerIndex(self):
-		"""DEPRECATED Parent Controller Index
+		"""Parent Controller Index
 
 		Returns:
 			list(str)
@@ -129,7 +129,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def ControllerName(self):
-		"""DEPRECATED Parent Controller Name
+		"""Parent Controller Name
 
 		Returns:
 			str
@@ -138,7 +138,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -147,7 +147,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def DatapathId(self):
-		"""DEPRECATED The Datapath ID of the OF Channel.
+		"""The Datapath ID of the OF Channel.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -156,7 +156,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def DatapathIdHex(self):
-		"""DEPRECATED The Datapath ID in hexadecimal format.
+		"""The Datapath ID in hexadecimal format.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -165,7 +165,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -174,7 +174,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def EnableHelloElement(self):
-		"""DEPRECATED If selected, the Controller sends a hello message consisting of an OpenFlow header and a set of variable size hello elements to inform the initial handshake of the connection.
+		"""If selected, the Controller sends a hello message consisting of an OpenFlow header and a set of variable size hello elements to inform the initial handshake of the connection.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -183,7 +183,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -192,7 +192,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def FlowTxBurstSize(self):
-		"""DEPRECATED Specify the number of Flow transmitting packets that can be sent in a single burst within the time frame specified by the Inter Flow Burst Gap value.
+		"""Specify the number of Flow transmitting packets that can be sent in a single burst within the time frame specified by the Inter Flow Burst Gap value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -201,7 +201,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def GroupsPerChannel(self):
-		"""DEPRECATED Number of Groups per Channel
+		"""Number of Groups per Channel
 
 		Returns:
 			number
@@ -213,7 +213,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def InterFlowBurstGap(self):
-		"""DEPRECATED Specify the duration (in milliseconds) for which the controller waits between successive flow advertisements.
+		"""Specify the duration (in milliseconds) for which the controller waits between successive flow advertisements.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -222,7 +222,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED The local IP address of the interface. This field is auto-populated and cannot be changed.
+		"""The local IP address of the interface. This field is auto-populated and cannot be changed.
 
 		Returns:
 			list(str)
@@ -231,7 +231,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def MaxFlowsAtATime(self):
-		"""DEPRECATED The Max Number of Flows Processed at a Time is the size of an internal buffer maintained by the Ixiacontroller, which prevents it from sending more flows than the Openflow switch can consume at a time.
+		"""The Max Number of Flows Processed at a Time is the size of an internal buffer maintained by the Ixiacontroller, which prevents it from sending more flows than the Openflow switch can consume at a time.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,7 +240,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def MetersPerChannel(self):
-		"""DEPRECATED Number of Meters per Channel
+		"""Number of Meters per Channel
 
 		Returns:
 			number
@@ -252,7 +252,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -264,7 +264,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -276,7 +276,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def RemoteIp(self):
-		"""DEPRECATED The IP address of the DUT at the other end of the OF Channel.
+		"""The IP address of the DUT at the other end of the OF Channel.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -285,7 +285,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def SendRoleRequest(self):
-		"""DEPRECATED If selected, the controller sends a Role Request message after the connection is established; to change its role according to the Role Request option selected.
+		"""If selected, the controller sends a Role Request message after the connection is established; to change its role according to the Role Request option selected.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -294,7 +294,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -303,7 +303,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -315,7 +315,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def StartupGenerationId(self):
-		"""DEPRECATED A 64-bit sequence number field that identifies a given mastership view.
+		"""A 64-bit sequence number field that identifies a given mastership view.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -324,7 +324,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def StartupRoleRequest(self):
-		"""DEPRECATED This defines role of the controller.Options include: 1) No Change 2) Equal 3) Master 4) Slave
+		"""This defines role of the controller.Options include: 1) No Change 2) Equal 3) Master 4) Slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -333,7 +333,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -342,7 +342,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -351,7 +351,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def TablesPerChannel(self):
-		"""DEPRECATED Number of Tables per Channel
+		"""Number of Tables per Channel
 
 		Returns:
 			number
@@ -363,7 +363,7 @@ class OpenFlowChannel(Base):
 
 	@property
 	def UseDatapathID(self):
-		"""DEPRECATED If selected, the Datapath ID and IP address are used as the OF Channel identifier.
+		"""If selected, the Datapath ID and IP address are used as the OF Channel identifier.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

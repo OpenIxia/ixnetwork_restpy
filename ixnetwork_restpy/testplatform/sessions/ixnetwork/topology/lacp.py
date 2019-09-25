@@ -141,7 +141,7 @@ class Lacp(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -150,7 +150,7 @@ class Lacp(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -159,7 +159,7 @@ class Lacp(Base):
 
 	@property
 	def DistributingFlag(self):
-		"""DEPRECATED Distributing Flag
+		"""Distributing Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -168,7 +168,7 @@ class Lacp(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -177,7 +177,7 @@ class Lacp(Base):
 
 	@property
 	def InterMarkerPDUDelay(self):
-		"""DEPRECATED Inter Marker PDU Delay (sec)
+		"""Inter Marker PDU Delay (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -186,7 +186,7 @@ class Lacp(Base):
 
 	@property
 	def InterMarkerPDUDelayRandomMax(self):
-		"""DEPRECATED Inter Marker PDU Delay Random Max (sec)
+		"""Inter Marker PDU Delay Random Max (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -195,7 +195,7 @@ class Lacp(Base):
 
 	@property
 	def InterMarkerPDUDelayRandomMin(self):
-		"""DEPRECATED Inter Marker PDU Delay Random Min (sec)
+		"""Inter Marker PDU Delay Random Min (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -204,7 +204,7 @@ class Lacp(Base):
 
 	@property
 	def LacpActivity(self):
-		"""DEPRECATED LACP Actvity
+		"""LACP Actvity
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -213,7 +213,7 @@ class Lacp(Base):
 
 	@property
 	def LacpduPeriodicTimeInterval(self):
-		"""DEPRECATED Lacp PDU Periodic Time Interval
+		"""Lacp PDU Periodic Time Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -222,7 +222,7 @@ class Lacp(Base):
 
 	@property
 	def LacpduTimeout(self):
-		"""DEPRECATED Lacp PDU Timeout
+		"""Lacp PDU Timeout
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -231,7 +231,7 @@ class Lacp(Base):
 
 	@property
 	def MarkerRequestMode(self):
-		"""DEPRECATED Marker Request Mode
+		"""Marker Request Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,7 +240,7 @@ class Lacp(Base):
 
 	@property
 	def MarkerResponseWaitTime(self):
-		"""DEPRECATED Marker Response Wait Time (sec)
+		"""Marker Response Wait Time (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -249,7 +249,7 @@ class Lacp(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -261,7 +261,7 @@ class Lacp(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -273,7 +273,7 @@ class Lacp(Base):
 
 	@property
 	def PeriodicSendingOfMarkerRequest(self):
-		"""DEPRECATED Periodic Sending Of Marker Request
+		"""Periodic Sending Of Marker Request
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -282,7 +282,7 @@ class Lacp(Base):
 
 	@property
 	def SendMarkerRequestOnLagChange(self):
-		"""DEPRECATED Send Marker Request On Lag Change
+		"""Send Marker Request On Lag Change
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -291,7 +291,7 @@ class Lacp(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -300,7 +300,7 @@ class Lacp(Base):
 
 	@property
 	def SourceMac(self):
-		"""DEPRECATED Source MAC
+		"""Source MAC
 
 		Returns:
 			list(str)
@@ -309,7 +309,7 @@ class Lacp(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -321,7 +321,7 @@ class Lacp(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -330,7 +330,7 @@ class Lacp(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -339,7 +339,7 @@ class Lacp(Base):
 
 	@property
 	def SupportRespondingToMarker(self):
-		"""DEPRECATED Support Responding To Marker
+		"""Support Responding To Marker
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -348,7 +348,7 @@ class Lacp(Base):
 
 	@property
 	def SynchronizationFlag(self):
-		"""DEPRECATED Synchronization Flag
+		"""Synchronization Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

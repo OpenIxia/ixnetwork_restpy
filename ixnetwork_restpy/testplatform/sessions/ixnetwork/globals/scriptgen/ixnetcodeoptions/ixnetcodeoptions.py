@@ -62,7 +62,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeDefaultValues(self):
-		"""DEPRECATED Flag to include attributes that have values which are default
+		"""Flag to include attributes that have values which are default
 
 		Returns:
 			bool
@@ -74,7 +74,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeQuickTest(self):
-		"""DEPRECATED Flag to include quickTest nodes
+		"""Flag to include quickTest nodes
 
 		Returns:
 			bool
@@ -86,7 +86,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeStatistic(self):
-		"""DEPRECATED Flag to include statistic view nodes
+		"""Flag to include statistic view nodes
 
 		Returns:
 			bool
@@ -98,7 +98,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeTAPSettings(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -122,7 +122,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeTraffic(self):
-		"""DEPRECATED Flag to include traffic item nodes
+		"""Flag to include traffic item nodes
 
 		Returns:
 			bool
@@ -134,7 +134,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeTrafficFlowGroup(self):
-		"""DEPRECATED Flag to include traffic item high level stream nodes
+		"""Flag to include traffic item high level stream nodes
 
 		Returns:
 			bool
@@ -146,7 +146,7 @@ class IxNetCodeOptions(Base):
 
 	@property
 	def IncludeTrafficStack(self):
-		"""DEPRECATED Flag to include high level stream stack nodes
+		"""Flag to include high level stream stack nodes
 
 		Returns:
 			bool

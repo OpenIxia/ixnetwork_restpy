@@ -111,7 +111,7 @@ class MacAddressRange(Base):
 
 	@property
 	def MacCountPerL2Site(self):
-		"""DEPRECATED Signifies the count of MAC values per L2 site
+		"""Signifies the count of MAC values per L2 site
 
 		Returns:
 			number
@@ -123,7 +123,7 @@ class MacAddressRange(Base):
 
 	@property
 	def MacIncrement(self):
-		"""DEPRECATED If enabled, each additional MAC Address in this range of addresses will be incremented by 00 00 00 00 00 01.
+		"""If enabled, each additional MAC Address in this range of addresses will be incremented by 00 00 00 00 00 01.
 
 		Returns:
 			bool
@@ -135,7 +135,7 @@ class MacAddressRange(Base):
 
 	@property
 	def SkipVlanIdZero(self):
-		"""DEPRECATED If enabled, the VLAN ID with zero value will be ignored.
+		"""If enabled, the VLAN ID with zero value will be ignored.
 
 		Returns:
 			bool
@@ -147,7 +147,7 @@ class MacAddressRange(Base):
 
 	@property
 	def StartMacAddress(self):
-		"""DEPRECATED The first 6-byte MAC address in the range of MAC addresses. The default is 00 00 00 00 00 00.
+		"""The first 6-byte MAC address in the range of MAC addresses. The default is 00 00 00 00 00 00.
 
 		Returns:
 			str
@@ -159,7 +159,7 @@ class MacAddressRange(Base):
 
 	@property
 	def TotalMacCount(self):
-		"""DEPRECATED Signifies the total MAC count
+		"""Signifies the total MAC count
 
 		Returns:
 			number
@@ -168,7 +168,7 @@ class MacAddressRange(Base):
 
 	@property
 	def Tpid(self):
-		"""DEPRECATED Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
+		"""Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
 
 		Returns:
 			str
@@ -180,7 +180,7 @@ class MacAddressRange(Base):
 
 	@property
 	def VlanCount(self):
-		"""DEPRECATED The number of VLANs created.
+		"""The number of VLANs created.
 
 		Returns:
 			number
@@ -192,7 +192,7 @@ class MacAddressRange(Base):
 
 	@property
 	def VlanId(self):
-		"""DEPRECATED The ID for the first VLAN in a range of VLANs. An 2-byte unsigned integer. The valid range is 0 to 4095. The default is 0.
+		"""The ID for the first VLAN in a range of VLANs. An 2-byte unsigned integer. The valid range is 0 to 4095. The default is 0.
 
 		Returns:
 			str
@@ -204,7 +204,7 @@ class MacAddressRange(Base):
 
 	@property
 	def VlanPriority(self):
-		"""DEPRECATED The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+		"""The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
 
 		Returns:
 			str

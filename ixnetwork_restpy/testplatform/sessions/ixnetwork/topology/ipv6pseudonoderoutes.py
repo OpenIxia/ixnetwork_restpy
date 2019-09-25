@@ -178,7 +178,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Ipv6VFlag(self):
-		"""DEPRECATED Value Flag
+		"""Value Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -187,7 +187,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -199,7 +199,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def NetworkAddress(self):
-		"""DEPRECATED Prefixes of the simulated IPv6 network
+		"""Prefixes of the simulated IPv6 network
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -208,7 +208,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def Prefix(self):
-		"""DEPRECATED Prefix Length
+		"""Prefix Length
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +217,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def RangeSize(self):
-		"""DEPRECATED Range Size
+		"""Range Size
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -226,7 +226,7 @@ class IPv6PseudoNodeRoutes(Base):
 
 	@property
 	def SIDIndexLabel(self):
-		"""DEPRECATED SID/Index/Label
+		"""SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

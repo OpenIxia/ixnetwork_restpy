@@ -65,7 +65,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -74,7 +74,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -83,7 +83,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -92,7 +92,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def LightweightDhcp6RelayAgentGlobalAndPortData(self):
-		"""DEPRECATED Global and Port Settings
+		"""Global and Port Settings
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*)
@@ -101,7 +101,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -113,7 +113,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -125,7 +125,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[excessiveTlvs|ipDown|none])
@@ -134,7 +134,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -143,7 +143,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -155,7 +155,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -164,7 +164,7 @@ class LightweightDhcpv6relayAgent(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

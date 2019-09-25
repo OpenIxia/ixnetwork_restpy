@@ -63,7 +63,7 @@ class TunnelHeadTrafficEndPoint(Base):
 
 	@property
 	def InsertIpv6ExplicitNull(self):
-		"""DEPRECATED This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
+		"""This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
 
 		Returns:
 			bool
@@ -75,7 +75,7 @@ class TunnelHeadTrafficEndPoint(Base):
 
 	@property
 	def IpCount(self):
-		"""DEPRECATED Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
+		"""Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
 
 		Returns:
 			number
@@ -87,7 +87,7 @@ class TunnelHeadTrafficEndPoint(Base):
 
 	@property
 	def IpStart(self):
-		"""DEPRECATED The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
+		"""The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
 
 		Returns:
 			str

@@ -186,7 +186,7 @@ class Data(Base):
 
 	@property
 	def Timestamp(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -195,7 +195,7 @@ class Data(Base):
 
 	@property
 	def TotalPages(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -204,7 +204,7 @@ class Data(Base):
 
 	@property
 	def TotalRows(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number

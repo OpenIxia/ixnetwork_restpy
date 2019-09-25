@@ -87,7 +87,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def Capabilities(self):
-		"""DEPRECATED This describes the OF Channel capabilities of the switch.
+		"""This describes the OF Channel capabilities of the switch.
 
 		Returns:
 			str
@@ -96,7 +96,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def ConfigFlags(self):
-		"""DEPRECATED This describes the Flags for fragmentation handling.
+		"""This describes the Flags for fragmentation handling.
 
 		Returns:
 			str
@@ -129,7 +129,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def DataPathId(self):
-		"""DEPRECATED This describes the datapath ID of the switch.
+		"""This describes the datapath ID of the switch.
 
 		Returns:
 			str
@@ -138,7 +138,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def DataPathIdAsHex(self):
-		"""DEPRECATED This describes the datapath ID, in hexadecimal format, of the switch.
+		"""This describes the datapath ID, in hexadecimal format, of the switch.
 
 		Returns:
 			str
@@ -147,7 +147,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def FlowRate(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -156,7 +156,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def GenerationId(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -165,7 +165,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LastErrorCode(self):
-		"""DEPRECATED This describes the code for the last error received.
+		"""This describes the code for the last error received.
 
 		Returns:
 			str
@@ -174,7 +174,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LastErrorType(self):
-		"""DEPRECATED This describes the type of error for the last error received.
+		"""This describes the type of error for the last error received.
 
 		Returns:
 			str
@@ -183,7 +183,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED This describes the local IP address of the switch.
+		"""This describes the local IP address of the switch.
 
 		Returns:
 			str
@@ -192,7 +192,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def MaxBufferSize(self):
-		"""DEPRECATED This describes the maximum number of packets that can be stored in the buffer of the switch at a time.
+		"""This describes the maximum number of packets that can be stored in the buffer of the switch at a time.
 
 		Returns:
 			number
@@ -201,7 +201,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def MaxPacketInBytes(self):
-		"""DEPRECATED This describes the max amount of data to be sent in the Packet-In message.
+		"""This describes the max amount of data to be sent in the Packet-In message.
 
 		Returns:
 			number
@@ -210,7 +210,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NegotiatedVersion(self):
-		"""DEPRECATED This describes the OpenFlow version supported by this configuration.
+		"""This describes the OpenFlow version supported by this configuration.
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberOfErrorsSent(self):
-		"""DEPRECATED This describes the number of errors received by the switch.
+		"""This describes the number of errors received by the switch.
 
 		Returns:
 			number
@@ -240,7 +240,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberOfPorts(self):
-		"""DEPRECATED This describes the number of ports in the switch.
+		"""This describes the number of ports in the switch.
 
 		Returns:
 			number
@@ -249,7 +249,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def NumberofTable(self):
-		"""DEPRECATED This describes the number of tables in the switch.
+		"""This describes the number of tables in the switch.
 
 		Returns:
 			number
@@ -258,7 +258,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def RemoteIp(self):
-		"""DEPRECATED This describes the IP address of the remote end of the OF Channel.
+		"""This describes the IP address of the remote end of the OF Channel.
 
 		Returns:
 			str
@@ -279,7 +279,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
 	@property
 	def SessionType(self):
-		"""DEPRECATED This describes the type of OpenFlow session.
+		"""This describes the type of OpenFlow session.
 
 		Returns:
 			str

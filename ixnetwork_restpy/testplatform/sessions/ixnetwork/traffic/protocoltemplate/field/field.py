@@ -47,7 +47,7 @@ class Field(Base):
 
 	@property
 	def DisplayName(self):
-		"""DEPRECATED It is used to get the name of the particular field as available in the protocol template.
+		"""It is used to get the name of the particular field as available in the protocol template.
 
 		Returns:
 			str
@@ -56,7 +56,7 @@ class Field(Base):
 
 	@property
 	def FieldTypeId(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -65,7 +65,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""DEPRECATED It is used to get the length of the field in bits.
+		"""It is used to get the length of the field in bits.
 
 		Returns:
 			number
@@ -74,7 +74,7 @@ class Field(Base):
 
 	@property
 	def Trackable(self):
-		"""DEPRECATED The trackable fields.
+		"""The trackable fields.
 
 		Returns:
 			bool

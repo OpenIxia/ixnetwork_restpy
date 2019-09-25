@@ -859,7 +859,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidLoc(self):
-		"""DEPRECATED SRv6 SID. It consists of Locator, Func and Args
+		"""SRv6 SID. It consists of Locator, Func and Args
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -868,7 +868,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidLocLen(self):
-		"""DEPRECATED SRv6 SID Locator Length to be advertised in IGP
+		"""SRv6 SID Locator Length to be advertised in IGP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -877,7 +877,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidLocMetric(self):
-		"""DEPRECATED SRv6 SID Locator Metric for advertisement in IGP
+		"""SRv6 SID Locator Metric for advertisement in IGP
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -886,7 +886,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidReserved(self):
-		"""DEPRECATED SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
+		"""SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -895,7 +895,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidReserved1(self):
-		"""DEPRECATED SRv6 SID Reserved1 Field for Service Information sub-TLV
+		"""SRv6 SID Reserved1 Field for Service Information sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -904,7 +904,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidReserved2(self):
-		"""DEPRECATED SRv6 SID Reserved2 Field for Service Information sub-TLV
+		"""SRv6 SID Reserved2 Field for Service Information sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -913,7 +913,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Srv6SidStep(self):
-		"""DEPRECATED Route Range SRv6 SID Step
+		"""Route Range SRv6 SID Step
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -922,7 +922,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Uptime(self):
-		"""DEPRECATED Uptime In Seconds
+		"""Uptime In Seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -931,7 +931,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def UseAsIpv6UmhRoutes(self):
-		"""DEPRECATED Use As IPv6 UMH Routes
+		"""Use As IPv6 UMH Routes
 
 		Returns:
 			bool
@@ -952,7 +952,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def UseTraditionalNlri(self):
-		"""DEPRECATED Use Traditional NLRI
+		"""Use Traditional NLRI
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -961,7 +961,7 @@ class BgpV6L3VpnRouteProperty(Base):
 
 	@property
 	def Weight(self):
-		"""DEPRECATED Weight
+		"""Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

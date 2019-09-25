@@ -115,7 +115,7 @@ class ECpriRec(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class ECpriRec(Base):
 
 	@property
 	def DelayMeasurementId(self):
-		"""DEPRECATED The Measurement ID is a 1-byte value used by the sender of the request when the response is received to distinguish between different measurements, i.e. the receiver of the request shall copy the ID from the request into the response message.
+		"""The Measurement ID is a 1-byte value used by the sender of the request when the response is received to distinguish between different measurements, i.e. the receiver of the request shall copy the ID from the request into the response message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -133,7 +133,7 @@ class ECpriRec(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -142,7 +142,7 @@ class ECpriRec(Base):
 
 	@property
 	def DummyBytesLength(self):
-		"""DEPRECATED The number of dummy bytes included in the eCPRI-payload will be defined by the eCPRI payload size field in the eCPRI common header. Due to network characteristics, a small message might take shorter time through the network than a large one, with the dummy bytes the one-way delay estimation can be improved. The insertion of dummy bytes is only needed when the Action Type set to 0x00 (Request) or to 0x01(Request with Follow_Up).
+		"""The number of dummy bytes included in the eCPRI-payload will be defined by the eCPRI payload size field in the eCPRI common header. Due to network characteristics, a small message might take shorter time through the network than a large one, with the dummy bytes the one-way delay estimation can be improved. The insertion of dummy bytes is only needed when the Action Type set to 0x00 (Request) or to 0x01(Request with Follow_Up).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -151,7 +151,7 @@ class ECpriRec(Base):
 
 	@property
 	def ElementId(self):
-		"""DEPRECATED Depending on implementation the Element ID could be used for instance to point out a specific instance of a generic hardware function.
+		"""Depending on implementation the Element ID could be used for instance to point out a specific instance of a generic hardware function.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -160,7 +160,7 @@ class ECpriRec(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -169,7 +169,7 @@ class ECpriRec(Base):
 
 	@property
 	def EventId(self):
-		"""DEPRECATED A 1-byte value set by the transmitter of an Event Indication or a Synchronization Request to enable identification of the acknowledge response.
+		"""A 1-byte value set by the transmitter of an Event Indication or a Synchronization Request to enable identification of the acknowledge response.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +178,7 @@ class ECpriRec(Base):
 
 	@property
 	def EventSequenceNumber(self):
-		"""DEPRECATED The Sequence Number is a 1-byte value that is incremented each time the transmitter sends the Event Indication with Event Type set to 0x00 (Fault(s) Indication). The receiver will use the sequence number to ensure that the correct status for a specific combination of {Element-ID; Fault-value} is used. Due to the nature of the packet based fronthaul network, packets might be delivered out of order and a sequence number is needed to handle this scenario. When a fault indication is not acknowledged the transmitter will re-transmit the fault, setting the sequence number to the same value used in the initial transmission.
+		"""The Sequence Number is a 1-byte value that is incremented each time the transmitter sends the Event Indication with Event Type set to 0x00 (Fault(s) Indication). The receiver will use the sequence number to ensure that the correct status for a specific combination of {Element-ID; Fault-value} is used. Due to the nature of the packet based fronthaul network, packets might be delivered out of order and a sequence number is needed to handle this scenario. When a fault indication is not acknowledged the transmitter will re-transmit the fault, setting the sequence number to the same value used in the initial transmission.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -187,7 +187,7 @@ class ECpriRec(Base):
 
 	@property
 	def EventType(self):
-		"""DEPRECATED Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
+		"""Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -196,7 +196,7 @@ class ECpriRec(Base):
 
 	@property
 	def MessageType(self):
-		"""DEPRECATED Message Type
+		"""Message Type
 
 		Returns:
 			str(realTimeControlData|remoteMemoryAccess|onewayDelayMeasurement|remoteReset|eventIndication)
@@ -208,7 +208,7 @@ class ECpriRec(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -220,7 +220,7 @@ class ECpriRec(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -232,7 +232,7 @@ class ECpriRec(Base):
 
 	@property
 	def NumberOfFaultSubObjects(self):
-		"""DEPRECATED Number Of Fault or Notify.
+		"""Number Of Fault or Notify.
 
 		Returns:
 			number
@@ -244,7 +244,7 @@ class ECpriRec(Base):
 
 	@property
 	def ReadWriteType(self):
-		"""DEPRECATED The field consist of two parts, a read or write indication and a request or response indication. The Response value 0010b (Failure) is used when the receiver of the request is unable to perform the read or write request due to invalid content in received parameters or other faults.
+		"""The field consist of two parts, a read or write indication and a request or response indication. The Response value 0010b (Failure) is used when the receiver of the request is unable to perform the read or write request due to invalid content in received parameters or other faults.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -253,7 +253,7 @@ class ECpriRec(Base):
 
 	@property
 	def RemoteResetId(self):
-		"""DEPRECATED Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
+		"""Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -262,7 +262,7 @@ class ECpriRec(Base):
 
 	@property
 	def ReservedActionType(self):
-		"""DEPRECATED The Action Type is a 1-byte value. Value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
+		"""The Action Type is a 1-byte value. Value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -271,7 +271,7 @@ class ECpriRec(Base):
 
 	@property
 	def ReservedEventType(self):
-		"""DEPRECATED Reserved Event Type values from 0x06 to 0xFF are Reserved.
+		"""Reserved Event Type values from 0x06 to 0xFF are Reserved.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -280,7 +280,7 @@ class ECpriRec(Base):
 
 	@property
 	def ReservedResetCode(self):
-		"""DEPRECATED The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote reset request, 0x02 represents Remote reset response and value ranging from 0x03 to 0xFF are Reserved.
+		"""The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote reset request, 0x02 represents Remote reset response and value ranging from 0x03 to 0xFF are Reserved.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -289,7 +289,7 @@ class ECpriRec(Base):
 
 	@property
 	def ResetCodeOp(self):
-		"""DEPRECATED The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
+		"""The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -298,7 +298,7 @@ class ECpriRec(Base):
 
 	@property
 	def RmaAction(self):
-		"""DEPRECATED RMA Action Type is Request or Response or Failure.
+		"""RMA Action Type is Request or Response or Failure.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -307,7 +307,7 @@ class ECpriRec(Base):
 
 	@property
 	def RmaDataLength(self):
-		"""DEPRECATED Number of bytes(0 to 255) to read or write from or to remote node.
+		"""Number of bytes(0 to 255) to read or write from or to remote node.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -316,7 +316,7 @@ class ECpriRec(Base):
 
 	@property
 	def RtcDataLength(self):
-		"""DEPRECATED Size of RTC data that will be included in the eCPRI message.
+		"""Size of RTC data that will be included in the eCPRI message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -325,7 +325,7 @@ class ECpriRec(Base):
 
 	@property
 	def SequenceId(self):
-		"""DEPRECATED An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
+		"""An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -334,7 +334,7 @@ class ECpriRec(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -343,7 +343,7 @@ class ECpriRec(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -355,7 +355,7 @@ class ECpriRec(Base):
 
 	@property
 	def StartingRmaId(self):
-		"""DEPRECATED Identifier of the request message used by the Initiator to match the corresponding response message.
+		"""Identifier of the request message used by the Initiator to match the corresponding response message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -364,7 +364,7 @@ class ECpriRec(Base):
 
 	@property
 	def StartingRtcId(self):
-		"""DEPRECATED RTC ID of the eRE or eREC.
+		"""RTC ID of the eRE or eREC.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -373,7 +373,7 @@ class ECpriRec(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -382,7 +382,7 @@ class ECpriRec(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -391,7 +391,7 @@ class ECpriRec(Base):
 
 	@property
 	def TimeStamp(self):
-		"""DEPRECATED When Action Type is set to 0x00 (Request) in the message this field will contain the time stamp t1 and when Action Type is set to 0x02 (Response) the time stamp t2. When action type is set to 0x01(Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits, the corresponding time information values are sent in the Follow_Up message. When Action Type is set to 0x03 or 0x04 (Remote Request and Remote Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits. When using the Follow_Up message (2-Step version) the Follow_Up message (Action Type set to 0x05) the time information values t1 and tCV1 will be set to the TimeStamp field. The time information values follow the format specified in IEEE 1588-2008 [13] Clause 5.3.3. The value consists of 2 parts, one seconds-part and one nanoseconds-part. The first 6 bytes are the seconds and the next 4 bytes are the nanoseconds.
+		"""When Action Type is set to 0x00 (Request) in the message this field will contain the time stamp t1 and when Action Type is set to 0x02 (Response) the time stamp t2. When action type is set to 0x01(Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits, the corresponding time information values are sent in the Follow_Up message. When Action Type is set to 0x03 or 0x04 (Remote Request and Remote Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits. When using the Follow_Up message (2-Step version) the Follow_Up message (Action Type set to 0x05) the time information values t1 and tCV1 will be set to the TimeStamp field. The time information values follow the format specified in IEEE 1588-2008 [13] Clause 5.3.3. The value consists of 2 parts, one seconds-part and one nanoseconds-part. The first 6 bytes are the seconds and the next 4 bytes are the nanoseconds.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -400,7 +400,7 @@ class ECpriRec(Base):
 
 	@property
 	def VendorSpecificPayloadLength(self):
-		"""DEPRECATED Vendor Specific Payload bytes are used to carry optional vendor-specific information. The vendor specific information can contain data items such as authentication parameters or any parameters to select a specific reset behavior. This specification does not detail any concrete reset behavior.
+		"""Vendor Specific Payload bytes are used to carry optional vendor-specific information. The vendor specific information can contain data items such as authentication parameters or any parameters to select a specific reset behavior. This specification does not detail any concrete reset behavior.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

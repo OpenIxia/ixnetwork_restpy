@@ -174,7 +174,7 @@ class Pcc(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -183,7 +183,7 @@ class Pcc(Base):
 
 	@property
 	def DeadInterval(self):
-		"""DEPRECATED This is the time interval, after the expiration of which, a PCEP peer declares the session down if no PCEP message has been received.
+		"""This is the time interval, after the expiration of which, a PCEP peer declares the session down if no PCEP message has been received.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -192,7 +192,7 @@ class Pcc(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -201,7 +201,7 @@ class Pcc(Base):
 
 	@property
 	def ErrorValue(self):
-		"""DEPRECATED To configure the type of error. Editable only if Return Instantiation Error is enabled.
+		"""To configure the type of error. Editable only if Return Instantiation Error is enabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -210,7 +210,7 @@ class Pcc(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -219,7 +219,7 @@ class Pcc(Base):
 
 	@property
 	def ExpectedInitiatedLspsForTraffic(self):
-		"""DEPRECATED Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
+		"""Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class Pcc(Base):
 
 	@property
 	def KeepaliveInterval(self):
-		"""DEPRECATED Frequency/Time Interval of sending PCEP messages to keep the session active.
+		"""Frequency/Time Interval of sending PCEP messages to keep the session active.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,7 +240,7 @@ class Pcc(Base):
 
 	@property
 	def LspInstantiationCapability(self):
-		"""DEPRECATED If Stateful PCE Capability is enabled then this control should be activated to set the LSP Instantiation capability in the Stateful PCE Capability TLV.
+		"""If Stateful PCE Capability is enabled then this control should be activated to set the LSP Instantiation capability in the Stateful PCE Capability TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -249,7 +249,7 @@ class Pcc(Base):
 
 	@property
 	def LspUpdateCapability(self):
-		"""DEPRECATED If Stateful PCE Capability is enabled then this control should be activated to set the update capability in the Stateful PCE Capability TLV.
+		"""If Stateful PCE Capability is enabled then this control should be activated to set the update capability in the Stateful PCE Capability TLV.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -258,7 +258,7 @@ class Pcc(Base):
 
 	@property
 	def MD5Key(self):
-		"""DEPRECATED A value to be used as the secret MD5 Key.
+		"""A value to be used as the secret MD5 Key.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -267,7 +267,7 @@ class Pcc(Base):
 
 	@property
 	def MaxLspPerPcReq(self):
-		"""DEPRECATED Max LSPs Per PCReq
+		"""Max LSPs Per PCReq
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -276,7 +276,7 @@ class Pcc(Base):
 
 	@property
 	def MaxLspsPerPcRpt(self):
-		"""DEPRECATED Controls the maximum LSP information that can be present in a Path report message when the session is stateful session.
+		"""Controls the maximum LSP information that can be present in a Path report message when the session is stateful session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -285,7 +285,7 @@ class Pcc(Base):
 
 	@property
 	def MaxReconnectInterval(self):
-		"""DEPRECATED This is the maximum time interval, by which recoonect timer will be increased upto.
+		"""This is the maximum time interval, by which recoonect timer will be increased upto.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -294,7 +294,7 @@ class Pcc(Base):
 
 	@property
 	def MaxRequestedLspPerInterval(self):
-		"""DEPRECATED Maximum number of LSP computation request messages can be sent per interval.
+		"""Maximum number of LSP computation request messages can be sent per interval.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -303,7 +303,7 @@ class Pcc(Base):
 
 	@property
 	def MaxSyncLspPerInterval(self):
-		"""DEPRECATED Maximum number of LSP sync can be sent per interval.
+		"""Maximum number of LSP sync can be sent per interval.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -312,7 +312,7 @@ class Pcc(Base):
 
 	@property
 	def MaximumSidDepth(self):
-		"""DEPRECATED Maximum SID Depth field (MSD) specifies the maximum number of SIDs that a PCC is capable of imposing on a packet. Editable only if SR PCE Capability is enabled.
+		"""Maximum SID Depth field (MSD) specifies the maximum number of SIDs that a PCC is capable of imposing on a packet. Editable only if SR PCE Capability is enabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -321,7 +321,7 @@ class Pcc(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -333,7 +333,7 @@ class Pcc(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -345,7 +345,7 @@ class Pcc(Base):
 
 	@property
 	def NumberOfBackupPCEs(self):
-		"""DEPRECATED Number of Backup PCEs
+		"""Number of Backup PCEs
 
 		Returns:
 			number
@@ -357,7 +357,7 @@ class Pcc(Base):
 
 	@property
 	def PccPpagTLVType(self):
-		"""DEPRECATED PPAG TLV Type specifies PCC's capability of interpreting this type of PPAG TLV
+		"""PPAG TLV Type specifies PCC's capability of interpreting this type of PPAG TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -366,7 +366,7 @@ class Pcc(Base):
 
 	@property
 	def PceIpv4Address(self):
-		"""DEPRECATED IPv4 address of the PCE. This column is greyed out in case of PCCv6.
+		"""IPv4 address of the PCE. This column is greyed out in case of PCCv6.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -375,7 +375,7 @@ class Pcc(Base):
 
 	@property
 	def PreEstablishedSrLspsPerPcc(self):
-		"""DEPRECATED Pre-Established SR LSPs per PCC
+		"""Pre-Established SR LSPs per PCC
 
 		Returns:
 			number
@@ -387,7 +387,7 @@ class Pcc(Base):
 
 	@property
 	def RateControl(self):
-		"""DEPRECATED The rate control is an optional feature associated with PCE initiated LSP.
+		"""The rate control is an optional feature associated with PCE initiated LSP.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -396,7 +396,7 @@ class Pcc(Base):
 
 	@property
 	def ReconnectInterval(self):
-		"""DEPRECATED This is the time interval, after the expiration of which, retry to establish the broken session by PCC happen.
+		"""This is the time interval, after the expiration of which, retry to establish the broken session by PCC happen.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -405,7 +405,7 @@ class Pcc(Base):
 
 	@property
 	def RequestedLspsPerPcc(self):
-		"""DEPRECATED Requested LSPs per PCC
+		"""Requested LSPs per PCC
 
 		Returns:
 			number
@@ -417,7 +417,7 @@ class Pcc(Base):
 
 	@property
 	def ReturnInstantiationError(self):
-		"""DEPRECATED If enabled, then PCC will reply PCErr upon receiving PCInitiate message.
+		"""If enabled, then PCC will reply PCErr upon receiving PCInitiate message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -426,7 +426,7 @@ class Pcc(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -435,7 +435,7 @@ class Pcc(Base):
 
 	@property
 	def SrPceCapability(self):
-		"""DEPRECATED The SR PCE Capability TLV is an optional TLV associated with the OPEN Object to exchange SR capability of PCEP speakers.
+		"""The SR PCE Capability TLV is an optional TLV associated with the OPEN Object to exchange SR capability of PCEP speakers.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -444,7 +444,7 @@ class Pcc(Base):
 
 	@property
 	def Srv6MaxSL(self):
-		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) in the SRH.
+		"""This field specifies the maximum value of the Segments Left (SL) in the SRH.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -453,7 +453,7 @@ class Pcc(Base):
 
 	@property
 	def Srv6PceCapability(self):
-		"""DEPRECATED The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type. This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
+		"""The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type. This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -462,7 +462,7 @@ class Pcc(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -474,7 +474,7 @@ class Pcc(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -483,7 +483,7 @@ class Pcc(Base):
 
 	@property
 	def StateTimeoutInterval(self):
-		"""DEPRECATED This is the time interval, after the expiration of which, LSP is cleaned up by PCC.
+		"""This is the time interval, after the expiration of which, LSP is cleaned up by PCC.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -492,7 +492,7 @@ class Pcc(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -501,7 +501,7 @@ class Pcc(Base):
 
 	@property
 	def TcpPort(self):
-		"""DEPRECATED PCEP operates over TCP using a registered TCP port (default - 4189). This allows the requirements of reliable messaging and flow control to bemet without further protocol work. This control can be configured when user does not want to use the default one.
+		"""PCEP operates over TCP using a registered TCP port (default - 4189). This allows the requirements of reliable messaging and flow control to bemet without further protocol work. This control can be configured when user does not want to use the default one.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

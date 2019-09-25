@@ -309,7 +309,7 @@ class Router(Base):
 
 	@property
 	def CapabilityRouterId(self):
-		"""DEPRECATED The IPv4 address format of the Capability Router.
+		"""The IPv4 address format of the Capability Router.
 
 		Returns:
 			str
@@ -345,7 +345,7 @@ class Router(Base):
 
 	@property
 	def DomainAuthType(self):
-		"""DEPRECATED Sets up authentication for Level 2 LSPs.
+		"""Sets up authentication for Level 2 LSPs.
 
 		Returns:
 			str(none|password|md5)
@@ -357,7 +357,7 @@ class Router(Base):
 
 	@property
 	def DomainReceivedPasswordList(self):
-		"""DEPRECATED If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
+		"""If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
 
 		Returns:
 			list(str)
@@ -369,7 +369,7 @@ class Router(Base):
 
 	@property
 	def DomainTransmitPassword(self):
-		"""DEPRECATED If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
+		"""If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
 
 		Returns:
 			str
@@ -381,7 +381,7 @@ class Router(Base):
 
 	@property
 	def EnableAttached(self):
-		"""DEPRECATED Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
+		"""Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
 
 		Returns:
 			bool
@@ -393,7 +393,7 @@ class Router(Base):
 
 	@property
 	def EnableAutoLoopback(self):
-		"""DEPRECATED If enabled, loopback addresses are allowed in the generated routes.
+		"""If enabled, loopback addresses are allowed in the generated routes.
 
 		Returns:
 			bool
@@ -405,7 +405,7 @@ class Router(Base):
 
 	@property
 	def EnableDiscardLearnedLsps(self):
-		"""DEPRECATED If enabled, LSPs learned from this router's interfaces will be discarded.
+		"""If enabled, LSPs learned from this router's interfaces will be discarded.
 
 		Returns:
 			bool
@@ -417,7 +417,7 @@ class Router(Base):
 
 	@property
 	def EnableHelloPadding(self):
-		"""DEPRECATED If true, enables padding of hello messages.
+		"""If true, enables padding of hello messages.
 
 		Returns:
 			bool
@@ -429,7 +429,7 @@ class Router(Base):
 
 	@property
 	def EnableHitlessRestart(self):
-		"""DEPRECATED Hitless Restart is enabled for this emulated ISIS router.
+		"""Hitless Restart is enabled for this emulated ISIS router.
 
 		Returns:
 			bool
@@ -441,7 +441,7 @@ class Router(Base):
 
 	@property
 	def EnableHostName(self):
-		"""DEPRECATED If true, the given dynamic host name is transmitted in all the packets sent from this router.
+		"""If true, the given dynamic host name is transmitted in all the packets sent from this router.
 
 		Returns:
 			bool
@@ -453,7 +453,7 @@ class Router(Base):
 
 	@property
 	def EnableIgnoreMtPortCapability(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -465,7 +465,7 @@ class Router(Base):
 
 	@property
 	def EnableIgnoreRecvMd5(self):
-		"""DEPRECATED MD5 authentication will be disabled for incoming/received packets.
+		"""MD5 authentication will be disabled for incoming/received packets.
 
 		Returns:
 			bool
@@ -477,7 +477,7 @@ class Router(Base):
 
 	@property
 	def EnableMtIpv6(self):
-		"""DEPRECATED If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
+		"""If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
 
 		Returns:
 			bool
@@ -489,7 +489,7 @@ class Router(Base):
 
 	@property
 	def EnableMtuProbe(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -501,7 +501,7 @@ class Router(Base):
 
 	@property
 	def EnableMultiTopology(self):
-		"""DEPRECATED Enables more than one topology (distribution tree) corresponding to the given R bridge.
+		"""Enables more than one topology (distribution tree) corresponding to the given R bridge.
 
 		Returns:
 			bool
@@ -513,7 +513,7 @@ class Router(Base):
 
 	@property
 	def EnableOverloaded(self):
-		"""DEPRECATED If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
+		"""If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
 
 		Returns:
 			bool
@@ -525,7 +525,7 @@ class Router(Base):
 
 	@property
 	def EnablePartitionRepair(self):
-		"""DEPRECATED Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
+		"""Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
 
 		Returns:
 			bool
@@ -537,7 +537,7 @@ class Router(Base):
 
 	@property
 	def EnableTrillOam(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -549,7 +549,7 @@ class Router(Base):
 
 	@property
 	def EnableWideMetric(self):
-		"""DEPRECATED Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
+		"""Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
 
 		Returns:
 			bool
@@ -561,7 +561,7 @@ class Router(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED Enables or disables the simulated router.
+		"""Enables or disables the simulated router.
 
 		Returns:
 			bool
@@ -585,7 +585,7 @@ class Router(Base):
 
 	@property
 	def FilterIpv4MulticastTlvs(self):
-		"""DEPRECATED If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
+		"""If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
 
 		Returns:
 			bool
@@ -597,7 +597,7 @@ class Router(Base):
 
 	@property
 	def FilterIpv6MulticastTlvs(self):
-		"""DEPRECATED If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
+		"""If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
 
 		Returns:
 			bool
@@ -609,7 +609,7 @@ class Router(Base):
 
 	@property
 	def FilterLearnedIpv4Prefixes(self):
-		"""DEPRECATED If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
+		"""If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
 
 		Returns:
 			bool
@@ -621,7 +621,7 @@ class Router(Base):
 
 	@property
 	def FilterLearnedIpv6Prefixes(self):
-		"""DEPRECATED If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
+		"""If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
 
 		Returns:
 			bool
@@ -633,7 +633,7 @@ class Router(Base):
 
 	@property
 	def FilterLearnedRbridges(self):
-		"""DEPRECATED If true, retrieves RBridges learned information in the DCE ISIS mode.
+		"""If true, retrieves RBridges learned information in the DCE ISIS mode.
 
 		Returns:
 			bool
@@ -645,7 +645,7 @@ class Router(Base):
 
 	@property
 	def FilterLearnedSpbRbridges(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -657,7 +657,7 @@ class Router(Base):
 
 	@property
 	def FilterLearnedTrillMacUnicast(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -669,7 +669,7 @@ class Router(Base):
 
 	@property
 	def FilterMacMulticastTlvs(self):
-		"""DEPRECATED If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
+		"""If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
 
 		Returns:
 			bool
@@ -681,7 +681,7 @@ class Router(Base):
 
 	@property
 	def HostName(self):
-		"""DEPRECATED Allows to add a host name to this router.
+		"""Allows to add a host name to this router.
 
 		Returns:
 			str
@@ -693,7 +693,7 @@ class Router(Base):
 
 	@property
 	def InterLspMgroupPduBurstGap(self):
-		"""DEPRECATED Indicates the gap between each LSP MGROUP-PDUs.
+		"""Indicates the gap between each LSP MGROUP-PDUs.
 
 		Returns:
 			number
@@ -705,7 +705,7 @@ class Router(Base):
 
 	@property
 	def LspLifeTime(self):
-		"""DEPRECATED (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
+		"""(in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
 
 		Returns:
 			number
@@ -717,7 +717,7 @@ class Router(Base):
 
 	@property
 	def LspMaxSize(self):
-		"""DEPRECATED (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
+		"""(in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
 
 		Returns:
 			number
@@ -729,7 +729,7 @@ class Router(Base):
 
 	@property
 	def LspMgroupPduMinTransmissionInterval(self):
-		"""DEPRECATED Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
+		"""Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
 
 		Returns:
 			number
@@ -741,7 +741,7 @@ class Router(Base):
 
 	@property
 	def LspRefreshRate(self):
-		"""DEPRECATED (in sec) The rate at which LSPs are resent. The default value is 900 sec.
+		"""(in sec) The rate at which LSPs are resent. The default value is 900 sec.
 
 		Returns:
 			number
@@ -753,7 +753,7 @@ class Router(Base):
 
 	@property
 	def MaxAreaAddresses(self):
-		"""DEPRECATED The number of area addresses permitted for this IS area.
+		"""The number of area addresses permitted for this IS area.
 
 		Returns:
 			number
@@ -765,7 +765,7 @@ class Router(Base):
 
 	@property
 	def MaxLspMgroupPdusPerBurst(self):
-		"""DEPRECATED Indicates the maximum number of LSP MGROUP-PDUs for each burst.
+		"""Indicates the maximum number of LSP MGROUP-PDUs for each burst.
 
 		Returns:
 			number
@@ -777,7 +777,7 @@ class Router(Base):
 
 	@property
 	def NumberOfMtuProbes(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -801,7 +801,7 @@ class Router(Base):
 
 	@property
 	def OriginatingLspBufSize(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -813,7 +813,7 @@ class Router(Base):
 
 	@property
 	def PsnpInterval(self):
-		"""DEPRECATED The PSPN Interval.
+		"""The PSPN Interval.
 
 		Returns:
 			number
@@ -825,7 +825,7 @@ class Router(Base):
 
 	@property
 	def RestartMode(self):
-		"""DEPRECATED If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
+		"""If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
 
 		Returns:
 			str(normalRouter|restartingRouter|startingRouter|helperRouter)
@@ -837,7 +837,7 @@ class Router(Base):
 
 	@property
 	def RestartTime(self):
-		"""DEPRECATED Enter the restart time in seconds.
+		"""Enter the restart time in seconds.
 
 		Returns:
 			number
@@ -849,7 +849,7 @@ class Router(Base):
 
 	@property
 	def RestartVersion(self):
-		"""DEPRECATED If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
+		"""If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
 
 		Returns:
 			str(version3|version4)
@@ -897,7 +897,7 @@ class Router(Base):
 
 	@property
 	def SystemId(self):
-		"""DEPRECATED The neighbor's system ID.
+		"""The neighbor's system ID.
 
 		Returns:
 			str
@@ -909,7 +909,7 @@ class Router(Base):
 
 	@property
 	def TeEnable(self):
-		"""DEPRECATED Enables traffic engineering (TE) on this emulated ISIS router.
+		"""Enables traffic engineering (TE) on this emulated ISIS router.
 
 		Returns:
 			bool
@@ -921,7 +921,7 @@ class Router(Base):
 
 	@property
 	def TeRouterId(self):
-		"""DEPRECATED The ID of the simulated router, expressed as an IP address.
+		"""The ID of the simulated router, expressed as an IP address.
 
 		Returns:
 			str
@@ -933,7 +933,7 @@ class Router(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""DEPRECATED Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+		"""Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)

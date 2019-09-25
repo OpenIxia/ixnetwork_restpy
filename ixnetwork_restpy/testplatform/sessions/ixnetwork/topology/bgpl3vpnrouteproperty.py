@@ -826,7 +826,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def UseTraditionalNlri(self):
-		"""DEPRECATED Use Traditional NLRI
+		"""Use Traditional NLRI
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -835,7 +835,7 @@ class BgpL3VpnRouteProperty(Base):
 
 	@property
 	def Weight(self):
-		"""DEPRECATED Weight
+		"""Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

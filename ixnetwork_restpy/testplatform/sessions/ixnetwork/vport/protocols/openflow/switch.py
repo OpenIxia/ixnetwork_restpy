@@ -289,7 +289,7 @@ class Switch(Base):
 
 	@property
 	def BarrierReplyDelayType(self):
-		"""DEPRECATED Select the delay type supported for barrier reply messages
+		"""Select the delay type supported for barrier reply messages
 
 		Returns:
 			str(fixed|random)
@@ -301,7 +301,7 @@ class Switch(Base):
 
 	@property
 	def BarrierReplyMaxDelay(self):
-		"""DEPRECATED Indicates the delay between successive barrier notifications.
+		"""Indicates the delay between successive barrier notifications.
 
 		Returns:
 			number
@@ -313,7 +313,7 @@ class Switch(Base):
 
 	@property
 	def CalculateControllerFlowTxRate(self):
-		"""DEPRECATED If true, the Flow Rate of the controller is calculated.
+		"""If true, the Flow Rate of the controller is calculated.
 
 		Returns:
 			bool
@@ -325,7 +325,7 @@ class Switch(Base):
 
 	@property
 	def CalculatePacketInReplyDelay(self):
-		"""DEPRECATED If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
+		"""If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
 
 		Returns:
 			bool
@@ -337,7 +337,7 @@ class Switch(Base):
 
 	@property
 	def DatapathDescription(self):
-		"""DEPRECATED Indicates a description of datapath.
+		"""Indicates a description of datapath.
 
 		Returns:
 			str
@@ -349,7 +349,7 @@ class Switch(Base):
 
 	@property
 	def DatapathId(self):
-		"""DEPRECATED Indicates the Datapath ID of the OpenFlow switch.
+		"""Indicates the Datapath ID of the OpenFlow switch.
 
 		Returns:
 			str
@@ -361,7 +361,7 @@ class Switch(Base):
 
 	@property
 	def DatapathIdInHex(self):
-		"""DEPRECATED Indicates the Datapath ID in hexadecimal format.
+		"""Indicates the Datapath ID in hexadecimal format.
 
 		Returns:
 			str
@@ -373,7 +373,7 @@ class Switch(Base):
 
 	@property
 	def Description(self):
-		"""DEPRECATED A description for the object.
+		"""A description for the object.
 
 		Returns:
 			str
@@ -385,7 +385,7 @@ class Switch(Base):
 
 	@property
 	def Enable(self):
-		"""DEPRECATED If true, the object is enabled.
+		"""If true, the object is enabled.
 
 		Returns:
 			bool
@@ -397,7 +397,7 @@ class Switch(Base):
 
 	@property
 	def EnableCalculatePacketOutRxRate(self):
-		"""DEPRECATED If enabled packet_out rx rate and packet_in tx rate will be caculated for the switch and shown in Aggregated Switch Statistics and Switch Learned Info. This field can be enabled only if Calculate PacketIn Reply Delay is disabled for the switch.
+		"""If enabled packet_out rx rate and packet_in tx rate will be caculated for the switch and shown in Aggregated Switch Statistics and Switch Learned Info. This field can be enabled only if Calculate PacketIn Reply Delay is disabled for the switch.
 
 		Returns:
 			bool
@@ -409,7 +409,7 @@ class Switch(Base):
 
 	@property
 	def EnableHelloElement(self):
-		"""DEPRECATED If true, enables Hello element for version negotiation.
+		"""If true, enables Hello element for version negotiation.
 
 		Returns:
 			bool
@@ -421,7 +421,7 @@ class Switch(Base):
 
 	@property
 	def HardwareDescription(self):
-		"""DEPRECATED Indicates the hardware description of the switch.
+		"""Indicates the hardware description of the switch.
 
 		Returns:
 			str
@@ -433,7 +433,7 @@ class Switch(Base):
 
 	@property
 	def InterPacketInBurstGap(self):
-		"""DEPRECATED Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
+		"""Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
 
 		Returns:
 			number
@@ -445,7 +445,7 @@ class Switch(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
+		"""Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
 
 		Returns:
 			str
@@ -454,7 +454,7 @@ class Switch(Base):
 
 	@property
 	def ManufacturerDescription(self):
-		"""DEPRECATED Indicates the description of the switch manufacturer.
+		"""Indicates the description of the switch manufacturer.
 
 		Returns:
 			str
@@ -466,7 +466,7 @@ class Switch(Base):
 
 	@property
 	def MaxPacketInBytes(self):
-		"""DEPRECATED Specifies the max amount of data to be sent in the Packet-In message.
+		"""Specifies the max amount of data to be sent in the Packet-In message.
 
 		Returns:
 			number
@@ -478,7 +478,7 @@ class Switch(Base):
 
 	@property
 	def MaximumColorValue(self):
-		"""DEPRECATED Specify the maximum color value supported.The minimum value is 0 and the maximum value is 160. The default value is 50.
+		"""Specify the maximum color value supported.The minimum value is 0 and the maximum value is 160. The default value is 50.
 
 		Returns:
 			number
@@ -490,7 +490,7 @@ class Switch(Base):
 
 	@property
 	def MaximumNoOfBandsPerMeter(self):
-		"""DEPRECATED Specify the maximum number of bands supported per meter. The minimum value is 0 and the maximum value is 160. The default value is 50.
+		"""Specify the maximum number of bands supported per meter. The minimum value is 0 and the maximum value is 160. The default value is 50.
 
 		Returns:
 			number
@@ -502,7 +502,7 @@ class Switch(Base):
 
 	@property
 	def MaximumNoOfBucketsPerGroup(self):
-		"""DEPRECATED Specify the maximum number of Buckets supported per group.The minimum value is 1 and the maximum value is 4092.The default value is 4092.
+		"""Specify the maximum number of Buckets supported per group.The minimum value is 1 and the maximum value is 4092.The default value is 4092.
 
 		Returns:
 			number
@@ -514,7 +514,7 @@ class Switch(Base):
 
 	@property
 	def MaximumNoOfMeters(self):
-		"""DEPRECATED Specify the maximum number of meters supported. The default value is 1000.
+		"""Specify the maximum number of meters supported. The default value is 1000.
 
 		Returns:
 			number
@@ -526,7 +526,7 @@ class Switch(Base):
 
 	@property
 	def NumberOfBuffers(self):
-		"""DEPRECATED Indicates the maximum number of packets that can be stored in the buffered at a time.
+		"""Indicates the maximum number of packets that can be stored in the buffered at a time.
 
 		Returns:
 			number
@@ -538,7 +538,7 @@ class Switch(Base):
 
 	@property
 	def PacketInReplyTimeout(self):
-		"""DEPRECATED Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
+		"""Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
 
 		Returns:
 			number
@@ -550,7 +550,7 @@ class Switch(Base):
 
 	@property
 	def PacketInTxBurstSize(self):
-		"""DEPRECATED Indicates the number of packets in messages sent in a single burst.
+		"""Indicates the number of packets in messages sent in a single burst.
 
 		Returns:
 			number
@@ -562,7 +562,7 @@ class Switch(Base):
 
 	@property
 	def SerialNumber(self):
-		"""DEPRECATED Indicates the Serial Number of the switch.
+		"""Indicates the Serial Number of the switch.
 
 		Returns:
 			str
@@ -574,7 +574,7 @@ class Switch(Base):
 
 	@property
 	def SoftwareDescription(self):
-		"""DEPRECATED Indicates the description of the software installed on the switch.
+		"""Indicates the description of the software installed on the switch.
 
 		Returns:
 			str
@@ -586,7 +586,7 @@ class Switch(Base):
 
 	@property
 	def StoreFlows(self):
-		"""DEPRECATED If true, the switch will store the flows advertised by the controller in its tables.
+		"""If true, the switch will store the flows advertised by the controller in its tables.
 
 		Returns:
 			bool
@@ -598,7 +598,7 @@ class Switch(Base):
 
 	@property
 	def SupportPacketForwarding(self):
-		"""DEPRECATED If true, indicates that Packet Forwarding is supported on the OpenFlow switch.
+		"""If true, indicates that Packet Forwarding is supported on the OpenFlow switch.
 
 		Returns:
 			bool
@@ -610,7 +610,7 @@ class Switch(Base):
 
 	@property
 	def TableMissAction(self):
-		"""DEPRECATED Specify what the Switch should do when there is no match for the packets.
+		"""Specify what the Switch should do when there is no match for the packets.
 
 		Returns:
 			str(drop|sendToController)

@@ -248,7 +248,7 @@ class MacPools(Base):
 
 	@property
 	def NumberOfAddressesAsy(self):
-		"""DEPRECATED Number of MAC addresses in the simulated MAC range
+		"""Number of MAC addresses in the simulated MAC range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -257,7 +257,7 @@ class MacPools(Base):
 
 	@property
 	def PrefixLength(self):
-		"""DEPRECATED The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+		"""The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -278,7 +278,7 @@ class MacPools(Base):
 
 	@property
 	def VlanCount(self):
-		"""DEPRECATED Number of active VLANs
+		"""Number of active VLANs
 
 		Returns:
 			number

@@ -160,7 +160,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def FirecodeForceOn(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -172,7 +172,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def FirecodeRequest(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -184,7 +184,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def FlowControlDirectedAddress(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -196,7 +196,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def ForceDisableFEC(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -208,7 +208,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def GoodBlocksNumber(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -220,7 +220,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def IeeeL1Defaults(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -229,7 +229,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def LaserOn(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -241,7 +241,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def LinkTraining(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -253,7 +253,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def LoopContinuously(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -265,7 +265,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def LoopCountNumber(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -277,7 +277,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def Loopback(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -289,7 +289,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def LoopbackMode(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(internalLoopback|lineLoopback|none)
@@ -301,7 +301,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def Ppm(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -313,7 +313,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def RsFecAdvertise(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -325,7 +325,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def RsFecForceOn(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -337,7 +337,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def RsFecRequest(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -349,7 +349,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def SendSetsMode(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(alternate|typeAOnly|typeBOnly)
@@ -361,7 +361,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def Speed(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(speed100g|speed200g|speed400g|speed50g)
@@ -373,7 +373,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def StartErrorInsertion(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -385,7 +385,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def TxIgnoreRxLinkFaults(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -397,7 +397,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def TypeAOrderedSets(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(localFault|remoteFault)
@@ -409,7 +409,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def TypeBOrderedSets(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(localFault|remoteFault)
@@ -421,7 +421,7 @@ class AtlasFourHundredGigLan(Base):
 
 	@property
 	def UseANResults(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool

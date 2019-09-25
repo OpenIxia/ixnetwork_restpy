@@ -130,7 +130,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -139,7 +139,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -148,7 +148,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def EnableP2PEgress(self):
-		"""DEPRECATED Enable to configure P2P Egress LSPs
+		"""Enable to configure P2P Egress LSPs
 
 		Returns:
 			bool
@@ -160,7 +160,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -169,7 +169,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def ExpectedPceInitiatedLspsCount(self):
-		"""DEPRECATED Number of Expected PCE Initiated RSVP-TE LSPs
+		"""Number of Expected PCE Initiated RSVP-TE LSPs
 
 		Returns:
 			number
@@ -181,7 +181,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def IngressP2PLsps(self):
-		"""DEPRECATED Number of P2P Ingress LSPs configured per IPv4 Loopback
+		"""Number of P2P Ingress LSPs configured per IPv4 Loopback
 
 		Returns:
 			number
@@ -193,7 +193,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED Local IP
+		"""Local IP
 
 		Returns:
 			list(str)
@@ -202,7 +202,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -214,7 +214,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -226,7 +226,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def P2mpEgressTunnelCount(self):
-		"""DEPRECATED Number of P2MP Egress Tunnels configured per IPv4 Loopback
+		"""Number of P2MP Egress Tunnels configured per IPv4 Loopback
 
 		Returns:
 			number
@@ -238,7 +238,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def P2mpIngressLspCount(self):
-		"""DEPRECATED Number of P2MP Ingress LSPs configured per IPv4 Loopback
+		"""Number of P2MP Ingress LSPs configured per IPv4 Loopback
 
 		Returns:
 			number
@@ -250,7 +250,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -259,7 +259,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -271,7 +271,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -280,7 +280,7 @@ class RsvpteLsps(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

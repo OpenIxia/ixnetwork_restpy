@@ -241,7 +241,7 @@ class IsisL3Router(Base):
 
 	@property
 	def AreaAddresses(self):
-		"""DEPRECATED Area Addresses
+		"""Area Addresses
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +250,7 @@ class IsisL3Router(Base):
 
 	@property
 	def AreaAuthenticationType(self):
-		"""DEPRECATED Area Authentication Type
+		"""Area Authentication Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -259,7 +259,7 @@ class IsisL3Router(Base):
 
 	@property
 	def AreaTransmitPasswordOrMD5Key(self):
-		"""DEPRECATED Area Transmit Password / MD5-Key
+		"""Area Transmit Password / MD5-Key
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +268,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Attached(self):
-		"""DEPRECATED Attached
+		"""Attached
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -277,7 +277,7 @@ class IsisL3Router(Base):
 
 	@property
 	def BIERIPv6NodePrefix(self):
-		"""DEPRECATED IPv6 Node Prefix
+		"""IPv6 Node Prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -286,7 +286,7 @@ class IsisL3Router(Base):
 
 	@property
 	def BierNFlag(self):
-		"""DEPRECATED Nodal prefix flag
+		"""Nodal prefix flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -295,7 +295,7 @@ class IsisL3Router(Base):
 
 	@property
 	def BierRFlag(self):
-		"""DEPRECATED Redistribution flag
+		"""Redistribution flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -304,7 +304,7 @@ class IsisL3Router(Base):
 
 	@property
 	def CSNPInterval(self):
-		"""DEPRECATED CSNP Interval (ms)
+		"""CSNP Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -313,7 +313,7 @@ class IsisL3Router(Base):
 
 	@property
 	def ConfigureSIDIndexLabel(self):
-		"""DEPRECATED Configure SID/Index/Label
+		"""Configure SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -322,7 +322,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -331,7 +331,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DBit(self):
-		"""DEPRECATED When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
+		"""When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -340,7 +340,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DBitForSRv6Cap(self):
-		"""DEPRECATED When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
+		"""When the IS-IS Router CAPABILITY TLV is leaked from level-2 to level-1, the D bit MUST be set, else it should be clear
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -358,7 +358,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -367,7 +367,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DiscardLSPs(self):
-		"""DEPRECATED Discard LSPs
+		"""Discard LSPs
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -376,7 +376,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Distribution(self):
-		"""DEPRECATED Distribution
+		"""Distribution
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -385,7 +385,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DomainAuthenticationType(self):
-		"""DEPRECATED Domain Authentication Type
+		"""Domain Authentication Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -394,7 +394,7 @@ class IsisL3Router(Base):
 
 	@property
 	def DomainTransmitPasswordOrMD5Key(self):
-		"""DEPRECATED Domain Transmit Password / MD5-Key
+		"""Domain Transmit Password / MD5-Key
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -403,7 +403,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EFlag(self):
-		"""DEPRECATED Explicit NULL flag
+		"""Explicit NULL flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -421,7 +421,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableBIER(self):
-		"""DEPRECATED Enable BIER
+		"""Enable BIER
 
 		Returns:
 			bool
@@ -433,7 +433,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableHelloPadding(self):
-		"""DEPRECATED Enable Hello Padding
+		"""Enable Hello Padding
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -442,7 +442,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableHitlessRestart(self):
-		"""DEPRECATED Enable Hitless Restart
+		"""Enable Hitless Restart
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -451,7 +451,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableHostName(self):
-		"""DEPRECATED Enable Host Name
+		"""Enable Host Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -460,7 +460,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableMTIPv6(self):
-		"""DEPRECATED Enable MT for IPv6
+		"""Enable MT for IPv6
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -469,7 +469,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableMappingServer(self):
-		"""DEPRECATED This ensures whether the ISIS router will behave as a Segment Routing Mapping Server (SRMS) or not.
+		"""This ensures whether the ISIS router will behave as a Segment Routing Mapping Server (SRMS) or not.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -478,7 +478,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableSR(self):
-		"""DEPRECATED This enables SR MPLS on all the emulated ISIS router(s)
+		"""This enables SR MPLS on all the emulated ISIS router(s)
 
 		Returns:
 			bool
@@ -490,7 +490,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableTE(self):
-		"""DEPRECATED Enable TE
+		"""Enable TE
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -499,7 +499,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableWMforTE(self):
-		"""DEPRECATED Hidden field is to disable wide Metric, when user disable TE Router conditionally
+		"""Hidden field is to disable wide Metric, when user disable TE Router conditionally
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -508,7 +508,7 @@ class IsisL3Router(Base):
 
 	@property
 	def EnableWideMetric(self):
-		"""DEPRECATED Enable Wide Metric
+		"""Enable Wide Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -517,7 +517,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -544,7 +544,7 @@ class IsisL3Router(Base):
 
 	@property
 	def HitlessRestartMode(self):
-		"""DEPRECATED Restart Mode
+		"""Restart Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -553,7 +553,7 @@ class IsisL3Router(Base):
 
 	@property
 	def HitlessRestartTime(self):
-		"""DEPRECATED Restart Time
+		"""Restart Time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -562,7 +562,7 @@ class IsisL3Router(Base):
 
 	@property
 	def HitlessRestartVersion(self):
-		"""DEPRECATED Restart Version
+		"""Restart Version
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -571,7 +571,7 @@ class IsisL3Router(Base):
 
 	@property
 	def HostName(self):
-		"""DEPRECATED Host Name
+		"""Host Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -580,7 +580,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IgnoreReceiveMD5(self):
-		"""DEPRECATED Ignore Receive MD5
+		"""Ignore Receive MD5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -589,7 +589,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludeMaxSlMsd(self):
-		"""DEPRECATED If set, then Include Maximum Segment Left MSD in SRv6 capability
+		"""If set, then Include Maximum Segment Left MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -598,7 +598,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludeMaximumEndDMsd(self):
-		"""DEPRECATED If set, then include Maximum End D MSD in SRv6 capability
+		"""If set, then include Maximum End D MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -616,7 +616,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludeMaximumEndPopMsd(self):
-		"""DEPRECATED If set, then include Max-End-Pop-MSD in SRv6 capability
+		"""If set, then include Max-End-Pop-MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -643,7 +643,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludeMaximumTEncapMsd(self):
-		"""DEPRECATED If set, then include Maximum T.Encap MSD in SRv6 capability
+		"""If set, then include Maximum T.Encap MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -661,7 +661,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludeMaximumTInsertMsd(self):
-		"""DEPRECATED If set, then include Maximum T.Insert MSD in SRv6 capability
+		"""If set, then include Maximum T.Insert MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -679,7 +679,7 @@ class IsisL3Router(Base):
 
 	@property
 	def IncludePrefixAttrFlags(self):
-		"""DEPRECATED Include Prefix Attributes Flags
+		"""Include Prefix Attributes Flags
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -688,7 +688,7 @@ class IsisL3Router(Base):
 
 	@property
 	def InterLSPsOrMGroupPDUBurstGap(self):
-		"""DEPRECATED Inter LSPs/MGROUP-PDUs Burst Gap (ms)
+		"""Inter LSPs/MGROUP-PDUs Burst Gap (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -697,7 +697,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Ipv4Flag(self):
-		"""DEPRECATED If set, then the router is capable of processing SR MPLS encapsulated IPv4 packets on all interfaces.
+		"""If set, then the router is capable of processing SR MPLS encapsulated IPv4 packets on all interfaces.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -706,7 +706,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Ipv6Flag(self):
-		"""DEPRECATED If set, then the router is capable of processing SR MPLS encapsulated IPv6 packets on all interfaces.
+		"""If set, then the router is capable of processing SR MPLS encapsulated IPv6 packets on all interfaces.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -724,7 +724,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Ipv6Srh(self):
-		"""DEPRECATED This is the SR-IPv6 flag. If set to true, then this enables the SRv6 capability on the router If set to false, then this enables the MPLS SR capability on the router
+		"""This is the SR-IPv6 flag. If set to true, then this enables the SRv6 capability on the router If set to false, then this enables the MPLS SR capability on the router
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -733,7 +733,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LFlag(self):
-		"""DEPRECATED Local Flag
+		"""Local Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -742,7 +742,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LSPLifetime(self):
-		"""DEPRECATED LSP Rifetime (sec)
+		"""LSP Rifetime (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -751,7 +751,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LSPRefreshRate(self):
-		"""DEPRECATED LSP Refresh Rate (sec)
+		"""LSP Refresh Rate (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -760,7 +760,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LSPorMGroupPDUMinTransmissionInterval(self):
-		"""DEPRECATED LSP/MGROUP-PDU Min Transmission Interval (ms)
+		"""LSP/MGROUP-PDU Min Transmission Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -769,7 +769,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LocalSystemID(self):
-		"""DEPRECATED System ID
+		"""System ID
 
 		Returns:
 			list(str)
@@ -778,7 +778,7 @@ class IsisL3Router(Base):
 
 	@property
 	def LocatorCount(self):
-		"""DEPRECATED Locator Count
+		"""Locator Count
 
 		Returns:
 			number
@@ -799,7 +799,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Mask(self):
-		"""DEPRECATED Mask
+		"""Mask
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -808,7 +808,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxAreaAddresses(self):
-		"""DEPRECATED Maximum Area Addresses
+		"""Maximum Area Addresses
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -826,7 +826,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxEndDMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
+		"""This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -835,7 +835,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxEndPopMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
+		"""This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -853,7 +853,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxLSPSize(self):
-		"""DEPRECATED Max LSP Size
+		"""Max LSP Size
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -862,7 +862,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxLSPsOrMGroupPDUsPerBurst(self):
-		"""DEPRECATED Max LSPs/MGROUP-PDUs Per Burst
+		"""Max LSPs/MGROUP-PDUs Per Burst
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -880,7 +880,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxSlMsd(self):
-		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
+		"""This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -889,7 +889,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxTEncap(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
+		"""This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -907,7 +907,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MaxTInsertMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
+		"""This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -916,7 +916,7 @@ class IsisL3Router(Base):
 
 	@property
 	def MtCount(self):
-		"""DEPRECATED MT Count
+		"""MT Count
 
 		Returns:
 			number
@@ -928,7 +928,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NFlag(self):
-		"""DEPRECATED Nodal prefix flag
+		"""Nodal prefix flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -937,7 +937,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -949,7 +949,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NoOfBIERSubDomains(self):
-		"""DEPRECATED Number of BIER Sub Domains
+		"""Number of BIER Sub Domains
 
 		Returns:
 			number
@@ -961,7 +961,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NoOfSRTunnels(self):
-		"""DEPRECATED Number of MPLS SR Tunnels
+		"""Number of MPLS SR Tunnels
 
 		Returns:
 			number
@@ -973,7 +973,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NodePrefix(self):
-		"""DEPRECATED Node Prefix
+		"""Node Prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -982,7 +982,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NumberOfMappingIPV4Ranges(self):
-		"""DEPRECATED Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
+		"""Specifies the number of IPv4 mappings or range TLVs that each router in a DG can advertise.
 
 		Returns:
 			number
@@ -994,7 +994,7 @@ class IsisL3Router(Base):
 
 	@property
 	def NumberOfMappingIPV6Ranges(self):
-		"""DEPRECATED Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
+		"""Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
 
 		Returns:
 			number
@@ -1006,7 +1006,7 @@ class IsisL3Router(Base):
 
 	@property
 	def OFlagOfSRv6Cap(self):
-		"""DEPRECATED If set, it indicates that this packet is an operations and management (OAM) packet.
+		"""If set, it indicates that this packet is an operations and management (OAM) packet.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1024,7 +1024,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Overloaded(self):
-		"""DEPRECATED Overloaded
+		"""Overloaded
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1033,7 +1033,7 @@ class IsisL3Router(Base):
 
 	@property
 	def PFlag(self):
-		"""DEPRECATED No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
+		"""No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1042,7 +1042,7 @@ class IsisL3Router(Base):
 
 	@property
 	def PSNPInterval(self):
-		"""DEPRECATED PSNP Interval (ms)
+		"""PSNP Interval (ms)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1051,7 +1051,7 @@ class IsisL3Router(Base):
 
 	@property
 	def PartitionRepair(self):
-		"""DEPRECATED Partition Repair
+		"""Partition Repair
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1060,7 +1060,7 @@ class IsisL3Router(Base):
 
 	@property
 	def PrefixAdvertisementType(self):
-		"""DEPRECATED Prefix Advertisement Type
+		"""Prefix Advertisement Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1078,7 +1078,7 @@ class IsisL3Router(Base):
 
 	@property
 	def RFlag(self):
-		"""DEPRECATED Redistribution flag
+		"""Redistribution flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1087,7 +1087,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Redistribution(self):
-		"""DEPRECATED Redistribution
+		"""Redistribution
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1114,7 +1114,7 @@ class IsisL3Router(Base):
 
 	@property
 	def ReservedInsideSRv6CapFlag(self):
-		"""DEPRECATED This is the reserved field (as part of Flags field of SRv6 Capability TLV)
+		"""This is the reserved field (as part of Flags field of SRv6 Capability TLV)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1141,7 +1141,7 @@ class IsisL3Router(Base):
 
 	@property
 	def RtrcapId(self):
-		"""DEPRECATED Router Capability Id
+		"""Router Capability Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1150,7 +1150,7 @@ class IsisL3Router(Base):
 
 	@property
 	def RtrcapIdForSrv6(self):
-		"""DEPRECATED Router Capability Id
+		"""Router Capability Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1159,7 +1159,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SBit(self):
-		"""DEPRECATED Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
+		"""Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1168,7 +1168,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SBitForSRv6Cap(self):
-		"""DEPRECATED Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
+		"""Enabling S bit lets the IS-IS Router CAPABILITY TLV to get flooded across the entire routing domain, otherwise the TLV not be leaked between levels
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1177,7 +1177,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SIDIndexLabel(self):
-		"""DEPRECATED SID/Index/Label
+		"""SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1186,7 +1186,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SRAlgorithmCount(self):
-		"""DEPRECATED SR Algorithm Count
+		"""SR Algorithm Count
 
 		Returns:
 			number
@@ -1198,7 +1198,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SRGBRangeCount(self):
-		"""DEPRECATED SRGB Range Count
+		"""SRGB Range Count
 
 		Returns:
 			number
@@ -1210,7 +1210,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SRv6NodePrefix(self):
-		"""DEPRECATED This is an IPv6 Node prefix for the SRv6 router
+		"""This is an IPv6 Node prefix for the SRv6 router
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1219,7 +1219,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SRv6NodePrefixLength(self):
-		"""DEPRECATED This is the prefix length of the SRv6 node prefix
+		"""This is the prefix length of the SRv6 node prefix
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1228,7 +1228,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session Information
+		"""Logs additional information about the session Information
 
 		Returns:
 			list(str[noIfaceUp|up])
@@ -1237,7 +1237,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -1246,7 +1246,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SrlbDescriptorCount(self):
-		"""DEPRECATED Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+		"""Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
 		Returns:
 			number
@@ -1258,7 +1258,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SrlbFlags(self):
-		"""DEPRECATED This specifies the value of the SRLB flags field
+		"""This specifies the value of the SRLB flags field
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1267,7 +1267,7 @@ class IsisL3Router(Base):
 
 	@property
 	def SrmsPreference(self):
-		"""DEPRECATED This is used to associate a preference with SRMS advertisements and is being advertised as a sub-TLV in Router Capability TLV
+		"""This is used to associate a preference with SRMS advertisements and is being advertised as a sub-TLV in Router Capability TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1276,7 +1276,7 @@ class IsisL3Router(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -1285,7 +1285,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -1294,7 +1294,7 @@ class IsisL3Router(Base):
 
 	@property
 	def TERouterId(self):
-		"""DEPRECATED TE Router ID
+		"""TE Router ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -1303,7 +1303,7 @@ class IsisL3Router(Base):
 
 	@property
 	def VFlag(self):
-		"""DEPRECATED Value Flag
+		"""Value Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

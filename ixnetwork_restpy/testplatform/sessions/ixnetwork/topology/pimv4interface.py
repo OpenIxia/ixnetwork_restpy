@@ -175,7 +175,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -184,7 +184,7 @@ class PimV4Interface(Base):
 
 	@property
 	def CrpRanges(self):
-		"""DEPRECATED Number of C-RP Ranges
+		"""Number of C-RP Ranges
 
 		Returns:
 			number
@@ -196,7 +196,7 @@ class PimV4Interface(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -205,7 +205,7 @@ class PimV4Interface(Base):
 
 	@property
 	def DisableTriggered(self):
-		"""DEPRECATED If enabled, the triggered hello delay function is disabled.
+		"""If enabled, the triggered hello delay function is disabled.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -214,7 +214,7 @@ class PimV4Interface(Base):
 
 	@property
 	def DiscardLearnedRpInfo(self):
-		"""DEPRECATED If selected, disregards group mappings learnt from Bootstrap Message (in case not acting as elected BSR) or from Candidate RP Advertisement (in case of elected BSR).
+		"""If selected, disregards group mappings learnt from Bootstrap Message (in case not acting as elected BSR) or from Candidate RP Advertisement (in case of elected BSR).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -223,7 +223,7 @@ class PimV4Interface(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""DEPRECATED Enable BFD Registration
+		"""Enable BFD Registration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +232,7 @@ class PimV4Interface(Base):
 
 	@property
 	def EnableBootstrap(self):
-		"""DEPRECATED If selected, enables the PIM-SM interface to participate in Bootstrap Router election procedure.
+		"""If selected, enables the PIM-SM interface to participate in Bootstrap Router election procedure.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -241,7 +241,7 @@ class PimV4Interface(Base):
 
 	@property
 	def EnablePrune(self):
-		"""DEPRECATED If selected, the LAN Prune (propagation) Delay is enabled for this PIM-SM interface. (This Indicates that this option is present in the Hello message.)
+		"""If selected, the LAN Prune (propagation) Delay is enabled for this PIM-SM interface. (This Indicates that this option is present in the Hello message.)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +250,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -259,7 +259,7 @@ class PimV4Interface(Base):
 
 	@property
 	def ForceSemantic(self):
-		"""DEPRECATED If enabled, this forces the BSR to send only one group specific RP list per bootstrap message, even if there is space in the packet to push in more RP list information pertaining to a different group.
+		"""If enabled, this forces the BSR to send only one group specific RP list per bootstrap message, even if there is space in the packet to push in more RP list information pertaining to a different group.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -268,7 +268,7 @@ class PimV4Interface(Base):
 
 	@property
 	def HelloHoldTime(self):
-		"""DEPRECATED The timeout period in seconds specified in Hello messages. It is the length of time the receiver of this message must keep the neighbor reachable. The default is 3.5 times the Hello Interval (105 seconds).
+		"""The timeout period in seconds specified in Hello messages. It is the length of time the receiver of this message must keep the neighbor reachable. The default is 3.5 times the Hello Interval (105 seconds).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -277,7 +277,7 @@ class PimV4Interface(Base):
 
 	@property
 	def HelloInterval(self):
-		"""DEPRECATED The PIM-SM Hello Interval is the length of time in seconds between the transmissions of Hello messages. The default is 30 seconds.
+		"""The PIM-SM Hello Interval is the length of time in seconds between the transmissions of Hello messages. The default is 30 seconds.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -286,7 +286,7 @@ class PimV4Interface(Base):
 
 	@property
 	def JoinPrunes(self):
-		"""DEPRECATED Number of Join/Prunes
+		"""Number of Join/Prunes
 
 		Returns:
 			number
@@ -298,7 +298,7 @@ class PimV4Interface(Base):
 
 	@property
 	def LanPruneTbit(self):
-		"""DEPRECATED If selected, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression
+		"""If selected, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -307,7 +307,7 @@ class PimV4Interface(Base):
 
 	@property
 	def LearnSelectedRpSet(self):
-		"""DEPRECATED If selected, displays the best RP per group (member of selected RP set).
+		"""If selected, displays the best RP per group (member of selected RP set).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -316,7 +316,7 @@ class PimV4Interface(Base):
 
 	@property
 	def LocalRouterId(self):
-		"""DEPRECATED The PIM-SM Router ID value, in IPv4 format.
+		"""The PIM-SM Router ID value, in IPv4 format.
 
 		Returns:
 			list(str)
@@ -325,7 +325,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -337,7 +337,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -349,7 +349,7 @@ class PimV4Interface(Base):
 
 	@property
 	def OverrideInterval(self):
-		"""DEPRECATED (in ms) The delay interval for randomizing the transmission time for override messages-when scheduling a delayed Join message. The default value is 2,500 milliseconds (ms). The valid range is 100 to 7FFF msec. (This is part of the LAN Prune Delay option included in Hello messages).
+		"""(in ms) The delay interval for randomizing the transmission time for override messages-when scheduling a delayed Join message. The default value is 2,500 milliseconds (ms). The valid range is 100 to 7FFF msec. (This is part of the LAN Prune Delay option included in Hello messages).
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -358,7 +358,7 @@ class PimV4Interface(Base):
 
 	@property
 	def PruneDelay(self):
-		"""DEPRECATED (in ms) The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface. The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
+		"""(in ms) The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface. The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -367,7 +367,7 @@ class PimV4Interface(Base):
 
 	@property
 	def SendBidirectional(self):
-		"""DEPRECATED If selected, sets the bi-directional PIM-SM flag bit (= 1), per IETF DRAFT draft-ietf-pim-bidir-04. (Note: Designated Forwarder election is not currently supported.)
+		"""If selected, sets the bi-directional PIM-SM flag bit (= 1), per IETF DRAFT draft-ietf-pim-bidir-04. (Note: Designated Forwarder election is not currently supported.)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -376,7 +376,7 @@ class PimV4Interface(Base):
 
 	@property
 	def SendGenerationIdOption(self):
-		"""DEPRECATED If selected, enables the Send Generation ID Option, and the Generation ID Mode field will become available to make a mode selection.
+		"""If selected, enables the Send Generation ID Option, and the Generation ID Mode field will become available to make a mode selection.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -385,7 +385,7 @@ class PimV4Interface(Base):
 
 	@property
 	def SendGenerationMode(self):
-		"""DEPRECATED The mode for creating the 32-bit value for the Generation Identifier (GenID) option in the Hello message. A new GenID is created each time an interface (or router) starts or restarts PIM-SM forwarding. A change in this value indicates to the neighbor(s) that a change of state may have occurred, and that the old PIM-SM states information received from those interfaces should be discarded. Choose one of: Incremental-the GenID increases by 1 for each successive Hello Message sent from this emulated PIM-SM router. Random-each Hello message sent from this emulated PIM-SM router will have a randomly-generated GenID. Constant (the default)-the GenID remains the same in all of the Hello Messages sent from this emulated. PIM-SM router.
+		"""The mode for creating the 32-bit value for the Generation Identifier (GenID) option in the Hello message. A new GenID is created each time an interface (or router) starts or restarts PIM-SM forwarding. A change in this value indicates to the neighbor(s) that a change of state may have occurred, and that the old PIM-SM states information received from those interfaces should be discarded. Choose one of: Incremental-the GenID increases by 1 for each successive Hello Message sent from this emulated PIM-SM router. Random-each Hello message sent from this emulated PIM-SM router will have a randomly-generated GenID. Constant (the default)-the GenID remains the same in all of the Hello Messages sent from this emulated. PIM-SM router.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -394,7 +394,7 @@ class PimV4Interface(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -403,7 +403,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Sources(self):
-		"""DEPRECATED Number of Sources
+		"""Number of Sources
 
 		Returns:
 			number
@@ -415,7 +415,7 @@ class PimV4Interface(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -427,7 +427,7 @@ class PimV4Interface(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -436,7 +436,7 @@ class PimV4Interface(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -445,7 +445,7 @@ class PimV4Interface(Base):
 
 	@property
 	def SupportUnicastBsm(self):
-		"""DEPRECATED If enabled, this supports the sending and processing of Unicast bootstrap messages.
+		"""If enabled, this supports the sending and processing of Unicast bootstrap messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -454,7 +454,7 @@ class PimV4Interface(Base):
 
 	@property
 	def TriggeredHelloDelay(self):
-		"""DEPRECATED The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
+		"""The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -463,7 +463,7 @@ class PimV4Interface(Base):
 
 	@property
 	def V4Neighbor(self):
-		"""DEPRECATED (Auto Pick Neighbor must be disabled/not selected to make this field active) The user can manually type in the link-local address to be used for the Upstream Neighbor address field in the Join/Prune message.
+		"""(Auto Pick Neighbor must be disabled/not selected to make this field active) The user can manually type in the link-local address to be used for the Upstream Neighbor address field in the Join/Prune message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

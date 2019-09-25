@@ -50,7 +50,7 @@ class ImportTarget(Base):
 
 	@property
 	def ImportTargetListEx(self):
-		"""DEPRECATED Configures a list of export targets to be associated with advertised L3 VPN routeranges.
+		"""Configures a list of export targets to be associated with advertised L3 VPN routeranges.
 
 		Returns:
 			list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))

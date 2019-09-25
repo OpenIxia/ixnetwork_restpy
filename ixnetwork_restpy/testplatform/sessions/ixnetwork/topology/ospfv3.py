@@ -115,7 +115,7 @@ class Ospfv3(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class Ospfv3(Base):
 
 	@property
 	def DeadInterval(self):
-		"""DEPRECATED Dead Interval
+		"""Dead Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -133,7 +133,7 @@ class Ospfv3(Base):
 
 	@property
 	def DemandCircuit(self):
-		"""DEPRECATED Option bit 5
+		"""Option bit 5
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -142,7 +142,7 @@ class Ospfv3(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -151,7 +151,7 @@ class Ospfv3(Base):
 
 	@property
 	def EnableAuthentication(self):
-		"""DEPRECATED Enable Authentication
+		"""Enable Authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -160,7 +160,7 @@ class Ospfv3(Base):
 
 	@property
 	def EnableBfdRegistration(self):
-		"""DEPRECATED Enable BFD Registration
+		"""Enable BFD Registration
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -169,7 +169,7 @@ class Ospfv3(Base):
 
 	@property
 	def EnableFastHello(self):
-		"""DEPRECATED Enable Fast Hello
+		"""Enable Fast Hello
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +178,7 @@ class Ospfv3(Base):
 
 	@property
 	def EnableIgnoreDbDescMtu(self):
-		"""DEPRECATED Ignore DB-Desc MTU
+		"""Ignore DB-Desc MTU
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -187,7 +187,7 @@ class Ospfv3(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -196,7 +196,7 @@ class Ospfv3(Base):
 
 	@property
 	def ExternalCapability(self):
-		"""DEPRECATED Option bit 1
+		"""Option bit 1
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -205,7 +205,7 @@ class Ospfv3(Base):
 
 	@property
 	def HelloInterval(self):
-		"""DEPRECATED Hello Interval
+		"""Hello Interval
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -214,7 +214,7 @@ class Ospfv3(Base):
 
 	@property
 	def HelloMultiplier(self):
-		"""DEPRECATED Hello Multiplier
+		"""Hello Multiplier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -223,7 +223,7 @@ class Ospfv3(Base):
 
 	@property
 	def InstanceId(self):
-		"""DEPRECATED Instance ID
+		"""Instance ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +232,7 @@ class Ospfv3(Base):
 
 	@property
 	def Key(self):
-		"""DEPRECATED Key
+		"""Key
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -241,7 +241,7 @@ class Ospfv3(Base):
 
 	@property
 	def LinkMetric(self):
-		"""DEPRECATED Link Metric
+		"""Link Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -250,7 +250,7 @@ class Ospfv3(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""DEPRECATED Router ID
+		"""Router ID
 
 		Returns:
 			list(str)
@@ -259,7 +259,7 @@ class Ospfv3(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -271,7 +271,7 @@ class Ospfv3(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -283,7 +283,7 @@ class Ospfv3(Base):
 
 	@property
 	def NetworkType(self):
-		"""DEPRECATED Network Type
+		"""Network Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -292,7 +292,7 @@ class Ospfv3(Base):
 
 	@property
 	def NssaCapability(self):
-		"""DEPRECATED Option bit 3
+		"""Option bit 3
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -301,7 +301,7 @@ class Ospfv3(Base):
 
 	@property
 	def Ospfv3IfaceState(self):
-		"""DEPRECATED Logs additional information about the Interface State
+		"""Logs additional information about the Interface State
 
 		Returns:
 			list(str[backup|down|dr|drOther|pointToPoint|unrecognized|waiting])
@@ -310,7 +310,7 @@ class Ospfv3(Base):
 
 	@property
 	def Ospfv3NeighborState(self):
-		"""DEPRECATED Logs additional information about the Neighbor State
+		"""Logs additional information about the Neighbor State
 
 		Returns:
 			list(str[attempt|down|exchange|exStart|full|init|loading|multiNeighbor|none|twoWay])
@@ -319,7 +319,7 @@ class Ospfv3(Base):
 
 	@property
 	def Priority(self):
-		"""DEPRECATED Priority (when DR/BDR)
+		"""Priority (when DR/BDR)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -328,7 +328,7 @@ class Ospfv3(Base):
 
 	@property
 	def Router(self):
-		"""DEPRECATED Option bit 4
+		"""Option bit 4
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -337,7 +337,7 @@ class Ospfv3(Base):
 
 	@property
 	def SaId(self):
-		"""DEPRECATED Security Association ID
+		"""Security Association ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -346,7 +346,7 @@ class Ospfv3(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[ifaceSessInfoAllNbrIn2Way|ifaceSessInfoAllNbrInattempt|ifaceSessInfoAllNbrInDown|ifaceSessInfoAllNbrInExchange|ifaceSessInfoAllNbrInExStart|ifaceSessInfoAllNbrInInit|ifaceSessInfoAllNbrInLoading|ifaceSessInfoFsmNotStarted|ifaceSessInfoSameNbrId|iPAddressNotRcvd|none])
@@ -355,7 +355,7 @@ class Ospfv3(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -364,7 +364,7 @@ class Ospfv3(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -376,7 +376,7 @@ class Ospfv3(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -385,7 +385,7 @@ class Ospfv3(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -394,7 +394,7 @@ class Ospfv3(Base):
 
 	@property
 	def TypeAreaId(self):
-		"""DEPRECATED Area ID Type
+		"""Area ID Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -403,7 +403,7 @@ class Ospfv3(Base):
 
 	@property
 	def V6(self):
-		"""DEPRECATED Option bit 0
+		"""Option bit 0
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

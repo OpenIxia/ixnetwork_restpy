@@ -424,7 +424,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -433,7 +433,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def CustomLinkLocalAddress(self):
-		"""DEPRECATED Configures the Manual Link-Local IPv6 Address for the DHCPv6 Client.
+		"""Configures the Manual Link-Local IPv6 Address for the DHCPv6 Client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -442,7 +442,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -451,7 +451,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6DuidEnterpriseId(self):
-		"""DEPRECATED The enterprise-number is the vendor's registered Private Enterprise Number as maintained by IANA.
+		"""The enterprise-number is the vendor's registered Private Enterprise Number as maintained by IANA.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -460,7 +460,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6DuidType(self):
-		"""DEPRECATED DHCP Unique Identifier Type.
+		"""DHCP Unique Identifier Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -469,7 +469,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6DuidVendorId(self):
-		"""DEPRECATED The vendor-assigned unique ID for this range. This ID is incremented automaticaly for each DHCP client.
+		"""The vendor-assigned unique ID for this range. This ID is incremented automaticaly for each DHCP client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -478,7 +478,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6GatewayAddress(self):
-		"""DEPRECATED Configures the Manual Gateway IPv6 Address for the DHCPv6 Client.
+		"""Configures the Manual Gateway IPv6 Address for the DHCPv6 Client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -487,7 +487,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6GatewayMac(self):
-		"""DEPRECATED Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv6 Client session.
+		"""Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv6 Client session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -496,7 +496,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IANACount(self):
-		"""DEPRECATED Number of IANA options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
+		"""Number of IANA options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -505,7 +505,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IAPDCount(self):
-		"""DEPRECATED Number of IAPD options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
+		"""Number of IAPD options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -514,7 +514,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IaId(self):
-		"""DEPRECATED The identity association unique ID for this range.
+		"""The identity association unique ID for this range.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -523,7 +523,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IaIdInc(self):
-		"""DEPRECATED Increment step for each IAID in a multiple IANA/IAPD case.
+		"""Increment step for each IAID in a multiple IANA/IAPD case.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -532,7 +532,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IaT1(self):
-		"""DEPRECATED The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
+		"""The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -541,7 +541,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IaT2(self):
-		"""DEPRECATED The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
+		"""The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -550,7 +550,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6IaType(self):
-		"""DEPRECATED Identity Association Type.
+		"""Identity Association Type.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -559,7 +559,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Dhcp6UsePDGlobalAddress(self):
-		"""DEPRECATED Use DHCPc6-PD global addressing.
+		"""Use DHCPc6-PD global addressing.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -568,7 +568,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DiscoveredAddresses(self):
-		"""DEPRECATED The discovered IPv6 addresses.
+		"""The discovered IPv6 addresses.
 
 		Returns:
 			list(str)
@@ -577,7 +577,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DiscoveredGateways(self):
-		"""DEPRECATED The discovered gateway IPv6 addresses.
+		"""The discovered gateway IPv6 addresses.
 
 		Returns:
 			list(str)
@@ -586,7 +586,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DiscoveredPrefix(self):
-		"""DEPRECATED The discovered IPv6 prefix.
+		"""The discovered IPv6 prefix.
 
 		Returns:
 			list(str)
@@ -595,7 +595,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def DiscoveredPrefixLength(self):
-		"""DEPRECATED The length of the discovered IPv6 prefix.
+		"""The length of the discovered IPv6 prefix.
 
 		Returns:
 			list(number)
@@ -604,7 +604,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def EnableStateless(self):
-		"""DEPRECATED Enables DHCP stateless.
+		"""Enables DHCP stateless.
 
 		Returns:
 			bool
@@ -616,7 +616,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -625,7 +625,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def MaxNoPerClient(self):
-		"""DEPRECATED Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
+		"""Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
 
 		Returns:
 			number
@@ -637,7 +637,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -649,7 +649,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -661,7 +661,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def NoOfAddresses(self):
-		"""DEPRECATED Number of Negotiated Addresses.
+		"""Number of Negotiated Addresses.
 
 		Returns:
 			list(number)
@@ -670,7 +670,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def NoOfPrefixes(self):
-		"""DEPRECATED Number of Negotiated Addresses.
+		"""Number of Negotiated Addresses.
 
 		Returns:
 			list(number)
@@ -679,7 +679,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def RenewTimer(self):
-		"""DEPRECATED The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
+		"""The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -688,7 +688,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[duidNak|excessiveTlvs|noAddrsAvail|noAddrsBelow|none|noPrefixAvail|nsFailed|partiallyNegotiated|rebindTimeout|relayDown|renewTimeout|requestTimeout|solicitTimeout])
@@ -697,7 +697,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -706,7 +706,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -718,7 +718,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -727,7 +727,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -736,7 +736,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def UseCustomLinkLocalAddress(self):
-		"""DEPRECATED Enables users to manually set non-EUI link local addresses
+		"""Enables users to manually set non-EUI link local addresses
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -745,7 +745,7 @@ class Dhcpv6client(Base):
 
 	@property
 	def UseRapidCommit(self):
-		"""DEPRECATED Enables DHCP clients to negotiate leases with rapid commit.
+		"""Enables DHCP clients to negotiate leases with rapid commit.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

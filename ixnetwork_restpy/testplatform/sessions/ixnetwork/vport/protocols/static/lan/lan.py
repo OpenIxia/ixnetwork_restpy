@@ -183,7 +183,7 @@ class Lan(Base):
 
 	@property
 	def Mac(self):
-		"""DEPRECATED The first MAC address in the range.
+		"""The first MAC address in the range.
 
 		Returns:
 			str
@@ -195,7 +195,7 @@ class Lan(Base):
 
 	@property
 	def MacRangeMode(self):
-		"""DEPRECATED Indicates the available MAC range mode.
+		"""Indicates the available MAC range mode.
 
 		Returns:
 			str(normal|bundled)
@@ -207,7 +207,7 @@ class Lan(Base):
 
 	@property
 	def NumberOfVcs(self):
-		"""DEPRECATED The total number of VCs in this mode.
+		"""The total number of VCs in this mode.
 
 		Returns:
 			number
@@ -219,7 +219,7 @@ class Lan(Base):
 
 	@property
 	def SiteId(self):
-		"""DEPRECATED The value of the site identifier (ID). The valid range is 0 to 4,294,967,295. The default is 0.
+		"""The value of the site identifier (ID). The valid range is 0 to 4,294,967,295. The default is 0.
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class Lan(Base):
 
 	@property
 	def SkipVlanIdZero(self):
-		"""DEPRECATED Skip the value of vlad id, if the vlan id value is equal to zero.
+		"""Skip the value of vlad id, if the vlan id value is equal to zero.
 
 		Returns:
 			bool
@@ -243,7 +243,7 @@ class Lan(Base):
 
 	@property
 	def Tpid(self):
-		"""DEPRECATED Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
+		"""Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
 
 		Returns:
 			str
@@ -255,7 +255,7 @@ class Lan(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""DEPRECATED The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -267,7 +267,7 @@ class Lan(Base):
 
 	@property
 	def VlanCount(self):
-		"""DEPRECATED The number of VLANs created.
+		"""The number of VLANs created.
 
 		Returns:
 			number
@@ -279,7 +279,7 @@ class Lan(Base):
 
 	@property
 	def VlanId(self):
-		"""DEPRECATED The identifier for the first VLAN in the range.
+		"""The identifier for the first VLAN in the range.
 
 		Returns:
 			str
@@ -291,7 +291,7 @@ class Lan(Base):
 
 	@property
 	def VlanPriority(self):
-		"""DEPRECATED The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
+		"""The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
 
 		Returns:
 			str

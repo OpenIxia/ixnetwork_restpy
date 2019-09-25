@@ -140,7 +140,7 @@ class Field(Base):
 
 	@property
 	def FixedBits(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -152,7 +152,7 @@ class Field(Base):
 
 	@property
 	def FormattedFieldValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -161,7 +161,7 @@ class Field(Base):
 
 	@property
 	def FullMesh(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -173,7 +173,7 @@ class Field(Base):
 
 	@property
 	def Length(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -182,7 +182,7 @@ class Field(Base):
 
 	@property
 	def Level(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -191,7 +191,7 @@ class Field(Base):
 
 	@property
 	def MaxValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -203,7 +203,7 @@ class Field(Base):
 
 	@property
 	def MinValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -215,7 +215,7 @@ class Field(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -224,7 +224,7 @@ class Field(Base):
 
 	@property
 	def Offset(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -233,7 +233,7 @@ class Field(Base):
 
 	@property
 	def OffsetFromRoot(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			number
@@ -242,7 +242,7 @@ class Field(Base):
 
 	@property
 	def OnTheFlyMask(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -254,7 +254,7 @@ class Field(Base):
 
 	@property
 	def Optional(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -263,7 +263,7 @@ class Field(Base):
 
 	@property
 	def OptionalEnabled(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -275,7 +275,7 @@ class Field(Base):
 
 	@property
 	def RandomMask(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -287,7 +287,7 @@ class Field(Base):
 
 	@property
 	def RateVaried(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -296,7 +296,7 @@ class Field(Base):
 
 	@property
 	def ReadOnly(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -305,7 +305,7 @@ class Field(Base):
 
 	@property
 	def RequiresUdf(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -314,7 +314,7 @@ class Field(Base):
 
 	@property
 	def Seed(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -326,7 +326,7 @@ class Field(Base):
 
 	@property
 	def SingleValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -338,7 +338,7 @@ class Field(Base):
 
 	@property
 	def StartValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -350,7 +350,7 @@ class Field(Base):
 
 	@property
 	def StepValue(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str
@@ -362,7 +362,7 @@ class Field(Base):
 
 	@property
 	def SupportsAuto(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -371,7 +371,7 @@ class Field(Base):
 
 	@property
 	def SupportsNonRepeatableRandom(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -380,7 +380,7 @@ class Field(Base):
 
 	@property
 	def SupportsOnTheFlyMask(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -389,7 +389,7 @@ class Field(Base):
 
 	@property
 	def SupportsRepeatableRandomRange(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -398,7 +398,7 @@ class Field(Base):
 
 	@property
 	def TrackingEnabled(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -410,7 +410,7 @@ class Field(Base):
 
 	@property
 	def ValueFormat(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(aTM|bool|debug|decimal|decimalFixed2|decimalSigned8|fCID|float|floatEng|hex|hex8WithColons|hex8WithSpaces|iPv4|iPv6|mAC|mACMAC|mACSiteId|mACVLAN|mACVLANSiteId|string|unknown|varLenHex)
@@ -419,7 +419,7 @@ class Field(Base):
 
 	@property
 	def ValueList(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			list(str)
@@ -431,7 +431,7 @@ class Field(Base):
 
 	@property
 	def ValueType(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			str(decrement|increment|nonRepeatableRandom|random|repeatableRandomRange|singleValue|valueList)

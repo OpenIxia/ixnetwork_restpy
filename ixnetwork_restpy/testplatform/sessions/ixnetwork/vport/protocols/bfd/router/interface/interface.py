@@ -185,7 +185,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""DEPRECATED The assigned protocol interface ID for this BFD interface.
+		"""The assigned protocol interface ID for this BFD interface.
 
 		Returns:
 			number
@@ -197,7 +197,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceType(self):
-		"""DEPRECATED The type of interface to be selected for this BFD interface.
+		"""The type of interface to be selected for this BFD interface.
 
 		Returns:
 			str
@@ -209,7 +209,7 @@ class Interface(Base):
 
 	@property
 	def Interfaces(self):
-		"""DEPRECATED The interfaces that are associated with the selected interface type.
+		"""The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -221,7 +221,7 @@ class Interface(Base):
 
 	@property
 	def IpDifferentiatedServiceField(self):
-		"""DEPRECATED Sets the TOS byte for IP Differentiated Service Field
+		"""Sets the TOS byte for IP Differentiated Service Field
 
 		Returns:
 			number
@@ -233,7 +233,7 @@ class Interface(Base):
 
 	@property
 	def MinRxInterval(self):
-		"""DEPRECATED This option indicates the desired minimum interval between received BFD control packets.
+		"""This option indicates the desired minimum interval between received BFD control packets.
 
 		Returns:
 			number
@@ -245,7 +245,7 @@ class Interface(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Multiplier * intv defines the timeout period. (default = 3)
+		"""Multiplier * intv defines the timeout period. (default = 3)
 
 		Returns:
 			number
@@ -257,7 +257,7 @@ class Interface(Base):
 
 	@property
 	def PollInterval(self):
-		"""DEPRECATED If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
+		"""If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
 
 		Returns:
 			number
@@ -269,7 +269,7 @@ class Interface(Base):
 
 	@property
 	def TxInterval(self):
-		"""DEPRECATED This option indicates the desired interval between transmitted BFD control packets.
+		"""This option indicates the desired interval between transmitted BFD control packets.
 
 		Returns:
 			number

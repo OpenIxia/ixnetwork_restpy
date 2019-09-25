@@ -363,7 +363,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def NumberOfAddressesAsy(self):
-		"""DEPRECATED Number of host/network addresses in the simulated IPv4 host/network range
+		"""Number of host/network addresses in the simulated IPv4 host/network range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -372,7 +372,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def PrefixAddrStep(self):
-		"""DEPRECATED The difference between each address, and its next, in the IPv4 host/network range.
+		"""The difference between each address, and its next, in the IPv4 host/network range.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -381,7 +381,7 @@ class Ipv4PrefixPools(Base):
 
 	@property
 	def PrefixLength(self):
-		"""DEPRECATED The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
+		"""The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

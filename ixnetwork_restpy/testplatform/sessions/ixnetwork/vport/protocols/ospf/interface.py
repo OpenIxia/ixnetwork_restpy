@@ -628,7 +628,7 @@ class Interface(Base):
 
 	@property
 	def ShowExternal(self):
-		"""DEPRECATED Enables the use of External routes on this interface.
+		"""Enables the use of External routes on this interface.
 
 		Returns:
 			bool
@@ -640,7 +640,7 @@ class Interface(Base):
 
 	@property
 	def ShowNssa(self):
-		"""DEPRECATED Enables the use of Not So Stubby Area routes on this interface.
+		"""Enables the use of Not So Stubby Area routes on this interface.
 
 		Returns:
 			bool
@@ -652,7 +652,7 @@ class Interface(Base):
 
 	@property
 	def TeAdminGroup(self):
-		"""DEPRECATED Assignment of traffic engineering administrative group numbers to the interface.
+		"""Assignment of traffic engineering administrative group numbers to the interface.
 
 		Returns:
 			str
@@ -664,7 +664,7 @@ class Interface(Base):
 
 	@property
 	def TeEnable(self):
-		"""DEPRECATED Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
+		"""Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
 
 		Returns:
 			bool
@@ -676,7 +676,7 @@ class Interface(Base):
 
 	@property
 	def TeMaxBandwidth(self):
-		"""DEPRECATED The maximum bandwidth that can possibly be used on this link in this direction.
+		"""The maximum bandwidth that can possibly be used on this link in this direction.
 
 		Returns:
 			number
@@ -688,7 +688,7 @@ class Interface(Base):
 
 	@property
 	def TeMetricLevel(self):
-		"""DEPRECATED The user-assigned link metric for traffic engineering.
+		"""The user-assigned link metric for traffic engineering.
 
 		Returns:
 			number
@@ -700,7 +700,7 @@ class Interface(Base):
 
 	@property
 	def TeResMaxBandwidth(self):
-		"""DEPRECATED If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+		"""If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
 
 		Returns:
 			number
@@ -712,7 +712,7 @@ class Interface(Base):
 
 	@property
 	def TeUnreservedBwPriority(self):
-		"""DEPRECATED The amount of bandwidth not yet reserved at each of the eight priority levels.
+		"""The amount of bandwidth not yet reserved at each of the eight priority levels.
 
 		Returns:
 			dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number)
@@ -724,7 +724,7 @@ class Interface(Base):
 
 	@property
 	def ValidateReceivedMtuSize(self):
-		"""DEPRECATED If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
+		"""If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
 
 		Returns:
 			bool

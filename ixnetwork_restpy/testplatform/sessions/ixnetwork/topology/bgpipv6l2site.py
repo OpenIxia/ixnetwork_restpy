@@ -116,7 +116,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -125,7 +125,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -134,7 +134,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def DistinguishAsNumber(self):
-		"""DEPRECATED Distinguish AS Number
+		"""Distinguish AS Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -143,7 +143,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def DistinguishAssignedNumber(self):
-		"""DEPRECATED Distinguish Assigned Number
+		"""Distinguish Assigned Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -152,7 +152,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def DistinguishIpAddr(self):
-		"""DEPRECATED Distinguish IP Address
+		"""Distinguish IP Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -161,7 +161,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def DutIp(self):
-		"""DEPRECATED DUT IP
+		"""DUT IP
 
 		Returns:
 			list(str)
@@ -170,7 +170,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def EnCluster(self):
-		"""DEPRECATED Enable Cluster
+		"""Enable Cluster
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -179,7 +179,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def EnControlWord(self):
-		"""DEPRECATED Enable Control Word
+		"""Enable Control Word
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -188,7 +188,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def EnSeqDelivery(self):
-		"""DEPRECATED Enable Sequenced Delivery
+		"""Enable Sequenced Delivery
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -197,7 +197,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -206,7 +206,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED Local IP
+		"""Local IP
 
 		Returns:
 			list(str)
@@ -215,7 +215,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def LocalRouterID(self):
-		"""DEPRECATED Router ID
+		"""Router ID
 
 		Returns:
 			list(str)
@@ -224,7 +224,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def MtuL2Site(self):
-		"""DEPRECATED MTU
+		"""MTU
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -233,7 +233,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -245,7 +245,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -257,7 +257,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def NumClusterPerL2Site(self):
-		"""DEPRECATED Number Of Clusters Per L2 Site
+		"""Number Of Clusters Per L2 Site
 
 		Returns:
 			number
@@ -269,7 +269,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def NumL2Sites(self):
-		"""DEPRECATED No. Of L2 Sites
+		"""No. Of L2 Sites
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -278,7 +278,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def NumLabelBlocksPerL2Site(self):
-		"""DEPRECATED Number Of Label Blocks Per L2 Site
+		"""Number Of Label Blocks Per L2 Site
 
 		Returns:
 			number
@@ -290,7 +290,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -299,7 +299,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def SiteId(self):
-		"""DEPRECATED Site ID
+		"""Site ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -308,7 +308,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -320,7 +320,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -329,7 +329,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -338,7 +338,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def TargetAsNumber(self):
-		"""DEPRECATED Target AS Number
+		"""Target AS Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -347,7 +347,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def TargetAssignedNumber(self):
-		"""DEPRECATED Target Assigned Number
+		"""Target Assigned Number
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -356,7 +356,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def TargetIpAddr(self):
-		"""DEPRECATED Target IP Address
+		"""Target IP Address
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -365,7 +365,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def TypeDistinguish(self):
-		"""DEPRECATED Distinguish Type
+		"""Distinguish Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -374,7 +374,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def TypeTarget(self):
-		"""DEPRECATED Target Type
+		"""Target Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -383,7 +383,7 @@ class BgpIpv6L2Site(Base):
 
 	@property
 	def VpnName(self):
-		"""DEPRECATED VPN Name
+		"""VPN Name
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

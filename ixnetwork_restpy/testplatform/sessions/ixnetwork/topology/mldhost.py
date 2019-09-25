@@ -102,7 +102,7 @@ class MldHost(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -111,7 +111,7 @@ class MldHost(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -120,7 +120,7 @@ class MldHost(Base):
 
 	@property
 	def EnableIptv(self):
-		"""DEPRECATED Enable IPTV
+		"""Enable IPTV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -129,7 +129,7 @@ class MldHost(Base):
 
 	@property
 	def EnableProxyReporting(self):
-		"""DEPRECATED Enable Proxy Reporting
+		"""Enable Proxy Reporting
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -138,7 +138,7 @@ class MldHost(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -147,7 +147,7 @@ class MldHost(Base):
 
 	@property
 	def GQResponseMode(self):
-		"""DEPRECATED General Query Response Mode
+		"""General Query Response Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -156,7 +156,7 @@ class MldHost(Base):
 
 	@property
 	def GSResponseMode(self):
-		"""DEPRECATED Group Specific Response Mode
+		"""Group Specific Response Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -165,7 +165,7 @@ class MldHost(Base):
 
 	@property
 	def ImResponse(self):
-		"""DEPRECATED Immediate Response
+		"""Immediate Response
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -174,7 +174,7 @@ class MldHost(Base):
 
 	@property
 	def JlMultiplier(self):
-		"""DEPRECATED No. of Join/Leave messages to send per opertation
+		"""No. of Join/Leave messages to send per opertation
 
 		Returns:
 			number
@@ -186,7 +186,7 @@ class MldHost(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -198,7 +198,7 @@ class MldHost(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -210,7 +210,7 @@ class MldHost(Base):
 
 	@property
 	def NoOfGrpRanges(self):
-		"""DEPRECATED Defines the number of group range per host required
+		"""Defines the number of group range per host required
 
 		Returns:
 			number
@@ -222,7 +222,7 @@ class MldHost(Base):
 
 	@property
 	def ReportFreq(self):
-		"""DEPRECATED Report Frequency measured in seconds
+		"""Report Frequency measured in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -231,7 +231,7 @@ class MldHost(Base):
 
 	@property
 	def RouterAlert(self):
-		"""DEPRECATED Enables Router Alert option of IPv4 Packet
+		"""Enables Router Alert option of IPv4 Packet
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -240,7 +240,7 @@ class MldHost(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -249,7 +249,7 @@ class MldHost(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -261,7 +261,7 @@ class MldHost(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -270,7 +270,7 @@ class MldHost(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -279,7 +279,7 @@ class MldHost(Base):
 
 	@property
 	def USResponseMode(self):
-		"""DEPRECATED Unsolicited Response Mode
+		"""Unsolicited Response Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -288,7 +288,7 @@ class MldHost(Base):
 
 	@property
 	def VersionType(self):
-		"""DEPRECATED Specifies the MLD Version Type
+		"""Specifies the MLD Version Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

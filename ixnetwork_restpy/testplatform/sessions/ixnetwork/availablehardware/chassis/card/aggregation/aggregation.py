@@ -47,7 +47,7 @@ class Aggregation(Base):
 
 	@property
 	def ActivePorts(self):
-		"""DEPRECATED All active ports from Resource Group.
+		"""All active ports from Resource Group.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port])
@@ -56,7 +56,7 @@ class Aggregation(Base):
 
 	@property
 	def AvailableModes(self):
-		"""DEPRECATED Gets the supported resource group modes.
+		"""Gets the supported resource group modes.
 
 		Returns:
 			list(str[normal|tenGig|fortyGig|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut])
@@ -65,7 +65,7 @@ class Aggregation(Base):
 
 	@property
 	def Mode(self):
-		"""DEPRECATED Resource Group mode.
+		"""Resource Group mode.
 
 		Returns:
 			str(normal|tenGig|fortyGig|singleMode|dualMode|hundredGigNonFanOut|fortyGigFanOut|threeByTenGigFanOut|eightByTenGigFanOut|fourByTwentyFiveGigNonFanOut|twoByTwentyFiveGigNonFanOut|oneByFiftyGigNonFanOut|fortyGigNonFanOut|oneByTenGigFanOut|fourByTenGigFanOut|incompatibleMode|hundredGigCapturePlayback|fortyGigCapturePlayback|novusHundredGigNonFanOut|novusFourByTwentyFiveGigNonFanOut|novusTwoByFiftyGigNonFanOut|novusOneByFortyGigNonFanOut|novusFourByTenGigNonFanOut|krakenOneByFourHundredGigNonFanOut|krakenOneByTwoHundredGigNonFanOut|krakenTwoByOneHundredGigFanOut|krakenFourByFiftyGigFanOut|aresOneOneByFourHundredGigNonFanOut|aresOneTwoByTwoHundredGigFanOut|aresOneFourByOneHundredGigFanOut|aresOneEightByFiftyGigFanOut)
@@ -77,7 +77,7 @@ class Aggregation(Base):
 
 	@property
 	def ResourcePorts(self):
-		"""DEPRECATED All ports from Resource Group.
+		"""All ports from Resource Group.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/availableHardware?deepchild=port])

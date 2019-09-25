@@ -240,7 +240,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6CapabilitiesSubTlvType(self):
-		"""DEPRECATED This specifies the type of SRv6 Capabilities sub-TLV
+		"""This specifies the type of SRv6 Capabilities sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -249,7 +249,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6EndSidSubTlvType(self):
-		"""DEPRECATED This specifies the type of SRv6 End SID sub-TLV
+		"""This specifies the type of SRv6 End SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -258,7 +258,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6EndXSidSubTlvType(self):
-		"""DEPRECATED This specifies the type of SRv6 End.X SID sub-TLV
+		"""This specifies the type of SRv6 End.X SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -276,7 +276,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6LanEndXSidSubTlvType(self):
-		"""DEPRECATED This specifies the type of SRv6 LAN End.X SID sub-TLV
+		"""This specifies the type of SRv6 LAN End.X SID sub-TLV
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -294,7 +294,7 @@ class IsisL3Router(Base):
 
 	@property
 	def Srv6SidLocatorTlvType(self):
-		"""DEPRECATED SRv6 SID Locator Tlv Type
+		"""SRv6 SID Locator Tlv Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

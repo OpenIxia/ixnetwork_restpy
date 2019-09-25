@@ -143,7 +143,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Algorithm(self):
-		"""DEPRECATED Algorithm
+		"""Algorithm
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -152,7 +152,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def ConfigureSIDIndexLabel(self):
-		"""DEPRECATED Configure SID/Index/Label
+		"""Configure SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -161,7 +161,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -179,7 +179,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -188,7 +188,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def EFlag(self):
-		"""DEPRECATED Explicit NULL flag
+		"""Explicit NULL flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -215,7 +215,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def IncludeBIERInfo(self):
-		"""DEPRECATED Include BIER Info
+		"""Include BIER Info
 
 		Returns:
 			bool
@@ -227,7 +227,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def IncludeBSLObject(self):
-		"""DEPRECATED If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
+		"""If set, MPLS encapsulation sub-sub-Tlv will be advertised under Bier Info Sub-Tlv
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -254,7 +254,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LFlag(self):
-		"""DEPRECATED Local Flag
+		"""Local Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -263,7 +263,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LabelRangeSize(self):
-		"""DEPRECATED Maximum Set Identifier
+		"""Maximum Set Identifier
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -272,7 +272,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LabelStart(self):
-		"""DEPRECATED Label Start
+		"""Label Start
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -281,7 +281,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def LocalSystemID(self):
-		"""DEPRECATED System ID
+		"""System ID
 
 		Returns:
 			list(str)
@@ -290,7 +290,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Metric(self):
-		"""DEPRECATED Route Metric
+		"""Route Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -299,7 +299,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def NFlag(self):
-		"""DEPRECATED Nodal prefix flag
+		"""Nodal prefix flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -308,7 +308,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -320,7 +320,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def PFlag(self):
-		"""DEPRECATED No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
+		"""No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -329,7 +329,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def RFlag(self):
-		"""DEPRECATED Redistribution flag
+		"""Redistribution flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -338,7 +338,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def Redistribution(self):
-		"""DEPRECATED Redistribution
+		"""Redistribution
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -356,7 +356,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def RouteOrigin(self):
-		"""DEPRECATED Route Origin
+		"""Route Origin
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -365,7 +365,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def SIDIndexLabel(self):
-		"""DEPRECATED SID/Index/Label
+		"""SID/Index/Label
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -374,7 +374,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def SubDomainId(self):
-		"""DEPRECATED Sub Domain Id
+		"""Sub Domain Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -383,7 +383,7 @@ class IsisL3RouteProperty(Base):
 
 	@property
 	def VFlag(self):
-		"""DEPRECATED Value Flag
+		"""Value Flag
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

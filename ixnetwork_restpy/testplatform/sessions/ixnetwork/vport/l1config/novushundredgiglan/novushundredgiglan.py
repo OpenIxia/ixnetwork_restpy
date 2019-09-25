@@ -174,7 +174,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def FirecodeForceOn(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -186,7 +186,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def FirecodeRequest(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -198,7 +198,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def FlowControlDirectedAddress(self):
-		"""DEPRECATED The 48-bit MAC address that the port listens on for a directed pause.
+		"""The 48-bit MAC address that the port listens on for a directed pause.
 
 		Returns:
 			str
@@ -210,7 +210,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def ForceDisableFEC(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -222,7 +222,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def GoodBlocksNumber(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -234,7 +234,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def IeeeL1Defaults(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -246,7 +246,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def LaserOn(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -258,7 +258,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def LinkTraining(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -267,7 +267,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def LoopContinuously(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -279,7 +279,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def LoopCountNumber(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -291,7 +291,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def Loopback(self):
-		"""DEPRECATED If enabled, the port is set to internally loopback from transmit to receive.
+		"""If enabled, the port is set to internally loopback from transmit to receive.
 
 		Returns:
 			bool
@@ -303,7 +303,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def LoopbackMode(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(internalLoopback|lineLoopback|none)
@@ -315,7 +315,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def Ppm(self):
-		"""DEPRECATED Indicates the value that needs to be adjusted for the line transmit frequency.
+		"""Indicates the value that needs to be adjusted for the line transmit frequency.
 
 		Returns:
 			number
@@ -327,7 +327,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def RsFecAdvertise(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -339,7 +339,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def RsFecForceOn(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -351,7 +351,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def RsFecRequest(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -363,7 +363,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def SendSetsMode(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(alternate|typeAOnly|typeBOnly)
@@ -375,7 +375,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def Speed(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(speed100g|speed10g|speed25g|speed40g|speed50g)
@@ -387,7 +387,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def StartErrorInsertion(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -399,7 +399,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def TxIgnoreRxLinkFaults(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool
@@ -411,7 +411,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def TypeAOrderedSets(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(localFault|remoteFault)
@@ -423,7 +423,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def TypeBOrderedSets(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(localFault|remoteFault)
@@ -435,7 +435,7 @@ class NovusHundredGigLan(Base):
 
 	@property
 	def UseANResults(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool

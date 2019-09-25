@@ -50,7 +50,7 @@ class SequenceChecking(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
+		"""If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
 
 		Returns:
 			bool
@@ -62,7 +62,7 @@ class SequenceChecking(Base):
 
 	@property
 	def SequenceMode(self):
-		"""DEPRECATED The mode to conduct sequence checking.
+		"""The mode to conduct sequence checking.
 
 		Returns:
 			str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)

@@ -106,7 +106,7 @@ class Lac(Base):
 
 	@property
 	def ControlMsgsRetryCounter(self):
-		"""DEPRECATED Number of L2TP retries
+		"""Number of L2TP retries
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -115,7 +115,7 @@ class Lac(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class Lac(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -133,7 +133,7 @@ class Lac(Base):
 
 	@property
 	def EnableControlChecksum(self):
-		"""DEPRECATED If checked, UDP checksum is enabled on control plane packets
+		"""If checked, UDP checksum is enabled on control plane packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -142,7 +142,7 @@ class Lac(Base):
 
 	@property
 	def EnableDataChecksum(self):
-		"""DEPRECATED If checked, UDP checksum is enabled on data plane packets
+		"""If checked, UDP checksum is enabled on data plane packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -151,7 +151,7 @@ class Lac(Base):
 
 	@property
 	def EnableExcludeHdlc(self):
-		"""DEPRECATED If checked, HDLC header is not encoded in the L2TP packets.
+		"""If checked, HDLC header is not encoded in the L2TP packets.
 
 		Returns:
 			bool
@@ -163,7 +163,7 @@ class Lac(Base):
 
 	@property
 	def EnableHelloRequest(self):
-		"""DEPRECATED If checked, L2TP hello request is enabled
+		"""If checked, L2TP hello request is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -172,7 +172,7 @@ class Lac(Base):
 
 	@property
 	def EnableRedial(self):
-		"""DEPRECATED If checked, L2TP redial is enabled
+		"""If checked, L2TP redial is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -181,7 +181,7 @@ class Lac(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -190,7 +190,7 @@ class Lac(Base):
 
 	@property
 	def FramingCapability(self):
-		"""DEPRECATED Designates sync or async framing
+		"""Designates sync or async framing
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -199,7 +199,7 @@ class Lac(Base):
 
 	@property
 	def HelloRequestInterval(self):
-		"""DEPRECATED Timeout for L2TP hello request, in seconds
+		"""Timeout for L2TP hello request, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -208,7 +208,7 @@ class Lac(Base):
 
 	@property
 	def InitRetransmitInterval(self):
-		"""DEPRECATED The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
+		"""The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +217,7 @@ class Lac(Base):
 
 	@property
 	def LacHostName(self):
-		"""DEPRECATED LAC Hostname used for tunnel authentication.
+		"""LAC Hostname used for tunnel authentication.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -226,7 +226,7 @@ class Lac(Base):
 
 	@property
 	def LacSecret(self):
-		"""DEPRECATED Secret value used for tunnel authentication.
+		"""Secret value used for tunnel authentication.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -235,7 +235,7 @@ class Lac(Base):
 
 	@property
 	def MaxRedialAttempts(self):
-		"""DEPRECATED Maximum number of L2TP redial attempts
+		"""Maximum number of L2TP redial attempts
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -244,7 +244,7 @@ class Lac(Base):
 
 	@property
 	def MaxRetransmitInterval(self):
-		"""DEPRECATED The maximum amount of time that can elapse for receiving a reply for a control message.
+		"""The maximum amount of time that can elapse for receiving a reply for a control message.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -253,7 +253,7 @@ class Lac(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -265,7 +265,7 @@ class Lac(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -277,7 +277,7 @@ class Lac(Base):
 
 	@property
 	def OffsetByte(self):
-		"""DEPRECATED L2TP offset byte. Applicable only if offset bit is set.
+		"""L2TP offset byte. Applicable only if offset bit is set.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -286,7 +286,7 @@ class Lac(Base):
 
 	@property
 	def OffsetLength(self):
-		"""DEPRECATED L2TP offset length in bytes. Applicable only if offset bit set.
+		"""L2TP offset length in bytes. Applicable only if offset bit set.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -295,7 +295,7 @@ class Lac(Base):
 
 	@property
 	def ReceiveWindowSize(self):
-		"""DEPRECATED L2TP Receive Window Size
+		"""L2TP Receive Window Size
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -304,7 +304,7 @@ class Lac(Base):
 
 	@property
 	def RedialInterval(self):
-		"""DEPRECATED L2TP redial timeout, in seconds
+		"""L2TP redial timeout, in seconds
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -313,7 +313,7 @@ class Lac(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -322,7 +322,7 @@ class Lac(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -334,7 +334,7 @@ class Lac(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -343,7 +343,7 @@ class Lac(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -352,7 +352,7 @@ class Lac(Base):
 
 	@property
 	def TunnelAuthentication(self):
-		"""DEPRECATED Enables or disables L2TP tunnel authentication
+		"""Enables or disables L2TP tunnel authentication
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -361,7 +361,7 @@ class Lac(Base):
 
 	@property
 	def TunnelsPerInterfaceMultiplier(self):
-		"""DEPRECATED Number of tunnels per interface (multiplier).
+		"""Number of tunnels per interface (multiplier).
 
 		Returns:
 			number
@@ -373,7 +373,7 @@ class Lac(Base):
 
 	@property
 	def UdpDestinationPort(self):
-		"""DEPRECATED UDP port to employ for tunneling destinations
+		"""UDP port to employ for tunneling destinations
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -382,7 +382,7 @@ class Lac(Base):
 
 	@property
 	def UdpSourcePort(self):
-		"""DEPRECATED UDP port to employ for tunneling sources
+		"""UDP port to employ for tunneling sources
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -391,7 +391,7 @@ class Lac(Base):
 
 	@property
 	def UseHiddenAVPs(self):
-		"""DEPRECATED If checked, Attribute Value Pair hiding is enabled
+		"""If checked, Attribute Value Pair hiding is enabled
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -400,7 +400,7 @@ class Lac(Base):
 
 	@property
 	def UseLengthBitInPayload(self):
-		"""DEPRECATED If checked, length bit is set in L2TP data packets.
+		"""If checked, length bit is set in L2TP data packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -409,7 +409,7 @@ class Lac(Base):
 
 	@property
 	def UseOffsetBitInPayload(self):
-		"""DEPRECATED If checked, offset bit is enabled in L2TP data packets
+		"""If checked, offset bit is enabled in L2TP data packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -418,7 +418,7 @@ class Lac(Base):
 
 	@property
 	def UseSequenceNoInPayload(self):
-		"""DEPRECATED If checked, sequence bit is set in L2TP data packets.
+		"""If checked, sequence bit is set in L2TP data packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

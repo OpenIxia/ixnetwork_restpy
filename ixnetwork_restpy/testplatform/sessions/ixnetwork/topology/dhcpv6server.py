@@ -79,7 +79,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -88,7 +88,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -97,7 +97,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def DnsDomain(self):
-		"""DEPRECATED The domain name to be searched during name resolution advertised in DHCP Offer and Reply messages.
+		"""The domain name to be searched during name resolution advertised in DHCP Offer and Reply messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -106,7 +106,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -115,7 +115,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def IpDns1(self):
-		"""DEPRECATED The first DNS address advertised in DHCP Offer and Reply messages.
+		"""The first DNS address advertised in DHCP Offer and Reply messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -124,7 +124,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def IpDns2(self):
-		"""DEPRECATED The second DNS address advertised in DHCP Offer and Reply messages.
+		"""The second DNS address advertised in DHCP Offer and Reply messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -133,7 +133,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -145,7 +145,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -157,7 +157,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def PoolCount(self):
-		"""DEPRECATED number of DHCP pools a single server has
+		"""number of DHCP pools a single server has
 
 		Returns:
 			number
@@ -169,7 +169,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def ReconfviaRelay(self):
-		"""DEPRECATED If Enabled allows Reconfigure to be sent from server to Client via RelayAgent
+		"""If Enabled allows Reconfigure to be sent from server to Client via RelayAgent
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +178,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[excessiveTlvs|noAddrsBelow|nonDisjointPools|none|notOneReservedPool|notSameIAType])
@@ -187,7 +187,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -196,7 +196,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -208,7 +208,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -217,7 +217,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -226,7 +226,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def SubnetAddrAssign(self):
-		"""DEPRECATED Enabled DHCPv6 Server to assign IP based on Relay Agent IP Address Subnet.
+		"""Enabled DHCPv6 Server to assign IP based on Relay Agent IP Address Subnet.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -235,7 +235,7 @@ class Dhcpv6server(Base):
 
 	@property
 	def UseRapidCommit(self):
-		"""DEPRECATED Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
+		"""Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

@@ -185,7 +185,7 @@ class Host(Base):
 
 	@property
 	def ReportFreq(self):
-		"""DEPRECATED Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
+		"""Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
 
 		Returns:
 			number
@@ -197,7 +197,7 @@ class Host(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -209,7 +209,7 @@ class Host(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""DEPRECATED The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+		"""The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -221,7 +221,7 @@ class Host(Base):
 
 	@property
 	def Version(self):
-		"""DEPRECATED Sets the MLD version number that is to be simulated on the host: 1 or 2.
+		"""Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
 		Returns:
 			str(version1|version2)

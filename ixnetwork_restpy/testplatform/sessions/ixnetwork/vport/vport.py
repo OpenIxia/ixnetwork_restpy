@@ -338,7 +338,7 @@ class Vport(Base):
 
 	@property
 	def TraceEnabled(self):
-		"""DEPRECATED Enables/Disables rpf port trace for this port
+		"""Enables/Disables rpf port trace for this port
 
 		Returns:
 			bool
@@ -350,7 +350,7 @@ class Vport(Base):
 
 	@property
 	def TraceLevel(self):
-		"""DEPRECATED PCPU Trace level
+		"""PCPU Trace level
 
 		Returns:
 			str(kCritical|kDebug|kError|kInfo|kTrace|kWarning)
@@ -362,7 +362,7 @@ class Vport(Base):
 
 	@property
 	def TraceTag(self):
-		"""DEPRECATED PCPU Trace Tag
+		"""PCPU Trace Tag
 
 		Returns:
 			str
@@ -374,7 +374,7 @@ class Vport(Base):
 
 	@property
 	def TransmitIgnoreLinkStatus(self):
-		"""DEPRECATED If true, the port ingores the link status when transmitting data.
+		"""If true, the port ingores the link status when transmitting data.
 
 		Returns:
 			bool
@@ -386,7 +386,7 @@ class Vport(Base):
 
 	@property
 	def TxGapControlMode(self):
-		"""DEPRECATED This object controls the Gap Control mode of the port.
+		"""This object controls the Gap Control mode of the port.
 
 		Returns:
 			str(averageMode|fixedMode)
@@ -398,7 +398,7 @@ class Vport(Base):
 
 	@property
 	def TxMode(self):
-		"""DEPRECATED The transmit mode.
+		"""The transmit mode.
 
 		Returns:
 			str(interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse)
@@ -410,7 +410,7 @@ class Vport(Base):
 
 	@property
 	def Type(self):
-		"""DEPRECATED The type of port selection.
+		"""The type of port selection.
 
 		Returns:
 			str(ethernet|ethernetvm|ethernetFcoe|atm|pos|tenGigLan|tenGigLanFcoe|fortyGigLan|fortyGigLanFcoe|tenGigWan|tenGigWanFcoe|hundredGigLan|hundredGigLanFcoe|tenFortyHundredGigLan|tenFortyHundredGigLanFcoe|fc|ethernetImpairment|novusHundredGigLan|novusHundredGigLanFcoe|novusTenGigLan|novusTenGigLanFcoe|krakenFourHundredGigLan|aresOneFourHundredGigLan|aresOneFourHundredGigLanFcoe)
@@ -422,7 +422,7 @@ class Vport(Base):
 
 	@property
 	def UseGlobalSettings(self):
-		"""DEPRECATED Enables/Disables use of global settings instead of local settings on port
+		"""Enables/Disables use of global settings instead of local settings on port
 
 		Returns:
 			bool
@@ -434,7 +434,7 @@ class Vport(Base):
 
 	@property
 	def ValidTxModes(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			list(str[interleaved|interleavedCoarse|packetImpairment|sequential|sequentialCoarse])
@@ -677,21 +677,6 @@ class Vport(Base):
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('enableOAM', payload=payload, response_object=None)
-
-	def GetChassisInConfig(self):
-		"""Executes the getChassisInConfig operation on the server.
-
-		get chassis used in this config
-
-			Returns:
-				list(str): Returns a list of chassis used in config <chassisDns>
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('getChassisInConfig', payload=payload, response_object=None)
 
 	def IgmpJoin(self, *args, **kwargs):
 		"""Executes the igmpJoin operation on the server.
@@ -990,42 +975,6 @@ class Vport(Base):
 		"""
 		payload = { "Arg1": self }
 		return self._execute('sendRsAll', payload=payload, response_object=None)
-
-	def SetCardAggregation(self, *args, **kwargs):
-		"""Executes the setCardAggregation operation on the server.
-
-		Sets the aggregation mode into Spyder Config. The selected mode is applied at the time the test is started
-
-		setCardAggregation(Arg2:list)
-			Args:
-				args[0] is Arg2 (list(dict(arg1:str,arg2:number,arg3:number,arg4:str,arg5:list[number]))): list of aggregation structs [chassisdns, cardid, aggrgroupid, aggremode]
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('setCardAggregation', payload=payload, response_object=None)
-
-	def SetChassisChain(self, *args, **kwargs):
-		"""Executes the setChassisChain operation on the server.
-
-		Ensure the chain exist as defined. Any missing chassis (by dns) will be added. Any existing slaves of the given master will not be removed.
-
-		setChassisChain(Arg2:list)
-			Args:
-				args[0] is Arg2 (list(dict(arg1:str,arg2:str,arg3:number,arg4:number))): Array of { dns, master dns } pairs. if only dns is given, then any existing masterdns will be removed
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('setChassisChain', payload=payload, response_object=None)
 
 	def SetFactoryDefaults(self):
 		"""Executes the setFactoryDefaults operation on the server.

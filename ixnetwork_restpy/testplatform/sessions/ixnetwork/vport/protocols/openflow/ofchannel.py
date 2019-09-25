@@ -189,7 +189,7 @@ class OfChannel(Base):
 
 	@property
 	def DataPathId(self):
-		"""DEPRECATED Indicates the Datapath ID of the OpenFlow switch.
+		"""Indicates the Datapath ID of the OpenFlow switch.
 
 		Returns:
 			str
@@ -201,7 +201,7 @@ class OfChannel(Base):
 
 	@property
 	def DataPathIdInHex(self):
-		"""DEPRECATED Indicates the Datapath ID in hexadecimal format.
+		"""Indicates the Datapath ID in hexadecimal format.
 
 		Returns:
 			str
@@ -225,7 +225,7 @@ class OfChannel(Base):
 
 	@property
 	def Description(self):
-		"""DEPRECATED A description of the OF Channel used to identify it.
+		"""A description of the OF Channel used to identify it.
 
 		Returns:
 			str
@@ -237,7 +237,7 @@ class OfChannel(Base):
 
 	@property
 	def EnableCalculateFlowsPerSecondUsingBarrierReq(self):
-		"""DEPRECATED If true, enables flow rate Calculation using Barrier request message.
+		"""If true, enables flow rate Calculation using Barrier request message.
 
 		Returns:
 			bool
@@ -249,7 +249,7 @@ class OfChannel(Base):
 
 	@property
 	def EnableHelloElement(self):
-		"""DEPRECATED Enables Hello element for version negotiation.
+		"""Enables Hello element for version negotiation.
 
 		Returns:
 			bool
@@ -261,7 +261,7 @@ class OfChannel(Base):
 
 	@property
 	def EnableStartupEmptyTableFeatureRequest(self):
-		"""DEPRECATED If true, the Table Feature Request is sent at start up. The default value is false
+		"""If true, the Table Feature Request is sent at start up. The default value is false
 
 		Returns:
 			bool
@@ -273,7 +273,7 @@ class OfChannel(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED If true, the OF Channel is used in the OpenFlow configuration.
+		"""If true, the OF Channel is used in the OpenFlow configuration.
 
 		Returns:
 			bool
@@ -285,7 +285,7 @@ class OfChannel(Base):
 
 	@property
 	def FlowTxBurstSize(self):
-		"""DEPRECATED Indicates the number of flows sent in a single burst.
+		"""Indicates the number of flows sent in a single burst.
 
 		Returns:
 			number
@@ -309,7 +309,7 @@ class OfChannel(Base):
 
 	@property
 	def InterFlowBurstGap(self):
-		"""DEPRECATED Indicates the duration, in milliseconds, to wait between successive flow bursts.
+		"""Indicates the duration, in milliseconds, to wait between successive flow bursts.
 
 		Returns:
 			number
@@ -333,7 +333,7 @@ class OfChannel(Base):
 
 	@property
 	def LocalIp(self):
-		"""DEPRECATED Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
+		"""Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
 
 		Returns:
 			str
@@ -354,7 +354,7 @@ class OfChannel(Base):
 
 	@property
 	def MaximumNumberOfFlowsProcessed(self):
-		"""DEPRECATED Indicates the maximum number of flows that the controller can advertise before backing off.
+		"""Indicates the maximum number of flows that the controller can advertise before backing off.
 
 		Returns:
 			number
@@ -414,7 +414,7 @@ class OfChannel(Base):
 
 	@property
 	def RemoteIp(self):
-		"""DEPRECATED Indicates the IP address of the DUT at the other end of OF channel.
+		"""Indicates the IP address of the DUT at the other end of OF channel.
 
 		Returns:
 			str
@@ -450,7 +450,7 @@ class OfChannel(Base):
 
 	@property
 	def StartUpGenerationId(self):
-		"""DEPRECATED A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
+		"""A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
 
 		Returns:
 			str
@@ -462,7 +462,7 @@ class OfChannel(Base):
 
 	@property
 	def StartUpRoleRequest(self):
-		"""DEPRECATED If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
+		"""If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
 
 		Returns:
 			str(noRoleRequest|master|slave)
@@ -474,7 +474,7 @@ class OfChannel(Base):
 
 	@property
 	def StartupFeatureRequest(self):
-		"""DEPRECATED If true, a feature request is sent at startup.
+		"""If true, a feature request is sent at startup.
 
 		Returns:
 			bool
@@ -510,7 +510,7 @@ class OfChannel(Base):
 
 	@property
 	def UseDatapathId(self):
-		"""DEPRECATED Use datapath Id that is configured.
+		"""Use datapath Id that is configured.
 
 		Returns:
 			bool

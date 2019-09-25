@@ -123,7 +123,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""DEPRECATED The assigned protocol interface ID for this EIGRP interface.
+		"""The assigned protocol interface ID for this EIGRP interface.
 
 		Returns:
 			number
@@ -135,7 +135,7 @@ class Interface(Base):
 
 	@property
 	def InterfaceType(self):
-		"""DEPRECATED The type of interface to be selected for this EIGRP interface.
+		"""The type of interface to be selected for this EIGRP interface.
 
 		Returns:
 			str
@@ -147,7 +147,7 @@ class Interface(Base):
 
 	@property
 	def Interfaces(self):
-		"""DEPRECATED The interfaces that are associated with the selected interface type.
+		"""The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -159,7 +159,7 @@ class Interface(Base):
 
 	@property
 	def Load(self):
-		"""DEPRECATED The amount of load on the link. The valid range is 0 to 255. (default = 0)
+		"""The amount of load on the link. The valid range is 0 to 255. (default = 0)
 
 		Returns:
 			number
@@ -171,7 +171,7 @@ class Interface(Base):
 
 	@property
 	def MaxTlvPerPacket(self):
-		"""DEPRECATED The maximum number of TLVs that will be packed into a single Update packet, taking MTU into consideration. The valid range is 0-255. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. (default = 30)
+		"""The maximum number of TLVs that will be packed into a single Update packet, taking MTU into consideration. The valid range is 0-255. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. (default = 30)
 
 		Returns:
 			number
@@ -195,7 +195,7 @@ class Interface(Base):
 
 	@property
 	def Reliability(self):
-		"""DEPRECATED The reliability factor. The valid range is 0 to 255. (default =255, which means 100% reliable)
+		"""The reliability factor. The valid range is 0 to 255. (default =255, which means 100% reliable)
 
 		Returns:
 			number
@@ -207,7 +207,7 @@ class Interface(Base):
 
 	@property
 	def SplitHorizon(self):
-		"""DEPRECATED Split Horizon is a method for omitting routes learned from a neighbor in update messages to that same neighbor. This enables or disables poison reverse.
+		"""Split Horizon is a method for omitting routes learned from a neighbor in update messages to that same neighbor. This enables or disables poison reverse.
 
 		Returns:
 			bool

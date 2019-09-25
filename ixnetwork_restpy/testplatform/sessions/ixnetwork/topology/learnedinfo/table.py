@@ -52,7 +52,7 @@ class Table(Base):
 
 	@property
 	def Actions(self):
-		"""DEPRECATED The list of actions allowed on the learned information table
+		"""The list of actions allowed on the learned information table
 
 		Returns:
 			list(str)
@@ -61,7 +61,7 @@ class Table(Base):
 
 	@property
 	def Columns(self):
-		"""DEPRECATED The list of columns in the learned information table
+		"""The list of columns in the learned information table
 
 		Returns:
 			list(str)
@@ -70,7 +70,7 @@ class Table(Base):
 
 	@property
 	def RowCount(self):
-		"""DEPRECATED Number of rows in the learned information table
+		"""Number of rows in the learned information table
 
 		Returns:
 			number
@@ -79,7 +79,7 @@ class Table(Base):
 
 	@property
 	def Type(self):
-		"""DEPRECATED Description of the learned information type
+		"""Description of the learned information type
 
 		Returns:
 			str
@@ -88,7 +88,7 @@ class Table(Base):
 
 	@property
 	def Values(self):
-		"""DEPRECATED A list of rows of learned information values
+		"""A list of rows of learned information values
 
 		Returns:
 			list(list[str])

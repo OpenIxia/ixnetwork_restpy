@@ -64,7 +64,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableControlLspInitiationRate(self):
-		"""DEPRECATED Controls the LSP initiation rate.
+		"""Controls the LSP initiation rate.
 
 		Returns:
 			bool
@@ -76,7 +76,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableShowTimeValue(self):
-		"""DEPRECATED If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
+		"""If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
 
 		Returns:
 			bool
@@ -88,7 +88,7 @@ class Rsvp(Base):
 
 	@property
 	def EnableVpnLabelExchangeOverLsp(self):
-		"""DEPRECATED If true, enables VPN label exchange over LSP
+		"""If true, enables VPN label exchange over LSP
 
 		Returns:
 			bool
@@ -100,7 +100,7 @@ class Rsvp(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
+		"""Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
 
 		Returns:
 			bool
@@ -112,7 +112,7 @@ class Rsvp(Base):
 
 	@property
 	def MaxLspInitiationsPerSec(self):
-		"""DEPRECATED The maximum number of LSP Initiations sent per second.
+		"""The maximum number of LSP Initiations sent per second.
 
 		Returns:
 			number
@@ -124,7 +124,7 @@ class Rsvp(Base):
 
 	@property
 	def RunningState(self):
-		"""DEPRECATED The current running state of the RSVP server.
+		"""The current running state of the RSVP server.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -133,7 +133,7 @@ class Rsvp(Base):
 
 	@property
 	def UseTransportLabelsForMplsOam(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			bool

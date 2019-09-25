@@ -148,7 +148,7 @@ class Bgp(Base):
 
 	@property
 	def EnableVpnLabelExchangeOverLsp(self):
-		"""DEPRECATED If true, enables the exchange of VPN exchange over LSP
+		"""If true, enables the exchange of VPN exchange over LSP
 
 		Returns:
 			bool
@@ -160,7 +160,7 @@ class Bgp(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED Enables or disables the use of this emulated BGP router in the emulated BGP network. (default = disabled)
+		"""Enables or disables the use of this emulated BGP router in the emulated BGP network. (default = disabled)
 
 		Returns:
 			bool
@@ -172,7 +172,7 @@ class Bgp(Base):
 
 	@property
 	def EsImportRouteTargetSubType(self):
-		"""DEPRECATED This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 2. Minimum value is 1 and maximum value is 0xFF.
+		"""This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 2. Minimum value is 1 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -184,7 +184,7 @@ class Bgp(Base):
 
 	@property
 	def EsImportRouteTargetType(self):
-		"""DEPRECATED This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+		"""This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -196,7 +196,7 @@ class Bgp(Base):
 
 	@property
 	def EsiLabelExtendedCommunitySubType(self):
-		"""DEPRECATED This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 1. Minimum value is 1 and maximum value is 0xFF.
+		"""This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 1. Minimum value is 1 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -208,7 +208,7 @@ class Bgp(Base):
 
 	@property
 	def EsiLabelExtendedCommunityType(self):
-		"""DEPRECATED This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+		"""This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -220,7 +220,7 @@ class Bgp(Base):
 
 	@property
 	def EvpnIpAddressLengthUnit(self):
-		"""DEPRECATED The unit of the IP address length field in MAC Advertisement route packet, can be bits or bytes
+		"""The unit of the IP address length field in MAC Advertisement route packet, can be bits or bytes
 
 		Returns:
 			str(bit|byte)
@@ -232,7 +232,7 @@ class Bgp(Base):
 
 	@property
 	def ExternalRetries(self):
-		"""DEPRECATED The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
+		"""The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
 
 		Returns:
 			number
@@ -244,7 +244,7 @@ class Bgp(Base):
 
 	@property
 	def ExternalRetryDelay(self):
-		"""DEPRECATED When retries are necessary, the delay between retries.
+		"""When retries are necessary, the delay between retries.
 
 		Returns:
 			number
@@ -256,7 +256,7 @@ class Bgp(Base):
 
 	@property
 	def InternalRetries(self):
-		"""DEPRECATED The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
+		"""The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
 
 		Returns:
 			number
@@ -268,7 +268,7 @@ class Bgp(Base):
 
 	@property
 	def InternalRetryDelay(self):
-		"""DEPRECATED When retries are necessary, the delay between retries.
+		"""When retries are necessary, the delay between retries.
 
 		Returns:
 			number
@@ -280,7 +280,7 @@ class Bgp(Base):
 
 	@property
 	def MacMobilityExtendedCommunitySubType(self):
-		"""DEPRECATED This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 0. Minimum value is 0 and maximum value is 0xFF.
+		"""This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 0. Minimum value is 0 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -292,7 +292,7 @@ class Bgp(Base):
 
 	@property
 	def MacMobilityExtendedCommunityType(self):
-		"""DEPRECATED This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
+		"""This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
 
 		Returns:
 			number
@@ -304,7 +304,7 @@ class Bgp(Base):
 
 	@property
 	def MldpP2mpFecType(self):
-		"""DEPRECATED The MLDP P2MP FEC type value in hexadecimal.LOCAL EXECS
+		"""The MLDP P2MP FEC type value in hexadecimal.LOCAL EXECS
 
 		Returns:
 			number
@@ -316,7 +316,7 @@ class Bgp(Base):
 
 	@property
 	def RunningState(self):
-		"""DEPRECATED The current running state of the BGP server.
+		"""The current running state of the BGP server.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)
@@ -325,7 +325,7 @@ class Bgp(Base):
 
 	@property
 	def Tester4ByteAsForIbgp(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -337,7 +337,7 @@ class Bgp(Base):
 
 	@property
 	def TesterAsForIbgp(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number
@@ -349,7 +349,7 @@ class Bgp(Base):
 
 	@property
 	def TriggerVplsPwInitiation(self):
-		"""DEPRECATED Enable to initiate a trigger a VPLS PW initation that is a BGP-LDP communication.
+		"""Enable to initiate a trigger a VPLS PW initation that is a BGP-LDP communication.
 
 		Returns:
 			bool
@@ -361,7 +361,7 @@ class Bgp(Base):
 
 	@property
 	def VrfRouteImportExtendedCommunitySubType(self):
-		"""DEPRECATED Extended Community Sub Type to be used in VRF Route Import Extended Community.
+		"""Extended Community Sub Type to be used in VRF Route Import Extended Community.
 
 		Returns:
 			number

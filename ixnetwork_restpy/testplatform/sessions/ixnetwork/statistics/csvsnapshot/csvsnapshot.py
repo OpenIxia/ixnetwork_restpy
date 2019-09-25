@@ -134,7 +134,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def OpenViewer(self):
-		"""DEPRECATED 
+		"""
 
 		Returns:
 			bool
@@ -146,7 +146,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotSettingsName(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str
@@ -155,7 +155,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotViewContents(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(allPages|currentPage)
@@ -167,7 +167,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def SnapshotViewCsvGenerationMode(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			str(appendCSVFile|newCSVFile|overwriteCSVFile)
@@ -179,7 +179,7 @@ class CsvSnapshot(Base):
 
 	@property
 	def Views(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=view])

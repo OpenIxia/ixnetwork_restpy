@@ -38,7 +38,7 @@ class ReportGeneration(Base):
 
 	@property
 	def OutputFile(self):
-		"""DEPRECATED Signifies the output file
+		"""Signifies the output file
 
 		Returns:
 			str
@@ -50,7 +50,7 @@ class ReportGeneration(Base):
 
 	@property
 	def OutputType(self):
-		"""DEPRECATED Signifies the output type
+		"""Signifies the output type
 
 		Returns:
 			str(Html|Pdf)
@@ -62,7 +62,7 @@ class ReportGeneration(Base):
 
 	@property
 	def Template(self):
-		"""DEPRECATED Signifies the template for IxReporter
+		"""Signifies the template for IxReporter
 
 		Returns:
 			str
@@ -74,7 +74,7 @@ class ReportGeneration(Base):
 
 	@property
 	def TestRunId(self):
-		"""DEPRECATED Signifies the identifier for the test run
+		"""Signifies the identifier for the test run
 
 		Returns:
 			number

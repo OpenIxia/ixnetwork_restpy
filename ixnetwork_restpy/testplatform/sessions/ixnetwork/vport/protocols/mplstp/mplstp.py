@@ -88,7 +88,7 @@ class MplsTp(Base):
 
 	@property
 	def EnableHighPerformanceMode(self):
-		"""DEPRECATED This signifies select the checkbox to enable high performance mode.
+		"""This signifies select the checkbox to enable high performance mode.
 
 		Returns:
 			bool
@@ -100,7 +100,7 @@ class MplsTp(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED This signifies that the mplsTp protocol is enabled.
+		"""This signifies that the mplsTp protocol is enabled.
 
 		Returns:
 			bool
@@ -160,7 +160,7 @@ class MplsTp(Base):
 
 	@property
 	def RunningState(self):
-		"""DEPRECATED This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
+		"""This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
 
 		Returns:
 			str(unknown|stopped|stopping|starting|started)

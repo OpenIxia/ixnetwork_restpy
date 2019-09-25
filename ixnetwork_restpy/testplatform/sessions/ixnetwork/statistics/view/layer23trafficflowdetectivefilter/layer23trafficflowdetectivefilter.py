@@ -178,7 +178,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
 
 	@property
 	def TrafficItemFilterIds(self):
-		"""DEPRECATED Selected traffic item filters from the availableTrafficItemFilter list.
+		"""Selected traffic item filters from the availableTrafficItemFilter list.
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/statistics?deepchild=availableTrafficItemFilter])

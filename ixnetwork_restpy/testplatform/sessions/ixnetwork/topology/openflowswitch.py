@@ -221,7 +221,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def ControllerFlowTxRate(self):
-		"""DEPRECATED If selected, statistics is published showing the rate at which Flows are transmitted per second, by the Controller
+		"""If selected, statistics is published showing the rate at which Flows are transmitted per second, by the Controller
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -230,7 +230,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -239,7 +239,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def DatapathDesc(self):
-		"""DEPRECATED The description of the Data Path used.
+		"""The description of the Data Path used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -248,7 +248,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def DatapathId(self):
-		"""DEPRECATED The Datapath ID of the OF Channel.
+		"""The Datapath ID of the OF Channel.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -257,7 +257,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def DatapathIdHex(self):
-		"""DEPRECATED The Datapath ID in Hex of the OF Channel.
+		"""The Datapath ID in Hex of the OF Channel.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -266,7 +266,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -275,7 +275,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def DirectoryName(self):
-		"""DEPRECATED Location of Directory in Client where the Certificate and Key Files are available
+		"""Location of Directory in Client where the Certificate and Key Files are available
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -284,7 +284,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def EchoInterval(self):
-		"""DEPRECATED The periodic interval in seconds at which the Interface sends Echo Request Packets.
+		"""The periodic interval in seconds at which the Interface sends Echo Request Packets.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -293,7 +293,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def EchoTimeOut(self):
-		"""DEPRECATED If selected, the echo request times out when they have been sent for a specified number of times, or when the time value specified has lapsed, but no response is received
+		"""If selected, the echo request times out when they have been sent for a specified number of times, or when the time value specified has lapsed, but no response is received
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -302,7 +302,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def EnableHelloElement(self):
-		"""DEPRECATED Enable Hello Element
+		"""Enable Hello Element
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -311,7 +311,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -320,7 +320,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def FileCaCertificate(self):
-		"""DEPRECATED Browse and upload a CA Certificate file for TLS session.
+		"""Browse and upload a CA Certificate file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -329,7 +329,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def FileCertificate(self):
-		"""DEPRECATED Browse and upload the certificate file for TLS session.
+		"""Browse and upload the certificate file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -338,7 +338,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def FilePrivKey(self):
-		"""DEPRECATED Browse and upload the private key file for TLS session.
+		"""Browse and upload the private key file for TLS session.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -347,7 +347,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def FlowRemovedMask(self):
-		"""DEPRECATED Specify the flow removed message types that will not be received when the controller has the Master role
+		"""Specify the flow removed message types that will not be received when the controller has the Master role
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -356,7 +356,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def FlowRemovedMaskSlave(self):
-		"""DEPRECATED Specify the flow removed message types that will not be received when the controller has the Slave role
+		"""Specify the flow removed message types that will not be received when the controller has the Slave role
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -365,7 +365,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def GroupCapabilities(self):
-		"""DEPRECATED Group configuration flags: Weight:Support weight for select groups. Liveness:Support liveness for select groups. Chaining:Support chaining groups. Check Loops:Check chaining for loops and delete.
+		"""Group configuration flags: Weight:Support weight for select groups. Liveness:Support liveness for select groups. Chaining:Support chaining groups. Check Loops:Check chaining for loops and delete.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -374,7 +374,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def GroupType(self):
-		"""DEPRECATED Can be of the following types per switch: 1)All: Execute all buckets in the group. 2)Select:Execute one bucket in the group. 3)Indirect:Execute the one defined bucket in this group. 4)Fast Failover:Execute the first live bucket.
+		"""Can be of the following types per switch: 1)All: Execute all buckets in the group. 2)Select:Execute one bucket in the group. 3)Indirect:Execute the one defined bucket in this group. 4)Fast Failover:Execute the first live bucket.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -383,7 +383,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def HardwareDesc(self):
-		"""DEPRECATED The description of the hardware used.
+		"""The description of the hardware used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -392,7 +392,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def InterPacketInBurstGap(self):
-		"""DEPRECATED Specify the duration (in milliseconds) for which the switch waits between successive packet-in bursts.The default value is 1,000 milliseconds.
+		"""Specify the duration (in milliseconds) for which the switch waits between successive packet-in bursts.The default value is 1,000 milliseconds.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -401,7 +401,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def ManufacturerDesc(self):
-		"""DEPRECATED The description of the manufacturer. The default value is Ixia.
+		"""The description of the manufacturer. The default value is Ixia.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -410,7 +410,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def MaxBandPerMeter(self):
-		"""DEPRECATED Maximum number of bands per meter
+		"""Maximum number of bands per meter
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -419,7 +419,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def MaxColorValue(self):
-		"""DEPRECATED Maximum Color Value
+		"""Maximum Color Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -428,7 +428,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def MaxNumberOfBucketsPerGroups(self):
-		"""DEPRECATED To specify the maximum number of group buckets each group can have.
+		"""To specify the maximum number of group buckets each group can have.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -437,7 +437,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def MaxPacketInBytes(self):
-		"""DEPRECATED The maximum length of the Packet-in messages in bytes.
+		"""The maximum length of the Packet-in messages in bytes.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -446,7 +446,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def MeterCapabilities(self):
-		"""DEPRECATED Select meter capabilities from the list
+		"""Select meter capabilities from the list
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -455,7 +455,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -467,7 +467,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -479,7 +479,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumMeter(self):
-		"""DEPRECATED Maximum number of Openflow meters configured for the switch
+		"""Maximum number of Openflow meters configured for the switch
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -488,7 +488,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfBuffers(self):
-		"""DEPRECATED Specify the maximum number of packets the switch can buffer when sending packets to the controller using packet-in messages.
+		"""Specify the maximum number of packets the switch can buffer when sending packets to the controller using packet-in messages.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -497,7 +497,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfChannels(self):
-		"""DEPRECATED Total number of OpenFlow channels to be added for this protocol interface.
+		"""Total number of OpenFlow channels to be added for this protocol interface.
 
 		Returns:
 			number
@@ -509,7 +509,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfHostPorts(self):
-		"""DEPRECATED Number of Host Ports per Switch
+		"""Number of Host Ports per Switch
 
 		Returns:
 			number
@@ -518,7 +518,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfPacketIn(self):
-		"""DEPRECATED Specify the number of packet-in ranges supported by the switch.The maximum allowed value is 10 ranges.
+		"""Specify the number of packet-in ranges supported by the switch.The maximum allowed value is 10 ranges.
 
 		Returns:
 			number
@@ -530,7 +530,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfPorts(self):
-		"""DEPRECATED Number of Ports per Switch
+		"""Number of Ports per Switch
 
 		Returns:
 			number
@@ -539,7 +539,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfTableRanges(self):
-		"""DEPRECATED Number of Tables per Switch
+		"""Number of Tables per Switch
 
 		Returns:
 			number
@@ -551,7 +551,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfTopologyPorts(self):
-		"""DEPRECATED Number of Topology Ports per Switch
+		"""Number of Topology Ports per Switch
 
 		Returns:
 			number
@@ -560,7 +560,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def NumberOfUnconnectedPorts(self):
-		"""DEPRECATED Number of Unconnected Ports per Switch
+		"""Number of Unconnected Ports per Switch
 
 		Returns:
 			number
@@ -572,7 +572,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketInMaskMaster(self):
-		"""DEPRECATED Packet In Mask Master
+		"""Packet In Mask Master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -581,7 +581,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketInMaskSlave(self):
-		"""DEPRECATED Packet In Mask Slave
+		"""Packet In Mask Slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -590,7 +590,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketInReplyDelay(self):
-		"""DEPRECATED If selected, delay between packet-in and the corresponding packet-out or flow mod is published.
+		"""If selected, delay between packet-in and the corresponding packet-out or flow mod is published.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -599,7 +599,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketInReplyTimeout(self):
-		"""DEPRECATED The amount of time, in seconds, that the switch keeps the packet-in message in buffer, if it does not receive any corresponding packet-out or flow mod.
+		"""The amount of time, in seconds, that the switch keeps the packet-in message in buffer, if it does not receive any corresponding packet-out or flow mod.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -608,7 +608,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketInTxBurst(self):
-		"""DEPRECATED Specify the number of packet-in transmitting packets that can be sent in a single burst within the time frame specified by the Inter PacketIn Burst Gap value.
+		"""Specify the number of packet-in transmitting packets that can be sent in a single burst within the time frame specified by the Inter PacketIn Burst Gap value.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -617,7 +617,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PacketOutRxRate(self):
-		"""DEPRECATED If selected, packet_out rx rate and packet_in tx rate is calculated for the switch.
+		"""If selected, packet_out rx rate and packet_in tx rate is calculated for the switch.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -626,7 +626,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PeriodicEcho(self):
-		"""DEPRECATED If selected, the Interface sends echo requests periodically to keep the OpenFlow session connected.
+		"""If selected, the Interface sends echo requests periodically to keep the OpenFlow session connected.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -635,7 +635,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PortStatusMaskMaster(self):
-		"""DEPRECATED Port Status Mask Master
+		"""Port Status Mask Master
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -644,7 +644,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def PortStatusMaskSlave(self):
-		"""DEPRECATED Port Status Mask Slave
+		"""Port Status Mask Slave
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -653,7 +653,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def SerialNumber(self):
-		"""DEPRECATED The serial number used.
+		"""The serial number used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -662,7 +662,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -671,7 +671,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def SoftwareDesc(self):
-		"""DEPRECATED The description of the software used.
+		"""The description of the software used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -680,7 +680,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -692,7 +692,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -701,7 +701,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -710,7 +710,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def StoreFlows(self):
-		"""DEPRECATED If selected, the flow information sent by the Controller are learned by the Switch.
+		"""If selected, the flow information sent by the Controller are learned by the Switch.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -719,7 +719,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def SwitchDesc(self):
-		"""DEPRECATED A description of the Switch
+		"""A description of the Switch
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -728,7 +728,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def SwitchLocalIp(self):
-		"""DEPRECATED The local IP address of the interface. This field is auto-populated and cannot be changed.
+		"""The local IP address of the interface. This field is auto-populated and cannot be changed.
 
 		Returns:
 			list(str)
@@ -737,7 +737,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TableMissAction(self):
-		"""DEPRECATED Specify what the Switch should do when there is no match for the packets
+		"""Specify what the Switch should do when there is no match for the packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -746,7 +746,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TcpPort(self):
-		"""DEPRECATED Specify the TCP port for this interface
+		"""Specify the TCP port for this interface
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -755,7 +755,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TimeoutOption(self):
-		"""DEPRECATED The types of timeout options supported. Choose one of the following: 1) Multiplier 2) Timeout Value
+		"""The types of timeout options supported. Choose one of the following: 1) Multiplier 2) Timeout Value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -764,7 +764,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TimeoutOptionValue(self):
-		"""DEPRECATED The value specified for the selected Timeout option.
+		"""The value specified for the selected Timeout option.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -773,7 +773,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TlsVersion(self):
-		"""DEPRECATED TLS version selection
+		"""TLS version selection
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -782,7 +782,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TransactionID(self):
-		"""DEPRECATED If selected, PacketIn Delay Calculation will be done by matching transaction ID
+		"""If selected, PacketIn Delay Calculation will be done by matching transaction ID
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -791,7 +791,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def TypeOfConnection(self):
-		"""DEPRECATED The type of connection used for the Interface. Options include: 1) TCP 2) TLS
+		"""The type of connection used for the Interface. Options include: 1) TCP 2) TLS
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -800,7 +800,7 @@ class OpenFlowSwitch(Base):
 
 	@property
 	def VersionSupported(self):
-		"""DEPRECATED Indicates the supported OpenFlow version number.
+		"""Indicates the supported OpenFlow version number.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

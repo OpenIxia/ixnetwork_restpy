@@ -8,7 +8,8 @@ from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 # platform='linux' forces the scheme to https
 # if the default platform='windows' is used a ConnectionError will be raised
 # as the Linux API Server does not redirect but closes the connection
-test_platform=TestPlatform('10.36.74.17', platform='linux')
+test_platform=TestPlatform('10.36.82.185')
+assert(test_platform.Platform == 'linux')
 test_platform.Trace = 'request_response'
 
 # authenticate with username and password
@@ -26,9 +27,19 @@ for session in test_platform.Sessions.find():
     print(session)
 
 # add a session
-sessions = test_platform.Sessions.add()
+sessions = test_platform.Sessions.add(ApplicationType='ixnrest')
 session_id = sessions.Id
 print(sessions)
+
+# change the name of a session
+session_name = 'new session name'
+sessions.Name = session_name
+assert(sessions.Name == session_name)
+print(sessions)
+
+# find by session name
+sessions = test_platform.Sessions.find(Name=session_name)
+assert(len(sessions) == 1)
 
 # remove the session
 sessions.remove()

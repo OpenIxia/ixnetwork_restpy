@@ -207,7 +207,7 @@ class RouteRange(Base):
 
 	@property
 	def NumberOfRoutes(self):
-		"""DEPRECATED The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
+		"""The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
 
 		Returns:
 			number
@@ -219,7 +219,7 @@ class RouteRange(Base):
 
 	@property
 	def OriginatingAs(self):
-		"""DEPRECATED (Available only for External route ranges.) The external AS where this route was originated. The valid range is 1 to 4294967295. (default = 1)
+		"""(Available only for External route ranges.) The external AS where this route was originated. The valid range is 1 to 4294967295. (default = 1)
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class RouteRange(Base):
 
 	@property
 	def ProtocolId(self):
-		"""DEPRECATED (Available only for External route ranges.) The external protocol where the route was originated, if applicable.
+		"""(Available only for External route ranges.) The external protocol where the route was originated, if applicable.
 
 		Returns:
 			str(igrp|enhancedIgrp|static|rip|hello|ospf|isis|egp|bgp|idrp|connected)
@@ -243,7 +243,7 @@ class RouteRange(Base):
 
 	@property
 	def Reliability(self):
-		"""DEPRECATED The reliability factor. The valid range is 0 to 255 (100% reliable). (default = 255)
+		"""The reliability factor. The valid range is 0 to 255 (100% reliable). (default = 255)
 
 		Returns:
 			number
@@ -255,7 +255,7 @@ class RouteRange(Base):
 
 	@property
 	def RouteTag(self):
-		"""DEPRECATED (Available only for External route ranges.) An administrative tag applied to the route when it is redistributed between EIGRP and an external protocol, to prevent routing loops. Used as a route mapping filter. The valid range is 0 to 4294967295. (default = 0)
+		"""(Available only for External route ranges.) An administrative tag applied to the route when it is redistributed between EIGRP and an external protocol, to prevent routing loops. Used as a route mapping filter. The valid range is 0 to 4294967295. (default = 0)
 
 		Returns:
 			number
@@ -267,7 +267,7 @@ class RouteRange(Base):
 
 	@property
 	def Source(self):
-		"""DEPRECATED (Available only for External route ranges.) The IPv4 address for the external source of the route information, in dotted decimal format. (default = 0.0.0.0)
+		"""(Available only for External route ranges.) The IPv4 address for the external source of the route information, in dotted decimal format. (default = 0.0.0.0)
 
 		Returns:
 			str
@@ -279,7 +279,7 @@ class RouteRange(Base):
 
 	@property
 	def Type(self):
-		"""DEPRECATED The type of route range: internal or external to the AS.
+		"""The type of route range: internal or external to the AS.
 
 		Returns:
 			str(external|internal)

@@ -113,7 +113,7 @@ class Querier(Base):
 
 	@property
 	def InterfaceIndex(self):
-		"""DEPRECATED The assigned protocol interface ID for this SM interface.
+		"""The assigned protocol interface ID for this SM interface.
 
 		Returns:
 			number
@@ -125,7 +125,7 @@ class Querier(Base):
 
 	@property
 	def InterfaceType(self):
-		"""DEPRECATED The type of interface to be selected for this SM interface.
+		"""The type of interface to be selected for this SM interface.
 
 		Returns:
 			str
@@ -137,7 +137,7 @@ class Querier(Base):
 
 	@property
 	def Interfaces(self):
-		"""DEPRECATED The interfaces that are associated with the selected interface type.
+		"""The interfaces that are associated with the selected interface type.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range|/api/v1/sessions/1/ixnetwork/vport?deepchild=range)
@@ -149,7 +149,7 @@ class Querier(Base):
 
 	@property
 	def IsQuerier(self):
-		"""DEPRECATED If true, this MLD entity is a querier.
+		"""If true, this MLD entity is a querier.
 
 		Returns:
 			bool
@@ -158,7 +158,7 @@ class Querier(Base):
 
 	@property
 	def IsRefreshComplete(self):
-		"""DEPRECATED If true, the querier information is current.
+		"""If true, the querier information is current.
 
 		Returns:
 			bool
@@ -167,7 +167,7 @@ class Querier(Base):
 
 	@property
 	def QuerierAddress(self):
-		"""DEPRECATED The querier IP address.
+		"""The querier IP address.
 
 		Returns:
 			str
@@ -176,7 +176,7 @@ class Querier(Base):
 
 	@property
 	def QuerierWorkingVersion(self):
-		"""DEPRECATED The querier working MLD version.
+		"""The querier working MLD version.
 
 		Returns:
 			number
@@ -185,7 +185,7 @@ class Querier(Base):
 
 	@property
 	def RobustnessVariable(self):
-		"""DEPRECATED Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
+		"""Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
 
 		Returns:
 			number
@@ -197,7 +197,7 @@ class Querier(Base):
 
 	@property
 	def RouterAlert(self):
-		"""DEPRECATED If true, sets the Send Router Alert bit in the IP header.
+		"""If true, sets the Send Router Alert bit in the IP header.
 
 		Returns:
 			bool
@@ -209,7 +209,7 @@ class Querier(Base):
 
 	@property
 	def SqResponseInterval(self):
-		"""DEPRECATED The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
+		"""The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
 
 		Returns:
 			number
@@ -221,7 +221,7 @@ class Querier(Base):
 
 	@property
 	def SqTransmissionCount(self):
-		"""DEPRECATED Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
+		"""Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
 
 		Returns:
 			number
@@ -233,7 +233,7 @@ class Querier(Base):
 
 	@property
 	def StartupQueryCount(self):
-		"""DEPRECATED The number of general query messages sent at startup. The default startup query count is 2.
+		"""The number of general query messages sent at startup. The default startup query count is 2.
 
 		Returns:
 			number
@@ -245,7 +245,7 @@ class Querier(Base):
 
 	@property
 	def SupportElection(self):
-		"""DEPRECATED If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
+		"""If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
 
 		Returns:
 			bool
@@ -257,7 +257,7 @@ class Querier(Base):
 
 	@property
 	def SupportOlderVersionHost(self):
-		"""DEPRECATED If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
+		"""If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
 
 		Returns:
 			bool
@@ -269,7 +269,7 @@ class Querier(Base):
 
 	@property
 	def SupportOlderVersionQuerier(self):
-		"""DEPRECATED If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
+		"""If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
 
 		Returns:
 			bool
@@ -281,7 +281,7 @@ class Querier(Base):
 
 	@property
 	def Version(self):
-		"""DEPRECATED Sets the version for the MLD querier.
+		"""Sets the version for the MLD querier.
 
 		Returns:
 			str(version1|version2)

@@ -99,7 +99,7 @@ class LspPwRange(Base):
 
 	@property
 	def CccvTrafficClass(self):
-		"""DEPRECATED This signifies the CCCV Traffic Class.
+		"""This signifies the CCCV Traffic Class.
 
 		Returns:
 			number
@@ -111,7 +111,7 @@ class LspPwRange(Base):
 
 	@property
 	def CccvType(self):
-		"""DEPRECATED This signifies the CCCV Type. Possible values include BFD CC, Y.1731 and None.
+		"""This signifies the CCCV Type. Possible values include BFD CC, Y.1731 and None.
 
 		Returns:
 			str(bfdCc|bfdCccv|y1731|none)
@@ -123,7 +123,7 @@ class LspPwRange(Base):
 
 	@property
 	def Description(self):
-		"""DEPRECATED This signifies the description of the range.
+		"""This signifies the description of the range.
 
 		Returns:
 			str
@@ -135,7 +135,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestAcId(self):
-		"""DEPRECATED This signifies the destination AC id. This is the ac id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+		"""This signifies the destination AC id. This is the ac id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
 
 		Returns:
 			number
@@ -147,7 +147,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestAcIdStep(self):
-		"""DEPRECATED This signifies the destination AC id step value.
+		"""This signifies the destination AC id step value.
 
 		Returns:
 			number
@@ -159,7 +159,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestGlobalId(self):
-		"""DEPRECATED This signifies the global id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+		"""This signifies the global id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
 
 		Returns:
 			number
@@ -171,7 +171,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestLspNumber(self):
-		"""DEPRECATED This signifies the lsp number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
+		"""This signifies the lsp number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
 
 		Returns:
 			number
@@ -183,7 +183,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestLspNumberStep(self):
-		"""DEPRECATED This signifies the source LSP Number step value.
+		"""This signifies the source LSP Number step value.
 
 		Returns:
 			number
@@ -195,7 +195,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestMepId(self):
-		"""DEPRECATED This signifies the destination MEP Id.
+		"""This signifies the destination MEP Id.
 
 		Returns:
 			number
@@ -207,7 +207,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestMepIdStep(self):
-		"""DEPRECATED This signifies the Destination MEP Id step value in integer.
+		"""This signifies the Destination MEP Id step value in integer.
 
 		Returns:
 			number
@@ -219,7 +219,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestNodeId(self):
-		"""DEPRECATED This signifies the destination node id. This is the node id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
+		"""This signifies the destination node id. This is the node id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestTunnelNumber(self):
-		"""DEPRECATED This signifies the tunnel number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
+		"""This signifies the tunnel number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
 
 		Returns:
 			number
@@ -243,7 +243,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestTunnelNumberStep(self):
-		"""DEPRECATED This signifies the destination tunnel number step value.
+		"""This signifies the destination tunnel number step value.
 
 		Returns:
 			number
@@ -255,7 +255,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdAsNumber(self):
-		"""DEPRECATED This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
+		"""This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
 
 		Returns:
 			number
@@ -267,7 +267,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdAsNumberStep(self):
-		"""DEPRECATED This signifies the step of destination vpls id AS number by which the AS number will be incremented if there are multiple LSP/PW in the range.
+		"""This signifies the step of destination vpls id AS number by which the AS number will be incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			number
@@ -279,7 +279,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdAssignedNumber(self):
-		"""DEPRECATED This signifies the destination VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber, the max value can be 4294967295.
+		"""This signifies the destination VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber, the max value can be 4294967295.
 
 		Returns:
 			number
@@ -291,7 +291,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdAssignedNumberStep(self):
-		"""DEPRECATED This signifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
+		"""This signifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			number
@@ -303,7 +303,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdIpAddress(self):
-		"""DEPRECATED This specifies the IP Address configured as destination VPLS Id IP Address when VPLS Id type is set as ipAddress.
+		"""This specifies the IP Address configured as destination VPLS Id IP Address when VPLS Id type is set as ipAddress.
 
 		Returns:
 			str
@@ -315,7 +315,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdIpAddressStep(self):
-		"""DEPRECATED This signifies the step of ip address by which the ip address will be incremented if there are multiple LSP/PW in the range.
+		"""This signifies the step of ip address by which the ip address will be incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			str
@@ -327,7 +327,7 @@ class LspPwRange(Base):
 
 	@property
 	def DestVplsIdType(self):
-		"""DEPRECATED This signifies the destination VplsId type.
+		"""This signifies the destination VplsId type.
 
 		Returns:
 			str(asNumber|ipAddress|asNumber4Bytes)
@@ -339,7 +339,7 @@ class LspPwRange(Base):
 
 	@property
 	def DmTimeFormat(self):
-		"""DEPRECATED This signifies the DM Time Format. Possible values include IEEE and NTP.
+		"""This signifies the DM Time Format. Possible values include IEEE and NTP.
 
 		Returns:
 			str(ieee|ntp)
@@ -351,7 +351,7 @@ class LspPwRange(Base):
 
 	@property
 	def DmTrafficClass(self):
-		"""DEPRECATED This signifies the DM Traffic Class for LSP PW Range.
+		"""This signifies the DM Traffic Class for LSP PW Range.
 
 		Returns:
 			number
@@ -363,7 +363,7 @@ class LspPwRange(Base):
 
 	@property
 	def DmType(self):
-		"""DEPRECATED This signifies the DM Type. Possible values include IETF and Y.1731.
+		"""This signifies the DM Type. Possible values include IETF and Y.1731.
 
 		Returns:
 			str(ietf|y1731)
@@ -375,7 +375,7 @@ class LspPwRange(Base):
 
 	@property
 	def EnableVlan(self):
-		"""DEPRECATED If true, the MAC Traffic will have a vlan header.
+		"""If true, the MAC Traffic will have a vlan header.
 
 		Returns:
 			bool
@@ -387,7 +387,7 @@ class LspPwRange(Base):
 
 	@property
 	def Enabled(self):
-		"""DEPRECATED This signifies the enablement of this LSP PW Range.
+		"""This signifies the enablement of this LSP PW Range.
 
 		Returns:
 			bool
@@ -399,7 +399,7 @@ class LspPwRange(Base):
 
 	@property
 	def IpAddress(self):
-		"""DEPRECATED This signifies the IP address.
+		"""This signifies the IP address.
 
 		Returns:
 			str
@@ -411,7 +411,7 @@ class LspPwRange(Base):
 
 	@property
 	def IpAddressMask(self):
-		"""DEPRECATED This signifies the IP Address Mask.
+		"""This signifies the IP Address Mask.
 
 		Returns:
 			number
@@ -423,7 +423,7 @@ class LspPwRange(Base):
 
 	@property
 	def IpAddressStep(self):
-		"""DEPRECATED This signifies the IP Address Step Value.
+		"""This signifies the IP Address Step Value.
 
 		Returns:
 			number
@@ -435,7 +435,7 @@ class LspPwRange(Base):
 
 	@property
 	def IpHostPerLsp(self):
-		"""DEPRECATED This signifies the total number of IP hosts per lsp.
+		"""This signifies the total number of IP hosts per lsp.
 
 		Returns:
 			number
@@ -447,7 +447,7 @@ class LspPwRange(Base):
 
 	@property
 	def IpType(self):
-		"""DEPRECATED This signifies the IP Type. Possible values include IPv4 and IPv6.
+		"""This signifies the IP Type. Possible values include IPv4 and IPv6.
 
 		Returns:
 			str(ipv4|ipv6)
@@ -459,7 +459,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmCounterType(self):
-		"""DEPRECATED This signifies the LM Counter Type. Possible values include 32 Bit and 64 Bit.
+		"""This signifies the LM Counter Type. Possible values include 32 Bit and 64 Bit.
 
 		Returns:
 			str(32Bit|64Bit)
@@ -471,7 +471,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmInitialRxValue(self):
-		"""DEPRECATED This signifies the LM Initial Rx value for LSP PW Range.
+		"""This signifies the LM Initial Rx value for LSP PW Range.
 
 		Returns:
 			number
@@ -483,7 +483,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmInitialTxValue(self):
-		"""DEPRECATED This signifies the LM Initial Tx value for LSP PW Range.
+		"""This signifies the LM Initial Tx value for LSP PW Range.
 
 		Returns:
 			number
@@ -495,7 +495,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmRxStep(self):
-		"""DEPRECATED This signifies the LM Rx step value for LSP PW Range.
+		"""This signifies the LM Rx step value for LSP PW Range.
 
 		Returns:
 			number
@@ -507,7 +507,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmTrafficClass(self):
-		"""DEPRECATED This signifies the LM Traffic Class.
+		"""This signifies the LM Traffic Class.
 
 		Returns:
 			number
@@ -519,7 +519,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmTxStep(self):
-		"""DEPRECATED This signifies the LM Tx Step value for LSP PW Range.
+		"""This signifies the LM Tx Step value for LSP PW Range.
 
 		Returns:
 			number
@@ -531,7 +531,7 @@ class LspPwRange(Base):
 
 	@property
 	def LmType(self):
-		"""DEPRECATED This signifies the LM Type. Possible values include IETF and Y.1731.
+		"""This signifies the LM Type. Possible values include IETF and Y.1731.
 
 		Returns:
 			str(ietf|y1731)
@@ -543,7 +543,7 @@ class LspPwRange(Base):
 
 	@property
 	def LspIncomingLabel(self):
-		"""DEPRECATED This signifies the LSP Incoming label value. All mpls-tp packets are expected to be received with this LSP label value, if there is a mismatch of this value with the peer's outgoing LSP label value, cccv sessions will not come up.
+		"""This signifies the LSP Incoming label value. All mpls-tp packets are expected to be received with this LSP label value, if there is a mismatch of this value with the peer's outgoing LSP label value, cccv sessions will not come up.
 
 		Returns:
 			number
@@ -555,7 +555,7 @@ class LspPwRange(Base):
 
 	@property
 	def LspIncomingLabelStep(self):
-		"""DEPRECATED This signifies the LSP Incoming Label Step value.
+		"""This signifies the LSP Incoming Label Step value.
 
 		Returns:
 			number
@@ -567,7 +567,7 @@ class LspPwRange(Base):
 
 	@property
 	def LspOutgoingLabel(self):
-		"""DEPRECATED This signifies the LSP Outgoing Label value. All mpls-tp packets are transmitted with this LSP label from the port.
+		"""This signifies the LSP Outgoing Label value. All mpls-tp packets are transmitted with this LSP label from the port.
 
 		Returns:
 			number
@@ -579,7 +579,7 @@ class LspPwRange(Base):
 
 	@property
 	def LspOutgoingLabelStep(self):
-		"""DEPRECATED This signifies the LSP Outgoing Label Step value.
+		"""This signifies the LSP Outgoing Label Step value.
 
 		Returns:
 			number
@@ -591,7 +591,7 @@ class LspPwRange(Base):
 
 	@property
 	def MacAddress(self):
-		"""DEPRECATED This signifies the starting MAC address of the range, this will be used for traffic generation.
+		"""This signifies the starting MAC address of the range, this will be used for traffic generation.
 
 		Returns:
 			str
@@ -603,7 +603,7 @@ class LspPwRange(Base):
 
 	@property
 	def MacPerPw(self):
-		"""DEPRECATED This signifies the number of MACs behind each PW, these are the MACs that are used for traffic generation.
+		"""This signifies the number of MACs behind each PW, these are the MACs that are used for traffic generation.
 
 		Returns:
 			number
@@ -615,7 +615,7 @@ class LspPwRange(Base):
 
 	@property
 	def MegIdIntegerStep(self):
-		"""DEPRECATED This signifies the MEG Id step value in integer.
+		"""This signifies the MEG Id step value in integer.
 
 		Returns:
 			number
@@ -627,7 +627,7 @@ class LspPwRange(Base):
 
 	@property
 	def MegIdPrefix(self):
-		"""DEPRECATED This signifies the prefix for the MEG Id.
+		"""This signifies the prefix for the MEG Id.
 
 		Returns:
 			str
@@ -639,7 +639,7 @@ class LspPwRange(Base):
 
 	@property
 	def MegLevel(self):
-		"""DEPRECATED This signifies the peer range of the nested LSP PW value.
+		"""This signifies the peer range of the nested LSP PW value.
 
 		Returns:
 			number
@@ -651,7 +651,7 @@ class LspPwRange(Base):
 
 	@property
 	def MinRxInterval(self):
-		"""DEPRECATED This signifies the CCCV minimum receive interval of cc messages, in milliseconds. Not valid for cccv type y1731.
+		"""This signifies the CCCV minimum receive interval of cc messages, in milliseconds. Not valid for cccv type y1731.
 
 		Returns:
 			number
@@ -663,7 +663,7 @@ class LspPwRange(Base):
 
 	@property
 	def MinTxInterval(self):
-		"""DEPRECATED This signifies the CCCV minimum transmit interval of cc messages, in milliseconds. Valid for all types of cccv.
+		"""This signifies the CCCV minimum transmit interval of cc messages, in milliseconds. Valid for all types of cccv.
 
 		Returns:
 			number
@@ -675,7 +675,7 @@ class LspPwRange(Base):
 
 	@property
 	def NumberOfLsp(self):
-		"""DEPRECATED This signifies the total number of LSPs for this range.
+		"""This signifies the total number of LSPs for this range.
 
 		Returns:
 			number
@@ -687,7 +687,7 @@ class LspPwRange(Base):
 
 	@property
 	def NumberOfPwPerLsp(self):
-		"""DEPRECATED This signifies the total number of PWs per LSP.
+		"""This signifies the total number of PWs per LSP.
 
 		Returns:
 			number
@@ -699,7 +699,7 @@ class LspPwRange(Base):
 
 	@property
 	def OnDemandCvTrafficClass(self):
-		"""DEPRECATED This signifies the On Demand CV Traffic Class for LSP PW Range.
+		"""This signifies the On Demand CV Traffic Class for LSP PW Range.
 
 		Returns:
 			number
@@ -711,7 +711,7 @@ class LspPwRange(Base):
 
 	@property
 	def PeerLspOrPwRange(self):
-		"""DEPRECATED This signifies the type of Peer LSP Or PW Range.
+		"""This signifies the type of Peer LSP Or PW Range.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=lspPwRange)
@@ -723,7 +723,7 @@ class LspPwRange(Base):
 
 	@property
 	def PeerNestedLspPwRange(self):
-		"""DEPRECATED This signifies the peer range of the nested LSP PW value.
+		"""This signifies the peer range of the nested LSP PW value.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=lspPwRange)
@@ -735,7 +735,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwIncomingLabel(self):
-		"""DEPRECATED This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
+		"""This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
 
 		Returns:
 			number
@@ -747,7 +747,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwIncomingLabelStep(self):
-		"""DEPRECATED This signifies the PW Incoming Label Step value.
+		"""This signifies the PW Incoming Label Step value.
 
 		Returns:
 			number
@@ -759,7 +759,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwIncomingLabelStepAcrossLsp(self):
-		"""DEPRECATED This signifies the PW Incoming Label Step value across LSPs.
+		"""This signifies the PW Incoming Label Step value across LSPs.
 
 		Returns:
 			number
@@ -771,7 +771,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwOutgoingLabel(self):
-		"""DEPRECATED This signifies the PW Outgoing Label value. All mpls-tp packets are transmitted with this PW label from the port.
+		"""This signifies the PW Outgoing Label value. All mpls-tp packets are transmitted with this PW label from the port.
 
 		Returns:
 			number
@@ -783,7 +783,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwOutgoingLabelStep(self):
-		"""DEPRECATED This signifies the PW Outgoing Label Step value.
+		"""This signifies the PW Outgoing Label Step value.
 
 		Returns:
 			number
@@ -795,7 +795,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwOutgoingLabelStepAcrossLsp(self):
-		"""DEPRECATED This signifies the PW Outgoing Label Step value across LSPs.
+		"""This signifies the PW Outgoing Label Step value across LSPs.
 
 		Returns:
 			number
@@ -807,7 +807,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwStatusFaultReplyInterval(self):
-		"""DEPRECATED This signifies the PW Status Fault Reply Interval in seconds.
+		"""This signifies the PW Status Fault Reply Interval in seconds.
 
 		Returns:
 			number
@@ -819,7 +819,7 @@ class LspPwRange(Base):
 
 	@property
 	def PwStatusTrafficClass(self):
-		"""DEPRECATED This signifies the PW Status Traffic Class for LSP PW Range.
+		"""This signifies the PW Status Traffic Class for LSP PW Range.
 
 		Returns:
 			number
@@ -831,7 +831,7 @@ class LspPwRange(Base):
 
 	@property
 	def RangeRole(self):
-		"""DEPRECATED This signifies the role of the range. Possible values include None, Working and Protect.
+		"""This signifies the role of the range. Possible values include None, Working and Protect.
 
 		Returns:
 			str(none|working|protect)
@@ -843,7 +843,7 @@ class LspPwRange(Base):
 
 	@property
 	def RepeatMac(self):
-		"""DEPRECATED If true, and the Count is greater than 1, the same address value will be repeated for all MAC addresses within a PW.
+		"""If true, and the Count is greater than 1, the same address value will be repeated for all MAC addresses within a PW.
 
 		Returns:
 			bool
@@ -855,7 +855,7 @@ class LspPwRange(Base):
 
 	@property
 	def Revertive(self):
-		"""DEPRECATED This signifies the switching mode, whether revertive or non-revertive.
+		"""This signifies the switching mode, whether revertive or non-revertive.
 
 		Returns:
 			bool
@@ -867,7 +867,7 @@ class LspPwRange(Base):
 
 	@property
 	def SkipZeroVlanId(self):
-		"""DEPRECATED This signifies the VLAN Id 0 will not be used for any MAC.
+		"""This signifies the VLAN Id 0 will not be used for any MAC.
 
 		Returns:
 			bool
@@ -879,7 +879,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcAcId(self):
-		"""DEPRECATED This signifies the AC Id that is carried in the Echo Request message that is transmitted from this port.
+		"""This signifies the AC Id that is carried in the Echo Request message that is transmitted from this port.
 
 		Returns:
 			number
@@ -891,7 +891,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcAcIdStep(self):
-		"""DEPRECATED This signifies the source AC id step value.
+		"""This signifies the source AC id step value.
 
 		Returns:
 			number
@@ -903,7 +903,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcGlobalId(self):
-		"""DEPRECATED This signifies the source global id. This is the global id that is carried in the Echo Request message that is transmitted from this port.
+		"""This signifies the source global id. This is the global id that is carried in the Echo Request message that is transmitted from this port.
 
 		Returns:
 			number
@@ -915,7 +915,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcLspNumber(self):
-		"""DEPRECATED This signifies the lsp number that is carried in the Echo Request message that is transmitted from this port.
+		"""This signifies the lsp number that is carried in the Echo Request message that is transmitted from this port.
 
 		Returns:
 			number
@@ -927,7 +927,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcLspNumberStep(self):
-		"""DEPRECATED This signifies the source LSP Number step value.
+		"""This signifies the source LSP Number step value.
 
 		Returns:
 			number
@@ -939,7 +939,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcMepId(self):
-		"""DEPRECATED This signifies the source MEP Id.
+		"""This signifies the source MEP Id.
 
 		Returns:
 			number
@@ -951,7 +951,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcMepIdStep(self):
-		"""DEPRECATED This signifies the Source MEP Id step value in integer.
+		"""This signifies the Source MEP Id step value in integer.
 
 		Returns:
 			number
@@ -963,7 +963,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcNodeId(self):
-		"""DEPRECATED This signifies the node id that is carried in the Echo Request message that is transmitted from this port.
+		"""This signifies the node id that is carried in the Echo Request message that is transmitted from this port.
 
 		Returns:
 			number
@@ -975,7 +975,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcTunnelNumber(self):
-		"""DEPRECATED This signifies the tunnel number that is carried in the Echo Request message that is transmitted from this port.
+		"""This signifies the tunnel number that is carried in the Echo Request message that is transmitted from this port.
 
 		Returns:
 			number
@@ -987,7 +987,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcTunnelNumberStep(self):
-		"""DEPRECATED This signifies the source tunnel number step value.
+		"""This signifies the source tunnel number step value.
 
 		Returns:
 			number
@@ -999,7 +999,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdAsNumber(self):
-		"""DEPRECATED This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
+		"""This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
 
 		Returns:
 			number
@@ -1011,7 +1011,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdAsNumberStep(self):
-		"""DEPRECATED This signifies the step of AS number by which the number is incremented if there are multiple LSP/PW in the range.
+		"""This signifies the step of AS number by which the number is incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			number
@@ -1023,7 +1023,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdAssignedNumber(self):
-		"""DEPRECATED This signifies the source VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber the max value can be 4294967295.
+		"""This signifies the source VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber the max value can be 4294967295.
 
 		Returns:
 			number
@@ -1035,7 +1035,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdAssignedNumberStep(self):
-		"""DEPRECATED This specifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
+		"""This specifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			number
@@ -1047,7 +1047,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdIpAddress(self):
-		"""DEPRECATED This signifies the IP Address configured as Source VPLS Id IP Address when VPLS Id type is set as ipAddress.
+		"""This signifies the IP Address configured as Source VPLS Id IP Address when VPLS Id type is set as ipAddress.
 
 		Returns:
 			str
@@ -1059,7 +1059,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdIpAddressStep(self):
-		"""DEPRECATED This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
+		"""This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
 
 		Returns:
 			str
@@ -1071,7 +1071,7 @@ class LspPwRange(Base):
 
 	@property
 	def SrcVplsIdType(self):
-		"""DEPRECATED This specifies the source VplsId type.
+		"""This specifies the source VplsId type.
 
 		Returns:
 			str(asNumber|ipAddress|asNumber4Bytes)
@@ -1095,7 +1095,7 @@ class LspPwRange(Base):
 
 	@property
 	def TrafficGroupId(self):
-		"""DEPRECATED This signifies the Traffic Group Id.
+		"""This signifies the Traffic Group Id.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -1107,7 +1107,7 @@ class LspPwRange(Base):
 
 	@property
 	def TypeOfProtectionSwitching(self):
-		"""DEPRECATED This signifies different types of protection switching mechanism.
+		"""This signifies different types of protection switching mechanism.
 
 		Returns:
 			str(1+1Unidirectional|1:1Bidirectional|1+1Bidirectional)
@@ -1119,7 +1119,7 @@ class LspPwRange(Base):
 
 	@property
 	def TypeOfRange(self):
-		"""DEPRECATED This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
+		"""This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
 
 		Returns:
 			str(lsp|pw|nestedLspPw)
@@ -1131,7 +1131,7 @@ class LspPwRange(Base):
 
 	@property
 	def VlanCount(self):
-		"""DEPRECATED This signifies the number of VLANs configured for this MAC Range.
+		"""This signifies the number of VLANs configured for this MAC Range.
 
 		Returns:
 			number
@@ -1143,7 +1143,7 @@ class LspPwRange(Base):
 
 	@property
 	def VlanId(self):
-		"""DEPRECATED This signifies the VLAN option is enabled for the current MAC Range and a VLAN Id may be added to the packet, to identify the VLAN that the packet belongs to.
+		"""This signifies the VLAN option is enabled for the current MAC Range and a VLAN Id may be added to the packet, to identify the VLAN that the packet belongs to.
 
 		Returns:
 			str
@@ -1155,7 +1155,7 @@ class LspPwRange(Base):
 
 	@property
 	def VlanIncrementMode(self):
-		"""DEPRECATED This signifies the mode that defines how the VLAN will be incremented across MACs.
+		"""This signifies the mode that defines how the VLAN will be incremented across MACs.
 
 		Returns:
 			str(noIncrement|parallelIncrement|innerFirst|outerFirst)
@@ -1167,7 +1167,7 @@ class LspPwRange(Base):
 
 	@property
 	def VlanPriority(self):
-		"""DEPRECATED This signifies the user priority of the VLAN tag. This may have a value from 0 through 7.
+		"""This signifies the user priority of the VLAN tag. This may have a value from 0 through 7.
 
 		Returns:
 			str
@@ -1179,7 +1179,7 @@ class LspPwRange(Base):
 
 	@property
 	def VlanTpId(self):
-		"""DEPRECATED This signifies the EtherType that identifies the protocol header that follows the VLAN header.
+		"""This signifies the EtherType that identifies the protocol header that follows the VLAN header.
 
 		Returns:
 			str
@@ -1191,7 +1191,7 @@ class LspPwRange(Base):
 
 	@property
 	def WaitToRevertTime(self):
-		"""DEPRECATED This signifies the duration after which data traffic will be switched from protect to working path once working path has recovered from signal fail. This is configurable only if Revertive is checked.
+		"""This signifies the duration after which data traffic will be switched from protect to working path once working path has recovered from signal fail. This is configurable only if Revertive is checked.
 
 		Returns:
 			number

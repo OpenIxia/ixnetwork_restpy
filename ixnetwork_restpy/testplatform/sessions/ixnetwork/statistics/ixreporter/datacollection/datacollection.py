@@ -38,7 +38,7 @@ class DataCollection(Base):
 
 	@property
 	def Enable(self):
-		"""DEPRECATED If it is true, enables collection of data
+		"""If it is true, enables collection of data
 
 		Returns:
 			bool
@@ -50,7 +50,7 @@ class DataCollection(Base):
 
 	@property
 	def LastRunId(self):
-		"""DEPRECATED Specifies the identifier for last run.
+		"""Specifies the identifier for last run.
 
 		Returns:
 			number

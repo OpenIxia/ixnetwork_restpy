@@ -65,7 +65,7 @@ class Ancp(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -74,7 +74,7 @@ class Ancp(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -83,7 +83,7 @@ class Ancp(Base):
 
 	@property
 	def DynamicTopologyDiscovery(self):
-		"""DEPRECATED Enable/Disable Dynamic Topology Discovery capability
+		"""Enable/Disable Dynamic Topology Discovery capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -92,7 +92,7 @@ class Ancp(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -101,7 +101,7 @@ class Ancp(Base):
 
 	@property
 	def KeepAliveRetries(self):
-		"""DEPRECATED Number of times ANCP adjacency mechanism send ANCP keep-alive packets before closing the TCP connections
+		"""Number of times ANCP adjacency mechanism send ANCP keep-alive packets before closing the TCP connections
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -110,7 +110,7 @@ class Ancp(Base):
 
 	@property
 	def KeepAliveTimeout(self):
-		"""DEPRECATED Timer value in units of 100ms used in the adjacency protocol with the peer
+		"""Timer value in units of 100ms used in the adjacency protocol with the peer
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -119,7 +119,7 @@ class Ancp(Base):
 
 	@property
 	def LineConfiguration(self):
-		"""DEPRECATED Enable/Disable DSL Line Configuration capability
+		"""Enable/Disable DSL Line Configuration capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -128,7 +128,7 @@ class Ancp(Base):
 
 	@property
 	def MaxRedialAttempts(self):
-		"""DEPRECATED Number of attempts to establish ANCP adjacency in case connection is lost
+		"""Number of attempts to establish ANCP adjacency in case connection is lost
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -137,7 +137,7 @@ class Ancp(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -149,7 +149,7 @@ class Ancp(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -161,7 +161,7 @@ class Ancp(Base):
 
 	@property
 	def NasIp(self):
-		"""DEPRECATED Ip address of BRAS listening for ANCP connections
+		"""Ip address of BRAS listening for ANCP connections
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -170,7 +170,7 @@ class Ancp(Base):
 
 	@property
 	def NasServicePort(self):
-		"""DEPRECATED BRAS TCP port number used to listen for ANCP connections
+		"""BRAS TCP port number used to listen for ANCP connections
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -179,7 +179,7 @@ class Ancp(Base):
 
 	@property
 	def PartitionId(self):
-		"""DEPRECATED Partition ID to be used in adjacency negotiation
+		"""Partition ID to be used in adjacency negotiation
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -188,7 +188,7 @@ class Ancp(Base):
 
 	@property
 	def RemoteLoopback(self):
-		"""DEPRECATED Enable/Disable DSL Remote Line Conectivity Testing Capability
+		"""Enable/Disable DSL Remote Line Conectivity Testing Capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -197,7 +197,7 @@ class Ancp(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -206,7 +206,7 @@ class Ancp(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -218,7 +218,7 @@ class Ancp(Base):
 
 	@property
 	def Standard(self):
-		"""DEPRECATED Define ANCP Standard to be used.
+		"""Define ANCP Standard to be used.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -227,7 +227,7 @@ class Ancp(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -236,7 +236,7 @@ class Ancp(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -245,7 +245,7 @@ class Ancp(Base):
 
 	@property
 	def TransactionalMulticast(self):
-		"""DEPRECATED Enable/Disable advertise Transactional Multicast capability
+		"""Enable/Disable advertise Transactional Multicast capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -254,7 +254,7 @@ class Ancp(Base):
 
 	@property
 	def TriggerAccessLoopEvents(self):
-		"""DEPRECATED Enable sending Port Up/ Port Down events when AN is Started / Stopped. Does not apply if flapping is enabled on the Access Loop
+		"""Enable sending Port Up/ Port Down events when AN is Started / Stopped. Does not apply if flapping is enabled on the Access Loop
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -263,7 +263,7 @@ class Ancp(Base):
 
 	@property
 	def UnlimitedRedial(self):
-		"""DEPRECATED Limit the Number of attempts to establish ANCP adjacency in case connection is lost
+		"""Limit the Number of attempts to establish ANCP adjacency in case connection is lost
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

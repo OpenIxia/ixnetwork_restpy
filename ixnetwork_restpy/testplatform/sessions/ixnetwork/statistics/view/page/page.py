@@ -198,7 +198,7 @@ class Page(Base):
 
 	@property
 	def Timestamp(self):
-		"""DEPRECATED Describes the date and time of the event.
+		"""Describes the date and time of the event.
 
 		Returns:
 			number
@@ -207,7 +207,7 @@ class Page(Base):
 
 	@property
 	def TotalPages(self):
-		"""DEPRECATED The total number of statistics pages.
+		"""The total number of statistics pages.
 
 		Returns:
 			number
@@ -216,7 +216,7 @@ class Page(Base):
 
 	@property
 	def TotalRows(self):
-		"""DEPRECATED NOT DEFINED
+		"""NOT DEFINED
 
 		Returns:
 			number

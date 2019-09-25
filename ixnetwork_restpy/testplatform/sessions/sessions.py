@@ -68,7 +68,7 @@ class Sessions(Base):
         """The application type of the session
 
         Returns:
-            str(ixnetwork|quicktest)
+            str(ixnrest|quicktest)
         """
         return self._properties['applicationType']
     
@@ -99,19 +99,49 @@ class Sessions(Base):
         """
         return self._properties['userName']
 
+    @property
+    def Name(self):
+        """The name of the session.
+        Currently this is only supported on the linux API Server platform.
+
+        Returns:
+            str: if linux platform a valid session name else empty
+        """
+        return self._properties['name']
+    @Name.setter
+    def Name(self, value):
+        if value is not None:
+            if self._connection.platform == 'linux':
+                self._connection._update('ixnetworkweb/api/v1/%s/%s' % (self._SDM_NAME, self.Id), payload={ 'sessionName': value })
+                self._properties['name'] = value
+            else:
+                self.warn('Setting the session name is not supported on the %s platform' % self._connection.platform)
+        elif self._connection.platform == 'linux' and 'name' not in self._properties:
+            if 'sessionName' in self._properties:
+                self._properties['name'] = self._properties['sessionName']
+            else:
+                self._properties['name'] = self._properties['configName']
+
     def Start(self):
         """Starts a session resource
 
         Returns:
             None
         """
-        if self._connection._platform != 'windows':
+        if self._connection.platform != 'windows':
             response = self._execute('start', payload={'applicationType': self.ApplicationType})
             if response is not None:
                 self._set_properties(response, clear=True)
     
-    def find(self, Id=None):
+    def find(self, Id=None, Name=None):
         """Finds Sessions resources on the server and encapsulates the data in this instance.
+
+        Args:
+            Id (number): a valid session id
+            Name (str): a valid session name
+        
+        Returns:
+            obj(testplatform.sessions.sessions.Session): a Sessions object with found resources
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
@@ -119,22 +149,34 @@ class Sessions(Base):
         responses = self._connection._read('%s/%s' % (self._parent.href, self._SDM_NAME))
         self._clear()
         for response in responses:
+            if self._connection.platform == 'linux':
+                if 'sessionName' in response:
+                    response['name'] = response['sessionName']
+                else:
+                    response['name'] = response['configName']
+            else:
+                response['name'] = ''
             if response['applicationType'] == 'ixnetwork':
                 response['applicationType'] = 'quicktest'
-            if Id is not None:
-                if str(response['id']) == str(Id):
-                    self._set_properties(response)
-            else:
+            if Id is not None and str(response['id']) == str(Id):
+                self._set_properties(response)
+            elif Name is not None and response['name'] == Name:
+                self._set_properties(response)
+            elif Id is None and Name is None:
                 self._set_properties(response)
         return self
 
-    def add(self, ApplicationType='ixnrest'):
+    def add(self, ApplicationType='ixnrest', Name=None):
         """Adds a new sessions resource on the server and encapsulates the data in this instance.
         Two types of sessions can be created, an ixnrest session or a quicktest web session.
         The quicktest web session can only be created when the TestPlatform.Platform type is 'linux'
 
         Args:
             ApplicationType (str[ixnrest|quicktest]): The type of session to be started
+            Name (str): The name of the session
+
+        Returns:
+            obj(testplatform.sessions.sessions.Session): a Sessions object
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
@@ -149,10 +191,15 @@ class Sessions(Base):
         self._create(locals())
         if self._properties['applicationType'] == 'ixnetwork':
             self._object_properties[self.index]['applicationType'] = 'quicktest'
-        if self._connection._platform == 'linux':
+        if self._connection.platform == 'linux':
             self.Start()
+        self.Name = Name
         return self
 
+    def update(self, Name=None):
+        self.Name = Name
+        return self
+        
     def remove(self):
         """Deletes all the encapsulated sessions resources from the server.
 

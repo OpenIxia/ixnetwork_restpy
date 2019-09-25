@@ -84,7 +84,7 @@ class Tracking(Base):
 
 	@property
 	def AvailableTrackByInfos(self):
-		"""DEPRECATED Returns list of tracking fields with id/displayname
+		"""Returns list of tracking fields with id/displayname
 
 		Returns:
 			list(dict(arg1:str,arg2:str))
@@ -93,7 +93,7 @@ class Tracking(Base):
 
 	@property
 	def FieldWidth(self):
-		"""DEPRECATED Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
+		"""Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			str(eightBits|sixteenBits|thirtyTwoBits|twentyFourBits)
@@ -105,7 +105,7 @@ class Tracking(Base):
 
 	@property
 	def Offset(self):
-		"""DEPRECATED Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
+		"""Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			number
@@ -117,7 +117,7 @@ class Tracking(Base):
 
 	@property
 	def OneToOneMesh(self):
-		"""DEPRECATED If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
+		"""If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
 
 		Returns:
 			bool
@@ -129,7 +129,7 @@ class Tracking(Base):
 
 	@property
 	def ProtocolOffset(self):
-		"""DEPRECATED Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
+		"""Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			str
@@ -141,7 +141,7 @@ class Tracking(Base):
 
 	@property
 	def TrackBy(self):
-		"""DEPRECATED Specifies the tracking option by which the Flows of a Traffic Item are tracked.
+		"""Specifies the tracking option by which the Flows of a Traffic Item are tracked.
 
 		Returns:
 			list(str)
@@ -153,7 +153,7 @@ class Tracking(Base):
 
 	@property
 	def Values(self):
-		"""DEPRECATED Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
+		"""Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
 
 		Returns:
 			list(str)

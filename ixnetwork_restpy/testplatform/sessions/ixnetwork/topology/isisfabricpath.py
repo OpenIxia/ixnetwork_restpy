@@ -142,7 +142,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -151,7 +151,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -160,7 +160,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Enable3WayHandshake(self):
-		"""DEPRECATED Enable 3-way Handshake
+		"""Enable 3-way Handshake
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -169,7 +169,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def EnableConfiguredHoldTime(self):
-		"""DEPRECATED Enable Configured Hold Time
+		"""Enable Configured Hold Time
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -178,7 +178,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -187,7 +187,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def ExtendedLocalCircuitId(self):
-		"""DEPRECATED Extended Local Circuit Id
+		"""Extended Local Circuit Id
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -196,7 +196,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def InterfaceMetric(self):
-		"""DEPRECATED Interface Metric
+		"""Interface Metric
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -205,7 +205,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Level1DeadInterval(self):
-		"""DEPRECATED Level 1 Dead Interval (sec)
+		"""Level 1 Dead Interval (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -214,7 +214,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Level1HelloInterval(self):
-		"""DEPRECATED Level 1 Hello Interval (sec)
+		"""Level 1 Hello Interval (sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -223,7 +223,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def LevelType(self):
-		"""DEPRECATED Level Type
+		"""Level Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -232,7 +232,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def LocalSystemID(self):
-		"""DEPRECATED System ID
+		"""System ID
 
 		Returns:
 			list(str)
@@ -241,7 +241,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -253,7 +253,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -265,7 +265,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def NetworkType(self):
-		"""DEPRECATED Network Type
+		"""Network Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -274,7 +274,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def SessionInfo(self):
-		"""DEPRECATED Logs additional information about the session state
+		"""Logs additional information about the session state
 
 		Returns:
 			list(str[ifaceSessInfoFsmNotStarted|ifaceSessInfoNotAllNbrInFull|iPAddressNotRcvd|none])
@@ -283,7 +283,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -292,7 +292,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -304,7 +304,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -313,7 +313,7 @@ class IsisFabricPath(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)

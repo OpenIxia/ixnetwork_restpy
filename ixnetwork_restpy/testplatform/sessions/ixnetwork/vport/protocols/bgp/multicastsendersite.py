@@ -185,7 +185,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiRsvpTunnelId(self):
-		"""DEPRECATED The first Tunnel ID value in the range of Tunnel IDs.
+		"""The first Tunnel ID value in the range of Tunnel IDs.
 
 		Returns:
 			number
@@ -197,7 +197,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiRsvpTunnelIdStep(self):
-		"""DEPRECATED Indicates the P2MP ID. This accepts only integer values.
+		"""Indicates the P2MP ID. This accepts only integer values.
 
 		Returns:
 			number
@@ -209,7 +209,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiTrafficGroupId(self):
-		"""DEPRECATED Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+		"""Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
 
 		Returns:
 			str(None|/api/v1/sessions/1/ixnetwork/traffic?deepchild=trafficGroup)
@@ -221,7 +221,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SPmsiTunnelCount(self):
-		"""DEPRECATED Signifies the SPMSI tunnel count
+		"""Signifies the SPMSI tunnel count
 
 		Returns:
 			number
@@ -233,7 +233,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SendTriggeredSourceActiveAdRoute(self):
-		"""DEPRECATED If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
+		"""If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
 
 		Returns:
 			bool
@@ -245,7 +245,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SetLeafInformationRequiredBit(self):
-		"""DEPRECATED his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
+		"""his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
 
 		Returns:
 			bool
@@ -257,7 +257,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceAddressCount(self):
-		"""DEPRECATED The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values of the Source Address and the Source Mask Width.
+		"""The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values of the Source Address and the Source Mask Width.
 
 		Returns:
 			number
@@ -269,7 +269,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceGroupMapping(self):
-		"""DEPRECATED Indicates the source group mapping.
+		"""Indicates the source group mapping.
 
 		Returns:
 			str(fullyMeshed|oneToOne)
@@ -281,7 +281,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def SourceMaskWidth(self):
-		"""DEPRECATED The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
+		"""The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
 
 		Returns:
 			number
@@ -293,7 +293,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def StartGroupAddress(self):
-		"""DEPRECATED The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
+		"""The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
 
 		Returns:
 			str
@@ -305,7 +305,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def StartSourceAddress(self):
-		"""DEPRECATED The first IPv4 or IPv6 source address to be included in this Register message.
+		"""The first IPv4 or IPv6 source address to be included in this Register message.
 
 		Returns:
 			str
@@ -317,7 +317,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def TuunelType(self):
-		"""DEPRECATED the tunnel type.
+		"""the tunnel type.
 
 		Returns:
 			str()
@@ -329,7 +329,7 @@ class MulticastSenderSite(Base):
 
 	@property
 	def UseUpstreamAssignedLabel(self):
-		"""DEPRECATED Indicates whether upstream label as configured be used or not. If this field is false, then MPLS Assigned Upstream Label and MPLS Assigned Upstream Label Step fields are disabled.
+		"""Indicates whether upstream label as configured be used or not. If this field is false, then MPLS Assigned Upstream Label and MPLS Assigned Upstream Label Step fields are disabled.
 
 		Returns:
 			bool

@@ -438,7 +438,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def IncludeMaxSlMsd(self):
-		"""DEPRECATED If set, then Include Maximum Segment Left MSD in SRv6 capability
+		"""If set, then Include Maximum Segment Left MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -447,7 +447,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def IncludeMaximumEndDMsd(self):
-		"""DEPRECATED If set, then include Maximum End D MSD in SRv6 capability
+		"""If set, then include Maximum End D MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -456,7 +456,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def IncludeMaximumEndPopMsd(self):
-		"""DEPRECATED If set, then include Max-End-Pop-MSD n SRv6 capability
+		"""If set, then include Max-End-Pop-MSD n SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -465,7 +465,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def IncludeMaximumTEncapMsd(self):
-		"""DEPRECATED If set, then include Maximum T.Encap MSD in SRv6 capability
+		"""If set, then include Maximum T.Encap MSD in SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -474,7 +474,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def IncludeMaximumTInsertMsd(self):
-		"""DEPRECATED If set, then include Maximum T.Insert MSDin SRv6 capability
+		"""If set, then include Maximum T.Insert MSDin SRv6 capability
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -492,7 +492,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def LFlag(self):
-		"""DEPRECATED Local Flag, if set, then the value/index carried by the Adj-SID has local significance
+		"""Local Flag, if set, then the value/index carried by the Adj-SID has local significance
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -501,7 +501,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def LinkType(self):
-		"""DEPRECATED Link Type
+		"""Link Type
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -510,7 +510,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxBandwidth_Bps(self):
-		"""DEPRECATED Maximum Bandwidth (B/sec)
+		"""Maximum Bandwidth (B/sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -519,7 +519,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxEndDMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
+		"""This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -528,7 +528,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxEndPopMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
+		"""This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -537,7 +537,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxReservableBandwidth_Bps(self):
-		"""DEPRECATED Maximum Reservable Bandwidth (B/sec)
+		"""Maximum Reservable Bandwidth (B/sec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -546,7 +546,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxSlMsd(self):
-		"""DEPRECATED This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
+		"""This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -555,7 +555,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxTEncap(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt
+		"""This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -564,7 +564,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MaxTInsertMsd(self):
-		"""DEPRECATED This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
+		"""This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -573,7 +573,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MetricLevel(self):
-		"""DEPRECATED Metric Level
+		"""Metric Level
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -582,7 +582,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def MtCount(self):
-		"""DEPRECATED MT Count
+		"""MT Count
 
 		Returns:
 			number
@@ -591,7 +591,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -603,7 +603,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def OverrideFFlag(self):
-		"""DEPRECATED When false, then F flag value in the packet will be set TRUE/ FALSE depending on whether IPv6/ IPv4 stack is present beside ISIS respectively. When true, then F flag value will be the one as configured.
+		"""When false, then F flag value in the packet will be set TRUE/ FALSE depending on whether IPv6/ IPv4 stack is present beside ISIS respectively. When true, then F flag value will be the one as configured.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -612,7 +612,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def PFlag(self):
-		"""DEPRECATED Persistent flag: when set, this indicates that the Adj-SID value remains persistent across router restart and/or interface flap.
+		"""Persistent flag: when set, this indicates that the Adj-SID value remains persistent across router restart and/or interface flap.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -621,7 +621,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Reserved0x40(self):
-		"""DEPRECATED This is a Protection Scheme with value 0x40.
+		"""This is a Protection Scheme with value 0x40.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -630,7 +630,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Reserved0x80(self):
-		"""DEPRECATED This is a Protection Scheme with value 0x80.
+		"""This is a Protection Scheme with value 0x80.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -639,7 +639,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def SFlag(self):
-		"""DEPRECATED Set flag: when set, this indicates that the Adj-SID refers to a set of adjacencies
+		"""Set flag: when set, this indicates that the Adj-SID refers to a set of adjacencies
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -648,7 +648,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Shared(self):
-		"""DEPRECATED This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
+		"""This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -657,7 +657,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def SrlgCount(self):
-		"""DEPRECATED This field value shows how many SRLG Value columns would be there in the GUI.
+		"""This field value shows how many SRLG Value columns would be there in the GUI.
 
 		Returns:
 			number
@@ -678,7 +678,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Unprotected(self):
-		"""DEPRECATED This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
+		"""This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -687,7 +687,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def VFlag(self):
-		"""DEPRECATED Value Flag, if set, the Adjacency SID carries a value
+		"""Value Flag, if set, the Adjacency SID carries a value
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -696,7 +696,7 @@ class IsisL3PseudoInterface(Base):
 
 	@property
 	def Weight(self):
-		"""DEPRECATED Weight
+		"""Weight
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)

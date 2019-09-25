@@ -147,7 +147,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def CapabilityRouterId(self):
-		"""DEPRECATED The IP address format of Capability Router.
+		"""The IP address format of Capability Router.
 
 		Returns:
 			str
@@ -159,7 +159,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def EnableHostName(self):
-		"""DEPRECATED If true, the given dynamic host name is transmitted in all the packets sent from this router.
+		"""If true, the given dynamic host name is transmitted in all the packets sent from this router.
 
 		Returns:
 			bool
@@ -171,7 +171,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def EnableMultiTopology(self):
-		"""DEPRECATED Enables more than one topology (distribution tree) corresponding to the given R bridge.
+		"""Enables more than one topology (distribution tree) corresponding to the given R bridge.
 
 		Returns:
 			bool
@@ -183,7 +183,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def EntryCol(self):
-		"""DEPRECATED The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+		"""The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
 
 		Returns:
 			number
@@ -195,7 +195,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def EntryRow(self):
-		"""DEPRECATED The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
+		"""The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
 
 		Returns:
 			number
@@ -207,7 +207,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def HostNamePrefix(self):
-		"""DEPRECATED Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
+		"""Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
 
 		Returns:
 			str
@@ -219,7 +219,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def InterfaceMetric(self):
-		"""DEPRECATED The metric cost associated with this emulated DCE ISIS router.
+		"""The metric cost associated with this emulated DCE ISIS router.
 
 		Returns:
 			number
@@ -231,7 +231,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def LinkType(self):
-		"""DEPRECATED For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
+		"""For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
 
 		Returns:
 			str(pointToPoint|broadcast)
@@ -240,7 +240,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def NoOfCols(self):
-		"""DEPRECATED The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
+		"""The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
 
 		Returns:
 			number
@@ -252,7 +252,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def NoOfRows(self):
-		"""DEPRECATED The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
+		"""The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
 
 		Returns:
 			number
@@ -300,7 +300,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def StartSystemId(self):
-		"""DEPRECATED The System ID assigned to the starting DCE ISIS router in this network range.
+		"""The System ID assigned to the starting DCE ISIS router in this network range.
 
 		Returns:
 			str
@@ -336,7 +336,7 @@ class DceNetworkRange(Base):
 
 	@property
 	def SystemIdIncrementBy(self):
-		"""DEPRECATED The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
+		"""The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
 
 		Returns:
 			str

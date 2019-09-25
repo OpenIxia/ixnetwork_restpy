@@ -109,7 +109,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Count(self):
-		"""DEPRECATED Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
 		Returns:
 			number
@@ -118,7 +118,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def DescriptiveName(self):
-		"""DEPRECATED Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
 		Returns:
 			str
@@ -127,7 +127,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def EchoRxInterval(self):
-		"""DEPRECATED The minimum interval, in milliseconds, between received BFD Echo packets that this interface is capable of supporting. If this value is zero, the transmitting system does not support the receipt of BFD Echo packets
+		"""The minimum interval, in milliseconds, between received BFD Echo packets that this interface is capable of supporting. If this value is zero, the transmitting system does not support the receipt of BFD Echo packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -136,7 +136,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def EchoTimeOut(self):
-		"""DEPRECATED The interval, in milliseconds, that the interface waits for a response to the last Echo packet sent out
+		"""The interval, in milliseconds, that the interface waits for a response to the last Echo packet sent out
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -145,7 +145,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def EchoTxInterval(self):
-		"""DEPRECATED The minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Echo packets
+		"""The minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Echo packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -154,7 +154,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def EnableControlPlaneIndependent(self):
-		"""DEPRECATED This check box enables Control Plane Independent Mode. If set, the interface's BFD is implemented in the forwarding plane and can continue to function through disruptions in the control plane
+		"""This check box enables Control Plane Independent Mode. If set, the interface's BFD is implemented in the forwarding plane and can continue to function through disruptions in the control plane
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -163,7 +163,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def EnableDemandMode(self):
-		"""DEPRECATED This check box enables Demand Mode. In this mode, it is assumed the interface has an independent way of verifying it has connectivity to the other system. Once a BFD session is established, the systems stop sending BFD Control packets, except when either system feels the need to verify connectivity explicitly. In this case, a short sequence of BFD Control packets is sent
+		"""This check box enables Demand Mode. In this mode, it is assumed the interface has an independent way of verifying it has connectivity to the other system. Once a BFD session is established, the systems stop sending BFD Control packets, except when either system feels the need to verify connectivity explicitly. In this case, a short sequence of BFD Control packets is sent
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -172,7 +172,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Errors(self):
-		"""DEPRECATED A list of errors that have occurred
+		"""A list of errors that have occurred
 
 		Returns:
 			list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))
@@ -181,7 +181,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def FlapTxIntervals(self):
-		"""DEPRECATED The number of Tx packets sent from device after which session flaps for BFD. A value of zero means no flapping
+		"""The number of Tx packets sent from device after which session flaps for BFD. A value of zero means no flapping
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -190,7 +190,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def IpDiffServ(self):
-		"""DEPRECATED IP DiffServ/TOSByte (Dec)
+		"""IP DiffServ/TOSByte (Dec)
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -199,7 +199,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def LocalRouterId(self):
-		"""DEPRECATED The BFD Router ID value, in IPv4 format.
+		"""The BFD Router ID value, in IPv4 format.
 
 		Returns:
 			list(str)
@@ -208,7 +208,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def MinRxInterval(self):
-		"""DEPRECATED The minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting
+		"""The minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -217,7 +217,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Multiplier(self):
-		"""DEPRECATED Number of layer instances per parent instance (multiplier)
+		"""Number of layer instances per parent instance (multiplier)
 
 		Returns:
 			number
@@ -229,7 +229,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Name(self):
-		"""DEPRECATED Name of NGPF element, guaranteed to be unique in Scenario
+		"""Name of NGPF element, guaranteed to be unique in Scenario
 
 		Returns:
 			str
@@ -241,7 +241,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def NoOfSessions(self):
-		"""DEPRECATED The number of configured BFD sessions
+		"""The number of configured BFD sessions
 
 		Returns:
 			number
@@ -253,7 +253,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def PollInterval(self):
-		"""DEPRECATED The interval, in milliseconds, between exchanges of Control Messages in Demand Mode
+		"""The interval, in milliseconds, between exchanges of Control Messages in Demand Mode
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -262,7 +262,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def SessionStatus(self):
-		"""DEPRECATED Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+		"""Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
 
 		Returns:
 			list(str[down|notStarted|up])
@@ -271,7 +271,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def SourceIp4(self):
-		"""DEPRECATED If Configure Echo Source-IP is selected, the IPv4 source address of the Echo Message
+		"""If Configure Echo Source-IP is selected, the IPv4 source address of the Echo Message
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -280,7 +280,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def StackedLayers(self):
-		"""DEPRECATED List of secondary (many to one) child layer protocols
+		"""List of secondary (many to one) child layer protocols
 
 		Returns:
 			list(str[None|/api/v1/sessions/1/ixnetwork/topology?deepchild=*])
@@ -292,7 +292,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def StateCounts(self):
-		"""DEPRECATED A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
+		"""A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
 
 		Returns:
 			dict(total:number,notStarted:number,down:number,up:number)
@@ -301,7 +301,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Status(self):
-		"""DEPRECATED Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+		"""Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
 		Returns:
 			str(configured|error|mixed|notStarted|started|starting|stopping)
@@ -310,7 +310,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def TimeoutMultiplier(self):
-		"""DEPRECATED The negotiated transmit interval, multiplied by this value, provides the detection time for the interface
+		"""The negotiated transmit interval, multiplied by this value, provides the detection time for the interface
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -319,7 +319,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def TxInterval(self):
-		"""DEPRECATED The minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Control packets
+		"""The minimum interval, in milliseconds, that the interface would like to use when transmitting BFD Control packets
 
 		Returns:
 			obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -328,7 +328,7 @@ class Bfdv4Interface(Base):
 
 	@property
 	def Vni(self):
-		"""DEPRECATED Corresponding VXLAN Protocol VNI.
+		"""Corresponding VXLAN Protocol VNI.
 
 		Returns:
 			list(number)

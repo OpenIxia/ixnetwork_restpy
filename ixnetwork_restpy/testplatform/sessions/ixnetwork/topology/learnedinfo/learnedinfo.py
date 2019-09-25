@@ -84,7 +84,7 @@ class LearnedInfo(Base):
 
 	@property
 	def State(self):
-		"""DEPRECATED The state of the learned information query
+		"""The state of the learned information query
 
 		Returns:
 			str
