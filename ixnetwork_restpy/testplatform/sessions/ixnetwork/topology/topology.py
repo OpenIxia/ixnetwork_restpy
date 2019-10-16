@@ -242,6 +242,28 @@ class Topology(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('adjustPortCount', payload=payload, response_object=None)
 
+	def CreateAggrPortWatch(self, *args, **kwargs):
+		"""Executes the createAggrPortWatch operation on the server.
+
+		Create an aggregated watch for ports in a configuration. If the watch id exists it will be updated.
+
+		createAggrPortWatch(Arg2:string, Arg3:list)href
+			Args:
+				args[0] is Arg2 (str): A unique watch id
+				args[1] is Arg3 (list(str)): A array of unique port ids to watch. If the array is empty then all the unique port ids that are assigned to the topology will be used for the watch.
+
+			Returns:
+				str(None): Returns an object reference of the port watch
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('createAggrPortWatch', payload=payload, response_object=None)
+
 	def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
 		"""Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
@@ -258,6 +280,33 @@ class Topology(Base):
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
+	def GetAssignedPortsInConfig(self):
+		"""Executes the getAssignedPortsInConfig operation on the server.
+
+		get assigned ports for all topologies
+
+			Returns:
+				dict(arg1:list[dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology],arg2:list[str])]): Returns a list of <topologyref, uniqueIds[], unavailableIds[]> structs
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		return self._execute('getAssignedPortsInConfig', payload=payload, response_object=None)
+
+	def RemoveAssignedPorts(self):
+		"""Executes the removeAssignedPorts operation on the server.
+
+		Remove port set from topology.
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		return self._execute('removeAssignedPorts', payload=payload, response_object=None)
+
 	def RestartDown(self):
 		"""Executes the restartDown operation on the server.
 
@@ -269,6 +318,27 @@ class Topology(Base):
 		"""
 		payload = { "Arg1": self }
 		return self._execute('restartDown', payload=payload, response_object=None)
+
+	def SetAssignedPorts(self, *args, **kwargs):
+		"""Executes the setAssignedPorts operation on the server.
+
+		Assign ports (chassis;card;port) to a topology. All existing assigned ports will be replaced. Port count on the topology will be adjusted to match assigned ports. If a port is already assigned on a different topology, it will removed from the other topology
+
+		setAssignedPorts(Arg2:list)list
+			Args:
+				args[0] is Arg2 (list(str)): list of unique port ids to assign. If chassis does not alreayd exist, then it will be added to the config
+
+			Returns:
+				list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/topology],arg2:list[str])): Returns a list of <topologyref, uniqueids[]> structs
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		payload = { "Arg1": self.href }
+		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+		for item in kwargs.items(): payload[item[0]] = item[1]
+		return self._execute('setAssignedPorts', payload=payload, response_object=None)
 
 	def Start(self):
 		"""Executes the start operation on the server.

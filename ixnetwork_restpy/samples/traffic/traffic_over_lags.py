@@ -26,6 +26,10 @@ lag_2 = ixnetwork.Lag.add(Name='Lag 2', Vports=vports_2)
 lag_2.ProtocolStack.add().Ethernet.add().Lagportlacp.add()
 assert(len(lag_2.Vports) == 2)
 
+# add lags to topologies
+ethernet1 = ixnetwork.Topology.add(Ports=lag_1).DeviceGroup.add().Ethernet.add()    
+ethernet2 = ixnetwork.Topology.add(Ports=lag_2).DeviceGroup.add().Ethernet.add()    
+
 # create a raw traffic item
 traffic_item = ixnetwork.Traffic.TrafficItem.add(Name='Lag Traffic Item Sample', TrafficType='raw')
 

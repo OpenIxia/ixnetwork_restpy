@@ -135,6 +135,20 @@ class Ixnetwork(Base):
 		return Statistics(self)._select()
 
 	@property
+	def Timeline(self):
+		"""An instance of the Timeline class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import Timeline
+		return Timeline(self)._select()
+
+	@property
 	def Topology(self):
 		"""An instance of the Topology class.
 
