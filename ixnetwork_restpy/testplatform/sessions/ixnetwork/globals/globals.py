@@ -121,6 +121,20 @@ class Globals(Base):
 		return Preferences(self)._select()
 
 	@property
+	def ProtocolStack(self):
+		"""An instance of the ProtocolStack class.
+
+		Returns:
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack.ProtocolStack)
+
+		Raises:
+			NotFoundError: The requested resource does not exist on the server
+			ServerError: The server has encountered an uncategorized error condition
+		"""
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack import ProtocolStack
+		return ProtocolStack(self)._select()
+
+	@property
 	def Scriptgen(self):
 		"""An instance of the Scriptgen class.
 

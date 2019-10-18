@@ -232,7 +232,12 @@ class Multivalue(Base):
         if values is not None:
             formatted_values = []
             for value in values:
-                formatted_values.append({'arg1': self._format_value(value[0]), 'arg2': value[1]})
+                formatted_values.append(
+                    {
+                        'arg1': value[0], 
+                        'arg2': value[1]
+                    }
+                )
         payload = {
             'algorithm': algorithm,
             'mode': mode,
