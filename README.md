@@ -3,6 +3,8 @@ This package is an IxNetwork object oriented pure python client package over a R
 To get started [browse the class and samples documentation here](https://openixia.github.io/ixnetwork_restpy/index.html).
 
 ## What's New!
+- Oct 2019 - 1.0.43
+  - StackManager is now supported under TestPlatform.Sessions.IxNetwork.Vport.ProtocolStack...
 - Sep 2019 - 1.0.41
   - support for Session naming (linux API Server only)
   - support for IxNetwork 9.0 features
