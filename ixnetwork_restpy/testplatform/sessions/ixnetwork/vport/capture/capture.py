@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Capture(Base):
-	"""The Capture class encapsulates a required capture node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Capture property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Allows the user to set the default behavior of the capture operation.
+	The Capture class encapsulates a required capture resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

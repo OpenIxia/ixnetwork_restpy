@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class TransmissionDistribution(Base):
-	"""The TransmissionDistribution class encapsulates a system managed transmissionDistribution node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TransmissionDistribution property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides the options for packet transmission distribution.
+	The TransmissionDistribution class encapsulates a list of transmissionDistribution resources that is managed by the system.
+	A list of resources can be retrieved from the server using the TransmissionDistribution.find() method.
 	"""
 
 	__slots__ = ()

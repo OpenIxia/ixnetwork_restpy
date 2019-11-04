@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class ExpectedInitiatedLspList(Base):
-	"""The ExpectedInitiatedLspList class encapsulates a required expectedInitiatedLspList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ExpectedInitiatedLspList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This specifies the Expected Initiated LSPs from the PCE for traffic generation.
+	The ExpectedInitiatedLspList class encapsulates a required expectedInitiatedLspList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class CustomDelayVariation(Base):
-	"""The CustomDelayVariation class encapsulates a required customDelayVariation node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the CustomDelayVariation property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Specifies custom delay variation as a histogram.  Can only be used on one enabled profile at a time.  Can only be used on a profile which has delay and delayVariation disabled.
+	The CustomDelayVariation class encapsulates a required customDelayVariation resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

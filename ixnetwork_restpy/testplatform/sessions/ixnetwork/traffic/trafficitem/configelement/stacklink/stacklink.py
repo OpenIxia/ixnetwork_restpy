@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class StackLink(Base):
-	"""The StackLink class encapsulates a system managed stackLink node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the StackLink property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This is a list of stack objects that can be linked
+	The StackLink class encapsulates a list of stackLink resources that is managed by the system.
+	A list of resources can be retrieved from the server using the StackLink.find() method.
 	"""
 
 	__slots__ = ()

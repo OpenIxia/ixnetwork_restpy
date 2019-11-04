@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIpv6Peer(Base):
-	"""The BgpIpv6Peer class encapsulates a required bgpIpv6Peer node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIpv6Peer property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""BGP Port level Configuration
+	The BgpIpv6Peer class encapsulates a required bgpIpv6Peer resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

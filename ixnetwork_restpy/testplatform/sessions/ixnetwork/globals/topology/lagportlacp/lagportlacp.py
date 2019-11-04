@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Lagportlacp(Base):
-	"""The Lagportlacp class encapsulates a required lagportlacp node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Lagportlacp property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Lacp Port Specific Data
+	The Lagportlacp class encapsulates a required lagportlacp resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

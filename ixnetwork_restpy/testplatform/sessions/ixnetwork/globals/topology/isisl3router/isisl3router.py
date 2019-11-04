@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisL3Router(Base):
-	"""The IsisL3Router class encapsulates a system managed isisL3Router node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisL3Router property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ISIS-L3 Port Configuration
+	The IsisL3Router class encapsulates a list of isisL3Router resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisL3Router.find() method.
 	"""
 
 	__slots__ = ()

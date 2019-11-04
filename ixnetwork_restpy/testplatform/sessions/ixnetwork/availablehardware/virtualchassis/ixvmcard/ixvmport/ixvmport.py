@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IxVmPort(Base):
-	"""The IxVmPort class encapsulates a user managed ixVmPort node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IxVmPort property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Retrieves the list of ports from an IxVM card
+	The IxVmPort class encapsulates a list of ixVmPort resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IxVmPort.find() method.
+	The list can be managed by the user by using the IxVmPort.add() and IxVmPort.remove() methods.
 	"""
 
 	__slots__ = ()

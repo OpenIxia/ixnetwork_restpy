@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv6NodeId(Base):
-	"""The Ipv6NodeId class encapsulates a required ipv6NodeId node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ipv6NodeId property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The Ipv6NodeId class encapsulates a required ipv6NodeId resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

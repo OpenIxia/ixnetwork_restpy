@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class FormulaColumn(Base):
-	"""The FormulaColumn class encapsulates a user managed formulaColumn node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the FormulaColumn property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""The formula is filtered and maintained in columns.
+	The FormulaColumn class encapsulates a list of formulaColumn resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the FormulaColumn.find() method.
+	The list can be managed by the user by using the FormulaColumn.add() and FormulaColumn.remove() methods.
 	"""
 
 	__slots__ = ()

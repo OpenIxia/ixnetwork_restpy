@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ldpv6ConnectedInterface(Base):
-	"""The Ldpv6ConnectedInterface class encapsulates a user managed ldpv6ConnectedInterface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ldpv6ConnectedInterface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""LDPv6 Interface level Configuration
+	The Ldpv6ConnectedInterface class encapsulates a list of ldpv6ConnectedInterface resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ldpv6ConnectedInterface.find() method.
+	The list can be managed by the user by using the Ldpv6ConnectedInterface.add() and Ldpv6ConnectedInterface.remove() methods.
 	"""
 
 	__slots__ = ()

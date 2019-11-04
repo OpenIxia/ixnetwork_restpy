@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class GenerateIpv6RoutesParams(Base):
-	"""The GenerateIpv6RoutesParams class encapsulates a required generateIpv6RoutesParams node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the GenerateIpv6RoutesParams property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Generate Primary and Duplicate Routes with advanced prefix length distribution options.
+	The GenerateIpv6RoutesParams class encapsulates a required generateIpv6RoutesParams resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class AutoRefresh(Base):
-	"""The AutoRefresh class encapsulates a required autoRefresh node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AutoRefresh property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""NOT DEFINED
+	The AutoRefresh class encapsulates a required autoRefresh resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

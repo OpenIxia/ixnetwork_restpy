@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class PccLearnedLspDb(Base):
-	"""The PccLearnedLspDb class encapsulates a required pccLearnedLspDb node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PccLearnedLspDb property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PCC Learned LSPs Information Database
+	The PccLearnedLspDb class encapsulates a required pccLearnedLspDb resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

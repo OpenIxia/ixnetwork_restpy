@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv6Loopback(Base):
-	"""The Ipv6Loopback class encapsulates a user managed ipv6Loopback node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ipv6Loopback property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""IPV6 Loopback
+	The Ipv6Loopback class encapsulates a list of ipv6Loopback resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ipv6Loopback.find() method.
+	The list can be managed by the user by using the Ipv6Loopback.add() and Ipv6Loopback.remove() methods.
 	"""
 
 	__slots__ = ()

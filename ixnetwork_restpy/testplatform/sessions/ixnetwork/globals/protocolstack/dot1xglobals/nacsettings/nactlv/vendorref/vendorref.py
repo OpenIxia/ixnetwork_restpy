@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class VendorRef(Base):
-	"""The VendorRef class encapsulates a required vendorRef node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the VendorRef property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""TLV Vendor ID
+	The VendorRef class encapsulates a required vendorRef resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

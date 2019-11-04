@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Card(Base):
-	"""The Card class encapsulates a system managed card node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Card property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This command allows the user to view version and type information for the card.
+	The Card class encapsulates a list of card resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Card.find() method.
 	"""
 
 	__slots__ = ()

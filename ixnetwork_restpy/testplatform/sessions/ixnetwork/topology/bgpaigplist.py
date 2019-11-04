@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpAigpList(Base):
-	"""The BgpAigpList class encapsulates a system managed bgpAigpList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpAigpList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Bgp AIGP
+	The BgpAigpList class encapsulates a list of bgpAigpList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BgpAigpList.find() method.
 	"""
 
 	__slots__ = ()

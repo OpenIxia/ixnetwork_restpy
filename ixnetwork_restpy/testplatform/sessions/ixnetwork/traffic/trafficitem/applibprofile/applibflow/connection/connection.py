@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Connection(Base):
-	"""The Connection class encapsulates a system managed connection node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Connection property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the particular connection related properties.
+	The Connection class encapsulates a list of connection resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Connection.find() method.
 	"""
 
 	__slots__ = ()

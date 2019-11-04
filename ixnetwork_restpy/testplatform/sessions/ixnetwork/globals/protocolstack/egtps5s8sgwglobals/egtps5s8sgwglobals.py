@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class EgtpS5S8SgwGlobals(Base):
-	"""The EgtpS5S8SgwGlobals class encapsulates a user managed egtpS5S8SgwGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EgtpS5S8SgwGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The EgtpS5S8SgwGlobals class encapsulates a list of egtpS5S8SgwGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the EgtpS5S8SgwGlobals.find() method.
+	The list can be managed by the user by using the EgtpS5S8SgwGlobals.add() and EgtpS5S8SgwGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

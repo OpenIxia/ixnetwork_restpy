@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv3RouteProperty(Base):
-	"""The Ospfv3RouteProperty class encapsulates a user managed ospfv3RouteProperty node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv3RouteProperty property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""OSPFv3 route range table
+	The Ospfv3RouteProperty class encapsulates a list of ospfv3RouteProperty resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ospfv3RouteProperty.find() method.
+	The list can be managed by the user by using the Ospfv3RouteProperty.add() and Ospfv3RouteProperty.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -290,7 +289,7 @@ class Ospfv3RouteProperty(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('ageOutRoutes', payload=payload, response_object=None)
@@ -324,7 +323,7 @@ class Ospfv3RouteProperty(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('readvertiseRoutes', payload=payload, response_object=None)

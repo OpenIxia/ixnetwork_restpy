@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class OpenFlowController(Base):
-	"""The OpenFlowController class encapsulates a required openFlowController node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OpenFlowController property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""OpenFlow Controller global and per-port settings
+	The OpenFlowController class encapsulates a required openFlowController resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class RangeList(Base):
-	"""The RangeList class encapsulates a system managed rangeList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RangeList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides different options for UDF in Range list Type.
+	The RangeList class encapsulates a list of rangeList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the RangeList.find() method.
 	"""
 
 	__slots__ = ()

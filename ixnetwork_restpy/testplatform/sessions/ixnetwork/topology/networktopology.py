@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class NetworkTopology(Base):
-	"""The NetworkTopology class encapsulates a user managed networkTopology node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NetworkTopology property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Container for Network Topology related objects
+	The NetworkTopology class encapsulates a list of networkTopology resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the NetworkTopology.find() method.
+	The list can be managed by the user by using the NetworkTopology.add() and NetworkTopology.remove() methods.
 	"""
 
 	__slots__ = ()

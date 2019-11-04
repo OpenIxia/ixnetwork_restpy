@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisMultiTopologyValuesList(Base):
-	"""The IsisMultiTopologyValuesList class encapsulates a system managed isisMultiTopologyValuesList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisMultiTopologyValuesList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ISIS MT Values
+	The IsisMultiTopologyValuesList class encapsulates a list of isisMultiTopologyValuesList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisMultiTopologyValuesList.find() method.
 	"""
 
 	__slots__ = ()

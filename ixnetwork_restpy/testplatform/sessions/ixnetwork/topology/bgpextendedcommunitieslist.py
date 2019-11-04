@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpExtendedCommunitiesList(Base):
-	"""The BgpExtendedCommunitiesList class encapsulates a system managed bgpExtendedCommunitiesList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpExtendedCommunitiesList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Bgp Non VPN RR External Communities
+	The BgpExtendedCommunitiesList class encapsulates a list of bgpExtendedCommunitiesList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BgpExtendedCommunitiesList.find() method.
 	"""
 
 	__slots__ = ()

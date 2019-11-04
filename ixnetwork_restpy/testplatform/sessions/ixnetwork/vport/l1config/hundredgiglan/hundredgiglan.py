@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class HundredGigLan(Base):
-	"""The HundredGigLan class encapsulates a required hundredGigLan node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the HundredGigLan property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""100GE LAN port.
+	The HundredGigLan class encapsulates a required hundredGigLan resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Impairment(Base):
-	"""The Impairment class encapsulates a required impairment node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Impairment property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Allows the user to emulate WAN links with impairments such as packet delay and drop.
+	The Impairment class encapsulates a required impairment resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

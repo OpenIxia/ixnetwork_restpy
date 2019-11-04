@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DelayVariation(Base):
-	"""The DelayVariation class encapsulates a required delayVariation node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DelayVariation property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Randomly vary packet delay.  Can only be used on a profile with delay enabled.
+	The DelayVariation class encapsulates a required delayVariation resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

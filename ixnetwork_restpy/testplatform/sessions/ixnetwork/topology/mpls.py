@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Mpls(Base):
-	"""The Mpls class encapsulates a user managed mpls node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Mpls property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""MPLS protocol.
+	The Mpls class encapsulates a list of mpls resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Mpls.find() method.
+	The list can be managed by the user by using the Mpls.add() and Mpls.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Atm(Base):
-	"""The Atm class encapsulates a required atm node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Atm property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""On Asynchronous Transport Mode (ATM) is a Layer 2, connection-oriented, switching protocol, based on L2 Virtual Circuits (VCs). For operation in a connection-less IP routing or bridging environment, the IP PDUs must be encapsulated within the payload field of an ATM AAL5 CPCS-PDU (ATM Adaptation Layer 5 - Common Part Convergence Sublayer - Protocol Data Unit). The ATM CPCS-PDUs are divided into 48-byte segments which receive 5-byte headers - to form 53-byte ATM cells. The ATM cells are then switched across the ATM network, based on the Virtual Port Identifiers (VPIs) and the Virtual Connection Identifiers (VCIs).
+	The Atm class encapsulates a required atm resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

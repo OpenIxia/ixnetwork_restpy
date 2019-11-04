@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class VepaGlobals(Base):
-	"""The VepaGlobals class encapsulates a user managed vepaGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the VepaGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Global settings for VEPA protocol.
+	The VepaGlobals class encapsulates a list of vepaGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the VepaGlobals.find() method.
+	The list can be managed by the user by using the VepaGlobals.add() and VepaGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

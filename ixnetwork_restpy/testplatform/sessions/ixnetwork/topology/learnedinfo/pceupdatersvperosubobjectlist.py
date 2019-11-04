@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class PceUpdateRsvpEroSubObjectList(Base):
-	"""The PceUpdateRsvpEroSubObjectList class encapsulates a system managed pceUpdateRsvpEroSubObjectList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PceUpdateRsvpEroSubObjectList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""
+	The PceUpdateRsvpEroSubObjectList class encapsulates a list of pceUpdateRsvpEroSubObjectList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the PceUpdateRsvpEroSubObjectList.find() method.
 	"""
 
 	__slots__ = ()

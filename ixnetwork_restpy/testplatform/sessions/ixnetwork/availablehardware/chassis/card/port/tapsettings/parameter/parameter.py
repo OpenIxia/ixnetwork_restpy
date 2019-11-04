@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Parameter(Base):
-	"""The Parameter class encapsulates a system managed parameter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Parameter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""A TAP paramter that can be used.
+	The Parameter class encapsulates a list of parameter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Parameter.find() method.
 	"""
 
 	__slots__ = ()

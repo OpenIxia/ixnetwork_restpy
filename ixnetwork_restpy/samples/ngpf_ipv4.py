@@ -10,11 +10,12 @@ from ixnetwork_restpy.files import Files
 sessions = None
 
 try:
-    # test_platform = TestPlatform('10.36.78.53', platform='linux')
-    test_platform = TestPlatform('127.0.0.1', rest_port=11009, platform='windows')
-    test_platform.Trace = 'request_response'
+    # connect to a test tool platform
+    test_platform = TestPlatform('127.0.0.1')
     test_platform.Authenticate('admin', 'admin')
-    print(test_platform)
+    sessions = test_platform.Sessions.add()
+    ixnetwork = sessions.ixnetwork
+    ixnetwork.NewConfig()
 
     sessions = test_platform.Sessions.add()
     print(sessions)

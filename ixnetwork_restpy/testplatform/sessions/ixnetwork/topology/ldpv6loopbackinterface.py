@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ldpv6LoopbackInterface(Base):
-	"""The Ldpv6LoopbackInterface class encapsulates a user managed ldpv6LoopbackInterface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ldpv6LoopbackInterface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""LDPv6 Loopback Interface level Configuration
+	The Ldpv6LoopbackInterface class encapsulates a list of ldpv6LoopbackInterface resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ldpv6LoopbackInterface.find() method.
+	The list can be managed by the user by using the Ldpv6LoopbackInterface.add() and Ldpv6LoopbackInterface.remove() methods.
 	"""
 
 	__slots__ = ()

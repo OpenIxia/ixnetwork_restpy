@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv3(Base):
-	"""The Ospfv3 class encapsulates a user managed ospfv3 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv3 property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Ospfv3 Interface level Configuration
+	The Ospfv3 class encapsulates a list of ospfv3 resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ospfv3.find() method.
+	The list can be managed by the user by using the Ospfv3.add() and Ospfv3.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -614,7 +613,7 @@ class Ospfv3(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getBasicLearnedInfo', payload=payload, response_object=None)
@@ -648,7 +647,7 @@ class Ospfv3(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getDetailedLearnedInfo', payload=payload, response_object=None)

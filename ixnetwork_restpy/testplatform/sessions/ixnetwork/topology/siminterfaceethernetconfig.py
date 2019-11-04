@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class SimInterfaceEthernetConfig(Base):
-	"""The SimInterfaceEthernetConfig class encapsulates a system managed simInterfaceEthernetConfig node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SimInterfaceEthernetConfig property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Data associated with simulated interface Ethernet link configuration inside a Network Topology.
+	The SimInterfaceEthernetConfig class encapsulates a list of simInterfaceEthernetConfig resources that is managed by the system.
+	A list of resources can be retrieved from the server using the SimInterfaceEthernetConfig.find() method.
 	"""
 
 	__slots__ = ()

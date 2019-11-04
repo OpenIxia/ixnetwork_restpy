@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Level(Base):
-	"""The Level class encapsulates a system managed level node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Level property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Fat Tree Topology - Per Level Info
+	The Level class encapsulates a list of level resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Level.find() method.
 	"""
 
 	__slots__ = ()

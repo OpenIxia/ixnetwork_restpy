@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class PimV4SourcesList(Base):
-	"""The PimV4SourcesList class encapsulates a required pimV4SourcesList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PimV4SourcesList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PIMv4 Sources Data
+	The PimV4SourcesList class encapsulates a required pimV4SourcesList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -307,7 +305,7 @@ class PimV4SourcesList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('start', payload=payload, response_object=None)
@@ -341,7 +339,7 @@ class PimV4SourcesList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stop', payload=payload, response_object=None)

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class PccRequestedMetricSubObjectsList(Base):
-	"""The PccRequestedMetricSubObjectsList class encapsulates a system managed pccRequestedMetricSubObjectsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PccRequestedMetricSubObjectsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""
+	The PccRequestedMetricSubObjectsList class encapsulates a list of pccRequestedMetricSubObjectsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the PccRequestedMetricSubObjectsList.find() method.
 	"""
 
 	__slots__ = ()

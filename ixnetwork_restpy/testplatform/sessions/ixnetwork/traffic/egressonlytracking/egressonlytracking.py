@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class EgressOnlyTracking(Base):
-	"""The EgressOnlyTracking class encapsulates a user managed egressOnlyTracking node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EgressOnlyTracking property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The EgressOnlyTracking class encapsulates a list of egressOnlyTracking resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the EgressOnlyTracking.find() method.
+	The list can be managed by the user by using the EgressOnlyTracking.add() and EgressOnlyTracking.remove() methods.
 	"""
 
 	__slots__ = ()

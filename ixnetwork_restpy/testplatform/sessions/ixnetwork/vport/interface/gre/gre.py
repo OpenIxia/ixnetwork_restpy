@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Gre(Base):
-	"""The Gre class encapsulates a required gre node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Gre property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Allows the user to set up GRE tunnels from the Ixia port to the DUT port. The GRE protocol can be used to encapsulate packets of many different protocol types and tunnel them across a network of a different protocol type. This basic encapsulation method indicates the Ethertype of the payload packet, and depends on a delivery header with both Layer 2 and Layer 3 information to forward the packet across the network.
+	The Gre class encapsulates a required gre resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

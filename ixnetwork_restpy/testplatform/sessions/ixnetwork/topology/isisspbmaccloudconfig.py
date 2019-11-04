@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisSpbMacCloudConfig(Base):
-	"""The IsisSpbMacCloudConfig class encapsulates a user managed isisSpbMacCloudConfig node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisSpbMacCloudConfig property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Isis Spb MAC Cloud specific configuration
+	The IsisSpbMacCloudConfig class encapsulates a list of isisSpbMacCloudConfig resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IsisSpbMacCloudConfig.find() method.
+	The list can be managed by the user by using the IsisSpbMacCloudConfig.add() and IsisSpbMacCloudConfig.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class PccGroup(Base):
-	"""The PccGroup class encapsulates a user managed pccGroup node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PccGroup property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Pce Group (Device) level Configuration
+	The PccGroup class encapsulates a list of pccGroup resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the PccGroup.find() method.
+	The list can be managed by the user by using the PccGroup.add() and PccGroup.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -528,7 +527,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearPceAllLearnedInfo', payload=payload, response_object=None)
@@ -562,7 +561,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicAllRsvpLspLearnedInfo', payload=payload, response_object=None)
@@ -596,7 +595,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicAllSrLspLearnedInfo', payload=payload, response_object=None)
@@ -630,7 +629,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicAllSrv6LspLearnedInfo', payload=payload, response_object=None)
@@ -664,7 +663,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicRsvpPccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -698,7 +697,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicRsvpPccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -732,7 +731,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicRsvpPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
@@ -766,7 +765,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -800,7 +799,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrPccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -834,7 +833,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
@@ -868,7 +867,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -902,7 +901,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrv6PccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -936,7 +935,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceBasicSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
@@ -970,7 +969,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedAllRsvpLspLearnedInfo', payload=payload, response_object=None)
@@ -1004,7 +1003,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedAllSrLspLearnedInfo', payload=payload, response_object=None)
@@ -1038,7 +1037,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedAllSrv6LspLearnedInfo', payload=payload, response_object=None)
@@ -1072,7 +1071,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedRsvpPccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -1106,7 +1105,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedRsvpPccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -1140,7 +1139,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedRsvpPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
@@ -1174,7 +1173,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -1208,7 +1207,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrPccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -1242,7 +1241,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
@@ -1276,7 +1275,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
@@ -1310,7 +1309,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrv6PccSyncLspLearnedInfo', payload=payload, response_object=None)
@@ -1344,7 +1343,7 @@ class PccGroup(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getPceDetailedSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)

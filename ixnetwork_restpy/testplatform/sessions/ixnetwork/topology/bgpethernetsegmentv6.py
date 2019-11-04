@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpEthernetSegmentV6(Base):
-	"""The BgpEthernetSegmentV6 class encapsulates a required bgpEthernetSegmentV6 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpEthernetSegmentV6 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""BGP V6 Ethernet Segment Configuration
+	The BgpEthernetSegmentV6 class encapsulates a required bgpEthernetSegmentV6 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -787,7 +785,7 @@ class BgpEthernetSegmentV6(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('flushRemoteCMACForwardingTable', payload=payload, response_object=None)

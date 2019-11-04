@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisDcePseudoIfaceAttPoint1Config(Base):
-	"""The IsisDcePseudoIfaceAttPoint1Config class encapsulates a system managed isisDcePseudoIfaceAttPoint1Config node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisDcePseudoIfaceAttPoint1Config property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Fabric-Path Pseudo Interaface Attribute Configuration
+	The IsisDcePseudoIfaceAttPoint1Config class encapsulates a list of isisDcePseudoIfaceAttPoint1Config resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisDcePseudoIfaceAttPoint1Config.find() method.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class NetTopologyFatTree(Base):
-	"""The NetTopologyFatTree class encapsulates a user managed netTopologyFatTree node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NetTopologyFatTree property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Fat Tree topology
+	The NetTopologyFatTree class encapsulates a list of netTopologyFatTree resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the NetTopologyFatTree.find() method.
+	The list can be managed by the user by using the NetTopologyFatTree.add() and NetTopologyFatTree.remove() methods.
 	"""
 
 	__slots__ = ()

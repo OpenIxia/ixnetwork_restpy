@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BridgeData(Base):
-	"""The BridgeData class encapsulates a system managed bridgeData node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BridgeData property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Bridge related configuration settings.
+	The BridgeData class encapsulates a list of bridgeData resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BridgeData.find() method.
 	"""
 
 	__slots__ = ()

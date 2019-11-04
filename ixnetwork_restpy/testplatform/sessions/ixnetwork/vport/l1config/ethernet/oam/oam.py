@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Oam(Base):
-	"""The Oam class encapsulates a required oam node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Oam property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The Layer 1 Configuration is being configured for an Ethernet port and OAM is selected as the Payload Type.
+	The Oam class encapsulates a required oam resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

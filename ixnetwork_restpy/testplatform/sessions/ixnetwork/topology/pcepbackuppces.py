@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class PcepBackupPCEs(Base):
-	"""The PcepBackupPCEs class encapsulates a required pcepBackupPCEs node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PcepBackupPCEs property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This tab configures the Backup PCEs connected to the PCC.
+	The PcepBackupPCEs class encapsulates a required pcepBackupPCEs resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

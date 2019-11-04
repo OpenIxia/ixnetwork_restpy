@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class AvailableTargetRowFilters(Base):
-	"""The AvailableTargetRowFilters class encapsulates a system managed availableTargetRowFilters node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AvailableTargetRowFilters property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Provides a list of filters that can be used to select the row used to perform the drill-down
+	The AvailableTargetRowFilters class encapsulates a list of availableTargetRowFilters resources that is managed by the system.
+	A list of resources can be retrieved from the server using the AvailableTargetRowFilters.find() method.
 	"""
 
 	__slots__ = ()

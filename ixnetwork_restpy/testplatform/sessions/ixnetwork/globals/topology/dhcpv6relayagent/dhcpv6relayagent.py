@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcpv6relayAgent(Base):
-	"""The Dhcpv6relayAgent class encapsulates a required dhcpv6relayAgent node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcpv6relayAgent property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""IPv6 global and per-port settings
+	The Dhcpv6relayAgent class encapsulates a required dhcpv6relayAgent resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

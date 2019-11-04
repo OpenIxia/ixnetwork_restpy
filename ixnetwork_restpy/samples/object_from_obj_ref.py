@@ -6,12 +6,11 @@ The TestPlatform.Sessions class has a helper method that assists in returning an
 
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
-test_platform = TestPlatform('127.0.0.1', rest_port=11009)
-test_platform.Trace = 'request_response'
-
+# connect to a test tool platform
+test_platform = TestPlatform('127.0.0.1')
+test_platform.Authenticate('admin', 'admin')
 sessions = test_platform.Sessions.add()
-
-ixnetwork = sessions.Ixnetwork
+ixnetwork = sessions.ixnetwork
 ixnetwork.NewConfig()
 
 vport = ixnetwork.Vport.add()

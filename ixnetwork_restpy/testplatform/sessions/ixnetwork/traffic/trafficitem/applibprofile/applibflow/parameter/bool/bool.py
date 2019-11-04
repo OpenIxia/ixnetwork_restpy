@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Bool(Base):
-	"""The Bool class encapsulates a system managed bool node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Bool property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the boolean properties of the parameter.
+	The Bool class encapsulates a list of bool resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Bool.find() method.
 	"""
 
 	__slots__ = ()

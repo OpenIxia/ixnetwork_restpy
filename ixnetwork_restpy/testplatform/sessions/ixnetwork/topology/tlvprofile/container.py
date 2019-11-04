@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Container(Base):
-	"""The Container class encapsulates a system managed container node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Container property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Tlv container used to group multiple object containers
+	The Container class encapsulates a list of container resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Container.find() method.
 	"""
 
 	__slots__ = ()

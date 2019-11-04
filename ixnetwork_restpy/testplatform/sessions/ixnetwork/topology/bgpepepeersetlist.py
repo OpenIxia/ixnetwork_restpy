@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpEpePeerSetList(Base):
-	"""The BgpEpePeerSetList class encapsulates a system managed bgpEpePeerSetList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpEpePeerSetList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""EPE Peer Set
+	The BgpEpePeerSetList class encapsulates a list of bgpEpePeerSetList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BgpEpePeerSetList.find() method.
 	"""
 
 	__slots__ = ()

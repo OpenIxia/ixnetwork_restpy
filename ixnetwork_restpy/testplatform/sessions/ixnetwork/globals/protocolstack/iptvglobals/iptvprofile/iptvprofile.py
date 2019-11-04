@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IptvProfile(Base):
-	"""The IptvProfile class encapsulates a user managed iptvProfile node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IptvProfile property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The IptvProfile class encapsulates a list of iptvProfile resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IptvProfile.find() method.
+	The list can be managed by the user by using the IptvProfile.add() and IptvProfile.remove() methods.
 	"""
 
 	__slots__ = ()

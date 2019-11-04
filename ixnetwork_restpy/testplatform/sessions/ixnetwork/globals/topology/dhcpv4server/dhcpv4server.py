@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcpv4server(Base):
-	"""The Dhcpv4server class encapsulates a required dhcpv4server node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcpv4server property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Dhcp4Server global and per-port settings
+	The Dhcpv4server class encapsulates a required dhcpv4server resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpRootRangeV4(Base):
-	"""The LdpRootRangeV4 class encapsulates a required ldpRootRangeV4 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LdpRootRangeV4 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Ldp Targeted RootRange V4 Configuration
+	The LdpRootRangeV4 class encapsulates a required ldpRootRangeV4 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

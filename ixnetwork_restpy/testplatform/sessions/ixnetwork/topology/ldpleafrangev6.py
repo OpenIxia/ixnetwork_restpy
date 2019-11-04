@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpLeafRangeV6(Base):
-	"""The LdpLeafRangeV6 class encapsulates a required ldpLeafRangeV6 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LdpLeafRangeV6 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Ldp Targeted LeafRange V6 Configuration
+	The LdpLeafRangeV6 class encapsulates a required ldpLeafRangeV6 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -275,7 +273,7 @@ class LdpLeafRangeV6(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('activateLeafRange', payload=payload, response_object=None)
@@ -309,7 +307,7 @@ class LdpLeafRangeV6(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('deactivateLeafRange', payload=payload, response_object=None)

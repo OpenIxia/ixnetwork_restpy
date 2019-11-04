@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class PimV6JoinPruneList(Base):
-	"""The PimV6JoinPruneList class encapsulates a required pimV6JoinPruneList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PimV6JoinPruneList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PIM V6 Join Prune Data
+	The PimV6JoinPruneList class encapsulates a required pimV6JoinPruneList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -337,7 +335,7 @@ class PimV6JoinPruneList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('join', payload=payload, response_object=None)
@@ -371,7 +369,7 @@ class PimV6JoinPruneList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('leave', payload=payload, response_object=None)
@@ -405,7 +403,7 @@ class PimV6JoinPruneList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('resumePeriodicJoin', payload=payload, response_object=None)
@@ -439,7 +437,7 @@ class PimV6JoinPruneList(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stopPeriodicJoin', payload=payload, response_object=None)

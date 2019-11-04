@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class AllFlowsFilter(Base):
-	"""The AllFlowsFilter class encapsulates a user managed allFlowsFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AllFlowsFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""All flows filter specification.
+	The AllFlowsFilter class encapsulates a list of allFlowsFilter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the AllFlowsFilter.find() method.
+	The list can be managed by the user by using the AllFlowsFilter.add() and AllFlowsFilter.remove() methods.
 	"""
 
 	__slots__ = ()

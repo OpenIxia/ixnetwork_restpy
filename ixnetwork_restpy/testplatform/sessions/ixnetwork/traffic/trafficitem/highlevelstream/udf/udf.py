@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Udf(Base):
-	"""The Udf class encapsulates a system managed udf node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Udf property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides different options for UDF.
+	The Udf class encapsulates a list of udf resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Udf.find() method.
 	"""
 
 	__slots__ = ()

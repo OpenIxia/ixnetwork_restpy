@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class RsvpDetourSubObjectsList(Base):
-	"""The RsvpDetourSubObjectsList class encapsulates a system managed rsvpDetourSubObjectsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RsvpDetourSubObjectsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Rsvp Detour Sub-Objects
+	The RsvpDetourSubObjectsList class encapsulates a list of rsvpDetourSubObjectsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the RsvpDetourSubObjectsList.find() method.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Row(Base):
-	"""The Row class encapsulates a system managed row node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Row property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""A row view of learned information.
+	The Row class encapsulates a list of row resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Row.find() method.
 	"""
 
 	__slots__ = ()

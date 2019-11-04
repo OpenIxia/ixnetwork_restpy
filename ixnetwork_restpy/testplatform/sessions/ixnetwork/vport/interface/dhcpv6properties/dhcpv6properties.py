@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DhcpV6Properties(Base):
-	"""The DhcpV6Properties class encapsulates a required dhcpV6Properties node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DhcpV6Properties property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Controls the general DHCPv6 interface properties.
+	The DhcpV6Properties class encapsulates a required dhcpV6Properties resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

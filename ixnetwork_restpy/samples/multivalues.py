@@ -7,11 +7,9 @@ from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
 # connect to a test tool platform
 test_platform = TestPlatform('127.0.0.1')
-
-# use the default session and get the root node of the hierarhcy
-ixnetwork = test_platform.Sessions.find().Ixnetwork
-
-# clear any configuration that may be present
+test_platform.Authenticate('admin', 'admin')
+sessions = test_platform.Sessions.add()
+ixnetwork = sessions.ixnetwork
 ixnetwork.NewConfig()
 
 # add virtual ports

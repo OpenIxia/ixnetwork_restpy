@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv4(Base):
-	"""The Ipv4 class encapsulates a system managed ipv4 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ipv4 property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides different options for UDF in IPv4 Type.
+	The Ipv4 class encapsulates a list of ipv4 resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Ipv4.find() method.
 	"""
 
 	__slots__ = ()

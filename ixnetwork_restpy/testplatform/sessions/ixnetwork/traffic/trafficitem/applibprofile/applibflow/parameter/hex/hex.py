@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Hex(Base):
-	"""The Hex class encapsulates a system managed hex node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Hex property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the hexadecimal properties related to the parameter.
+	The Hex class encapsulates a list of hex resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Hex.find() method.
 	"""
 
 	__slots__ = ()

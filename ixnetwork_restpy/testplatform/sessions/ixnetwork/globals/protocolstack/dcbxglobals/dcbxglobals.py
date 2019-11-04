@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class DcbxGlobals(Base):
-	"""The DcbxGlobals class encapsulates a user managed dcbxGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DcbxGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Global settings for DCBX protocol
+	The DcbxGlobals class encapsulates a list of dcbxGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the DcbxGlobals.find() method.
+	The list can be managed by the user by using the DcbxGlobals.add() and DcbxGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -9,9 +9,12 @@ The sample operates under the following assumptions:
 """
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
-testplatform = TestPlatform('127.0.0.1')
-sessions = testplatform.Sessions.find(Id=1)
-ixnetwork = sessions.Ixnetwork
+# connect to a test tool platform
+test_platform = TestPlatform('127.0.0.1')
+test_platform.Authenticate('admin', 'admin')
+sessions = test_platform.Sessions.add()
+ixnetwork = sessions.ixnetwork
+
 
 # assumes that the view exists and it sets up csv logging for the view
 view = ixnetwork.Statistics.View.find(Caption='Port Statistics')

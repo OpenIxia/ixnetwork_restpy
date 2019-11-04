@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class OfSwitchQueues(Base):
-	"""The OfSwitchQueues class encapsulates a required ofSwitchQueues node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OfSwitchQueues property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""OF Switch Port Queues configuration
+	The OfSwitchQueues class encapsulates a required ofSwitchQueues resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

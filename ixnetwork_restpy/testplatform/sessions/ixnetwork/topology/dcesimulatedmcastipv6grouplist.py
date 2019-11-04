@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DceSimulatedMCastIpv6GroupList(Base):
-	"""The DceSimulatedMCastIpv6GroupList class encapsulates a required dceSimulatedMCastIpv6GroupList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DceSimulatedMCastIpv6GroupList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Fabric-Path Multicast IPv6 Groups
+	The DceSimulatedMCastIpv6GroupList class encapsulates a required dceSimulatedMCastIpv6GroupList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

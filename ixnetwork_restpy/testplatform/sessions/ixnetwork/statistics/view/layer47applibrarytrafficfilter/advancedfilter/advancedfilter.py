@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class AdvancedFilter(Base):
-	"""The AdvancedFilter class encapsulates a user managed advancedFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AdvancedFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Allows you to configure an advanced filter for drill down views.
+	The AdvancedFilter class encapsulates a list of advancedFilter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the AdvancedFilter.find() method.
+	The list can be managed by the user by using the AdvancedFilter.add() and AdvancedFilter.remove() methods.
 	"""
 
 	__slots__ = ()

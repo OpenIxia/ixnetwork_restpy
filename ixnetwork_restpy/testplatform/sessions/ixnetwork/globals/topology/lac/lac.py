@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Lac(Base):
-	"""The Lac class encapsulates a required lac node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Lac property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""L2TP Access Concentrator global and per-port settings
+	The Lac class encapsulates a required lac resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

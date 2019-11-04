@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class HighLevelStream(Base):
-	"""The HighLevelStream class encapsulates a system managed highLevelStream node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the HighLevelStream property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""A Flow Group that is generated from the Traffic Item. Each Traffic Item generates one or more Flow Groups, which in turn map to hardware streams on the port.  Each Flow Group/highLevelStream picks up its QOS, Rate, Frame size properties/attributes from its corresponding configElement configuration under the Traffic Item.
+	The HighLevelStream class encapsulates a list of highLevelStream resources that is managed by the system.
+	A list of resources can be retrieved from the server using the HighLevelStream.find() method.
 	"""
 
 	__slots__ = ()

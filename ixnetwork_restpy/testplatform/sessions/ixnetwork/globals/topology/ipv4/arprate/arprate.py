@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class ArpRate(Base):
-	"""The ArpRate class encapsulates a required arpRate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ArpRate property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Parameters used for controlling the rate of actions
+	The ArpRate class encapsulates a required arpRate resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

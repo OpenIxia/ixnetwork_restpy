@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisL3RouteProperty(Base):
-	"""The IsisL3RouteProperty class encapsulates a system managed isisL3RouteProperty node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisL3RouteProperty property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ISIS L3 Route Range Table
+	The IsisL3RouteProperty class encapsulates a list of isisL3RouteProperty resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisL3RouteProperty.find() method.
 	"""
 
 	__slots__ = ()

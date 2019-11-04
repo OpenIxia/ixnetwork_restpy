@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class DeviceGroup(Base):
-	"""The DeviceGroup class encapsulates a user managed deviceGroup node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DeviceGroup property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Describes a set of network devices with similar configuration and the same multiplicity for devices behind.
+	The DeviceGroup class encapsulates a list of deviceGroup resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the DeviceGroup.find() method.
+	The list can be managed by the user by using the DeviceGroup.add() and DeviceGroup.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class OspfRouteProperty(Base):
-	"""The OspfRouteProperty class encapsulates a system managed ospfRouteProperty node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OspfRouteProperty property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""OSPF route range table
+	The OspfRouteProperty class encapsulates a list of ospfRouteProperty resources that is managed by the system.
+	A list of resources can be retrieved from the server using the OspfRouteProperty.find() method.
 	"""
 
 	__slots__ = ()

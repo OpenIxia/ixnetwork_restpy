@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv3Router(Base):
-	"""The Ospfv3Router class encapsulates a required ospfv3Router node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv3Router property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Ospfv3 Port Specific Data
+	The Ospfv3Router class encapsulates a required ospfv3Router resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

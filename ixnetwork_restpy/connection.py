@@ -45,6 +45,7 @@ class Connection(object):
     TRACE_NONE = 'none'
     TRACE_REQUEST = 'request'
     TRACE_REQUEST_RESPONSE = 'request_response'
+    TRACE_ALL = 'all'
     PLATFORMS = {
         'Jetty': 'linux',
         'SelfHost': 'windows',
@@ -52,7 +53,7 @@ class Connection(object):
         'Microsoft-HTTPAPI/2.0': 'connection_manager'
     }
 
-    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False):
+    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace='none'):
         """ Set the connection parameters to a rest server
 
         Args:
@@ -61,25 +62,9 @@ class Connection(object):
             platform (str):
             log_file_name (str):
             ignore_env_proxy (bool):
+            verify_cert (bool): 
         """
-        if sys.version < '2.7.9':
-            import requests.packages.urllib3
-            requests.packages.urllib3.disable_warnings()
-        else:
-            import urllib3
-            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        self._headers = {
-            Connection.X_API_KEY: None
-        }
-        self._hostname = hostname
-        self._rest_port = rest_port
-        self._verify_cert = False
-        self._scheme = 'https'
-        self._log_file_name = log_file_name
-        self._session = Session()
-
-        # setup logging to both console and file if requested
-        self._trace = Connection.TRACE_NONE
+        self._trace = trace
         if len(logging.getLogger(__name__).handlers) == 0:
             handlers = [logging.StreamHandler(sys.stdout)]
             if log_file_name is not None:
@@ -89,15 +74,33 @@ class Connection(object):
             for handler in handlers:
                 handler.setFormatter(formatter)
                 logging.getLogger(__name__).addHandler(handler)
-            logging.getLogger(__name__).setLevel(logging.INFO)
+            if self._trace == 'none':
+                logging.getLogger(__name__).setLevel(logging.CRITICAL)
+            else:
+                logging.getLogger(__name__).setLevel(logging.INFO)
             logging.getLogger(__name__).info('using python version %s' % sys.version)
             try:
                 logging.getLogger(__name__).info('using ixnetwork-restpy version %s' % pkg_resources.get_distribution("ixnetwork-restpy").version)
             except Exception as e:
                 logging.getLogger(__name__).warn("ixnetwork-restpy not installed using pip, unable to determine version")
-
+        self._verify_cert = verify_cert
+        if self._verify_cert is False:
+            self._warn('Verification of certificates is disabled')
+            if sys.version < '2.7.9':
+                import requests.packages.urllib3
+                requests.packages.urllib3.disable_warnings()
+            else:
+                import urllib3
+                urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        self._headers = {
+            Connection.X_API_KEY: None
+        }
+        self._hostname = hostname
+        self._rest_port = rest_port
+        self._scheme = 'https'
+        self._log_file_name = log_file_name
+        self._session = Session()
         self._scheme = self._determine_test_tool_platform(platform)
-
         if ignore_env_proxy is True:
             self._session.proxies.update({
                 'http': None,
@@ -105,7 +108,7 @@ class Connection(object):
             })
 
     def _determine_test_tool_platform(self, platform):
-        self._info('The package will automatically determine the test tool platform and rest_port using the %s address...' % self._hostname)
+        self._info('The package will automatically determine the test tool platform and rest_port using the %s address.' % self._hostname)
         if platform is not None:
             self._warn('The `platform` parameter is deprecated and the value `%s` will be ignored.' % platform)
         self._platform = None
@@ -131,7 +134,7 @@ class Connection(object):
                     else:
                         raise Exception()
                 except Exception as e:
-                    self._info('Unable to connect to test tool at %s://%s:%s.' % (scheme, self._hostname, rest_port))
+                    self._warn('Unable to connect to test tool at %s://%s:%s.' % (scheme, self._hostname, rest_port))
         raise ConnectionError('Unable to connect to %s. Check the ip address and consider using the rest_port parameter.' % self._hostname)
 
     @property
@@ -141,12 +144,12 @@ class Connection(object):
 
     @trace.setter
     def trace(self, value):
-        if value not in [Connection.TRACE_NONE, Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
+        if value not in [Connection.TRACE_NONE, Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
             raise ValueError('the value %s is an incorrect Trace level' % value)
         self._trace = value
         if self._trace == Connection.TRACE_NONE:
-            logging.getLogger(__name__).setLevel(logging.INFO)
-        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
+            logging.getLogger(__name__).setLevel(logging.CRITICAL)
+        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
             logging.getLogger(__name__).setLevel(logging.DEBUG)
 
     @property
@@ -200,22 +203,27 @@ class Connection(object):
         return self._send_recv('OPTIONS', url)
 
     def _print_request(self, method, url, payload=None):
-        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE]:
+        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
             data = ''
             if payload is not None:
-                data = payload[0:128]
-                if len(payload) > 128:
-                    data += ' ...'
+                if self._trace == Connection.TRACE_ALL:
+                    data = payload
+                else:
+                    data = payload[0:132]
+                    if len(payload) > 132:
+                        data += ' ...'
             logging.getLogger(__name__).debug('%s %s %s' % (method, url, data))
 
     def _print_response(self, response):
-        if self._trace == Connection.TRACE_REQUEST_RESPONSE \
+        if self._trace in [Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL] \
             and response.headers.get('content-length') \
             and response.headers.get('content-type') \
             and 'application/json' in response.headers['content-type']:
             data = ''
-            if int(response.headers['content-length']) > 512:
-                data = '%s...' % response.content[0:512]
+            if self._trace == Connection.TRACE_ALL:
+                data = response.content
+            elif int(response.headers['content-length']) > 132:
+                data = '%s...' % response.content[0:132]
             else:
                 data = response.content
             logging.getLogger(__name__).debug('%s %s %s' % (response.status_code, response.reason, data))
@@ -275,17 +283,44 @@ class Connection(object):
         else:
             self._process_response_status_code(response)
 
-    def _process_response_status_code(self, response):
-        if response.status_code == 400:
-            raise BadRequestError(response)
-        elif response.status_code == 401:
-            raise UnauthorizedError(response)
-        elif response.status_code == 404:
-            raise NotFoundError(response)
-        elif response.status_code == 409:
-            raise ResourceInUseError(response)
+    def _process_response_status_code(self, url, headers, response):
+        errors = []
+        # add the initial error
+        if response.status_code == 202:
+            self._url = response.url
+            async_status = response.json()
+            errors.append('%s %s %s' % (async_status["state"], async_status["message"], async_status["result"]))
         else:
-            raise ServerError(response)
+            try:
+                for error in response.json()['errors']:
+                    errors.append(error['detail'])
+            except:
+                errors.append(response.text)
+        # add any /globals/appErrors/error items
+        try:
+            url = url[0:url.find('/ixnetwork')] + '/ixnetwork/globals/appErrors/error'
+            error_response = self._session.request('GET', url, headers=headers, verify=self._verify_cert, allow_redirects=False)
+            server_info = '\tCurrent Server Errors/Warnings:'
+            for error in error_response.json():
+                if error['errorLevel'] in ['kError', 'kWarning']:
+                    if server_info is not None:
+                        errors.append(server_info)
+                        server_info = None
+                    errors.append('\t%s [%s] %s' % (error['lastModified'], error['errorLevel'][1:].upper(), error['description']))
+        except:
+            errors.append('\tUnable to access the server to collect appErrors')
+        # raise the appropriate error
+        message = '\n'.join(errors)
+        if response.status_code == 400:
+            raise BadRequestError(message, response.status_code)
+        elif response.status_code == 401:
+            raise UnauthorizedError(message, response.status_code)
+        elif response.status_code == 404:
+            raise NotFoundError(message, response.status_code)
+        elif response.status_code == 409:
+            raise ResourceInUseError(message, response.status_code)
+        else:
+            raise ServerError(message, response.status_code)
 
     def _send_recv(self, method, url, payload=None):
         headers = self._headers
@@ -347,7 +382,7 @@ class Connection(object):
                     response = self._session.request('GET', state_url, headers=headers, verify=self._verify_cert)
                     self._print_response(response)
                 elif state == 'SUCCESS':
-                    if 'result' in async_status.keys():
+                    if 'result' in async_status.keys() and async_status['result'] != 'kVoid':
                         return async_status['result']
                     else:
                         return None
@@ -373,6 +408,6 @@ class Connection(object):
                    return response.json()
             return None
         else:
-            self._process_response_status_code(response)
+            self._process_response_status_code(url, headers, response)
 
 

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BackupLspEROSubObjectsList(Base):
-	"""The BackupLspEROSubObjectsList class encapsulates a system managed backupLspEROSubObjectsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BackupLspEROSubObjectsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Rsvp ERO Sub-Objects
+	The BackupLspEROSubObjectsList class encapsulates a list of backupLspEROSubObjectsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BackupLspEROSubObjectsList.find() method.
 	"""
 
 	__slots__ = ()

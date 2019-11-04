@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisSpbBcb(Base):
-	"""The IsisSpbBcb class encapsulates a user managed isisSpbBcb node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisSpbBcb property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""ISIS Interface level Configuration
+	The IsisSpbBcb class encapsulates a list of isisSpbBcb resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IsisSpbBcb.find() method.
+	The list can be managed by the user by using the IsisSpbBcb.add() and IsisSpbBcb.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -500,7 +499,7 @@ class IsisSpbBcb(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getLearnedInfo', payload=payload, response_object=None)

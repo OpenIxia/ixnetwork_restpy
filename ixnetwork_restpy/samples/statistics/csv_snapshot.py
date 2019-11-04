@@ -9,8 +9,12 @@ The sample operates under the following assumptions:
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 import os
 
-testplatform = TestPlatform('127.0.0.1')
-sessions = testplatform.Sessions.find(Id=1)
+# connect to a test tool platform
+test_platform = TestPlatform('127.0.0.1')
+test_platform.Authenticate('admin', 'admin')
+sessions = test_platform.Sessions.add()
+ixnetwork = sessions.ixnetwork
+
 
 testplatform.info('''
 1) setup the csv snapshot parameters

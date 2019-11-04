@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisL3PseudoIfaceAttPoint2Config(Base):
-	"""The IsisL3PseudoIfaceAttPoint2Config class encapsulates a system managed isisL3PseudoIfaceAttPoint2Config node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisL3PseudoIfaceAttPoint2Config property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ISIS-L3 Pseudo Interafce Attribute Configuration
+	The IsisL3PseudoIfaceAttPoint2Config class encapsulates a list of isisL3PseudoIfaceAttPoint2Config resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisL3PseudoIfaceAttPoint2Config.find() method.
 	"""
 
 	__slots__ = ()

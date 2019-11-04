@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcpv6ClientGlobals(Base):
-	"""The Dhcpv6ClientGlobals class encapsulates a user managed dhcpv6ClientGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcpv6ClientGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Global settings placeholder for DHCPPlugin.
+	The Dhcpv6ClientGlobals class encapsulates a list of dhcpv6ClientGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Dhcpv6ClientGlobals.find() method.
+	The list can be managed by the user by using the Dhcpv6ClientGlobals.add() and Dhcpv6ClientGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpMVpnReceiverSitesIpv4(Base):
-	"""The BgpMVpnReceiverSitesIpv4 class encapsulates a user managed bgpMVpnReceiverSitesIpv4 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpMVpnReceiverSitesIpv4 property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Bgp MVPN Receiver Sites Properties
+	The BgpMVpnReceiverSitesIpv4 class encapsulates a list of bgpMVpnReceiverSitesIpv4 resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpMVpnReceiverSitesIpv4.find() method.
+	The list can be managed by the user by using the BgpMVpnReceiverSitesIpv4.add() and BgpMVpnReceiverSitesIpv4.remove() methods.
 	"""
 
 	__slots__ = ()

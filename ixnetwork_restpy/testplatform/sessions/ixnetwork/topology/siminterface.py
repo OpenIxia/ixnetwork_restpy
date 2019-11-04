@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class SimInterface(Base):
-	"""The SimInterface class encapsulates a system managed simInterface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SimInterface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Simulated Interface specific configuration inside a Network Topology
+	The SimInterface class encapsulates a list of simInterface resources that is managed by the system.
+	A list of resources can be retrieved from the server using the SimInterface.find() method.
 	"""
 
 	__slots__ = ()

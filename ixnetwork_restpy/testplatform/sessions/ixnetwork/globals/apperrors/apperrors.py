@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class AppErrors(Base):
-	"""The AppErrors class encapsulates a system managed appErrors node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AppErrors property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This node holds application errors.
+	The AppErrors class encapsulates a list of appErrors resources that is managed by the system.
+	A list of resources can be retrieved from the server using the AppErrors.find() method.
 	"""
 
 	__slots__ = ()

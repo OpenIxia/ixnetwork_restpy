@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpTLVList(Base):
-	"""The LdpTLVList class encapsulates a system managed ldpTLVList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LdpTLVList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""LDP Opaque TLV
+	The LdpTLVList class encapsulates a list of ldpTLVList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the LdpTLVList.find() method.
 	"""
 
 	__slots__ = ()

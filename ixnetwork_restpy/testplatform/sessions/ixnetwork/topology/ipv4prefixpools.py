@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv4PrefixPools(Base):
-	"""The Ipv4PrefixPools class encapsulates a user managed ipv4PrefixPools node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ipv4PrefixPools property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Represents an IPv4 address
+	The Ipv4PrefixPools class encapsulates a list of ipv4PrefixPools resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ipv4PrefixPools.find() method.
+	The list can be managed by the user by using the Ipv4PrefixPools.add() and Ipv4PrefixPools.remove() methods.
 	"""
 
 	__slots__ = ()

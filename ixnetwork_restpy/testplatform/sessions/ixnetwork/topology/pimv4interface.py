@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class PimV4Interface(Base):
-	"""The PimV4Interface class encapsulates a user managed pimV4Interface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PimV4Interface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""PIMv4 Interface level Configuration
+	The PimV4Interface class encapsulates a list of pimV4Interface resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the PimV4Interface.find() method.
+	The list can be managed by the user by using the PimV4Interface.add() and PimV4Interface.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -633,7 +632,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearLearnedInfo', payload=payload, response_object=None)
@@ -667,7 +666,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getLearnedInfo', payload=payload, response_object=None)
@@ -776,7 +775,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('resumeBSM', payload=payload, response_object=None)
@@ -810,7 +809,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('resumeHello', payload=payload, response_object=None)
@@ -844,7 +843,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('sendBSM', payload=payload, response_object=None)
@@ -932,7 +931,7 @@ class PimV4Interface(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stopBSM', payload=payload, response_object=None)

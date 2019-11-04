@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class CurrentPacket(Base):
-	"""The CurrentPacket class encapsulates a required currentPacket node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the CurrentPacket property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This object specifies current packet properties.
+	The CurrentPacket class encapsulates a required currentPacket resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

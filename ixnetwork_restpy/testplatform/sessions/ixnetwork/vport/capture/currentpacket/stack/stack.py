@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Stack(Base):
-	"""The Stack class encapsulates a system managed stack node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Stack property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object specifies the stack properties.
+	The Stack class encapsulates a list of stack resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Stack.find() method.
 	"""
 
 	__slots__ = ()

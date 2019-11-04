@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class GlobalEgtpApn(Base):
-	"""The GlobalEgtpApn class encapsulates a user managed globalEgtpApn node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the GlobalEgtpApn property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The GlobalEgtpApn class encapsulates a list of globalEgtpApn resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the GlobalEgtpApn.find() method.
+	The list can be managed by the user by using the GlobalEgtpApn.add() and GlobalEgtpApn.remove() methods.
 	"""
 
 	__slots__ = ()

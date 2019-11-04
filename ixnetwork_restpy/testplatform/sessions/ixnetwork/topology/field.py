@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Field(Base):
-	"""The Field class encapsulates a user managed field node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Field property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Fixed size field.
+	The Field class encapsulates a list of field resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Field.find() method.
+	The list can be managed by the user by using the Field.add() and Field.remove() methods.
 	"""
 
 	__slots__ = ()

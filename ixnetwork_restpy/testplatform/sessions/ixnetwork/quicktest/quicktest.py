@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class QuickTest(Base):
-	"""The QuickTest class encapsulates a required quickTest node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the QuickTest property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The IxNetwork QuickTests feature provides the ability to run predefined tests.
+	The QuickTest class encapsulates a required quickTest resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -41,13 +39,13 @@ class QuickTest(Base):
 		"""An instance of the AsymmetricFrameLoss class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss.asymmetricframeloss.AsymmetricFrameLoss)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss_vzdc9hc3ltbwv0cmljrnjhbwvmb3nz.AsymmetricFrameLoss)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss.asymmetricframeloss import AsymmetricFrameLoss
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss_vzdc9hc3ltbwv0cmljrnjhbwvmb3nz import AsymmetricFrameLoss
 		return AsymmetricFrameLoss(self)
 
 	@property
@@ -55,13 +53,13 @@ class QuickTest(Base):
 		"""An instance of the AsymmetricThroughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput.asymmetricthroughput.AsymmetricThroughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput_dc9hc3ltbwv0cmljvghyb3vnahb1da.AsymmetricThroughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput.asymmetricthroughput import AsymmetricThroughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput_dc9hc3ltbwv0cmljvghyb3vnahb1da import AsymmetricThroughput
 		return AsymmetricThroughput(self)
 
 	@property
@@ -69,13 +67,13 @@ class QuickTest(Base):
 		"""An instance of the CloudPerf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf.cloudperf.CloudPerf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf_l3f1awnrvgvzdc9jbg91zfblcmy.CloudPerf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf.cloudperf import CloudPerf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf_l3f1awnrvgvzdc9jbg91zfblcmy import CloudPerf
 		return CloudPerf(self)
 
 	@property
@@ -83,13 +81,13 @@ class QuickTest(Base):
 		"""An instance of the CustomContDuration class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration.customcontduration.CustomContDuration)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration_gvzdc9jdxn0b21db250rhvyyxrpb24.CustomContDuration)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration.customcontduration import CustomContDuration
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration_gvzdc9jdxn0b21db250rhvyyxrpb24 import CustomContDuration
 		return CustomContDuration(self)
 
 	@property
@@ -97,13 +95,13 @@ class QuickTest(Base):
 		"""An instance of the CustomFixedDuration class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration.customfixedduration.CustomFixedDuration)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration_vzdc9jdxn0b21gaxhlzer1cmf0aw9u.CustomFixedDuration)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration.customfixedduration import CustomFixedDuration
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration_vzdc9jdxn0b21gaxhlzer1cmf0aw9u import CustomFixedDuration
 		return CustomFixedDuration(self)
 
 	@property
@@ -111,13 +109,13 @@ class QuickTest(Base):
 		"""An instance of the CustomStep class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep.customstep.CustomStep)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep_l3f1awnrvgvzdc9jdxn0b21tdgvw.CustomStep)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep.customstep import CustomStep
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep_l3f1awnrvgvzdc9jdxn0b21tdgvw import CustomStep
 		return CustomStep(self)
 
 	@property
@@ -125,13 +123,13 @@ class QuickTest(Base):
 		"""An instance of the CustomThroughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput.customthroughput.CustomThroughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput_nrvgvzdc9jdxn0b21uahjvdwdochv0.CustomThroughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput.customthroughput import CustomThroughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput_nrvgvzdc9jdxn0b21uahjvdwdochv0 import CustomThroughput
 		return CustomThroughput(self)
 
 	@property
@@ -139,13 +137,13 @@ class QuickTest(Base):
 		"""An instance of the DhcpRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate.dhcprate.DhcpRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate_l3f1awnrvgvzdc9kagnwumf0zq.DhcpRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate.dhcprate import DhcpRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate_l3f1awnrvgvzdc9kagnwumf0zq import DhcpRate
 		return DhcpRate(self)
 
 	@property
@@ -153,13 +151,13 @@ class QuickTest(Base):
 		"""An instance of the DhcpRateCpf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf.dhcpratecpf.DhcpRateCpf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf_l3f1awnrvgvzdc9kagnwumf0zunwzg.DhcpRateCpf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf.dhcpratecpf import DhcpRateCpf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf_l3f1awnrvgvzdc9kagnwumf0zunwzg import DhcpRateCpf
 		return DhcpRateCpf(self)
 
 	@property
@@ -167,13 +165,13 @@ class QuickTest(Base):
 		"""An instance of the Dhcpv6Rate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate.dhcpv6rate.Dhcpv6Rate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate_l3f1awnrvgvzdc9kagnwdjzsyxrl.Dhcpv6Rate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate.dhcpv6rate import Dhcpv6Rate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate_l3f1awnrvgvzdc9kagnwdjzsyxrl import Dhcpv6Rate
 		return Dhcpv6Rate(self)
 
 	@property
@@ -181,13 +179,13 @@ class QuickTest(Base):
 		"""An instance of the Dhcpv6RateCpf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf.dhcpv6ratecpf.Dhcpv6RateCpf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf_f1awnrvgvzdc9kagnwdjzsyxrlq3bm.Dhcpv6RateCpf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf.dhcpv6ratecpf import Dhcpv6RateCpf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf_f1awnrvgvzdc9kagnwdjzsyxrlq3bm import Dhcpv6RateCpf
 		return Dhcpv6RateCpf(self)
 
 	@property
@@ -195,13 +193,13 @@ class QuickTest(Base):
 		"""An instance of the Dot1xCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity.dot1xcapacity.Dot1xCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity_f1awnrvgvzdc9kb3qxeenhcgfjaxr5.Dot1xCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity.dot1xcapacity import Dot1xCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity_f1awnrvgvzdc9kb3qxeenhcgfjaxr5 import Dot1xCapacity
 		return Dot1xCapacity(self)
 
 	@property
@@ -209,13 +207,13 @@ class QuickTest(Base):
 		"""An instance of the Dot1xRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate.dot1xrate.Dot1xRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate_l3f1awnrvgvzdc9kb3qxefjhdgu.Dot1xRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate.dot1xrate import Dot1xRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate_l3f1awnrvgvzdc9kb3qxefjhdgu import Dot1xRate
 		return Dot1xRate(self)
 
 	@property
@@ -223,13 +221,13 @@ class QuickTest(Base):
 		"""An instance of the EventScheduler class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler.eventscheduler.EventScheduler)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler_awnrvgvzdc9ldmvudfnjagvkdwxlcg.EventScheduler)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler.eventscheduler import EventScheduler
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler_awnrvgvzdc9ldmvudfnjagvkdwxlcg import EventScheduler
 		return EventScheduler(self)
 
 	@property
@@ -237,13 +235,13 @@ class QuickTest(Base):
 		"""An instance of the FcoeMaxNoDropThroughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput.fcoemaxnodropthroughput.FcoeMaxNoDropThroughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput_y29ltwf4tm9ecm9wvghyb3vnahb1da.FcoeMaxNoDropThroughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput.fcoemaxnodropthroughput import FcoeMaxNoDropThroughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput_y29ltwf4tm9ecm9wvghyb3vnahb1da import FcoeMaxNoDropThroughput
 		return FcoeMaxNoDropThroughput(self)
 
 	@property
@@ -251,13 +249,13 @@ class QuickTest(Base):
 		"""An instance of the FcoeMaxNoPauseThroughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.fcoemaxnopausethroughput.FcoeMaxNoPauseThroughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput_29ltwf4tm9qyxvzzvrocm91z2hwdxq.FcoeMaxNoPauseThroughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput.fcoemaxnopausethroughput import FcoeMaxNoPauseThroughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput_29ltwf4tm9qyxvzzvrocm91z2hwdxq import FcoeMaxNoPauseThroughput
 		return FcoeMaxNoPauseThroughput(self)
 
 	@property
@@ -265,13 +263,13 @@ class QuickTest(Base):
 		"""An instance of the Globals class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals.globals.Globals)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_l3f1awnrvgvzdc9nbg9iywxz.Globals)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals.globals import Globals
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_l3f1awnrvgvzdc9nbg9iywxz import Globals
 		return Globals(self)._select()
 
 	@property
@@ -279,13 +277,13 @@ class QuickTest(Base):
 		"""An instance of the IptvChannelZapping class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping.iptvchannelzapping.IptvChannelZapping)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping_gvzdc9pchr2q2hhbm5lbfphchbpbmc.IptvChannelZapping)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping.iptvchannelzapping import IptvChannelZapping
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping_gvzdc9pchr2q2hhbm5lbfphchbpbmc import IptvChannelZapping
 		return IptvChannelZapping(self)
 
 	@property
@@ -293,13 +291,13 @@ class QuickTest(Base):
 		"""An instance of the L2tpCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity.l2tpcapacity.L2tpCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity_3f1awnrvgvzdc9smnrwq2fwywnpdhk.L2tpCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity.l2tpcapacity import L2tpCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity_3f1awnrvgvzdc9smnrwq2fwywnpdhk import L2tpCapacity
 		return L2tpCapacity(self)
 
 	@property
@@ -307,13 +305,13 @@ class QuickTest(Base):
 		"""An instance of the L2tpRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate.l2tprate.L2tpRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate_l3f1awnrvgvzdc9smnrwumf0zq.L2tpRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate.l2tprate import L2tpRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate_l3f1awnrvgvzdc9smnrwumf0zq import L2tpRate
 		return L2tpRate(self)
 
 	@property
@@ -321,13 +319,13 @@ class QuickTest(Base):
 		"""An instance of the L2tpRateCpf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf.l2tpratecpf.L2tpRateCpf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf_l3f1awnrvgvzdc9smnrwumf0zunwzg.L2tpRateCpf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf.l2tpratecpf import L2tpRateCpf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf_l3f1awnrvgvzdc9smnrwumf0zunwzg import L2tpRateCpf
 		return L2tpRateCpf(self)
 
 	@property
@@ -335,13 +333,13 @@ class QuickTest(Base):
 		"""An instance of the LnsCpfCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity.lnscpfcapacity.LnsCpfCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity_awnrvgvzdc9sbnndcgzdyxbhy2l0eq.LnsCpfCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity.lnscpfcapacity import LnsCpfCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity_awnrvgvzdc9sbnndcgzdyxbhy2l0eq import LnsCpfCapacity
 		return LnsCpfCapacity(self)
 
 	@property
@@ -349,13 +347,13 @@ class QuickTest(Base):
 		"""An instance of the OpenFlowFailoverPerformance class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance.openflowfailoverperformance.OpenFlowFailoverPerformance)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance_mxvd0zhawxvdmvyugvyzm9ybwfuy2u.OpenFlowFailoverPerformance)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance.openflowfailoverperformance import OpenFlowFailoverPerformance
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance_mxvd0zhawxvdmvyugvyzm9ybwfuy2u import OpenFlowFailoverPerformance
 		return OpenFlowFailoverPerformance(self)
 
 	@property
@@ -363,13 +361,13 @@ class QuickTest(Base):
 		"""An instance of the OpenFlowLayer2LearningRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.openflowlayer2learningrate.OpenFlowLayer2LearningRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate_rmxvd0xhewvymkxlyxjuaw5numf0zq.OpenFlowLayer2LearningRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate.openflowlayer2learningrate import OpenFlowLayer2LearningRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate_rmxvd0xhewvymkxlyxjuaw5numf0zq import OpenFlowLayer2LearningRate
 		return OpenFlowLayer2LearningRate(self)
 
 	@property
@@ -377,13 +375,13 @@ class QuickTest(Base):
 		"""An instance of the OpenFlowLayer3LearningRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate.openflowlayer3learningrate.OpenFlowLayer3LearningRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate_rmxvd0xhewvym0xlyxjuaw5numf0zq.OpenFlowLayer3LearningRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate.openflowlayer3learningrate import OpenFlowLayer3LearningRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate_rmxvd0xhewvym0xlyxjuaw5numf0zq import OpenFlowLayer3LearningRate
 		return OpenFlowLayer3LearningRate(self)
 
 	@property
@@ -391,13 +389,13 @@ class QuickTest(Base):
 		"""An instance of the OpenFlowTableCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity.openflowtablecapacity.OpenFlowTableCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity_c9vcgvurmxvd1rhymxlq2fwywnpdhk.OpenFlowTableCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity.openflowtablecapacity import OpenFlowTableCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity_c9vcgvurmxvd1rhymxlq2fwywnpdhk import OpenFlowTableCapacity
 		return OpenFlowTableCapacity(self)
 
 	@property
@@ -405,13 +403,13 @@ class QuickTest(Base):
 		"""An instance of the PppServerCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity.pppservercapacity.PppServerCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity_vgvzdc9wchbtzxj2zxjdyxbhy2l0eq.PppServerCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity.pppservercapacity import PppServerCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity_vgvzdc9wchbtzxj2zxjdyxbhy2l0eq import PppServerCapacity
 		return PppServerCapacity(self)
 
 	@property
@@ -419,13 +417,13 @@ class QuickTest(Base):
 		"""An instance of the PppSessionRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate.pppsessionrate.PppSessionRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate_awnrvgvzdc9wchbtzxnzaw9uumf0zq.PppSessionRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate.pppsessionrate import PppSessionRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate_awnrvgvzdc9wchbtzxnzaw9uumf0zq import PppSessionRate
 		return PppSessionRate(self)
 
 	@property
@@ -433,13 +431,13 @@ class QuickTest(Base):
 		"""An instance of the PppoxRateCpf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf.pppoxratecpf.PppoxRateCpf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf_3f1awnrvgvzdc9wchbvefjhdgvdcgy.PppoxRateCpf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf.pppoxratecpf import PppoxRateCpf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf_3f1awnrvgvzdc9wchbvefjhdgvdcgy import PppoxRateCpf
 		return PppoxRateCpf(self)
 
 	@property
@@ -447,13 +445,13 @@ class QuickTest(Base):
 		"""An instance of the PppoxRateCpfServerCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity.pppoxratecpfservercapacity.PppoxRateCpfServerCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity_efjhdgvdcgztzxj2zxjdyxbhy2l0eq.PppoxRateCpfServerCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity.pppoxratecpfservercapacity import PppoxRateCpfServerCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity_efjhdgvdcgztzxj2zxjdyxbhy2l0eq import PppoxRateCpfServerCapacity
 		return PppoxRateCpfServerCapacity(self)
 
 	@property
@@ -461,13 +459,13 @@ class QuickTest(Base):
 		"""An instance of the PtpBestMasterSelection class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection.ptpbestmasterselection.PtpBestMasterSelection)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection_9wdhbczxn0twfzdgvyu2vszwn0aw9u.PtpBestMasterSelection)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection.ptpbestmasterselection import PtpBestMasterSelection
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection_9wdhbczxn0twfzdgvyu2vszwn0aw9u import PtpBestMasterSelection
 		return PtpBestMasterSelection(self)
 
 	@property
@@ -475,13 +473,13 @@ class QuickTest(Base):
 		"""An instance of the PtpCorrectionFactorError class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror.ptpcorrectionfactorerror.PtpCorrectionFactorError)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror_hbdb3jyzwn0aw9urmfjdg9yrxjyb3i.PtpCorrectionFactorError)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror.ptpcorrectionfactorerror import PtpCorrectionFactorError
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror_hbdb3jyzwn0aw9urmfjdg9yrxjyb3i import PtpCorrectionFactorError
 		return PtpCorrectionFactorError(self)
 
 	@property
@@ -489,13 +487,13 @@ class QuickTest(Base):
 		"""An instance of the PtpSlaveScalability class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability.ptpslavescalability.PtpSlaveScalability)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability_vzdc9wdhbtbgf2zvnjywxhymlsaxr5.PtpSlaveScalability)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability.ptpslavescalability import PtpSlaveScalability
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability_vzdc9wdhbtbgf2zvnjywxhymlsaxr5 import PtpSlaveScalability
 		return PtpSlaveScalability(self)
 
 	@property
@@ -503,13 +501,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2544back2back class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back.rfc2544back2back.Rfc2544back2back)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_nrvgvzdc9yzmmyntq0ymfjazjiywnr.Rfc2544back2back)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back.rfc2544back2back import Rfc2544back2back
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_nrvgvzdc9yzmmyntq0ymfjazjiywnr import Rfc2544back2back
 		return Rfc2544back2back(self)
 
 	@property
@@ -517,13 +515,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2544frameLoss class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss.rfc2544frameloss.Rfc2544frameLoss)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_nrvgvzdc9yzmmyntq0znjhbwvmb3nz.Rfc2544frameLoss)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss.rfc2544frameloss import Rfc2544frameLoss
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_nrvgvzdc9yzmmyntq0znjhbwvmb3nz import Rfc2544frameLoss
 		return Rfc2544frameLoss(self)
 
 	@property
@@ -531,13 +529,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2544throughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput.rfc2544throughput.Rfc2544throughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_vgvzdc9yzmmyntq0dghyb3vnahb1da.Rfc2544throughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput.rfc2544throughput import Rfc2544throughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_vgvzdc9yzmmyntq0dghyb3vnahb1da import Rfc2544throughput
 		return Rfc2544throughput(self)
 
 	@property
@@ -545,13 +543,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889addressCache class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache.rfc2889addresscache.Rfc2889addressCache)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache_vzdc9yzmmyodg5ywrkcmvzc0nhy2hl.Rfc2889addressCache)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache.rfc2889addresscache import Rfc2889addressCache
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache_vzdc9yzmmyodg5ywrkcmvzc0nhy2hl import Rfc2889addressCache
 		return Rfc2889addressCache(self)
 
 	@property
@@ -559,13 +557,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889addressRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate.rfc2889addressrate.Rfc2889addressRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate_gvzdc9yzmmyodg5ywrkcmvzc1jhdgu.Rfc2889addressRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate.rfc2889addressrate import Rfc2889addressRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate_gvzdc9yzmmyodg5ywrkcmvzc1jhdgu import Rfc2889addressRate
 		return Rfc2889addressRate(self)
 
 	@property
@@ -573,13 +571,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889broadcastRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate.rfc2889broadcastrate.Rfc2889broadcastRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate_dc9yzmmyodg5ynjvywrjyxn0umf0zq.Rfc2889broadcastRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate.rfc2889broadcastrate import Rfc2889broadcastRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate_dc9yzmmyodg5ynjvywrjyxn0umf0zq import Rfc2889broadcastRate
 		return Rfc2889broadcastRate(self)
 
 	@property
@@ -587,13 +585,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889congestionControl class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol.rfc2889congestioncontrol.Rfc2889congestionControl)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol_mmyodg5y29uz2vzdglvbknvbnryb2w.Rfc2889congestionControl)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol.rfc2889congestioncontrol import Rfc2889congestionControl
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol_mmyodg5y29uz2vzdglvbknvbnryb2w import Rfc2889congestionControl
 		return Rfc2889congestionControl(self)
 
 	@property
@@ -601,13 +599,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889frameErrorFiltering class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering.rfc2889frameerrorfiltering.Rfc2889frameErrorFiltering)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering_odg5znjhbwvfcnjvckzpbhrlcmluzw.Rfc2889frameErrorFiltering)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering.rfc2889frameerrorfiltering import Rfc2889frameErrorFiltering
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering_odg5znjhbwvfcnjvckzpbhrlcmluzw import Rfc2889frameErrorFiltering
 		return Rfc2889frameErrorFiltering(self)
 
 	@property
@@ -615,13 +613,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889fullyMeshed class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.rfc2889fullymeshed.Rfc2889fullyMeshed)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed_gvzdc9yzmmyodg5znvsbhlnzxnozwq.Rfc2889fullyMeshed)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed.rfc2889fullymeshed import Rfc2889fullyMeshed
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed_gvzdc9yzmmyodg5znvsbhlnzxnozwq import Rfc2889fullyMeshed
 		return Rfc2889fullyMeshed(self)
 
 	@property
@@ -629,13 +627,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889manyToOne class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone.rfc2889manytoone.Rfc2889manyToOne)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone_nrvgvzdc9yzmmyodg5bwfuevrvt25l.Rfc2889manyToOne)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone.rfc2889manytoone import Rfc2889manyToOne
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone_nrvgvzdc9yzmmyodg5bwfuevrvt25l import Rfc2889manyToOne
 		return Rfc2889manyToOne(self)
 
 	@property
@@ -643,13 +641,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889oneToMany class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany.rfc2889onetomany.Rfc2889oneToMany)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany_nrvgvzdc9yzmmyodg5b25lvg9nyw55.Rfc2889oneToMany)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany.rfc2889onetomany import Rfc2889oneToMany
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany_nrvgvzdc9yzmmyodg5b25lvg9nyw55 import Rfc2889oneToMany
 		return Rfc2889oneToMany(self)
 
 	@property
@@ -657,13 +655,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc2889partiallyMeshed class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed.rfc2889partiallymeshed.Rfc2889partiallyMeshed)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed_9yzmmyodg5cgfydglhbgx5twvzagvk.Rfc2889partiallyMeshed)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed.rfc2889partiallymeshed import Rfc2889partiallyMeshed
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed_9yzmmyodg5cgfydglhbgx5twvzagvk import Rfc2889partiallyMeshed
 		return Rfc2889partiallyMeshed(self)
 
 	@property
@@ -671,13 +669,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918aggregated class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated.rfc3918aggregated.Rfc3918aggregated)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated_vgvzdc9yzmmzote4ywdncmvnyxrlza.Rfc3918aggregated)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated.rfc3918aggregated import Rfc3918aggregated
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated_vgvzdc9yzmmzote4ywdncmvnyxrlza import Rfc3918aggregated
 		return Rfc3918aggregated(self)
 
 	@property
@@ -685,13 +683,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918burdenedJoinDelay class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay.rfc3918burdenedjoindelay.Rfc3918burdenedJoinDelay)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay_mmzote4ynvyzgvuzwrkb2lurgvsyxk.Rfc3918burdenedJoinDelay)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay.rfc3918burdenedjoindelay import Rfc3918burdenedJoinDelay
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay_mmzote4ynvyzgvuzwrkb2lurgvsyxk import Rfc3918burdenedJoinDelay
 		return Rfc3918burdenedJoinDelay(self)
 
 	@property
@@ -699,13 +697,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918burdenedLatency class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency.rfc3918burdenedlatency.Rfc3918burdenedLatency)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency_9yzmmzote4ynvyzgvuzwrmyxrlbmn5.Rfc3918burdenedLatency)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency.rfc3918burdenedlatency import Rfc3918burdenedLatency
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency_9yzmmzote4ynvyzgvuzwrmyxrlbmn5 import Rfc3918burdenedLatency
 		return Rfc3918burdenedLatency(self)
 
 	@property
@@ -713,13 +711,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918groupCapacity class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity.rfc3918groupcapacity.Rfc3918groupCapacity)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity_dc9yzmmzote4z3jvdxbdyxbhy2l0eq.Rfc3918groupCapacity)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity.rfc3918groupcapacity import Rfc3918groupCapacity
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity_dc9yzmmzote4z3jvdxbdyxbhy2l0eq import Rfc3918groupCapacity
 		return Rfc3918groupCapacity(self)
 
 	@property
@@ -727,13 +725,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918groupPatternVerification class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification.rfc3918grouppatternverification.Rfc3918groupPatternVerification)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification_jvdxbqyxr0zxjuvmvyawzpy2f0aw9u.Rfc3918groupPatternVerification)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification.rfc3918grouppatternverification import Rfc3918groupPatternVerification
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification_jvdxbqyxr0zxjuvmvyawzpy2f0aw9u import Rfc3918groupPatternVerification
 		return Rfc3918groupPatternVerification(self)
 
 	@property
@@ -741,13 +739,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918ipmcMinMaxLat class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat.rfc3918ipmcminmaxlat.Rfc3918ipmcMinMaxLat)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat_dc9yzmmzote4axbty01pbk1heexhda.Rfc3918ipmcMinMaxLat)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat.rfc3918ipmcminmaxlat import Rfc3918ipmcMinMaxLat
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat_dc9yzmmzote4axbty01pbk1heexhda import Rfc3918ipmcMinMaxLat
 		return Rfc3918ipmcMinMaxLat(self)
 
 	@property
@@ -755,13 +753,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918joinLeaveDelay class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay.rfc3918joinleavedelay.Rfc3918joinLeaveDelay)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay_c9yzmmzote4am9pbkxlyxzlrgvsyxk.Rfc3918joinLeaveDelay)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay.rfc3918joinleavedelay import Rfc3918joinLeaveDelay
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay_c9yzmmzote4am9pbkxlyxzlrgvsyxk import Rfc3918joinLeaveDelay
 		return Rfc3918joinLeaveDelay(self)
 
 	@property
@@ -769,13 +767,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918joinRate class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate.rfc3918joinrate.Rfc3918joinRate)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate_wnrvgvzdc9yzmmzote4am9pbljhdgu.Rfc3918joinRate)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate.rfc3918joinrate import Rfc3918joinRate
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate_wnrvgvzdc9yzmmzote4am9pbljhdgu import Rfc3918joinRate
 		return Rfc3918joinRate(self)
 
 	@property
@@ -783,13 +781,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918mixedClassThroughput class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.rfc3918mixedclassthroughput.Rfc3918mixedClassThroughput)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput_te4bwl4zwrdbgfzc1rocm91z2hwdxq.Rfc3918mixedClassThroughput)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput.rfc3918mixedclassthroughput import Rfc3918mixedClassThroughput
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput_te4bwl4zwrdbgfzc1rocm91z2hwdxq import Rfc3918mixedClassThroughput
 		return Rfc3918mixedClassThroughput(self)
 
 	@property
@@ -797,13 +795,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc3918scaleGroup class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup.rfc3918scalegroup.Rfc3918scaleGroup)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup_vgvzdc9yzmmzote4c2nhbgvhcm91ca.Rfc3918scaleGroup)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup.rfc3918scalegroup import Rfc3918scaleGroup
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup_vgvzdc9yzmmzote4c2nhbgvhcm91ca import Rfc3918scaleGroup
 		return Rfc3918scaleGroup(self)
 
 	@property
@@ -811,13 +809,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc7747failover class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover.rfc7747failover.Rfc7747failover)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover_wnrvgvzdc9yzmm3nzq3zmfpbg92zxi.Rfc7747failover)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover.rfc7747failover import Rfc7747failover
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover_wnrvgvzdc9yzmm3nzq3zmfpbg92zxi import Rfc7747failover
 		return Rfc7747failover(self)
 
 	@property
@@ -825,13 +823,13 @@ class QuickTest(Base):
 		"""An instance of the Rfc7747ribIn class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin.rfc7747ribin.Rfc7747ribIn)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin_3f1awnrvgvzdc9yzmm3nzq3cmlisw4.Rfc7747ribIn)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin.rfc7747ribin import Rfc7747ribIn
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin_3f1awnrvgvzdc9yzmm3nzq3cmlisw4 import Rfc7747ribIn
 		return Rfc7747ribIn(self)
 
 	@property
@@ -839,13 +837,13 @@ class QuickTest(Base):
 		"""An instance of the TrafficTest class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest.traffictest.TrafficTest)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_l3f1awnrvgvzdc90cmfmzmljvgvzda.TrafficTest)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest.traffictest import TrafficTest
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_l3f1awnrvgvzdc90cmfmzmljvgvzda import TrafficTest
 		return TrafficTest(self)
 
 	@property
@@ -853,13 +851,13 @@ class QuickTest(Base):
 		"""An instance of the Y1564 class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564.y1564.Y1564)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564_l3f1awnrvgvzdc95mtu2na.Y1564)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564.y1564 import Y1564
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564_l3f1awnrvgvzdc95mtu2na import Y1564
 		return Y1564(self)
 
 	@property

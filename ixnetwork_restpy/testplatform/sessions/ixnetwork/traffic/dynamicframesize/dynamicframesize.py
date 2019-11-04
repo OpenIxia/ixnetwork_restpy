@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class DynamicFrameSize(Base):
-	"""The DynamicFrameSize class encapsulates a system managed dynamicFrameSize node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DynamicFrameSize property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object fetches the options for setting dynamic frame size.
+	The DynamicFrameSize class encapsulates a list of dynamicFrameSize resources that is managed by the system.
+	A list of resources can be retrieved from the server using the DynamicFrameSize.find() method.
 	"""
 
 	__slots__ = ()

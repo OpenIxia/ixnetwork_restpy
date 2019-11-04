@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class RateControlParameters(Base):
-	"""The RateControlParameters class encapsulates a required rateControlParameters node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RateControlParameters property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This object holds the configuration parameters for rate control.
+	The RateControlParameters class encapsulates a required rateControlParameters resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

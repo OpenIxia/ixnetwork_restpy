@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Column(Base):
-	"""The Column class encapsulates a user managed column node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Column property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""This object specifies column properties of an UDF table.
+	The Column class encapsulates a list of column resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Column.find() method.
+	The list can be managed by the user by using the Column.add() and Column.remove() methods.
 	"""
 
 	__slots__ = ()

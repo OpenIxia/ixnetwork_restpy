@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class AvailableAdvancedFilters(Base):
-	"""The AvailableAdvancedFilters class encapsulates a system managed availableAdvancedFilters node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AvailableAdvancedFilters property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Represents the id of an advanced filter.
+	The AvailableAdvancedFilters class encapsulates a list of availableAdvancedFilters resources that is managed by the system.
+	A list of resources can be retrieved from the server using the AvailableAdvancedFilters.find() method.
 	"""
 
 	__slots__ = ()

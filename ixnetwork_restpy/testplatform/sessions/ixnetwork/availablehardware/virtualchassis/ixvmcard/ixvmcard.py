@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IxVmCard(Base):
-	"""The IxVmCard class encapsulates a user managed ixVmCard node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IxVmCard property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Retrieves the list of cards existent on the virtual chassis
+	The IxVmCard class encapsulates a list of ixVmCard resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IxVmCard.find() method.
+	The list can be managed by the user by using the IxVmCard.add() and IxVmCard.remove() methods.
 	"""
 
 	__slots__ = ()

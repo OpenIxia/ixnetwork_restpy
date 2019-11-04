@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class MultipleJoinLeaveLatency(Base):
-	"""The MultipleJoinLeaveLatency class encapsulates a required multipleJoinLeaveLatency node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the MultipleJoinLeaveLatency property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Calculate join/leave latency for AMT in cae of repeated join/leave. This means that a host can join/leave a group multiple times between traffic start and stop
+	The MultipleJoinLeaveLatency class encapsulates a required multipleJoinLeaveLatency resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

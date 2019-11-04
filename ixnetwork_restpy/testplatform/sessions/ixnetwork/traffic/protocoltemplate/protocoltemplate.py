@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class ProtocolTemplate(Base):
-	"""The ProtocolTemplate class encapsulates a system managed protocolTemplate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ProtocolTemplate property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides different options for Protocol Template.
+	The ProtocolTemplate class encapsulates a list of protocolTemplate resources that is managed by the system.
+	A list of resources can be retrieved from the server using the ProtocolTemplate.find() method.
 	"""
 
 	__slots__ = ()

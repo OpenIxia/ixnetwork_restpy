@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class DhcpHostsGlobals(Base):
-	"""The DhcpHostsGlobals class encapsulates a user managed dhcpHostsGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DhcpHostsGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Global settings placeholder for DHCPHostsPlugin.
+	The DhcpHostsGlobals class encapsulates a list of dhcpHostsGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the DhcpHostsGlobals.find() method.
+	The list can be managed by the user by using the DhcpHostsGlobals.add() and DhcpHostsGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

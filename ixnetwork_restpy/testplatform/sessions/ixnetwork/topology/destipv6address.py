@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DestIpv6Address(Base):
-	"""The DestIpv6Address class encapsulates a required destIpv6Address node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DestIpv6Address property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The DestIpv6Address class encapsulates a required destIpv6Address resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

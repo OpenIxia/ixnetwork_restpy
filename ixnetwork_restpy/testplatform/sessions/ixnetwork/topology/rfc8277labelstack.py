@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Rfc8277LabelStack(Base):
-	"""The Rfc8277LabelStack class encapsulates a system managed Rfc8277LabelStack node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Rfc8277LabelStack property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Rfc 8277 Label Stack
+	The Rfc8277LabelStack class encapsulates a list of Rfc8277LabelStack resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Rfc8277LabelStack.find() method.
 	"""
 
 	__slots__ = ()

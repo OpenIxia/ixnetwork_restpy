@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class OFSwitchChannel(Base):
-	"""The OFSwitchChannel class encapsulates a user managed OFSwitchChannel node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OFSwitchChannel property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Openflow Switch Channel level Configuration
+	The OFSwitchChannel class encapsulates a list of OFSwitchChannel resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the OFSwitchChannel.find() method.
+	The list can be managed by the user by using the OFSwitchChannel.add() and OFSwitchChannel.remove() methods.
 	"""
 
 	__slots__ = ()

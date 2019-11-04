@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIpv6AdL2Vpn(Base):
-	"""The BgpIpv6AdL2Vpn class encapsulates a user managed bgpIpv6AdL2Vpn node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIpv6AdL2Vpn property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP AD-L2VPN Configuration
+	The BgpIpv6AdL2Vpn class encapsulates a list of bgpIpv6AdL2Vpn resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIpv6AdL2Vpn.find() method.
+	The list can be managed by the user by using the BgpIpv6AdL2Vpn.add() and BgpIpv6AdL2Vpn.remove() methods.
 	"""
 
 	__slots__ = ()

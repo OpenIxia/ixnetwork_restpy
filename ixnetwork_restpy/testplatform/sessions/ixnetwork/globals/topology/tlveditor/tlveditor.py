@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class TlvEditor(Base):
-	"""The TlvEditor class encapsulates a system managed tlvEditor node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TlvEditor property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Tlv template functionality is contained under this node
+	The TlvEditor class encapsulates a list of tlvEditor resources that is managed by the system.
+	A list of resources can be retrieved from the server using the TlvEditor.find() method.
 	"""
 
 	__slots__ = ()

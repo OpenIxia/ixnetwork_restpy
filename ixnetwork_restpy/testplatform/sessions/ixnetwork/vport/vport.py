@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Vport(Base):
-	"""The Vport class encapsulates a user managed vport node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Vport property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""This is the virtual port hierarchy, which is used to configure IxNetwork.
+	The Vport class encapsulates a list of vport resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Vport.find() method.
+	The list can be managed by the user by using the Vport.add() and Vport.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -609,7 +608,7 @@ class Vport(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		return self._execute('clearNeighborSolicitation', payload=payload, response_object=None)
 
 	def ClearNeighborTable(self):

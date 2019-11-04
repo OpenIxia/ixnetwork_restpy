@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class OspfSRGBRangeSubObjectsList(Base):
-	"""The OspfSRGBRangeSubObjectsList class encapsulates a system managed ospfSRGBRangeSubObjectsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OspfSRGBRangeSubObjectsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Ospf SRGB Range Sub Objects
+	The OspfSRGBRangeSubObjectsList class encapsulates a list of ospfSRGBRangeSubObjectsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the OspfSRGBRangeSubObjectsList.find() method.
 	"""
 
 	__slots__ = ()

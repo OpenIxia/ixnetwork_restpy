@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class FlowAggrMatchTemplate(Base):
-	"""The FlowAggrMatchTemplate class encapsulates a required flowAggrMatchTemplate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the FlowAggrMatchTemplate property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Global data for OFAggrMatch template data extension.
+	The FlowAggrMatchTemplate class encapsulates a required flowAggrMatchTemplate resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

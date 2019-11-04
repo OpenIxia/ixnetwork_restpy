@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class EgressRxCondition(Base):
-	"""The EgressRxCondition class encapsulates a required egressRxCondition node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EgressRxCondition property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The EgressRxCondition class encapsulates a required egressRxCondition resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

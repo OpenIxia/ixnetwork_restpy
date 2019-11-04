@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class RsvpP2mpIngressSubLsps(Base):
-	"""The RsvpP2mpIngressSubLsps class encapsulates a required rsvpP2mpIngressSubLsps node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RsvpP2mpIngressSubLsps property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""RSVP-TE P2MP Head (Ingress) Sub LSPs
+	The RsvpP2mpIngressSubLsps class encapsulates a required rsvpP2mpIngressSubLsps resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -37,18 +35,18 @@ class RsvpP2mpIngressSubLsps(Base):
 		super(RsvpP2mpIngressSubLsps, self).__init__(parent)
 
 	@property
-	def RsvpEroSubObjectsList(self):
-		"""An instance of the RsvpEroSubObjectsList class.
+	def RsvpEROSubObjectsList(self):
+		"""An instance of the RsvpEROSubObjectsList class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist.RsvpEroSubObjectsList)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist.RsvpEROSubObjectsList)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist import RsvpEroSubObjectsList
-		return RsvpEroSubObjectsList(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist import RsvpEROSubObjectsList
+		return RsvpEROSubObjectsList(self)
 
 	@property
 	def Active(self):

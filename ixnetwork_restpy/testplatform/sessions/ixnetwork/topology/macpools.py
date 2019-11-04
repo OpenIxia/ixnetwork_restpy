@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class MacPools(Base):
-	"""The MacPools class encapsulates a user managed macPools node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the MacPools property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Represents an Ethernet device set
+	The MacPools class encapsulates a list of macPools resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the MacPools.find() method.
+	The list can be managed by the user by using the MacPools.add() and MacPools.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class MsrpListener(Base):
-	"""The MsrpListener class encapsulates a user managed msrpListener node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the MsrpListener property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""MSRP Listener level Configuration
+	The MsrpListener class encapsulates a list of msrpListener resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the MsrpListener.find() method.
+	The list can be managed by the user by using the MsrpListener.add() and MsrpListener.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -450,7 +449,7 @@ class MsrpListener(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('clearListenerDatabasesInClient', payload=payload, response_object=None)
@@ -484,7 +483,7 @@ class MsrpListener(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getListenerDatabases', payload=payload, response_object=None)
@@ -518,7 +517,7 @@ class MsrpListener(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getMsrpListenerDomainDatabase', payload=payload, response_object=None)
@@ -552,7 +551,7 @@ class MsrpListener(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getMsrpListenerStreamDatabase', payload=payload, response_object=None)
@@ -586,7 +585,7 @@ class MsrpListener(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getMsrpListenerVlanDatabase', payload=payload, response_object=None)

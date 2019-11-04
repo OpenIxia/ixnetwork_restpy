@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class SwitchGroupsList(Base):
-	"""The SwitchGroupsList class encapsulates a system managed switchGroupsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SwitchGroupsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Openflow Switch Groups level Configuration
+	The SwitchGroupsList class encapsulates a list of switchGroupsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the SwitchGroupsList.find() method.
 	"""
 
 	__slots__ = ()

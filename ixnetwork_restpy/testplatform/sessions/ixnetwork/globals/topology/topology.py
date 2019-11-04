@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Topology(Base):
-	"""The Topology class encapsulates a required topology node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Topology property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Topology port level configuration
+	The Topology class encapsulates a required topology resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -247,18 +245,18 @@ class Topology(Base):
 		return ECpriRec(self)._select()
 
 	@property
-	def EcpriRec(self):
-		"""An instance of the EcpriRec class.
+	def ECpriRec(self):
+		"""An instance of the ECpriRec class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec.EcpriRec)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec.ECpriRec)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec import EcpriRec
-		return EcpriRec(self)._select()
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ecprirec.ecprirec import ECpriRec
+		return ECpriRec(self)._select()
 
 	@property
 	def Ere(self):

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class ProtocolStack(Base):
-	"""The ProtocolStack class encapsulates a required protocolStack node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ProtocolStack property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PortGroup represents the concept of a stack of layers which are to be configured on a group of ports.
+	The ProtocolStack class encapsulates a required protocolStack resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -41,13 +39,13 @@ class ProtocolStack(Base):
 		"""An instance of the AmtOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions.amtoptions.AmtOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_b3rvy29su3rhy2svyw10t3b0aw9ucw.AmtOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions.amtoptions import AmtOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_b3rvy29su3rhy2svyw10t3b0aw9ucw import AmtOptions
 		return AmtOptions(self)
 
 	@property
@@ -55,41 +53,27 @@ class ProtocolStack(Base):
 		"""An instance of the AncpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions.ancpoptions.AncpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_3rvy29su3rhy2svyw5jce9wdglvbnm.AncpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions.ancpoptions import AncpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_3rvy29su3rhy2svyw5jce9wdglvbnm import AncpOptions
 		return AncpOptions(self)
-
-	@property
-	def Atm(self):
-		"""An instance of the Atm class.
-
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.atm.atm.Atm)
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.atm.atm import Atm
-		return Atm(self)
 
 	@property
 	def DhcpHostsOptions(self):
 		"""An instance of the DhcpHostsOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions.dhcphostsoptions.DhcpHostsOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_u3rhy2svzghjcehvc3rzt3b0aw9ucw.DhcpHostsOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions.dhcphostsoptions import DhcpHostsOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_u3rhy2svzghjcehvc3rzt3b0aw9ucw import DhcpHostsOptions
 		return DhcpHostsOptions(self)
 
 	@property
@@ -97,13 +81,13 @@ class ProtocolStack(Base):
 		"""An instance of the DhcpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions.dhcpoptions.DhcpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_3rvy29su3rhy2svzghjce9wdglvbnm.DhcpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions.dhcpoptions import DhcpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_3rvy29su3rhy2svzghjce9wdglvbnm import DhcpOptions
 		return DhcpOptions(self)
 
 	@property
@@ -111,13 +95,13 @@ class ProtocolStack(Base):
 		"""An instance of the Dhcpv6ClientOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions.dhcpv6clientoptions.Dhcpv6ClientOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_y2svzghjchy2q2xpzw50t3b0aw9ucw.Dhcpv6ClientOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions.dhcpv6clientoptions import Dhcpv6ClientOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_y2svzghjchy2q2xpzw50t3b0aw9ucw import Dhcpv6ClientOptions
 		return Dhcpv6ClientOptions(self)
 
 	@property
@@ -125,13 +109,13 @@ class ProtocolStack(Base):
 		"""An instance of the Dhcpv6PdClientOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions.dhcpv6pdclientoptions.Dhcpv6PdClientOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_svzghjchy2ugrdbgllbnrpchrpb25z.Dhcpv6PdClientOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions.dhcpv6pdclientoptions import Dhcpv6PdClientOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_svzghjchy2ugrdbgllbnrpchrpb25z import Dhcpv6PdClientOptions
 		return Dhcpv6PdClientOptions(self)
 
 	@property
@@ -139,13 +123,13 @@ class ProtocolStack(Base):
 		"""An instance of the Dhcpv6ServerOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions.dhcpv6serveroptions.Dhcpv6ServerOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_y2svzghjchy2u2vydmvyt3b0aw9ucw.Dhcpv6ServerOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions.dhcpv6serveroptions import Dhcpv6ServerOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_y2svzghjchy2u2vydmvyt3b0aw9ucw import Dhcpv6ServerOptions
 		return Dhcpv6ServerOptions(self)
 
 	@property
@@ -153,13 +137,13 @@ class ProtocolStack(Base):
 		"""An instance of the Dot1xOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions.dot1xoptions.Dot1xOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_rvy29su3rhy2svzg90mxhpchrpb25z.Dot1xOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions.dot1xoptions import Dot1xOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_rvy29su3rhy2svzg90mxhpchrpb25z import Dot1xOptions
 		return Dot1xOptions(self)
 
 	@property
@@ -167,13 +151,13 @@ class ProtocolStack(Base):
 		"""An instance of the EapoUdpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions.eapoudpoptions.EapoUdpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_29su3rhy2svzwfwb1vkce9wdglvbnm.EapoUdpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions.eapoudpoptions import EapoUdpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_29su3rhy2svzwfwb1vkce9wdglvbnm import EapoUdpOptions
 		return EapoUdpOptions(self)
 
 	@property
@@ -181,13 +165,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpClientOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions.egtpclientoptions.EgtpClientOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_3rhy2svzwd0censawvude9wdglvbnm.EgtpClientOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions.egtpclientoptions import EgtpClientOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_3rhy2svzwd0censawvude9wdglvbnm import EgtpClientOptions
 		return EgtpClientOptions(self)
 
 	@property
@@ -195,13 +179,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpMmeOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions.egtpmmeoptions.EgtpMmeOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions_29su3rhy2svzwd0ce1tzu9wdglvbnm.EgtpMmeOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions.egtpmmeoptions import EgtpMmeOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions_29su3rhy2svzwd0ce1tzu9wdglvbnm import EgtpMmeOptions
 		return EgtpMmeOptions(self)
 
 	@property
@@ -209,13 +193,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpOptionsBase class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase.egtpoptionsbase.EgtpOptionsBase)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_9su3rhy2svzwd0ce9wdglvbnncyxnl.EgtpOptionsBase)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase.egtpoptionsbase import EgtpOptionsBase
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_9su3rhy2svzwd0ce9wdglvbnncyxnl import EgtpOptionsBase
 		return EgtpOptionsBase(self)
 
 	@property
@@ -223,13 +207,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpS5S8PgwOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions.egtps5s8pgwoptions.EgtpS5S8PgwOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_rhy2svzwd0cfm1uzhqz3dpchrpb25z.EgtpS5S8PgwOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions.egtps5s8pgwoptions import EgtpS5S8PgwOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_rhy2svzwd0cfm1uzhqz3dpchrpb25z import EgtpS5S8PgwOptions
 		return EgtpS5S8PgwOptions(self)
 
 	@property
@@ -237,13 +221,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpS5S8SgwOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions.egtps5s8sgwoptions.EgtpS5S8SgwOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_rhy2svzwd0cfm1uzhtz3dpchrpb25z.EgtpS5S8SgwOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions.egtps5s8sgwoptions import EgtpS5S8SgwOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_rhy2svzwd0cfm1uzhtz3dpchrpb25z import EgtpS5S8SgwOptions
 		return EgtpS5S8SgwOptions(self)
 
 	@property
@@ -251,13 +235,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpServerOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions.egtpserveroptions.EgtpServerOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_3rhy2svzwd0cfnlcnzlck9wdglvbnm.EgtpServerOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions.egtpserveroptions import EgtpServerOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_3rhy2svzwd0cfnlcnzlck9wdglvbnm import EgtpServerOptions
 		return EgtpServerOptions(self)
 
 	@property
@@ -265,13 +249,13 @@ class ProtocolStack(Base):
 		"""An instance of the EgtpSgwOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions.egtpsgwoptions.EgtpSgwOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_29su3rhy2svzwd0cfnnd09wdglvbnm.EgtpSgwOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions.egtpsgwoptions import EgtpSgwOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_29su3rhy2svzwd0cfnnd09wdglvbnm import EgtpSgwOptions
 		return EgtpSgwOptions(self)
 
 	@property
@@ -279,13 +263,13 @@ class ProtocolStack(Base):
 		"""An instance of the Ethernet class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernet.Ethernet)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_3byb3rvy29su3rhy2svzxrozxjuzxq.Ethernet)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernet import Ethernet
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_3byb3rvy29su3rhy2svzxrozxjuzxq import Ethernet
 		return Ethernet(self)
 
 	@property
@@ -293,13 +277,13 @@ class ProtocolStack(Base):
 		"""An instance of the EthernetEndpoint class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernetendpoint.EthernetEndpoint)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_u3rhy2svzxrozxjuzxrfbmrwb2luda.EthernetEndpoint)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernetendpoint import EthernetEndpoint
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_u3rhy2svzxrozxjuzxrfbmrwb2luda import EthernetEndpoint
 		return EthernetEndpoint(self)
 
 	@property
@@ -307,13 +291,13 @@ class ProtocolStack(Base):
 		"""An instance of the EthernetOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernetoptions.EthernetOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_9su3rhy2svzxrozxjuzxrpchrpb25z.EthernetOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet.ethernetoptions import EthernetOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_9su3rhy2svzxrozxjuzxrpchrpb25z import EthernetOptions
 		return EthernetOptions(self)
 
 	@property
@@ -321,13 +305,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcClientEndpoint class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint.fcclientendpoint.FcClientEndpoint)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_u3rhy2svzmndbgllbnrfbmrwb2luda.FcClientEndpoint)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint.fcclientendpoint import FcClientEndpoint
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_u3rhy2svzmndbgllbnrfbmrwb2luda import FcClientEndpoint
 		return FcClientEndpoint(self)
 
 	@property
@@ -335,13 +319,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcClientOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions.fcclientoptions.FcClientOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_9su3rhy2svzmndbgllbnrpchrpb25z.FcClientOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions.fcclientoptions import FcClientOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_9su3rhy2svzmndbgllbnrpchrpb25z import FcClientOptions
 		return FcClientOptions(self)
 
 	@property
@@ -349,13 +333,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcFportFwdEndpoint class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint.fcfportfwdendpoint.FcFportFwdEndpoint)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_rhy2svzmngcg9ydez3zevuzhbvaw50.FcFportFwdEndpoint)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint.fcfportfwdendpoint import FcFportFwdEndpoint
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_rhy2svzmngcg9ydez3zevuzhbvaw50 import FcFportFwdEndpoint
 		return FcFportFwdEndpoint(self)
 
 	@property
@@ -363,13 +347,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcFportOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions.fcfportoptions.FcFportOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_29su3rhy2svzmngcg9yde9wdglvbnm.FcFportOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions.fcfportoptions import FcFportOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_29su3rhy2svzmngcg9yde9wdglvbnm import FcFportOptions
 		return FcFportOptions(self)
 
 	@property
@@ -377,13 +361,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcoeClientOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions.fcoeclientoptions.FcoeClientOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_3rhy2svzmnvzunsawvude9wdglvbnm.FcoeClientOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions.fcoeclientoptions import FcoeClientOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_3rhy2svzmnvzunsawvude9wdglvbnm import FcoeClientOptions
 		return FcoeClientOptions(self)
 
 	@property
@@ -391,13 +375,13 @@ class ProtocolStack(Base):
 		"""An instance of the FcoeFwdOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions.fcoefwdoptions.FcoeFwdOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_29su3rhy2svzmnvzuz3ze9wdglvbnm.FcoeFwdOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions.fcoefwdoptions import FcoeFwdOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_29su3rhy2svzmnvzuz3ze9wdglvbnm import FcoeFwdOptions
 		return FcoeFwdOptions(self)
 
 	@property
@@ -405,13 +389,13 @@ class ProtocolStack(Base):
 		"""An instance of the IgmpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions.igmpoptions.IgmpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_3rvy29su3rhy2svawdtce9wdglvbnm.IgmpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions.igmpoptions import IgmpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_3rvy29su3rhy2svawdtce9wdglvbnm import IgmpOptions
 		return IgmpOptions(self)
 
 	@property
@@ -419,13 +403,13 @@ class ProtocolStack(Base):
 		"""An instance of the IpRangeOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions.iprangeoptions.IpRangeOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_29su3rhy2svaxbsyw5nzu9wdglvbnm.IpRangeOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions.iprangeoptions import IpRangeOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_29su3rhy2svaxbsyw5nzu9wdglvbnm import IpRangeOptions
 		return IpRangeOptions(self)
 
 	@property
@@ -433,13 +417,13 @@ class ProtocolStack(Base):
 		"""An instance of the L2tpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions.l2tpoptions.L2tpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_3rvy29su3rhy2svbdj0ce9wdglvbnm.L2tpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions.l2tpoptions import L2tpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_3rvy29su3rhy2svbdj0ce9wdglvbnm import L2tpOptions
 		return L2tpOptions(self)
 
 	@property
@@ -447,13 +431,13 @@ class ProtocolStack(Base):
 		"""An instance of the Options class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options.options.Options)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_l3byb3rvy29su3rhy2svb3b0aw9ucw.Options)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options.options import Options
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_l3byb3rvy29su3rhy2svb3b0aw9ucw import Options
 		return Options(self)._select()
 
 	@property
@@ -461,13 +445,13 @@ class ProtocolStack(Base):
 		"""An instance of the PppoxOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions.pppoxoptions.PppoxOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_rvy29su3rhy2svchbwb3hpchrpb25z.PppoxOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions.pppoxoptions import PppoxOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_rvy29su3rhy2svchbwb3hpchrpb25z import PppoxOptions
 		return PppoxOptions(self)
 
 	@property
@@ -475,13 +459,13 @@ class ProtocolStack(Base):
 		"""An instance of the PtpOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions.ptpoptions.PtpOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_b3rvy29su3rhy2svchrwt3b0aw9ucw.PtpOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions.ptpoptions import PtpOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_b3rvy29su3rhy2svchrwt3b0aw9ucw import PtpOptions
 		return PtpOptions(self)
 
 	@property
@@ -489,13 +473,13 @@ class ProtocolStack(Base):
 		"""An instance of the SmDnsOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions.smdnsoptions.SmDnsOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_rvy29su3rhy2svc21ebnnpchrpb25z.SmDnsOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions.smdnsoptions import SmDnsOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_rvy29su3rhy2svc21ebnnpchrpb25z import SmDnsOptions
 		return SmDnsOptions(self)
 
 	@property
@@ -503,13 +487,13 @@ class ProtocolStack(Base):
 		"""An instance of the StaticHostsOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions.statichostsoptions.StaticHostsOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_rhy2svc3rhdgljsg9zdhnpchrpb25z.StaticHostsOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions.statichostsoptions import StaticHostsOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_rhy2svc3rhdgljsg9zdhnpchrpb25z import StaticHostsOptions
 		return StaticHostsOptions(self)
 
 	@property
@@ -517,13 +501,13 @@ class ProtocolStack(Base):
 		"""An instance of the TwampOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions.twampoptions.TwampOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_rvy29su3rhy2svdhdhbxbpchrpb25z.TwampOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions.twampoptions import TwampOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_rvy29su3rhy2svdhdhbxbpchrpb25z import TwampOptions
 		return TwampOptions(self)
 
 	@property
@@ -531,13 +515,13 @@ class ProtocolStack(Base):
 		"""An instance of the TwampServerOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions.twampserveroptions.TwampServerOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_rhy2svdhdhbxbtzxj2zxjpchrpb25z.TwampServerOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions.twampserveroptions import TwampServerOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_rhy2svdhdhbxbtzxj2zxjpchrpb25z import TwampServerOptions
 		return TwampServerOptions(self)
 
 	@property
@@ -545,13 +529,13 @@ class ProtocolStack(Base):
 		"""An instance of the VepaOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions.vepaoptions.VepaOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_3rvy29su3rhy2svdmvwyu9wdglvbnm.VepaOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions.vepaoptions import VepaOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_3rvy29su3rhy2svdmvwyu9wdglvbnm import VepaOptions
 		return VepaOptions(self)
 
 	@property
@@ -559,13 +543,13 @@ class ProtocolStack(Base):
 		"""An instance of the WebAuthOptions class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions.webauthoptions.WebAuthOptions)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_29su3rhy2svd2viqxv0ae9wdglvbnm.WebAuthOptions)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions.webauthoptions import WebAuthOptions
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_29su3rhy2svd2viqxv0ae9wdglvbnm import WebAuthOptions
 		return WebAuthOptions(self)
 
 	@property

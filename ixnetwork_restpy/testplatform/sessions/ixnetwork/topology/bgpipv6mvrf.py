@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIpv6MVrf(Base):
-	"""The BgpIpv6MVrf class encapsulates a user managed bgpIpv6MVrf node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIpv6MVrf property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP IPv6 Peer mVRF Configuration
+	The BgpIpv6MVrf class encapsulates a list of bgpIpv6MVrf resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIpv6MVrf.find() method.
+	The list can be managed by the user by using the BgpIpv6MVrf.add() and BgpIpv6MVrf.remove() methods.
 	"""
 
 	__slots__ = ()

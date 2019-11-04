@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class NacApps(Base):
-	"""The NacApps class encapsulates a user managed nacApps node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NacApps property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""TLV Application Code
+	The NacApps class encapsulates a list of nacApps resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the NacApps.find() method.
+	The list can be managed by the user by using the NacApps.add() and NacApps.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IgmpGlobals(Base):
-	"""The IgmpGlobals class encapsulates a user managed igmpGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IgmpGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The IgmpGlobals class encapsulates a list of igmpGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IgmpGlobals.find() method.
+	The list can be managed by the user by using the IgmpGlobals.add() and IgmpGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

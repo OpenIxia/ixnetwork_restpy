@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class RsvpP2mpEgressLsps(Base):
-	"""The RsvpP2mpEgressLsps class encapsulates a required rsvpP2mpEgressLsps node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RsvpP2mpEgressLsps property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""RSVP-TE P2MP Tail (Egress) Tunnels
+	The RsvpP2mpEgressLsps class encapsulates a required rsvpP2mpEgressLsps resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -37,18 +35,18 @@ class RsvpP2mpEgressLsps(Base):
 		super(RsvpP2mpEgressLsps, self).__init__(parent)
 
 	@property
-	def RsvpRroSubObjectsList(self):
-		"""An instance of the RsvpRroSubObjectsList class.
+	def RsvpRROSubObjectsList(self):
+		"""An instance of the RsvpRROSubObjectsList class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist.RsvpRroSubObjectsList)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist.RsvpRROSubObjectsList)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist import RsvpRroSubObjectsList
-		return RsvpRroSubObjectsList(self)
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist import RsvpRROSubObjectsList
+		return RsvpRROSubObjectsList(self)
 
 	@property
 	def Tag(self):
@@ -367,7 +365,7 @@ class RsvpP2mpEgressLsps(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('graftSubLsp', payload=payload, response_object=None)
@@ -401,7 +399,7 @@ class RsvpP2mpEgressLsps(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('pruneSubLsp', payload=payload, response_object=None)
@@ -435,7 +433,7 @@ class RsvpP2mpEgressLsps(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('start', payload=payload, response_object=None)
@@ -469,7 +467,7 @@ class RsvpP2mpEgressLsps(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stop', payload=payload, response_object=None)

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Actions(Base):
-	"""The Actions class encapsulates a user managed actions node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Actions property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Action
+	The Actions class encapsulates a list of actions resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Actions.find() method.
+	The list can be managed by the user by using the Actions.add() and Actions.remove() methods.
 	"""
 
 	__slots__ = ()

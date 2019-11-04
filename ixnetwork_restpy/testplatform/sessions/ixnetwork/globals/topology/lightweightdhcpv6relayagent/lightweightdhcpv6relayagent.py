@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LightweightDhcpv6relayAgent(Base):
-	"""The LightweightDhcpv6relayAgent class encapsulates a required lightweightDhcpv6relayAgent node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LightweightDhcpv6relayAgent property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""IPv6 global and per-port settings
+	The LightweightDhcpv6relayAgent class encapsulates a required lightweightDhcpv6relayAgent resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

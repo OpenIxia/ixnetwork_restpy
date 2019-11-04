@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpL3VNIImportRouteTargetList(Base):
-	"""The BgpL3VNIImportRouteTargetList class encapsulates a system managed bgpL3VNIImportRouteTargetList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpL3VNIImportRouteTargetList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Import RouteTarget
+	The BgpL3VNIImportRouteTargetList class encapsulates a list of bgpL3VNIImportRouteTargetList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BgpL3VNIImportRouteTargetList.find() method.
 	"""
 
 	__slots__ = ()

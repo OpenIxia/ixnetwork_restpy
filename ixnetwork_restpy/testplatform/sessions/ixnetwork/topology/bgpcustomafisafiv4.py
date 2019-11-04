@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpCustomAfiSafiv4(Base):
-	"""The BgpCustomAfiSafiv4 class encapsulates a required bgpCustomAfiSafiv4 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpCustomAfiSafiv4 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The BgpCustomAfiSafiv4 class encapsulates a required bgpCustomAfiSafiv4 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

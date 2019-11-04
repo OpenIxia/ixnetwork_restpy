@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class EgtpClientGlobals(Base):
-	"""The EgtpClientGlobals class encapsulates a user managed egtpClientGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EgtpClientGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The EgtpClientGlobals class encapsulates a list of egtpClientGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the EgtpClientGlobals.find() method.
+	The list can be managed by the user by using the EgtpClientGlobals.add() and EgtpClientGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

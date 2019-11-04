@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class ActionTemplate(Base):
-	"""The ActionTemplate class encapsulates a user managed actionTemplate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ActionTemplate property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Action Builder Template.
+	The ActionTemplate class encapsulates a list of actionTemplate resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the ActionTemplate.find() method.
+	The list can be managed by the user by using the ActionTemplate.add() and ActionTemplate.remove() methods.
 	"""
 
 	__slots__ = ()

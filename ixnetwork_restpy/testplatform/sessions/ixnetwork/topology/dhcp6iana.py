@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcp6Iana(Base):
-	"""The Dhcp6Iana class encapsulates a required dhcp6Iana node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcp6Iana property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""DHCPv6 Iana/Iata endpoint used in traffic
+	The Dhcp6Iana class encapsulates a required dhcp6Iana resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

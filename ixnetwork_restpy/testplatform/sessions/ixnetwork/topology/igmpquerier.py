@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IgmpQuerier(Base):
-	"""The IgmpQuerier class encapsulates a user managed igmpQuerier node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IgmpQuerier property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""IGMP Querier Configuration
+	The IgmpQuerier class encapsulates a list of igmpQuerier resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IgmpQuerier.find() method.
+	The list can be managed by the user by using the IgmpQuerier.add() and IgmpQuerier.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -751,7 +750,7 @@ class IgmpQuerier(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('startIGMP', payload=payload, response_object=None)
@@ -810,7 +809,7 @@ class IgmpQuerier(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stopIGMP', payload=payload, response_object=None)

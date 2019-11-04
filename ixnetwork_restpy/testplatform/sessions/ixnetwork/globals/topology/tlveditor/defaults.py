@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Defaults(Base):
-	"""The Defaults class encapsulates a system managed defaults node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Defaults property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Default Tlv template container
+	The Defaults class encapsulates a list of defaults resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Defaults.find() method.
 	"""
 
 	__slots__ = ()

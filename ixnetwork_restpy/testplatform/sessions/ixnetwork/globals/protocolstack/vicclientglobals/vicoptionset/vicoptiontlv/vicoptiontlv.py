@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class VicOptionTlv(Base):
-	"""The VicOptionTlv class encapsulates a user managed vicOptionTlv node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the VicOptionTlv property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Define a single TLV option.
+	The VicOptionTlv class encapsulates a list of vicOptionTlv resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the VicOptionTlv.find() method.
+	The list can be managed by the user by using the VicOptionTlv.add() and VicOptionTlv.remove() methods.
 	"""
 
 	__slots__ = ()

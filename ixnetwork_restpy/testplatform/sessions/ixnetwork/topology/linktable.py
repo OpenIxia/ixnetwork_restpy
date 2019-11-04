@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LinkTable(Base):
-	"""The LinkTable class encapsulates a required linkTable node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LinkTable property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Topology Link Table. sizes of fromNodeIndex and toNodeIndex are the same.
+	The LinkTable class encapsulates a required linkTable resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

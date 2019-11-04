@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Atm(Base):
-	"""The Atm class encapsulates a required atm node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Atm property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Layer 1 (Physical) parameters for an Asynchronous Transfer Mode (ATM) port.
+	The Atm class encapsulates a required atm resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

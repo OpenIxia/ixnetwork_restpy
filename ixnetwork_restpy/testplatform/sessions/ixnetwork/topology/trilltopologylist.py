@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class TrillTopologyList(Base):
-	"""The TrillTopologyList class encapsulates a required trillTopologyList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TrillTopologyList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""TRILL Topology
+	The TrillTopologyList class encapsulates a required trillTopologyList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

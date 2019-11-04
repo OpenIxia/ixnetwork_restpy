@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DceSimulatedMCastMacGroupList(Base):
-	"""The DceSimulatedMCastMacGroupList class encapsulates a required dceSimulatedMCastMacGroupList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DceSimulatedMCastMacGroupList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Fabric-Path Simulated Multicast MAC Groups
+	The DceSimulatedMCastMacGroupList class encapsulates a required dceSimulatedMCastMacGroupList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

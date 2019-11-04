@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class PceDetailedSrSyncLspUpdateParams(Base):
-	"""The PceDetailedSrSyncLspUpdateParams class encapsulates a system managed pceDetailedSrSyncLspUpdateParams node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the PceDetailedSrSyncLspUpdateParams property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""PCE Learned LSPs Information Database
+	The PceDetailedSrSyncLspUpdateParams class encapsulates a list of pceDetailedSrSyncLspUpdateParams resources that is managed by the system.
+	A list of resources can be retrieved from the server using the PceDetailedSrSyncLspUpdateParams.find() method.
 	"""
 
 	__slots__ = ()

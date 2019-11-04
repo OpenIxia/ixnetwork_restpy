@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class ECpriFaultSubObjectsList(Base):
-	"""The ECpriFaultSubObjectsList class encapsulates a system managed eCpriFaultSubObjectsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ECpriFaultSubObjectsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ECPRI Fault Sub Objects
+	The ECpriFaultSubObjectsList class encapsulates a list of eCpriFaultSubObjectsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the ECpriFaultSubObjectsList.find() method.
 	"""
 
 	__slots__ = ()

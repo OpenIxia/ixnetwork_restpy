@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class VxlanIPv6StaticInfo(Base):
-	"""The VxlanIPv6StaticInfo class encapsulates a required vxlanIPv6StaticInfo node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the VxlanIPv6StaticInfo property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""VXLANv6 Unicast Info
+	The VxlanIPv6StaticInfo class encapsulates a required vxlanIPv6StaticInfo resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

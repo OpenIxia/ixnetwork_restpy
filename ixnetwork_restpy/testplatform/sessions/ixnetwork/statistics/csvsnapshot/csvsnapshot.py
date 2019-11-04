@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class CsvSnapshot(Base):
-	"""The CsvSnapshot class encapsulates a required csvSnapshot node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the CsvSnapshot property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""NOT DEFINED
+	The CsvSnapshot class encapsulates a required csvSnapshot resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

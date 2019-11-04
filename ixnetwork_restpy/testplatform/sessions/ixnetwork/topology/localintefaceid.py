@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LocalIntefaceId(Base):
-	"""The LocalIntefaceId class encapsulates a required localIntefaceId node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LocalIntefaceId property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The LocalIntefaceId class encapsulates a required localIntefaceId resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

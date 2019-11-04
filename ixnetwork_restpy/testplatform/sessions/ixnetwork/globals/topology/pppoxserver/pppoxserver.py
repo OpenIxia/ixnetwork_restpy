@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Pppoxserver(Base):
-	"""The Pppoxserver class encapsulates a required pppoxserver node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Pppoxserver property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PPPoX Server global and per-port settings
+	The Pppoxserver class encapsulates a required pppoxserver resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

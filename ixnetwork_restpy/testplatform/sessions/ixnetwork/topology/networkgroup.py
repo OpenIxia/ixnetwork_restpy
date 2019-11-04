@@ -24,11 +24,11 @@ from ixnetwork_restpy.files import Files
 
 
 class NetworkGroup(Base):
-	"""The NetworkGroup class encapsulates a user managed networkGroup node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NetworkGroup property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Describes a set of network clouds with similar configuration 
+        and the same multiplicity for devices behind.
+	The NetworkGroup class encapsulates a list of networkGroup resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the NetworkGroup.find() method.
+	The list can be managed by the user by using the NetworkGroup.add() and NetworkGroup.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpLargeCommunitiesList(Base):
-	"""The BgpLargeCommunitiesList class encapsulates a system managed bgpLargeCommunitiesList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpLargeCommunitiesList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Bgp Non VPN RR Large Communities
+	The BgpLargeCommunitiesList class encapsulates a list of bgpLargeCommunitiesList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the BgpLargeCommunitiesList.find() method.
 	"""
 
 	__slots__ = ()

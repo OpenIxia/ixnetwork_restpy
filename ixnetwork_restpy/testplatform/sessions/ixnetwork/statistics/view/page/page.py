@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Page(Base):
-	"""The DEPRECATED Page class encapsulates a required page node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Page property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""DEPRECATED The root page for statistics view.
+	The Page class encapsulates a required page resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

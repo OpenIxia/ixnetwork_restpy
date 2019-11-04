@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DhcpV6DiscoveredInfo(Base):
-	"""The DhcpV6DiscoveredInfo class encapsulates a required dhcpV6DiscoveredInfo node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DhcpV6DiscoveredInfo property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The Dynamic Host Configuration Protocol Version 6 (DHCPv6) Discovered Information is based on RFC 3315. When the protocol interface is set for DHCPv6 and enabled, DHCPv6 negotiations will be started.
+	The DhcpV6DiscoveredInfo class encapsulates a required dhcpV6DiscoveredInfo resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Pce(Base):
-	"""The Pce class encapsulates a user managed pce node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Pce property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Pcep Session (Device) level Configuration
+	The Pce class encapsulates a list of pce resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Pce.find() method.
+	The list can be managed by the user by using the Pce.add() and Pce.remove() methods.
 	"""
 
 	__slots__ = ()

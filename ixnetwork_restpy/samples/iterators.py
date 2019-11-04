@@ -20,11 +20,9 @@ from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 
 # connect to a test platform
 test_platform = TestPlatform('127.0.0.1')
-
-# use the default session and get the root node of the hierarchy
-ixnetwork = test_platform.Sessions.find().Ixnetwork
-
-# clear the configuration
+test_platform.Authenticate('admin', 'admin')
+sessions = test_platform.Sessions.add()
+ixnetwork = sessions.ixnetwork
 ixnetwork.NewConfig()
 
 # create x number of vports

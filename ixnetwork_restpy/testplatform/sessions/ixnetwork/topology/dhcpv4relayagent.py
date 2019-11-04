@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcpv4relayAgent(Base):
-	"""The Dhcpv4relayAgent class encapsulates a user managed dhcpv4relayAgent node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcpv4relayAgent property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""DHCPv4 Relay Agent protocol.
+	The Dhcpv4relayAgent class encapsulates a list of dhcpv4relayAgent resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Dhcpv4relayAgent.find() method.
+	The list can be managed by the user by using the Dhcpv4relayAgent.add() and Dhcpv4relayAgent.remove() methods.
 	"""
 
 	__slots__ = ()

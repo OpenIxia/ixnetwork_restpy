@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Choice(Base):
-	"""The Choice class encapsulates a system managed choice node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Choice property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the particular choice related properties for the parameter.
+	The Choice class encapsulates a list of choice resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Choice.find() method.
 	"""
 
 	__slots__ = ()

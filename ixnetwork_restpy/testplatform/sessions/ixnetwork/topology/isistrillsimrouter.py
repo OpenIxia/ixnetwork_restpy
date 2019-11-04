@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisTrillSimRouter(Base):
-	"""The IsisTrillSimRouter class encapsulates a user managed isisTrillSimRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisTrillSimRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""TRILL Simulated Edge
+	The IsisTrillSimRouter class encapsulates a list of isisTrillSimRouter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IsisTrillSimRouter.find() method.
+	The list can be managed by the user by using the IsisTrillSimRouter.add() and IsisTrillSimRouter.remove() methods.
 	"""
 
 	__slots__ = ()

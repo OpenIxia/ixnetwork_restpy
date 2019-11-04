@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class ResourceManager(Base):
-	"""The ResourceManager class encapsulates a required resourceManager node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ResourceManager property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Top level node for resource manager API
+	The ResourceManager class encapsulates a required resourceManager resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

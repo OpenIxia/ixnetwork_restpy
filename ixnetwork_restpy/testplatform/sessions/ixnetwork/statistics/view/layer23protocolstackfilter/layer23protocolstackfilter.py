@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Layer23ProtocolStackFilter(Base):
-	"""The Layer23ProtocolStackFilter class encapsulates a user managed layer23ProtocolStackFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Layer23ProtocolStackFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Filters associated with layer23ProtocolStack view.
+	The Layer23ProtocolStackFilter class encapsulates a list of layer23ProtocolStackFilter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Layer23ProtocolStackFilter.find() method.
+	The list can be managed by the user by using the Layer23ProtocolStackFilter.add() and Layer23ProtocolStackFilter.remove() methods.
 	"""
 
 	__slots__ = ()

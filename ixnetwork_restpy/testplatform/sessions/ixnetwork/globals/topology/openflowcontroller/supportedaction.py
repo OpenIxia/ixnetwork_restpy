@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class SupportedAction(Base):
-	"""The SupportedAction class encapsulates a user managed supportedAction node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SupportedAction property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Action prototype.
+	The SupportedAction class encapsulates a list of supportedAction resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the SupportedAction.find() method.
+	The list can be managed by the user by using the SupportedAction.add() and SupportedAction.remove() methods.
 	"""
 
 	__slots__ = ()

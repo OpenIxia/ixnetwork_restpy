@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Manager(Base):
-	"""The Manager class encapsulates a required manager node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Manager property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Managers to which the OVSDB will initiate connections to.
+	The Manager class encapsulates a required manager resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

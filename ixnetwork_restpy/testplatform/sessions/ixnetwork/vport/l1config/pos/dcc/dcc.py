@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dcc(Base):
-	"""The Dcc class encapsulates a required dcc node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dcc property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The Layer 1 Configuration is being configured for a POS port and DCC is selected as the Payload Type.
+	The Dcc class encapsulates a required dcc resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class OspfPseudoRouterStubRoutes(Base):
-	"""The OspfPseudoRouterStubRoutes class encapsulates a system managed ospfPseudoRouterStubRoutes node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OspfPseudoRouterStubRoutes property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Simulated Router Information
+	The OspfPseudoRouterStubRoutes class encapsulates a list of ospfPseudoRouterStubRoutes resources that is managed by the system.
+	A list of resources can be retrieved from the server using the OspfPseudoRouterStubRoutes.find() method.
 	"""
 
 	__slots__ = ()

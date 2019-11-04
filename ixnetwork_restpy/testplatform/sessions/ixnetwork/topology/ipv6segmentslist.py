@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IPv6SegmentsList(Base):
-	"""The IPv6SegmentsList class encapsulates a system managed IPv6SegmentsList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IPv6SegmentsList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""IPv6 Segments List
+	The IPv6SegmentsList class encapsulates a list of IPv6SegmentsList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IPv6SegmentsList.find() method.
 	"""
 
 	__slots__ = ()

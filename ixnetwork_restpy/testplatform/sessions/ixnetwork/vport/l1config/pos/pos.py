@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Pos(Base):
-	"""The Pos class encapsulates a required pos node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Pos property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Layer 1 (physical) parameters for a POS (Packet over SONET) port.
+	The Pos class encapsulates a required pos resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

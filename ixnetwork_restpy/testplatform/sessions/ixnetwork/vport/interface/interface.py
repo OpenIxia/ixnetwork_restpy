@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Interface(Base):
-	"""The Interface class encapsulates a user managed interface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Interface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""List of interfaces that can be configured on ports. Multiple protocol interfaces can be configured for Ixia ports that support this capability, with the number of protocol interfaces being dependent on the amount of memory available on the Ixia port.
+	The Interface class encapsulates a list of interface resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Interface.find() method.
+	The list can be managed by the user by using the Interface.add() and Interface.remove() methods.
 	"""
 
 	__slots__ = ()

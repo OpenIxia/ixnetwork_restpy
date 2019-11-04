@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisSRv6EndSIDList(Base):
-	"""The IsisSRv6EndSIDList class encapsulates a required isisSRv6EndSIDList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisSRv6EndSIDList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""ISIS SRv6 End SID
+	The IsisSRv6EndSIDList class encapsulates a required isisSRv6EndSIDList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

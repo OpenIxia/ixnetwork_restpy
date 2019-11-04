@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Ixnet(Base):
-	"""The Ixnet class encapsulates a required ixnet node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ixnet property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This node tracks remote clients connected using the ixNet Service. Each client connection is being transported over an https websocket.
+	The Ixnet class encapsulates a required ixnet resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

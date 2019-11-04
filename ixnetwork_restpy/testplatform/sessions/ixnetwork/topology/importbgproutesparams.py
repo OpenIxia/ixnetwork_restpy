@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class ImportBgpRoutesParams(Base):
-	"""The ImportBgpRoutesParams class encapsulates a required importBgpRoutesParams node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ImportBgpRoutesParams property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Import IPv4 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
+	The ImportBgpRoutesParams class encapsulates a required importBgpRoutesParams resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

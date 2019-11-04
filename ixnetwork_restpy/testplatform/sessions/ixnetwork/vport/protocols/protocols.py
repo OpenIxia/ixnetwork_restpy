@@ -24,11 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Protocols(Base):
-	"""The Protocols class encapsulates a user managed protocols node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Protocols property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Allows the user to select a set of protocols that are enabled for a newly added port.
+	The Protocols class encapsulates a list of protocols resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Protocols.find() method.
 	"""
 
 	__slots__ = ()
@@ -42,13 +40,13 @@ class Protocols(Base):
 		"""An instance of the Arp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp.arp.Arp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_l3zwb3j0l3byb3rvy29scy9hcna.Arp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp.arp import Arp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_l3zwb3j0l3byb3rvy29scy9hcna import Arp
 		return Arp(self)
 
 	@property
@@ -56,13 +54,13 @@ class Protocols(Base):
 		"""An instance of the Bfd class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd.bfd.Bfd)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_l3zwb3j0l3byb3rvy29scy9izmq.Bfd)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd.bfd import Bfd
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_l3zwb3j0l3byb3rvy29scy9izmq import Bfd
 		return Bfd(self)._select()
 
 	@property
@@ -70,13 +68,13 @@ class Protocols(Base):
 		"""An instance of the Bgp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp.bgp.Bgp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_l3zwb3j0l3byb3rvy29scy9iz3a.Bgp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp.bgp import Bgp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_l3zwb3j0l3byb3rvy29scy9iz3a import Bgp
 		return Bgp(self)._select()
 
 	@property
@@ -84,13 +82,13 @@ class Protocols(Base):
 		"""An instance of the Cfm class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm.cfm.Cfm)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_l3zwb3j0l3byb3rvy29scy9jzm0.Cfm)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm.cfm import Cfm
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_l3zwb3j0l3byb3rvy29scy9jzm0 import Cfm
 		return Cfm(self)._select()
 
 	@property
@@ -98,13 +96,13 @@ class Protocols(Base):
 		"""An instance of the Eigrp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp.eigrp.Eigrp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_l3zwb3j0l3byb3rvy29scy9lawdyca.Eigrp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp.eigrp import Eigrp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_l3zwb3j0l3byb3rvy29scy9lawdyca import Eigrp
 		return Eigrp(self)._select()
 
 	@property
@@ -112,13 +110,13 @@ class Protocols(Base):
 		"""An instance of the Elmi class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi.elmi.Elmi)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_l3zwb3j0l3byb3rvy29scy9lbg1p.Elmi)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi.elmi import Elmi
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_l3zwb3j0l3byb3rvy29scy9lbg1p import Elmi
 		return Elmi(self)._select()
 
 	@property
@@ -126,13 +124,13 @@ class Protocols(Base):
 		"""An instance of the Igmp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp.igmp.Igmp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_l3zwb3j0l3byb3rvy29scy9pz21w.Igmp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp.igmp import Igmp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_l3zwb3j0l3byb3rvy29scy9pz21w import Igmp
 		return Igmp(self)._select()
 
 	@property
@@ -140,13 +138,13 @@ class Protocols(Base):
 		"""An instance of the Isis class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis.isis.Isis)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_l3zwb3j0l3byb3rvy29scy9pc2lz.Isis)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis.isis import Isis
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_l3zwb3j0l3byb3rvy29scy9pc2lz import Isis
 		return Isis(self)._select()
 
 	@property
@@ -154,13 +152,13 @@ class Protocols(Base):
 		"""An instance of the Lacp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp.lacp.Lacp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_l3zwb3j0l3byb3rvy29scy9sywnw.Lacp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp.lacp import Lacp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_l3zwb3j0l3byb3rvy29scy9sywnw import Lacp
 		return Lacp(self)._select()
 
 	@property
@@ -168,13 +166,13 @@ class Protocols(Base):
 		"""An instance of the Ldp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp.ldp.Ldp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_l3zwb3j0l3byb3rvy29scy9szha.Ldp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp.ldp import Ldp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_l3zwb3j0l3byb3rvy29scy9szha import Ldp
 		return Ldp(self)._select()
 
 	@property
@@ -182,13 +180,13 @@ class Protocols(Base):
 		"""An instance of the LinkOam class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam.linkoam.LinkOam)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_zwb3j0l3byb3rvy29scy9saw5rt2ft.LinkOam)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam.linkoam import LinkOam
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_zwb3j0l3byb3rvy29scy9saw5rt2ft import LinkOam
 		return LinkOam(self)._select()
 
 	@property
@@ -196,13 +194,13 @@ class Protocols(Base):
 		"""An instance of the Lisp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp.lisp.Lisp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_l3zwb3j0l3byb3rvy29scy9saxnw.Lisp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp.lisp import Lisp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_l3zwb3j0l3byb3rvy29scy9saxnw import Lisp
 		return Lisp(self)._select()
 
 	@property
@@ -210,13 +208,13 @@ class Protocols(Base):
 		"""An instance of the Mld class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld.mld.Mld)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_l3zwb3j0l3byb3rvy29scy9tbgq.Mld)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld.mld import Mld
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_l3zwb3j0l3byb3rvy29scy9tbgq import Mld
 		return Mld(self)._select()
 
 	@property
@@ -224,13 +222,13 @@ class Protocols(Base):
 		"""An instance of the MplsOam class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam.mplsoam.MplsOam)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_zwb3j0l3byb3rvy29scy9tcgxzt2ft.MplsOam)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam.mplsoam import MplsOam
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_zwb3j0l3byb3rvy29scy9tcgxzt2ft import MplsOam
 		return MplsOam(self)._select()
 
 	@property
@@ -238,13 +236,13 @@ class Protocols(Base):
 		"""An instance of the MplsTp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp.mplstp.MplsTp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_3zwb3j0l3byb3rvy29scy9tcgxzvha.MplsTp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp.mplstp import MplsTp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_3zwb3j0l3byb3rvy29scy9tcgxzvha import MplsTp
 		return MplsTp(self)._select()
 
 	@property
@@ -252,13 +250,13 @@ class Protocols(Base):
 		"""An instance of the OpenFlow class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow.openflow.OpenFlow)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_b3j0l3byb3rvy29scy9vcgvurmxvdw.OpenFlow)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow.openflow import OpenFlow
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_b3j0l3byb3rvy29scy9vcgvurmxvdw import OpenFlow
 		return OpenFlow(self)._select()
 
 	@property
@@ -266,13 +264,13 @@ class Protocols(Base):
 		"""An instance of the Ospf class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf.ospf.Ospf)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_l3zwb3j0l3byb3rvy29scy9vc3bm.Ospf)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf.ospf import Ospf
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_l3zwb3j0l3byb3rvy29scy9vc3bm import Ospf
 		return Ospf(self)._select()
 
 	@property
@@ -280,13 +278,13 @@ class Protocols(Base):
 		"""An instance of the OspfV3 class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf.ospfv3.OspfV3)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_3zwb3j0l3byb3rvy29scy9vc3bmvjm.OspfV3)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf.ospfv3 import OspfV3
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_3zwb3j0l3byb3rvy29scy9vc3bmvjm import OspfV3
 		return OspfV3(self)._select()
 
 	@property
@@ -294,13 +292,13 @@ class Protocols(Base):
 		"""An instance of the Pimsm class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm.pimsm.Pimsm)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_l3zwb3j0l3byb3rvy29scy9waw1zbq.Pimsm)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm.pimsm import Pimsm
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_l3zwb3j0l3byb3rvy29scy9waw1zbq import Pimsm
 		return Pimsm(self)._select()
 
 	@property
@@ -308,13 +306,13 @@ class Protocols(Base):
 		"""An instance of the Ping class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping.ping.Ping)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_l3zwb3j0l3byb3rvy29scy9waw5n.Ping)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping.ping import Ping
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_l3zwb3j0l3byb3rvy29scy9waw5n import Ping
 		return Ping(self)
 
 	@property
@@ -322,13 +320,13 @@ class Protocols(Base):
 		"""An instance of the Rip class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip.rip.Rip)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_l3zwb3j0l3byb3rvy29scy9yaxa.Rip)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip.rip import Rip
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_l3zwb3j0l3byb3rvy29scy9yaxa import Rip
 		return Rip(self)._select()
 
 	@property
@@ -336,13 +334,13 @@ class Protocols(Base):
 		"""An instance of the Ripng class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng.ripng.Ripng)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_l3zwb3j0l3byb3rvy29scy9yaxbuzw.Ripng)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng.ripng import Ripng
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_l3zwb3j0l3byb3rvy29scy9yaxbuzw import Ripng
 		return Ripng(self)._select()
 
 	@property
@@ -350,13 +348,13 @@ class Protocols(Base):
 		"""An instance of the Rsvp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp.rsvp.Rsvp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_l3zwb3j0l3byb3rvy29scy9yc3zw.Rsvp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp.rsvp import Rsvp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_l3zwb3j0l3byb3rvy29scy9yc3zw import Rsvp
 		return Rsvp(self)._select()
 
 	@property
@@ -364,13 +362,13 @@ class Protocols(Base):
 		"""An instance of the Static class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static.static.Static)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_3zwb3j0l3byb3rvy29scy9zdgf0awm.Static)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static.static import Static
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_3zwb3j0l3byb3rvy29scy9zdgf0awm import Static
 		return Static(self)._select()
 
 	@property
@@ -378,13 +376,13 @@ class Protocols(Base):
 		"""An instance of the Stp class.
 
 		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp.stp.Stp)
+			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_l3zwb3j0l3byb3rvy29scy9zdha.Stp)
 
 		Raises:
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp.stp import Stp
+		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_l3zwb3j0l3byb3rvy29scy9zdha import Stp
 		return Stp(self)._select()
 
 	@property
@@ -395,26 +393,6 @@ class Protocols(Base):
 			number
 		"""
 		return self._get_attribute('protocolMaxNodeCount')
-
-	def add(self):
-		"""Adds a new protocols node on the server and retrieves it in this instance.
-
-		Returns:
-			self: This instance with all currently retrieved protocols data using find and the newly added protocols data available through an iterator or index
-
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
-
-	def remove(self):
-		"""Deletes all the protocols data in this instance from server.
-
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
 
 	def find(self, ProtocolMaxNodeCount=None):
 		"""Finds and retrieves protocols data from the server.

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class TrafficItem(Base):
-	"""The TrafficItem class encapsulates a user managed trafficItem node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TrafficItem property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""This object specifies the particular traffic item related properties.
+	The TrafficItem class encapsulates a list of trafficItem resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the TrafficItem.find() method.
+	The list can be managed by the user by using the TrafficItem.add() and TrafficItem.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -730,7 +729,7 @@ class TrafficItem(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		return self._execute('generate', payload=payload, response_object=None)
 
 	def ResolveAptixiaEndpoints(self):
@@ -764,7 +763,7 @@ class TrafficItem(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		return self._execute('startDefaultLearning', payload=payload, response_object=None)
 
 	def StartLearning(self, *args, **kwargs):

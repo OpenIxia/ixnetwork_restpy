@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class OspfPseudoRouterType2ExtRoutes(Base):
-	"""The OspfPseudoRouterType2ExtRoutes class encapsulates a system managed ospfPseudoRouterType2ExtRoutes node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OspfPseudoRouterType2ExtRoutes property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""External routes with external metric
+	The OspfPseudoRouterType2ExtRoutes class encapsulates a list of ospfPseudoRouterType2ExtRoutes resources that is managed by the system.
+	A list of resources can be retrieved from the server using the OspfPseudoRouterType2ExtRoutes.find() method.
 	"""
 
 	__slots__ = ()

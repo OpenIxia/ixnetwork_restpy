@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Layer23NextGenProtocolFilter(Base):
-	"""The Layer23NextGenProtocolFilter class encapsulates a user managed layer23NextGenProtocolFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Layer23NextGenProtocolFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Describes the filter of next gen protocols for layer 2 and layer 3
+	The Layer23NextGenProtocolFilter class encapsulates a list of layer23NextGenProtocolFilter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Layer23NextGenProtocolFilter.find() method.
+	The list can be managed by the user by using the Layer23NextGenProtocolFilter.add() and Layer23NextGenProtocolFilter.remove() methods.
 	"""
 
 	__slots__ = ()

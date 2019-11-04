@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcp6ServerSessions(Base):
-	"""The Dhcp6ServerSessions class encapsulates a required dhcp6ServerSessions node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcp6ServerSessions property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""DHCPv6 Leases.
+	The Dhcp6ServerSessions class encapsulates a required dhcp6ServerSessions resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

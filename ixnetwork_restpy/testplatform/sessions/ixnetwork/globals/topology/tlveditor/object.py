@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Object(Base):
-	"""The Object class encapsulates a user managed object node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Object property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Tlv object container which can contain one of a field, sub tlv or container
+	The Object class encapsulates a list of object resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Object.find() method.
+	The list can be managed by the user by using the Object.add() and Object.remove() methods.
 	"""
 
 	__slots__ = ()

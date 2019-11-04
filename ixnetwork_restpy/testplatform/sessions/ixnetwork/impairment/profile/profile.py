@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Profile(Base):
-	"""The Profile class encapsulates a user managed profile node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Profile property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""List of impairment profiles.  For each incoming packet, apply the highest-priority profile which matches.
+	The Profile class encapsulates a list of profile resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Profile.find() method.
+	The list can be managed by the user by using the Profile.add() and Profile.remove() methods.
 	"""
 
 	__slots__ = ()

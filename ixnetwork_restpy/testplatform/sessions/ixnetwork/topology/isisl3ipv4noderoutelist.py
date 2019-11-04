@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisL3ipv4NodeRouteList(Base):
-	"""The IsisL3ipv4NodeRouteList class encapsulates a required isisL3ipv4NodeRouteList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisL3ipv4NodeRouteList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""ISIS-L3 IPv4 Node Route Configuration
+	The IsisL3ipv4NodeRouteList class encapsulates a required isisL3ipv4NodeRouteList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

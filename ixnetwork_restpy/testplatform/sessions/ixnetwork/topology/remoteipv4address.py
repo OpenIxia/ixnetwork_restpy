@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class RemoteIpv4Address(Base):
-	"""The RemoteIpv4Address class encapsulates a required remoteIpv4Address node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RemoteIpv4Address property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The RemoteIpv4Address class encapsulates a required remoteIpv4Address resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

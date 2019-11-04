@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BfdRouter(Base):
-	"""The BfdRouter class encapsulates a required bfdRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BfdRouter property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Bfd Port Specific Data
+	The BfdRouter class encapsulates a required bfdRouter resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

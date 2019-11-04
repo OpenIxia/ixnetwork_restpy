@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class DynamicRate(Base):
-	"""The DynamicRate class encapsulates a system managed dynamicRate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DynamicRate property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object provides different options for the rate that can be changed on the fly.
+	The DynamicRate class encapsulates a list of dynamicRate resources that is managed by the system.
+	A list of resources can be retrieved from the server using the DynamicRate.find() method.
 	"""
 
 	__slots__ = ()

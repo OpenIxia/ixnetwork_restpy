@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisBierSubDomainList(Base):
-	"""The IsisBierSubDomainList class encapsulates a required isisBierSubDomainList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisBierSubDomainList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""ISIS BIER Sub Domain
+	The IsisBierSubDomainList class encapsulates a required isisBierSubDomainList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

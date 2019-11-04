@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class RadiusGlobals(Base):
-	"""The RadiusGlobals class encapsulates a user managed radiusGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the RadiusGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Global settings for the RADIUS extension.
+	The RadiusGlobals class encapsulates a list of radiusGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the RadiusGlobals.find() method.
+	The list can be managed by the user by using the RadiusGlobals.add() and RadiusGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

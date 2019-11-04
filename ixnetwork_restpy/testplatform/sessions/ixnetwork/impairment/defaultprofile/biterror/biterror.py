@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BitError(Base):
-	"""The BitError class encapsulates a required bitError node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BitError property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Introduce bit errors.
+	The BitError class encapsulates a required bitError resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Link(Base):
-	"""The Link class encapsulates a required link node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Link property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The Link class encapsulates a required link resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv6Autoconfiguration(Base):
-	"""The Ipv6Autoconfiguration class encapsulates a user managed ipv6Autoconfiguration node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ipv6Autoconfiguration property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""IPv6 Autoconfiguration protocol
+	The Ipv6Autoconfiguration class encapsulates a list of ipv6Autoconfiguration resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ipv6Autoconfiguration.find() method.
+	The list can be managed by the user by using the Ipv6Autoconfiguration.add() and Ipv6Autoconfiguration.remove() methods.
 	"""
 
 	__slots__ = ()

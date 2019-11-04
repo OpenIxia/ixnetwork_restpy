@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Lns(Base):
-	"""The Lns class encapsulates a required lns node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Lns property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""L2TP Network Server global and per-port settings
+	The Lns class encapsulates a required lns resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

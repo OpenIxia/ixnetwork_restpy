@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class MldUcastIPv6SourceList(Base):
-	"""The MldUcastIPv6SourceList class encapsulates a required mldUcastIPv6SourceList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the MldUcastIPv6SourceList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""MLD Unicast IPv6 Source
+	The MldUcastIPv6SourceList class encapsulates a required mldUcastIPv6SourceList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

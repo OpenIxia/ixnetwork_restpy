@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class SupportedInstruction(Base):
-	"""The SupportedInstruction class encapsulates a user managed supportedInstruction node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SupportedInstruction property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Instruction prototype.
+	The SupportedInstruction class encapsulates a list of supportedInstruction resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the SupportedInstruction.find() method.
+	The list can be managed by the user by using the SupportedInstruction.add() and SupportedInstruction.remove() methods.
 	"""
 
 	__slots__ = ()

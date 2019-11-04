@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class ValueList(Base):
-	"""The ValueList class encapsulates a system managed valueList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ValueList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This object specifies the value list properties.
+	The ValueList class encapsulates a list of valueList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the ValueList.find() method.
 	"""
 
 	__slots__ = ()

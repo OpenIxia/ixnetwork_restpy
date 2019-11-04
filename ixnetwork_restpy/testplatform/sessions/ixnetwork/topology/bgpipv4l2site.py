@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIpv4L2Site(Base):
-	"""The BgpIpv4L2Site class encapsulates a user managed bgpIpv4L2Site node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIpv4L2Site property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP IPv4 Peer L2 Site (Range) Configuration
+	The BgpIpv4L2Site class encapsulates a list of bgpIpv4L2Site resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIpv4L2Site.find() method.
+	The list can be managed by the user by using the BgpIpv4L2Site.add() and BgpIpv4L2Site.remove() methods.
 	"""
 
 	__slots__ = ()

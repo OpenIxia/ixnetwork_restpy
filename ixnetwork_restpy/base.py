@@ -296,7 +296,7 @@ class Base(object):
                 payload['Arg1'] = payload['Arg1'].href
                 response = self._connection._execute(url, payload)
             else:
-                raise NotFoundError
+                raise notFoundError
         if response_object is None:
             return response
 

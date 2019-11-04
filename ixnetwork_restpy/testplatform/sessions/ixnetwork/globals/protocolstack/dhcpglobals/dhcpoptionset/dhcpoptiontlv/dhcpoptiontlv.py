@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class DhcpOptionTlv(Base):
-	"""The DhcpOptionTlv class encapsulates a user managed dhcpOptionTlv node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DhcpOptionTlv property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""A single DHCP option.
+	The DhcpOptionTlv class encapsulates a list of dhcpOptionTlv resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the DhcpOptionTlv.find() method.
+	The list can be managed by the user by using the DhcpOptionTlv.add() and DhcpOptionTlv.remove() methods.
 	"""
 
 	__slots__ = ()

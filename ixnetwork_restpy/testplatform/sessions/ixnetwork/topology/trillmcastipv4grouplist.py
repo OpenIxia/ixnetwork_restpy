@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class TrillMCastIpv4GroupList(Base):
-	"""The TrillMCastIpv4GroupList class encapsulates a required trillMCastIpv4GroupList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TrillMCastIpv4GroupList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""TRILL Multicast IPv4 Groups
+	The TrillMCastIpv4GroupList class encapsulates a required trillMCastIpv4GroupList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

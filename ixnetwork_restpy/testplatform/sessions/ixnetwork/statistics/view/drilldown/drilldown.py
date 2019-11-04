@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class DrillDown(Base):
-	"""The DrillDown class encapsulates a user managed drillDown node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DrillDown property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Executes drill down operation on the drill down object set through steps 1-4.
+	The DrillDown class encapsulates a list of drillDown resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the DrillDown.find() method.
+	The list can be managed by the user by using the DrillDown.add() and DrillDown.remove() methods.
 	"""
 
 	__slots__ = ()

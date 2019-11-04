@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv3PseudoRouter(Base):
-	"""The Ospfv3PseudoRouter class encapsulates a system managed ospfv3PseudoRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv3PseudoRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Simulated Router Information
+	The Ospfv3PseudoRouter class encapsulates a list of ospfv3PseudoRouter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Ospfv3PseudoRouter.find() method.
 	"""
 
 	__slots__ = ()
@@ -285,7 +284,7 @@ class Ospfv3PseudoRouter(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('startSimulatedRouter', payload=payload, response_object=None)
@@ -331,7 +330,7 @@ class Ospfv3PseudoRouter(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stopSimulatedRouter', payload=payload, response_object=None)

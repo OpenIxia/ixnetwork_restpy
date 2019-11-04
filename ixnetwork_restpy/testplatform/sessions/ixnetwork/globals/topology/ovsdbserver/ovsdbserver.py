@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Ovsdbserver(Base):
-	"""The Ovsdbserver class encapsulates a required ovsdbserver node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ovsdbserver property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The Ovsdbserver class encapsulates a required ovsdbserver resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

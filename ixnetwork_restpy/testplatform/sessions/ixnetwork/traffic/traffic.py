@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Traffic(Base):
-	"""The Traffic class encapsulates a required traffic node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Traffic property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The traffic object allows the user to create millions of traffic flows for validating emulated networks and hosts. This is the top-level object for traffic configuration.
+	The Traffic class encapsulates a required traffic resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

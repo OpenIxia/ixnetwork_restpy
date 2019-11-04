@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisSpbPseudoIfaceAttPoint2Config(Base):
-	"""The IsisSpbPseudoIfaceAttPoint2Config class encapsulates a system managed isisSpbPseudoIfaceAttPoint2Config node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisSpbPseudoIfaceAttPoint2Config property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""ISIS-SPB Pseudo Interface Attribute Configuration
+	The IsisSpbPseudoIfaceAttPoint2Config class encapsulates a list of isisSpbPseudoIfaceAttPoint2Config resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisSpbPseudoIfaceAttPoint2Config.find() method.
 	"""
 
 	__slots__ = ()

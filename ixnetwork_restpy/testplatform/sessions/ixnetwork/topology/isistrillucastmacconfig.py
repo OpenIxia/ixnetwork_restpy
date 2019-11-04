@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisTrillUCastMacConfig(Base):
-	"""The IsisTrillUCastMacConfig class encapsulates a system managed isisTrillUCastMacConfig node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisTrillUCastMacConfig property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Isis TRILL Unicast MAC specific configuration
+	The IsisTrillUCastMacConfig class encapsulates a list of isisTrillUCastMacConfig resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisTrillUCastMacConfig.find() method.
 	"""
 
 	__slots__ = ()

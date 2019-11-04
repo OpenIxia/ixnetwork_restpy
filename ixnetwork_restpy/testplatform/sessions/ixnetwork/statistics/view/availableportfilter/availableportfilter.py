@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class AvailablePortFilter(Base):
-	"""The AvailablePortFilter class encapsulates a system managed availablePortFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AvailablePortFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""List of ports available for filtering.
+	The AvailablePortFilter class encapsulates a list of availablePortFilter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the AvailablePortFilter.find() method.
 	"""
 
 	__slots__ = ()

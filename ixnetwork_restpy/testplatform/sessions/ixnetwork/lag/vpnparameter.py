@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class VpnParameter(Base):
-	"""The VpnParameter class encapsulates a user managed vpnParameter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the VpnParameter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""VPN
+	The VpnParameter class encapsulates a list of vpnParameter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the VpnParameter.find() method.
+	The list can be managed by the user by using the VpnParameter.add() and VpnParameter.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Pcc(Base):
-	"""The Pcc class encapsulates a required pcc node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Pcc property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""PCC Port Specific Data
+	The Pcc class encapsulates a required pcc resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

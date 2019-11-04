@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class SelectWatch(Base):
-	"""The SelectWatch class encapsulates a user managed selectWatch node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SelectWatch property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The SelectWatch class encapsulates a list of selectWatch resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the SelectWatch.find() method.
+	The list can be managed by the user by using the SelectWatch.add() and SelectWatch.remove() methods.
 	"""
 
 	__slots__ = ()

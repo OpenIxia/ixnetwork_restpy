@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Filter(Base):
-	"""The Filter class encapsulates a required filter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Filter property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""This object specifies the field properties.
+	The Filter class encapsulates a required filter resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class DynamicUpdate(Base):
-	"""The DynamicUpdate class encapsulates a system managed dynamicUpdate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DynamicUpdate property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Contains attributes that help IxNetwork update the corresponding traffic packet labels on the fly based on the information from the configured protocol.
+	The DynamicUpdate class encapsulates a list of dynamicUpdate resources that is managed by the system.
+	A list of resources can be retrieved from the server using the DynamicUpdate.find() method.
 	"""
 
 	__slots__ = ()

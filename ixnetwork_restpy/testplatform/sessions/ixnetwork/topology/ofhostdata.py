@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class OfHostData(Base):
-	"""The OfHostData class encapsulates a user managed ofHostData node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the OfHostData property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Contains number of host ports per switch and number of hosts per host port
+	The OfHostData class encapsulates a list of ofHostData resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the OfHostData.find() method.
+	The list can be managed by the user by using the OfHostData.add() and OfHostData.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class NovusTenGigLan(Base):
-	"""The NovusTenGigLan class encapsulates a required novusTenGigLan node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NovusTenGigLan property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Novus 10GE LAN Port
+	The NovusTenGigLan class encapsulates a required novusTenGigLan resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Layer47AppLibraryTrafficFilter(Base):
-	"""The Layer47AppLibraryTrafficFilter class encapsulates a user managed layer47AppLibraryTrafficFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Layer47AppLibraryTrafficFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Describes the filter for a layer 4-7 AppLibrary Traffic view.
+	The Layer47AppLibraryTrafficFilter class encapsulates a list of layer47AppLibraryTrafficFilter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Layer47AppLibraryTrafficFilter.find() method.
+	The list can be managed by the user by using the Layer47AppLibraryTrafficFilter.add() and Layer47AppLibraryTrafficFilter.remove() methods.
 	"""
 
 	__slots__ = ()

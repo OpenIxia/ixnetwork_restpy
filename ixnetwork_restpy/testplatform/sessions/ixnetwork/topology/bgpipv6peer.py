@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIpv6Peer(Base):
-	"""The BgpIpv6Peer class encapsulates a user managed bgpIpv6Peer node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIpv6Peer property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Bgp IPv6 Peer
+	The BgpIpv6Peer class encapsulates a list of bgpIpv6Peer resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIpv6Peer.find() method.
+	The list can be managed by the user by using the BgpIpv6Peer.add() and BgpIpv6Peer.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -2333,7 +2332,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getADVPLSLearnedInfo', payload=payload, response_object=None)
@@ -2367,7 +2366,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
@@ -2458,7 +2457,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getEVPNLearnedInfo', payload=payload, response_object=None)
@@ -2492,7 +2491,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getIPv4LearnedInfo', payload=payload, response_object=None)
@@ -2589,7 +2588,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getIPv4VpnLearnedInfo', payload=payload, response_object=None)
@@ -2623,7 +2622,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getIPv6LearnedInfo', payload=payload, response_object=None)
@@ -2720,7 +2719,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getIPv6VpnLearnedInfo', payload=payload, response_object=None)
@@ -2754,7 +2753,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getLinkStateLearnedInfo', payload=payload, response_object=None)
@@ -2788,7 +2787,7 @@ class BgpIpv6Peer(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getVPLSLearnedInfo', payload=payload, response_object=None)

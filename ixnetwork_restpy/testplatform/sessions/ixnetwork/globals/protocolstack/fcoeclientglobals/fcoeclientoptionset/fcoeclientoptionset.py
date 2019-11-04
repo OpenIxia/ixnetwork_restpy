@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class FcoeClientOptionSet(Base):
-	"""The FcoeClientOptionSet class encapsulates a user managed fcoeClientOptionSet node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the FcoeClientOptionSet property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""A group of TLV options.
+	The FcoeClientOptionSet class encapsulates a list of fcoeClientOptionSet resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the FcoeClientOptionSet.find() method.
+	The list can be managed by the user by using the FcoeClientOptionSet.add() and FcoeClientOptionSet.remove() methods.
 	"""
 
 	__slots__ = ()

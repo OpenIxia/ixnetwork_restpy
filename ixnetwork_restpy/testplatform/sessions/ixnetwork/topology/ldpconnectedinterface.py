@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpConnectedInterface(Base):
-	"""The LdpConnectedInterface class encapsulates a user managed ldpConnectedInterface node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LdpConnectedInterface property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""LDP Interface level Configuration
+	The LdpConnectedInterface class encapsulates a list of ldpConnectedInterface resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the LdpConnectedInterface.find() method.
+	The list can be managed by the user by using the LdpConnectedInterface.add() and LdpConnectedInterface.remove() methods.
 	"""
 
 	__slots__ = ()

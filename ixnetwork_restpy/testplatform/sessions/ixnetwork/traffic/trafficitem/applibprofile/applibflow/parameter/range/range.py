@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Range(Base):
-	"""The Range class encapsulates a system managed range node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Range property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the range parameter of the properties.
+	The Range class encapsulates a list of range resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Range.find() method.
 	"""
 
 	__slots__ = ()

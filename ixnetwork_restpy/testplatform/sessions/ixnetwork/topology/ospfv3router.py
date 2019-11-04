@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv3Router(Base):
-	"""The Ospfv3Router class encapsulates a user managed ospfv3Router node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv3Router property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Ospfv3 Device level Configuration
+	The Ospfv3Router class encapsulates a list of ospfv3Router resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Ospfv3Router.find() method.
+	The list can be managed by the user by using the Ospfv3Router.add() and Ospfv3Router.remove() methods.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class LightweightDhcp6RelayTlvProfile(Base):
-	"""The LightweightDhcp6RelayTlvProfile class encapsulates a required lightweightDhcp6RelayTlvProfile node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LightweightDhcp6RelayTlvProfile property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Lightweight DHCPv6 Relay Agent TLV Profiles.
+	The LightweightDhcp6RelayTlvProfile class encapsulates a required lightweightDhcp6RelayTlvProfile resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

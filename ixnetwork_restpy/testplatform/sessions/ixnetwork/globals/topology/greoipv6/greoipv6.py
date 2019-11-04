@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Greoipv6(Base):
-	"""The Greoipv6 class encapsulates a required greoipv6 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Greoipv6 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""GRE global and per-port settings
+	The Greoipv6 class encapsulates a required greoipv6 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

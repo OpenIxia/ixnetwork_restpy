@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class SwitchTablesList(Base):
-	"""The SwitchTablesList class encapsulates a system managed switchTablesList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SwitchTablesList property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Openflow Switch Tables level Configuration
+	The SwitchTablesList class encapsulates a list of switchTablesList resources that is managed by the system.
+	A list of resources can be retrieved from the server using the SwitchTablesList.find() method.
 	"""
 
 	__slots__ = ()

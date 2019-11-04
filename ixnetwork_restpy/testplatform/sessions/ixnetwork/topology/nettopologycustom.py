@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class NetTopologyCustom(Base):
-	"""The NetTopologyCustom class encapsulates a user managed netTopologyCustom node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NetTopologyCustom property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Custom, user defined topology.
+	The NetTopologyCustom class encapsulates a list of netTopologyCustom resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the NetTopologyCustom.find() method.
+	The list can be managed by the user by using the NetTopologyCustom.add() and NetTopologyCustom.remove() methods.
 	"""
 
 	__slots__ = ()

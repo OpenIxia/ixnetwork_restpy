@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class TlvProfile(Base):
-	"""The TlvProfile class encapsulates a system managed tlvProfile node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the TlvProfile property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Tlv profile functionality is contained under this node
+	The TlvProfile class encapsulates a list of tlvProfile resources that is managed by the system.
+	A list of resources can be retrieved from the server using the TlvProfile.find() method.
 	"""
 
 	__slots__ = ()

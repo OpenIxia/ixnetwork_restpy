@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Topology(Base):
-	"""The Topology class encapsulates a user managed topology node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Topology property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Topology represents the concept of network devices which are to be configured on a group of ports.
+	The Topology class encapsulates a list of topology resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Topology.find() method.
+	The list can be managed by the user by using the Topology.add() and Topology.remove() methods.
 	"""
 
 	__slots__ = ()

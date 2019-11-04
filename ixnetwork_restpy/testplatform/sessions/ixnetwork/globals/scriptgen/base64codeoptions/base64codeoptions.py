@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Base64CodeOptions(Base):
-	"""The Base64CodeOptions class encapsulates a required base64CodeOptions node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Base64CodeOptions property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Contains the base64 encoding code generation options
+	The Base64CodeOptions class encapsulates a required base64CodeOptions resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

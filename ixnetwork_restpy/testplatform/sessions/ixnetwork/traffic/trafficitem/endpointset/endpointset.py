@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class EndpointSet(Base):
-	"""The EndpointSet class encapsulates a user managed endpointSet node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EndpointSet property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""This object helps to set the endpoint set of a traffic item.
+	The EndpointSet class encapsulates a list of endpointSet resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the EndpointSet.find() method.
+	The list can be managed by the user by using the EndpointSet.add() and EndpointSet.remove() methods.
 	"""
 
 	__slots__ = ()

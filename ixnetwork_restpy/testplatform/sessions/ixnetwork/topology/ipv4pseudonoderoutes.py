@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IPv4PseudoNodeRoutes(Base):
-	"""The IPv4PseudoNodeRoutes class encapsulates a system managed IPv4PseudoNodeRoutes node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IPv4PseudoNodeRoutes property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Isis IPv4 pseudo node routes
+	The IPv4PseudoNodeRoutes class encapsulates a list of IPv4PseudoNodeRoutes resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IPv4PseudoNodeRoutes.find() method.
 	"""
 
 	__slots__ = ()

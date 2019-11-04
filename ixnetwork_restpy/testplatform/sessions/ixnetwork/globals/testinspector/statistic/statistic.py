@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Statistic(Base):
-	"""The Statistic class encapsulates a user managed statistic node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Statistic property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The Statistic class encapsulates a list of statistic resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Statistic.find() method.
+	The list can be managed by the user by using the Statistic.add() and Statistic.remove() methods.
 	"""
 
 	__slots__ = ()

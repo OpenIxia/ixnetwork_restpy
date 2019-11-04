@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class ActionSet(Base):
-	"""The ActionSet class encapsulates a user managed actionSet node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ActionSet property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Action prototype.
+	The ActionSet class encapsulates a list of actionSet resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the ActionSet.find() method.
+	The list can be managed by the user by using the ActionSet.add() and ActionSet.remove() methods.
 	"""
 
 	__slots__ = ()

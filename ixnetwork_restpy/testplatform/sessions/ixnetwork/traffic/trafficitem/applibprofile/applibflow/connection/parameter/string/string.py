@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class String(Base):
-	"""The String class encapsulates a system managed string node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the String property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the string properties related to the parameter.
+	The String class encapsulates a list of string resources that is managed by the system.
+	A list of resources can be retrieved from the server using the String.find() method.
 	"""
 
 	__slots__ = ()

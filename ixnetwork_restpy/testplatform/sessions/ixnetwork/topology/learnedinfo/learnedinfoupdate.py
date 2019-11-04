@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class LearnedInfoUpdate(Base):
-	"""The LearnedInfoUpdate class encapsulates a system managed learnedInfoUpdate node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LearnedInfoUpdate property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""The learned information trigger node that contains trigger tables of learned information.
+	The LearnedInfoUpdate class encapsulates a list of learnedInfoUpdate resources that is managed by the system.
+	A list of resources can be retrieved from the server using the LearnedInfoUpdate.find() method.
 	"""
 
 	__slots__ = ()

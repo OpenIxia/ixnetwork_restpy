@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class AccumulateAndBurst(Base):
-	"""The AccumulateAndBurst class encapsulates a required accumulateAndBurst node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AccumulateAndBurst property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Accumulates packets in a queue and transmit groups of packets as a burst. It can only be used on a profile if delayVariation and customDelayVariation are disabled.
+	The AccumulateAndBurst class encapsulates a required accumulateAndBurst resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

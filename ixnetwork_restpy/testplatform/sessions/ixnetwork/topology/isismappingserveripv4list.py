@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisMappingServerIPV4List(Base):
-	"""The IsisMappingServerIPV4List class encapsulates a required isisMappingServerIPV4List node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisMappingServerIPV4List property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""ISIS Mapping Server IPV4
+	The IsisMappingServerIPV4List class encapsulates a required isisMappingServerIPV4List resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

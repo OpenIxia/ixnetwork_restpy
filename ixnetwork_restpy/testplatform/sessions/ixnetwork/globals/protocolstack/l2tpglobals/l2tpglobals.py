@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class L2tpGlobals(Base):
-	"""The L2tpGlobals class encapsulates a user managed l2tpGlobals node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the L2tpGlobals property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""L2tp session data class
+	The L2tpGlobals class encapsulates a list of l2tpGlobals resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the L2tpGlobals.find() method.
+	The list can be managed by the user by using the L2tpGlobals.add() and L2tpGlobals.remove() methods.
 	"""
 
 	__slots__ = ()

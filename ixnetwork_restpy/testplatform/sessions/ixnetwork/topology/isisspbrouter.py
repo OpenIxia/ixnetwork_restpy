@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisSpbRouter(Base):
-	"""The IsisSpbRouter class encapsulates a user managed isisSpbRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisSpbRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""SPB Configuration
+	The IsisSpbRouter class encapsulates a list of isisSpbRouter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IsisSpbRouter.find() method.
+	The list can be managed by the user by using the IsisSpbRouter.add() and IsisSpbRouter.remove() methods.
 	"""
 
 	__slots__ = ()

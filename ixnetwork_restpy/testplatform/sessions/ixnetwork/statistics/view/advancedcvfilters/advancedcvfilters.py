@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class AdvancedCVFilters(Base):
-	"""The AdvancedCVFilters class encapsulates a user managed advancedCVFilters node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AdvancedCVFilters property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Sets the advanced filter for a custom view. Note- To change the filter on an existing view, you must first disable it.
+	The AdvancedCVFilters class encapsulates a list of advancedCVFilters resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the AdvancedCVFilters.find() method.
+	The list can be managed by the user by using the AdvancedCVFilters.add() and AdvancedCVFilters.remove() methods.
 	"""
 
 	__slots__ = ()

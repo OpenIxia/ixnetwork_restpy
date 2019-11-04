@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcp6Iapd2(Base):
-	"""The Dhcp6Iapd2 class encapsulates a required dhcp6Iapd2 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Dhcp6Iapd2 property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""DHCPv6 Iapd endpoint used in traffic
+	The Dhcp6Iapd2 class encapsulates a required dhcp6Iapd2 resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisDceSimRouter(Base):
-	"""The IsisDceSimRouter class encapsulates a user managed isisDceSimRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisDceSimRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Fabric Path Simulated Router Edge
+	The IsisDceSimRouter class encapsulates a list of isisDceSimRouter resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the IsisDceSimRouter.find() method.
+	The list can be managed by the user by using the IsisDceSimRouter.add() and IsisDceSimRouter.remove() methods.
 	"""
 
 	__slots__ = ()

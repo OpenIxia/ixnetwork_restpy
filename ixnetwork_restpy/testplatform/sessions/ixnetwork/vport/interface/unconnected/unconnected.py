@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Unconnected(Base):
-	"""The Unconnected class encapsulates a required unconnected node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Unconnected property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Unconnected protocol interfaces that are not connected by any links to the SUT or to other Ixia ports. The unconnected interfaces can be set up to link the Ixia-emulated router to virtual networks "behind" the router, such as emulated OSPF network ranges.
+	The Unconnected class encapsulates a required unconnected resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

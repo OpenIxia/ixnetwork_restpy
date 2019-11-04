@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Number(Base):
-	"""The Number class encapsulates a system managed number node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Number property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""This specifies the number related properties of the parameter.
+	The Number class encapsulates a list of number resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Number.find() method.
 	"""
 
 	__slots__ = ()

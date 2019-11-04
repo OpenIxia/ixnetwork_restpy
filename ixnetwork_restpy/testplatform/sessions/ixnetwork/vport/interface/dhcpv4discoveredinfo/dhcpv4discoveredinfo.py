@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class DhcpV4DiscoveredInfo(Base):
-	"""The DhcpV4DiscoveredInfo class encapsulates a required dhcpV4DiscoveredInfo node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the DhcpV4DiscoveredInfo property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""The Dynamic Host Configuration Protocol (DHCP) Discovered Information is based on DHCPv4 defined in RFC 2131.  When the protocol interface is set for DHCP and enabled, DHCP negotiations will be started.
+	The DhcpV4DiscoveredInfo class encapsulates a required dhcpV4DiscoveredInfo resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

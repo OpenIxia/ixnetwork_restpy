@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Watch(Base):
-	"""The Watch class encapsulates a required watch node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Watch property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Top level node for watch topics and notifications.
+	The Watch class encapsulates a required watch resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

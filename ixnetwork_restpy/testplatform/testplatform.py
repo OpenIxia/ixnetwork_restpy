@@ -36,7 +36,7 @@ class TestPlatform(Base):
     """
     _SDM_NAME = None
 
-    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False):
+    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace='none'):
         """TestPlatform constructor
 
         Establishes an initial connection to an IxNetwork test tool platform. 
@@ -48,12 +48,14 @@ class TestPlatform(Base):
             platform (str[windows|linux|connection_manager]): DEPRECATED. This will be determined by the Connection class.
             log_file_name (str): the name of the log file that trace logging will be written to, if omitted it will be written to the console
             ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
+			verify_cert (bool): enable this flag to verify the certificate 
+			trace (str[none|request|request_response|all]): set the tracing level of requests and responses
 
         Raises:
             obj(ixnetwork_restpy.errors.ConnectionError)
         """
         super(TestPlatform, self).__init__(None)
-        self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy)
+        self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy, verify_cert, trace)
         self._uid = ''
         self._set_default_href()
 

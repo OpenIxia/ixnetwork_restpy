@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class BondedGRE(Base):
-	"""The BondedGRE class encapsulates a required bondedGRE node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BondedGRE property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""
+	The BondedGRE class encapsulates a required bondedGRE resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpV6L3VpnRouteProperty(Base):
-	"""The BgpV6L3VpnRouteProperty class encapsulates a user managed bgpV6L3VpnRouteProperty node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpV6L3VpnRouteProperty property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP+ L3-VPN Route Range Properties
+	The BgpV6L3VpnRouteProperty class encapsulates a list of bgpV6L3VpnRouteProperty resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpV6L3VpnRouteProperty.find() method.
+	The list can be managed by the user by using the BgpV6L3VpnRouteProperty.add() and BgpV6L3VpnRouteProperty.remove() methods.
 	"""
 
 	__slots__ = ()

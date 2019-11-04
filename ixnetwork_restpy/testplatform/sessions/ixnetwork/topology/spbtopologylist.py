@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class SpbTopologyList(Base):
-	"""The SpbTopologyList class encapsulates a required spbTopologyList node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SpbTopologyList property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""ISIS SPB Topology Range Configuration
+	The SpbTopologyList class encapsulates a required spbTopologyList resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

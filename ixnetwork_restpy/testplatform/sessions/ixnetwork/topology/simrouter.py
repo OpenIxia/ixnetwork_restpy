@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class SimRouter(Base):
-	"""The SimRouter class encapsulates a system managed simRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the SimRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Simulated router specific configuration inside a Network Topology.
+	The SimRouter class encapsulates a list of simRouter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the SimRouter.find() method.
 	"""
 
 	__slots__ = ()

@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class LightweightDhcpv6relayAgent(Base):
-	"""The LightweightDhcpv6relayAgent class encapsulates a user managed lightweightDhcpv6relayAgent node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the LightweightDhcpv6relayAgent property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Lightweight DHCPv6 Relay Agent protocol.
+	The LightweightDhcpv6relayAgent class encapsulates a list of lightweightDhcpv6relayAgent resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the LightweightDhcpv6relayAgent.find() method.
+	The list can be managed by the user by using the LightweightDhcpv6relayAgent.add() and LightweightDhcpv6relayAgent.remove() methods.
 	"""
 
 	__slots__ = ()

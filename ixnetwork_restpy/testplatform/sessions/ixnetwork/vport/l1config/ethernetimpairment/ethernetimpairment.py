@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class EthernetImpairment(Base):
-	"""The EthernetImpairment class encapsulates a required ethernetImpairment node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the EthernetImpairment property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""Layer 1 (physical) parameters for an Ethernet Impairment port.
+	The EthernetImpairment class encapsulates a required ethernetImpairment resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

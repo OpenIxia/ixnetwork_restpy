@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class NssaRoutes(Base):
-	"""The NssaRoutes class encapsulates a system managed nssaRoutes node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the NssaRoutes property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""OSPFv3 NSSA Routes directly derived from RB class since I could not agree with Options and Link State ID PrefixLen in the OSPFv3 specific base class
+	The NssaRoutes class encapsulates a list of nssaRoutes resources that is managed by the system.
+	A list of resources can be retrieved from the server using the NssaRoutes.find() method.
 	"""
 
 	__slots__ = ()

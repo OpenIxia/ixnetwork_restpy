@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Vxlanv6(Base):
-	"""The Vxlanv6 class encapsulates a user managed vxlanv6 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Vxlanv6 property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""VXLANv6 protocol.
+	The Vxlanv6 class encapsulates a list of vxlanv6 resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Vxlanv6.find() method.
+	The list can be managed by the user by using the Vxlanv6.add() and Vxlanv6.remove() methods.
 	"""
 
 	__slots__ = ()
@@ -506,7 +505,7 @@ class Vxlanv6(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('getVXLANLearnedInfo', payload=payload, response_object=None)

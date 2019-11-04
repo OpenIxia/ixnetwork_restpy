@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class IgmpQuerier(Base):
-	"""The IgmpQuerier class encapsulates a required igmpQuerier node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IgmpQuerier property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""IGMP Querier Port Specific Data
+	The IgmpQuerier class encapsulates a required igmpQuerier resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()

@@ -24,10 +24,8 @@ from ixnetwork_restpy.files import Files
 
 
 class Bfdv6Session(Base):
-	"""The Bfdv6Session class encapsulates a required bfdv6Session node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Bfdv6Session property from a parent instance.
-	The internal properties list will contain one and only one set of properties which is populated when the property is accessed.
+	"""BFDv6 Session (Device) level Configuration
+	The Bfdv6Session class encapsulates a required bfdv6Session resource which will be retrieved from the server every time the property is accessed.
 	"""
 
 	__slots__ = ()
@@ -261,7 +259,7 @@ class Bfdv6Session(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('start', payload=payload, response_object=None)
@@ -295,7 +293,7 @@ class Bfdv6Session(Base):
 			NotFoundError: The requested resource does not exist on the server
 			ServerError: The server has encountered an uncategorized error condition
 		"""
-		payload = { "Arg1": self.href }
+		payload = { "Arg1": self }
 		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
 		for item in kwargs.items(): payload[item[0]] = item[1]
 		return self._execute('stop', payload=payload, response_object=None)

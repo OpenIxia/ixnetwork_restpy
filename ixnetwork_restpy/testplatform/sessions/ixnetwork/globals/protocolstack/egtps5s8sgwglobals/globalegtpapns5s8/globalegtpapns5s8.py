@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class GlobalEgtpApnS5S8(Base):
-	"""The GlobalEgtpApnS5S8 class encapsulates a user managed globalEgtpApnS5S8 node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the GlobalEgtpApnS5S8 property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""
+	The GlobalEgtpApnS5S8 class encapsulates a list of globalEgtpApnS5S8 resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the GlobalEgtpApnS5S8.find() method.
+	The list can be managed by the user by using the GlobalEgtpApnS5S8.add() and GlobalEgtpApnS5S8.remove() methods.
 	"""
 
 	__slots__ = ()

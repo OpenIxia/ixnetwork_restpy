@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class Lag(Base):
-	"""The Lag class encapsulates a user managed lag node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Lag property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""Represents a Ixia port in CPF framework
+	The Lag class encapsulates a list of lag resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the Lag.find() method.
+	The list can be managed by the user by using the Lag.add() and Lag.remove() methods.
 	"""
 
 	__slots__ = ()

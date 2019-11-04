@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisFabricPathRouter(Base):
-	"""The IsisFabricPathRouter class encapsulates a system managed isisFabricPathRouter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the IsisFabricPathRouter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Fabric-Path Port Configuration
+	The IsisFabricPathRouter class encapsulates a list of isisFabricPathRouter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the IsisFabricPathRouter.find() method.
 	"""
 
 	__slots__ = ()

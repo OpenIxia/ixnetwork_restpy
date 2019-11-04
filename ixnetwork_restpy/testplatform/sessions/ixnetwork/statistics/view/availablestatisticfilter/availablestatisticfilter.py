@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class AvailableStatisticFilter(Base):
-	"""The AvailableStatisticFilter class encapsulates a system managed availableStatisticFilter node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the AvailableStatisticFilter property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""List of statistics available for filtering.
+	The AvailableStatisticFilter class encapsulates a list of availableStatisticFilter resources that is managed by the system.
+	A list of resources can be retrieved from the server using the AvailableStatisticFilter.find() method.
 	"""
 
 	__slots__ = ()

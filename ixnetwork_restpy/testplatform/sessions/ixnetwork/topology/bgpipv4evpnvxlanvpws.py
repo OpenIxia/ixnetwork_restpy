@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIPv4EvpnVXLANVpws(Base):
-	"""The BgpIPv4EvpnVXLANVpws class encapsulates a user managed bgpIPv4EvpnVXLANVpws node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIPv4EvpnVXLANVpws property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP IPv4 Peer EVPN VXLAN VPWS Configuration
+	The BgpIPv4EvpnVXLANVpws class encapsulates a list of bgpIPv4EvpnVXLANVpws resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIPv4EvpnVXLANVpws.find() method.
+	The list can be managed by the user by using the BgpIPv4EvpnVXLANVpws.add() and BgpIPv4EvpnVXLANVpws.remove() methods.
 	"""
 
 	__slots__ = ()

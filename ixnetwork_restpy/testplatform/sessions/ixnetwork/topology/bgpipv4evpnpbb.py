@@ -24,11 +24,10 @@ from ixnetwork_restpy.files import Files
 
 
 class BgpIPv4EvpnPbb(Base):
-	"""The BgpIPv4EvpnPbb class encapsulates a user managed bgpIPv4EvpnPbb node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the BgpIPv4EvpnPbb property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server using the find method.
-	The internal properties list can be managed by the user by using the add and remove methods.
+	"""BGP IPv4 Peer PBB EVPN Configuration
+	The BgpIPv4EvpnPbb class encapsulates a list of bgpIPv4EvpnPbb resources that is be managed by the user.
+	A list of resources can be retrieved from the server using the BgpIPv4EvpnPbb.find() method.
+	The list can be managed by the user by using the BgpIPv4EvpnPbb.add() and BgpIPv4EvpnPbb.remove() methods.
 	"""
 
 	__slots__ = ()

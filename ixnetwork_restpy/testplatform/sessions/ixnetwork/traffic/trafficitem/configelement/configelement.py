@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class ConfigElement(Base):
-	"""The ConfigElement class encapsulates a system managed configElement node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the ConfigElement property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""A grouping of endpoints under the Traffic Item per unique encapsulation/packet structure. The user sees each configElement as rows in the Pages of the wizard after the first page of the Wizard and also on the First Page under Endpoint sets as below. The user can then configure QOS, Frame Size, Rate etc per configElement. The configElements control the rate/frame size/qos properties of one or more flowGroups/highLevelStreams that are generated from the Traffic Item.
+	The ConfigElement class encapsulates a list of configElement resources that is managed by the system.
+	A list of resources can be retrieved from the server using the ConfigElement.find() method.
 	"""
 
 	__slots__ = ()

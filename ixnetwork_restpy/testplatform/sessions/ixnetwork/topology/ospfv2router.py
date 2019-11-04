@@ -24,10 +24,9 @@ from ixnetwork_restpy.files import Files
 
 
 class Ospfv2Router(Base):
-	"""The Ospfv2Router class encapsulates a system managed ospfv2Router node in the ixnetwork hierarchy.
-
-	An instance of the class can be obtained by accessing the Ospfv2Router property from a parent instance.
-	The internal properties list will be empty when the property is accessed and is populated from the server by using the find method.
+	"""Ospf Device level Configuration
+	The Ospfv2Router class encapsulates a list of ospfv2Router resources that is managed by the system.
+	A list of resources can be retrieved from the server using the Ospfv2Router.find() method.
 	"""
 
 	__slots__ = ()
