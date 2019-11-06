@@ -103,7 +103,7 @@ class OfHostData(Base):
 		"""Updates a child instance of ofHostData on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			Name (str): Name of NGPF element, guaranteed to be unique in Scenario

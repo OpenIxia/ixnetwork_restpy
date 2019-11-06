@@ -735,7 +735,7 @@ class BgpIpv4MVrf(Base):
 		"""Updates a child instance of bgpIpv4MVrf on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			AdvertiseIPMSIRoutes (bool): Enables I-PMSI Route Advertisement for MVPN (if True). Disables I-PMSI Route Advertisement for MVPN (if False). - Set to False when Enable TRM is Enabled (by deafult).

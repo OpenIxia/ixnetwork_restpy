@@ -948,7 +948,7 @@ class BgpIPRouteProperty(Base):
 		"""Updates a child instance of bgpIPRouteProperty on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			AdvertiseAsBgp3107 (bool): Will cause this route to be sent as BGP 3107 MPLS SAFI route

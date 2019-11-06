@@ -228,7 +228,7 @@ class Ntpclock(Base):
 		"""Updates a child instance of ntpclock on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			AcceptNTPPacketswithCryptoNAK (bool): Accept NTP Packets with Crypto-NAK

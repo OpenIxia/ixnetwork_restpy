@@ -283,13 +283,21 @@ class Connection(object):
         else:
             self._process_response_status_code(response)
 
-    def _process_response_status_code(self, url, headers, response):
+    def _process_response_status_code(self, url, headers, response, async_status=False):
         errors = []
         # add the initial error
-        if response.status_code == 202:
-            self._url = response.url
+        if async_status is True:
             async_status = response.json()
-            errors.append('%s %s %s' % (async_status["state"], async_status["message"], async_status["result"]))
+            if 'message' in async_status and async_status['message'] is not None and 'API CONTENTION' in async_status['message']:
+                response.status_code = 409
+            else:
+                response.status_code = 400
+            error = ''
+            if 'message' in async_status and async_status['message'] is not None:
+                error += ' ' + async_status['message']
+            if 'result' in async_status and async_status['result'] is not None:
+                error += ' ' + async_status['result']
+            errors.append(error)
         else:
             try:
                 for error in response.json()['errors']:
@@ -388,10 +396,8 @@ class Connection(object):
                         return None
                 elif self._platform == 'connection_manager' and state in ['ACTIVE', 'STOPPED']:
                     return response.json()
-                elif 'message' in async_status.keys() and async_status['message'] is not None and 'API CONTENTION' in async_status['message']:
-                    raise ResourceInUseError(response)
                 else:
-                    raise ServerError(response) 
+                    return self._process_response_status_code(url, headers, response, async_status=True)
         
         while(response.status_code == 409):
             time.sleep(6)

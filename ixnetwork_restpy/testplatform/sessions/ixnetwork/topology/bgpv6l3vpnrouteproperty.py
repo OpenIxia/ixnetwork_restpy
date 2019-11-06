@@ -971,7 +971,7 @@ class BgpV6L3VpnRouteProperty(Base):
 		"""Updates a child instance of bgpV6L3VpnRouteProperty on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			EnableIpv6Receiver (bool): Enable IPv6 Receiver

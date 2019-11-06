@@ -157,7 +157,7 @@ class SbfdInitiator(Base):
 		"""Updates a child instance of sbfdInitiator on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			MplsLabelCount (number): Number of MPLS Labels.

@@ -70,7 +70,7 @@ class VpnParameter(Base):
 		"""Updates a child instance of vpnParameter on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			UseVpnParameters (bool): Flag to determine whether optional VPN parameters are provided.

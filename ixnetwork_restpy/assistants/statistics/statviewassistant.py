@@ -92,7 +92,10 @@ class StatViewAssistant(object):
         with open(local_filename, 'r') as fid:
             column_headers = fid.readline()[:-1].split(',')
             for row in fid:
-                row = row[:-1].split(',')
+                row = row[:-1]
+                row = ''.join(x if i % 2 == 0 else x.replace(',', ' ')
+                    for i, x in enumerate(row.split('"')))
+                row = row.split(',')
                 match = True
                 for column_index in range(len(row)):
                     if column_index in self._filters.keys():

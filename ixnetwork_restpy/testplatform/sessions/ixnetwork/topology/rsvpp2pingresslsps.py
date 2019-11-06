@@ -993,7 +993,7 @@ class RsvpP2PIngressLsps(Base):
 		"""Updates a child instance of rsvpP2PIngressLsps on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			BackupLspNumberOfEroSubObjects (number): Number Of ERO Sub-Objects

@@ -833,7 +833,7 @@ class IsisL3PseudoRouter(Base):
 		"""Updates a child instance of isisL3PseudoRouter on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			EnableSR (bool): This enables SR MPLS on all the simulated ISIS router(s)

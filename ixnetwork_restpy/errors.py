@@ -24,8 +24,8 @@ from requests import Response
 class IxNetworkError(Exception):
     """The base error class for all IxNetwork REST API errors"""
     def __init__(self, message, status_code=None):
-		self._message = message
-		self._status_code = status_code
+        self._message = message
+        self._status_code = status_code
 
     @property
     def message(self):
@@ -59,9 +59,9 @@ class AsyncOperationError(IxNetworkError):
 class UnauthorizedError(IxNetworkError):
     """Access is unauthorized
 
-	Authorization has not been successfully completed.
-	Use the IxNetwork.auth method or the IxNetwork.api_key property prior to using any other functionality.
-	"""
+    Authorization has not been successfully completed.
+    Use the IxNetwork.auth method or the IxNetwork.api_key property prior to using any other functionality.
+    """
     def __init__(self, message, status_code=None):
         super(UnauthorizedError, self).__init__(message, status_code)
 

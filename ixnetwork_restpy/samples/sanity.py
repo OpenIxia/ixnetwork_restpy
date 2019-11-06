@@ -23,7 +23,7 @@ try:
     test_platform = TestPlatform('127.0.0.1')
     test_platform.Authenticate('admin', 'admin')
     sessions = test_platform.Sessions.add()
-    ixnetwork = sessions.ixnetwork
+    ixnetwork = sessions.Ixnetwork
     ixnetwork.NewConfig()
 
     sessions = test_platform.Sessions.add()

@@ -174,7 +174,7 @@ class BgpEpePeerSetList(Base):
 		"""Updates a child instance of bgpEpePeerSetList on the server.
 
 		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has the associated documentation that details the possible values for those named parameters.
+		The Multivalue class has documentation that details the possible values for those named parameters.
 
 		Args:
 			BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
