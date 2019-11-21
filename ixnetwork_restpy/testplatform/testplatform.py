@@ -30,26 +30,32 @@ class TestPlatform(Base):
     """TestPlatform class
 
     The TestPlatform class is the only class that can be instantiated directly.  
-    The package is constructed in an hierarchical format so as a result any child resources are accessed by through class properties.
+    The package is constructed in an hierarchical format so as a result child resources are accessed through class properties.
     Class properties will return an iterable child container of that class.
     If the class is system managed or user managed it will have a find() method which can be used to retrieve the resources from the server otherwise the one and only one resource will be retrieved from the server.
     """
     _SDM_NAME = None
+    TRACE_NONE = Connection.TRACE_NONE
+    TRACE_INFO = Connection.TRACE_INFO
+    TRACE_WARNING = Connection.TRACE_WARNING
+    TRACE_REQUEST = Connection.TRACE_REQUEST
+    TRACE_REQUEST_RESPONSE = Connection.TRACE_REQUEST_RESPONSE
+    TRACE_ALL = Connection.TRACE_ALL
 
-    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace='none'):
+    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace=TRACE_NONE):
         """TestPlatform constructor
 
         Establishes an initial connection to an IxNetwork test tool platform. 
         Currently supported platforms are Linux API Server, Windows GUI and ConnectionManager.
 
-        Args:  
+        Args:
             ip_address (str): the ip address of the test tool platform that requests will be made to
             rest_port (number): the ip port of the test tool platform that the server is listening on. Defaults are linux|connection_manager:443, windows:11009
             platform (str[windows|linux|connection_manager]): DEPRECATED. This will be determined by the Connection class.
             log_file_name (str): the name of the log file that trace logging will be written to, if omitted it will be written to the console
             ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
 			verify_cert (bool): enable this flag to verify the certificate 
-			trace (str[none|request|request_response|all]): set the tracing level of requests and responses
+			trace (str(none|info|warning|request|request_response|all)): set the tracing level of requests and responses.
 
         Raises:
             obj(ixnetwork_restpy.errors.ConnectionError)
@@ -96,7 +102,7 @@ class TestPlatform(Base):
         """Trace http transactions to console
 
         Returns:
-            str(none|request|request_response): Enables tracing of the connection transport request and responses
+            str(none|info|warning|request|request_response|all): Enables tracing of the connection transport request and responses
         """
         return self._get_attribute('trace')
 

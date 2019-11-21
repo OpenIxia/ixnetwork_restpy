@@ -43,6 +43,8 @@ class Connection(object):
     """Http/Https transport"""
     X_API_KEY = 'X-Api-Key'
     TRACE_NONE = 'none'
+    TRACE_INFO = 'info'
+    TRACE_WARNING = 'warning'
     TRACE_REQUEST = 'request'
     TRACE_REQUEST_RESPONSE = 'request_response'
     TRACE_ALL = 'all'
@@ -64,7 +66,7 @@ class Connection(object):
             ignore_env_proxy (bool):
             verify_cert (bool): 
         """
-        self._trace = trace
+        self.trace = trace
         if len(logging.getLogger(__name__).handlers) == 0:
             handlers = [logging.StreamHandler(sys.stdout)]
             if log_file_name is not None:
@@ -74,15 +76,11 @@ class Connection(object):
             for handler in handlers:
                 handler.setFormatter(formatter)
                 logging.getLogger(__name__).addHandler(handler)
-            if self._trace == 'none':
-                logging.getLogger(__name__).setLevel(logging.CRITICAL)
-            else:
-                logging.getLogger(__name__).setLevel(logging.INFO)
             logging.getLogger(__name__).info('using python version %s' % sys.version)
             try:
                 logging.getLogger(__name__).info('using ixnetwork-restpy version %s' % pkg_resources.get_distribution("ixnetwork-restpy").version)
             except Exception as e:
-                logging.getLogger(__name__).warn("ixnetwork-restpy not installed using pip, unable to determine version")
+                logging.getLogger(__name__).warning("ixnetwork-restpy not installed using pip, unable to determine version")
         self._verify_cert = verify_cert
         if self._verify_cert is False:
             self._warn('Verification of certificates is disabled')
@@ -144,13 +142,17 @@ class Connection(object):
 
     @trace.setter
     def trace(self, value):
-        if value not in [Connection.TRACE_NONE, Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
+        if value == Connection.TRACE_NONE:
+            logging.getLogger(__name__).setLevel(logging.CRITICAL)
+        elif value == Connection.TRACE_INFO:
+            logging.getLogger(__name__).setLevel(logging.INFO)
+        elif value == Connection.TRACE_WARNING:
+            logging.getLogger(__name__).setLevel(logging.WARNING)
+        elif value in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
+            logging.getLogger(__name__).setLevel(logging.DEBUG)
+        else:
             raise ValueError('the value %s is an incorrect Trace level' % value)
         self._trace = value
-        if self._trace == Connection.TRACE_NONE:
-            logging.getLogger(__name__).setLevel(logging.CRITICAL)
-        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
-            logging.getLogger(__name__).setLevel(logging.DEBUG)
 
     @property
     def platform(self):

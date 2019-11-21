@@ -192,7 +192,7 @@ class Base(object):
         else:
             return None
 
-    def _build_value(self, key, value, method_name=None):
+    def _build_value(self, key, value, method_name=None, ignore_is_list=False):
         public_key = '%s%s' % (key[0].upper(), key[1:])
         if isinstance(value, Files):
             if value.is_local_file:
@@ -210,7 +210,7 @@ class Base(object):
             elif hasattr(self.__class__, public_key) is True:
                 returns = getattr(self.__class__, public_key).__doc__.replace('\n', '').replace('\t', '').replace(' ', '')
                 is_list = returns.find('Returns:list(') != -1
-            if is_list is True:
+            if is_list is True and ignore_is_list is False:
                 hrefs = []
                 for list_value in value:
                     hrefs.append(list_value.href)
@@ -220,7 +220,7 @@ class Base(object):
         elif isinstance(value, list):
             list_values = []
             for list_item in value:
-                list_value = self._build_value(key, list_item)
+                list_value = self._build_value(key, list_item, ignore_is_list=isinstance(list_item, Base))
                 if list_value is not None:
                     list_values.append(list_value)
             return list_values

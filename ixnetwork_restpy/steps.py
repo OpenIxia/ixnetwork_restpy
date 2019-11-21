@@ -73,7 +73,7 @@ class Steps(Base):
     def Step(self, value):
         self._set_attribute('step', value)
 
-    def find(Description=None):
+    def find(self, Description=None):
         """Finds and retrieves multivalue step data from the server.
 
         All named parameters support regex and can be used to selectively retrieve step data from the server.
@@ -88,9 +88,12 @@ class Steps(Base):
         Raises:
             ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._custom_select(Description)
 
-    def _custom_select(self):
+    def _custom_select(self, Description=None):
+        filters = []
+        if Description is not None:
+            filters.append({ 'name': 'Description', 'regex': Description })
         payload = {
             'selects': [
                 {
@@ -100,7 +103,7 @@ class Steps(Base):
                         {
                             'child': Steps._SDM_NAME,
                             'properties': ['*'],
-                            'filters': []
+                            'filters': filters
                         }
                     ],
                     'inlines': []
