@@ -1,5 +1,6 @@
 include LICENSE
 include README.md
+include RELEASENOTES.md
 include setup.py
 include version.txt
 recursive-include ixnetwork_restpy *.py
