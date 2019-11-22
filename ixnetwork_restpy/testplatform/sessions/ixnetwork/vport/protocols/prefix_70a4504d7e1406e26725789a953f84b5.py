@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Prefix(Base):
-	"""Filters based on route prefix information.
-	The Prefix class encapsulates a required prefix resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Filters based on route prefix information.
+    The Prefix class encapsulates a required prefix resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'prefix'
+    __slots__ = ()
+    _SDM_NAME = 'prefix'
 
-	def __init__(self, parent):
-		super(Prefix, self).__init__(parent)
+    def __init__(self, parent):
+        super(Prefix, self).__init__(parent)
 
-	@property
-	def Prefix(self):
-		"""Controls the prefix attributes that are filtered on.
+    @property
+    def Prefix(self):
+        """Controls the prefix attributes that are filtered on.
 
-		Returns:
-			list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))
-		"""
-		return self._get_attribute('prefix')
-	@Prefix.setter
-	def Prefix(self, value):
-		self._set_attribute('prefix', value)
+        Returns:
+            list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))
+        """
+        return self._get_attribute('prefix')
+    @Prefix.setter
+    def Prefix(self, value):
+        self._set_attribute('prefix', value)
 
-	def update(self, Prefix=None):
-		"""Updates a child instance of prefix on the server.
+    def update(self, Prefix=None):
+        """Updates a child instance of prefix on the server.
 
-		Args:
-			Prefix (list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))): Controls the prefix attributes that are filtered on.
+        Args:
+            Prefix (list(dict(arg1:str,arg2:bool,arg3:number,arg4:number))): Controls the prefix attributes that are filtered on.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

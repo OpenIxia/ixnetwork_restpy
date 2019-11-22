@@ -18,258 +18,258 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class OspfSRMappingServerList(Base):
-	"""Ospf SR Mapping Server related configuration
-	The OspfSRMappingServerList class encapsulates a required ospfSRMappingServerList resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Ospf SR Mapping Server related configuration
+    The OspfSRMappingServerList class encapsulates a required ospfSRMappingServerList resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ospfSRMappingServerList'
+    __slots__ = ()
+    _SDM_NAME = 'ospfSRMappingServerList'
 
-	def __init__(self, parent):
-		super(OspfSRMappingServerList, self).__init__(parent)
+    def __init__(self, parent):
+        super(OspfSRMappingServerList, self).__init__(parent)
 
-	@property
-	def Active(self):
-		"""Activate/Deactivate Configuration
+    @property
+    def Active(self):
+        """Activate/Deactivate Configuration
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('active')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('active')
 
-	@property
-	def Algorithm(self):
-		"""Algorithm
+    @property
+    def Algorithm(self):
+        """Algorithm
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('algorithm')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('algorithm')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def EFlag(self):
-		"""Explicit-Null Flag
+    @property
+    def EFlag(self):
+        """Explicit-Null Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('eFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('eFlag')
 
-	@property
-	def IaFlag(self):
-		"""Inter Area Flag
+    @property
+    def IaFlag(self):
+        """Inter Area Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('iaFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('iaFlag')
 
-	@property
-	def LFlag(self):
-		"""Local or Global Flag
+    @property
+    def LFlag(self):
+        """Local or Global Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('lFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('lFlag')
 
-	@property
-	def LastNetworkAddress(self):
-		"""Last Address of network address pool in the SR Mapping server network range
+    @property
+    def LastNetworkAddress(self):
+        """Last Address of network address pool in the SR Mapping server network range
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('lastNetworkAddress')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('lastNetworkAddress')
 
-	@property
-	def LocalRouterID(self):
-		"""Router ID
+    @property
+    def LocalRouterID(self):
+        """Router ID
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('localRouterID')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('localRouterID')
 
-	@property
-	def MFlag(self):
-		"""Mapping Server Flag
+    @property
+    def MFlag(self):
+        """Mapping Server Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('mFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mFlag')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def NetworkAddress(self):
-		"""Starting Address of network address pool in the SR Mapping server network range
+    @property
+    def NetworkAddress(self):
+        """Starting Address of network address pool in the SR Mapping server network range
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('networkAddress')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('networkAddress')
 
-	@property
-	def NpFlag(self):
-		"""No-PHP Flag
+    @property
+    def NpFlag(self):
+        """No-PHP Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('npFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('npFlag')
 
-	@property
-	def PrefixLength(self):
-		"""Prefix Length
+    @property
+    def PrefixLength(self):
+        """Prefix Length
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('prefixLength')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('prefixLength')
 
-	@property
-	def Range(self):
-		"""Range
+    @property
+    def Range(self):
+        """Range
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('range')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('range')
 
-	@property
-	def SidIndexLabel(self):
-		"""SID/Index/Label
+    @property
+    def SidIndexLabel(self):
+        """SID/Index/Label
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('sidIndexLabel')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('sidIndexLabel')
 
-	@property
-	def VFlag(self):
-		"""Value or Index Flag
+    @property
+    def VFlag(self):
+        """Value or Index Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('vFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('vFlag')
 
-	def update(self, Name=None):
-		"""Updates a child instance of ospfSRMappingServerList on the server.
+    def update(self, Name=None):
+        """Updates a child instance of ospfSRMappingServerList on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, EFlag=None, IaFlag=None, LFlag=None, MFlag=None, NetworkAddress=None, NpFlag=None, PrefixLength=None, Range=None, SidIndexLabel=None, VFlag=None):
-		"""Base class infrastructure that gets a list of ospfSRMappingServerList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, EFlag=None, IaFlag=None, LFlag=None, MFlag=None, NetworkAddress=None, NpFlag=None, PrefixLength=None, Range=None, SidIndexLabel=None, VFlag=None):
+        """Base class infrastructure that gets a list of ospfSRMappingServerList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			Active (str): optional regex of active
-			Algorithm (str): optional regex of algorithm
-			EFlag (str): optional regex of eFlag
-			IaFlag (str): optional regex of iaFlag
-			LFlag (str): optional regex of lFlag
-			MFlag (str): optional regex of mFlag
-			NetworkAddress (str): optional regex of networkAddress
-			NpFlag (str): optional regex of npFlag
-			PrefixLength (str): optional regex of prefixLength
-			Range (str): optional regex of range
-			SidIndexLabel (str): optional regex of sidIndexLabel
-			VFlag (str): optional regex of vFlag
+        Args:
+            PortNames (str): optional regex of port names
+            Active (str): optional regex of active
+            Algorithm (str): optional regex of algorithm
+            EFlag (str): optional regex of eFlag
+            IaFlag (str): optional regex of iaFlag
+            LFlag (str): optional regex of lFlag
+            MFlag (str): optional regex of mFlag
+            NetworkAddress (str): optional regex of networkAddress
+            NpFlag (str): optional regex of npFlag
+            PrefixLength (str): optional regex of prefixLength
+            Range (str): optional regex of range
+            SidIndexLabel (str): optional regex of sidIndexLabel
+            VFlag (str): optional regex of vFlag
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())
 
-	def Advertise(self, *args, **kwargs):
-		"""Executes the advertise operation on the server.
+    def Advertise(self, *args, **kwargs):
+        """Executes the advertise operation on the server.
 
-		Advertise the Mapping Server mapping
+        Advertise the Mapping Server mapping
 
-		advertise(Arg2:list)list
-			Args:
-				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        advertise(Arg2:list)list
+            Args:
+                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
 
-			Returns:
-				list(str): ID to associate each async action invocation
+            Returns:
+                list(str): ID to associate each async action invocation
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('advertise', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertise', payload=payload, response_object=None)
 
-	def Withdraw(self, *args, **kwargs):
-		"""Executes the withdraw operation on the server.
+    def Withdraw(self, *args, **kwargs):
+        """Executes the withdraw operation on the server.
 
-		Withdraw the Mapping Server mapping
+        Withdraw the Mapping Server mapping
 
-		withdraw(Arg2:list)list
-			Args:
-				args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        withdraw(Arg2:list)list
+            Args:
+                args[0] is Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
 
-			Returns:
-				list(str): ID to associate each async action invocation
+            Returns:
+                list(str): ID to associate each async action invocation
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('withdraw', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdraw', payload=payload, response_object=None)

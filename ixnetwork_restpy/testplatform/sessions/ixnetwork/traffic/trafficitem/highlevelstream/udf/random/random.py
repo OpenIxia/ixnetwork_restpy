@@ -18,98 +18,98 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Random(Base):
-	"""This object specifies the random properties of UDF.
-	The Random class encapsulates a list of random resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Random.find() method.
-	"""
+    """This object specifies the random properties of UDF.
+    The Random class encapsulates a list of random resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Random.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'random'
+    __slots__ = ()
+    _SDM_NAME = 'random'
 
-	def __init__(self, parent):
-		super(Random, self).__init__(parent)
+    def __init__(self, parent):
+        super(Random, self).__init__(parent)
 
-	@property
-	def AvailableWidths(self):
-		"""Species all the possible widths available for a UDF in particular Type.
+    @property
+    def AvailableWidths(self):
+        """Species all the possible widths available for a UDF in particular Type.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('availableWidths')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('availableWidths')
 
-	@property
-	def Mask(self):
-		"""Sets the UDF mask.
+    @property
+    def Mask(self):
+        """Sets the UDF mask.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('mask')
-	@Mask.setter
-	def Mask(self, value):
-		self._set_attribute('mask', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('mask')
+    @Mask.setter
+    def Mask(self, value):
+        self._set_attribute('mask', value)
 
-	@property
-	def Width(self):
-		"""Specifies the width of the UDF.
+    @property
+    def Width(self):
+        """Specifies the width of the UDF.
 
-		Returns:
-			str(16|24|32|8)
-		"""
-		return self._get_attribute('width')
-	@Width.setter
-	def Width(self, value):
-		self._set_attribute('width', value)
+        Returns:
+            str(16|24|32|8)
+        """
+        return self._get_attribute('width')
+    @Width.setter
+    def Width(self, value):
+        self._set_attribute('width', value)
 
-	def update(self, Mask=None, Width=None):
-		"""Updates a child instance of random on the server.
+    def update(self, Mask=None, Width=None):
+        """Updates a child instance of random on the server.
 
-		Args:
-			Mask (str): Sets the UDF mask.
-			Width (str(16|24|32|8)): Specifies the width of the UDF.
+        Args:
+            Mask (str): Sets the UDF mask.
+            Width (str(16|24|32|8)): Specifies the width of the UDF.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, AvailableWidths=None, Mask=None, Width=None):
-		"""Finds and retrieves random data from the server.
+    def find(self, AvailableWidths=None, Mask=None, Width=None):
+        """Finds and retrieves random data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve random data from the server.
-		By default the find method takes no parameters and will retrieve all random data from the server.
+        All named parameters support regex and can be used to selectively retrieve random data from the server.
+        By default the find method takes no parameters and will retrieve all random data from the server.
 
-		Args:
-			AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
-			Mask (str): Sets the UDF mask.
-			Width (str(16|24|32|8)): Specifies the width of the UDF.
+        Args:
+            AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
+            Mask (str): Sets the UDF mask.
+            Width (str(16|24|32|8)): Specifies the width of the UDF.
 
-		Returns:
-			self: This instance with matching random data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching random data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of random data from the server.
+    def read(self, href):
+        """Retrieves a single instance of random data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the random data from the server available through an iterator or index
+        Returns:
+            self: This instance with the random data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

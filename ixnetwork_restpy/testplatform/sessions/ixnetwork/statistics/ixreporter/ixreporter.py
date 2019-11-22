@@ -18,46 +18,46 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Ixreporter(Base):
-	"""Specifies the statistics for IxReporter.
-	The Ixreporter class encapsulates a required ixreporter resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Specifies the statistics for IxReporter.
+    The Ixreporter class encapsulates a required ixreporter resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ixreporter'
+    __slots__ = ()
+    _SDM_NAME = 'ixreporter'
 
-	def __init__(self, parent):
-		super(Ixreporter, self).__init__(parent)
+    def __init__(self, parent):
+        super(Ixreporter, self).__init__(parent)
 
-	@property
-	def DataCollection(self):
-		"""An instance of the DEPRECATED DataCollection class.
+    @property
+    def DataCollection(self):
+        """An instance of the DEPRECATED DataCollection class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection.DataCollection)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection.DataCollection)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection import DataCollection
-		return DataCollection(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection import DataCollection
+        return DataCollection(self)._select()
 
-	@property
-	def ReportGeneration(self):
-		"""An instance of the DEPRECATED ReportGeneration class.
+    @property
+    def ReportGeneration(self):
+        """An instance of the DEPRECATED ReportGeneration class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration.ReportGeneration)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration.ReportGeneration)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration import ReportGeneration
-		return ReportGeneration(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration import ReportGeneration
+        return ReportGeneration(self)._select()

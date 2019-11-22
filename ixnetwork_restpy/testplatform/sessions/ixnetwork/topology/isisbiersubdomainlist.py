@@ -18,155 +18,155 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class IsisBierSubDomainList(Base):
-	"""ISIS BIER Sub Domain
-	The IsisBierSubDomainList class encapsulates a required isisBierSubDomainList resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """ISIS BIER Sub Domain
+    The IsisBierSubDomainList class encapsulates a required isisBierSubDomainList resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'isisBierSubDomainList'
+    __slots__ = ()
+    _SDM_NAME = 'isisBierSubDomainList'
 
-	def __init__(self, parent):
-		super(IsisBierSubDomainList, self).__init__(parent)
+    def __init__(self, parent):
+        super(IsisBierSubDomainList, self).__init__(parent)
 
-	@property
-	def IsisBierBSObjectList(self):
-		"""An instance of the IsisBierBSObjectList class.
+    @property
+    def IsisBierBSObjectList(self):
+        """An instance of the IsisBierBSObjectList class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist.IsisBierBSObjectList)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist.IsisBierBSObjectList)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist import IsisBierBSObjectList
-		return IsisBierBSObjectList(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist import IsisBierBSObjectList
+        return IsisBierBSObjectList(self)
 
-	@property
-	def BAR(self):
-		"""BIER Algorithm
+    @property
+    def BAR(self):
+        """BIER Algorithm
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('BAR')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('BAR')
 
-	@property
-	def BFRId(self):
-		"""BFR Id
+    @property
+    def BFRId(self):
+        """BFR Id
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('BFRId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('BFRId')
 
-	@property
-	def IPA(self):
-		"""IGP Algorithm
+    @property
+    def IPA(self):
+        """IGP Algorithm
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('IPA')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('IPA')
 
-	@property
-	def Active(self):
-		"""Activate/Deactivate Configuration
+    @property
+    def Active(self):
+        """Activate/Deactivate Configuration
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('active')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('active')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def NumberOfBSLen(self):
-		"""Number of Supported BSL
+    @property
+    def NumberOfBSLen(self):
+        """Number of Supported BSL
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('numberOfBSLen')
-	@NumberOfBSLen.setter
-	def NumberOfBSLen(self, value):
-		self._set_attribute('numberOfBSLen', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('numberOfBSLen')
+    @NumberOfBSLen.setter
+    def NumberOfBSLen(self, value):
+        self._set_attribute('numberOfBSLen', value)
 
-	@property
-	def SubDomainId(self):
-		"""Sub Domain Id
+    @property
+    def SubDomainId(self):
+        """Sub Domain Id
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('subDomainId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('subDomainId')
 
-	def update(self, Name=None, NumberOfBSLen=None):
-		"""Updates a child instance of isisBierSubDomainList on the server.
+    def update(self, Name=None, NumberOfBSLen=None):
+        """Updates a child instance of isisBierSubDomainList on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-			NumberOfBSLen (number): Number of Supported BSL
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+            NumberOfBSLen (number): Number of Supported BSL
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, IPA=None, Active=None, SubDomainId=None):
-		"""Base class infrastructure that gets a list of isisBierSubDomainList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, IPA=None, Active=None, SubDomainId=None):
+        """Base class infrastructure that gets a list of isisBierSubDomainList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			BAR (str): optional regex of BAR
-			BFRId (str): optional regex of BFRId
-			IPA (str): optional regex of IPA
-			Active (str): optional regex of active
-			SubDomainId (str): optional regex of subDomainId
+        Args:
+            PortNames (str): optional regex of port names
+            BAR (str): optional regex of BAR
+            BFRId (str): optional regex of BFRId
+            IPA (str): optional regex of IPA
+            Active (str): optional regex of active
+            SubDomainId (str): optional regex of subDomainId
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

@@ -35,14 +35,14 @@ except NameError:
 
 class Base(object):
     """Base
-    
+
     Designed around __iter__, __next__, __getitem__
     _object_properties is a list of property dicts returned by the server
     _index is the current pointer into the _object_properties
     _properties returns the current properties as dictated by _index
     """
     __slots__ = ('_object_properties', '_connection', '_parent', '_index')
-    
+
     def __init__(self, parent):
         self._parent = parent
         if self._parent is not None:
@@ -65,7 +65,7 @@ class Base(object):
 
     def __getitem__(self, index):
         if index >= len(self._object_properties):
-            raise IndexError	
+            raise IndexError
         elif index < 0 and len(self._object_properties) + index in range(len(self._object_properties)):
             index = len(self._object_properties) + index
         item = self.__class__(self._parent)
@@ -92,7 +92,7 @@ class Base(object):
     @property
     def href(self):
         """The hypertext reference of the current object
-        
+
         Returns: 
             str: The fully qualified hypertext reference of the current object
 
@@ -104,7 +104,7 @@ class Base(object):
     @property
     def parent(self):
         """The parent object of the current object
-        
+
         Returns: 
             obj(Base): The parent object of the current object or None if there is no parent for this object
         """
@@ -129,7 +129,7 @@ class Base(object):
             return self._properties[name]
         except Exception as e:
             raise NotFoundError('The attribute %s is not in the internal list of object dicts. (%s)' % (name, e))
-  
+
     def _set_attribute(self, name, value):
         """Update a property on the server and save it locally if there is no exception
         """
@@ -138,7 +138,7 @@ class Base(object):
             self._properties[name] = value
         except Exception as e:
             raise e
-        
+
     def __str__(self):
         """Get all the instances encapsulated by this container without changing the current index
 
@@ -164,7 +164,7 @@ class Base(object):
             key of self
             any key not in the internal dictionary
             value of None or Multivalue
-        
+
         Returns: 
             dict: if there are items in the payload after processing of the locals_dict is complete
             None: if there are no items in the payload
@@ -200,7 +200,7 @@ class Base(object):
                 self._connection._execute(upload_url, payload=value)
             return value.file_name
         elif isinstance(value, Base):
-            is_list = False		
+            is_list = False
             if method_name is not None:
                 if key == 'Arg1':
                     is_list = True
@@ -256,13 +256,13 @@ class Base(object):
                 continue
             else:
                 self._properties[key] = value
-        
+
         # if href is missing then try backfilling it using either links or id
         if 'href' not in self._properties.keys():
             if 'links' in properties.keys():
                 self._properties['href'] = properties['links'][0]['href']
             elif 'id' in properties.keys():
-                self._properties['href'] = '%s/%s/%s' % (self._parent.href, self._SDM_NAME, properties['id'])        
+                self._properties['href'] = '%s/%s/%s' % (self._parent.href, self._SDM_NAME, properties['id'])
 
     def _update(self, locals_dict):
         payload = self._build_payload(locals_dict)
@@ -270,7 +270,7 @@ class Base(object):
             self._connection._update(self._properties['href'], payload)
             return self.refresh()
         return self
-    
+
     def _delete(self):
         try:
             for properties in self._object_properties:
@@ -317,7 +317,7 @@ class Base(object):
                     'properties': ['*'],
                     'children': [],
                     'inlines': []
-                }				
+                }
             )
         payload = {'selects': selects}
         end = len(self._parent.href)
@@ -336,7 +336,7 @@ class Base(object):
         response = self._connection._read(href)
         self._set_properties(response, clear=True)
         return self
-        
+
     def _select(self, locals_dict=dict()):
         selects = []
         for parent in self._parent:
@@ -352,9 +352,9 @@ class Base(object):
                         }
                     ],
                     'inlines': []
-                }				
+                }
             )
-        payload = { 'selects': selects }
+        payload = {'selects': selects}
         for key in locals_dict.keys():
             if key == 'self' or locals_dict[key] is None or isclass(locals_dict[key]):
                 continue
@@ -383,7 +383,7 @@ class Base(object):
 
     def _get_ngpf_device_ids(self, locals_dict=dict()):
         """Get NGPF device ids
-        
+
         NGPF has a /topology/deviceGroup -count attribute that is used to set the devices per port
         Any NGPF class that has an operation that requires a list of session indices will have a GetDeviceIds method generated for it that calls into this method
         All parameters will be optional and defaulted to None
@@ -407,12 +407,12 @@ class Base(object):
         # setup the device id map
         topology_url = self.href[0:self.href.index('deviceGroup') - 1]
         from ixnetwork_restpy.select import Select
-        topology_results = Select(self._connection, topology_url, 
-            from_properties=['vports'], 
-            children=[{'child': 'deviceGroup', 'properties': ['count'], 'filters': []}], 
-            inlines=[{'child': 'vport', 'properties': ['name']}]).go()
+        topology_results = Select(self._connection, topology_url,
+                                  from_properties=['vports'],
+                                  children=[{'child': 'deviceGroup', 'properties': ['count'], 'filters': []}],
+                                  inlines=[{'child': 'vport', 'properties': ['name']}]).go()
         number_of_ports = len(topology_results[0]['vports'])
-        total_devices = topology_results[0]['deviceGroup'][0]['count'] 
+        total_devices = topology_results[0]['deviceGroup'][0]['count']
         devices_per_port = int(total_devices / number_of_ports)
         if sys.version_info >= (3, 0):
             device_ids = list(range(1, total_devices + 1))
@@ -433,7 +433,7 @@ class Base(object):
                 for i in range(len(values)):
                     if regex.search(values[i]) is None:
                         device_ids[i] = 0
-        
+
         return [x for x in device_ids if x != 0]
 
     def info(self, message):
@@ -445,9 +445,8 @@ class Base(object):
         """Add a WARN level message to the logger handlers
         """
         self._connection._warn(message)
-    
+
     def debug(self, message):
         """Add a DEBUG level message to the logger handlers
         """
         self._connection._debug(message)
-        

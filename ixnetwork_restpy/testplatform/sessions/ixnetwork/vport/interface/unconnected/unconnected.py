@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Unconnected(Base):
-	"""Unconnected protocol interfaces that are not connected by any links to the SUT or to other Ixia ports. The unconnected interfaces can be set up to link the Ixia-emulated router to virtual networks "behind" the router, such as emulated OSPF network ranges.
-	The Unconnected class encapsulates a required unconnected resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Unconnected protocol interfaces that are not connected by any links to the SUT or to other Ixia ports. The unconnected interfaces can be set up to link the Ixia-emulated router to virtual networks "behind" the router, such as emulated OSPF network ranges.
+    The Unconnected class encapsulates a required unconnected resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'unconnected'
+    __slots__ = ()
+    _SDM_NAME = 'unconnected'
 
-	def __init__(self, parent):
-		super(Unconnected, self).__init__(parent)
+    def __init__(self, parent):
+        super(Unconnected, self).__init__(parent)
 
-	@property
-	def ConnectedVia(self):
-		"""The name of a specified connected protocol interface on the link that is directly connected to the DUT.
+    @property
+    def ConnectedVia(self):
+        """The name of a specified connected protocol interface on the link that is directly connected to the DUT.
 
-		Returns:
-			str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
-		"""
-		return self._get_attribute('connectedVia')
-	@ConnectedVia.setter
-	def ConnectedVia(self, value):
-		self._set_attribute('connectedVia', value)
+        Returns:
+            str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)
+        """
+        return self._get_attribute('connectedVia')
+    @ConnectedVia.setter
+    def ConnectedVia(self, value):
+        self._set_attribute('connectedVia', value)
 
-	def update(self, ConnectedVia=None):
-		"""Updates a child instance of unconnected on the server.
+    def update(self, ConnectedVia=None):
+        """Updates a child instance of unconnected on the server.
 
-		Args:
-			ConnectedVia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
+        Args:
+            ConnectedVia (str(None|/api/v1/sessions/1/ixnetwork/vport?deepchild=interface)): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

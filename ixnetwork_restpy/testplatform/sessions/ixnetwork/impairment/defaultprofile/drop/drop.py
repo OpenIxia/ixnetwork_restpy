@@ -18,67 +18,67 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Drop(Base):
-	"""Drop incoming packets.
-	The Drop class encapsulates a required drop resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Drop incoming packets.
+    The Drop class encapsulates a required drop resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'drop'
+    __slots__ = ()
+    _SDM_NAME = 'drop'
 
-	def __init__(self, parent):
-		super(Drop, self).__init__(parent)
+    def __init__(self, parent):
+        super(Drop, self).__init__(parent)
 
-	@property
-	def ClusterSize(self):
-		"""Number of packets to drop on each occurrence.
+    @property
+    def ClusterSize(self):
+        """Number of packets to drop on each occurrence.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('clusterSize')
-	@ClusterSize.setter
-	def ClusterSize(self, value):
-		self._set_attribute('clusterSize', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('clusterSize')
+    @ClusterSize.setter
+    def ClusterSize(self, value):
+        self._set_attribute('clusterSize', value)
 
-	@property
-	def Enabled(self):
-		"""If true, periodically drop received packets.
+    @property
+    def Enabled(self):
+        """If true, periodically drop received packets.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def PercentRate(self):
-		"""How often to drop packets, as a percentage.
+    @property
+    def PercentRate(self):
+        """How often to drop packets, as a percentage.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('percentRate')
-	@PercentRate.setter
-	def PercentRate(self, value):
-		self._set_attribute('percentRate', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('percentRate')
+    @PercentRate.setter
+    def PercentRate(self, value):
+        self._set_attribute('percentRate', value)
 
-	def update(self, ClusterSize=None, Enabled=None, PercentRate=None):
-		"""Updates a child instance of drop on the server.
+    def update(self, ClusterSize=None, Enabled=None, PercentRate=None):
+        """Updates a child instance of drop on the server.
 
-		Args:
-			ClusterSize (number): Number of packets to drop on each occurrence.
-			Enabled (bool): If true, periodically drop received packets.
-			PercentRate (number): How often to drop packets, as a percentage.
+        Args:
+            ClusterSize (number): Number of packets to drop on each occurrence.
+            Enabled (bool): If true, periodically drop received packets.
+            PercentRate (number): How often to drop packets, as a percentage.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

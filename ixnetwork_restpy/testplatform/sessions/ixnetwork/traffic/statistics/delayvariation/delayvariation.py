@@ -18,80 +18,80 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class DelayVariation(Base):
-	"""This object fetches delay variation statistics.
-	The DelayVariation class encapsulates a required delayVariation resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object fetches delay variation statistics.
+    The DelayVariation class encapsulates a required delayVariation resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'delayVariation'
+    __slots__ = ()
+    _SDM_NAME = 'delayVariation'
 
-	def __init__(self, parent):
-		super(DelayVariation, self).__init__(parent)
+    def __init__(self, parent):
+        super(DelayVariation, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
+    @property
+    def Enabled(self):
+        """If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def LargeSequenceNumberErrorThreshold(self):
-		"""The value for the large sequence number error.
+    @property
+    def LargeSequenceNumberErrorThreshold(self):
+        """The value for the large sequence number error.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('largeSequenceNumberErrorThreshold')
-	@LargeSequenceNumberErrorThreshold.setter
-	def LargeSequenceNumberErrorThreshold(self, value):
-		self._set_attribute('largeSequenceNumberErrorThreshold', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('largeSequenceNumberErrorThreshold')
+    @LargeSequenceNumberErrorThreshold.setter
+    def LargeSequenceNumberErrorThreshold(self, value):
+        self._set_attribute('largeSequenceNumberErrorThreshold', value)
 
-	@property
-	def LatencyMode(self):
-		"""If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
+    @property
+    def LatencyMode(self):
+        """If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
 
-		Returns:
-			str(cutThrough|forwardingDelay|mef|storeForward)
-		"""
-		return self._get_attribute('latencyMode')
-	@LatencyMode.setter
-	def LatencyMode(self, value):
-		self._set_attribute('latencyMode', value)
+        Returns:
+            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        return self._get_attribute('latencyMode')
+    @LatencyMode.setter
+    def LatencyMode(self, value):
+        self._set_attribute('latencyMode', value)
 
-	@property
-	def StatisticsMode(self):
-		"""If enabled, allows to receive delay variation statistics with sequence error measurements.
+    @property
+    def StatisticsMode(self):
+        """If enabled, allows to receive delay variation statistics with sequence error measurements.
 
-		Returns:
-			str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)
-		"""
-		return self._get_attribute('statisticsMode')
-	@StatisticsMode.setter
-	def StatisticsMode(self, value):
-		self._set_attribute('statisticsMode', value)
+        Returns:
+            str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)
+        """
+        return self._get_attribute('statisticsMode')
+    @StatisticsMode.setter
+    def StatisticsMode(self, value):
+        self._set_attribute('statisticsMode', value)
 
-	def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
-		"""Updates a child instance of delayVariation on the server.
+    def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
+        """Updates a child instance of delayVariation on the server.
 
-		Args:
-			Enabled (bool): If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
-			LargeSequenceNumberErrorThreshold (number): The value for the large sequence number error.
-			LatencyMode (str(cutThrough|forwardingDelay|mef|storeForward)): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
-			StatisticsMode (str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)): If enabled, allows to receive delay variation statistics with sequence error measurements.
+        Args:
+            Enabled (bool): If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
+            LargeSequenceNumberErrorThreshold (number): The value for the large sequence number error.
+            LatencyMode (str(cutThrough|forwardingDelay|mef|storeForward)): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
+            StatisticsMode (str(rxDelayVariationAverage|rxDelayVariationErrorsAndRate|rxDelayVariationMinMaxAndRate)): If enabled, allows to receive delay variation statistics with sequence error measurements.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

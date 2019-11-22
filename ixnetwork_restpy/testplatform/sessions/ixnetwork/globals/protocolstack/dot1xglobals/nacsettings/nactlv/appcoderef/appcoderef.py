@@ -18,63 +18,63 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AppCodeRef(Base):
-	"""TLV Application Code
-	The AppCodeRef class encapsulates a required appCodeRef resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """TLV Application Code
+    The AppCodeRef class encapsulates a required appCodeRef resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'appCodeRef'
+    __slots__ = ()
+    _SDM_NAME = 'appCodeRef'
 
-	def __init__(self, parent):
-		super(AppCodeRef, self).__init__(parent)
+    def __init__(self, parent):
+        super(AppCodeRef, self).__init__(parent)
 
-	@property
-	def Name(self):
-		"""AppCode Name.
+    @property
+    def Name(self):
+        """AppCode Name.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def ObjectId(self):
-		"""Unique identifier for this object
+    @property
+    def ObjectId(self):
+        """Unique identifier for this object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('objectId')
+        Returns:
+            str
+        """
+        return self._get_attribute('objectId')
 
-	@property
-	def Value(self):
-		"""AppCode ID.
+    @property
+    def Value(self):
+        """AppCode ID.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Name=None, Value=None):
-		"""Updates a child instance of appCodeRef on the server.
+    def update(self, Name=None, Value=None):
+        """Updates a child instance of appCodeRef on the server.
 
-		Args:
-			Name (str): AppCode Name.
-			Value (number): AppCode ID.
+        Args:
+            Name (str): AppCode Name.
+            Value (number): AppCode ID.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

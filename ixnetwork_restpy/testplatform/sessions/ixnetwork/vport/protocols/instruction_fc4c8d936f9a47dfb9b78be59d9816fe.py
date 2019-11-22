@@ -18,119 +18,119 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Instruction(Base):
-	"""Instructions property.
-	The Instruction class encapsulates a required instruction resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Instructions property.
+    The Instruction class encapsulates a required instruction resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'instruction'
+    __slots__ = ()
+    _SDM_NAME = 'instruction'
 
-	def __init__(self, parent):
-		super(Instruction, self).__init__(parent)
+    def __init__(self, parent):
+        super(Instruction, self).__init__(parent)
 
-	@property
-	def ApplyActions(self):
-		"""If selected, applies the actions associated with a flow immediately.
+    @property
+    def ApplyActions(self):
+        """If selected, applies the actions associated with a flow immediately.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('applyActions')
-	@ApplyActions.setter
-	def ApplyActions(self, value):
-		self._set_attribute('applyActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('applyActions')
+    @ApplyActions.setter
+    def ApplyActions(self, value):
+        self._set_attribute('applyActions', value)
 
-	@property
-	def ClearActions(self):
-		"""If selected, clears the actions attached with the flow.
+    @property
+    def ClearActions(self):
+        """If selected, clears the actions attached with the flow.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('clearActions')
-	@ClearActions.setter
-	def ClearActions(self, value):
-		self._set_attribute('clearActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('clearActions')
+    @ClearActions.setter
+    def ClearActions(self, value):
+        self._set_attribute('clearActions', value)
 
-	@property
-	def Experimenter(self):
-		"""Set the Experimenter details.
+    @property
+    def Experimenter(self):
+        """Set the Experimenter details.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('experimenter')
-	@Experimenter.setter
-	def Experimenter(self, value):
-		self._set_attribute('experimenter', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('experimenter')
+    @Experimenter.setter
+    def Experimenter(self, value):
+        self._set_attribute('experimenter', value)
 
-	@property
-	def GoToTable(self):
-		"""If selected, forwards the packet to the next table in the pipeline.
+    @property
+    def GoToTable(self):
+        """If selected, forwards the packet to the next table in the pipeline.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('goToTable')
-	@GoToTable.setter
-	def GoToTable(self, value):
-		self._set_attribute('goToTable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('goToTable')
+    @GoToTable.setter
+    def GoToTable(self, value):
+        self._set_attribute('goToTable', value)
 
-	@property
-	def Meter(self):
-		"""If selected, directs a flow to a particular meter.
+    @property
+    def Meter(self):
+        """If selected, directs a flow to a particular meter.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('meter')
-	@Meter.setter
-	def Meter(self, value):
-		self._set_attribute('meter', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('meter')
+    @Meter.setter
+    def Meter(self, value):
+        self._set_attribute('meter', value)
 
-	@property
-	def WriteActions(self):
-		"""If selected, appends actions to the existing action set of the packet.
+    @property
+    def WriteActions(self):
+        """If selected, appends actions to the existing action set of the packet.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('writeActions')
-	@WriteActions.setter
-	def WriteActions(self, value):
-		self._set_attribute('writeActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('writeActions')
+    @WriteActions.setter
+    def WriteActions(self, value):
+        self._set_attribute('writeActions', value)
 
-	@property
-	def WriteMetadata(self):
-		"""If selected, writes the masked metadata field to the match.
+    @property
+    def WriteMetadata(self):
+        """If selected, writes the masked metadata field to the match.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('writeMetadata')
-	@WriteMetadata.setter
-	def WriteMetadata(self, value):
-		self._set_attribute('writeMetadata', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('writeMetadata')
+    @WriteMetadata.setter
+    def WriteMetadata(self, value):
+        self._set_attribute('writeMetadata', value)
 
-	def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
-		"""Updates a child instance of instruction on the server.
+    def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+        """Updates a child instance of instruction on the server.
 
-		Args:
-			ApplyActions (bool): If selected, applies the actions associated with a flow immediately.
-			ClearActions (bool): If selected, clears the actions attached with the flow.
-			Experimenter (bool): Set the Experimenter details.
-			GoToTable (bool): If selected, forwards the packet to the next table in the pipeline.
-			Meter (bool): If selected, directs a flow to a particular meter.
-			WriteActions (bool): If selected, appends actions to the existing action set of the packet.
-			WriteMetadata (bool): If selected, writes the masked metadata field to the match.
+        Args:
+            ApplyActions (bool): If selected, applies the actions associated with a flow immediately.
+            ClearActions (bool): If selected, clears the actions attached with the flow.
+            Experimenter (bool): Set the Experimenter details.
+            GoToTable (bool): If selected, forwards the packet to the next table in the pipeline.
+            Meter (bool): If selected, directs a flow to a particular meter.
+            WriteActions (bool): If selected, appends actions to the existing action set of the packet.
+            WriteMetadata (bool): If selected, writes the masked metadata field to the match.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

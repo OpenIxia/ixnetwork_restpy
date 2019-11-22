@@ -18,33 +18,33 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FormulaCatalog(Base):
-	"""This object holds the catalog information for the various statistical
+    """This object holds the catalog information for the various statistical
 formula.
-	The FormulaCatalog class encapsulates a required formulaCatalog resource which will be retrieved from the server every time the property is accessed.
-	"""
+    The FormulaCatalog class encapsulates a required formulaCatalog resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'formulaCatalog'
+    __slots__ = ()
+    _SDM_NAME = 'formulaCatalog'
 
-	def __init__(self, parent):
-		super(FormulaCatalog, self).__init__(parent)
+    def __init__(self, parent):
+        super(FormulaCatalog, self).__init__(parent)
 
-	@property
-	def FormulaColumn(self):
-		"""An instance of the FormulaColumn class.
+    @property
+    def FormulaColumn(self):
+        """An instance of the FormulaColumn class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn.FormulaColumn)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn.FormulaColumn)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import FormulaColumn
-		return FormulaColumn(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import FormulaColumn
+        return FormulaColumn(self)

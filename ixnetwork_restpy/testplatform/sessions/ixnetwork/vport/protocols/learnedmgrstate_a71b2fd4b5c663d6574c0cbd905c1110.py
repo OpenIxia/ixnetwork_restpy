@@ -18,70 +18,70 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedMgrState(Base):
-	"""The number of Multicast Groups for which information has been learned.
-	The LearnedMgrState class encapsulates a list of learnedMgrState resources that is managed by the system.
-	A list of resources can be retrieved from the server using the LearnedMgrState.find() method.
-	"""
+    """The number of Multicast Groups for which information has been learned.
+    The LearnedMgrState class encapsulates a list of learnedMgrState resources that is managed by the system.
+    A list of resources can be retrieved from the server using the LearnedMgrState.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedMgrState'
+    __slots__ = ()
+    _SDM_NAME = 'learnedMgrState'
 
-	def __init__(self, parent):
-		super(LearnedMgrState, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedMgrState, self).__init__(parent)
 
-	@property
-	def Group(self):
-		"""An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
+    @property
+    def Group(self):
+        """An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('group')
+        Returns:
+            str
+        """
+        return self._get_attribute('group')
 
-	@property
-	def Source(self):
-		"""The source address that generates multicast traffic. It must be a unicast address.
+    @property
+    def Source(self):
+        """The source address that generates multicast traffic. It must be a unicast address.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('source')
+        Returns:
+            str
+        """
+        return self._get_attribute('source')
 
-	def find(self, Group=None, Source=None):
-		"""Finds and retrieves learnedMgrState data from the server.
+    def find(self, Group=None, Source=None):
+        """Finds and retrieves learnedMgrState data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve learnedMgrState data from the server.
-		By default the find method takes no parameters and will retrieve all learnedMgrState data from the server.
+        All named parameters support regex and can be used to selectively retrieve learnedMgrState data from the server.
+        By default the find method takes no parameters and will retrieve all learnedMgrState data from the server.
 
-		Args:
-			Group (str): An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
-			Source (str): The source address that generates multicast traffic. It must be a unicast address.
+        Args:
+            Group (str): An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
+            Source (str): The source address that generates multicast traffic. It must be a unicast address.
 
-		Returns:
-			self: This instance with matching learnedMgrState data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching learnedMgrState data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of learnedMgrState data from the server.
+    def read(self, href):
+        """Retrieves a single instance of learnedMgrState data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the learnedMgrState data from the server available through an iterator or index
+        Returns:
+            self: This instance with the learnedMgrState data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -18,68 +18,68 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class CustomDelayVariation(Base):
-	"""Specifies custom delay variation as a histogram.  Can only be used on one enabled profile at a time.  Can only be used on a profile which has delay and delayVariation disabled.
-	The CustomDelayVariation class encapsulates a required customDelayVariation resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Specifies custom delay variation as a histogram.  Can only be used on one enabled profile at a time.  Can only be used on a profile which has delay and delayVariation disabled.
+    The CustomDelayVariation class encapsulates a required customDelayVariation resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'customDelayVariation'
+    __slots__ = ()
+    _SDM_NAME = 'customDelayVariation'
 
-	def __init__(self, parent):
-		super(CustomDelayVariation, self).__init__(parent)
+    def __init__(self, parent):
+        super(CustomDelayVariation, self).__init__(parent)
 
-	@property
-	def CustomValue(self):
-		"""An instance of the CustomValue class.
+    @property
+    def CustomValue(self):
+        """An instance of the CustomValue class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue.CustomValue)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue.CustomValue)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue import CustomValue
-		return CustomValue(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customvalue.customvalue import CustomValue
+        return CustomValue(self)
 
-	@property
-	def Enabled(self):
-		"""If true, vary the packet delay.
+    @property
+    def Enabled(self):
+        """If true, vary the packet delay.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def Name(self):
-		"""Descriptive name of custom value list.
+    @property
+    def Name(self):
+        """Descriptive name of custom value list.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	def update(self, Enabled=None, Name=None):
-		"""Updates a child instance of customDelayVariation on the server.
+    def update(self, Enabled=None, Name=None):
+        """Updates a child instance of customDelayVariation on the server.
 
-		Args:
-			Enabled (bool): If true, vary the packet delay.
-			Name (str): Descriptive name of custom value list.
+        Args:
+            Enabled (bool): If true, vary the packet delay.
+            Name (str): Descriptive name of custom value list.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

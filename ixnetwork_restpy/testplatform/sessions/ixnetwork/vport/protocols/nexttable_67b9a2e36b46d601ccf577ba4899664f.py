@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class NextTable(Base):
-	"""NOT DEFINED
-	The NextTable class encapsulates a required nextTable resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The NextTable class encapsulates a required nextTable resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'nextTable'
+    __slots__ = ()
+    _SDM_NAME = 'nextTable'
 
-	def __init__(self, parent):
-		super(NextTable, self).__init__(parent)
+    def __init__(self, parent):
+        super(NextTable, self).__init__(parent)
 
-	@property
-	def TableId(self):
-		"""NOT DEFINED
+    @property
+    def TableId(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('tableId')
-	@TableId.setter
-	def TableId(self, value):
-		self._set_attribute('tableId', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('tableId')
+    @TableId.setter
+    def TableId(self, value):
+        self._set_attribute('tableId', value)
 
-	@property
-	def TableIdMiss(self):
-		"""NOT DEFINED
+    @property
+    def TableIdMiss(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('tableIdMiss')
-	@TableIdMiss.setter
-	def TableIdMiss(self, value):
-		self._set_attribute('tableIdMiss', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('tableIdMiss')
+    @TableIdMiss.setter
+    def TableIdMiss(self, value):
+        self._set_attribute('tableIdMiss', value)
 
-	def update(self, TableId=None, TableIdMiss=None):
-		"""Updates a child instance of nextTable on the server.
+    def update(self, TableId=None, TableIdMiss=None):
+        """Updates a child instance of nextTable on the server.
 
-		Args:
-			TableId (str): NOT DEFINED
-			TableIdMiss (str): NOT DEFINED
+        Args:
+            TableId (str): NOT DEFINED
+            TableIdMiss (str): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

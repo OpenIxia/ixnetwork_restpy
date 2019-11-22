@@ -18,145 +18,145 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TrillPingOam(Base):
-	"""NOT DEFINED
-	The TrillPingOam class encapsulates a required trillPingOam resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The TrillPingOam class encapsulates a required trillPingOam resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'trillPingOam'
+    __slots__ = ()
+    _SDM_NAME = 'trillPingOam'
 
-	def __init__(self, parent):
-		super(TrillPingOam, self).__init__(parent)
+    def __init__(self, parent):
+        super(TrillPingOam, self).__init__(parent)
 
-	@property
-	def AlertFlag(self):
-		"""NOT DEFINED
+    @property
+    def AlertFlag(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('alertFlag')
-	@AlertFlag.setter
-	def AlertFlag(self, value):
-		self._set_attribute('alertFlag', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('alertFlag')
+    @AlertFlag.setter
+    def AlertFlag(self, value):
+        self._set_attribute('alertFlag', value)
 
-	@property
-	def DestinationNickname(self):
-		"""NOT DEFINED
+    @property
+    def DestinationNickname(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('destinationNickname')
-	@DestinationNickname.setter
-	def DestinationNickname(self, value):
-		self._set_attribute('destinationNickname', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('destinationNickname')
+    @DestinationNickname.setter
+    def DestinationNickname(self, value):
+        self._set_attribute('destinationNickname', value)
 
-	@property
-	def EtherType(self):
-		"""NOT DEFINED
+    @property
+    def EtherType(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('etherType')
-	@EtherType.setter
-	def EtherType(self, value):
-		self._set_attribute('etherType', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('etherType')
+    @EtherType.setter
+    def EtherType(self, value):
+        self._set_attribute('etherType', value)
 
-	@property
-	def HopCount(self):
-		"""NOT DEFINED
+    @property
+    def HopCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('hopCount')
-	@HopCount.setter
-	def HopCount(self, value):
-		self._set_attribute('hopCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('hopCount')
+    @HopCount.setter
+    def HopCount(self, value):
+        self._set_attribute('hopCount', value)
 
-	@property
-	def NativeFlag(self):
-		"""NOT DEFINED
+    @property
+    def NativeFlag(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('nativeFlag')
-	@NativeFlag.setter
-	def NativeFlag(self, value):
-		self._set_attribute('nativeFlag', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('nativeFlag')
+    @NativeFlag.setter
+    def NativeFlag(self, value):
+        self._set_attribute('nativeFlag', value)
 
-	@property
-	def NoOfPingRequests(self):
-		"""NOT DEFINED
+    @property
+    def NoOfPingRequests(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('noOfPingRequests')
-	@NoOfPingRequests.setter
-	def NoOfPingRequests(self, value):
-		self._set_attribute('noOfPingRequests', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('noOfPingRequests')
+    @NoOfPingRequests.setter
+    def NoOfPingRequests(self, value):
+        self._set_attribute('noOfPingRequests', value)
 
-	@property
-	def SilentFlag(self):
-		"""NOT DEFINED
+    @property
+    def SilentFlag(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('silentFlag')
-	@SilentFlag.setter
-	def SilentFlag(self, value):
-		self._set_attribute('silentFlag', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('silentFlag')
+    @SilentFlag.setter
+    def SilentFlag(self, value):
+        self._set_attribute('silentFlag', value)
 
-	@property
-	def SourceNickname(self):
-		"""NOT DEFINED
+    @property
+    def SourceNickname(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('sourceNickname')
-	@SourceNickname.setter
-	def SourceNickname(self, value):
-		self._set_attribute('sourceNickname', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('sourceNickname')
+    @SourceNickname.setter
+    def SourceNickname(self, value):
+        self._set_attribute('sourceNickname', value)
 
-	@property
-	def TimeOut(self):
-		"""NOT DEFINED
+    @property
+    def TimeOut(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('timeOut')
-	@TimeOut.setter
-	def TimeOut(self, value):
-		self._set_attribute('timeOut', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('timeOut')
+    @TimeOut.setter
+    def TimeOut(self, value):
+        self._set_attribute('timeOut', value)
 
-	def update(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
-		"""Updates a child instance of trillPingOam on the server.
+    def update(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
+        """Updates a child instance of trillPingOam on the server.
 
-		Args:
-			AlertFlag (bool): NOT DEFINED
-			DestinationNickname (number): NOT DEFINED
-			EtherType (number): NOT DEFINED
-			HopCount (number): NOT DEFINED
-			NativeFlag (bool): NOT DEFINED
-			NoOfPingRequests (number): NOT DEFINED
-			SilentFlag (bool): NOT DEFINED
-			SourceNickname (number): NOT DEFINED
-			TimeOut (number): NOT DEFINED
+        Args:
+            AlertFlag (bool): NOT DEFINED
+            DestinationNickname (number): NOT DEFINED
+            EtherType (number): NOT DEFINED
+            HopCount (number): NOT DEFINED
+            NativeFlag (bool): NOT DEFINED
+            NoOfPingRequests (number): NOT DEFINED
+            SilentFlag (bool): NOT DEFINED
+            SourceNickname (number): NOT DEFINED
+            TimeOut (number): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

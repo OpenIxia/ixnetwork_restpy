@@ -1,30 +1,10 @@
-# Copyright 1997 - 2018 by IXIA Keysight
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"),
-# to deal in the Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute, sublicense,
-# and/or sell copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.steps import Steps
 
 
 class Multivalue(Base):
     def __init__(self, parent, href):
-        super(Multivalue, self).__init__(parent)        
+        super(Multivalue, self).__init__(parent)
         self._href = href
         self._pattern = None
 
@@ -90,7 +70,7 @@ class Multivalue(Base):
         for item in increment:
             child_increments = []
             if 'increment' in item.keys():
-                self._add_increments(child_increments, item['increment'])     
+                self._add_increments(child_increments, item['increment'])
             increments.append('(%s, %s, [%s])' % (item['value'], item['count'], ','.join(child_increments)))
 
     def __str__(self):
@@ -119,7 +99,7 @@ class Multivalue(Base):
     def Source(self):
         self.Pattern
         return self._properties['source']
-    
+
     @property
     def Count(self):
         self.Pattern
@@ -208,7 +188,7 @@ class Multivalue(Base):
             mask_value (str): Maximum value according to the format property
             seed (int): Seed value 
             count (int): Count value
-        """        
+        """
         payload = {
             'fixed': fixed_value,
             'mask': mask_value,
@@ -234,7 +214,7 @@ class Multivalue(Base):
             for value in values:
                 formatted_values.append(
                     {
-                        'arg1': value[0], 
+                        'arg1': value[0],
                         'arg2': value[1]
                     }
                 )
@@ -299,7 +279,7 @@ class Multivalue(Base):
                     self._add_custom_increments(response['links'][0]['href'], increment[2])
                 else:
                     raise ValueError('increment value `%s` must be a tuple of 3 values (value, count, list[increment])' % increment)
-                    
+
     @property
     def Steps(self):
         """Get the Steps for this multivalue.
@@ -360,7 +340,7 @@ class Multivalue(Base):
         Args:
             index (int): 1 based device index
             value (str): the overlay value
-        
+
         Raises:
         """
         href = '%s/overlay' % (self._href)

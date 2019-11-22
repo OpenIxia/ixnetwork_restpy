@@ -18,137 +18,137 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class PbbEVpnParameter(Base):
-	"""PBB-EVPN
-	The PbbEVpnParameter class encapsulates a list of pbbEVpnParameter resources that is be managed by the user.
-	A list of resources can be retrieved from the server using the PbbEVpnParameter.find() method.
-	The list can be managed by the user by using the PbbEVpnParameter.add() and PbbEVpnParameter.remove() methods.
-	"""
+    """PBB-EVPN
+    The PbbEVpnParameter class encapsulates a list of pbbEVpnParameter resources that is be managed by the user.
+    A list of resources can be retrieved from the server using the PbbEVpnParameter.find() method.
+    The list can be managed by the user by using the PbbEVpnParameter.add() and PbbEVpnParameter.remove() methods.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'pbbEVpnParameter'
+    __slots__ = ()
+    _SDM_NAME = 'pbbEVpnParameter'
 
-	def __init__(self, parent):
-		super(PbbEVpnParameter, self).__init__(parent)
+    def __init__(self, parent):
+        super(PbbEVpnParameter, self).__init__(parent)
 
-	@property
-	def BMac(self):
-		"""Broadcast MAC addresses of the devices
+    @property
+    def BMac(self):
+        """Broadcast MAC addresses of the devices
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('bMac')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('bMac')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def UsePbbEVpnParameters(self):
-		"""Flag to determine whether optional PBB EVPN parameters are provided.
+    @property
+    def UsePbbEVpnParameters(self):
+        """Flag to determine whether optional PBB EVPN parameters are provided.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('usePbbEVpnParameters')
-	@UsePbbEVpnParameters.setter
-	def UsePbbEVpnParameters(self, value):
-		self._set_attribute('usePbbEVpnParameters', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('usePbbEVpnParameters')
+    @UsePbbEVpnParameters.setter
+    def UsePbbEVpnParameters(self, value):
+        self._set_attribute('usePbbEVpnParameters', value)
 
-	def update(self, UsePbbEVpnParameters=None):
-		"""Updates a child instance of pbbEVpnParameter on the server.
+    def update(self, UsePbbEVpnParameters=None):
+        """Updates a child instance of pbbEVpnParameter on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
+        Args:
+            UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def add(self, UsePbbEVpnParameters=None):
-		"""Adds a new pbbEVpnParameter node on the server and retrieves it in this instance.
+    def add(self, UsePbbEVpnParameters=None):
+        """Adds a new pbbEVpnParameter node on the server and retrieves it in this instance.
 
-		Args:
-			UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
+        Args:
+            UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
 
-		Returns:
-			self: This instance with all currently retrieved pbbEVpnParameter data using find and the newly added pbbEVpnParameter data available through an iterator or index
+        Returns:
+            self: This instance with all currently retrieved pbbEVpnParameter data using find and the newly added pbbEVpnParameter data available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(locals())
 
-	def remove(self):
-		"""Deletes all the pbbEVpnParameter data in this instance from server.
+    def remove(self):
+        """Deletes all the pbbEVpnParameter data in this instance from server.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
-	def find(self, Count=None, UsePbbEVpnParameters=None):
-		"""Finds and retrieves pbbEVpnParameter data from the server.
+    def find(self, Count=None, UsePbbEVpnParameters=None):
+        """Finds and retrieves pbbEVpnParameter data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve pbbEVpnParameter data from the server.
-		By default the find method takes no parameters and will retrieve all pbbEVpnParameter data from the server.
+        All named parameters support regex and can be used to selectively retrieve pbbEVpnParameter data from the server.
+        By default the find method takes no parameters and will retrieve all pbbEVpnParameter data from the server.
 
-		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-			UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
+        Args:
+            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+            UsePbbEVpnParameters (bool): Flag to determine whether optional PBB EVPN parameters are provided.
 
-		Returns:
-			self: This instance with matching pbbEVpnParameter data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching pbbEVpnParameter data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of pbbEVpnParameter data from the server.
+    def read(self, href):
+        """Retrieves a single instance of pbbEVpnParameter data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the pbbEVpnParameter data from the server available through an iterator or index
+        Returns:
+            self: This instance with the pbbEVpnParameter data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def get_device_ids(self, PortNames=None, BMac=None):
-		"""Base class infrastructure that gets a list of pbbEVpnParameter device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, BMac=None):
+        """Base class infrastructure that gets a list of pbbEVpnParameter device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			BMac (str): optional regex of bMac
+        Args:
+            PortNames (str): optional regex of port names
+            BMac (str): optional regex of bMac
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

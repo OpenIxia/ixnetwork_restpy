@@ -18,53 +18,53 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class QueueProperty(Base):
-	"""The property of the queue.
-	The QueueProperty class encapsulates a required queueProperty resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """The property of the queue.
+    The QueueProperty class encapsulates a required queueProperty resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'queueProperty'
+    __slots__ = ()
+    _SDM_NAME = 'queueProperty'
 
-	def __init__(self, parent):
-		super(QueueProperty, self).__init__(parent)
+    def __init__(self, parent):
+        super(QueueProperty, self).__init__(parent)
 
-	@property
-	def MinimumDataRateGuaranteed(self):
-		"""If true, indicates that a minimum data rate is guaranteed.
+    @property
+    def MinimumDataRateGuaranteed(self):
+        """If true, indicates that a minimum data rate is guaranteed.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('minimumDataRateGuaranteed')
-	@MinimumDataRateGuaranteed.setter
-	def MinimumDataRateGuaranteed(self, value):
-		self._set_attribute('minimumDataRateGuaranteed', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('minimumDataRateGuaranteed')
+    @MinimumDataRateGuaranteed.setter
+    def MinimumDataRateGuaranteed(self, value):
+        self._set_attribute('minimumDataRateGuaranteed', value)
 
-	@property
-	def IsNone(self):
-		"""If true, indicates that no property is defined for the queue.
+    @property
+    def IsNone(self):
+        """If true, indicates that no property is defined for the queue.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('none')
-	@IsNone.setter
-	def IsNone(self, value):
-		self._set_attribute('none', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('none')
+    @IsNone.setter
+    def IsNone(self, value):
+        self._set_attribute('none', value)
 
-	def update(self, MinimumDataRateGuaranteed=None):
-		"""Updates a child instance of queueProperty on the server.
+    def update(self, MinimumDataRateGuaranteed=None):
+        """Updates a child instance of queueProperty on the server.
 
-		Args:
-			MinimumDataRateGuaranteed (bool): If true, indicates that a minimum data rate is guaranteed.
+        Args:
+            MinimumDataRateGuaranteed (bool): If true, indicates that a minimum data rate is guaranteed.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

@@ -18,249 +18,249 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class WriteActionsMiss(Base):
-	"""Select the type of write action miss instructions that the table miss flow entry will support.
-	The WriteActionsMiss class encapsulates a required writeActionsMiss resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Select the type of write action miss instructions that the table miss flow entry will support.
+    The WriteActionsMiss class encapsulates a required writeActionsMiss resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'writeActionsMiss'
+    __slots__ = ()
+    _SDM_NAME = 'writeActionsMiss'
 
-	def __init__(self, parent):
-		super(WriteActionsMiss, self).__init__(parent)
+    def __init__(self, parent):
+        super(WriteActionsMiss, self).__init__(parent)
 
-	@property
-	def CopyTtlIn(self):
-		"""Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
+    @property
+    def CopyTtlIn(self):
+        """Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('copyTtlIn')
-	@CopyTtlIn.setter
-	def CopyTtlIn(self, value):
-		self._set_attribute('copyTtlIn', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('copyTtlIn')
+    @CopyTtlIn.setter
+    def CopyTtlIn(self, value):
+        self._set_attribute('copyTtlIn', value)
 
-	@property
-	def CopyTtlOut(self):
-		"""Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
+    @property
+    def CopyTtlOut(self):
+        """Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('copyTtlOut')
-	@CopyTtlOut.setter
-	def CopyTtlOut(self, value):
-		self._set_attribute('copyTtlOut', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('copyTtlOut')
+    @CopyTtlOut.setter
+    def CopyTtlOut(self, value):
+        self._set_attribute('copyTtlOut', value)
 
-	@property
-	def DecrementMplsTtl(self):
-		"""Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
+    @property
+    def DecrementMplsTtl(self):
+        """Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('decrementMplsTtl')
-	@DecrementMplsTtl.setter
-	def DecrementMplsTtl(self, value):
-		self._set_attribute('decrementMplsTtl', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('decrementMplsTtl')
+    @DecrementMplsTtl.setter
+    def DecrementMplsTtl(self, value):
+        self._set_attribute('decrementMplsTtl', value)
 
-	@property
-	def DecrementNetworkTtl(self):
-		"""If selected, table supports Decrement Network TTL Write Actions.
+    @property
+    def DecrementNetworkTtl(self):
+        """If selected, table supports Decrement Network TTL Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('decrementNetworkTtl')
-	@DecrementNetworkTtl.setter
-	def DecrementNetworkTtl(self, value):
-		self._set_attribute('decrementNetworkTtl', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('decrementNetworkTtl')
+    @DecrementNetworkTtl.setter
+    def DecrementNetworkTtl(self, value):
+        self._set_attribute('decrementNetworkTtl', value)
 
-	@property
-	def Experimenter(self):
-		"""If selected, table supports Experimenter Write Actions.
+    @property
+    def Experimenter(self):
+        """If selected, table supports Experimenter Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('experimenter')
-	@Experimenter.setter
-	def Experimenter(self, value):
-		self._set_attribute('experimenter', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('experimenter')
+    @Experimenter.setter
+    def Experimenter(self, value):
+        self._set_attribute('experimenter', value)
 
-	@property
-	def Group(self):
-		"""Sets the Group ID
+    @property
+    def Group(self):
+        """Sets the Group ID
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('group')
-	@Group.setter
-	def Group(self, value):
-		self._set_attribute('group', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('group')
+    @Group.setter
+    def Group(self, value):
+        self._set_attribute('group', value)
 
-	@property
-	def Output(self):
-		"""Output to switch port.
+    @property
+    def Output(self):
+        """Output to switch port.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('output')
-	@Output.setter
-	def Output(self, value):
-		self._set_attribute('output', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('output')
+    @Output.setter
+    def Output(self, value):
+        self._set_attribute('output', value)
 
-	@property
-	def PopMpls(self):
-		"""Pops the outer MPLS tag.
+    @property
+    def PopMpls(self):
+        """Pops the outer MPLS tag.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('popMpls')
-	@PopMpls.setter
-	def PopMpls(self, value):
-		self._set_attribute('popMpls', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('popMpls')
+    @PopMpls.setter
+    def PopMpls(self, value):
+        self._set_attribute('popMpls', value)
 
-	@property
-	def PopPbb(self):
-		"""If selected, table supports Pop PBB Write Actions.
+    @property
+    def PopPbb(self):
+        """If selected, table supports Pop PBB Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('popPbb')
-	@PopPbb.setter
-	def PopPbb(self, value):
-		self._set_attribute('popPbb', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('popPbb')
+    @PopPbb.setter
+    def PopPbb(self, value):
+        self._set_attribute('popPbb', value)
 
-	@property
-	def PopVlan(self):
-		"""Pops the outer VLAN tag.
+    @property
+    def PopVlan(self):
+        """Pops the outer VLAN tag.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('popVlan')
-	@PopVlan.setter
-	def PopVlan(self, value):
-		self._set_attribute('popVlan', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('popVlan')
+    @PopVlan.setter
+    def PopVlan(self, value):
+        self._set_attribute('popVlan', value)
 
-	@property
-	def PushMpls(self):
-		"""Pushes a new MPLS tag.
+    @property
+    def PushMpls(self):
+        """Pushes a new MPLS tag.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('pushMpls')
-	@PushMpls.setter
-	def PushMpls(self, value):
-		self._set_attribute('pushMpls', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('pushMpls')
+    @PushMpls.setter
+    def PushMpls(self, value):
+        self._set_attribute('pushMpls', value)
 
-	@property
-	def PushPbb(self):
-		"""If selected, table supports Push PBB Write Actions.
+    @property
+    def PushPbb(self):
+        """If selected, table supports Push PBB Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('pushPbb')
-	@PushPbb.setter
-	def PushPbb(self, value):
-		self._set_attribute('pushPbb', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('pushPbb')
+    @PushPbb.setter
+    def PushPbb(self, value):
+        self._set_attribute('pushPbb', value)
 
-	@property
-	def PushVlan(self):
-		"""Pushes a new VLAN tag
+    @property
+    def PushVlan(self):
+        """Pushes a new VLAN tag
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('pushVlan')
-	@PushVlan.setter
-	def PushVlan(self, value):
-		self._set_attribute('pushVlan', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('pushVlan')
+    @PushVlan.setter
+    def PushVlan(self, value):
+        self._set_attribute('pushVlan', value)
 
-	@property
-	def SetField(self):
-		"""If selected, table supports Set Field Write Actions.
+    @property
+    def SetField(self):
+        """If selected, table supports Set Field Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('setField')
-	@SetField.setter
-	def SetField(self, value):
-		self._set_attribute('setField', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('setField')
+    @SetField.setter
+    def SetField(self, value):
+        self._set_attribute('setField', value)
 
-	@property
-	def SetMplsTtl(self):
-		"""Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+    @property
+    def SetMplsTtl(self):
+        """Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('setMplsTtl')
-	@SetMplsTtl.setter
-	def SetMplsTtl(self, value):
-		self._set_attribute('setMplsTtl', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('setMplsTtl')
+    @SetMplsTtl.setter
+    def SetMplsTtl(self, value):
+        self._set_attribute('setMplsTtl', value)
 
-	@property
-	def SetNetworkTtl(self):
-		"""If selected, table supports Set Network TTL Write Actions.
+    @property
+    def SetNetworkTtl(self):
+        """If selected, table supports Set Network TTL Write Actions.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('setNetworkTtl')
-	@SetNetworkTtl.setter
-	def SetNetworkTtl(self, value):
-		self._set_attribute('setNetworkTtl', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('setNetworkTtl')
+    @SetNetworkTtl.setter
+    def SetNetworkTtl(self, value):
+        self._set_attribute('setNetworkTtl', value)
 
-	@property
-	def SetQueue(self):
-		"""Set queue ID when outputting to a port.
+    @property
+    def SetQueue(self):
+        """Set queue ID when outputting to a port.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('setQueue')
-	@SetQueue.setter
-	def SetQueue(self, value):
-		self._set_attribute('setQueue', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('setQueue')
+    @SetQueue.setter
+    def SetQueue(self, value):
+        self._set_attribute('setQueue', value)
 
-	def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
-		"""Updates a child instance of writeActionsMiss on the server.
+    def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        """Updates a child instance of writeActionsMiss on the server.
 
-		Args:
-			CopyTtlIn (bool): Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
-			CopyTtlOut (bool): Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
-			DecrementMplsTtl (bool): Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
-			DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
-			Experimenter (bool): If selected, table supports Experimenter Write Actions.
-			Group (bool): Sets the Group ID
-			Output (bool): Output to switch port.
-			PopMpls (bool): Pops the outer MPLS tag.
-			PopPbb (bool): If selected, table supports Pop PBB Write Actions.
-			PopVlan (bool): Pops the outer VLAN tag.
-			PushMpls (bool): Pushes a new MPLS tag.
-			PushPbb (bool): If selected, table supports Push PBB Write Actions.
-			PushVlan (bool): Pushes a new VLAN tag
-			SetField (bool): If selected, table supports Set Field Write Actions.
-			SetMplsTtl (bool): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
-			SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
-			SetQueue (bool): Set queue ID when outputting to a port.
+        Args:
+            CopyTtlIn (bool): Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
+            CopyTtlOut (bool): Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
+            DecrementMplsTtl (bool): Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
+            DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
+            Experimenter (bool): If selected, table supports Experimenter Write Actions.
+            Group (bool): Sets the Group ID
+            Output (bool): Output to switch port.
+            PopMpls (bool): Pops the outer MPLS tag.
+            PopPbb (bool): If selected, table supports Pop PBB Write Actions.
+            PopVlan (bool): Pops the outer VLAN tag.
+            PushMpls (bool): Pushes a new MPLS tag.
+            PushPbb (bool): If selected, table supports Push PBB Write Actions.
+            PushVlan (bool): Pushes a new VLAN tag
+            SetField (bool): If selected, table supports Set Field Write Actions.
+            SetMplsTtl (bool): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+            SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
+            SetQueue (bool): Set queue ID when outputting to a port.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

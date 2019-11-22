@@ -18,70 +18,70 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Field(Base):
-	"""This object specifies the field properties.
-	The Field class encapsulates a list of field resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Field.find() method.
-	"""
+    """This object specifies the field properties.
+    The Field class encapsulates a list of field resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Field.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'field'
+    __slots__ = ()
+    _SDM_NAME = 'field'
 
-	def __init__(self, parent):
-		super(Field, self).__init__(parent)
+    def __init__(self, parent):
+        super(Field, self).__init__(parent)
 
-	@property
-	def DisplayName(self):
-		"""Refers to the name of the field.
+    @property
+    def DisplayName(self):
+        """Refers to the name of the field.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('displayName')
+        Returns:
+            str
+        """
+        return self._get_attribute('displayName')
 
-	@property
-	def FieldValue(self):
-		"""Refers to the value displayed in the field.
+    @property
+    def FieldValue(self):
+        """Refers to the value displayed in the field.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('fieldValue')
+        Returns:
+            str
+        """
+        return self._get_attribute('fieldValue')
 
-	def find(self, DisplayName=None, FieldValue=None):
-		"""Finds and retrieves field data from the server.
+    def find(self, DisplayName=None, FieldValue=None):
+        """Finds and retrieves field data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve field data from the server.
-		By default the find method takes no parameters and will retrieve all field data from the server.
+        All named parameters support regex and can be used to selectively retrieve field data from the server.
+        By default the find method takes no parameters and will retrieve all field data from the server.
 
-		Args:
-			DisplayName (str): Refers to the name of the field.
-			FieldValue (str): Refers to the value displayed in the field.
+        Args:
+            DisplayName (str): Refers to the name of the field.
+            FieldValue (str): Refers to the value displayed in the field.
 
-		Returns:
-			self: This instance with matching field data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching field data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of field data from the server.
+    def read(self, href):
+        """Retrieves a single instance of field data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the field data from the server available through an iterator or index
+        Returns:
+            self: This instance with the field data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

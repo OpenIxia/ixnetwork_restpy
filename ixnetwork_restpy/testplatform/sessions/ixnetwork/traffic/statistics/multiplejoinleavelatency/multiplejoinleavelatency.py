@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class MultipleJoinLeaveLatency(Base):
-	"""Calculate join/leave latency for AMT in cae of repeated join/leave. This means that a host can join/leave a group multiple times between traffic start and stop
-	The MultipleJoinLeaveLatency class encapsulates a required multipleJoinLeaveLatency resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Calculate join/leave latency for AMT in cae of repeated join/leave. This means that a host can join/leave a group multiple times between traffic start and stop
+    The MultipleJoinLeaveLatency class encapsulates a required multipleJoinLeaveLatency resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'multipleJoinLeaveLatency'
+    __slots__ = ()
+    _SDM_NAME = 'multipleJoinLeaveLatency'
 
-	def __init__(self, parent):
-		super(MultipleJoinLeaveLatency, self).__init__(parent)
+    def __init__(self, parent):
+        super(MultipleJoinLeaveLatency, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If true enables multiple join leave latency.
+    @property
+    def Enabled(self):
+        """If true enables multiple join leave latency.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of multipleJoinLeaveLatency on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of multipleJoinLeaveLatency on the server.
 
-		Args:
-			Enabled (bool): If true enables multiple join leave latency.
+        Args:
+            Enabled (bool): If true enables multiple join leave latency.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

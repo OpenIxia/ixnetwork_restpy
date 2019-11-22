@@ -18,61 +18,61 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class HostTopologyLearnedInformation(Base):
-	"""NOT DEFINED
-	The HostTopologyLearnedInformation class encapsulates a required hostTopologyLearnedInformation resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The HostTopologyLearnedInformation class encapsulates a required hostTopologyLearnedInformation resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'hostTopologyLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'hostTopologyLearnedInformation'
 
-	def __init__(self, parent):
-		super(HostTopologyLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(HostTopologyLearnedInformation, self).__init__(parent)
 
-	@property
-	def SwitchHostRangeLearnedInfo(self):
-		"""An instance of the SwitchHostRangeLearnedInfo class.
+    @property
+    def SwitchHostRangeLearnedInfo(self):
+        """An instance of the SwitchHostRangeLearnedInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00.SwitchHostRangeLearnedInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00.SwitchHostRangeLearnedInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00 import SwitchHostRangeLearnedInfo
-		return SwitchHostRangeLearnedInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_8639c9f8929db6fefbcca9cd75dfda00 import SwitchHostRangeLearnedInfo
+        return SwitchHostRangeLearnedInfo(self)
 
-	@property
-	def SwitchHostRangeLearnedInfoTriggerAttributes(self):
-		"""An instance of the SwitchHostRangeLearnedInfoTriggerAttributes class.
+    @property
+    def SwitchHostRangeLearnedInfoTriggerAttributes(self):
+        """An instance of the SwitchHostRangeLearnedInfoTriggerAttributes class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d.SwitchHostRangeLearnedInfoTriggerAttributes)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d.SwitchHostRangeLearnedInfoTriggerAttributes)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d import SwitchHostRangeLearnedInfoTriggerAttributes
-		return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_aeac1ea882243cc1ba76661520b1d45d import SwitchHostRangeLearnedInfoTriggerAttributes
+        return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
 
-	def RefreshHostRangeLearnedInformation(self):
-		"""Executes the refreshHostRangeLearnedInformation operation on the server.
+    def RefreshHostRangeLearnedInformation(self):
+        """Executes the refreshHostRangeLearnedInformation operation on the server.
 
-		NOT DEFINED
+        NOT DEFINED
 
-			Returns:
-				bool: NOT DEFINED
+            Returns:
+                bool: NOT DEFINED
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('refreshHostRangeLearnedInformation', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('refreshHostRangeLearnedInformation', payload=payload, response_object=None)

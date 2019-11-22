@@ -18,137 +18,137 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class EgtpMmeS5S8Range(Base):
-	"""MME Range
-	The EgtpMmeS5S8Range class encapsulates a required egtpMmeS5S8Range resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """MME Range
+    The EgtpMmeS5S8Range class encapsulates a required egtpMmeS5S8Range resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'egtpMmeS5S8Range'
+    __slots__ = ()
+    _SDM_NAME = 'egtpMmeS5S8Range'
 
-	def __init__(self, parent):
-		super(EgtpMmeS5S8Range, self).__init__(parent)
+    def __init__(self, parent):
+        super(EgtpMmeS5S8Range, self).__init__(parent)
 
-	@property
-	def EnableChangeReporting(self):
-		"""Set to true to enable change reporting
+    @property
+    def EnableChangeReporting(self):
+        """Set to true to enable change reporting
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableChangeReporting')
-	@EnableChangeReporting.setter
-	def EnableChangeReporting(self, value):
-		self._set_attribute('enableChangeReporting', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableChangeReporting')
+    @EnableChangeReporting.setter
+    def EnableChangeReporting(self, value):
+        self._set_attribute('enableChangeReporting', value)
 
-	@property
-	def Enabled(self):
-		"""Disabled ranges won't be configured nor validated.
+    @property
+    def Enabled(self):
+        """Disabled ranges won't be configured nor validated.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def Name(self):
-		"""Name of range
+    @property
+    def Name(self):
+        """Name of range
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def ObjectId(self):
-		"""Unique identifier for this object
+    @property
+    def ObjectId(self):
+        """Unique identifier for this object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('objectId')
+        Returns:
+            str
+        """
+        return self._get_attribute('objectId')
 
-	def update(self, EnableChangeReporting=None, Enabled=None, Name=None):
-		"""Updates a child instance of egtpMmeS5S8Range on the server.
+    def update(self, EnableChangeReporting=None, Enabled=None, Name=None):
+        """Updates a child instance of egtpMmeS5S8Range on the server.
 
-		Args:
-			EnableChangeReporting (bool): Set to true to enable change reporting
-			Enabled (bool): Disabled ranges won't be configured nor validated.
-			Name (str): Name of range
+        Args:
+            EnableChangeReporting (bool): Set to true to enable change reporting
+            Enabled (bool): Disabled ranges won't be configured nor validated.
+            Name (str): Name of range
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def CustomProtocolStack(self, *args, **kwargs):
-		"""Executes the customProtocolStack operation on the server.
+    def CustomProtocolStack(self, *args, **kwargs):
+        """Executes the customProtocolStack operation on the server.
 
-		Create custom protocol stack under /vport/protocolStack
+        Create custom protocol stack under /vport/protocolStack
 
-		customProtocolStack(Arg2:list, Arg3:enum)
-			Args:
-				args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-				args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2:list, Arg3:enum)
+            Args:
+                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
+                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('customProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
-	def DisableProtocolStack(self, *args, **kwargs):
-		"""Executes the disableProtocolStack operation on the server.
+    def DisableProtocolStack(self, *args, **kwargs):
+        """Executes the disableProtocolStack operation on the server.
 
-		Disable a protocol under protocolStack using the class name
+        Disable a protocol under protocolStack using the class name
 
-		disableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to disable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
-	def EnableProtocolStack(self, *args, **kwargs):
-		"""Executes the enableProtocolStack operation on the server.
+    def EnableProtocolStack(self, *args, **kwargs):
+        """Executes the enableProtocolStack operation on the server.
 
-		Enable a protocol under protocolStack using the class name
+        Enable a protocol under protocolStack using the class name
 
-		enableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to enable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('enableProtocolStack', payload=payload, response_object=None)

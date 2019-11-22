@@ -18,67 +18,67 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class OrganizationSpecificEventTlv(Base):
-	"""
-	The OrganizationSpecificEventTlv class encapsulates a required organizationSpecificEventTlv resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The OrganizationSpecificEventTlv class encapsulates a required organizationSpecificEventTlv resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'organizationSpecificEventTlv'
+    __slots__ = ()
+    _SDM_NAME = 'organizationSpecificEventTlv'
 
-	def __init__(self, parent):
-		super(OrganizationSpecificEventTlv, self).__init__(parent)
+    def __init__(self, parent):
+        super(OrganizationSpecificEventTlv, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""
+    @property
+    def Enabled(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def Oui(self):
-		"""
+    @property
+    def Oui(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('oui')
-	@Oui.setter
-	def Oui(self, value):
-		self._set_attribute('oui', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('oui')
+    @Oui.setter
+    def Oui(self, value):
+        self._set_attribute('oui', value)
 
-	@property
-	def Value(self):
-		"""
+    @property
+    def Value(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Enabled=None, Oui=None, Value=None):
-		"""Updates a child instance of organizationSpecificEventTlv on the server.
+    def update(self, Enabled=None, Oui=None, Value=None):
+        """Updates a child instance of organizationSpecificEventTlv on the server.
 
-		Args:
-			Enabled (bool): 
-			Oui (str): 
-			Value (str): 
+        Args:
+            Enabled (bool): 
+            Oui (str): 
+            Value (str): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

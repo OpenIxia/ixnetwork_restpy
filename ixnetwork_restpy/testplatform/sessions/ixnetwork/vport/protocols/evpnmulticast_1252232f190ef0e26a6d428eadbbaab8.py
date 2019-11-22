@@ -18,84 +18,84 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class EvpnMulticast(Base):
-	"""(Read Only) Inclusive Multicast Ethernet Tag route type.
-	The EvpnMulticast class encapsulates a list of evpnMulticast resources that is managed by the system.
-	A list of resources can be retrieved from the server using the EvpnMulticast.find() method.
-	"""
+    """(Read Only) Inclusive Multicast Ethernet Tag route type.
+    The EvpnMulticast class encapsulates a list of evpnMulticast resources that is managed by the system.
+    A list of resources can be retrieved from the server using the EvpnMulticast.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'evpnMulticast'
+    __slots__ = ()
+    _SDM_NAME = 'evpnMulticast'
 
-	def __init__(self, parent):
-		super(EvpnMulticast, self).__init__(parent)
+    def __init__(self, parent):
+        super(EvpnMulticast, self).__init__(parent)
 
-	@property
-	def NextHopInfo(self):
-		"""An instance of the NextHopInfo class.
+    @property
+    def NextHopInfo(self):
+        """An instance of the NextHopInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_7c68968807f2e790ed877245831304ae.NextHopInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_7c68968807f2e790ed877245831304ae.NextHopInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_7c68968807f2e790ed877245831304ae import NextHopInfo
-		return NextHopInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_7c68968807f2e790ed877245831304ae import NextHopInfo
+        return NextHopInfo(self)
 
-	@property
-	def Neighbor(self):
-		"""(Read Only) Neighbr IP.
+    @property
+    def Neighbor(self):
+        """(Read Only) Neighbr IP.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('neighbor')
+        Returns:
+            str
+        """
+        return self._get_attribute('neighbor')
 
-	@property
-	def OriginatorsIp(self):
-		"""(Read Only) Learned Originator's IP.
+    @property
+    def OriginatorsIp(self):
+        """(Read Only) Learned Originator's IP.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('originatorsIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('originatorsIp')
 
-	def find(self, Neighbor=None, OriginatorsIp=None):
-		"""Finds and retrieves evpnMulticast data from the server.
+    def find(self, Neighbor=None, OriginatorsIp=None):
+        """Finds and retrieves evpnMulticast data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve evpnMulticast data from the server.
-		By default the find method takes no parameters and will retrieve all evpnMulticast data from the server.
+        All named parameters support regex and can be used to selectively retrieve evpnMulticast data from the server.
+        By default the find method takes no parameters and will retrieve all evpnMulticast data from the server.
 
-		Args:
-			Neighbor (str): (Read Only) Neighbr IP.
-			OriginatorsIp (str): (Read Only) Learned Originator's IP.
+        Args:
+            Neighbor (str): (Read Only) Neighbr IP.
+            OriginatorsIp (str): (Read Only) Learned Originator's IP.
 
-		Returns:
-			self: This instance with matching evpnMulticast data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching evpnMulticast data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of evpnMulticast data from the server.
+    def read(self, href):
+        """Retrieves a single instance of evpnMulticast data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the evpnMulticast data from the server available through an iterator or index
+        Returns:
+            self: This instance with the evpnMulticast data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

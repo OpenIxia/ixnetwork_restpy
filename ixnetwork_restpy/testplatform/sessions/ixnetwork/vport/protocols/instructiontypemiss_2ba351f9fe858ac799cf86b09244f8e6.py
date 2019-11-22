@@ -18,119 +18,119 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InstructionTypeMiss(Base):
-	"""NOT DEFINED
-	The InstructionTypeMiss class encapsulates a required instructionTypeMiss resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The InstructionTypeMiss class encapsulates a required instructionTypeMiss resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'instructionTypeMiss'
+    __slots__ = ()
+    _SDM_NAME = 'instructionTypeMiss'
 
-	def __init__(self, parent):
-		super(InstructionTypeMiss, self).__init__(parent)
+    def __init__(self, parent):
+        super(InstructionTypeMiss, self).__init__(parent)
 
-	@property
-	def ApplyActions(self):
-		"""NOT DEFINED
+    @property
+    def ApplyActions(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('applyActions')
-	@ApplyActions.setter
-	def ApplyActions(self, value):
-		self._set_attribute('applyActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('applyActions')
+    @ApplyActions.setter
+    def ApplyActions(self, value):
+        self._set_attribute('applyActions', value)
 
-	@property
-	def ClearActions(self):
-		"""NOT DEFINED
+    @property
+    def ClearActions(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('clearActions')
-	@ClearActions.setter
-	def ClearActions(self, value):
-		self._set_attribute('clearActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('clearActions')
+    @ClearActions.setter
+    def ClearActions(self, value):
+        self._set_attribute('clearActions', value)
 
-	@property
-	def Experimenter(self):
-		"""NOT DEFINED
+    @property
+    def Experimenter(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('experimenter')
-	@Experimenter.setter
-	def Experimenter(self, value):
-		self._set_attribute('experimenter', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('experimenter')
+    @Experimenter.setter
+    def Experimenter(self, value):
+        self._set_attribute('experimenter', value)
 
-	@property
-	def GoToTable(self):
-		"""NOT DEFINED
+    @property
+    def GoToTable(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('goToTable')
-	@GoToTable.setter
-	def GoToTable(self, value):
-		self._set_attribute('goToTable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('goToTable')
+    @GoToTable.setter
+    def GoToTable(self, value):
+        self._set_attribute('goToTable', value)
 
-	@property
-	def Meter(self):
-		"""NOT DEFINED
+    @property
+    def Meter(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('meter')
-	@Meter.setter
-	def Meter(self, value):
-		self._set_attribute('meter', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('meter')
+    @Meter.setter
+    def Meter(self, value):
+        self._set_attribute('meter', value)
 
-	@property
-	def WriteActions(self):
-		"""NOT DEFINED
+    @property
+    def WriteActions(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('writeActions')
-	@WriteActions.setter
-	def WriteActions(self, value):
-		self._set_attribute('writeActions', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('writeActions')
+    @WriteActions.setter
+    def WriteActions(self, value):
+        self._set_attribute('writeActions', value)
 
-	@property
-	def WriteMetadata(self):
-		"""NOT DEFINED
+    @property
+    def WriteMetadata(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('writeMetadata')
-	@WriteMetadata.setter
-	def WriteMetadata(self, value):
-		self._set_attribute('writeMetadata', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('writeMetadata')
+    @WriteMetadata.setter
+    def WriteMetadata(self, value):
+        self._set_attribute('writeMetadata', value)
 
-	def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
-		"""Updates a child instance of instructionTypeMiss on the server.
+    def update(self, ApplyActions=None, ClearActions=None, Experimenter=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+        """Updates a child instance of instructionTypeMiss on the server.
 
-		Args:
-			ApplyActions (bool): NOT DEFINED
-			ClearActions (bool): NOT DEFINED
-			Experimenter (bool): NOT DEFINED
-			GoToTable (bool): NOT DEFINED
-			Meter (bool): NOT DEFINED
-			WriteActions (bool): NOT DEFINED
-			WriteMetadata (bool): NOT DEFINED
+        Args:
+            ApplyActions (bool): NOT DEFINED
+            ClearActions (bool): NOT DEFINED
+            Experimenter (bool): NOT DEFINED
+            GoToTable (bool): NOT DEFINED
+            Meter (bool): NOT DEFINED
+            WriteActions (bool): NOT DEFINED
+            WriteMetadata (bool): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

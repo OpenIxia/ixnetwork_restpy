@@ -18,116 +18,116 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Router(Base):
-	"""
-	The Router class encapsulates a list of router resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Router.find() method.
-	"""
+    """
+    The Router class encapsulates a list of router resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Router.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'router'
+    __slots__ = ()
+    _SDM_NAME = 'router'
 
-	def __init__(self, parent):
-		super(Router, self).__init__(parent)
+    def __init__(self, parent):
+        super(Router, self).__init__(parent)
 
-	@property
-	def BBit(self):
-		"""
+    @property
+    def BBit(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('bBit')
-	@BBit.setter
-	def BBit(self, value):
-		self._set_attribute('bBit', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('bBit')
+    @BBit.setter
+    def BBit(self, value):
+        self._set_attribute('bBit', value)
 
-	@property
-	def EBit(self):
-		"""
+    @property
+    def EBit(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('eBit')
-	@EBit.setter
-	def EBit(self, value):
-		self._set_attribute('eBit', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('eBit')
+    @EBit.setter
+    def EBit(self, value):
+        self._set_attribute('eBit', value)
 
-	@property
-	def Interfaces(self):
-		"""
+    @property
+    def Interfaces(self):
+        """
 
-		Returns:
-			list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))
-		"""
-		return self._get_attribute('interfaces')
-	@Interfaces.setter
-	def Interfaces(self, value):
-		self._set_attribute('interfaces', value)
+        Returns:
+            list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))
+        """
+        return self._get_attribute('interfaces')
+    @Interfaces.setter
+    def Interfaces(self, value):
+        self._set_attribute('interfaces', value)
 
-	@property
-	def VBit(self):
-		"""
+    @property
+    def VBit(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('vBit')
-	@VBit.setter
-	def VBit(self, value):
-		self._set_attribute('vBit', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('vBit')
+    @VBit.setter
+    def VBit(self, value):
+        self._set_attribute('vBit', value)
 
-	def update(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
-		"""Updates a child instance of router on the server.
+    def update(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
+        """Updates a child instance of router on the server.
 
-		Args:
-			BBit (bool): 
-			EBit (bool): 
-			Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))): 
-			VBit (bool): 
+        Args:
+            BBit (bool): 
+            EBit (bool): 
+            Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))): 
+            VBit (bool): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
-		"""Finds and retrieves router data from the server.
+    def find(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
+        """Finds and retrieves router data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve router data from the server.
-		By default the find method takes no parameters and will retrieve all router data from the server.
+        All named parameters support regex and can be used to selectively retrieve router data from the server.
+        By default the find method takes no parameters and will retrieve all router data from the server.
 
-		Args:
-			BBit (bool): 
-			EBit (bool): 
-			Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))): 
-			VBit (bool): 
+        Args:
+            BBit (bool): 
+            EBit (bool): 
+            Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint|transit|stub|virtual],arg4:number))): 
+            VBit (bool): 
 
-		Returns:
-			self: This instance with matching router data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching router data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of router data from the server.
+    def read(self, href):
+        """Retrieves a single instance of router data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the router data from the server available through an iterator or index
+        Returns:
+            self: This instance with the router data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

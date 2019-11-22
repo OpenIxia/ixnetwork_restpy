@@ -18,136 +18,136 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class DynamicFrameSize(Base):
-	"""This object fetches the options for setting dynamic frame size.
-	The DynamicFrameSize class encapsulates a list of dynamicFrameSize resources that is managed by the system.
-	A list of resources can be retrieved from the server using the DynamicFrameSize.find() method.
-	"""
+    """This object fetches the options for setting dynamic frame size.
+    The DynamicFrameSize class encapsulates a list of dynamicFrameSize resources that is managed by the system.
+    A list of resources can be retrieved from the server using the DynamicFrameSize.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'dynamicFrameSize'
+    __slots__ = ()
+    _SDM_NAME = 'dynamicFrameSize'
 
-	def __init__(self, parent):
-		super(DynamicFrameSize, self).__init__(parent)
+    def __init__(self, parent):
+        super(DynamicFrameSize, self).__init__(parent)
 
-	@property
-	def FixedSize(self):
-		"""Sets all frames to a specified constant size. The default is 64 bytes.
+    @property
+    def FixedSize(self):
+        """Sets all frames to a specified constant size. The default is 64 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('fixedSize')
-	@FixedSize.setter
-	def FixedSize(self, value):
-		self._set_attribute('fixedSize', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('fixedSize')
+    @FixedSize.setter
+    def FixedSize(self, value):
+        self._set_attribute('fixedSize', value)
 
-	@property
-	def HighLevelStreamName(self):
-		"""The name of the high level stream
+    @property
+    def HighLevelStreamName(self):
+        """The name of the high level stream
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('highLevelStreamName')
+        Returns:
+            str
+        """
+        return self._get_attribute('highLevelStreamName')
 
-	@property
-	def RandomMax(self):
-		"""Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+    @property
+    def RandomMax(self):
+        """Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('randomMax')
-	@RandomMax.setter
-	def RandomMax(self, value):
-		self._set_attribute('randomMax', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('randomMax')
+    @RandomMax.setter
+    def RandomMax(self, value):
+        self._set_attribute('randomMax', value)
 
-	@property
-	def RandomMin(self):
-		"""Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+    @property
+    def RandomMin(self):
+        """Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('randomMin')
-	@RandomMin.setter
-	def RandomMin(self, value):
-		self._set_attribute('randomMin', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('randomMin')
+    @RandomMin.setter
+    def RandomMin(self, value):
+        self._set_attribute('randomMin', value)
 
-	@property
-	def TrafficItemName(self):
-		"""The name of the parent traffic item.
+    @property
+    def TrafficItemName(self):
+        """The name of the parent traffic item.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('trafficItemName')
+        Returns:
+            str
+        """
+        return self._get_attribute('trafficItemName')
 
-	@property
-	def Type(self):
-		"""Sets the frame size to either fixed or random lengths in bytes.
+    @property
+    def Type(self):
+        """Sets the frame size to either fixed or random lengths in bytes.
 
-		Returns:
-			str(fixed|random)
-		"""
-		return self._get_attribute('type')
-	@Type.setter
-	def Type(self, value):
-		self._set_attribute('type', value)
+        Returns:
+            str(fixed|random)
+        """
+        return self._get_attribute('type')
+    @Type.setter
+    def Type(self, value):
+        self._set_attribute('type', value)
 
-	def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
-		"""Updates a child instance of dynamicFrameSize on the server.
+    def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
+        """Updates a child instance of dynamicFrameSize on the server.
 
-		Args:
-			FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
-			RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
-			RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-			Type (str(fixed|random)): Sets the frame size to either fixed or random lengths in bytes.
+        Args:
+            FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
+            RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+            RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+            Type (str(fixed|random)): Sets the frame size to either fixed or random lengths in bytes.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
-		"""Finds and retrieves dynamicFrameSize data from the server.
+    def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
+        """Finds and retrieves dynamicFrameSize data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve dynamicFrameSize data from the server.
-		By default the find method takes no parameters and will retrieve all dynamicFrameSize data from the server.
+        All named parameters support regex and can be used to selectively retrieve dynamicFrameSize data from the server.
+        By default the find method takes no parameters and will retrieve all dynamicFrameSize data from the server.
 
-		Args:
-			FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
-			HighLevelStreamName (str): The name of the high level stream
-			RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
-			RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-			TrafficItemName (str): The name of the parent traffic item.
-			Type (str(fixed|random)): Sets the frame size to either fixed or random lengths in bytes.
+        Args:
+            FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
+            HighLevelStreamName (str): The name of the high level stream
+            RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+            RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+            TrafficItemName (str): The name of the parent traffic item.
+            Type (str(fixed|random)): Sets the frame size to either fixed or random lengths in bytes.
 
-		Returns:
-			self: This instance with matching dynamicFrameSize data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching dynamicFrameSize data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of dynamicFrameSize data from the server.
+    def read(self, href):
+        """Retrieves a single instance of dynamicFrameSize data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the dynamicFrameSize data from the server available through an iterator or index
+        Returns:
+            self: This instance with the dynamicFrameSize data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

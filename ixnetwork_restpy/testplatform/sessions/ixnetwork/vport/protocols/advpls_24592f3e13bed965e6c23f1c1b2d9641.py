@@ -18,130 +18,130 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AdVpls(Base):
-	"""Helps to configure the attributes for the AD VPLS ranges.
-	The AdVpls class encapsulates a list of adVpls resources that is managed by the system.
-	A list of resources can be retrieved from the server using the AdVpls.find() method.
-	"""
+    """Helps to configure the attributes for the AD VPLS ranges.
+    The AdVpls class encapsulates a list of adVpls resources that is managed by the system.
+    A list of resources can be retrieved from the server using the AdVpls.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'adVpls'
+    __slots__ = ()
+    _SDM_NAME = 'adVpls'
 
-	def __init__(self, parent):
-		super(AdVpls, self).__init__(parent)
+    def __init__(self, parent):
+        super(AdVpls, self).__init__(parent)
 
-	@property
-	def NeighborAddress(self):
-		"""(Read Only) The descriptive identifier for the BGP neighbor.
+    @property
+    def NeighborAddress(self):
+        """(Read Only) The descriptive identifier for the BGP neighbor.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('neighborAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('neighborAddress')
 
-	@property
-	def NextHopAddress(self):
-		"""(Read Only) A 4-octet IP address which indicates the next hop.
+    @property
+    def NextHopAddress(self):
+        """(Read Only) A 4-octet IP address which indicates the next hop.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('nextHopAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('nextHopAddress')
 
-	@property
-	def RemotePeAddress(self):
-		"""(Read Only) The descriptive identifier for the remote PE.
+    @property
+    def RemotePeAddress(self):
+        """(Read Only) The descriptive identifier for the remote PE.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remotePeAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('remotePeAddress')
 
-	@property
-	def RemoteVplsId(self):
-		"""(Read Only) The remote VPLS ID indicated by an IP or AS.
+    @property
+    def RemoteVplsId(self):
+        """(Read Only) The remote VPLS ID indicated by an IP or AS.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteVplsId')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteVplsId')
 
-	@property
-	def RemoteVsiId(self):
-		"""(Read Only) The remote VSI Id indicated by 4 bytes unsigned number.
+    @property
+    def RemoteVsiId(self):
+        """(Read Only) The remote VSI Id indicated by 4 bytes unsigned number.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('remoteVsiId')
+        Returns:
+            number
+        """
+        return self._get_attribute('remoteVsiId')
 
-	@property
-	def RouteDistinguisher(self):
-		"""(Read Only) The route distinguisher indicated by the IP or AS number.
+    @property
+    def RouteDistinguisher(self):
+        """(Read Only) The route distinguisher indicated by the IP or AS number.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('routeDistinguisher')
+        Returns:
+            str
+        """
+        return self._get_attribute('routeDistinguisher')
 
-	@property
-	def RouteTarget(self):
-		"""(Read Only) The route target indicated by the IP or AS number.
+    @property
+    def RouteTarget(self):
+        """(Read Only) The route target indicated by the IP or AS number.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('routeTarget')
+        Returns:
+            str
+        """
+        return self._get_attribute('routeTarget')
 
-	@property
-	def SupportedLocally(self):
-		"""(Read Only) The boolean value indicating whether it is supported locally.
+    @property
+    def SupportedLocally(self):
+        """(Read Only) The boolean value indicating whether it is supported locally.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('supportedLocally')
+        Returns:
+            bool
+        """
+        return self._get_attribute('supportedLocally')
 
-	def find(self, NeighborAddress=None, NextHopAddress=None, RemotePeAddress=None, RemoteVplsId=None, RemoteVsiId=None, RouteDistinguisher=None, RouteTarget=None, SupportedLocally=None):
-		"""Finds and retrieves adVpls data from the server.
+    def find(self, NeighborAddress=None, NextHopAddress=None, RemotePeAddress=None, RemoteVplsId=None, RemoteVsiId=None, RouteDistinguisher=None, RouteTarget=None, SupportedLocally=None):
+        """Finds and retrieves adVpls data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve adVpls data from the server.
-		By default the find method takes no parameters and will retrieve all adVpls data from the server.
+        All named parameters support regex and can be used to selectively retrieve adVpls data from the server.
+        By default the find method takes no parameters and will retrieve all adVpls data from the server.
 
-		Args:
-			NeighborAddress (str): (Read Only) The descriptive identifier for the BGP neighbor.
-			NextHopAddress (str): (Read Only) A 4-octet IP address which indicates the next hop.
-			RemotePeAddress (str): (Read Only) The descriptive identifier for the remote PE.
-			RemoteVplsId (str): (Read Only) The remote VPLS ID indicated by an IP or AS.
-			RemoteVsiId (number): (Read Only) The remote VSI Id indicated by 4 bytes unsigned number.
-			RouteDistinguisher (str): (Read Only) The route distinguisher indicated by the IP or AS number.
-			RouteTarget (str): (Read Only) The route target indicated by the IP or AS number.
-			SupportedLocally (bool): (Read Only) The boolean value indicating whether it is supported locally.
+        Args:
+            NeighborAddress (str): (Read Only) The descriptive identifier for the BGP neighbor.
+            NextHopAddress (str): (Read Only) A 4-octet IP address which indicates the next hop.
+            RemotePeAddress (str): (Read Only) The descriptive identifier for the remote PE.
+            RemoteVplsId (str): (Read Only) The remote VPLS ID indicated by an IP or AS.
+            RemoteVsiId (number): (Read Only) The remote VSI Id indicated by 4 bytes unsigned number.
+            RouteDistinguisher (str): (Read Only) The route distinguisher indicated by the IP or AS number.
+            RouteTarget (str): (Read Only) The route target indicated by the IP or AS number.
+            SupportedLocally (bool): (Read Only) The boolean value indicating whether it is supported locally.
 
-		Returns:
-			self: This instance with matching adVpls data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching adVpls data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of adVpls data from the server.
+    def read(self, href):
+        """Retrieves a single instance of adVpls data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the adVpls data from the server available through an iterator or index
+        Returns:
+            self: This instance with the adVpls data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

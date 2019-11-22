@@ -18,88 +18,88 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LinkOam(Base):
-	"""The linkOam object contains the Link-OAM protocol configuration.
-	The LinkOam class encapsulates a required linkOam resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """The linkOam object contains the Link-OAM protocol configuration.
+    The LinkOam class encapsulates a required linkOam resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'linkOam'
+    __slots__ = ()
+    _SDM_NAME = 'linkOam'
 
-	def __init__(self, parent):
-		super(LinkOam, self).__init__(parent)
+    def __init__(self, parent):
+        super(LinkOam, self).__init__(parent)
 
-	@property
-	def Link(self):
-		"""An instance of the Link class.
+    @property
+    def Link(self):
+        """An instance of the Link class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b.Link)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b.Link)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b import Link
-		return Link(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5dd6fab391da0d8ef2ebc35eaa6cb23b import Link
+        return Link(self)
 
-	@property
-	def Enabled(self):
-		"""If true, the Link OAM protocol is enabled.
+    @property
+    def Enabled(self):
+        """If true, the Link OAM protocol is enabled.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def RunningState(self):
-		"""The current runnings state of Link OAM.
+    @property
+    def RunningState(self):
+        """The current runnings state of Link OAM.
 
-		Returns:
-			str(unknown|stopped|stopping|starting|started)
-		"""
-		return self._get_attribute('runningState')
+        Returns:
+            str(unknown|stopped|stopping|starting|started)
+        """
+        return self._get_attribute('runningState')
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of linkOam on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of linkOam on the server.
 
-		Args:
-			Enabled (bool): If true, the Link OAM protocol is enabled.
+        Args:
+            Enabled (bool): If true, the Link OAM protocol is enabled.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def Start(self):
-		"""Executes the start operation on the server.
+    def Start(self):
+        """Executes the start operation on the server.
 
-		Starts the Link OAM protocol.
+        Starts the Link OAM protocol.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('start', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('start', payload=payload, response_object=None)
 
-	def Stop(self):
-		"""Executes the stop operation on the server.
+    def Stop(self):
+        """Executes the stop operation on the server.
 
-		Stops the Link OAM protocol
+        Stops the Link OAM protocol
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('stop', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('stop', payload=payload, response_object=None)

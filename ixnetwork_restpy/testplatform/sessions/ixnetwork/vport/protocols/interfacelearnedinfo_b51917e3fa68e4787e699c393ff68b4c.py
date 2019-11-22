@@ -18,55 +18,55 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InterfaceLearnedInfo(Base):
-	"""This objects contains the learned information from the
+    """This objects contains the learned information from the
 interface.
-	The InterfaceLearnedInfo class encapsulates a required interfaceLearnedInfo resource which will be retrieved from the server every time the property is accessed.
-	"""
+    The InterfaceLearnedInfo class encapsulates a required interfaceLearnedInfo resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'interfaceLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'interfaceLearnedInfo'
 
-	def __init__(self, parent):
-		super(InterfaceLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(InterfaceLearnedInfo, self).__init__(parent)
 
-	@property
-	def GatewayIp(self):
-		"""The IP address of the Gateway to the network, typically an interface on the DUT.
+    @property
+    def GatewayIp(self):
+        """The IP address of the Gateway to the network, typically an interface on the DUT.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('gatewayIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('gatewayIp')
 
-	@property
-	def IpType(self):
-		"""The IP version used with this option set: IPv4 or IPv6.
+    @property
+    def IpType(self):
+        """The IP version used with this option set: IPv4 or IPv6.
 
-		Returns:
-			str(kIpv4|kIpv6)
-		"""
-		return self._get_attribute('ipType')
+        Returns:
+            str(kIpv4|kIpv6)
+        """
+        return self._get_attribute('ipType')
 
-	@property
-	def OwnIp(self):
-		"""The own ip type.
+    @property
+    def OwnIp(self):
+        """The own ip type.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('ownIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('ownIp')
 
-	@property
-	def PrefixLength(self):
-		"""A learned/allocated IPv4 address prefix length (mask) for this interface.
+    @property
+    def PrefixLength(self):
+        """A learned/allocated IPv4 address prefix length (mask) for this interface.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('prefixLength')
+        Returns:
+            number
+        """
+        return self._get_attribute('prefixLength')

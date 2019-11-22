@@ -18,104 +18,104 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class EvpnMac(Base):
-	"""(Read Only) EVPN MAC Advertisement route type.
-	The EvpnMac class encapsulates a list of evpnMac resources that is managed by the system.
-	A list of resources can be retrieved from the server using the EvpnMac.find() method.
-	"""
+    """(Read Only) EVPN MAC Advertisement route type.
+    The EvpnMac class encapsulates a list of evpnMac resources that is managed by the system.
+    A list of resources can be retrieved from the server using the EvpnMac.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'evpnMac'
+    __slots__ = ()
+    _SDM_NAME = 'evpnMac'
 
-	def __init__(self, parent):
-		super(EvpnMac, self).__init__(parent)
+    def __init__(self, parent):
+        super(EvpnMac, self).__init__(parent)
 
-	@property
-	def NextHopInfo(self):
-		"""An instance of the NextHopInfo class.
+    @property
+    def NextHopInfo(self):
+        """An instance of the NextHopInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21.NextHopInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21.NextHopInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21 import NextHopInfo
-		return NextHopInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_f8adce5b6df2aac18ae2c02e11862c21 import NextHopInfo
+        return NextHopInfo(self)
 
-	@property
-	def Esi(self):
-		"""(Read Only) Ethernet Segment Identifier.
+    @property
+    def Esi(self):
+        """(Read Only) Ethernet Segment Identifier.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('esi')
+        Returns:
+            str
+        """
+        return self._get_attribute('esi')
 
-	@property
-	def MacAddress(self):
-		"""(Read Only) The C-MAC or the B-MAC address learned.
+    @property
+    def MacAddress(self):
+        """(Read Only) The C-MAC or the B-MAC address learned.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('macAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('macAddress')
 
-	@property
-	def MacPrefixLen(self):
-		"""(Read Only) Prefix length of the learned C-MAC or B-MAC.
+    @property
+    def MacPrefixLen(self):
+        """(Read Only) Prefix length of the learned C-MAC or B-MAC.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('macPrefixLen')
+        Returns:
+            str
+        """
+        return self._get_attribute('macPrefixLen')
 
-	@property
-	def Neighbor(self):
-		"""(Read Only) The neighbor IP.
+    @property
+    def Neighbor(self):
+        """(Read Only) The neighbor IP.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('neighbor')
+        Returns:
+            str
+        """
+        return self._get_attribute('neighbor')
 
-	def find(self, Esi=None, MacAddress=None, MacPrefixLen=None, Neighbor=None):
-		"""Finds and retrieves evpnMac data from the server.
+    def find(self, Esi=None, MacAddress=None, MacPrefixLen=None, Neighbor=None):
+        """Finds and retrieves evpnMac data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve evpnMac data from the server.
-		By default the find method takes no parameters and will retrieve all evpnMac data from the server.
+        All named parameters support regex and can be used to selectively retrieve evpnMac data from the server.
+        By default the find method takes no parameters and will retrieve all evpnMac data from the server.
 
-		Args:
-			Esi (str): (Read Only) Ethernet Segment Identifier.
-			MacAddress (str): (Read Only) The C-MAC or the B-MAC address learned.
-			MacPrefixLen (str): (Read Only) Prefix length of the learned C-MAC or B-MAC.
-			Neighbor (str): (Read Only) The neighbor IP.
+        Args:
+            Esi (str): (Read Only) Ethernet Segment Identifier.
+            MacAddress (str): (Read Only) The C-MAC or the B-MAC address learned.
+            MacPrefixLen (str): (Read Only) Prefix length of the learned C-MAC or B-MAC.
+            Neighbor (str): (Read Only) The neighbor IP.
 
-		Returns:
-			self: This instance with matching evpnMac data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching evpnMac data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of evpnMac data from the server.
+    def read(self, href):
+        """Retrieves a single instance of evpnMac data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the evpnMac data from the server available through an iterator or index
+        Returns:
+            self: This instance with the evpnMac data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedInfo(Base):
-	"""This object holds a list of the the bridge learned information.
-	The LearnedInfo class encapsulates a required learnedInfo resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object holds a list of the the bridge learned information.
+    The LearnedInfo class encapsulates a required learnedInfo resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'learnedInfo'
 
-	def __init__(self, parent):
-		super(LearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedInfo, self).__init__(parent)
 
-	@property
-	def BridgeMac(self):
-		"""The MAC address of the bridge advertising information on this link.
+    @property
+    def BridgeMac(self):
+        """The MAC address of the bridge advertising information on this link.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('bridgeMac')
+        Returns:
+            str
+        """
+        return self._get_attribute('bridgeMac')
 
-	@property
-	def RootCost(self):
-		"""The cost for the shortest path from this bridge to the root bridge.
+    @property
+    def RootCost(self):
+        """The cost for the shortest path from this bridge to the root bridge.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rootCost')
+        Returns:
+            number
+        """
+        return self._get_attribute('rootCost')
 
-	@property
-	def RootMac(self):
-		"""The root bridge MAC address being advertised by the bridge.
+    @property
+    def RootMac(self):
+        """The root bridge MAC address being advertised by the bridge.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('rootMac')
+        Returns:
+            str
+        """
+        return self._get_attribute('rootMac')
 
-	@property
-	def RootPriority(self):
-		"""The priority for the root bridge.
+    @property
+    def RootPriority(self):
+        """The priority for the root bridge.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rootPriority')
+        Returns:
+            number
+        """
+        return self._get_attribute('rootPriority')

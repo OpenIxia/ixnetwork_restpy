@@ -18,265 +18,265 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class PortFeaturesLearnedInformation(Base):
-	"""This object allows to configure the portFeaturesLearnedInformation ports.
-	The PortFeaturesLearnedInformation class encapsulates a list of portFeaturesLearnedInformation resources that is managed by the system.
-	A list of resources can be retrieved from the server using the PortFeaturesLearnedInformation.find() method.
-	"""
+    """This object allows to configure the portFeaturesLearnedInformation ports.
+    The PortFeaturesLearnedInformation class encapsulates a list of portFeaturesLearnedInformation resources that is managed by the system.
+    A list of resources can be retrieved from the server using the PortFeaturesLearnedInformation.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'portFeaturesLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'portFeaturesLearnedInformation'
 
-	def __init__(self, parent):
-		super(PortFeaturesLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(PortFeaturesLearnedInformation, self).__init__(parent)
 
-	@property
-	def AdvertisedFeatures(self):
-		"""The current features, like link modes, link types, and link features that the port advertises.
+    @property
+    def AdvertisedFeatures(self):
+        """The current features, like link modes, link types, and link features that the port advertises.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('advertisedFeatures')
+        Returns:
+            str
+        """
+        return self._get_attribute('advertisedFeatures')
 
-	@property
-	def Config(self):
-		"""Signifies the configuration supported by the port.
+    @property
+    def Config(self):
+        """Signifies the configuration supported by the port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('config')
+        Returns:
+            str
+        """
+        return self._get_attribute('config')
 
-	@property
-	def CurrentFeatures(self):
-		"""The current features like the link modes, link types, and link features that the port supports.
+    @property
+    def CurrentFeatures(self):
+        """The current features like the link modes, link types, and link features that the port supports.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('currentFeatures')
+        Returns:
+            str
+        """
+        return self._get_attribute('currentFeatures')
 
-	@property
-	def CurrentSpeed(self):
-		"""The current speed of the port in kbps.
+    @property
+    def CurrentSpeed(self):
+        """The current speed of the port in kbps.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('currentSpeed')
+        Returns:
+            number
+        """
+        return self._get_attribute('currentSpeed')
 
-	@property
-	def DataPathId(self):
-		"""The Data Path identifier of the OpenFlow switch.
+    @property
+    def DataPathId(self):
+        """The Data Path identifier of the OpenFlow switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathId')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathId')
 
-	@property
-	def DataPathIdAsHex(self):
-		"""The Data Path identifier of the OpenFlow switch in hexadecimal format.
+    @property
+    def DataPathIdAsHex(self):
+        """The Data Path identifier of the OpenFlow switch in hexadecimal format.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathIdAsHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathIdAsHex')
 
-	@property
-	def ErrorCode(self):
-		"""The error code of the received error.
+    @property
+    def ErrorCode(self):
+        """The error code of the received error.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorCode')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorCode')
 
-	@property
-	def ErrorType(self):
-		"""The type of the error received.
+    @property
+    def ErrorType(self):
+        """The type of the error received.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorType')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorType')
 
-	@property
-	def EthernetAddress(self):
-		"""The Ethernet address of the switch.
+    @property
+    def EthernetAddress(self):
+        """The Ethernet address of the switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('ethernetAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('ethernetAddress')
 
-	@property
-	def Latency(self):
-		"""The latency measurement for the OpenFlow channel in microseconds.
+    @property
+    def Latency(self):
+        """The latency measurement for the OpenFlow channel in microseconds.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('latency')
+        Returns:
+            number
+        """
+        return self._get_attribute('latency')
 
-	@property
-	def LocalIp(self):
-		"""Indicates the local IP of the Controller.
+    @property
+    def LocalIp(self):
+        """Indicates the local IP of the Controller.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('localIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('localIp')
 
-	@property
-	def MaxSpeed(self):
-		"""The maximum speed of the port in kbps.
+    @property
+    def MaxSpeed(self):
+        """The maximum speed of the port in kbps.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('maxSpeed')
+        Returns:
+            number
+        """
+        return self._get_attribute('maxSpeed')
 
-	@property
-	def Name(self):
-		"""Signifies the name of the port.
+    @property
+    def Name(self):
+        """Signifies the name of the port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
 
-	@property
-	def NegotiatedVersion(self):
-		"""Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+    @property
+    def NegotiatedVersion(self):
+        """Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('negotiatedVersion')
+        Returns:
+            str
+        """
+        return self._get_attribute('negotiatedVersion')
 
-	@property
-	def PeerAdvertisedFeatures(self):
-		"""The current features, like, link modes, link types, and link features, that the peer advertises.
+    @property
+    def PeerAdvertisedFeatures(self):
+        """The current features, like, link modes, link types, and link features, that the peer advertises.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('peerAdvertisedFeatures')
+        Returns:
+            str
+        """
+        return self._get_attribute('peerAdvertisedFeatures')
 
-	@property
-	def PortNumber(self):
-		"""The port number.
+    @property
+    def PortNumber(self):
+        """The port number.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('portNumber')
+        Returns:
+            number
+        """
+        return self._get_attribute('portNumber')
 
-	@property
-	def RemoteIp(self):
-		"""The Remote IP address of the selected interface.
+    @property
+    def RemoteIp(self):
+        """The Remote IP address of the selected interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
 
-	@property
-	def ReplyState(self):
-		"""The state of reply for the Open Flow channel.
+    @property
+    def ReplyState(self):
+        """The state of reply for the Open Flow channel.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('replyState')
+        Returns:
+            str
+        """
+        return self._get_attribute('replyState')
 
-	@property
-	def State(self):
-		"""Signifies the states supported by the port.
+    @property
+    def State(self):
+        """Signifies the states supported by the port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('state')
+        Returns:
+            str
+        """
+        return self._get_attribute('state')
 
-	@property
-	def SupportedFeatures(self):
-		"""The features like link modes, link types, and link features that is supported by the switch.
+    @property
+    def SupportedFeatures(self):
+        """The features like link modes, link types, and link features that is supported by the switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('supportedFeatures')
+        Returns:
+            str
+        """
+        return self._get_attribute('supportedFeatures')
 
-	def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, EthernetAddress=None, Latency=None, LocalIp=None, MaxSpeed=None, Name=None, NegotiatedVersion=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, ReplyState=None, State=None, SupportedFeatures=None):
-		"""Finds and retrieves portFeaturesLearnedInformation data from the server.
+    def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, EthernetAddress=None, Latency=None, LocalIp=None, MaxSpeed=None, Name=None, NegotiatedVersion=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, ReplyState=None, State=None, SupportedFeatures=None):
+        """Finds and retrieves portFeaturesLearnedInformation data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve portFeaturesLearnedInformation data from the server.
-		By default the find method takes no parameters and will retrieve all portFeaturesLearnedInformation data from the server.
+        All named parameters support regex and can be used to selectively retrieve portFeaturesLearnedInformation data from the server.
+        By default the find method takes no parameters and will retrieve all portFeaturesLearnedInformation data from the server.
 
-		Args:
-			AdvertisedFeatures (str): The current features, like link modes, link types, and link features that the port advertises.
-			Config (str): Signifies the configuration supported by the port.
-			CurrentFeatures (str): The current features like the link modes, link types, and link features that the port supports.
-			CurrentSpeed (number): The current speed of the port in kbps.
-			DataPathId (str): The Data Path identifier of the OpenFlow switch.
-			DataPathIdAsHex (str): The Data Path identifier of the OpenFlow switch in hexadecimal format.
-			ErrorCode (str): The error code of the received error.
-			ErrorType (str): The type of the error received.
-			EthernetAddress (str): The Ethernet address of the switch.
-			Latency (number): The latency measurement for the OpenFlow channel in microseconds.
-			LocalIp (str): Indicates the local IP of the Controller.
-			MaxSpeed (number): The maximum speed of the port in kbps.
-			Name (str): Signifies the name of the port.
-			NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-			PeerAdvertisedFeatures (str): The current features, like, link modes, link types, and link features, that the peer advertises.
-			PortNumber (number): The port number.
-			RemoteIp (str): The Remote IP address of the selected interface.
-			ReplyState (str): The state of reply for the Open Flow channel.
-			State (str): Signifies the states supported by the port.
-			SupportedFeatures (str): The features like link modes, link types, and link features that is supported by the switch.
+        Args:
+            AdvertisedFeatures (str): The current features, like link modes, link types, and link features that the port advertises.
+            Config (str): Signifies the configuration supported by the port.
+            CurrentFeatures (str): The current features like the link modes, link types, and link features that the port supports.
+            CurrentSpeed (number): The current speed of the port in kbps.
+            DataPathId (str): The Data Path identifier of the OpenFlow switch.
+            DataPathIdAsHex (str): The Data Path identifier of the OpenFlow switch in hexadecimal format.
+            ErrorCode (str): The error code of the received error.
+            ErrorType (str): The type of the error received.
+            EthernetAddress (str): The Ethernet address of the switch.
+            Latency (number): The latency measurement for the OpenFlow channel in microseconds.
+            LocalIp (str): Indicates the local IP of the Controller.
+            MaxSpeed (number): The maximum speed of the port in kbps.
+            Name (str): Signifies the name of the port.
+            NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+            PeerAdvertisedFeatures (str): The current features, like, link modes, link types, and link features, that the peer advertises.
+            PortNumber (number): The port number.
+            RemoteIp (str): The Remote IP address of the selected interface.
+            ReplyState (str): The state of reply for the Open Flow channel.
+            State (str): Signifies the states supported by the port.
+            SupportedFeatures (str): The features like link modes, link types, and link features that is supported by the switch.
 
-		Returns:
-			self: This instance with matching portFeaturesLearnedInformation data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching portFeaturesLearnedInformation data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of portFeaturesLearnedInformation data from the server.
+    def read(self, href):
+        """Retrieves a single instance of portFeaturesLearnedInformation data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the portFeaturesLearnedInformation data from the server available through an iterator or index
+        Returns:
+            self: This instance with the portFeaturesLearnedInformation data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def AddRecordForTrigger(self):
-		"""Executes the addRecordForTrigger operation on the server.
+    def AddRecordForTrigger(self):
+        """Executes the addRecordForTrigger operation on the server.
 
-		NOT DEFINED
+        NOT DEFINED
 
-			Returns:
-				bool: NOT DEFINED
+            Returns:
+                bool: NOT DEFINED
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('addRecordForTrigger', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('addRecordForTrigger', payload=payload, response_object=None)

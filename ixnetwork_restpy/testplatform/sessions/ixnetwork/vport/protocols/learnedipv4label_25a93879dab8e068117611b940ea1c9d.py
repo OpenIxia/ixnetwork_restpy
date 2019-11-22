@@ -18,100 +18,100 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedIpv4Label(Base):
-	"""A single IPv4 ATM label from the list maintained by interface.
-	The LearnedIpv4Label class encapsulates a list of learnedIpv4Label resources that is managed by the system.
-	A list of resources can be retrieved from the server using the LearnedIpv4Label.find() method.
-	"""
+    """A single IPv4 ATM label from the list maintained by interface.
+    The LearnedIpv4Label class encapsulates a list of learnedIpv4Label resources that is managed by the system.
+    A list of resources can be retrieved from the server using the LearnedIpv4Label.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedIpv4Label'
+    __slots__ = ()
+    _SDM_NAME = 'learnedIpv4Label'
 
-	def __init__(self, parent):
-		super(LearnedIpv4Label, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedIpv4Label, self).__init__(parent)
 
-	@property
-	def Fec(self):
-		"""Forwarding equivalence class (FEC) type.
+    @property
+    def Fec(self):
+        """Forwarding equivalence class (FEC) type.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('fec')
+        Returns:
+            str
+        """
+        return self._get_attribute('fec')
 
-	@property
-	def FecPrefixLen(self):
-		"""The length of the prefix associated with the FEC.
+    @property
+    def FecPrefixLen(self):
+        """The length of the prefix associated with the FEC.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('fecPrefixLen')
+        Returns:
+            number
+        """
+        return self._get_attribute('fecPrefixLen')
 
-	@property
-	def Label(self):
-		"""The label value added to the packet(s) by the upstream LDP peer.
+    @property
+    def Label(self):
+        """The label value added to the packet(s) by the upstream LDP peer.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('label')
+        Returns:
+            number
+        """
+        return self._get_attribute('label')
 
-	@property
-	def LabelSpaceId(self):
-		"""Part of the LSR ID. It forms the last 2 octets of the 6-octet LDP identifier.
+    @property
+    def LabelSpaceId(self):
+        """Part of the LSR ID. It forms the last 2 octets of the 6-octet LDP identifier.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('labelSpaceId')
+        Returns:
+            number
+        """
+        return self._get_attribute('labelSpaceId')
 
-	@property
-	def PeerIpAddress(self):
-		"""The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
+    @property
+    def PeerIpAddress(self):
+        """The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('peerIpAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('peerIpAddress')
 
-	def find(self, Fec=None, FecPrefixLen=None, Label=None, LabelSpaceId=None, PeerIpAddress=None):
-		"""Finds and retrieves learnedIpv4Label data from the server.
+    def find(self, Fec=None, FecPrefixLen=None, Label=None, LabelSpaceId=None, PeerIpAddress=None):
+        """Finds and retrieves learnedIpv4Label data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve learnedIpv4Label data from the server.
-		By default the find method takes no parameters and will retrieve all learnedIpv4Label data from the server.
+        All named parameters support regex and can be used to selectively retrieve learnedIpv4Label data from the server.
+        By default the find method takes no parameters and will retrieve all learnedIpv4Label data from the server.
 
-		Args:
-			Fec (str): Forwarding equivalence class (FEC) type.
-			FecPrefixLen (number): The length of the prefix associated with the FEC.
-			Label (number): The label value added to the packet(s) by the upstream LDP peer.
-			LabelSpaceId (number): Part of the LSR ID. It forms the last 2 octets of the 6-octet LDP identifier.
-			PeerIpAddress (str): The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
+        Args:
+            Fec (str): Forwarding equivalence class (FEC) type.
+            FecPrefixLen (number): The length of the prefix associated with the FEC.
+            Label (number): The label value added to the packet(s) by the upstream LDP peer.
+            LabelSpaceId (number): Part of the LSR ID. It forms the last 2 octets of the 6-octet LDP identifier.
+            PeerIpAddress (str): The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
 
-		Returns:
-			self: This instance with matching learnedIpv4Label data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching learnedIpv4Label data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of learnedIpv4Label data from the server.
+    def read(self, href):
+        """Retrieves a single instance of learnedIpv4Label data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the learnedIpv4Label data from the server available through an iterator or index
+        Returns:
+            self: This instance with the learnedIpv4Label data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

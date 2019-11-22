@@ -18,170 +18,170 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TopologyLearnedInfo(Base):
-	"""This object allows to configure the Topology Learned Information parameters.
-	The TopologyLearnedInfo class encapsulates a list of topologyLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the TopologyLearnedInfo.find() method.
-	"""
+    """This object allows to configure the Topology Learned Information parameters.
+    The TopologyLearnedInfo class encapsulates a list of topologyLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the TopologyLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'topologyLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'topologyLearnedInfo'
 
-	def __init__(self, parent):
-		super(TopologyLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(TopologyLearnedInfo, self).__init__(parent)
 
-	@property
-	def InDataPathId(self):
-		"""Indicates the Datapath Id of Datapath for LLDP Packet-In Port.
+    @property
+    def InDataPathId(self):
+        """Indicates the Datapath Id of Datapath for LLDP Packet-In Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('inDataPathId')
+        Returns:
+            str
+        """
+        return self._get_attribute('inDataPathId')
 
-	@property
-	def InDataPathIdAshex(self):
-		"""Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet-In Port
+    @property
+    def InDataPathIdAshex(self):
+        """Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet-In Port
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('inDataPathIdAshex')
+        Returns:
+            str
+        """
+        return self._get_attribute('inDataPathIdAshex')
 
-	@property
-	def InIp(self):
-		"""Indicates the IP Address of Datapath for LLDP Packet-In Port.
+    @property
+    def InIp(self):
+        """Indicates the IP Address of Datapath for LLDP Packet-In Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('inIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('inIp')
 
-	@property
-	def InPortEthernetAddress(self):
-		"""Indicates the Ethernet Address for LLDP Packet-In Port
+    @property
+    def InPortEthernetAddress(self):
+        """Indicates the Ethernet Address for LLDP Packet-In Port
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('inPortEthernetAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('inPortEthernetAddress')
 
-	@property
-	def InPortName(self):
-		"""Indicates the Port Name for LLDP Packet-In Port
+    @property
+    def InPortName(self):
+        """Indicates the Port Name for LLDP Packet-In Port
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('inPortName')
+        Returns:
+            str
+        """
+        return self._get_attribute('inPortName')
 
-	@property
-	def InPortNumber(self):
-		"""Indicates the Port Number for LLDP Packet-In Port.
+    @property
+    def InPortNumber(self):
+        """Indicates the Port Number for LLDP Packet-In Port.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('inPortNumber')
+        Returns:
+            number
+        """
+        return self._get_attribute('inPortNumber')
 
-	@property
-	def OutDataPathId(self):
-		"""Indicates the Datapath Id of Datapath for LLDP Packet Out Port.
+    @property
+    def OutDataPathId(self):
+        """Indicates the Datapath Id of Datapath for LLDP Packet Out Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outDataPathId')
+        Returns:
+            str
+        """
+        return self._get_attribute('outDataPathId')
 
-	@property
-	def OutDataPathIdAsHex(self):
-		"""Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet Out Port.
+    @property
+    def OutDataPathIdAsHex(self):
+        """Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet Out Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outDataPathIdAsHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('outDataPathIdAsHex')
 
-	@property
-	def OutIp(self):
-		"""Indicates the IP Address of Datapath for LLDP Packet Out Port.
+    @property
+    def OutIp(self):
+        """Indicates the IP Address of Datapath for LLDP Packet Out Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('outIp')
 
-	@property
-	def OutPortEthernetAddress(self):
-		"""Indicates the Ethernet Address for LLDP Packet Out Port.
+    @property
+    def OutPortEthernetAddress(self):
+        """Indicates the Ethernet Address for LLDP Packet Out Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outPortEthernetAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('outPortEthernetAddress')
 
-	@property
-	def OutPortName(self):
-		"""Indicates the Port Name for LLDP Packet Out Port.
+    @property
+    def OutPortName(self):
+        """Indicates the Port Name for LLDP Packet Out Port.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outPortName')
+        Returns:
+            str
+        """
+        return self._get_attribute('outPortName')
 
-	@property
-	def OutPortNumber(self):
-		"""Indicates the Port Number for LLDP Packet Out Port.
+    @property
+    def OutPortNumber(self):
+        """Indicates the Port Number for LLDP Packet Out Port.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('outPortNumber')
+        Returns:
+            number
+        """
+        return self._get_attribute('outPortNumber')
 
-	def find(self, InDataPathId=None, InDataPathIdAshex=None, InIp=None, InPortEthernetAddress=None, InPortName=None, InPortNumber=None, OutDataPathId=None, OutDataPathIdAsHex=None, OutIp=None, OutPortEthernetAddress=None, OutPortName=None, OutPortNumber=None):
-		"""Finds and retrieves topologyLearnedInfo data from the server.
+    def find(self, InDataPathId=None, InDataPathIdAshex=None, InIp=None, InPortEthernetAddress=None, InPortName=None, InPortNumber=None, OutDataPathId=None, OutDataPathIdAsHex=None, OutIp=None, OutPortEthernetAddress=None, OutPortName=None, OutPortNumber=None):
+        """Finds and retrieves topologyLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve topologyLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all topologyLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve topologyLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all topologyLearnedInfo data from the server.
 
-		Args:
-			InDataPathId (str): Indicates the Datapath Id of Datapath for LLDP Packet-In Port.
-			InDataPathIdAshex (str): Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet-In Port
-			InIp (str): Indicates the IP Address of Datapath for LLDP Packet-In Port.
-			InPortEthernetAddress (str): Indicates the Ethernet Address for LLDP Packet-In Port
-			InPortName (str): Indicates the Port Name for LLDP Packet-In Port
-			InPortNumber (number): Indicates the Port Number for LLDP Packet-In Port.
-			OutDataPathId (str): Indicates the Datapath Id of Datapath for LLDP Packet Out Port.
-			OutDataPathIdAsHex (str): Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet Out Port.
-			OutIp (str): Indicates the IP Address of Datapath for LLDP Packet Out Port.
-			OutPortEthernetAddress (str): Indicates the Ethernet Address for LLDP Packet Out Port.
-			OutPortName (str): Indicates the Port Name for LLDP Packet Out Port.
-			OutPortNumber (number): Indicates the Port Number for LLDP Packet Out Port.
+        Args:
+            InDataPathId (str): Indicates the Datapath Id of Datapath for LLDP Packet-In Port.
+            InDataPathIdAshex (str): Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet-In Port
+            InIp (str): Indicates the IP Address of Datapath for LLDP Packet-In Port.
+            InPortEthernetAddress (str): Indicates the Ethernet Address for LLDP Packet-In Port
+            InPortName (str): Indicates the Port Name for LLDP Packet-In Port
+            InPortNumber (number): Indicates the Port Number for LLDP Packet-In Port.
+            OutDataPathId (str): Indicates the Datapath Id of Datapath for LLDP Packet Out Port.
+            OutDataPathIdAsHex (str): Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet Out Port.
+            OutIp (str): Indicates the IP Address of Datapath for LLDP Packet Out Port.
+            OutPortEthernetAddress (str): Indicates the Ethernet Address for LLDP Packet Out Port.
+            OutPortName (str): Indicates the Port Name for LLDP Packet Out Port.
+            OutPortNumber (number): Indicates the Port Number for LLDP Packet Out Port.
 
-		Returns:
-			self: This instance with matching topologyLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching topologyLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of topologyLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of topologyLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the topologyLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the topologyLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

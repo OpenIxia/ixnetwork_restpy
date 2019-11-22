@@ -18,36 +18,36 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InterfaceDiscoveredAddress(Base):
-	"""The tab that shows description and ip of interface configured on this port.
-	The InterfaceDiscoveredAddress class encapsulates a required interfaceDiscoveredAddress resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """The tab that shows description and ip of interface configured on this port.
+    The InterfaceDiscoveredAddress class encapsulates a required interfaceDiscoveredAddress resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'interfaceDiscoveredAddress'
+    __slots__ = ()
+    _SDM_NAME = 'interfaceDiscoveredAddress'
 
-	def __init__(self, parent):
-		super(InterfaceDiscoveredAddress, self).__init__(parent)
+    def __init__(self, parent):
+        super(InterfaceDiscoveredAddress, self).__init__(parent)
 
-	@property
-	def Description(self):
-		"""Shows description of the interface.
+    @property
+    def Description(self):
+        """Shows description of the interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('description')
+        Returns:
+            str
+        """
+        return self._get_attribute('description')
 
-	@property
-	def IpAddress(self):
-		"""Shows IP address of the interface.
+    @property
+    def IpAddress(self):
+        """Shows IP address of the interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('ipAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('ipAddress')

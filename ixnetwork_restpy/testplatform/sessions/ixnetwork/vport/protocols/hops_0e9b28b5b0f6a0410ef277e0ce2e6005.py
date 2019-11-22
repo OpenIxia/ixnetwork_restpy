@@ -18,90 +18,90 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Hops(Base):
-	"""This object holds attributes for Trace Route Hops view.
-	The Hops class encapsulates a list of hops resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Hops.find() method.
-	"""
+    """This object holds attributes for Trace Route Hops view.
+    The Hops class encapsulates a list of hops resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Hops.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'hops'
+    __slots__ = ()
+    _SDM_NAME = 'hops'
 
-	def __init__(self, parent):
-		super(Hops, self).__init__(parent)
+    def __init__(self, parent):
+        super(Hops, self).__init__(parent)
 
-	@property
-	def ReturnCode(self):
-		"""This signifies the return code to be specified in the trace route hop.
+    @property
+    def ReturnCode(self):
+        """This signifies the return code to be specified in the trace route hop.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('returnCode')
+        Returns:
+            str
+        """
+        return self._get_attribute('returnCode')
 
-	@property
-	def ReturnSubCode(self):
-		"""This signifies the return sub-code to be specified in the trace route hop.
+    @property
+    def ReturnSubCode(self):
+        """This signifies the return sub-code to be specified in the trace route hop.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('returnSubCode')
+        Returns:
+            number
+        """
+        return self._get_attribute('returnSubCode')
 
-	@property
-	def SrcIp(self):
-		"""This signifies the source IP address.
+    @property
+    def SrcIp(self):
+        """This signifies the source IP address.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('srcIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('srcIp')
 
-	@property
-	def Ttl(self):
-		"""This signifies the MPLS time to live value.
+    @property
+    def Ttl(self):
+        """This signifies the MPLS time to live value.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('ttl')
+        Returns:
+            number
+        """
+        return self._get_attribute('ttl')
 
-	def find(self, ReturnCode=None, ReturnSubCode=None, SrcIp=None, Ttl=None):
-		"""Finds and retrieves hops data from the server.
+    def find(self, ReturnCode=None, ReturnSubCode=None, SrcIp=None, Ttl=None):
+        """Finds and retrieves hops data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve hops data from the server.
-		By default the find method takes no parameters and will retrieve all hops data from the server.
+        All named parameters support regex and can be used to selectively retrieve hops data from the server.
+        By default the find method takes no parameters and will retrieve all hops data from the server.
 
-		Args:
-			ReturnCode (str): This signifies the return code to be specified in the trace route hop.
-			ReturnSubCode (number): This signifies the return sub-code to be specified in the trace route hop.
-			SrcIp (str): This signifies the source IP address.
-			Ttl (number): This signifies the MPLS time to live value.
+        Args:
+            ReturnCode (str): This signifies the return code to be specified in the trace route hop.
+            ReturnSubCode (number): This signifies the return sub-code to be specified in the trace route hop.
+            SrcIp (str): This signifies the source IP address.
+            Ttl (number): This signifies the MPLS time to live value.
 
-		Returns:
-			self: This instance with matching hops data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching hops data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of hops data from the server.
+    def read(self, href):
+        """Retrieves a single instance of hops data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the hops data from the server available through an iterator or index
+        Returns:
+            self: This instance with the hops data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

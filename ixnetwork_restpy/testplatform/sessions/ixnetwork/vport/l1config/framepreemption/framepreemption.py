@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FramePreemption(Base):
-	"""
-	The FramePreemption class encapsulates a required framePreemption resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The FramePreemption class encapsulates a required framePreemption resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'framePreemption'
+    __slots__ = ()
+    _SDM_NAME = 'framePreemption'
 
-	def __init__(self, parent):
-		super(FramePreemption, self).__init__(parent)
+    def __init__(self, parent):
+        super(FramePreemption, self).__init__(parent)
 
-	@property
-	def IsFramePreemptionEnabled(self):
-		"""
+    @property
+    def IsFramePreemptionEnabled(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isFramePreemptionEnabled')
-	@IsFramePreemptionEnabled.setter
-	def IsFramePreemptionEnabled(self, value):
-		self._set_attribute('isFramePreemptionEnabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('isFramePreemptionEnabled')
+    @IsFramePreemptionEnabled.setter
+    def IsFramePreemptionEnabled(self, value):
+        self._set_attribute('isFramePreemptionEnabled', value)
 
-	@property
-	def IsSmdVREnabled(self):
-		"""
+    @property
+    def IsSmdVREnabled(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isSmdVREnabled')
-	@IsSmdVREnabled.setter
-	def IsSmdVREnabled(self, value):
-		self._set_attribute('isSmdVREnabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('isSmdVREnabled')
+    @IsSmdVREnabled.setter
+    def IsSmdVREnabled(self, value):
+        self._set_attribute('isSmdVREnabled', value)
 
-	def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
-		"""Updates a child instance of framePreemption on the server.
+    def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
+        """Updates a child instance of framePreemption on the server.
 
-		Args:
-			IsFramePreemptionEnabled (bool): 
-			IsSmdVREnabled (bool): 
+        Args:
+            IsFramePreemptionEnabled (bool): 
+            IsSmdVREnabled (bool): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

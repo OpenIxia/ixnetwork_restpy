@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Cluster(Base):
-	"""The list of BGP clusters that a particular route has passed through.
-	The Cluster class encapsulates a required cluster resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """The list of BGP clusters that a particular route has passed through.
+    The Cluster class encapsulates a required cluster resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'cluster'
+    __slots__ = ()
+    _SDM_NAME = 'cluster'
 
-	def __init__(self, parent):
-		super(Cluster, self).__init__(parent)
+    def __init__(self, parent):
+        super(Cluster, self).__init__(parent)
 
-	@property
-	def Val(self):
-		"""The value of the cluster list.
+    @property
+    def Val(self):
+        """The value of the cluster list.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('val')
-	@Val.setter
-	def Val(self, value):
-		self._set_attribute('val', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('val')
+    @Val.setter
+    def Val(self, value):
+        self._set_attribute('val', value)
 
-	def update(self, Val=None):
-		"""Updates a child instance of cluster on the server.
+    def update(self, Val=None):
+        """Updates a child instance of cluster on the server.
 
-		Args:
-			Val (list(number)): The value of the cluster list.
+        Args:
+            Val (list(number)): The value of the cluster list.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

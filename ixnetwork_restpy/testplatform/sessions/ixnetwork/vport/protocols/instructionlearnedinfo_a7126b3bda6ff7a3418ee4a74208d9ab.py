@@ -18,110 +18,110 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InstructionLearnedInfo(Base):
-	"""NOT DEFINED
-	The InstructionLearnedInfo class encapsulates a list of instructionLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the InstructionLearnedInfo.find() method.
-	"""
+    """NOT DEFINED
+    The InstructionLearnedInfo class encapsulates a list of instructionLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the InstructionLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'instructionLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'instructionLearnedInfo'
 
-	def __init__(self, parent):
-		super(InstructionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(InstructionLearnedInfo, self).__init__(parent)
 
-	@property
-	def ExperimenterData(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterData(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterData')
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterData')
 
-	@property
-	def ExperimenterDataLength(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataLength(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLength')
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLength')
 
-	@property
-	def ExperimenterId(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterId(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterId')
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterId')
 
-	@property
-	def NextTableIds(self):
-		"""NOT DEFINED
+    @property
+    def NextTableIds(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('nextTableIds')
+        Returns:
+            str
+        """
+        return self._get_attribute('nextTableIds')
 
-	@property
-	def Property(self):
-		"""NOT DEFINED
+    @property
+    def Property(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('property')
+        Returns:
+            str
+        """
+        return self._get_attribute('property')
 
-	@property
-	def SupportedField(self):
-		"""NOT DEFINED
+    @property
+    def SupportedField(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('supportedField')
+        Returns:
+            str
+        """
+        return self._get_attribute('supportedField')
 
-	def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
-		"""Finds and retrieves instructionLearnedInfo data from the server.
+    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
+        """Finds and retrieves instructionLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve instructionLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all instructionLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve instructionLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all instructionLearnedInfo data from the server.
 
-		Args:
-			ExperimenterData (str): NOT DEFINED
-			ExperimenterDataLength (number): NOT DEFINED
-			ExperimenterId (number): NOT DEFINED
-			NextTableIds (str): NOT DEFINED
-			Property (str): NOT DEFINED
-			SupportedField (str): NOT DEFINED
+        Args:
+            ExperimenterData (str): NOT DEFINED
+            ExperimenterDataLength (number): NOT DEFINED
+            ExperimenterId (number): NOT DEFINED
+            NextTableIds (str): NOT DEFINED
+            Property (str): NOT DEFINED
+            SupportedField (str): NOT DEFINED
 
-		Returns:
-			self: This instance with matching instructionLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching instructionLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of instructionLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of instructionLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the instructionLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the instructionLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

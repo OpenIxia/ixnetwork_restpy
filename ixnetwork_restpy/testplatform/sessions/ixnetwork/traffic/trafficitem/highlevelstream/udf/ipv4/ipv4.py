@@ -18,168 +18,168 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Ipv4(Base):
-	"""This object provides different options for UDF in IPv4 Type.
-	The Ipv4 class encapsulates a list of ipv4 resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Ipv4.find() method.
-	"""
+    """This object provides different options for UDF in IPv4 Type.
+    The Ipv4 class encapsulates a list of ipv4 resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Ipv4.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ipv4'
+    __slots__ = ()
+    _SDM_NAME = 'ipv4'
 
-	def __init__(self, parent):
-		super(Ipv4, self).__init__(parent)
+    def __init__(self, parent):
+        super(Ipv4, self).__init__(parent)
 
-	@property
-	def AvailableWidths(self):
-		"""Species all the possible widths available for a UDF in particular Type.
+    @property
+    def AvailableWidths(self):
+        """Species all the possible widths available for a UDF in particular Type.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('availableWidths')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('availableWidths')
 
-	@property
-	def BitmaskCount(self):
-		"""Specifies the number of bits to be masked to any integer value between 2 to 32.
+    @property
+    def BitmaskCount(self):
+        """Specifies the number of bits to be masked to any integer value between 2 to 32.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('bitmaskCount')
-	@BitmaskCount.setter
-	def BitmaskCount(self, value):
-		self._set_attribute('bitmaskCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('bitmaskCount')
+    @BitmaskCount.setter
+    def BitmaskCount(self, value):
+        self._set_attribute('bitmaskCount', value)
 
-	@property
-	def InnerLoopIncrementBy(self):
-		"""Specifies the Step Value by which the Inner Loop will be incremented.
+    @property
+    def InnerLoopIncrementBy(self):
+        """Specifies the Step Value by which the Inner Loop will be incremented.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('innerLoopIncrementBy')
-	@InnerLoopIncrementBy.setter
-	def InnerLoopIncrementBy(self, value):
-		self._set_attribute('innerLoopIncrementBy', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('innerLoopIncrementBy')
+    @InnerLoopIncrementBy.setter
+    def InnerLoopIncrementBy(self, value):
+        self._set_attribute('innerLoopIncrementBy', value)
 
-	@property
-	def InnerLoopLoopCount(self):
-		"""Specifies the no. of times the inner loop will occur.
+    @property
+    def InnerLoopLoopCount(self):
+        """Specifies the no. of times the inner loop will occur.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('innerLoopLoopCount')
-	@InnerLoopLoopCount.setter
-	def InnerLoopLoopCount(self, value):
-		self._set_attribute('innerLoopLoopCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('innerLoopLoopCount')
+    @InnerLoopLoopCount.setter
+    def InnerLoopLoopCount(self, value):
+        self._set_attribute('innerLoopLoopCount', value)
 
-	@property
-	def OuterLoopLoopCount(self):
-		"""Specifies the no. of times the outer loop will occur.
+    @property
+    def OuterLoopLoopCount(self):
+        """Specifies the no. of times the outer loop will occur.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('outerLoopLoopCount')
-	@OuterLoopLoopCount.setter
-	def OuterLoopLoopCount(self, value):
-		self._set_attribute('outerLoopLoopCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('outerLoopLoopCount')
+    @OuterLoopLoopCount.setter
+    def OuterLoopLoopCount(self, value):
+        self._set_attribute('outerLoopLoopCount', value)
 
-	@property
-	def SkipValues(self):
-		"""If true, Skip Values option is enabled.
+    @property
+    def SkipValues(self):
+        """If true, Skip Values option is enabled.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('skipValues')
-	@SkipValues.setter
-	def SkipValues(self, value):
-		self._set_attribute('skipValues', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('skipValues')
+    @SkipValues.setter
+    def SkipValues(self, value):
+        self._set_attribute('skipValues', value)
 
-	@property
-	def StartValue(self):
-		"""Specifies the start value of the UDF.
+    @property
+    def StartValue(self):
+        """Specifies the start value of the UDF.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('startValue')
-	@StartValue.setter
-	def StartValue(self, value):
-		self._set_attribute('startValue', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('startValue')
+    @StartValue.setter
+    def StartValue(self, value):
+        self._set_attribute('startValue', value)
 
-	@property
-	def Width(self):
-		"""Specifies the width of the UDF.
+    @property
+    def Width(self):
+        """Specifies the width of the UDF.
 
-		Returns:
-			str(32)
-		"""
-		return self._get_attribute('width')
-	@Width.setter
-	def Width(self, value):
-		self._set_attribute('width', value)
+        Returns:
+            str(32)
+        """
+        return self._get_attribute('width')
+    @Width.setter
+    def Width(self, value):
+        self._set_attribute('width', value)
 
-	def update(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
-		"""Updates a child instance of ipv4 on the server.
+    def update(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
+        """Updates a child instance of ipv4 on the server.
 
-		Args:
-			BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
-			InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-			InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-			OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
-			SkipValues (bool): If true, Skip Values option is enabled.
-			StartValue (number): Specifies the start value of the UDF.
-			Width (str(32)): Specifies the width of the UDF.
+        Args:
+            BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
+            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+            OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
+            SkipValues (bool): If true, Skip Values option is enabled.
+            StartValue (number): Specifies the start value of the UDF.
+            Width (str(32)): Specifies the width of the UDF.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, AvailableWidths=None, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
-		"""Finds and retrieves ipv4 data from the server.
+    def find(self, AvailableWidths=None, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
+        """Finds and retrieves ipv4 data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve ipv4 data from the server.
-		By default the find method takes no parameters and will retrieve all ipv4 data from the server.
+        All named parameters support regex and can be used to selectively retrieve ipv4 data from the server.
+        By default the find method takes no parameters and will retrieve all ipv4 data from the server.
 
-		Args:
-			AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
-			BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
-			InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
-			InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
-			OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
-			SkipValues (bool): If true, Skip Values option is enabled.
-			StartValue (number): Specifies the start value of the UDF.
-			Width (str(32)): Specifies the width of the UDF.
+        Args:
+            AvailableWidths (list(str)): Species all the possible widths available for a UDF in particular Type.
+            BitmaskCount (number): Specifies the number of bits to be masked to any integer value between 2 to 32.
+            InnerLoopIncrementBy (number): Specifies the Step Value by which the Inner Loop will be incremented.
+            InnerLoopLoopCount (number): Specifies the no. of times the inner loop will occur.
+            OuterLoopLoopCount (number): Specifies the no. of times the outer loop will occur.
+            SkipValues (bool): If true, Skip Values option is enabled.
+            StartValue (number): Specifies the start value of the UDF.
+            Width (str(32)): Specifies the width of the UDF.
 
-		Returns:
-			self: This instance with matching ipv4 data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching ipv4 data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of ipv4 data from the server.
+    def read(self, href):
+        """Retrieves a single instance of ipv4 data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the ipv4 data from the server available through an iterator or index
+        Returns:
+            self: This instance with the ipv4 data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

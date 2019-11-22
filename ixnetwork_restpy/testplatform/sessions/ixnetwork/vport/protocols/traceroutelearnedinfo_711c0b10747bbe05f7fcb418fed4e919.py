@@ -18,124 +18,124 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TraceRouteLearnedInfo(Base):
-	"""This object holds lists of the trace route learned information.
-	The TraceRouteLearnedInfo class encapsulates a list of traceRouteLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the TraceRouteLearnedInfo.find() method.
-	"""
+    """This object holds lists of the trace route learned information.
+    The TraceRouteLearnedInfo class encapsulates a list of traceRouteLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the TraceRouteLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'traceRouteLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'traceRouteLearnedInfo'
 
-	def __init__(self, parent):
-		super(TraceRouteLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(TraceRouteLearnedInfo, self).__init__(parent)
 
-	@property
-	def Hops(self):
-		"""An instance of the Hops class.
+    @property
+    def Hops(self):
+        """An instance of the Hops class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8.Hops)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8.Hops)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8 import Hops
-		return Hops(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_85cfa990870c939e26a6572ab8ff00f8 import Hops
+        return Hops(self)
 
-	@property
-	def IncomingLabelOuterInner(self):
-		"""This signifies the incoming label information.
+    @property
+    def IncomingLabelOuterInner(self):
+        """This signifies the incoming label information.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('incomingLabelOuterInner')
+        Returns:
+            str
+        """
+        return self._get_attribute('incomingLabelOuterInner')
 
-	@property
-	def NumberOfReplyingHops(self):
-		"""This signifies the total number of replying hops.
+    @property
+    def NumberOfReplyingHops(self):
+        """This signifies the total number of replying hops.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('numberOfReplyingHops')
+        Returns:
+            number
+        """
+        return self._get_attribute('numberOfReplyingHops')
 
-	@property
-	def OutgoingLabelOuterInner(self):
-		"""This signifies the Outgoing Label information.
+    @property
+    def OutgoingLabelOuterInner(self):
+        """This signifies the Outgoing Label information.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('outgoingLabelOuterInner')
+        Returns:
+            str
+        """
+        return self._get_attribute('outgoingLabelOuterInner')
 
-	@property
-	def Reachability(self):
-		"""This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
+    @property
+    def Reachability(self):
+        """This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('reachability')
+        Returns:
+            str
+        """
+        return self._get_attribute('reachability')
 
-	@property
-	def SenderHandle(self):
-		"""This signifies the sender handle details.
+    @property
+    def SenderHandle(self):
+        """This signifies the sender handle details.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('senderHandle')
+        Returns:
+            number
+        """
+        return self._get_attribute('senderHandle')
 
-	@property
-	def Type(self):
-		"""This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
+    @property
+    def Type(self):
+        """This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('type')
+        Returns:
+            str
+        """
+        return self._get_attribute('type')
 
-	def find(self, IncomingLabelOuterInner=None, NumberOfReplyingHops=None, OutgoingLabelOuterInner=None, Reachability=None, SenderHandle=None, Type=None):
-		"""Finds and retrieves traceRouteLearnedInfo data from the server.
+    def find(self, IncomingLabelOuterInner=None, NumberOfReplyingHops=None, OutgoingLabelOuterInner=None, Reachability=None, SenderHandle=None, Type=None):
+        """Finds and retrieves traceRouteLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve traceRouteLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all traceRouteLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve traceRouteLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all traceRouteLearnedInfo data from the server.
 
-		Args:
-			IncomingLabelOuterInner (str): This signifies the incoming label information.
-			NumberOfReplyingHops (number): This signifies the total number of replying hops.
-			OutgoingLabelOuterInner (str): This signifies the Outgoing Label information.
-			Reachability (str): This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
-			SenderHandle (number): This signifies the sender handle details.
-			Type (str): This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
+        Args:
+            IncomingLabelOuterInner (str): This signifies the incoming label information.
+            NumberOfReplyingHops (number): This signifies the total number of replying hops.
+            OutgoingLabelOuterInner (str): This signifies the Outgoing Label information.
+            Reachability (str): This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
+            SenderHandle (number): This signifies the sender handle details.
+            Type (str): This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
 
-		Returns:
-			self: This instance with matching traceRouteLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching traceRouteLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of traceRouteLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of traceRouteLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the traceRouteLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the traceRouteLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

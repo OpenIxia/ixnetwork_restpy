@@ -18,199 +18,199 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Pos(Base):
-	"""Layer 1 (physical) parameters for a POS (Packet over SONET) port.
-	The Pos class encapsulates a required pos resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Layer 1 (physical) parameters for a POS (Packet over SONET) port.
+    The Pos class encapsulates a required pos resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'pos'
+    __slots__ = ()
+    _SDM_NAME = 'pos'
 
-	def __init__(self, parent):
-		super(Pos, self).__init__(parent)
+    def __init__(self, parent):
+        super(Pos, self).__init__(parent)
 
-	@property
-	def Dcc(self):
-		"""An instance of the Dcc class.
+    @property
+    def Dcc(self):
+        """An instance of the Dcc class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc.Dcc)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc.Dcc)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import Dcc
-		return Dcc(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import Dcc
+        return Dcc(self)._select()
 
-	@property
-	def Ppp(self):
-		"""An instance of the Ppp class.
+    @property
+    def Ppp(self):
+        """An instance of the Ppp class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp.Ppp)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp.Ppp)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import Ppp
-		return Ppp(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import Ppp
+        return Ppp(self)._select()
 
-	@property
-	def C2Expected(self):
-		"""C2 Byte
+    @property
+    def C2Expected(self):
+        """C2 Byte
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('c2Expected')
-	@C2Expected.setter
-	def C2Expected(self, value):
-		self._set_attribute('c2Expected', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('c2Expected')
+    @C2Expected.setter
+    def C2Expected(self, value):
+        self._set_attribute('c2Expected', value)
 
-	@property
-	def C2Tx(self):
-		"""C2 Byte
+    @property
+    def C2Tx(self):
+        """C2 Byte
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('c2Tx')
-	@C2Tx.setter
-	def C2Tx(self, value):
-		self._set_attribute('c2Tx', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('c2Tx')
+    @C2Tx.setter
+    def C2Tx(self, value):
+        self._set_attribute('c2Tx', value)
 
-	@property
-	def CrcSize(self):
-		"""The type of cyclic redundancy check (CRC) to be used.
+    @property
+    def CrcSize(self):
+        """The type of cyclic redundancy check (CRC) to be used.
 
-		Returns:
-			str(crc16|crc32)
-		"""
-		return self._get_attribute('crcSize')
-	@CrcSize.setter
-	def CrcSize(self, value):
-		self._set_attribute('crcSize', value)
+        Returns:
+            str(crc16|crc32)
+        """
+        return self._get_attribute('crcSize')
+    @CrcSize.setter
+    def CrcSize(self, value):
+        self._set_attribute('crcSize', value)
 
-	@property
-	def DataScrambling(self):
-		"""Data scrambling is enabled on this POS port.
+    @property
+    def DataScrambling(self):
+        """Data scrambling is enabled on this POS port.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('dataScrambling')
-	@DataScrambling.setter
-	def DataScrambling(self, value):
-		self._set_attribute('dataScrambling', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('dataScrambling')
+    @DataScrambling.setter
+    def DataScrambling(self, value):
+        self._set_attribute('dataScrambling', value)
 
-	@property
-	def EnablePPM(self):
-		"""If true, enables the portsppm
+    @property
+    def EnablePPM(self):
+        """If true, enables the portsppm
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enablePPM')
-	@EnablePPM.setter
-	def EnablePPM(self, value):
-		self._set_attribute('enablePPM', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePPM')
+    @EnablePPM.setter
+    def EnablePPM(self, value):
+        self._set_attribute('enablePPM', value)
 
-	@property
-	def InterfaceType(self):
-		"""The POS interface type for the port.
+    @property
+    def InterfaceType(self):
+        """The POS interface type for the port.
 
-		Returns:
-			str(oc12|oc192|oc3|oc48|stm1|stm16|stm4|stm64)
-		"""
-		return self._get_attribute('interfaceType')
-	@InterfaceType.setter
-	def InterfaceType(self, value):
-		self._set_attribute('interfaceType', value)
+        Returns:
+            str(oc12|oc192|oc3|oc48|stm1|stm16|stm4|stm64)
+        """
+        return self._get_attribute('interfaceType')
+    @InterfaceType.setter
+    def InterfaceType(self, value):
+        self._set_attribute('interfaceType', value)
 
-	@property
-	def Loopback(self):
-		"""If enabled, the port is set to internally loopback from transmit to receive.
+    @property
+    def Loopback(self):
+        """If enabled, the port is set to internally loopback from transmit to receive.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('loopback')
-	@Loopback.setter
-	def Loopback(self, value):
-		self._set_attribute('loopback', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('loopback')
+    @Loopback.setter
+    def Loopback(self, value):
+        self._set_attribute('loopback', value)
 
-	@property
-	def PayloadType(self):
-		"""The POS payload type.
+    @property
+    def PayloadType(self):
+        """The POS payload type.
 
-		Returns:
-			str(ciscoFrameRelay|ciscoHdlc|frameRelay|ppp)
-		"""
-		return self._get_attribute('payloadType')
-	@PayloadType.setter
-	def PayloadType(self, value):
-		self._set_attribute('payloadType', value)
+        Returns:
+            str(ciscoFrameRelay|ciscoHdlc|frameRelay|ppp)
+        """
+        return self._get_attribute('payloadType')
+    @PayloadType.setter
+    def PayloadType(self, value):
+        self._set_attribute('payloadType', value)
 
-	@property
-	def Ppm(self):
-		"""Indicates the value that needs to be adjusted for the line transmit frequency.
+    @property
+    def Ppm(self):
+        """Indicates the value that needs to be adjusted for the line transmit frequency.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('ppm')
-	@Ppm.setter
-	def Ppm(self, value):
-		self._set_attribute('ppm', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('ppm')
+    @Ppm.setter
+    def Ppm(self, value):
+        self._set_attribute('ppm', value)
 
-	@property
-	def TrafficMapType(self):
-		"""The POS traffic map type.
+    @property
+    def TrafficMapType(self):
+        """The POS traffic map type.
 
-		Returns:
-			str(dcc|spe)
-		"""
-		return self._get_attribute('trafficMapType')
-	@TrafficMapType.setter
-	def TrafficMapType(self, value):
-		self._set_attribute('trafficMapType', value)
+        Returns:
+            str(dcc|spe)
+        """
+        return self._get_attribute('trafficMapType')
+    @TrafficMapType.setter
+    def TrafficMapType(self, value):
+        self._set_attribute('trafficMapType', value)
 
-	@property
-	def TransmitClocking(self):
-		"""The POS transmit clocking type.
+    @property
+    def TransmitClocking(self):
+        """The POS transmit clocking type.
 
-		Returns:
-			str(external|internal|recovered)
-		"""
-		return self._get_attribute('transmitClocking')
-	@TransmitClocking.setter
-	def TransmitClocking(self, value):
-		self._set_attribute('transmitClocking', value)
+        Returns:
+            str(external|internal|recovered)
+        """
+        return self._get_attribute('transmitClocking')
+    @TransmitClocking.setter
+    def TransmitClocking(self, value):
+        self._set_attribute('transmitClocking', value)
 
-	def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, TrafficMapType=None, TransmitClocking=None):
-		"""Updates a child instance of pos on the server.
+    def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, TrafficMapType=None, TransmitClocking=None):
+        """Updates a child instance of pos on the server.
 
-		Args:
-			C2Expected (number): C2 Byte
-			C2Tx (number): C2 Byte
-			CrcSize (str(crc16|crc32)): The type of cyclic redundancy check (CRC) to be used.
-			DataScrambling (bool): Data scrambling is enabled on this POS port.
-			EnablePPM (bool): If true, enables the portsppm
-			InterfaceType (str(oc12|oc192|oc3|oc48|stm1|stm16|stm4|stm64)): The POS interface type for the port.
-			Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-			PayloadType (str(ciscoFrameRelay|ciscoHdlc|frameRelay|ppp)): The POS payload type.
-			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-			TrafficMapType (str(dcc|spe)): The POS traffic map type.
-			TransmitClocking (str(external|internal|recovered)): The POS transmit clocking type.
+        Args:
+            C2Expected (number): C2 Byte
+            C2Tx (number): C2 Byte
+            CrcSize (str(crc16|crc32)): The type of cyclic redundancy check (CRC) to be used.
+            DataScrambling (bool): Data scrambling is enabled on this POS port.
+            EnablePPM (bool): If true, enables the portsppm
+            InterfaceType (str(oc12|oc192|oc3|oc48|stm1|stm16|stm4|stm64)): The POS interface type for the port.
+            Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+            PayloadType (str(ciscoFrameRelay|ciscoHdlc|frameRelay|ppp)): The POS payload type.
+            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+            TrafficMapType (str(dcc|spe)): The POS traffic map type.
+            TransmitClocking (str(external|internal|recovered)): The POS transmit clocking type.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

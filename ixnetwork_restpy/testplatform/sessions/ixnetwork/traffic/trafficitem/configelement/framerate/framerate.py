@@ -18,93 +18,93 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FrameRate(Base):
-	"""This object provides different options for the Frame Rate.
-	The FrameRate class encapsulates a required frameRate resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object provides different options for the Frame Rate.
+    The FrameRate class encapsulates a required frameRate resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'frameRate'
+    __slots__ = ()
+    _SDM_NAME = 'frameRate'
 
-	def __init__(self, parent):
-		super(FrameRate, self).__init__(parent)
+    def __init__(self, parent):
+        super(FrameRate, self).__init__(parent)
 
-	@property
-	def BitRateUnitsType(self):
-		"""The rate units for transmitting packet.
+    @property
+    def BitRateUnitsType(self):
+        """The rate units for transmitting packet.
 
-		Returns:
-			str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)
-		"""
-		return self._get_attribute('bitRateUnitsType')
-	@BitRateUnitsType.setter
-	def BitRateUnitsType(self, value):
-		self._set_attribute('bitRateUnitsType', value)
+        Returns:
+            str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)
+        """
+        return self._get_attribute('bitRateUnitsType')
+    @BitRateUnitsType.setter
+    def BitRateUnitsType(self, value):
+        self._set_attribute('bitRateUnitsType', value)
 
-	@property
-	def EnforceMinimumInterPacketGap(self):
-		"""Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+    @property
+    def EnforceMinimumInterPacketGap(self):
+        """Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('enforceMinimumInterPacketGap')
-	@EnforceMinimumInterPacketGap.setter
-	def EnforceMinimumInterPacketGap(self, value):
-		self._set_attribute('enforceMinimumInterPacketGap', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('enforceMinimumInterPacketGap')
+    @EnforceMinimumInterPacketGap.setter
+    def EnforceMinimumInterPacketGap(self, value):
+        self._set_attribute('enforceMinimumInterPacketGap', value)
 
-	@property
-	def InterPacketGapUnitsType(self):
-		"""The inter-packet gap expressed in units.
+    @property
+    def InterPacketGapUnitsType(self):
+        """The inter-packet gap expressed in units.
 
-		Returns:
-			str(bytes|nanoseconds)
-		"""
-		return self._get_attribute('interPacketGapUnitsType')
-	@InterPacketGapUnitsType.setter
-	def InterPacketGapUnitsType(self, value):
-		self._set_attribute('interPacketGapUnitsType', value)
+        Returns:
+            str(bytes|nanoseconds)
+        """
+        return self._get_attribute('interPacketGapUnitsType')
+    @InterPacketGapUnitsType.setter
+    def InterPacketGapUnitsType(self, value):
+        self._set_attribute('interPacketGapUnitsType', value)
 
-	@property
-	def Rate(self):
-		"""The rate at which packet is transmitted.
+    @property
+    def Rate(self):
+        """The rate at which packet is transmitted.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rate')
-	@Rate.setter
-	def Rate(self, value):
-		self._set_attribute('rate', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('rate')
+    @Rate.setter
+    def Rate(self, value):
+        self._set_attribute('rate', value)
 
-	@property
-	def Type(self):
-		"""Sets the frame rate types.
+    @property
+    def Type(self):
+        """Sets the frame rate types.
 
-		Returns:
-			str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)
-		"""
-		return self._get_attribute('type')
-	@Type.setter
-	def Type(self, value):
-		self._set_attribute('type', value)
+        Returns:
+            str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)
+        """
+        return self._get_attribute('type')
+    @Type.setter
+    def Type(self, value):
+        self._set_attribute('type', value)
 
-	def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
-		"""Updates a child instance of frameRate on the server.
+    def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+        """Updates a child instance of frameRate on the server.
 
-		Args:
-			BitRateUnitsType (str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)): The rate units for transmitting packet.
-			EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
-			InterPacketGapUnitsType (str(bytes|nanoseconds)): The inter-packet gap expressed in units.
-			Rate (number): The rate at which packet is transmitted.
-			Type (str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)): Sets the frame rate types.
+        Args:
+            BitRateUnitsType (str(bitsPerSec|bytesPerSec|kbitsPerSec|kbytesPerSec|mbitsPerSec|mbytesPerSec)): The rate units for transmitting packet.
+            EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+            InterPacketGapUnitsType (str(bytes|nanoseconds)): The inter-packet gap expressed in units.
+            Rate (number): The rate at which packet is transmitted.
+            Type (str(bitsPerSecond|framesPerSecond|interPacketGap|percentLineRate)): Sets the frame rate types.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

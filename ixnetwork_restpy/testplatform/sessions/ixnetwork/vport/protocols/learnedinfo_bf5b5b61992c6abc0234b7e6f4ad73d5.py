@@ -18,99 +18,99 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedInfo(Base):
-	"""Learned information associated with an interface on an stpBridge object.
-	The LearnedInfo class encapsulates a required learnedInfo resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Learned information associated with an interface on an stpBridge object.
+    The LearnedInfo class encapsulates a required learnedInfo resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'learnedInfo'
 
-	def __init__(self, parent):
-		super(LearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedInfo, self).__init__(parent)
 
-	@property
-	def DesignatedCost(self):
-		"""Root Path Cost. The administrative cost for the shortest path from this bridge to the Root bridge. A 4-byte unsigned integer. The default is 0.
+    @property
+    def DesignatedCost(self):
+        """Root Path Cost. The administrative cost for the shortest path from this bridge to the Root bridge. A 4-byte unsigned integer. The default is 0.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('designatedCost')
+        Returns:
+            number
+        """
+        return self._get_attribute('designatedCost')
 
-	@property
-	def DesignatedMac(self):
-		"""(Read-only) The 6-byte MAC address of the designated bridge on the LAN segment.
+    @property
+    def DesignatedMac(self):
+        """(Read-only) The 6-byte MAC address of the designated bridge on the LAN segment.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('designatedMac')
+        Returns:
+            str
+        """
+        return self._get_attribute('designatedMac')
 
-	@property
-	def DesignatedPortId(self):
-		"""(Read-only) The port ID of the designated bridge's designated port on the LAN segment.
+    @property
+    def DesignatedPortId(self):
+        """(Read-only) The port ID of the designated bridge's designated port on the LAN segment.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('designatedPortId')
+        Returns:
+            number
+        """
+        return self._get_attribute('designatedPortId')
 
-	@property
-	def DesignatedPriority(self):
-		"""(Read-only) The priority of the designated bridge on the LAN segment.
+    @property
+    def DesignatedPriority(self):
+        """(Read-only) The priority of the designated bridge on the LAN segment.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('designatedPriority')
+        Returns:
+            number
+        """
+        return self._get_attribute('designatedPriority')
 
-	@property
-	def InterfaceDesc(self):
-		"""(Read-only) The descriptive identifier of the protocol interface.
+    @property
+    def InterfaceDesc(self):
+        """(Read-only) The descriptive identifier of the protocol interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('interfaceDesc')
+        Returns:
+            str
+        """
+        return self._get_attribute('interfaceDesc')
 
-	@property
-	def InterfaceRole(self):
-		"""(Read-only) The role of the Interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
+    @property
+    def InterfaceRole(self):
+        """(Read-only) The role of the Interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('interfaceRole')
+        Returns:
+            str
+        """
+        return self._get_attribute('interfaceRole')
 
-	@property
-	def InterfaceState(self):
-		"""Read-only) The state of the interface. One of the following options: Discarding, learning, or forwarding.
+    @property
+    def InterfaceState(self):
+        """Read-only) The state of the interface. One of the following options: Discarding, learning, or forwarding.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('interfaceState')
+        Returns:
+            str
+        """
+        return self._get_attribute('interfaceState')
 
-	@property
-	def RootMac(self):
-		"""(Read-only) The 6-byte MAC address of the root bridge.
+    @property
+    def RootMac(self):
+        """(Read-only) The 6-byte MAC address of the root bridge.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('rootMac')
+        Returns:
+            str
+        """
+        return self._get_attribute('rootMac')
 
-	@property
-	def RootPriority(self):
-		"""(Read-only) The priority of the root bridge.
+    @property
+    def RootPriority(self):
+        """(Read-only) The priority of the root bridge.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rootPriority')
+        Returns:
+            number
+        """
+        return self._get_attribute('rootPriority')

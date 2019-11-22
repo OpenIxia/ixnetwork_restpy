@@ -18,210 +18,210 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TransmissionControl(Base):
-	"""This object provides different options for Transmission Control.
-	The TransmissionControl class encapsulates a required transmissionControl resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object provides different options for Transmission Control.
+    The TransmissionControl class encapsulates a required transmissionControl resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'transmissionControl'
+    __slots__ = ()
+    _SDM_NAME = 'transmissionControl'
 
-	def __init__(self, parent):
-		super(TransmissionControl, self).__init__(parent)
+    def __init__(self, parent):
+        super(TransmissionControl, self).__init__(parent)
 
-	@property
-	def BurstPacketCount(self):
-		"""Specifies the number of packets per burst.
+    @property
+    def BurstPacketCount(self):
+        """Specifies the number of packets per burst.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('burstPacketCount')
-	@BurstPacketCount.setter
-	def BurstPacketCount(self, value):
-		self._set_attribute('burstPacketCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('burstPacketCount')
+    @BurstPacketCount.setter
+    def BurstPacketCount(self, value):
+        self._set_attribute('burstPacketCount', value)
 
-	@property
-	def Duration(self):
-		"""Indicates the time duration.
+    @property
+    def Duration(self):
+        """Indicates the time duration.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('duration')
-	@Duration.setter
-	def Duration(self, value):
-		self._set_attribute('duration', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('duration')
+    @Duration.setter
+    def Duration(self, value):
+        self._set_attribute('duration', value)
 
-	@property
-	def EnableInterBurstGap(self):
-		"""Enables the inter-burst gap of a frame.
+    @property
+    def EnableInterBurstGap(self):
+        """Enables the inter-burst gap of a frame.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableInterBurstGap')
-	@EnableInterBurstGap.setter
-	def EnableInterBurstGap(self, value):
-		self._set_attribute('enableInterBurstGap', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableInterBurstGap')
+    @EnableInterBurstGap.setter
+    def EnableInterBurstGap(self, value):
+        self._set_attribute('enableInterBurstGap', value)
 
-	@property
-	def EnableInterStreamGap(self):
-		"""Enables the inter-stream gap of a frame.
+    @property
+    def EnableInterStreamGap(self):
+        """Enables the inter-stream gap of a frame.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableInterStreamGap')
-	@EnableInterStreamGap.setter
-	def EnableInterStreamGap(self, value):
-		self._set_attribute('enableInterStreamGap', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableInterStreamGap')
+    @EnableInterStreamGap.setter
+    def EnableInterStreamGap(self, value):
+        self._set_attribute('enableInterStreamGap', value)
 
-	@property
-	def FrameCount(self):
-		"""Specifies Fixed Packet Count when Transmission Mode is Interleaved.
+    @property
+    def FrameCount(self):
+        """Specifies Fixed Packet Count when Transmission Mode is Interleaved.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('frameCount')
-	@FrameCount.setter
-	def FrameCount(self, value):
-		self._set_attribute('frameCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('frameCount')
+    @FrameCount.setter
+    def FrameCount(self, value):
+        self._set_attribute('frameCount', value)
 
-	@property
-	def InterBurstGap(self):
-		"""Specifies the gap between any two consecutive burst.
+    @property
+    def InterBurstGap(self):
+        """Specifies the gap between any two consecutive burst.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('interBurstGap')
-	@InterBurstGap.setter
-	def InterBurstGap(self, value):
-		self._set_attribute('interBurstGap', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('interBurstGap')
+    @InterBurstGap.setter
+    def InterBurstGap(self, value):
+        self._set_attribute('interBurstGap', value)
 
-	@property
-	def InterBurstGapUnits(self):
-		"""Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+    @property
+    def InterBurstGapUnits(self):
+        """Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
 
-		Returns:
-			str(bytes|nanoseconds)
-		"""
-		return self._get_attribute('interBurstGapUnits')
-	@InterBurstGapUnits.setter
-	def InterBurstGapUnits(self, value):
-		self._set_attribute('interBurstGapUnits', value)
+        Returns:
+            str(bytes|nanoseconds)
+        """
+        return self._get_attribute('interBurstGapUnits')
+    @InterBurstGapUnits.setter
+    def InterBurstGapUnits(self, value):
+        self._set_attribute('interBurstGapUnits', value)
 
-	@property
-	def InterStreamGap(self):
-		"""Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+    @property
+    def InterStreamGap(self):
+        """Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('interStreamGap')
-	@InterStreamGap.setter
-	def InterStreamGap(self, value):
-		self._set_attribute('interStreamGap', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('interStreamGap')
+    @InterStreamGap.setter
+    def InterStreamGap(self, value):
+        self._set_attribute('interStreamGap', value)
 
-	@property
-	def IterationCount(self):
-		"""Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
+    @property
+    def IterationCount(self):
+        """Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('iterationCount')
-	@IterationCount.setter
-	def IterationCount(self, value):
-		self._set_attribute('iterationCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('iterationCount')
+    @IterationCount.setter
+    def IterationCount(self, value):
+        self._set_attribute('iterationCount', value)
 
-	@property
-	def MinGapBytes(self):
-		"""Specifies the minimum gap between any 2 packets or frames in term of bytes.
+    @property
+    def MinGapBytes(self):
+        """Specifies the minimum gap between any 2 packets or frames in term of bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('minGapBytes')
-	@MinGapBytes.setter
-	def MinGapBytes(self, value):
-		self._set_attribute('minGapBytes', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('minGapBytes')
+    @MinGapBytes.setter
+    def MinGapBytes(self, value):
+        self._set_attribute('minGapBytes', value)
 
-	@property
-	def RepeatBurst(self):
-		"""Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
+    @property
+    def RepeatBurst(self):
+        """Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('repeatBurst')
-	@RepeatBurst.setter
-	def RepeatBurst(self, value):
-		self._set_attribute('repeatBurst', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('repeatBurst')
+    @RepeatBurst.setter
+    def RepeatBurst(self, value):
+        self._set_attribute('repeatBurst', value)
 
-	@property
-	def StartDelay(self):
-		"""Specifies the delay in Start when Transmission Mode is Interleaved.
+    @property
+    def StartDelay(self):
+        """Specifies the delay in Start when Transmission Mode is Interleaved.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('startDelay')
-	@StartDelay.setter
-	def StartDelay(self, value):
-		self._set_attribute('startDelay', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('startDelay')
+    @StartDelay.setter
+    def StartDelay(self, value):
+        self._set_attribute('startDelay', value)
 
-	@property
-	def StartDelayUnits(self):
-		"""Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+    @property
+    def StartDelayUnits(self):
+        """Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
 
-		Returns:
-			str(bytes|nanoseconds)
-		"""
-		return self._get_attribute('startDelayUnits')
-	@StartDelayUnits.setter
-	def StartDelayUnits(self, value):
-		self._set_attribute('startDelayUnits', value)
+        Returns:
+            str(bytes|nanoseconds)
+        """
+        return self._get_attribute('startDelayUnits')
+    @StartDelayUnits.setter
+    def StartDelayUnits(self, value):
+        self._set_attribute('startDelayUnits', value)
 
-	@property
-	def Type(self):
-		"""The Transmission Control types.
+    @property
+    def Type(self):
+        """The Transmission Control types.
 
-		Returns:
-			str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)
-		"""
-		return self._get_attribute('type')
-	@Type.setter
-	def Type(self, value):
-		self._set_attribute('type', value)
+        Returns:
+            str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)
+        """
+        return self._get_attribute('type')
+    @Type.setter
+    def Type(self, value):
+        self._set_attribute('type', value)
 
-	def update(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
-		"""Updates a child instance of transmissionControl on the server.
+    def update(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
+        """Updates a child instance of transmissionControl on the server.
 
-		Args:
-			BurstPacketCount (number): Specifies the number of packets per burst.
-			Duration (number): Indicates the time duration.
-			EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
-			EnableInterStreamGap (bool): Enables the inter-stream gap of a frame.
-			FrameCount (number): Specifies Fixed Packet Count when Transmission Mode is Interleaved.
-			InterBurstGap (number): Specifies the gap between any two consecutive burst.
-			InterBurstGapUnits (str(bytes|nanoseconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
-			InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
-			IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
-			MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
-			RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
-			StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
-			StartDelayUnits (str(bytes|nanoseconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
-			Type (str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)): The Transmission Control types.
+        Args:
+            BurstPacketCount (number): Specifies the number of packets per burst.
+            Duration (number): Indicates the time duration.
+            EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
+            EnableInterStreamGap (bool): Enables the inter-stream gap of a frame.
+            FrameCount (number): Specifies Fixed Packet Count when Transmission Mode is Interleaved.
+            InterBurstGap (number): Specifies the gap between any two consecutive burst.
+            InterBurstGapUnits (str(bytes|nanoseconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+            InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+            IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
+            MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
+            RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
+            StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
+            StartDelayUnits (str(bytes|nanoseconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+            Type (str(auto|burstFixedDuration|continuous|custom|fixedDuration|fixedFrameCount|fixedIterationCount)): The Transmission Control types.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

@@ -18,188 +18,188 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class DceMCastMacGroupList(Base):
-	"""Fabric-Path Multicast MAC Groups
-	The DceMCastMacGroupList class encapsulates a required dceMCastMacGroupList resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Fabric-Path Multicast MAC Groups
+    The DceMCastMacGroupList class encapsulates a required dceMCastMacGroupList resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'dceMCastMacGroupList'
+    __slots__ = ()
+    _SDM_NAME = 'dceMCastMacGroupList'
 
-	def __init__(self, parent):
-		super(DceMCastMacGroupList, self).__init__(parent)
+    def __init__(self, parent):
+        super(DceMCastMacGroupList, self).__init__(parent)
 
-	@property
-	def Active(self):
-		"""Activate/Deactivate Configuration
+    @property
+    def Active(self):
+        """Activate/Deactivate Configuration
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('active')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('active')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def InterGrpUcastAddrIncr(self):
-		"""Inter-Group Source Address Increment
+    @property
+    def InterGrpUcastAddrIncr(self):
+        """Inter-Group Source Address Increment
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('interGrpUcastAddrIncr')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('interGrpUcastAddrIncr')
 
-	@property
-	def McastAddrCnt(self):
-		"""Multicast Address Count
+    @property
+    def McastAddrCnt(self):
+        """Multicast Address Count
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('mcastAddrCnt')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mcastAddrCnt')
 
-	@property
-	def McastAddrIncr(self):
-		"""Multicast Address Increment
+    @property
+    def McastAddrIncr(self):
+        """Multicast Address Increment
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('mcastAddrIncr')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mcastAddrIncr')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def SrcGrpMapping(self):
-		"""Source-Group Mapping
+    @property
+    def SrcGrpMapping(self):
+        """Source-Group Mapping
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('srcGrpMapping')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('srcGrpMapping')
 
-	@property
-	def StartMcastAddr(self):
-		"""Start Multicast Address
+    @property
+    def StartMcastAddr(self):
+        """Start Multicast Address
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('startMcastAddr')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('startMcastAddr')
 
-	@property
-	def StartUcastAddr(self):
-		"""Start Source Address
+    @property
+    def StartUcastAddr(self):
+        """Start Source Address
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('startUcastAddr')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('startUcastAddr')
 
-	@property
-	def TopologyId(self):
-		"""Topology/Nickname
+    @property
+    def TopologyId(self):
+        """Topology/Nickname
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('topologyId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('topologyId')
 
-	@property
-	def UcastAddrIncr(self):
-		"""Source Address Increment
+    @property
+    def UcastAddrIncr(self):
+        """Source Address Increment
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ucastAddrIncr')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ucastAddrIncr')
 
-	@property
-	def UcastSrcCnt(self):
-		"""# Sources per Multicast Group
+    @property
+    def UcastSrcCnt(self):
+        """# Sources per Multicast Group
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ucastSrcCnt')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ucastSrcCnt')
 
-	@property
-	def VlanId(self):
-		"""Vlan Id
+    @property
+    def VlanId(self):
+        """Vlan Id
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('vlanId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('vlanId')
 
-	def update(self, Name=None):
-		"""Updates a child instance of dceMCastMacGroupList on the server.
+    def update(self, Name=None):
+        """Updates a child instance of dceMCastMacGroupList on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Active=None, InterGrpUcastAddrIncr=None, McastAddrCnt=None, McastAddrIncr=None, SrcGrpMapping=None, StartMcastAddr=None, StartUcastAddr=None, TopologyId=None, UcastAddrIncr=None, UcastSrcCnt=None, VlanId=None):
-		"""Base class infrastructure that gets a list of dceMCastMacGroupList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Active=None, InterGrpUcastAddrIncr=None, McastAddrCnt=None, McastAddrIncr=None, SrcGrpMapping=None, StartMcastAddr=None, StartUcastAddr=None, TopologyId=None, UcastAddrIncr=None, UcastSrcCnt=None, VlanId=None):
+        """Base class infrastructure that gets a list of dceMCastMacGroupList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			Active (str): optional regex of active
-			InterGrpUcastAddrIncr (str): optional regex of interGrpUcastAddrIncr
-			McastAddrCnt (str): optional regex of mcastAddrCnt
-			McastAddrIncr (str): optional regex of mcastAddrIncr
-			SrcGrpMapping (str): optional regex of srcGrpMapping
-			StartMcastAddr (str): optional regex of startMcastAddr
-			StartUcastAddr (str): optional regex of startUcastAddr
-			TopologyId (str): optional regex of topologyId
-			UcastAddrIncr (str): optional regex of ucastAddrIncr
-			UcastSrcCnt (str): optional regex of ucastSrcCnt
-			VlanId (str): optional regex of vlanId
+        Args:
+            PortNames (str): optional regex of port names
+            Active (str): optional regex of active
+            InterGrpUcastAddrIncr (str): optional regex of interGrpUcastAddrIncr
+            McastAddrCnt (str): optional regex of mcastAddrCnt
+            McastAddrIncr (str): optional regex of mcastAddrIncr
+            SrcGrpMapping (str): optional regex of srcGrpMapping
+            StartMcastAddr (str): optional regex of startMcastAddr
+            StartUcastAddr (str): optional regex of startUcastAddr
+            TopologyId (str): optional regex of topologyId
+            UcastAddrIncr (str): optional regex of ucastAddrIncr
+            UcastSrcCnt (str): optional regex of ucastSrcCnt
+            VlanId (str): optional regex of vlanId
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

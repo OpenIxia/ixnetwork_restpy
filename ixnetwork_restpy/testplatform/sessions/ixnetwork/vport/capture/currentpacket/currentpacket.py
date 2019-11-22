@@ -18,77 +18,77 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class CurrentPacket(Base):
-	"""This object specifies current packet properties.
-	The CurrentPacket class encapsulates a required currentPacket resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object specifies current packet properties.
+    The CurrentPacket class encapsulates a required currentPacket resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'currentPacket'
+    __slots__ = ()
+    _SDM_NAME = 'currentPacket'
 
-	def __init__(self, parent):
-		super(CurrentPacket, self).__init__(parent)
+    def __init__(self, parent):
+        super(CurrentPacket, self).__init__(parent)
 
-	@property
-	def Stack(self):
-		"""An instance of the Stack class.
+    @property
+    def Stack(self):
+        """An instance of the Stack class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack.Stack)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack.Stack)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
-		return Stack(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
+        return Stack(self)
 
-	@property
-	def PacketHex(self):
-		"""Gets the packet hex of the current packet
+    @property
+    def PacketHex(self):
+        """Gets the packet hex of the current packet
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('packetHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('packetHex')
 
-	def GetPacketFromControlCapture(self, *args, **kwargs):
-		"""Executes the getPacketFromControlCapture operation on the server.
+    def GetPacketFromControlCapture(self, *args, **kwargs):
+        """Executes the getPacketFromControlCapture operation on the server.
 
-		The command retrieves a packet from the control capture started on a port.
+        The command retrieves a packet from the control capture started on a port.
 
-		getPacketFromControlCapture(Arg2:number)
-			Args:
-				args[0] is Arg2 (number): The packet index.
+        getPacketFromControlCapture(Arg2:number)
+            Args:
+                args[0] is Arg2 (number): The packet index.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('getPacketFromControlCapture', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPacketFromControlCapture', payload=payload, response_object=None)
 
-	def GetPacketFromDataCapture(self, *args, **kwargs):
-		"""Executes the getPacketFromDataCapture operation on the server.
+    def GetPacketFromDataCapture(self, *args, **kwargs):
+        """Executes the getPacketFromDataCapture operation on the server.
 
-		The command retrieves a packet from the data capture started on a port.
+        The command retrieves a packet from the data capture started on a port.
 
-		getPacketFromDataCapture(Arg2:number)
-			Args:
-				args[0] is Arg2 (number): The packet index.
+        getPacketFromDataCapture(Arg2:number)
+            Args:
+                args[0] is Arg2 (number): The packet index.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('getPacketFromDataCapture', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPacketFromDataCapture', payload=payload, response_object=None)

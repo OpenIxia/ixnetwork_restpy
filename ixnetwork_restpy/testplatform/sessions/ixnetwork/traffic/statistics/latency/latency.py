@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Latency(Base):
-	"""This object sets the latency mode to fetch related statistics for each mode.
-	The Latency class encapsulates a required latency resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object sets the latency mode to fetch related statistics for each mode.
+    The Latency class encapsulates a required latency resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'latency'
+    __slots__ = ()
+    _SDM_NAME = 'latency'
 
-	def __init__(self, parent):
-		super(Latency, self).__init__(parent)
+    def __init__(self, parent):
+        super(Latency, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If true, latency statistics is enabled and if false, latency statistics is disabled.
+    @property
+    def Enabled(self):
+        """If true, latency statistics is enabled and if false, latency statistics is disabled.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def Mode(self):
-		"""Latency statistics is generated according to the mode set if latency is enabled.
+    @property
+    def Mode(self):
+        """Latency statistics is generated according to the mode set if latency is enabled.
 
-		Returns:
-			str(cutThrough|forwardingDelay|mef|storeForward)
-		"""
-		return self._get_attribute('mode')
-	@Mode.setter
-	def Mode(self, value):
-		self._set_attribute('mode', value)
+        Returns:
+            str(cutThrough|forwardingDelay|mef|storeForward)
+        """
+        return self._get_attribute('mode')
+    @Mode.setter
+    def Mode(self, value):
+        self._set_attribute('mode', value)
 
-	def update(self, Enabled=None, Mode=None):
-		"""Updates a child instance of latency on the server.
+    def update(self, Enabled=None, Mode=None):
+        """Updates a child instance of latency on the server.
 
-		Args:
-			Enabled (bool): If true, latency statistics is enabled and if false, latency statistics is disabled.
-			Mode (str(cutThrough|forwardingDelay|mef|storeForward)): Latency statistics is generated according to the mode set if latency is enabled.
+        Args:
+            Enabled (bool): If true, latency statistics is enabled and if false, latency statistics is disabled.
+            Mode (str(cutThrough|forwardingDelay|mef|storeForward)): Latency statistics is generated according to the mode set if latency is enabled.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

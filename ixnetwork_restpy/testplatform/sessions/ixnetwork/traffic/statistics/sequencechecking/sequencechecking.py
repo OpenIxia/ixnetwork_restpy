@@ -18,67 +18,67 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SequenceChecking(Base):
-	"""This object fetches sequence checking statistics.
-	The SequenceChecking class encapsulates a required sequenceChecking resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object fetches sequence checking statistics.
+    The SequenceChecking class encapsulates a required sequenceChecking resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'sequenceChecking'
+    __slots__ = ()
+    _SDM_NAME = 'sequenceChecking'
 
-	def __init__(self, parent):
-		super(SequenceChecking, self).__init__(parent)
+    def __init__(self, parent):
+        super(SequenceChecking, self).__init__(parent)
 
-	@property
-	def AdvancedSequenceThreshold(self):
-		"""DEPRECATED Checks the sequence.
+    @property
+    def AdvancedSequenceThreshold(self):
+        """DEPRECATED Checks the sequence.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('advancedSequenceThreshold')
-	@AdvancedSequenceThreshold.setter
-	def AdvancedSequenceThreshold(self, value):
-		self._set_attribute('advancedSequenceThreshold', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('advancedSequenceThreshold')
+    @AdvancedSequenceThreshold.setter
+    def AdvancedSequenceThreshold(self, value):
+        self._set_attribute('advancedSequenceThreshold', value)
 
-	@property
-	def Enabled(self):
-		"""If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
+    @property
+    def Enabled(self):
+        """If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def SequenceMode(self):
-		"""The mode to conduct sequence checking.
+    @property
+    def SequenceMode(self):
+        """The mode to conduct sequence checking.
 
-		Returns:
-			str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)
-		"""
-		return self._get_attribute('sequenceMode')
-	@SequenceMode.setter
-	def SequenceMode(self, value):
-		self._set_attribute('sequenceMode', value)
+        Returns:
+            str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)
+        """
+        return self._get_attribute('sequenceMode')
+    @SequenceMode.setter
+    def SequenceMode(self, value):
+        self._set_attribute('sequenceMode', value)
 
-	def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
-		"""Updates a child instance of sequenceChecking on the server.
+    def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
+        """Updates a child instance of sequenceChecking on the server.
 
-		Args:
-			AdvancedSequenceThreshold (number): Checks the sequence.
-			Enabled (bool): If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
-			SequenceMode (str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)): The mode to conduct sequence checking.
+        Args:
+            AdvancedSequenceThreshold (number): Checks the sequence.
+            Enabled (bool): If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
+            SequenceMode (str(advanced|rxPacketArrival|rxSwitchedPath|rxThreshold)): The mode to conduct sequence checking.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

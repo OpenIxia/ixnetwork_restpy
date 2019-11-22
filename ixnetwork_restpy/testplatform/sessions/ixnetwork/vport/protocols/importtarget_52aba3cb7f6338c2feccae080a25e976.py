@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class ImportTarget(Base):
-	"""This object controls the configuration of L3 Site imported targets.
-	The ImportTarget class encapsulates a required importTarget resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object controls the configuration of L3 Site imported targets.
+    The ImportTarget class encapsulates a required importTarget resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'importTarget'
+    __slots__ = ()
+    _SDM_NAME = 'importTarget'
 
-	def __init__(self, parent):
-		super(ImportTarget, self).__init__(parent)
+    def __init__(self, parent):
+        super(ImportTarget, self).__init__(parent)
 
-	@property
-	def ImportTargetList(self):
-		"""DEPRECATED Configures a target attribute to be associated with advertised L3 VPN route ranges.
+    @property
+    def ImportTargetList(self):
+        """DEPRECATED Configures a target attribute to be associated with advertised L3 VPN route ranges.
 
-		Returns:
-			list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))
-		"""
-		return self._get_attribute('importTargetList')
-	@ImportTargetList.setter
-	def ImportTargetList(self, value):
-		self._set_attribute('importTargetList', value)
+        Returns:
+            list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))
+        """
+        return self._get_attribute('importTargetList')
+    @ImportTargetList.setter
+    def ImportTargetList(self, value):
+        self._set_attribute('importTargetList', value)
 
-	@property
-	def ImportTargetListEx(self):
-		"""Configures a list of export targets to be associated with advertised L3 VPN routeranges.
+    @property
+    def ImportTargetListEx(self):
+        """Configures a list of export targets to be associated with advertised L3 VPN routeranges.
 
-		Returns:
-			list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
-		"""
-		return self._get_attribute('importTargetListEx')
-	@ImportTargetListEx.setter
-	def ImportTargetListEx(self, value):
-		self._set_attribute('importTargetListEx', value)
+        Returns:
+            list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
+        """
+        return self._get_attribute('importTargetListEx')
+    @ImportTargetListEx.setter
+    def ImportTargetListEx(self, value):
+        self._set_attribute('importTargetListEx', value)
 
-	def update(self, ImportTargetList=None, ImportTargetListEx=None):
-		"""Updates a child instance of importTarget on the server.
+    def update(self, ImportTargetList=None, ImportTargetListEx=None):
+        """Updates a child instance of importTarget on the server.
 
-		Args:
-			ImportTargetList (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
-			ImportTargetListEx (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN routeranges.
+        Args:
+            ImportTargetList (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number))): Configures a target attribute to be associated with advertised L3 VPN route ranges.
+            ImportTargetListEx (list(dict(arg1:str[as|ip|asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a list of export targets to be associated with advertised L3 VPN routeranges.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

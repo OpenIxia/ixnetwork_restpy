@@ -18,150 +18,150 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class MeterConfigStatsBandLearnedInformation(Base):
-	"""NOT DEFINED
-	The MeterConfigStatsBandLearnedInformation class encapsulates a list of meterConfigStatsBandLearnedInformation resources that is managed by the system.
-	A list of resources can be retrieved from the server using the MeterConfigStatsBandLearnedInformation.find() method.
-	"""
+    """NOT DEFINED
+    The MeterConfigStatsBandLearnedInformation class encapsulates a list of meterConfigStatsBandLearnedInformation resources that is managed by the system.
+    A list of resources can be retrieved from the server using the MeterConfigStatsBandLearnedInformation.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'meterConfigStatsBandLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'meterConfigStatsBandLearnedInformation'
 
-	def __init__(self, parent):
-		super(MeterConfigStatsBandLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(MeterConfigStatsBandLearnedInformation, self).__init__(parent)
 
-	@property
-	def BurstSize(self):
-		"""Specifies the Burst Size
+    @property
+    def BurstSize(self):
+        """Specifies the Burst Size
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('burstSize')
+        Returns:
+            number
+        """
+        return self._get_attribute('burstSize')
 
-	@property
-	def DataPathId(self):
-		"""The Data Path identifier of the OpenFlow Controller.
+    @property
+    def DataPathId(self):
+        """The Data Path identifier of the OpenFlow Controller.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('dataPathId')
+        Returns:
+            number
+        """
+        return self._get_attribute('dataPathId')
 
-	@property
-	def DataPathIdAsHex(self):
-		"""The Data Path identifier of the OpenFlow Controller in hexadecimal format.
+    @property
+    def DataPathIdAsHex(self):
+        """The Data Path identifier of the OpenFlow Controller in hexadecimal format.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathIdAsHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathIdAsHex')
 
-	@property
-	def Experimenter(self):
-		"""Specifies the Experimenter Value
+    @property
+    def Experimenter(self):
+        """Specifies the Experimenter Value
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenter')
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenter')
 
-	@property
-	def LocalIp(self):
-		"""Indicates the local IP of the Controller.
+    @property
+    def LocalIp(self):
+        """Indicates the local IP of the Controller.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('localIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('localIp')
 
-	@property
-	def MeterId(self):
-		"""Specifies Meter Id
+    @property
+    def MeterId(self):
+        """Specifies Meter Id
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('meterId')
+        Returns:
+            number
+        """
+        return self._get_attribute('meterId')
 
-	@property
-	def PrecedenceLevel(self):
-		"""Specifies the Precedence Level Value
+    @property
+    def PrecedenceLevel(self):
+        """Specifies the Precedence Level Value
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('precedenceLevel')
+        Returns:
+            str
+        """
+        return self._get_attribute('precedenceLevel')
 
-	@property
-	def Rate(self):
-		"""Specifies the rate
+    @property
+    def Rate(self):
+        """Specifies the rate
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rate')
+        Returns:
+            number
+        """
+        return self._get_attribute('rate')
 
-	@property
-	def RemoteIp(self):
-		"""The Remote IP address of the selected interface.
+    @property
+    def RemoteIp(self):
+        """The Remote IP address of the selected interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
 
-	@property
-	def Type(self):
-		"""Specifies the Band Type
+    @property
+    def Type(self):
+        """Specifies the Band Type
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('type')
+        Returns:
+            str
+        """
+        return self._get_attribute('type')
 
-	def find(self, BurstSize=None, DataPathId=None, DataPathIdAsHex=None, Experimenter=None, LocalIp=None, MeterId=None, PrecedenceLevel=None, Rate=None, RemoteIp=None, Type=None):
-		"""Finds and retrieves meterConfigStatsBandLearnedInformation data from the server.
+    def find(self, BurstSize=None, DataPathId=None, DataPathIdAsHex=None, Experimenter=None, LocalIp=None, MeterId=None, PrecedenceLevel=None, Rate=None, RemoteIp=None, Type=None):
+        """Finds and retrieves meterConfigStatsBandLearnedInformation data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve meterConfigStatsBandLearnedInformation data from the server.
-		By default the find method takes no parameters and will retrieve all meterConfigStatsBandLearnedInformation data from the server.
+        All named parameters support regex and can be used to selectively retrieve meterConfigStatsBandLearnedInformation data from the server.
+        By default the find method takes no parameters and will retrieve all meterConfigStatsBandLearnedInformation data from the server.
 
-		Args:
-			BurstSize (number): Specifies the Burst Size
-			DataPathId (number): The Data Path identifier of the OpenFlow Controller.
-			DataPathIdAsHex (str): The Data Path identifier of the OpenFlow Controller in hexadecimal format.
-			Experimenter (str): Specifies the Experimenter Value
-			LocalIp (str): Indicates the local IP of the Controller.
-			MeterId (number): Specifies Meter Id
-			PrecedenceLevel (str): Specifies the Precedence Level Value
-			Rate (number): Specifies the rate
-			RemoteIp (str): The Remote IP address of the selected interface.
-			Type (str): Specifies the Band Type
+        Args:
+            BurstSize (number): Specifies the Burst Size
+            DataPathId (number): The Data Path identifier of the OpenFlow Controller.
+            DataPathIdAsHex (str): The Data Path identifier of the OpenFlow Controller in hexadecimal format.
+            Experimenter (str): Specifies the Experimenter Value
+            LocalIp (str): Indicates the local IP of the Controller.
+            MeterId (number): Specifies Meter Id
+            PrecedenceLevel (str): Specifies the Precedence Level Value
+            Rate (number): Specifies the rate
+            RemoteIp (str): The Remote IP address of the selected interface.
+            Type (str): Specifies the Band Type
 
-		Returns:
-			self: This instance with matching meterConfigStatsBandLearnedInformation data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching meterConfigStatsBandLearnedInformation data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of meterConfigStatsBandLearnedInformation data from the server.
+    def read(self, href):
+        """Retrieves a single instance of meterConfigStatsBandLearnedInformation data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the meterConfigStatsBandLearnedInformation data from the server available through an iterator or index
+        Returns:
+            self: This instance with the meterConfigStatsBandLearnedInformation data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

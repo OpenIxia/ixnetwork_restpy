@@ -18,62 +18,62 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Defaults(Base):
-	"""Default Tlv template container
-	The Defaults class encapsulates a list of defaults resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Defaults.find() method.
-	"""
+    """Default Tlv template container
+    The Defaults class encapsulates a list of defaults resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Defaults.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'defaults'
+    __slots__ = ()
+    _SDM_NAME = 'defaults'
 
-	def __init__(self, parent):
-		super(Defaults, self).__init__(parent)
+    def __init__(self, parent):
+        super(Defaults, self).__init__(parent)
 
-	@property
-	def Template(self):
-		"""An instance of the Template class.
+    @property
+    def Template(self):
+        """An instance of the Template class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template.Template)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template.Template)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template import Template
-		return Template(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template import Template
+        return Template(self)
 
-	def find(self):
-		"""Finds and retrieves defaults data from the server.
+    def find(self):
+        """Finds and retrieves defaults data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve defaults data from the server.
-		By default the find method takes no parameters and will retrieve all defaults data from the server.
+        All named parameters support regex and can be used to selectively retrieve defaults data from the server.
+        By default the find method takes no parameters and will retrieve all defaults data from the server.
 
-		Returns:
-			self: This instance with matching defaults data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching defaults data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of defaults data from the server.
+    def read(self, href):
+        """Retrieves a single instance of defaults data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the defaults data from the server available through an iterator or index
+        Returns:
+            self: This instance with the defaults data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

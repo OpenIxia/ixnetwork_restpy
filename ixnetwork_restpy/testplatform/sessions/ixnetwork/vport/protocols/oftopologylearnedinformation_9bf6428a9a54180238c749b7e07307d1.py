@@ -18,118 +18,118 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class OfTopologyLearnedInformation(Base):
-	"""This object allows to configure the OF Toplogy Learned Information parameters.
-	The OfTopologyLearnedInformation class encapsulates a required ofTopologyLearnedInformation resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object allows to configure the OF Toplogy Learned Information parameters.
+    The OfTopologyLearnedInformation class encapsulates a required ofTopologyLearnedInformation resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ofTopologyLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'ofTopologyLearnedInformation'
 
-	def __init__(self, parent):
-		super(OfTopologyLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(OfTopologyLearnedInformation, self).__init__(parent)
 
-	@property
-	def TopologyLearnedInfo(self):
-		"""An instance of the TopologyLearnedInfo class.
+    @property
+    def TopologyLearnedInfo(self):
+        """An instance of the TopologyLearnedInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210.TopologyLearnedInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210.TopologyLearnedInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210 import TopologyLearnedInfo
-		return TopologyLearnedInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_fff85e03670631d1457334fda0234210 import TopologyLearnedInfo
+        return TopologyLearnedInfo(self)
 
-	@property
-	def EnableInstallLldpFlow(self):
-		"""If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
+    @property
+    def EnableInstallLldpFlow(self):
+        """If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableInstallLldpFlow')
-	@EnableInstallLldpFlow.setter
-	def EnableInstallLldpFlow(self, value):
-		self._set_attribute('enableInstallLldpFlow', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableInstallLldpFlow')
+    @EnableInstallLldpFlow.setter
+    def EnableInstallLldpFlow(self, value):
+        self._set_attribute('enableInstallLldpFlow', value)
 
-	@property
-	def EnableRefreshLldpLearnedInformation(self):
-		"""If true, the LLDP trigger configuration parameters are available.
+    @property
+    def EnableRefreshLldpLearnedInformation(self):
+        """If true, the LLDP trigger configuration parameters are available.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableRefreshLldpLearnedInformation')
-	@EnableRefreshLldpLearnedInformation.setter
-	def EnableRefreshLldpLearnedInformation(self, value):
-		self._set_attribute('enableRefreshLldpLearnedInformation', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableRefreshLldpLearnedInformation')
+    @EnableRefreshLldpLearnedInformation.setter
+    def EnableRefreshLldpLearnedInformation(self, value):
+        self._set_attribute('enableRefreshLldpLearnedInformation', value)
 
-	@property
-	def IsOfTopologyLearnedInformationRefreshed(self):
-		"""If true, it denotes that the Topology Learned Info is received.
+    @property
+    def IsOfTopologyLearnedInformationRefreshed(self):
+        """If true, it denotes that the Topology Learned Info is received.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isOfTopologyLearnedInformationRefreshed')
+        Returns:
+            bool
+        """
+        return self._get_attribute('isOfTopologyLearnedInformationRefreshed')
 
-	@property
-	def LldpDestinationMac(self):
-		"""Indicates the Destination MAC Address for LLDP PacketOut.
+    @property
+    def LldpDestinationMac(self):
+        """Indicates the Destination MAC Address for LLDP PacketOut.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('lldpDestinationMac')
-	@LldpDestinationMac.setter
-	def LldpDestinationMac(self, value):
-		self._set_attribute('lldpDestinationMac', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('lldpDestinationMac')
+    @LldpDestinationMac.setter
+    def LldpDestinationMac(self, value):
+        self._set_attribute('lldpDestinationMac', value)
 
-	@property
-	def LldpResponseTimeOut(self):
-		"""Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
+    @property
+    def LldpResponseTimeOut(self):
+        """Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('lldpResponseTimeOut')
-	@LldpResponseTimeOut.setter
-	def LldpResponseTimeOut(self, value):
-		self._set_attribute('lldpResponseTimeOut', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('lldpResponseTimeOut')
+    @LldpResponseTimeOut.setter
+    def LldpResponseTimeOut(self, value):
+        self._set_attribute('lldpResponseTimeOut', value)
 
-	def update(self, EnableInstallLldpFlow=None, EnableRefreshLldpLearnedInformation=None, LldpDestinationMac=None, LldpResponseTimeOut=None):
-		"""Updates a child instance of ofTopologyLearnedInformation on the server.
+    def update(self, EnableInstallLldpFlow=None, EnableRefreshLldpLearnedInformation=None, LldpDestinationMac=None, LldpResponseTimeOut=None):
+        """Updates a child instance of ofTopologyLearnedInformation on the server.
 
-		Args:
-			EnableInstallLldpFlow (bool): If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
-			EnableRefreshLldpLearnedInformation (bool): If true, the LLDP trigger configuration parameters are available.
-			LldpDestinationMac (str): Indicates the Destination MAC Address for LLDP PacketOut.
-			LldpResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
+        Args:
+            EnableInstallLldpFlow (bool): If true, Install Flow in Switch for LLDP Packets to explicitly send to Controller.
+            EnableRefreshLldpLearnedInformation (bool): If true, the LLDP trigger configuration parameters are available.
+            LldpDestinationMac (str): Indicates the Destination MAC Address for LLDP PacketOut.
+            LldpResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no Topology learned info response is received.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def RefreshOfTopology(self):
-		"""Executes the refreshOfTopology operation on the server.
+    def RefreshOfTopology(self):
+        """Executes the refreshOfTopology operation on the server.
 
-		Exec to refresh ofChannel topology.
+        Exec to refresh ofChannel topology.
 
-			Returns:
-				number: NOT DEFINED
+            Returns:
+                number: NOT DEFINED
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('refreshOfTopology', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('refreshOfTopology', payload=payload, response_object=None)

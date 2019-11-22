@@ -18,90 +18,90 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AvailableTrackingFilter(Base):
-	"""List of tracking available for filtering.
-	The AvailableTrackingFilter class encapsulates a list of availableTrackingFilter resources that is managed by the system.
-	A list of resources can be retrieved from the server using the AvailableTrackingFilter.find() method.
-	"""
+    """List of tracking available for filtering.
+    The AvailableTrackingFilter class encapsulates a list of availableTrackingFilter resources that is managed by the system.
+    A list of resources can be retrieved from the server using the AvailableTrackingFilter.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'availableTrackingFilter'
+    __slots__ = ()
+    _SDM_NAME = 'availableTrackingFilter'
 
-	def __init__(self, parent):
-		super(AvailableTrackingFilter, self).__init__(parent)
+    def __init__(self, parent):
+        super(AvailableTrackingFilter, self).__init__(parent)
 
-	@property
-	def Constraints(self):
-		"""Lists down the constraints associated with the available tracking filter list.
+    @property
+    def Constraints(self):
+        """Lists down the constraints associated with the available tracking filter list.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('constraints')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('constraints')
 
-	@property
-	def Name(self):
-		"""Displays the name of the tracking filter.
+    @property
+    def Name(self):
+        """Displays the name of the tracking filter.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
 
-	@property
-	def TrackingType(self):
-		"""Indicates the tracking type.
+    @property
+    def TrackingType(self):
+        """Indicates the tracking type.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('trackingType')
+        Returns:
+            str
+        """
+        return self._get_attribute('trackingType')
 
-	@property
-	def ValueType(self):
-		"""Value of tracking to be matched based on operator.
+    @property
+    def ValueType(self):
+        """Value of tracking to be matched based on operator.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('valueType')
+        Returns:
+            str
+        """
+        return self._get_attribute('valueType')
 
-	def find(self, Constraints=None, Name=None, TrackingType=None, ValueType=None):
-		"""Finds and retrieves availableTrackingFilter data from the server.
+    def find(self, Constraints=None, Name=None, TrackingType=None, ValueType=None):
+        """Finds and retrieves availableTrackingFilter data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve availableTrackingFilter data from the server.
-		By default the find method takes no parameters and will retrieve all availableTrackingFilter data from the server.
+        All named parameters support regex and can be used to selectively retrieve availableTrackingFilter data from the server.
+        By default the find method takes no parameters and will retrieve all availableTrackingFilter data from the server.
 
-		Args:
-			Constraints (list(str)): Lists down the constraints associated with the available tracking filter list.
-			Name (str): Displays the name of the tracking filter.
-			TrackingType (str): Indicates the tracking type.
-			ValueType (str): Value of tracking to be matched based on operator.
+        Args:
+            Constraints (list(str)): Lists down the constraints associated with the available tracking filter list.
+            Name (str): Displays the name of the tracking filter.
+            TrackingType (str): Indicates the tracking type.
+            ValueType (str): Value of tracking to be matched based on operator.
 
-		Returns:
-			self: This instance with matching availableTrackingFilter data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching availableTrackingFilter data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of availableTrackingFilter data from the server.
+    def read(self, href):
+        """Retrieves a single instance of availableTrackingFilter data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the availableTrackingFilter data from the server available through an iterator or index
+        Returns:
+            self: This instance with the availableTrackingFilter data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -4,6 +4,7 @@ from ixnetwork_restpy.base import Base
 class Select(object):
     """ Select infrastructure
 
+    e.g.,
     POST .../operations/select
     {
         "selects": [

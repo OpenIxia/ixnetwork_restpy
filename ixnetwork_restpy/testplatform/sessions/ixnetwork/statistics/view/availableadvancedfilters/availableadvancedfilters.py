@@ -18,70 +18,70 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AvailableAdvancedFilters(Base):
-	"""Represents the id of an advanced filter.
-	The AvailableAdvancedFilters class encapsulates a list of availableAdvancedFilters resources that is managed by the system.
-	A list of resources can be retrieved from the server using the AvailableAdvancedFilters.find() method.
-	"""
+    """Represents the id of an advanced filter.
+    The AvailableAdvancedFilters class encapsulates a list of availableAdvancedFilters resources that is managed by the system.
+    A list of resources can be retrieved from the server using the AvailableAdvancedFilters.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'availableAdvancedFilters'
+    __slots__ = ()
+    _SDM_NAME = 'availableAdvancedFilters'
 
-	def __init__(self, parent):
-		super(AvailableAdvancedFilters, self).__init__(parent)
+    def __init__(self, parent):
+        super(AvailableAdvancedFilters, self).__init__(parent)
 
-	@property
-	def Expression(self):
-		"""Allows you to get the filter expression or the body from the id.
+    @property
+    def Expression(self):
+        """Allows you to get the filter expression or the body from the id.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('expression')
+        Returns:
+            str
+        """
+        return self._get_attribute('expression')
 
-	@property
-	def Name(self):
-		"""Allows you to get the filter name from the id.
+    @property
+    def Name(self):
+        """Allows you to get the filter name from the id.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
 
-	def find(self, Expression=None, Name=None):
-		"""Finds and retrieves availableAdvancedFilters data from the server.
+    def find(self, Expression=None, Name=None):
+        """Finds and retrieves availableAdvancedFilters data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve availableAdvancedFilters data from the server.
-		By default the find method takes no parameters and will retrieve all availableAdvancedFilters data from the server.
+        All named parameters support regex and can be used to selectively retrieve availableAdvancedFilters data from the server.
+        By default the find method takes no parameters and will retrieve all availableAdvancedFilters data from the server.
 
-		Args:
-			Expression (str): Allows you to get the filter expression or the body from the id.
-			Name (str): Allows you to get the filter name from the id.
+        Args:
+            Expression (str): Allows you to get the filter expression or the body from the id.
+            Name (str): Allows you to get the filter name from the id.
 
-		Returns:
-			self: This instance with matching availableAdvancedFilters data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching availableAdvancedFilters data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of availableAdvancedFilters data from the server.
+    def read(self, href):
+        """Retrieves a single instance of availableAdvancedFilters data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the availableAdvancedFilters data from the server available through an iterator or index
+        Returns:
+            self: This instance with the availableAdvancedFilters data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

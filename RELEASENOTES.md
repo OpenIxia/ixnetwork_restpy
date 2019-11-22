@@ -1,6 +1,9 @@
 # Release Notes
 
 ### Nov 2019
+* 1.0.47
+  * fixed class generation, invalid property names, docstrings, normalized line endings
+  * RELEASENOTES.md included in distributions
 * 1.0.46
   * QuickTest TestConfig classes are now supported
   * added additional logging levels (info, warn, all), the default logging level is TestPlatform.NONE

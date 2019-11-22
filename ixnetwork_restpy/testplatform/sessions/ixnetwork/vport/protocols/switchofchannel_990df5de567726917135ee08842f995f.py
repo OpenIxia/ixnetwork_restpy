@@ -18,142 +18,142 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SwitchOfChannel(Base):
-	"""A high level object that allows to define the OpenFlow Channel configurations for the switch.
-	The SwitchOfChannel class encapsulates a list of switchOfChannel resources that is be managed by the user.
-	A list of resources can be retrieved from the server using the SwitchOfChannel.find() method.
-	The list can be managed by the user by using the SwitchOfChannel.add() and SwitchOfChannel.remove() methods.
-	"""
+    """A high level object that allows to define the OpenFlow Channel configurations for the switch.
+    The SwitchOfChannel class encapsulates a list of switchOfChannel resources that is be managed by the user.
+    A list of resources can be retrieved from the server using the SwitchOfChannel.find() method.
+    The list can be managed by the user by using the SwitchOfChannel.add() and SwitchOfChannel.remove() methods.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'switchOfChannel'
+    __slots__ = ()
+    _SDM_NAME = 'switchOfChannel'
 
-	def __init__(self, parent):
-		super(SwitchOfChannel, self).__init__(parent)
+    def __init__(self, parent):
+        super(SwitchOfChannel, self).__init__(parent)
 
-	@property
-	def AuxiliaryConnection(self):
-		"""An instance of the AuxiliaryConnection class.
+    @property
+    def AuxiliaryConnection(self):
+        """An instance of the AuxiliaryConnection class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_69417c1481d9ad6f304bcecb3ab3d1c5.AuxiliaryConnection)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_69417c1481d9ad6f304bcecb3ab3d1c5.AuxiliaryConnection)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_69417c1481d9ad6f304bcecb3ab3d1c5 import AuxiliaryConnection
-		return AuxiliaryConnection(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_69417c1481d9ad6f304bcecb3ab3d1c5 import AuxiliaryConnection
+        return AuxiliaryConnection(self)
 
-	@property
-	def Description(self):
-		"""A description of the object
+    @property
+    def Description(self):
+        """A description of the object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('description')
-	@Description.setter
-	def Description(self, value):
-		self._set_attribute('description', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('description')
+    @Description.setter
+    def Description(self, value):
+        self._set_attribute('description', value)
 
-	@property
-	def Enabled(self):
-		"""If true, the object is enabled.
+    @property
+    def Enabled(self):
+        """If true, the object is enabled.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def RemoteIp(self):
-		"""Signifies the Remote IP address of the selected interface.
+    @property
+    def RemoteIp(self):
+        """Signifies the Remote IP address of the selected interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
-	@RemoteIp.setter
-	def RemoteIp(self, value):
-		self._set_attribute('remoteIp', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
+    @RemoteIp.setter
+    def RemoteIp(self, value):
+        self._set_attribute('remoteIp', value)
 
-	def update(self, Description=None, Enabled=None, RemoteIp=None):
-		"""Updates a child instance of switchOfChannel on the server.
+    def update(self, Description=None, Enabled=None, RemoteIp=None):
+        """Updates a child instance of switchOfChannel on the server.
 
-		Args:
-			Description (str): A description of the object
-			Enabled (bool): If true, the object is enabled.
-			RemoteIp (str): Signifies the Remote IP address of the selected interface.
+        Args:
+            Description (str): A description of the object
+            Enabled (bool): If true, the object is enabled.
+            RemoteIp (str): Signifies the Remote IP address of the selected interface.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def add(self, Description=None, Enabled=None, RemoteIp=None):
-		"""Adds a new switchOfChannel node on the server and retrieves it in this instance.
+    def add(self, Description=None, Enabled=None, RemoteIp=None):
+        """Adds a new switchOfChannel node on the server and retrieves it in this instance.
 
-		Args:
-			Description (str): A description of the object
-			Enabled (bool): If true, the object is enabled.
-			RemoteIp (str): Signifies the Remote IP address of the selected interface.
+        Args:
+            Description (str): A description of the object
+            Enabled (bool): If true, the object is enabled.
+            RemoteIp (str): Signifies the Remote IP address of the selected interface.
 
-		Returns:
-			self: This instance with all currently retrieved switchOfChannel data using find and the newly added switchOfChannel data available through an iterator or index
+        Returns:
+            self: This instance with all currently retrieved switchOfChannel data using find and the newly added switchOfChannel data available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(locals())
 
-	def remove(self):
-		"""Deletes all the switchOfChannel data in this instance from server.
+    def remove(self):
+        """Deletes all the switchOfChannel data in this instance from server.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
-	def find(self, Description=None, Enabled=None, RemoteIp=None):
-		"""Finds and retrieves switchOfChannel data from the server.
+    def find(self, Description=None, Enabled=None, RemoteIp=None):
+        """Finds and retrieves switchOfChannel data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve switchOfChannel data from the server.
-		By default the find method takes no parameters and will retrieve all switchOfChannel data from the server.
+        All named parameters support regex and can be used to selectively retrieve switchOfChannel data from the server.
+        By default the find method takes no parameters and will retrieve all switchOfChannel data from the server.
 
-		Args:
-			Description (str): A description of the object
-			Enabled (bool): If true, the object is enabled.
-			RemoteIp (str): Signifies the Remote IP address of the selected interface.
+        Args:
+            Description (str): A description of the object
+            Enabled (bool): If true, the object is enabled.
+            RemoteIp (str): Signifies the Remote IP address of the selected interface.
 
-		Returns:
-			self: This instance with matching switchOfChannel data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching switchOfChannel data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of switchOfChannel data from the server.
+    def read(self, href):
+        """Retrieves a single instance of switchOfChannel data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the switchOfChannel data from the server available through an iterator or index
+        Returns:
+            self: This instance with the switchOfChannel data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class L1Rates(Base):
-	"""Layer 1 rates.
-	The L1Rates class encapsulates a required l1Rates resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Layer 1 rates.
+    The L1Rates class encapsulates a required l1Rates resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'l1Rates'
+    __slots__ = ()
+    _SDM_NAME = 'l1Rates'
 
-	def __init__(self, parent):
-		super(L1Rates, self).__init__(parent)
+    def __init__(self, parent):
+        super(L1Rates, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If true, enables layer 1 rates
+    @property
+    def Enabled(self):
+        """If true, enables layer 1 rates
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of l1Rates on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of l1Rates on the server.
 
-		Args:
-			Enabled (bool): If true, enables layer 1 rates
+        Args:
+            Enabled (bool): If true, enables layer 1 rates
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

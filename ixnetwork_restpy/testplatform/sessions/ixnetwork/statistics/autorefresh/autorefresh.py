@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AutoRefresh(Base):
-	"""NOT DEFINED
-	The AutoRefresh class encapsulates a required autoRefresh resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The AutoRefresh class encapsulates a required autoRefresh resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'autoRefresh'
+    __slots__ = ()
+    _SDM_NAME = 'autoRefresh'
 
-	def __init__(self, parent):
-		super(AutoRefresh, self).__init__(parent)
+    def __init__(self, parent):
+        super(AutoRefresh, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""NOT DEFINED
+    @property
+    def Enabled(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def MinRefreshInterval(self):
-		"""NOT DEFINED
+    @property
+    def MinRefreshInterval(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('minRefreshInterval')
-	@MinRefreshInterval.setter
-	def MinRefreshInterval(self, value):
-		self._set_attribute('minRefreshInterval', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('minRefreshInterval')
+    @MinRefreshInterval.setter
+    def MinRefreshInterval(self, value):
+        self._set_attribute('minRefreshInterval', value)
 
-	def update(self, Enabled=None, MinRefreshInterval=None):
-		"""Updates a child instance of autoRefresh on the server.
+    def update(self, Enabled=None, MinRefreshInterval=None):
+        """Updates a child instance of autoRefresh on the server.
 
-		Args:
-			Enabled (bool): NOT DEFINED
-			MinRefreshInterval (number): NOT DEFINED
+        Args:
+            Enabled (bool): NOT DEFINED
+            MinRefreshInterval (number): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

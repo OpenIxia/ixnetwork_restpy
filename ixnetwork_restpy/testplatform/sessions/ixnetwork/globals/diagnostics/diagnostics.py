@@ -18,32 +18,32 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Diagnostics(Base):
-	"""
-	The Diagnostics class encapsulates a required diagnostics resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The Diagnostics class encapsulates a required diagnostics resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'diagnostics'
+    __slots__ = ()
+    _SDM_NAME = 'diagnostics'
 
-	def __init__(self, parent):
-		super(Diagnostics, self).__init__(parent)
+    def __init__(self, parent):
+        super(Diagnostics, self).__init__(parent)
 
-	@property
-	def Cleanup(self):
-		"""An instance of the Cleanup class.
+    @property
+    def Cleanup(self):
+        """An instance of the Cleanup class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup.Cleanup)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup.Cleanup)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup import Cleanup
-		return Cleanup(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup import Cleanup
+        return Cleanup(self)._select()

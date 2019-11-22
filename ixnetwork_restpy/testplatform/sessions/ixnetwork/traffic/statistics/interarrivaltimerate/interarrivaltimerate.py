@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InterArrivalTimeRate(Base):
-	"""This object sets the inter arrival time delay of each packet.
-	The InterArrivalTimeRate class encapsulates a required interArrivalTimeRate resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object sets the inter arrival time delay of each packet.
+    The InterArrivalTimeRate class encapsulates a required interArrivalTimeRate resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'interArrivalTimeRate'
+    __slots__ = ()
+    _SDM_NAME = 'interArrivalTimeRate'
 
-	def __init__(self, parent):
-		super(InterArrivalTimeRate, self).__init__(parent)
+    def __init__(self, parent):
+        super(InterArrivalTimeRate, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If enabled, fetches inter-arrival time and rate statistics.
+    @property
+    def Enabled(self):
+        """If enabled, fetches inter-arrival time and rate statistics.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of interArrivalTimeRate on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of interArrivalTimeRate on the server.
 
-		Args:
-			Enabled (bool): If enabled, fetches inter-arrival time and rate statistics.
+        Args:
+            Enabled (bool): If enabled, fetches inter-arrival time and rate statistics.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

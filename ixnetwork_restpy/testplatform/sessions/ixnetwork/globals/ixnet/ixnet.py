@@ -18,36 +18,36 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Ixnet(Base):
-	"""This node tracks remote clients connected using the ixNet Service. Each client connection is being transported over an https websocket.
-	The Ixnet class encapsulates a required ixnet resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This node tracks remote clients connected using the ixNet Service. Each client connection is being transported over an https websocket.
+    The Ixnet class encapsulates a required ixnet resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ixnet'
+    __slots__ = ()
+    _SDM_NAME = 'ixnet'
 
-	def __init__(self, parent):
-		super(Ixnet, self).__init__(parent)
+    def __init__(self, parent):
+        super(Ixnet, self).__init__(parent)
 
-	@property
-	def ConnectedClients(self):
-		"""Returns the remote address and remote port for each of the currently connected ixNet clients.
+    @property
+    def ConnectedClients(self):
+        """Returns the remote address and remote port for each of the currently connected ixNet clients.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('connectedClients')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('connectedClients')
 
-	@property
-	def IsActive(self):
-		"""Returns true if any remote clients are connected, false if no remote clients are connected.
+    @property
+    def IsActive(self):
+        """Returns true if any remote clients are connected, false if no remote clients are connected.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isActive')
+        Returns:
+            bool
+        """
+        return self._get_attribute('isActive')

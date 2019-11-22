@@ -18,77 +18,77 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AppTypeRef(Base):
-	"""TLV Application Type
-	The AppTypeRef class encapsulates a required appTypeRef resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """TLV Application Type
+    The AppTypeRef class encapsulates a required appTypeRef resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'appTypeRef'
+    __slots__ = ()
+    _SDM_NAME = 'appTypeRef'
 
-	def __init__(self, parent):
-		super(AppTypeRef, self).__init__(parent)
+    def __init__(self, parent):
+        super(AppTypeRef, self).__init__(parent)
 
-	@property
-	def NacApps(self):
-		"""An instance of the NacApps class.
+    @property
+    def NacApps(self):
+        """An instance of the NacApps class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
-		return NacApps(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
+        return NacApps(self)
 
-	@property
-	def Name(self):
-		"""AppType Name.
+    @property
+    def Name(self):
+        """AppType Name.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def ObjectId(self):
-		"""Unique identifier for this object
+    @property
+    def ObjectId(self):
+        """Unique identifier for this object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('objectId')
+        Returns:
+            str
+        """
+        return self._get_attribute('objectId')
 
-	@property
-	def Value(self):
-		"""AppType ID.
+    @property
+    def Value(self):
+        """AppType ID.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Name=None, Value=None):
-		"""Updates a child instance of appTypeRef on the server.
+    def update(self, Name=None, Value=None):
+        """Updates a child instance of appTypeRef on the server.
 
-		Args:
-			Name (str): AppType Name.
-			Value (number): AppType ID.
+        Args:
+            Name (str): AppType Name.
+            Value (number): AppType ID.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

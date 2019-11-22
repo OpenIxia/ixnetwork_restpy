@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class UmhTarget(Base):
-	"""This object represent RT
-	The UmhTarget class encapsulates a required umhTarget resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object represent RT
+    The UmhTarget class encapsulates a required umhTarget resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'umhTarget'
+    __slots__ = ()
+    _SDM_NAME = 'umhTarget'
 
-	def __init__(self, parent):
-		super(UmhTarget, self).__init__(parent)
+    def __init__(self, parent):
+        super(UmhTarget, self).__init__(parent)
 
-	@property
-	def TargetList(self):
-		"""Configures a route target to be exported while advertising UMH routes
+    @property
+    def TargetList(self):
+        """Configures a route target to be exported while advertising UMH routes
 
-		Returns:
-			list(dict(arg1:str[asNumber2|as|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
-		"""
-		return self._get_attribute('targetList')
-	@TargetList.setter
-	def TargetList(self, value):
-		self._set_attribute('targetList', value)
+        Returns:
+            list(dict(arg1:str[asNumber2|as|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))
+        """
+        return self._get_attribute('targetList')
+    @TargetList.setter
+    def TargetList(self, value):
+        self._set_attribute('targetList', value)
 
-	def update(self, TargetList=None):
-		"""Updates a child instance of umhTarget on the server.
+    def update(self, TargetList=None):
+        """Updates a child instance of umhTarget on the server.
 
-		Args:
-			TargetList (list(dict(arg1:str[asNumber2|as|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a route target to be exported while advertising UMH routes
+        Args:
+            TargetList (list(dict(arg1:str[asNumber2|as|ip],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str))): Configures a route target to be exported while advertising UMH routes
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

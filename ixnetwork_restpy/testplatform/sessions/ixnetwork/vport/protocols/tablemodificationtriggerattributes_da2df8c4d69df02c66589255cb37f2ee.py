@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TableModificationTriggerAttributes(Base):
-	"""To modify the table config property, right click on any row in the grid, and select Table Modification Trigger. The Table Modification Trigger dialog appears.
-	The TableModificationTriggerAttributes class encapsulates a required tableModificationTriggerAttributes resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """To modify the table config property, right click on any row in the grid, and select Table Modification Trigger. The Table Modification Trigger dialog appears.
+    The TableModificationTriggerAttributes class encapsulates a required tableModificationTriggerAttributes resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'tableModificationTriggerAttributes'
+    __slots__ = ()
+    _SDM_NAME = 'tableModificationTriggerAttributes'
 
-	def __init__(self, parent):
-		super(TableModificationTriggerAttributes, self).__init__(parent)
+    def __init__(self, parent):
+        super(TableModificationTriggerAttributes, self).__init__(parent)
 
-	@property
-	def AllTables(self):
-		"""To apply the change to all tables.
+    @property
+    def AllTables(self):
+        """To apply the change to all tables.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('allTables')
-	@AllTables.setter
-	def AllTables(self, value):
-		self._set_attribute('allTables', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('allTables')
+    @AllTables.setter
+    def AllTables(self, value):
+        self._set_attribute('allTables', value)
 
-	@property
-	def Config(self):
-		"""2.Type the value of the Config.
+    @property
+    def Config(self):
+        """2.Type the value of the Config.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('config')
-	@Config.setter
-	def Config(self, value):
-		self._set_attribute('config', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('config')
+    @Config.setter
+    def Config(self, value):
+        self._set_attribute('config', value)
 
-	def update(self, AllTables=None, Config=None):
-		"""Updates a child instance of tableModificationTriggerAttributes on the server.
+    def update(self, AllTables=None, Config=None):
+        """Updates a child instance of tableModificationTriggerAttributes on the server.
 
-		Args:
-			AllTables (bool): To apply the change to all tables.
-			Config (number): 2.Type the value of the Config.
+        Args:
+            AllTables (bool): To apply the change to all tables.
+            Config (number): 2.Type the value of the Config.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

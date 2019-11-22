@@ -18,114 +18,114 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SwitchGroupBucketLearnedInfo(Base):
-	"""NOT DEFINED
-	The SwitchGroupBucketLearnedInfo class encapsulates a list of switchGroupBucketLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the SwitchGroupBucketLearnedInfo.find() method.
-	"""
+    """NOT DEFINED
+    The SwitchGroupBucketLearnedInfo class encapsulates a list of switchGroupBucketLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the SwitchGroupBucketLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'switchGroupBucketLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'switchGroupBucketLearnedInfo'
 
-	def __init__(self, parent):
-		super(SwitchGroupBucketLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(SwitchGroupBucketLearnedInfo, self).__init__(parent)
 
-	@property
-	def SwitchGroupActionLearnedInfo(self):
-		"""An instance of the SwitchGroupActionLearnedInfo class.
+    @property
+    def SwitchGroupActionLearnedInfo(self):
+        """An instance of the SwitchGroupActionLearnedInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee.SwitchGroupActionLearnedInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee.SwitchGroupActionLearnedInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee import SwitchGroupActionLearnedInfo
-		return SwitchGroupActionLearnedInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_7457797213ccff495afda86405ad44ee import SwitchGroupActionLearnedInfo
+        return SwitchGroupActionLearnedInfo(self)
 
-	@property
-	def ByteCount(self):
-		"""NOT DEFINED
+    @property
+    def ByteCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('byteCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('byteCount')
 
-	@property
-	def PacketCount(self):
-		"""NOT DEFINED
+    @property
+    def PacketCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('packetCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('packetCount')
 
-	@property
-	def WatchGroup(self):
-		"""NOT DEFINED
+    @property
+    def WatchGroup(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('watchGroup')
+        Returns:
+            number
+        """
+        return self._get_attribute('watchGroup')
 
-	@property
-	def WatchPort(self):
-		"""NOT DEFINED
+    @property
+    def WatchPort(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('watchPort')
+        Returns:
+            number
+        """
+        return self._get_attribute('watchPort')
 
-	@property
-	def Weight(self):
-		"""NOT DEFINED
+    @property
+    def Weight(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('weight')
+        Returns:
+            number
+        """
+        return self._get_attribute('weight')
 
-	def find(self, ByteCount=None, PacketCount=None, WatchGroup=None, WatchPort=None, Weight=None):
-		"""Finds and retrieves switchGroupBucketLearnedInfo data from the server.
+    def find(self, ByteCount=None, PacketCount=None, WatchGroup=None, WatchPort=None, Weight=None):
+        """Finds and retrieves switchGroupBucketLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve switchGroupBucketLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all switchGroupBucketLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve switchGroupBucketLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all switchGroupBucketLearnedInfo data from the server.
 
-		Args:
-			ByteCount (number): NOT DEFINED
-			PacketCount (number): NOT DEFINED
-			WatchGroup (number): NOT DEFINED
-			WatchPort (number): NOT DEFINED
-			Weight (number): NOT DEFINED
+        Args:
+            ByteCount (number): NOT DEFINED
+            PacketCount (number): NOT DEFINED
+            WatchGroup (number): NOT DEFINED
+            WatchPort (number): NOT DEFINED
+            Weight (number): NOT DEFINED
 
-		Returns:
-			self: This instance with matching switchGroupBucketLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching switchGroupBucketLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of switchGroupBucketLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of switchGroupBucketLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the switchGroupBucketLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the switchGroupBucketLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -18,173 +18,173 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Pppoxclient(Base):
-	"""PPPoX Client global and per-port settings
-	The Pppoxclient class encapsulates a required pppoxclient resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """PPPoX Client global and per-port settings
+    The Pppoxclient class encapsulates a required pppoxclient resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'pppoxclient'
+    __slots__ = ()
+    _SDM_NAME = 'pppoxclient'
 
-	def __init__(self, parent):
-		super(Pppoxclient, self).__init__(parent)
+    def __init__(self, parent):
+        super(Pppoxclient, self).__init__(parent)
 
-	@property
-	def SessionLifetime(self):
-		"""An instance of the SessionLifetime class.
+    @property
+    def SessionLifetime(self):
+        """An instance of the SessionLifetime class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime.SessionLifetime)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime.SessionLifetime)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime import SessionLifetime
-		return SessionLifetime(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.sessionlifetime.sessionlifetime import SessionLifetime
+        return SessionLifetime(self)._select()
 
-	@property
-	def StartRate(self):
-		"""An instance of the StartRate class.
+    @property
+    def StartRate(self):
+        """An instance of the StartRate class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate.StartRate)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate.StartRate)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate import StartRate
-		return StartRate(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.startrate.startrate import StartRate
+        return StartRate(self)._select()
 
-	@property
-	def StopRate(self):
-		"""An instance of the StopRate class.
+    @property
+    def StopRate(self):
+        """An instance of the StopRate class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate.StopRate)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate.StopRate)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate import StopRate
-		return StopRate(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pppoxclient.stoprate.stoprate import StopRate
+        return StopRate(self)._select()
 
-	@property
-	def TlvEditor(self):
-		"""An instance of the TlvEditor class.
+    @property
+    def TlvEditor(self):
+        """An instance of the TlvEditor class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
-		return TlvEditor(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
+        return TlvEditor(self)
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def CreateInterfaces(self):
-		"""Enable echo request/reply. This command applies only for PPPv4 clients.
+    @property
+    def CreateInterfaces(self):
+        """Enable echo request/reply. This command applies only for PPPv4 clients.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('createInterfaces')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('createInterfaces')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Ipv6GlobalAddressMode(self):
-		"""When PPP/L2TP is stacked under DHCP, this option selects the protocol used to set the IPv6 global address on the PPP/L2TP-IPv6CP interfaces.
+    @property
+    def Ipv6GlobalAddressMode(self):
+        """When PPP/L2TP is stacked under DHCP, this option selects the protocol used to set the IPv6 global address on the PPP/L2TP-IPv6CP interfaces.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ipv6GlobalAddressMode')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ipv6GlobalAddressMode')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def RaTimeout(self):
-		"""Time to wait (in seconds) for Router Advertisment before NCP up.
+    @property
+    def RaTimeout(self):
+        """Time to wait (in seconds) for Router Advertisment before NCP up.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('raTimeout')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('raTimeout')
 
-	@property
-	def RowNames(self):
-		"""Name of rows
+    @property
+    def RowNames(self):
+        """Name of rows
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('rowNames')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('rowNames')
 
-	def update(self, Name=None):
-		"""Updates a child instance of pppoxclient on the server.
+    def update(self, Name=None):
+        """Updates a child instance of pppoxclient on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, CreateInterfaces=None, Ipv6GlobalAddressMode=None, RaTimeout=None):
-		"""Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, CreateInterfaces=None, Ipv6GlobalAddressMode=None, RaTimeout=None):
+        """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			CreateInterfaces (str): optional regex of createInterfaces
-			Ipv6GlobalAddressMode (str): optional regex of ipv6GlobalAddressMode
-			RaTimeout (str): optional regex of raTimeout
+        Args:
+            PortNames (str): optional regex of port names
+            CreateInterfaces (str): optional regex of createInterfaces
+            Ipv6GlobalAddressMode (str): optional regex of ipv6GlobalAddressMode
+            RaTimeout (str): optional regex of raTimeout
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

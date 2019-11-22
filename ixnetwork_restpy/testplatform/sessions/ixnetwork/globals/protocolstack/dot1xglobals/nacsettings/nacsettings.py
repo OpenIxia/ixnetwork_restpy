@@ -18,83 +18,83 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class NacSettings(Base):
-	"""Nac Options
-	The NacSettings class encapsulates a required nacSettings resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Nac Options
+    The NacSettings class encapsulates a required nacSettings resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'nacSettings'
+    __slots__ = ()
+    _SDM_NAME = 'nacSettings'
 
-	def __init__(self, parent):
-		super(NacSettings, self).__init__(parent)
+    def __init__(self, parent):
+        super(NacSettings, self).__init__(parent)
 
-	@property
-	def NacPosture(self):
-		"""An instance of the NacPosture class.
+    @property
+    def NacPosture(self):
+        """An instance of the NacPosture class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacposture.nacposture.NacPosture)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacposture.nacposture.NacPosture)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacposture.nacposture import NacPosture
-		return NacPosture(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacposture.nacposture import NacPosture
+        return NacPosture(self)
 
-	@property
-	def NacSequence(self):
-		"""An instance of the NacSequence class.
+    @property
+    def NacSequence(self):
+        """An instance of the NacSequence class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsequence.nacsequence.NacSequence)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsequence.nacsequence.NacSequence)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsequence.nacsequence import NacSequence
-		return NacSequence(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsequence.nacsequence import NacSequence
+        return NacSequence(self)
 
-	@property
-	def NacTlv(self):
-		"""An instance of the NacTlv class.
+    @property
+    def NacTlv(self):
+        """An instance of the NacTlv class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.nactlv.NacTlv)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.nactlv.NacTlv)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.nactlv import NacTlv
-		return NacTlv(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.nactlv import NacTlv
+        return NacTlv(self)
 
-	@property
-	def NacVendors(self):
-		"""An instance of the NacVendors class.
+    @property
+    def NacVendors(self):
+        """An instance of the NacVendors class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nacvendors.NacVendors)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nacvendors.NacVendors)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nacvendors import NacVendors
-		return NacVendors(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nacvendors import NacVendors
+        return NacVendors(self)
 
-	@property
-	def ObjectId(self):
-		"""Unique identifier for this object
+    @property
+    def ObjectId(self):
+        """Unique identifier for this object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('objectId')
+        Returns:
+            str
+        """
+        return self._get_attribute('objectId')

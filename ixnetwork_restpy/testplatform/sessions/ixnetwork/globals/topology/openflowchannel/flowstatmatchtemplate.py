@@ -18,46 +18,46 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FlowStatMatchTemplate(Base):
-	"""Global data for OFMatch template data extension.
-	The FlowStatMatchTemplate class encapsulates a required flowStatMatchTemplate resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Global data for OFMatch template data extension.
+    The FlowStatMatchTemplate class encapsulates a required flowStatMatchTemplate resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'flowStatMatchTemplate'
+    __slots__ = ()
+    _SDM_NAME = 'flowStatMatchTemplate'
 
-	def __init__(self, parent):
-		super(FlowStatMatchTemplate, self).__init__(parent)
+    def __init__(self, parent):
+        super(FlowStatMatchTemplate, self).__init__(parent)
 
-	@property
-	def MatchTemplate(self):
-		"""An instance of the MatchTemplate class.
+    @property
+    def MatchTemplate(self):
+        """An instance of the MatchTemplate class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate.MatchTemplate)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate.MatchTemplate)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate import MatchTemplate
-		return MatchTemplate(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate import MatchTemplate
+        return MatchTemplate(self)
 
-	@property
-	def Predefined(self):
-		"""An instance of the Predefined class.
+    @property
+    def Predefined(self):
+        """An instance of the Predefined class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined.Predefined)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined.Predefined)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined import Predefined
-		return Predefined(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined import Predefined
+        return Predefined(self)

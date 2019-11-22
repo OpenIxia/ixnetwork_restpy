@@ -18,326 +18,326 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LinkTlv(Base):
-	"""
-	The LinkTlv class encapsulates a list of linkTlv resources that is managed by the system.
-	A list of resources can be retrieved from the server using the LinkTlv.find() method.
-	"""
+    """
+    The LinkTlv class encapsulates a list of linkTlv resources that is managed by the system.
+    A list of resources can be retrieved from the server using the LinkTlv.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'linkTlv'
+    __slots__ = ()
+    _SDM_NAME = 'linkTlv'
 
-	def __init__(self, parent):
-		super(LinkTlv, self).__init__(parent)
+    def __init__(self, parent):
+        super(LinkTlv, self).__init__(parent)
 
-	@property
-	def EnableLinkId(self):
-		"""
+    @property
+    def EnableLinkId(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLinkId')
-	@EnableLinkId.setter
-	def EnableLinkId(self, value):
-		self._set_attribute('enableLinkId', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLinkId')
+    @EnableLinkId.setter
+    def EnableLinkId(self, value):
+        self._set_attribute('enableLinkId', value)
 
-	@property
-	def EnableLinkMetric(self):
-		"""
+    @property
+    def EnableLinkMetric(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLinkMetric')
-	@EnableLinkMetric.setter
-	def EnableLinkMetric(self, value):
-		self._set_attribute('enableLinkMetric', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLinkMetric')
+    @EnableLinkMetric.setter
+    def EnableLinkMetric(self, value):
+        self._set_attribute('enableLinkMetric', value)
 
-	@property
-	def EnableLinkResourceClass(self):
-		"""
+    @property
+    def EnableLinkResourceClass(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLinkResourceClass')
-	@EnableLinkResourceClass.setter
-	def EnableLinkResourceClass(self, value):
-		self._set_attribute('enableLinkResourceClass', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLinkResourceClass')
+    @EnableLinkResourceClass.setter
+    def EnableLinkResourceClass(self, value):
+        self._set_attribute('enableLinkResourceClass', value)
 
-	@property
-	def EnableLinkType(self):
-		"""
+    @property
+    def EnableLinkType(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLinkType')
-	@EnableLinkType.setter
-	def EnableLinkType(self, value):
-		self._set_attribute('enableLinkType', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLinkType')
+    @EnableLinkType.setter
+    def EnableLinkType(self, value):
+        self._set_attribute('enableLinkType', value)
 
-	@property
-	def EnableLocalIpAddress(self):
-		"""
+    @property
+    def EnableLocalIpAddress(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLocalIpAddress')
-	@EnableLocalIpAddress.setter
-	def EnableLocalIpAddress(self, value):
-		self._set_attribute('enableLocalIpAddress', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLocalIpAddress')
+    @EnableLocalIpAddress.setter
+    def EnableLocalIpAddress(self, value):
+        self._set_attribute('enableLocalIpAddress', value)
 
-	@property
-	def EnableMaxBandwidth(self):
-		"""
+    @property
+    def EnableMaxBandwidth(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableMaxBandwidth')
-	@EnableMaxBandwidth.setter
-	def EnableMaxBandwidth(self, value):
-		self._set_attribute('enableMaxBandwidth', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableMaxBandwidth')
+    @EnableMaxBandwidth.setter
+    def EnableMaxBandwidth(self, value):
+        self._set_attribute('enableMaxBandwidth', value)
 
-	@property
-	def EnableMaxResBandwidth(self):
-		"""
+    @property
+    def EnableMaxResBandwidth(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableMaxResBandwidth')
-	@EnableMaxResBandwidth.setter
-	def EnableMaxResBandwidth(self, value):
-		self._set_attribute('enableMaxResBandwidth', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableMaxResBandwidth')
+    @EnableMaxResBandwidth.setter
+    def EnableMaxResBandwidth(self, value):
+        self._set_attribute('enableMaxResBandwidth', value)
 
-	@property
-	def EnableRemoteIpAddress(self):
-		"""
+    @property
+    def EnableRemoteIpAddress(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableRemoteIpAddress')
-	@EnableRemoteIpAddress.setter
-	def EnableRemoteIpAddress(self, value):
-		self._set_attribute('enableRemoteIpAddress', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableRemoteIpAddress')
+    @EnableRemoteIpAddress.setter
+    def EnableRemoteIpAddress(self, value):
+        self._set_attribute('enableRemoteIpAddress', value)
 
-	@property
-	def EnableUnreservedBandwidth(self):
-		"""
+    @property
+    def EnableUnreservedBandwidth(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableUnreservedBandwidth')
-	@EnableUnreservedBandwidth.setter
-	def EnableUnreservedBandwidth(self, value):
-		self._set_attribute('enableUnreservedBandwidth', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableUnreservedBandwidth')
+    @EnableUnreservedBandwidth.setter
+    def EnableUnreservedBandwidth(self, value):
+        self._set_attribute('enableUnreservedBandwidth', value)
 
-	@property
-	def LinkId(self):
-		"""
+    @property
+    def LinkId(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('linkId')
-	@LinkId.setter
-	def LinkId(self, value):
-		self._set_attribute('linkId', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('linkId')
+    @LinkId.setter
+    def LinkId(self, value):
+        self._set_attribute('linkId', value)
 
-	@property
-	def LinkLocalIpAddress(self):
-		"""
+    @property
+    def LinkLocalIpAddress(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('linkLocalIpAddress')
-	@LinkLocalIpAddress.setter
-	def LinkLocalIpAddress(self, value):
-		self._set_attribute('linkLocalIpAddress', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('linkLocalIpAddress')
+    @LinkLocalIpAddress.setter
+    def LinkLocalIpAddress(self, value):
+        self._set_attribute('linkLocalIpAddress', value)
 
-	@property
-	def LinkMetric(self):
-		"""
+    @property
+    def LinkMetric(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('linkMetric')
-	@LinkMetric.setter
-	def LinkMetric(self, value):
-		self._set_attribute('linkMetric', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('linkMetric')
+    @LinkMetric.setter
+    def LinkMetric(self, value):
+        self._set_attribute('linkMetric', value)
 
-	@property
-	def LinkRemoteIpAddress(self):
-		"""
+    @property
+    def LinkRemoteIpAddress(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('linkRemoteIpAddress')
-	@LinkRemoteIpAddress.setter
-	def LinkRemoteIpAddress(self, value):
-		self._set_attribute('linkRemoteIpAddress', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('linkRemoteIpAddress')
+    @LinkRemoteIpAddress.setter
+    def LinkRemoteIpAddress(self, value):
+        self._set_attribute('linkRemoteIpAddress', value)
 
-	@property
-	def LinkResourceClass(self):
-		"""
+    @property
+    def LinkResourceClass(self):
+        """
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('linkResourceClass')
-	@LinkResourceClass.setter
-	def LinkResourceClass(self, value):
-		self._set_attribute('linkResourceClass', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('linkResourceClass')
+    @LinkResourceClass.setter
+    def LinkResourceClass(self, value):
+        self._set_attribute('linkResourceClass', value)
 
-	@property
-	def LinkType(self):
-		"""
+    @property
+    def LinkType(self):
+        """
 
-		Returns:
-			str(pointToPoint|multiaccess)
-		"""
-		return self._get_attribute('linkType')
-	@LinkType.setter
-	def LinkType(self, value):
-		self._set_attribute('linkType', value)
+        Returns:
+            str(pointToPoint|multiaccess)
+        """
+        return self._get_attribute('linkType')
+    @LinkType.setter
+    def LinkType(self, value):
+        self._set_attribute('linkType', value)
 
-	@property
-	def LinkUnreservedBandwidth(self):
-		"""
+    @property
+    def LinkUnreservedBandwidth(self):
+        """
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('linkUnreservedBandwidth')
-	@LinkUnreservedBandwidth.setter
-	def LinkUnreservedBandwidth(self, value):
-		self._set_attribute('linkUnreservedBandwidth', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('linkUnreservedBandwidth')
+    @LinkUnreservedBandwidth.setter
+    def LinkUnreservedBandwidth(self, value):
+        self._set_attribute('linkUnreservedBandwidth', value)
 
-	@property
-	def MaxBandwidth(self):
-		"""
+    @property
+    def MaxBandwidth(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('maxBandwidth')
-	@MaxBandwidth.setter
-	def MaxBandwidth(self, value):
-		self._set_attribute('maxBandwidth', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('maxBandwidth')
+    @MaxBandwidth.setter
+    def MaxBandwidth(self, value):
+        self._set_attribute('maxBandwidth', value)
 
-	@property
-	def MaxResBandwidth(self):
-		"""
+    @property
+    def MaxResBandwidth(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('maxResBandwidth')
-	@MaxResBandwidth.setter
-	def MaxResBandwidth(self, value):
-		self._set_attribute('maxResBandwidth', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('maxResBandwidth')
+    @MaxResBandwidth.setter
+    def MaxResBandwidth(self, value):
+        self._set_attribute('maxResBandwidth', value)
 
-	@property
-	def SubTlvs(self):
-		"""
+    @property
+    def SubTlvs(self):
+        """
 
-		Returns:
-			list(dict(arg1:str,arg2:number,arg3:number))
-		"""
-		return self._get_attribute('subTlvs')
-	@SubTlvs.setter
-	def SubTlvs(self, value):
-		self._set_attribute('subTlvs', value)
+        Returns:
+            list(dict(arg1:str,arg2:number,arg3:number))
+        """
+        return self._get_attribute('subTlvs')
+    @SubTlvs.setter
+    def SubTlvs(self, value):
+        self._set_attribute('subTlvs', value)
 
-	def update(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
-		"""Updates a child instance of linkTlv on the server.
+    def update(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
+        """Updates a child instance of linkTlv on the server.
 
-		Args:
-			EnableLinkId (bool): 
-			EnableLinkMetric (bool): 
-			EnableLinkResourceClass (bool): 
-			EnableLinkType (bool): 
-			EnableLocalIpAddress (bool): 
-			EnableMaxBandwidth (bool): 
-			EnableMaxResBandwidth (bool): 
-			EnableRemoteIpAddress (bool): 
-			EnableUnreservedBandwidth (bool): 
-			LinkId (str): 
-			LinkLocalIpAddress (str): 
-			LinkMetric (number): 
-			LinkRemoteIpAddress (str): 
-			LinkResourceClass (str): 
-			LinkType (str(pointToPoint|multiaccess)): 
-			LinkUnreservedBandwidth (list(number)): 
-			MaxBandwidth (number): 
-			MaxResBandwidth (number): 
-			SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+        Args:
+            EnableLinkId (bool): 
+            EnableLinkMetric (bool): 
+            EnableLinkResourceClass (bool): 
+            EnableLinkType (bool): 
+            EnableLocalIpAddress (bool): 
+            EnableMaxBandwidth (bool): 
+            EnableMaxResBandwidth (bool): 
+            EnableRemoteIpAddress (bool): 
+            EnableUnreservedBandwidth (bool): 
+            LinkId (str): 
+            LinkLocalIpAddress (str): 
+            LinkMetric (number): 
+            LinkRemoteIpAddress (str): 
+            LinkResourceClass (str): 
+            LinkType (str(pointToPoint|multiaccess)): 
+            LinkUnreservedBandwidth (list(number)): 
+            MaxBandwidth (number): 
+            MaxResBandwidth (number): 
+            SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
-		"""Finds and retrieves linkTlv data from the server.
+    def find(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
+        """Finds and retrieves linkTlv data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve linkTlv data from the server.
-		By default the find method takes no parameters and will retrieve all linkTlv data from the server.
+        All named parameters support regex and can be used to selectively retrieve linkTlv data from the server.
+        By default the find method takes no parameters and will retrieve all linkTlv data from the server.
 
-		Args:
-			EnableLinkId (bool): 
-			EnableLinkMetric (bool): 
-			EnableLinkResourceClass (bool): 
-			EnableLinkType (bool): 
-			EnableLocalIpAddress (bool): 
-			EnableMaxBandwidth (bool): 
-			EnableMaxResBandwidth (bool): 
-			EnableRemoteIpAddress (bool): 
-			EnableUnreservedBandwidth (bool): 
-			LinkId (str): 
-			LinkLocalIpAddress (str): 
-			LinkMetric (number): 
-			LinkRemoteIpAddress (str): 
-			LinkResourceClass (str): 
-			LinkType (str(pointToPoint|multiaccess)): 
-			LinkUnreservedBandwidth (list(number)): 
-			MaxBandwidth (number): 
-			MaxResBandwidth (number): 
-			SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+        Args:
+            EnableLinkId (bool): 
+            EnableLinkMetric (bool): 
+            EnableLinkResourceClass (bool): 
+            EnableLinkType (bool): 
+            EnableLocalIpAddress (bool): 
+            EnableMaxBandwidth (bool): 
+            EnableMaxResBandwidth (bool): 
+            EnableRemoteIpAddress (bool): 
+            EnableUnreservedBandwidth (bool): 
+            LinkId (str): 
+            LinkLocalIpAddress (str): 
+            LinkMetric (number): 
+            LinkRemoteIpAddress (str): 
+            LinkResourceClass (str): 
+            LinkType (str(pointToPoint|multiaccess)): 
+            LinkUnreservedBandwidth (list(number)): 
+            MaxBandwidth (number): 
+            MaxResBandwidth (number): 
+            SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
 
-		Returns:
-			self: This instance with matching linkTlv data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching linkTlv data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of linkTlv data from the server.
+    def read(self, href):
+        """Retrieves a single instance of linkTlv data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the linkTlv data from the server available through an iterator or index
+        Returns:
+            self: This instance with the linkTlv data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

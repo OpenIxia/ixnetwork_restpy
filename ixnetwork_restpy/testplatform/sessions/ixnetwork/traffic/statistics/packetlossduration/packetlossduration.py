@@ -18,41 +18,41 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class PacketLossDuration(Base):
-	"""Fetches the packet loss duration statistics.
-	The PacketLossDuration class encapsulates a required packetLossDuration resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Fetches the packet loss duration statistics.
+    The PacketLossDuration class encapsulates a required packetLossDuration resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'packetLossDuration'
+    __slots__ = ()
+    _SDM_NAME = 'packetLossDuration'
 
-	def __init__(self, parent):
-		super(PacketLossDuration, self).__init__(parent)
+    def __init__(self, parent):
+        super(PacketLossDuration, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""If true, enables and fetches packet loss duration statistics
+    @property
+    def Enabled(self):
+        """If true, enables and fetches packet loss duration statistics
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of packetLossDuration on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of packetLossDuration on the server.
 
-		Args:
-			Enabled (bool): If true, enables and fetches packet loss duration statistics
+        Args:
+            Enabled (bool): If true, enables and fetches packet loss duration statistics
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

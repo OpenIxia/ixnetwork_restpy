@@ -18,90 +18,90 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedBsrInfo(Base):
-	"""The learnedBSRInfo object fetches and describes the learned BSR information for the bootstrap router.
-	The LearnedBsrInfo class encapsulates a list of learnedBsrInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the LearnedBsrInfo.find() method.
-	"""
+    """The learnedBSRInfo object fetches and describes the learned BSR information for the bootstrap router.
+    The LearnedBsrInfo class encapsulates a list of learnedBsrInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the LearnedBsrInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedBsrInfo'
+    __slots__ = ()
+    _SDM_NAME = 'learnedBsrInfo'
 
-	def __init__(self, parent):
-		super(LearnedBsrInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedBsrInfo, self).__init__(parent)
 
-	@property
-	def BsrAddress(self):
-		"""The address of the elected bootstrap router that is sending periodic bootstrap messages.
+    @property
+    def BsrAddress(self):
+        """The address of the elected bootstrap router that is sending periodic bootstrap messages.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('bsrAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('bsrAddress')
 
-	@property
-	def LastBsmSendRecv(self):
-		"""Indicates the elapsed time (in seconds) since last bootstrap message was received or sent.
+    @property
+    def LastBsmSendRecv(self):
+        """Indicates the elapsed time (in seconds) since last bootstrap message was received or sent.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('lastBsmSendRecv')
+        Returns:
+            number
+        """
+        return self._get_attribute('lastBsmSendRecv')
 
-	@property
-	def OurBsrState(self):
-		"""Indicates the state of the configured bootstrap router.
+    @property
+    def OurBsrState(self):
+        """Indicates the state of the configured bootstrap router.
 
-		Returns:
-			str(candidate|elected|notStarted|pending)
-		"""
-		return self._get_attribute('ourBsrState')
+        Returns:
+            str(candidate|elected|notStarted|pending)
+        """
+        return self._get_attribute('ourBsrState')
 
-	@property
-	def Priority(self):
-		"""Priority of the elected bootstrap router as received in Bootstrap messages or configured priority.
+    @property
+    def Priority(self):
+        """Priority of the elected bootstrap router as received in Bootstrap messages or configured priority.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('priority')
+        Returns:
+            number
+        """
+        return self._get_attribute('priority')
 
-	def find(self, BsrAddress=None, LastBsmSendRecv=None, OurBsrState=None, Priority=None):
-		"""Finds and retrieves learnedBsrInfo data from the server.
+    def find(self, BsrAddress=None, LastBsmSendRecv=None, OurBsrState=None, Priority=None):
+        """Finds and retrieves learnedBsrInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve learnedBsrInfo data from the server.
-		By default the find method takes no parameters and will retrieve all learnedBsrInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve learnedBsrInfo data from the server.
+        By default the find method takes no parameters and will retrieve all learnedBsrInfo data from the server.
 
-		Args:
-			BsrAddress (str): The address of the elected bootstrap router that is sending periodic bootstrap messages.
-			LastBsmSendRecv (number): Indicates the elapsed time (in seconds) since last bootstrap message was received or sent.
-			OurBsrState (str(candidate|elected|notStarted|pending)): Indicates the state of the configured bootstrap router.
-			Priority (number): Priority of the elected bootstrap router as received in Bootstrap messages or configured priority.
+        Args:
+            BsrAddress (str): The address of the elected bootstrap router that is sending periodic bootstrap messages.
+            LastBsmSendRecv (number): Indicates the elapsed time (in seconds) since last bootstrap message was received or sent.
+            OurBsrState (str(candidate|elected|notStarted|pending)): Indicates the state of the configured bootstrap router.
+            Priority (number): Priority of the elected bootstrap router as received in Bootstrap messages or configured priority.
 
-		Returns:
-			self: This instance with matching learnedBsrInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching learnedBsrInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of learnedBsrInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of learnedBsrInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the learnedBsrInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the learnedBsrInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

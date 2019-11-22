@@ -18,76 +18,76 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TlvEditor(Base):
-	"""Tlv template functionality is contained under this node
-	The TlvEditor class encapsulates a list of tlvEditor resources that is managed by the system.
-	A list of resources can be retrieved from the server using the TlvEditor.find() method.
-	"""
+    """Tlv template functionality is contained under this node
+    The TlvEditor class encapsulates a list of tlvEditor resources that is managed by the system.
+    A list of resources can be retrieved from the server using the TlvEditor.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'tlvEditor'
+    __slots__ = ()
+    _SDM_NAME = 'tlvEditor'
 
-	def __init__(self, parent):
-		super(TlvEditor, self).__init__(parent)
+    def __init__(self, parent):
+        super(TlvEditor, self).__init__(parent)
 
-	@property
-	def Defaults(self):
-		"""An instance of the Defaults class.
+    @property
+    def Defaults(self):
+        """An instance of the Defaults class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults.Defaults)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults.Defaults)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults import Defaults
-		return Defaults(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults import Defaults
+        return Defaults(self)
 
-	@property
-	def Template(self):
-		"""An instance of the Template class.
+    @property
+    def Template(self):
+        """An instance of the Template class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template.Template)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template.Template)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template import Template
-		return Template(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template import Template
+        return Template(self)
 
-	def find(self):
-		"""Finds and retrieves tlvEditor data from the server.
+    def find(self):
+        """Finds and retrieves tlvEditor data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve tlvEditor data from the server.
-		By default the find method takes no parameters and will retrieve all tlvEditor data from the server.
+        All named parameters support regex and can be used to selectively retrieve tlvEditor data from the server.
+        By default the find method takes no parameters and will retrieve all tlvEditor data from the server.
 
-		Returns:
-			self: This instance with matching tlvEditor data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching tlvEditor data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of tlvEditor data from the server.
+    def read(self, href):
+        """Retrieves a single instance of tlvEditor data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the tlvEditor data from the server available through an iterator or index
+        Returns:
+            self: This instance with the tlvEditor data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

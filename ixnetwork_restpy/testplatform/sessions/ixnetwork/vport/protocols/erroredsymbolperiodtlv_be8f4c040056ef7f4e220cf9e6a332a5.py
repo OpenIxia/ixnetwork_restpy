@@ -18,80 +18,80 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class ErroredSymbolPeriodTlv(Base):
-	"""
-	The ErroredSymbolPeriodTlv class encapsulates a required erroredSymbolPeriodTlv resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The ErroredSymbolPeriodTlv class encapsulates a required erroredSymbolPeriodTlv resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'erroredSymbolPeriodTlv'
+    __slots__ = ()
+    _SDM_NAME = 'erroredSymbolPeriodTlv'
 
-	def __init__(self, parent):
-		super(ErroredSymbolPeriodTlv, self).__init__(parent)
+    def __init__(self, parent):
+        super(ErroredSymbolPeriodTlv, self).__init__(parent)
 
-	@property
-	def Enabled(self):
-		"""
+    @property
+    def Enabled(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def Symbols(self):
-		"""
+    @property
+    def Symbols(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('symbols')
-	@Symbols.setter
-	def Symbols(self, value):
-		self._set_attribute('symbols', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('symbols')
+    @Symbols.setter
+    def Symbols(self, value):
+        self._set_attribute('symbols', value)
 
-	@property
-	def Threshold(self):
-		"""
+    @property
+    def Threshold(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('threshold')
-	@Threshold.setter
-	def Threshold(self, value):
-		self._set_attribute('threshold', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('threshold')
+    @Threshold.setter
+    def Threshold(self, value):
+        self._set_attribute('threshold', value)
 
-	@property
-	def Window(self):
-		"""
+    @property
+    def Window(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('window')
-	@Window.setter
-	def Window(self, value):
-		self._set_attribute('window', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('window')
+    @Window.setter
+    def Window(self, value):
+        self._set_attribute('window', value)
 
-	def update(self, Enabled=None, Symbols=None, Threshold=None, Window=None):
-		"""Updates a child instance of erroredSymbolPeriodTlv on the server.
+    def update(self, Enabled=None, Symbols=None, Threshold=None, Window=None):
+        """Updates a child instance of erroredSymbolPeriodTlv on the server.
 
-		Args:
-			Enabled (bool): 
-			Symbols (number): 
-			Threshold (number): 
-			Window (number): 
+        Args:
+            Enabled (bool): 
+            Symbols (number): 
+            Threshold (number): 
+            Window (number): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

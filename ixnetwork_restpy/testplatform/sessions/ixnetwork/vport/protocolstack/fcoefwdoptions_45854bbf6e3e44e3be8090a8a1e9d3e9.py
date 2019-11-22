@@ -18,199 +18,199 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FcoeFwdOptions(Base):
-	"""StackManager FCoE PortGroup Settings
-	The FcoeFwdOptions class encapsulates a list of fcoeFwdOptions resources that is be managed by the user.
-	A list of resources can be retrieved from the server using the FcoeFwdOptions.find() method.
-	The list can be managed by the user by using the FcoeFwdOptions.add() and FcoeFwdOptions.remove() methods.
-	"""
+    """StackManager FCoE PortGroup Settings
+    The FcoeFwdOptions class encapsulates a list of fcoeFwdOptions resources that is be managed by the user.
+    A list of resources can be retrieved from the server using the FcoeFwdOptions.find() method.
+    The list can be managed by the user by using the FcoeFwdOptions.add() and FcoeFwdOptions.remove() methods.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'fcoeFwdOptions'
+    __slots__ = ()
+    _SDM_NAME = 'fcoeFwdOptions'
 
-	def __init__(self, parent):
-		super(FcoeFwdOptions, self).__init__(parent)
+    def __init__(self, parent):
+        super(FcoeFwdOptions, self).__init__(parent)
 
-	@property
-	def MaxPacketsPerSecond(self):
-		"""The maximum number of PLOGI requests transmitted in each second.
+    @property
+    def MaxPacketsPerSecond(self):
+        """The maximum number of PLOGI requests transmitted in each second.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('maxPacketsPerSecond')
-	@MaxPacketsPerSecond.setter
-	def MaxPacketsPerSecond(self, value):
-		self._set_attribute('maxPacketsPerSecond', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('maxPacketsPerSecond')
+    @MaxPacketsPerSecond.setter
+    def MaxPacketsPerSecond(self, value):
+        self._set_attribute('maxPacketsPerSecond', value)
 
-	@property
-	def ObjectId(self):
-		"""Unique identifier for this object
+    @property
+    def ObjectId(self):
+        """Unique identifier for this object
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('objectId')
+        Returns:
+            str
+        """
+        return self._get_attribute('objectId')
 
-	@property
-	def OverrideGlobalRate(self):
-		"""Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+    @property
+    def OverrideGlobalRate(self):
+        """Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('overrideGlobalRate')
-	@OverrideGlobalRate.setter
-	def OverrideGlobalRate(self, value):
-		self._set_attribute('overrideGlobalRate', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('overrideGlobalRate')
+    @OverrideGlobalRate.setter
+    def OverrideGlobalRate(self, value):
+        self._set_attribute('overrideGlobalRate', value)
 
-	@property
-	def UnsolDiscoveryTpid(self):
-		"""Server VLAN TPIDs.
+    @property
+    def UnsolDiscoveryTpid(self):
+        """Server VLAN TPIDs.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('unsolDiscoveryTpid')
-	@UnsolDiscoveryTpid.setter
-	def UnsolDiscoveryTpid(self, value):
-		self._set_attribute('unsolDiscoveryTpid', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('unsolDiscoveryTpid')
+    @UnsolDiscoveryTpid.setter
+    def UnsolDiscoveryTpid(self, value):
+        self._set_attribute('unsolDiscoveryTpid', value)
 
-	def update(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
-		"""Updates a child instance of fcoeFwdOptions on the server.
+    def update(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+        """Updates a child instance of fcoeFwdOptions on the server.
 
-		Args:
-			MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
-			OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-			UnsolDiscoveryTpid (str): Server VLAN TPIDs.
+        Args:
+            MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
+            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+            UnsolDiscoveryTpid (str): Server VLAN TPIDs.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def add(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
-		"""Adds a new fcoeFwdOptions node on the server and retrieves it in this instance.
+    def add(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+        """Adds a new fcoeFwdOptions node on the server and retrieves it in this instance.
 
-		Args:
-			MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
-			OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-			UnsolDiscoveryTpid (str): Server VLAN TPIDs.
+        Args:
+            MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
+            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+            UnsolDiscoveryTpid (str): Server VLAN TPIDs.
 
-		Returns:
-			self: This instance with all currently retrieved fcoeFwdOptions data using find and the newly added fcoeFwdOptions data available through an iterator or index
+        Returns:
+            self: This instance with all currently retrieved fcoeFwdOptions data using find and the newly added fcoeFwdOptions data available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(locals())
 
-	def remove(self):
-		"""Deletes all the fcoeFwdOptions data in this instance from server.
+    def remove(self):
+        """Deletes all the fcoeFwdOptions data in this instance from server.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
-	def find(self, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
-		"""Finds and retrieves fcoeFwdOptions data from the server.
+    def find(self, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+        """Finds and retrieves fcoeFwdOptions data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve fcoeFwdOptions data from the server.
-		By default the find method takes no parameters and will retrieve all fcoeFwdOptions data from the server.
+        All named parameters support regex and can be used to selectively retrieve fcoeFwdOptions data from the server.
+        By default the find method takes no parameters and will retrieve all fcoeFwdOptions data from the server.
 
-		Args:
-			MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
-			ObjectId (str): Unique identifier for this object
-			OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
-			UnsolDiscoveryTpid (str): Server VLAN TPIDs.
+        Args:
+            MaxPacketsPerSecond (number): The maximum number of PLOGI requests transmitted in each second.
+            ObjectId (str): Unique identifier for this object
+            OverrideGlobalRate (bool): Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
+            UnsolDiscoveryTpid (str): Server VLAN TPIDs.
 
-		Returns:
-			self: This instance with matching fcoeFwdOptions data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching fcoeFwdOptions data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of fcoeFwdOptions data from the server.
+    def read(self, href):
+        """Retrieves a single instance of fcoeFwdOptions data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the fcoeFwdOptions data from the server available through an iterator or index
+        Returns:
+            self: This instance with the fcoeFwdOptions data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def CustomProtocolStack(self, *args, **kwargs):
-		"""Executes the customProtocolStack operation on the server.
+    def CustomProtocolStack(self, *args, **kwargs):
+        """Executes the customProtocolStack operation on the server.
 
-		Create custom protocol stack under /vport/protocolStack
+        Create custom protocol stack under /vport/protocolStack
 
-		customProtocolStack(Arg2:list, Arg3:enum)
-			Args:
-				args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-				args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2:list, Arg3:enum)
+            Args:
+                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
+                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('customProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
-	def DisableProtocolStack(self, *args, **kwargs):
-		"""Executes the disableProtocolStack operation on the server.
+    def DisableProtocolStack(self, *args, **kwargs):
+        """Executes the disableProtocolStack operation on the server.
 
-		Disable a protocol under protocolStack using the class name
+        Disable a protocol under protocolStack using the class name
 
-		disableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to disable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
-	def EnableProtocolStack(self, *args, **kwargs):
-		"""Executes the enableProtocolStack operation on the server.
+    def EnableProtocolStack(self, *args, **kwargs):
+        """Executes the enableProtocolStack operation on the server.
 
-		Enable a protocol under protocolStack using the class name
+        Enable a protocol under protocolStack using the class name
 
-		enableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to enable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('enableProtocolStack', payload=payload, response_object=None)

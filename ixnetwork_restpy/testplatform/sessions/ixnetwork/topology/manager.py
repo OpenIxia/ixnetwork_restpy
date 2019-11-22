@@ -18,108 +18,108 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Manager(Base):
-	"""Managers to which the OVSDB will initiate connections to.
-	The Manager class encapsulates a required manager resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Managers to which the OVSDB will initiate connections to.
+    The Manager class encapsulates a required manager resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'manager'
+    __slots__ = ()
+    _SDM_NAME = 'manager'
 
-	def __init__(self, parent):
-		super(Manager, self).__init__(parent)
+    def __init__(self, parent):
+        super(Manager, self).__init__(parent)
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def ManagerActive(self):
-		"""Enable Manager
+    @property
+    def ManagerActive(self):
+        """Enable Manager
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('managerActive')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('managerActive')
 
-	@property
-	def ManagerIp(self):
-		"""IPv4 Address of the Manager
+    @property
+    def ManagerIp(self):
+        """IPv4 Address of the Manager
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('managerIp')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('managerIp')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def TcpPort(self):
-		"""Specify the TCP port for the Manager
+    @property
+    def TcpPort(self):
+        """Specify the TCP port for the Manager
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('tcpPort')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('tcpPort')
 
-	def update(self, Name=None):
-		"""Updates a child instance of manager on the server.
+    def update(self, Name=None):
+        """Updates a child instance of manager on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, ManagerActive=None, ManagerIp=None, TcpPort=None):
-		"""Base class infrastructure that gets a list of manager device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, ManagerActive=None, ManagerIp=None, TcpPort=None):
+        """Base class infrastructure that gets a list of manager device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			ManagerActive (str): optional regex of managerActive
-			ManagerIp (str): optional regex of managerIp
-			TcpPort (str): optional regex of tcpPort
+        Args:
+            PortNames (str): optional regex of port names
+            ManagerActive (str): optional regex of managerActive
+            ManagerIp (str): optional regex of managerIp
+            TcpPort (str): optional regex of tcpPort
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

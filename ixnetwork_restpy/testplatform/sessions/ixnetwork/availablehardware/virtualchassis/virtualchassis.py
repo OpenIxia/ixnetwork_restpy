@@ -18,131 +18,131 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class VirtualChassis(Base):
-	"""Virtual Chassis is used to get and to manage a Virtual Chassis topology and get  the list of discovered appliances
-	The VirtualChassis class encapsulates a required virtualChassis resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Virtual Chassis is used to get and to manage a Virtual Chassis topology and get  the list of discovered appliances
+    The VirtualChassis class encapsulates a required virtualChassis resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'virtualChassis'
+    __slots__ = ()
+    _SDM_NAME = 'virtualChassis'
 
-	def __init__(self, parent):
-		super(VirtualChassis, self).__init__(parent)
+    def __init__(self, parent):
+        super(VirtualChassis, self).__init__(parent)
 
-	@property
-	def DiscoveredAppliance(self):
-		"""An instance of the DiscoveredAppliance class.
+    @property
+    def DiscoveredAppliance(self):
+        """An instance of the DiscoveredAppliance class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance.DiscoveredAppliance)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance.DiscoveredAppliance)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance import DiscoveredAppliance
-		return DiscoveredAppliance(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance import DiscoveredAppliance
+        return DiscoveredAppliance(self)
 
-	@property
-	def Hypervisor(self):
-		"""An instance of the Hypervisor class.
+    @property
+    def Hypervisor(self):
+        """An instance of the Hypervisor class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor.Hypervisor)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor.Hypervisor)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor import Hypervisor
-		return Hypervisor(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor import Hypervisor
+        return Hypervisor(self)
 
-	@property
-	def IxVmCard(self):
-		"""An instance of the IxVmCard class.
+    @property
+    def IxVmCard(self):
+        """An instance of the IxVmCard class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard.IxVmCard)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard.IxVmCard)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard import IxVmCard
-		return IxVmCard(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard import IxVmCard
+        return IxVmCard(self)
 
-	@property
-	def EnableLicenseCheck(self):
-		"""Enables license check on port connect
+    @property
+    def EnableLicenseCheck(self):
+        """Enables license check on port connect
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableLicenseCheck')
-	@EnableLicenseCheck.setter
-	def EnableLicenseCheck(self, value):
-		self._set_attribute('enableLicenseCheck', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLicenseCheck')
+    @EnableLicenseCheck.setter
+    def EnableLicenseCheck(self, value):
+        self._set_attribute('enableLicenseCheck', value)
 
-	@property
-	def Hostname(self):
-		"""Virtual Chassis hostname or IP
+    @property
+    def Hostname(self):
+        """Virtual Chassis hostname or IP
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('hostname')
+        Returns:
+            str
+        """
+        return self._get_attribute('hostname')
 
-	@property
-	def LicenseServer(self):
-		"""The address of the license server
+    @property
+    def LicenseServer(self):
+        """The address of the license server
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('licenseServer')
-	@LicenseServer.setter
-	def LicenseServer(self, value):
-		self._set_attribute('licenseServer', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('licenseServer')
+    @LicenseServer.setter
+    def LicenseServer(self, value):
+        self._set_attribute('licenseServer', value)
 
-	@property
-	def NtpServer(self):
-		"""The address of the NTP server
+    @property
+    def NtpServer(self):
+        """The address of the NTP server
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('ntpServer')
-	@NtpServer.setter
-	def NtpServer(self, value):
-		self._set_attribute('ntpServer', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('ntpServer')
+    @NtpServer.setter
+    def NtpServer(self, value):
+        self._set_attribute('ntpServer', value)
 
-	@property
-	def StartTxDelay(self):
-		"""The delay amount for transmit
+    @property
+    def StartTxDelay(self):
+        """The delay amount for transmit
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('startTxDelay')
-	@StartTxDelay.setter
-	def StartTxDelay(self, value):
-		self._set_attribute('startTxDelay', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('startTxDelay')
+    @StartTxDelay.setter
+    def StartTxDelay(self, value):
+        self._set_attribute('startTxDelay', value)
 
-	def update(self, EnableLicenseCheck=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
-		"""Updates a child instance of virtualChassis on the server.
+    def update(self, EnableLicenseCheck=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
+        """Updates a child instance of virtualChassis on the server.
 
-		Args:
-			EnableLicenseCheck (bool): Enables license check on port connect
-			LicenseServer (str): The address of the license server
-			NtpServer (str): The address of the NTP server
-			StartTxDelay (str): The delay amount for transmit
+        Args:
+            EnableLicenseCheck (bool): Enables license check on port connect
+            LicenseServer (str): The address of the license server
+            NtpServer (str): The address of the NTP server
+            StartTxDelay (str): The delay amount for transmit
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

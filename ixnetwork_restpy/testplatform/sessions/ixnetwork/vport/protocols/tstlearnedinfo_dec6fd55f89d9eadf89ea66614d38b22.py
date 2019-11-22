@@ -18,150 +18,150 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TstLearnedInfo(Base):
-	"""NOT DEFINED
-	The TstLearnedInfo class encapsulates a list of tstLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the TstLearnedInfo.find() method.
-	"""
+    """NOT DEFINED
+    The TstLearnedInfo class encapsulates a list of tstLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the TstLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'tstLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'tstLearnedInfo'
 
-	def __init__(self, parent):
-		super(TstLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(TstLearnedInfo, self).__init__(parent)
 
-	@property
-	def BVlan(self):
-		"""NOT DEFINED
+    @property
+    def BVlan(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('bVlan')
+        Returns:
+            str
+        """
+        return self._get_attribute('bVlan')
 
-	@property
-	def CVlan(self):
-		"""NOT DEFINED
+    @property
+    def CVlan(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('cVlan')
+        Returns:
+            str
+        """
+        return self._get_attribute('cVlan')
 
-	@property
-	def MepMacAddress(self):
-		"""NOT DEFINED
+    @property
+    def MepMacAddress(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('mepMacAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('mepMacAddress')
 
-	@property
-	def OutOfSequenceTstCount(self):
-		"""NOT DEFINED
+    @property
+    def OutOfSequenceTstCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('outOfSequenceTstCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('outOfSequenceTstCount')
 
-	@property
-	def PrbsBitErrorCount(self):
-		"""NOT DEFINED
+    @property
+    def PrbsBitErrorCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('prbsBitErrorCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('prbsBitErrorCount')
 
-	@property
-	def RemoteMepMacAddress(self):
-		"""NOT DEFINED
+    @property
+    def RemoteMepMacAddress(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteMepMacAddress')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteMepMacAddress')
 
-	@property
-	def RxCount(self):
-		"""NOT DEFINED
+    @property
+    def RxCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('rxCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('rxCount')
 
-	@property
-	def SVlan(self):
-		"""NOT DEFINED
+    @property
+    def SVlan(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('sVlan')
+        Returns:
+            str
+        """
+        return self._get_attribute('sVlan')
 
-	@property
-	def TxCount(self):
-		"""NOT DEFINED
+    @property
+    def TxCount(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('txCount')
+        Returns:
+            number
+        """
+        return self._get_attribute('txCount')
 
-	@property
-	def TxState(self):
-		"""NOT DEFINED
+    @property
+    def TxState(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('txState')
+        Returns:
+            str
+        """
+        return self._get_attribute('txState')
 
-	def find(self, BVlan=None, CVlan=None, MepMacAddress=None, OutOfSequenceTstCount=None, PrbsBitErrorCount=None, RemoteMepMacAddress=None, RxCount=None, SVlan=None, TxCount=None, TxState=None):
-		"""Finds and retrieves tstLearnedInfo data from the server.
+    def find(self, BVlan=None, CVlan=None, MepMacAddress=None, OutOfSequenceTstCount=None, PrbsBitErrorCount=None, RemoteMepMacAddress=None, RxCount=None, SVlan=None, TxCount=None, TxState=None):
+        """Finds and retrieves tstLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve tstLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all tstLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve tstLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all tstLearnedInfo data from the server.
 
-		Args:
-			BVlan (str): NOT DEFINED
-			CVlan (str): NOT DEFINED
-			MepMacAddress (str): NOT DEFINED
-			OutOfSequenceTstCount (number): NOT DEFINED
-			PrbsBitErrorCount (number): NOT DEFINED
-			RemoteMepMacAddress (str): NOT DEFINED
-			RxCount (number): NOT DEFINED
-			SVlan (str): NOT DEFINED
-			TxCount (number): NOT DEFINED
-			TxState (str): NOT DEFINED
+        Args:
+            BVlan (str): NOT DEFINED
+            CVlan (str): NOT DEFINED
+            MepMacAddress (str): NOT DEFINED
+            OutOfSequenceTstCount (number): NOT DEFINED
+            PrbsBitErrorCount (number): NOT DEFINED
+            RemoteMepMacAddress (str): NOT DEFINED
+            RxCount (number): NOT DEFINED
+            SVlan (str): NOT DEFINED
+            TxCount (number): NOT DEFINED
+            TxState (str): NOT DEFINED
 
-		Returns:
-			self: This instance with matching tstLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching tstLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of tstLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of tstLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the tstLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the tstLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

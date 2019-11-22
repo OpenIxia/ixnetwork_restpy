@@ -269,7 +269,7 @@ class Connection(object):
                 raise e
             return local_filename
         else:
-            self._process_response_status_code(response)
+            self._process_response_status_code(url, headers, response)
 
     def _put_file(self, url, local_filename, remote_filename=None):
         headers = self._headers
@@ -283,7 +283,7 @@ class Connection(object):
         if response.status_code == 201:
             return response.json()
         else:
-            self._process_response_status_code(response)
+            self._process_response_status_code(url, headers, response)
 
     def _process_response_status_code(self, url, headers, response, async_status=False):
         errors = []

@@ -18,172 +18,172 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Network(Base):
-	"""
-	The Network class encapsulates a list of network resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Network.find() method.
-	"""
+    """
+    The Network class encapsulates a list of network resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Network.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'network'
+    __slots__ = ()
+    _SDM_NAME = 'network'
 
-	def __init__(self, parent):
-		super(Network, self).__init__(parent)
+    def __init__(self, parent):
+        super(Network, self).__init__(parent)
 
-	@property
-	def AttachedRouters(self):
-		"""
+    @property
+    def AttachedRouters(self):
+        """
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('attachedRouters')
-	@AttachedRouters.setter
-	def AttachedRouters(self, value):
-		self._set_attribute('attachedRouters', value)
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('attachedRouters')
+    @AttachedRouters.setter
+    def AttachedRouters(self, value):
+        self._set_attribute('attachedRouters', value)
 
-	@property
-	def OptBitDc(self):
-		"""
+    @property
+    def OptBitDc(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitDc')
-	@OptBitDc.setter
-	def OptBitDc(self, value):
-		self._set_attribute('optBitDc', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitDc')
+    @OptBitDc.setter
+    def OptBitDc(self, value):
+        self._set_attribute('optBitDc', value)
 
-	@property
-	def OptBitE(self):
-		"""
+    @property
+    def OptBitE(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitE')
-	@OptBitE.setter
-	def OptBitE(self, value):
-		self._set_attribute('optBitE', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitE')
+    @OptBitE.setter
+    def OptBitE(self, value):
+        self._set_attribute('optBitE', value)
 
-	@property
-	def OptBitMc(self):
-		"""
+    @property
+    def OptBitMc(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitMc')
-	@OptBitMc.setter
-	def OptBitMc(self, value):
-		self._set_attribute('optBitMc', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitMc')
+    @OptBitMc.setter
+    def OptBitMc(self, value):
+        self._set_attribute('optBitMc', value)
 
-	@property
-	def OptBitN(self):
-		"""
+    @property
+    def OptBitN(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitN')
-	@OptBitN.setter
-	def OptBitN(self, value):
-		self._set_attribute('optBitN', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitN')
+    @OptBitN.setter
+    def OptBitN(self, value):
+        self._set_attribute('optBitN', value)
 
-	@property
-	def OptBitR(self):
-		"""
+    @property
+    def OptBitR(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitR')
-	@OptBitR.setter
-	def OptBitR(self, value):
-		self._set_attribute('optBitR', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitR')
+    @OptBitR.setter
+    def OptBitR(self, value):
+        self._set_attribute('optBitR', value)
 
-	@property
-	def OptBitV6(self):
-		"""
+    @property
+    def OptBitV6(self):
+        """
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('optBitV6')
-	@OptBitV6.setter
-	def OptBitV6(self, value):
-		self._set_attribute('optBitV6', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('optBitV6')
+    @OptBitV6.setter
+    def OptBitV6(self, value):
+        self._set_attribute('optBitV6', value)
 
-	@property
-	def Option(self):
-		"""
+    @property
+    def Option(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('option')
-	@Option.setter
-	def Option(self, value):
-		self._set_attribute('option', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('option')
+    @Option.setter
+    def Option(self, value):
+        self._set_attribute('option', value)
 
-	def update(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
-		"""Updates a child instance of network on the server.
+    def update(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
+        """Updates a child instance of network on the server.
 
-		Args:
-			AttachedRouters (list(str)): 
-			OptBitDc (bool): 
-			OptBitE (bool): 
-			OptBitMc (bool): 
-			OptBitN (bool): 
-			OptBitR (bool): 
-			OptBitV6 (bool): 
-			Option (number): 
+        Args:
+            AttachedRouters (list(str)): 
+            OptBitDc (bool): 
+            OptBitE (bool): 
+            OptBitMc (bool): 
+            OptBitN (bool): 
+            OptBitR (bool): 
+            OptBitV6 (bool): 
+            Option (number): 
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
-		"""Finds and retrieves network data from the server.
+    def find(self, AttachedRouters=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None):
+        """Finds and retrieves network data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve network data from the server.
-		By default the find method takes no parameters and will retrieve all network data from the server.
+        All named parameters support regex and can be used to selectively retrieve network data from the server.
+        By default the find method takes no parameters and will retrieve all network data from the server.
 
-		Args:
-			AttachedRouters (list(str)): 
-			OptBitDc (bool): 
-			OptBitE (bool): 
-			OptBitMc (bool): 
-			OptBitN (bool): 
-			OptBitR (bool): 
-			OptBitV6 (bool): 
-			Option (number): 
+        Args:
+            AttachedRouters (list(str)): 
+            OptBitDc (bool): 
+            OptBitE (bool): 
+            OptBitMc (bool): 
+            OptBitN (bool): 
+            OptBitR (bool): 
+            OptBitV6 (bool): 
+            Option (number): 
 
-		Returns:
-			self: This instance with matching network data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching network data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of network data from the server.
+    def read(self, href):
+        """Retrieves a single instance of network data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the network data from the server available through an iterator or index
+        Returns:
+            self: This instance with the network data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

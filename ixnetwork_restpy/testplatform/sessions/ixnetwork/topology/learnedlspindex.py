@@ -18,27 +18,27 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedLspIndex(Base):
-	"""
-	The LearnedLspIndex class encapsulates a required learnedLspIndex resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The LearnedLspIndex class encapsulates a required learnedLspIndex resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedLspIndex'
+    __slots__ = ()
+    _SDM_NAME = 'learnedLspIndex'
 
-	def __init__(self, parent):
-		super(LearnedLspIndex, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedLspIndex, self).__init__(parent)
 
-	@property
-	def Count(self):
-		"""total number of values
+    @property
+    def Count(self):
+        """total number of values
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')

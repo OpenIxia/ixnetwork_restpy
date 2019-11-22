@@ -18,180 +18,180 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class VendorStatLearnedInformation(Base):
-	"""Signifies the information learnt from the vendor statistics.
-	The VendorStatLearnedInformation class encapsulates a list of vendorStatLearnedInformation resources that is managed by the system.
-	A list of resources can be retrieved from the server using the VendorStatLearnedInformation.find() method.
-	"""
+    """Signifies the information learnt from the vendor statistics.
+    The VendorStatLearnedInformation class encapsulates a list of vendorStatLearnedInformation resources that is managed by the system.
+    A list of resources can be retrieved from the server using the VendorStatLearnedInformation.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'vendorStatLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'vendorStatLearnedInformation'
 
-	def __init__(self, parent):
-		super(VendorStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(VendorStatLearnedInformation, self).__init__(parent)
 
-	@property
-	def DataPathId(self):
-		"""Signifies the datapath ID of the OpenFlow switch.
+    @property
+    def DataPathId(self):
+        """Signifies the datapath ID of the OpenFlow switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathId')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathId')
 
-	@property
-	def DataPathIdAsHex(self):
-		"""Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
+    @property
+    def DataPathIdAsHex(self):
+        """Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathIdAsHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathIdAsHex')
 
-	@property
-	def ErrorCode(self):
-		"""Signifies the error code of the error received
+    @property
+    def ErrorCode(self):
+        """Signifies the error code of the error received
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorCode')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorCode')
 
-	@property
-	def ErrorType(self):
-		"""Signifies the type of the error received.
+    @property
+    def ErrorType(self):
+        """Signifies the type of the error received.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorType')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorType')
 
-	@property
-	def ExperimenterType(self):
-		"""Type of experimenter.
+    @property
+    def ExperimenterType(self):
+        """Type of experimenter.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterType')
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterType')
 
-	@property
-	def Latency(self):
-		"""Signifies the latency measurement for the OpenFlow channel in microseconds.
+    @property
+    def Latency(self):
+        """Signifies the latency measurement for the OpenFlow channel in microseconds.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('latency')
+        Returns:
+            number
+        """
+        return self._get_attribute('latency')
 
-	@property
-	def LocalIp(self):
-		"""Signifies the local IP address of the selected interface.
+    @property
+    def LocalIp(self):
+        """Signifies the local IP address of the selected interface.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('localIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('localIp')
 
-	@property
-	def MessageLength(self):
-		"""Signifies the length of the message transmitted.
+    @property
+    def MessageLength(self):
+        """Signifies the length of the message transmitted.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('messageLength')
+        Returns:
+            number
+        """
+        return self._get_attribute('messageLength')
 
-	@property
-	def NegotiatedVersion(self):
-		"""Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+    @property
+    def NegotiatedVersion(self):
+        """Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('negotiatedVersion')
+        Returns:
+            str
+        """
+        return self._get_attribute('negotiatedVersion')
 
-	@property
-	def RemoteIp(self):
-		"""The IP address of the DUT at the other end of the Open Flow channel.
+    @property
+    def RemoteIp(self):
+        """The IP address of the DUT at the other end of the Open Flow channel.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
 
-	@property
-	def ReplyState(self):
-		"""Signifies the reply state of the OF Channel.
+    @property
+    def ReplyState(self):
+        """Signifies the reply state of the OF Channel.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('replyState')
+        Returns:
+            str
+        """
+        return self._get_attribute('replyState')
 
-	@property
-	def VendorId(self):
-		"""Signifies the vendor identifier.
+    @property
+    def VendorId(self):
+        """Signifies the vendor identifier.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('vendorId')
+        Returns:
+            number
+        """
+        return self._get_attribute('vendorId')
 
-	@property
-	def VendorMessage(self):
-		"""Signifies the vendor message value.
+    @property
+    def VendorMessage(self):
+        """Signifies the vendor message value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('vendorMessage')
+        Returns:
+            str
+        """
+        return self._get_attribute('vendorMessage')
 
-	def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterType=None, Latency=None, LocalIp=None, MessageLength=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, VendorId=None, VendorMessage=None):
-		"""Finds and retrieves vendorStatLearnedInformation data from the server.
+    def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterType=None, Latency=None, LocalIp=None, MessageLength=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, VendorId=None, VendorMessage=None):
+        """Finds and retrieves vendorStatLearnedInformation data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve vendorStatLearnedInformation data from the server.
-		By default the find method takes no parameters and will retrieve all vendorStatLearnedInformation data from the server.
+        All named parameters support regex and can be used to selectively retrieve vendorStatLearnedInformation data from the server.
+        By default the find method takes no parameters and will retrieve all vendorStatLearnedInformation data from the server.
 
-		Args:
-			DataPathId (str): Signifies the datapath ID of the OpenFlow switch.
-			DataPathIdAsHex (str): Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
-			ErrorCode (str): Signifies the error code of the error received
-			ErrorType (str): Signifies the type of the error received.
-			ExperimenterType (number): Type of experimenter.
-			Latency (number): Signifies the latency measurement for the OpenFlow channel in microseconds.
-			LocalIp (str): Signifies the local IP address of the selected interface.
-			MessageLength (number): Signifies the length of the message transmitted.
-			NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
-			RemoteIp (str): The IP address of the DUT at the other end of the Open Flow channel.
-			ReplyState (str): Signifies the reply state of the OF Channel.
-			VendorId (number): Signifies the vendor identifier.
-			VendorMessage (str): Signifies the vendor message value.
+        Args:
+            DataPathId (str): Signifies the datapath ID of the OpenFlow switch.
+            DataPathIdAsHex (str): Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
+            ErrorCode (str): Signifies the error code of the error received
+            ErrorType (str): Signifies the type of the error received.
+            ExperimenterType (number): Type of experimenter.
+            Latency (number): Signifies the latency measurement for the OpenFlow channel in microseconds.
+            LocalIp (str): Signifies the local IP address of the selected interface.
+            MessageLength (number): Signifies the length of the message transmitted.
+            NegotiatedVersion (str): Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
+            RemoteIp (str): The IP address of the DUT at the other end of the Open Flow channel.
+            ReplyState (str): Signifies the reply state of the OF Channel.
+            VendorId (number): Signifies the vendor identifier.
+            VendorMessage (str): Signifies the vendor message value.
 
-		Returns:
-			self: This instance with matching vendorStatLearnedInformation data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching vendorStatLearnedInformation data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of vendorStatLearnedInformation data from the server.
+    def read(self, href):
+        """Retrieves a single instance of vendorStatLearnedInformation data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the vendorStatLearnedInformation data from the server available through an iterator or index
+        Returns:
+            self: This instance with the vendorStatLearnedInformation data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

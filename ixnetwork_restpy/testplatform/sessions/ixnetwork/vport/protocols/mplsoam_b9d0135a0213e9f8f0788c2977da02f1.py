@@ -18,102 +18,102 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class MplsOam(Base):
-	"""This object sends and responds to MPLS-TP messages.
-	The MplsOam class encapsulates a required mplsOam resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object sends and responds to MPLS-TP messages.
+    The MplsOam class encapsulates a required mplsOam resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'mplsOam'
+    __slots__ = ()
+    _SDM_NAME = 'mplsOam'
 
-	def __init__(self, parent):
-		super(MplsOam, self).__init__(parent)
+    def __init__(self, parent):
+        super(MplsOam, self).__init__(parent)
 
-	@property
-	def LearnedInformation(self):
-		"""An instance of the LearnedInformation class.
+    @property
+    def LearnedInformation(self):
+        """An instance of the LearnedInformation class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_8f083f5e37a989925cc4be0f76bf7c11.LearnedInformation)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_8f083f5e37a989925cc4be0f76bf7c11.LearnedInformation)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_8f083f5e37a989925cc4be0f76bf7c11 import LearnedInformation
-		return LearnedInformation(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_8f083f5e37a989925cc4be0f76bf7c11 import LearnedInformation
+        return LearnedInformation(self)
 
-	@property
-	def Router(self):
-		"""An instance of the Router class.
+    @property
+    def Router(self):
+        """An instance of the Router class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5572ab18fab229be83af89ddd1149409.Router)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5572ab18fab229be83af89ddd1149409.Router)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5572ab18fab229be83af89ddd1149409 import Router
-		return Router(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_5572ab18fab229be83af89ddd1149409 import Router
+        return Router(self)
 
-	@property
-	def Enabled(self):
-		"""This signifies the enablement or disablement of the simulated router.
+    @property
+    def Enabled(self):
+        """This signifies the enablement or disablement of the simulated router.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def RunningState(self):
-		"""This signifies the current running state of the MPLS-OAM server. Possible values include Started, Starting, Stopped, Stopping and Unknown.
+    @property
+    def RunningState(self):
+        """This signifies the current running state of the MPLS-OAM server. Possible values include Started, Starting, Stopped, Stopping and Unknown.
 
-		Returns:
-			str(unknown|stopped|stopping|starting|started)
-		"""
-		return self._get_attribute('runningState')
+        Returns:
+            str(unknown|stopped|stopping|starting|started)
+        """
+        return self._get_attribute('runningState')
 
-	def update(self, Enabled=None):
-		"""Updates a child instance of mplsOam on the server.
+    def update(self, Enabled=None):
+        """Updates a child instance of mplsOam on the server.
 
-		Args:
-			Enabled (bool): This signifies the enablement or disablement of the simulated router.
+        Args:
+            Enabled (bool): This signifies the enablement or disablement of the simulated router.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def Start(self):
-		"""Executes the start operation on the server.
+    def Start(self):
+        """Executes the start operation on the server.
 
-		This signifies the starting of the MPLS-OAM protocol on a port or group of ports.
+        This signifies the starting of the MPLS-OAM protocol on a port or group of ports.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('start', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('start', payload=payload, response_object=None)
 
-	def Stop(self):
-		"""Executes the stop operation on the server.
+    def Stop(self):
+        """Executes the stop operation on the server.
 
-		This signifies the stopping of the MPLS OAM protocol on a port or group of ports simultaneously.
+        This signifies the stopping of the MPLS OAM protocol on a port or group of ports simultaneously.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		return self._execute('stop', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('stop', payload=payload, response_object=None)

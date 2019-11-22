@@ -18,36 +18,36 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class InnerGlobalStats(Base):
-	"""NOT DEFINED
-	The InnerGlobalStats class encapsulates a required innerGlobalStats resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The InnerGlobalStats class encapsulates a required innerGlobalStats resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'innerGlobalStats'
+    __slots__ = ()
+    _SDM_NAME = 'innerGlobalStats'
 
-	def __init__(self, parent):
-		super(InnerGlobalStats, self).__init__(parent)
+    def __init__(self, parent):
+        super(InnerGlobalStats, self).__init__(parent)
 
-	@property
-	def ColumnCaptions(self):
-		"""NOT DEFINED
+    @property
+    def ColumnCaptions(self):
+        """NOT DEFINED
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('columnCaptions')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('columnCaptions')
 
-	@property
-	def RowValues(self):
-		"""NOT DEFINED
+    @property
+    def RowValues(self):
+        """NOT DEFINED
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('rowValues')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('rowValues')

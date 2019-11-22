@@ -18,93 +18,93 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LabelSpace(Base):
-	"""This object configures the labels for the route range.
-	The LabelSpace class encapsulates a required labelSpace resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object configures the labels for the route range.
+    The LabelSpace class encapsulates a required labelSpace resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'labelSpace'
+    __slots__ = ()
+    _SDM_NAME = 'labelSpace'
 
-	def __init__(self, parent):
-		super(LabelSpace, self).__init__(parent)
+    def __init__(self, parent):
+        super(LabelSpace, self).__init__(parent)
 
-	@property
-	def End(self):
-		"""The last label value available in the label space (range).
+    @property
+    def End(self):
+        """The last label value available in the label space (range).
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('end')
-	@End.setter
-	def End(self, value):
-		self._set_attribute('end', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('end')
+    @End.setter
+    def End(self, value):
+        self._set_attribute('end', value)
 
-	@property
-	def LabelId(self):
-		"""The identifier for the label space.
+    @property
+    def LabelId(self):
+        """The identifier for the label space.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('labelId')
-	@LabelId.setter
-	def LabelId(self, value):
-		self._set_attribute('labelId', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('labelId')
+    @LabelId.setter
+    def LabelId(self, value):
+        self._set_attribute('labelId', value)
 
-	@property
-	def Mode(self):
-		"""Sets the Label mode.
+    @property
+    def Mode(self):
+        """Sets the Label mode.
 
-		Returns:
-			str(fixedLabel|incrementLabel)
-		"""
-		return self._get_attribute('mode')
-	@Mode.setter
-	def Mode(self, value):
-		self._set_attribute('mode', value)
+        Returns:
+            str(fixedLabel|incrementLabel)
+        """
+        return self._get_attribute('mode')
+    @Mode.setter
+    def Mode(self, value):
+        self._set_attribute('mode', value)
 
-	@property
-	def Start(self):
-		"""The first label value available in the label space (range). The default is 16.
+    @property
+    def Start(self):
+        """The first label value available in the label space (range). The default is 16.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('start')
-	@Start.setter
-	def Start(self, value):
-		self._set_attribute('start', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('start')
+    @Start.setter
+    def Start(self, value):
+        self._set_attribute('start', value)
 
-	@property
-	def Step(self):
-		"""The value to add for creating each additional label value.
+    @property
+    def Step(self):
+        """The value to add for creating each additional label value.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('step')
-	@Step.setter
-	def Step(self, value):
-		self._set_attribute('step', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('step')
+    @Step.setter
+    def Step(self, value):
+        self._set_attribute('step', value)
 
-	def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
-		"""Updates a child instance of labelSpace on the server.
+    def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
+        """Updates a child instance of labelSpace on the server.
 
-		Args:
-			End (number): The last label value available in the label space (range).
-			LabelId (number): The identifier for the label space.
-			Mode (str(fixedLabel|incrementLabel)): Sets the Label mode.
-			Start (number): The first label value available in the label space (range). The default is 16.
-			Step (number): The value to add for creating each additional label value.
+        Args:
+            End (number): The last label value available in the label space (range).
+            LabelId (number): The identifier for the label space.
+            Mode (str(fixedLabel|incrementLabel)): Sets the Label mode.
+            Start (number): The first label value available in the label space (range). The default is 16.
+            Step (number): The value to add for creating each additional label value.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

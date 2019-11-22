@@ -18,93 +18,93 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class State(Base):
-	"""Describes the current state of the physical port.
-	The State class encapsulates a required state resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Describes the current state of the physical port.
+    The State class encapsulates a required state resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'state'
+    __slots__ = ()
+    _SDM_NAME = 'state'
 
-	def __init__(self, parent):
-		super(State, self).__init__(parent)
+    def __init__(self, parent):
+        super(State, self).__init__(parent)
 
-	@property
-	def LinkDown(self):
-		"""Indicates that, no physical link is present.
+    @property
+    def LinkDown(self):
+        """Indicates that, no physical link is present.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('linkDown')
-	@LinkDown.setter
-	def LinkDown(self, value):
-		self._set_attribute('linkDown', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('linkDown')
+    @LinkDown.setter
+    def LinkDown(self, value):
+        self._set_attribute('linkDown', value)
 
-	@property
-	def StpBlock(self):
-		"""Indicates that the port is not part of spanning tree.
+    @property
+    def StpBlock(self):
+        """Indicates that the port is not part of spanning tree.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('stpBlock')
-	@StpBlock.setter
-	def StpBlock(self, value):
-		self._set_attribute('stpBlock', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('stpBlock')
+    @StpBlock.setter
+    def StpBlock(self, value):
+        self._set_attribute('stpBlock', value)
 
-	@property
-	def StpForward(self):
-		"""Indicates that the port is learning and relaying frames.
+    @property
+    def StpForward(self):
+        """Indicates that the port is learning and relaying frames.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('stpForward')
-	@StpForward.setter
-	def StpForward(self, value):
-		self._set_attribute('stpForward', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('stpForward')
+    @StpForward.setter
+    def StpForward(self, value):
+        self._set_attribute('stpForward', value)
 
-	@property
-	def StpLearn(self):
-		"""Indicates that the port is learning but not relaying frames.
+    @property
+    def StpLearn(self):
+        """Indicates that the port is learning but not relaying frames.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('stpLearn')
-	@StpLearn.setter
-	def StpLearn(self, value):
-		self._set_attribute('stpLearn', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('stpLearn')
+    @StpLearn.setter
+    def StpLearn(self, value):
+        self._set_attribute('stpLearn', value)
 
-	@property
-	def StpListen(self):
-		"""Indicates that the port is not learning or relaying frames.
+    @property
+    def StpListen(self):
+        """Indicates that the port is not learning or relaying frames.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('stpListen')
-	@StpListen.setter
-	def StpListen(self, value):
-		self._set_attribute('stpListen', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('stpListen')
+    @StpListen.setter
+    def StpListen(self, value):
+        self._set_attribute('stpListen', value)
 
-	def update(self, LinkDown=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
-		"""Updates a child instance of state on the server.
+    def update(self, LinkDown=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+        """Updates a child instance of state on the server.
 
-		Args:
-			LinkDown (bool): Indicates that, no physical link is present.
-			StpBlock (bool): Indicates that the port is not part of spanning tree.
-			StpForward (bool): Indicates that the port is learning and relaying frames.
-			StpLearn (bool): Indicates that the port is learning but not relaying frames.
-			StpListen (bool): Indicates that the port is not learning or relaying frames.
+        Args:
+            LinkDown (bool): Indicates that, no physical link is present.
+            StpBlock (bool): Indicates that the port is not part of spanning tree.
+            StpForward (bool): Indicates that the port is learning and relaying frames.
+            StpLearn (bool): Indicates that the port is learning but not relaying frames.
+            StpListen (bool): Indicates that the port is not learning or relaying frames.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

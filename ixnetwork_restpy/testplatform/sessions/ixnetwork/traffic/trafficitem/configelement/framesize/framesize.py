@@ -18,171 +18,171 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FrameSize(Base):
-	"""This object provides different options for the Frame Size.
-	The FrameSize class encapsulates a required frameSize resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object provides different options for the Frame Size.
+    The FrameSize class encapsulates a required frameSize resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'frameSize'
+    __slots__ = ()
+    _SDM_NAME = 'frameSize'
 
-	def __init__(self, parent):
-		super(FrameSize, self).__init__(parent)
+    def __init__(self, parent):
+        super(FrameSize, self).__init__(parent)
 
-	@property
-	def FixedSize(self):
-		"""Sets all frames to a constant specified size.
+    @property
+    def FixedSize(self):
+        """Sets all frames to a constant specified size.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('fixedSize')
-	@FixedSize.setter
-	def FixedSize(self, value):
-		self._set_attribute('fixedSize', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('fixedSize')
+    @FixedSize.setter
+    def FixedSize(self, value):
+        self._set_attribute('fixedSize', value)
 
-	@property
-	def IncrementFrom(self):
-		"""Specifies the Start Value if the Frame Size is incremented.
+    @property
+    def IncrementFrom(self):
+        """Specifies the Start Value if the Frame Size is incremented.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('incrementFrom')
-	@IncrementFrom.setter
-	def IncrementFrom(self, value):
-		self._set_attribute('incrementFrom', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('incrementFrom')
+    @IncrementFrom.setter
+    def IncrementFrom(self, value):
+        self._set_attribute('incrementFrom', value)
 
-	@property
-	def IncrementStep(self):
-		"""Specifies the Step Value if the Frame Size is Increment.
+    @property
+    def IncrementStep(self):
+        """Specifies the Step Value if the Frame Size is Increment.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('incrementStep')
-	@IncrementStep.setter
-	def IncrementStep(self, value):
-		self._set_attribute('incrementStep', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('incrementStep')
+    @IncrementStep.setter
+    def IncrementStep(self, value):
+        self._set_attribute('incrementStep', value)
 
-	@property
-	def IncrementTo(self):
-		"""Specifies the Final Value if the Frame Size is Increment.
+    @property
+    def IncrementTo(self):
+        """Specifies the Final Value if the Frame Size is Increment.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('incrementTo')
-	@IncrementTo.setter
-	def IncrementTo(self, value):
-		self._set_attribute('incrementTo', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('incrementTo')
+    @IncrementTo.setter
+    def IncrementTo(self, value):
+        self._set_attribute('incrementTo', value)
 
-	@property
-	def PresetDistribution(self):
-		"""If set, Frame Size is set to IMIX.
+    @property
+    def PresetDistribution(self):
+        """If set, Frame Size is set to IMIX.
 
-		Returns:
-			str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)
-		"""
-		return self._get_attribute('presetDistribution')
-	@PresetDistribution.setter
-	def PresetDistribution(self, value):
-		self._set_attribute('presetDistribution', value)
+        Returns:
+            str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)
+        """
+        return self._get_attribute('presetDistribution')
+    @PresetDistribution.setter
+    def PresetDistribution(self, value):
+        self._set_attribute('presetDistribution', value)
 
-	@property
-	def QuadGaussian(self):
-		"""This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
+    @property
+    def QuadGaussian(self):
+        """This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('quadGaussian')
-	@QuadGaussian.setter
-	def QuadGaussian(self, value):
-		self._set_attribute('quadGaussian', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('quadGaussian')
+    @QuadGaussian.setter
+    def QuadGaussian(self, value):
+        self._set_attribute('quadGaussian', value)
 
-	@property
-	def RandomMax(self):
-		"""Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+    @property
+    def RandomMax(self):
+        """Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('randomMax')
-	@RandomMax.setter
-	def RandomMax(self, value):
-		self._set_attribute('randomMax', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('randomMax')
+    @RandomMax.setter
+    def RandomMax(self, value):
+        self._set_attribute('randomMax', value)
 
-	@property
-	def RandomMin(self):
-		"""Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+    @property
+    def RandomMin(self):
+        """Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('randomMin')
-	@RandomMin.setter
-	def RandomMin(self, value):
-		self._set_attribute('randomMin', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('randomMin')
+    @RandomMin.setter
+    def RandomMin(self, value):
+        self._set_attribute('randomMin', value)
 
-	@property
-	def Type(self):
-		"""Sets the type of Frame Size.
+    @property
+    def Type(self):
+        """Sets the type of Frame Size.
 
-		Returns:
-			str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)
-		"""
-		return self._get_attribute('type')
-	@Type.setter
-	def Type(self, value):
-		self._set_attribute('type', value)
+        Returns:
+            str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)
+        """
+        return self._get_attribute('type')
+    @Type.setter
+    def Type(self, value):
+        self._set_attribute('type', value)
 
-	@property
-	def WeightedPairs(self):
-		"""Defines the values for the weight pairs.
+    @property
+    def WeightedPairs(self):
+        """Defines the values for the weight pairs.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('weightedPairs')
-	@WeightedPairs.setter
-	def WeightedPairs(self, value):
-		self._set_attribute('weightedPairs', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('weightedPairs')
+    @WeightedPairs.setter
+    def WeightedPairs(self, value):
+        self._set_attribute('weightedPairs', value)
 
-	@property
-	def WeightedRangePairs(self):
-		"""A list of structures that define the weighted range.
+    @property
+    def WeightedRangePairs(self):
+        """A list of structures that define the weighted range.
 
-		Returns:
-			list(dict(arg1:number,arg2:number,arg3:number))
-		"""
-		return self._get_attribute('weightedRangePairs')
-	@WeightedRangePairs.setter
-	def WeightedRangePairs(self, value):
-		self._set_attribute('weightedRangePairs', value)
+        Returns:
+            list(dict(arg1:number,arg2:number,arg3:number))
+        """
+        return self._get_attribute('weightedRangePairs')
+    @WeightedRangePairs.setter
+    def WeightedRangePairs(self, value):
+        self._set_attribute('weightedRangePairs', value)
 
-	def update(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
-		"""Updates a child instance of frameSize on the server.
+    def update(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
+        """Updates a child instance of frameSize on the server.
 
-		Args:
-			FixedSize (number): Sets all frames to a constant specified size.
-			IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
-			IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
-			IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
-			PresetDistribution (str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)): If set, Frame Size is set to IMIX.
-			QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
-			RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
-			RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-			Type (str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)): Sets the type of Frame Size.
-			WeightedPairs (list(number)): Defines the values for the weight pairs.
-			WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
+        Args:
+            FixedSize (number): Sets all frames to a constant specified size.
+            IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
+            IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
+            IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
+            PresetDistribution (str(cisco|imix|ipSecImix|ipV6Imix|rprQuar|rprTri|standardImix|tcpImix|tolly)): If set, Frame Size is set to IMIX.
+            QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
+            RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+            RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+            Type (str(auto|fixed|increment|presetDistribution|quadGaussian|random|weightedPairs)): Sets the type of Frame Size.
+            WeightedPairs (list(number)): Defines the values for the weight pairs.
+            WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

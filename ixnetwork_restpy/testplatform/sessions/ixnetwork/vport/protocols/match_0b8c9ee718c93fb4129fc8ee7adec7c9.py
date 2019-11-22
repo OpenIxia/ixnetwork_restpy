@@ -18,107 +18,107 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Match(Base):
-	"""NOT DEFINED
-	The Match class encapsulates a required match resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The Match class encapsulates a required match resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'match'
+    __slots__ = ()
+    _SDM_NAME = 'match'
 
-	def __init__(self, parent):
-		super(Match, self).__init__(parent)
+    def __init__(self, parent):
+        super(Match, self).__init__(parent)
 
-	@property
-	def MatchFields(self):
-		"""An instance of the MatchFields class.
+    @property
+    def MatchFields(self):
+        """An instance of the MatchFields class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287.MatchFields)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287.MatchFields)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287 import MatchFields
-		return MatchFields(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_39df33112bb1cfa56367ea58e168f287 import MatchFields
+        return MatchFields(self)._select()
 
-	@property
-	def ExperimenterData(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterData(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterData')
-	@ExperimenterData.setter
-	def ExperimenterData(self, value):
-		self._set_attribute('experimenterData', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterData')
+    @ExperimenterData.setter
+    def ExperimenterData(self, value):
+        self._set_attribute('experimenterData', value)
 
-	@property
-	def ExperimenterDataLength(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataLength(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLength')
-	@ExperimenterDataLength.setter
-	def ExperimenterDataLength(self, value):
-		self._set_attribute('experimenterDataLength', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLength')
+    @ExperimenterDataLength.setter
+    def ExperimenterDataLength(self, value):
+        self._set_attribute('experimenterDataLength', value)
 
-	@property
-	def ExperimenterField(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterField(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterField')
-	@ExperimenterField.setter
-	def ExperimenterField(self, value):
-		self._set_attribute('experimenterField', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterField')
+    @ExperimenterField.setter
+    def ExperimenterField(self, value):
+        self._set_attribute('experimenterField', value)
 
-	@property
-	def ExperimenterHasMask(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterHasMask(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('experimenterHasMask')
-	@ExperimenterHasMask.setter
-	def ExperimenterHasMask(self, value):
-		self._set_attribute('experimenterHasMask', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('experimenterHasMask')
+    @ExperimenterHasMask.setter
+    def ExperimenterHasMask(self, value):
+        self._set_attribute('experimenterHasMask', value)
 
-	@property
-	def ExperimenterId(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterId(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterId')
-	@ExperimenterId.setter
-	def ExperimenterId(self, value):
-		self._set_attribute('experimenterId', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterId')
+    @ExperimenterId.setter
+    def ExperimenterId(self, value):
+        self._set_attribute('experimenterId', value)
 
-	def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
-		"""Updates a child instance of match on the server.
+    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+        """Updates a child instance of match on the server.
 
-		Args:
-			ExperimenterData (str): NOT DEFINED
-			ExperimenterDataLength (number): NOT DEFINED
-			ExperimenterField (number): NOT DEFINED
-			ExperimenterHasMask (bool): NOT DEFINED
-			ExperimenterId (number): NOT DEFINED
+        Args:
+            ExperimenterData (str): NOT DEFINED
+            ExperimenterDataLength (number): NOT DEFINED
+            ExperimenterField (number): NOT DEFINED
+            ExperimenterHasMask (bool): NOT DEFINED
+            ExperimenterId (number): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

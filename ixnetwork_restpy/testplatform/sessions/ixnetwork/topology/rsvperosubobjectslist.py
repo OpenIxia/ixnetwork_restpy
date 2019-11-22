@@ -18,173 +18,173 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class RsvpEROSubObjectsList(Base):
-	"""Rsvp ERO Sub-Objects
-	The RsvpEROSubObjectsList class encapsulates a list of rsvpEROSubObjectsList resources that is managed by the system.
-	A list of resources can be retrieved from the server using the RsvpEROSubObjectsList.find() method.
-	"""
+    """Rsvp ERO Sub-Objects
+    The RsvpEROSubObjectsList class encapsulates a list of rsvpEROSubObjectsList resources that is managed by the system.
+    A list of resources can be retrieved from the server using the RsvpEROSubObjectsList.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'rsvpEROSubObjectsList'
+    __slots__ = ()
+    _SDM_NAME = 'rsvpEROSubObjectsList'
 
-	def __init__(self, parent):
-		super(RsvpEROSubObjectsList, self).__init__(parent)
+    def __init__(self, parent):
+        super(RsvpEROSubObjectsList, self).__init__(parent)
 
-	@property
-	def AsNumber(self):
-		"""AS
+    @property
+    def AsNumber(self):
+        """AS
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('asNumber')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('asNumber')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Ip(self):
-		"""IP
+    @property
+    def Ip(self):
+        """IP
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ip')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ip')
 
-	@property
-	def LocalIp(self):
-		"""Local IP
+    @property
+    def LocalIp(self):
+        """Local IP
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('localIp')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('localIp')
 
-	@property
-	def LooseFlag(self):
-		"""Loose Flag
+    @property
+    def LooseFlag(self):
+        """Loose Flag
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('looseFlag')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('looseFlag')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def PrefixLength(self):
-		"""Prefix Length
+    @property
+    def PrefixLength(self):
+        """Prefix Length
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('prefixLength')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('prefixLength')
 
-	@property
-	def Type(self):
-		"""Type
+    @property
+    def Type(self):
+        """Type
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('type')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('type')
 
-	def update(self, Name=None):
-		"""Updates a child instance of rsvpEROSubObjectsList on the server.
+    def update(self, Name=None):
+        """Updates a child instance of rsvpEROSubObjectsList on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None):
-		"""Finds and retrieves rsvpEROSubObjectsList data from the server.
+    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None):
+        """Finds and retrieves rsvpEROSubObjectsList data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve rsvpEROSubObjectsList data from the server.
-		By default the find method takes no parameters and will retrieve all rsvpEROSubObjectsList data from the server.
+        All named parameters support regex and can be used to selectively retrieve rsvpEROSubObjectsList data from the server.
+        By default the find method takes no parameters and will retrieve all rsvpEROSubObjectsList data from the server.
 
-		Args:
-			Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-			DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-			LocalIp (list(str)): Local IP
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+            DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+            LocalIp (list(str)): Local IP
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			self: This instance with matching rsvpEROSubObjectsList data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching rsvpEROSubObjectsList data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of rsvpEROSubObjectsList data from the server.
+    def read(self, href):
+        """Retrieves a single instance of rsvpEROSubObjectsList data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the rsvpEROSubObjectsList data from the server available through an iterator or index
+        Returns:
+            self: This instance with the rsvpEROSubObjectsList data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def get_device_ids(self, PortNames=None, AsNumber=None, Ip=None, LooseFlag=None, PrefixLength=None, Type=None):
-		"""Base class infrastructure that gets a list of rsvpEROSubObjectsList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, AsNumber=None, Ip=None, LooseFlag=None, PrefixLength=None, Type=None):
+        """Base class infrastructure that gets a list of rsvpEROSubObjectsList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			AsNumber (str): optional regex of asNumber
-			Ip (str): optional regex of ip
-			LooseFlag (str): optional regex of looseFlag
-			PrefixLength (str): optional regex of prefixLength
-			Type (str): optional regex of type
+        Args:
+            PortNames (str): optional regex of port names
+            AsNumber (str): optional regex of asNumber
+            Ip (str): optional regex of ip
+            LooseFlag (str): optional regex of looseFlag
+            PrefixLength (str): optional regex of prefixLength
+            Type (str): optional regex of type
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

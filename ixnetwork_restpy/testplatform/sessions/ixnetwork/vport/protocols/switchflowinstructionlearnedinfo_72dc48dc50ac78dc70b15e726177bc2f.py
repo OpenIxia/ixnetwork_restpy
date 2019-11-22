@@ -18,144 +18,144 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SwitchFlowInstructionLearnedInfo(Base):
-	"""This object allows to configure the switch flow instruction learned information for OpenFlow.
-	The SwitchFlowInstructionLearnedInfo class encapsulates a list of switchFlowInstructionLearnedInfo resources that is managed by the system.
-	A list of resources can be retrieved from the server using the SwitchFlowInstructionLearnedInfo.find() method.
-	"""
+    """This object allows to configure the switch flow instruction learned information for OpenFlow.
+    The SwitchFlowInstructionLearnedInfo class encapsulates a list of switchFlowInstructionLearnedInfo resources that is managed by the system.
+    A list of resources can be retrieved from the server using the SwitchFlowInstructionLearnedInfo.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'switchFlowInstructionLearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'switchFlowInstructionLearnedInfo'
 
-	def __init__(self, parent):
-		super(SwitchFlowInstructionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(SwitchFlowInstructionLearnedInfo, self).__init__(parent)
 
-	@property
-	def SwitchActionV131LearnedInfo(self):
-		"""An instance of the SwitchActionV131LearnedInfo class.
+    @property
+    def SwitchActionV131LearnedInfo(self):
+        """An instance of the SwitchActionV131LearnedInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_04c5821e2bcc2c849fe7adae449c90fc.SwitchActionV131LearnedInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_04c5821e2bcc2c849fe7adae449c90fc.SwitchActionV131LearnedInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_04c5821e2bcc2c849fe7adae449c90fc import SwitchActionV131LearnedInfo
-		return SwitchActionV131LearnedInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_04c5821e2bcc2c849fe7adae449c90fc import SwitchActionV131LearnedInfo
+        return SwitchActionV131LearnedInfo(self)
 
-	@property
-	def Experimenter(self):
-		"""This describes the unique Experimenter identifier. The default value is 1.
+    @property
+    def Experimenter(self):
+        """This describes the unique Experimenter identifier. The default value is 1.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenter')
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenter')
 
-	@property
-	def ExperimenterData(self):
-		"""This describes the data of the Experimenter.
+    @property
+    def ExperimenterData(self):
+        """This describes the data of the Experimenter.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterData')
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterData')
 
-	@property
-	def ExperimenterDataLength(self):
-		"""This describes the data length of the Experimenter.
+    @property
+    def ExperimenterDataLength(self):
+        """This describes the data length of the Experimenter.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLength')
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLength')
 
-	@property
-	def InstructionType(self):
-		"""This describes the action type associated with this instruction.
+    @property
+    def InstructionType(self):
+        """This describes the action type associated with this instruction.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('instructionType')
+        Returns:
+            str
+        """
+        return self._get_attribute('instructionType')
 
-	@property
-	def Metadata(self):
-		"""This describes the table metadata value used to pass information between tables.
+    @property
+    def Metadata(self):
+        """This describes the table metadata value used to pass information between tables.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('metadata')
+        Returns:
+            str
+        """
+        return self._get_attribute('metadata')
 
-	@property
-	def MetadataMask(self):
-		"""This describes the metadata bitmask value.
+    @property
+    def MetadataMask(self):
+        """This describes the metadata bitmask value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('metadataMask')
+        Returns:
+            str
+        """
+        return self._get_attribute('metadataMask')
 
-	@property
-	def MeterId(self):
-		"""NOT DEFINED
+    @property
+    def MeterId(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('meterId')
+        Returns:
+            number
+        """
+        return self._get_attribute('meterId')
 
-	@property
-	def TableId(self):
-		"""This describes the table identifier. It indicates the next table in the packet processing pipeline.
+    @property
+    def TableId(self):
+        """This describes the table identifier. It indicates the next table in the packet processing pipeline.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('tableId')
+        Returns:
+            number
+        """
+        return self._get_attribute('tableId')
 
-	def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataMask=None, MeterId=None, TableId=None):
-		"""Finds and retrieves switchFlowInstructionLearnedInfo data from the server.
+    def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataMask=None, MeterId=None, TableId=None):
+        """Finds and retrieves switchFlowInstructionLearnedInfo data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve switchFlowInstructionLearnedInfo data from the server.
-		By default the find method takes no parameters and will retrieve all switchFlowInstructionLearnedInfo data from the server.
+        All named parameters support regex and can be used to selectively retrieve switchFlowInstructionLearnedInfo data from the server.
+        By default the find method takes no parameters and will retrieve all switchFlowInstructionLearnedInfo data from the server.
 
-		Args:
-			Experimenter (number): This describes the unique Experimenter identifier. The default value is 1.
-			ExperimenterData (str): This describes the data of the Experimenter.
-			ExperimenterDataLength (number): This describes the data length of the Experimenter.
-			InstructionType (str): This describes the action type associated with this instruction.
-			Metadata (str): This describes the table metadata value used to pass information between tables.
-			MetadataMask (str): This describes the metadata bitmask value.
-			MeterId (number): NOT DEFINED
-			TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+        Args:
+            Experimenter (number): This describes the unique Experimenter identifier. The default value is 1.
+            ExperimenterData (str): This describes the data of the Experimenter.
+            ExperimenterDataLength (number): This describes the data length of the Experimenter.
+            InstructionType (str): This describes the action type associated with this instruction.
+            Metadata (str): This describes the table metadata value used to pass information between tables.
+            MetadataMask (str): This describes the metadata bitmask value.
+            MeterId (number): NOT DEFINED
+            TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
 
-		Returns:
-			self: This instance with matching switchFlowInstructionLearnedInfo data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching switchFlowInstructionLearnedInfo data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of switchFlowInstructionLearnedInfo data from the server.
+    def read(self, href):
+        """Retrieves a single instance of switchFlowInstructionLearnedInfo data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the switchFlowInstructionLearnedInfo data from the server available through an iterator or index
+        Returns:
+            self: This instance with the switchFlowInstructionLearnedInfo data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

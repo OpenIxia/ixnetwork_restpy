@@ -18,50 +18,50 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class DataCollection(Base):
-	"""DEPRECATED Specifies the collection of data.
-	The DataCollection class encapsulates a required dataCollection resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """DEPRECATED Specifies the collection of data.
+    The DataCollection class encapsulates a required dataCollection resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'dataCollection'
+    __slots__ = ()
+    _SDM_NAME = 'dataCollection'
 
-	def __init__(self, parent):
-		super(DataCollection, self).__init__(parent)
+    def __init__(self, parent):
+        super(DataCollection, self).__init__(parent)
 
-	@property
-	def Enable(self):
-		"""If it is true, enables collection of data
+    @property
+    def Enable(self):
+        """If it is true, enables collection of data
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('Enable')
-	@Enable.setter
-	def Enable(self, value):
-		self._set_attribute('Enable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('Enable')
+    @Enable.setter
+    def Enable(self, value):
+        self._set_attribute('Enable', value)
 
-	@property
-	def LastRunId(self):
-		"""Specifies the identifier for last run.
+    @property
+    def LastRunId(self):
+        """Specifies the identifier for last run.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('LastRunId')
+        Returns:
+            number
+        """
+        return self._get_attribute('LastRunId')
 
-	def update(self, Enable=None):
-		"""Updates a child instance of dataCollection on the server.
+    def update(self, Enable=None):
+        """Updates a child instance of dataCollection on the server.
 
-		Args:
-			Enable (bool): If it is true, enables collection of data
+        Args:
+            Enable (bool): If it is true, enables collection of data
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

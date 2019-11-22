@@ -18,106 +18,106 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SwitchFlow131TriggerAttributes(Base):
-	"""This object allows to configure the switch Flow 131 Trigger Attributes.
-	The SwitchFlow131TriggerAttributes class encapsulates a required switchFlow131TriggerAttributes resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object allows to configure the switch Flow 131 Trigger Attributes.
+    The SwitchFlow131TriggerAttributes class encapsulates a required switchFlow131TriggerAttributes resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'switchFlow131TriggerAttributes'
+    __slots__ = ()
+    _SDM_NAME = 'switchFlow131TriggerAttributes'
 
-	def __init__(self, parent):
-		super(SwitchFlow131TriggerAttributes, self).__init__(parent)
+    def __init__(self, parent):
+        super(SwitchFlow131TriggerAttributes, self).__init__(parent)
 
-	@property
-	def OutGroup(self):
-		"""This describes the out group value. It requires matching entries to include this as an output group.
+    @property
+    def OutGroup(self):
+        """This describes the out group value. It requires matching entries to include this as an output group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('outGroup')
-	@OutGroup.setter
-	def OutGroup(self, value):
-		self._set_attribute('outGroup', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('outGroup')
+    @OutGroup.setter
+    def OutGroup(self, value):
+        self._set_attribute('outGroup', value)
 
-	@property
-	def OutGroupInputMode(self):
-		"""This describes the input mode of the out group value.
+    @property
+    def OutGroupInputMode(self):
+        """This describes the input mode of the out group value.
 
-		Returns:
-			str(allGroups|anyGroup|outGroupCustom)
-		"""
-		return self._get_attribute('outGroupInputMode')
-	@OutGroupInputMode.setter
-	def OutGroupInputMode(self, value):
-		self._set_attribute('outGroupInputMode', value)
+        Returns:
+            str(allGroups|anyGroup|outGroupCustom)
+        """
+        return self._get_attribute('outGroupInputMode')
+    @OutGroupInputMode.setter
+    def OutGroupInputMode(self, value):
+        self._set_attribute('outGroupInputMode', value)
 
-	@property
-	def OutPort(self):
-		"""This describes the out port value. It requires matching entries to include this as an output port.
+    @property
+    def OutPort(self):
+        """This describes the out port value. It requires matching entries to include this as an output port.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('outPort')
-	@OutPort.setter
-	def OutPort(self, value):
-		self._set_attribute('outPort', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('outPort')
+    @OutPort.setter
+    def OutPort(self, value):
+        self._set_attribute('outPort', value)
 
-	@property
-	def OutPortInputMode(self):
-		"""This describes the input mode of the out port value.
+    @property
+    def OutPortInputMode(self):
+        """This describes the input mode of the out port value.
 
-		Returns:
-			str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)
-		"""
-		return self._get_attribute('outPortInputMode')
-	@OutPortInputMode.setter
-	def OutPortInputMode(self, value):
-		self._set_attribute('outPortInputMode', value)
+        Returns:
+            str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)
+        """
+        return self._get_attribute('outPortInputMode')
+    @OutPortInputMode.setter
+    def OutPortInputMode(self, value):
+        self._set_attribute('outPortInputMode', value)
 
-	@property
-	def TableId(self):
-		"""This describes the table identifier. It indicates the next table in the packet processing pipeline.
+    @property
+    def TableId(self):
+        """This describes the table identifier. It indicates the next table in the packet processing pipeline.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('tableId')
-	@TableId.setter
-	def TableId(self, value):
-		self._set_attribute('tableId', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('tableId')
+    @TableId.setter
+    def TableId(self, value):
+        self._set_attribute('tableId', value)
 
-	@property
-	def TableIdInputMode(self):
-		"""This describes the input mode of the Table Identifier.
+    @property
+    def TableIdInputMode(self):
+        """This describes the input mode of the Table Identifier.
 
-		Returns:
-			str(allTables|emergency|custom)
-		"""
-		return self._get_attribute('tableIdInputMode')
-	@TableIdInputMode.setter
-	def TableIdInputMode(self, value):
-		self._set_attribute('tableIdInputMode', value)
+        Returns:
+            str(allTables|emergency|custom)
+        """
+        return self._get_attribute('tableIdInputMode')
+    @TableIdInputMode.setter
+    def TableIdInputMode(self, value):
+        self._set_attribute('tableIdInputMode', value)
 
-	def update(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
-		"""Updates a child instance of switchFlow131TriggerAttributes on the server.
+    def update(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
+        """Updates a child instance of switchFlow131TriggerAttributes on the server.
 
-		Args:
-			OutGroup (number): This describes the out group value. It requires matching entries to include this as an output group.
-			OutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): This describes the input mode of the out group value.
-			OutPort (number): This describes the out port value. It requires matching entries to include this as an output port.
-			OutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): This describes the input mode of the out port value.
-			TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
-			TableIdInputMode (str(allTables|emergency|custom)): This describes the input mode of the Table Identifier.
+        Args:
+            OutGroup (number): This describes the out group value. It requires matching entries to include this as an output group.
+            OutGroupInputMode (str(allGroups|anyGroup|outGroupCustom)): This describes the input mode of the out group value.
+            OutPort (number): This describes the out port value. It requires matching entries to include this as an output port.
+            OutPortInputMode (str(ofppInPort|ofppNormal|ofppFlood|ofppAll|ofppController|ofppLocal|ofppAny|outPortCustom)): This describes the input mode of the out port value.
+            TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+            TableIdInputMode (str(allTables|emergency|custom)): This describes the input mode of the Table Identifier.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

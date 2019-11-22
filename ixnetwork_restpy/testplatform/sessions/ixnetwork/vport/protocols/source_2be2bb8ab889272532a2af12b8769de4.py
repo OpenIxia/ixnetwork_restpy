@@ -18,113 +18,113 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Source(Base):
-	"""This object configures a set of IPv4 source addresses that a host wishes to receive multicast traffic from.
-	The Source class encapsulates a list of source resources that is be managed by the user.
-	A list of resources can be retrieved from the server using the Source.find() method.
-	The list can be managed by the user by using the Source.add() and Source.remove() methods.
-	"""
+    """This object configures a set of IPv4 source addresses that a host wishes to receive multicast traffic from.
+    The Source class encapsulates a list of source resources that is be managed by the user.
+    A list of resources can be retrieved from the server using the Source.find() method.
+    The list can be managed by the user by using the Source.add() and Source.remove() methods.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'source'
+    __slots__ = ()
+    _SDM_NAME = 'source'
 
-	def __init__(self, parent):
-		super(Source, self).__init__(parent)
+    def __init__(self, parent):
+        super(Source, self).__init__(parent)
 
-	@property
-	def SourceRangeCount(self):
-		"""The number of IP addresses in the source range.
+    @property
+    def SourceRangeCount(self):
+        """The number of IP addresses in the source range.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('sourceRangeCount')
-	@SourceRangeCount.setter
-	def SourceRangeCount(self, value):
-		self._set_attribute('sourceRangeCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('sourceRangeCount')
+    @SourceRangeCount.setter
+    def SourceRangeCount(self, value):
+        self._set_attribute('sourceRangeCount', value)
 
-	@property
-	def SourceRangeStart(self):
-		"""The first IP address in the source range.
+    @property
+    def SourceRangeStart(self):
+        """The first IP address in the source range.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('sourceRangeStart')
-	@SourceRangeStart.setter
-	def SourceRangeStart(self, value):
-		self._set_attribute('sourceRangeStart', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('sourceRangeStart')
+    @SourceRangeStart.setter
+    def SourceRangeStart(self, value):
+        self._set_attribute('sourceRangeStart', value)
 
-	def update(self, SourceRangeCount=None, SourceRangeStart=None):
-		"""Updates a child instance of source on the server.
+    def update(self, SourceRangeCount=None, SourceRangeStart=None):
+        """Updates a child instance of source on the server.
 
-		Args:
-			SourceRangeCount (number): The number of IP addresses in the source range.
-			SourceRangeStart (str): The first IP address in the source range.
+        Args:
+            SourceRangeCount (number): The number of IP addresses in the source range.
+            SourceRangeStart (str): The first IP address in the source range.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def add(self, SourceRangeCount=None, SourceRangeStart=None):
-		"""Adds a new source node on the server and retrieves it in this instance.
+    def add(self, SourceRangeCount=None, SourceRangeStart=None):
+        """Adds a new source node on the server and retrieves it in this instance.
 
-		Args:
-			SourceRangeCount (number): The number of IP addresses in the source range.
-			SourceRangeStart (str): The first IP address in the source range.
+        Args:
+            SourceRangeCount (number): The number of IP addresses in the source range.
+            SourceRangeStart (str): The first IP address in the source range.
 
-		Returns:
-			self: This instance with all currently retrieved source data using find and the newly added source data available through an iterator or index
+        Returns:
+            self: This instance with all currently retrieved source data using find and the newly added source data available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(locals())
 
-	def remove(self):
-		"""Deletes all the source data in this instance from server.
+    def remove(self):
+        """Deletes all the source data in this instance from server.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
-	def find(self, SourceRangeCount=None, SourceRangeStart=None):
-		"""Finds and retrieves source data from the server.
+    def find(self, SourceRangeCount=None, SourceRangeStart=None):
+        """Finds and retrieves source data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve source data from the server.
-		By default the find method takes no parameters and will retrieve all source data from the server.
+        All named parameters support regex and can be used to selectively retrieve source data from the server.
+        By default the find method takes no parameters and will retrieve all source data from the server.
 
-		Args:
-			SourceRangeCount (number): The number of IP addresses in the source range.
-			SourceRangeStart (str): The first IP address in the source range.
+        Args:
+            SourceRangeCount (number): The number of IP addresses in the source range.
+            SourceRangeStart (str): The first IP address in the source range.
 
-		Returns:
-			self: This instance with matching source data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching source data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of source data from the server.
+    def read(self, href):
+        """Retrieves a single instance of source data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the source data from the server available through an iterator or index
+        Returns:
+            self: This instance with the source data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

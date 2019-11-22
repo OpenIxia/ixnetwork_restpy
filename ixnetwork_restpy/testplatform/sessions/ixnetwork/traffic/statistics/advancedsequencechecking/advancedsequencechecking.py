@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class AdvancedSequenceChecking(Base):
-	"""Checks advanced sequence.
-	The AdvancedSequenceChecking class encapsulates a required advancedSequenceChecking resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Checks advanced sequence.
+    The AdvancedSequenceChecking class encapsulates a required advancedSequenceChecking resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'advancedSequenceChecking'
+    __slots__ = ()
+    _SDM_NAME = 'advancedSequenceChecking'
 
-	def __init__(self, parent):
-		super(AdvancedSequenceChecking, self).__init__(parent)
+    def __init__(self, parent):
+        super(AdvancedSequenceChecking, self).__init__(parent)
 
-	@property
-	def AdvancedSequenceThreshold(self):
-		"""Signifies the threshold of advanced sequence
+    @property
+    def AdvancedSequenceThreshold(self):
+        """Signifies the threshold of advanced sequence
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('advancedSequenceThreshold')
-	@AdvancedSequenceThreshold.setter
-	def AdvancedSequenceThreshold(self, value):
-		self._set_attribute('advancedSequenceThreshold', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('advancedSequenceThreshold')
+    @AdvancedSequenceThreshold.setter
+    def AdvancedSequenceThreshold(self, value):
+        self._set_attribute('advancedSequenceThreshold', value)
 
-	@property
-	def Enabled(self):
-		"""If true, enables advanced sequence checking
+    @property
+    def Enabled(self):
+        """If true, enables advanced sequence checking
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	def update(self, AdvancedSequenceThreshold=None, Enabled=None):
-		"""Updates a child instance of advancedSequenceChecking on the server.
+    def update(self, AdvancedSequenceThreshold=None, Enabled=None):
+        """Updates a child instance of advancedSequenceChecking on the server.
 
-		Args:
-			AdvancedSequenceThreshold (number): Signifies the threshold of advanced sequence
-			Enabled (bool): If true, enables advanced sequence checking
+        Args:
+            AdvancedSequenceThreshold (number): Signifies the threshold of advanced sequence
+            Enabled (bool): If true, enables advanced sequence checking
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

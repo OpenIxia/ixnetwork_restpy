@@ -18,224 +18,224 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class GroupStatLearnedInformation(Base):
-	"""NOT DEFINED
-	The GroupStatLearnedInformation class encapsulates a list of groupStatLearnedInformation resources that is managed by the system.
-	A list of resources can be retrieved from the server using the GroupStatLearnedInformation.find() method.
-	"""
+    """NOT DEFINED
+    The GroupStatLearnedInformation class encapsulates a list of groupStatLearnedInformation resources that is managed by the system.
+    A list of resources can be retrieved from the server using the GroupStatLearnedInformation.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'groupStatLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'groupStatLearnedInformation'
 
-	def __init__(self, parent):
-		super(GroupStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(GroupStatLearnedInformation, self).__init__(parent)
 
-	@property
-	def GroupStatBucketLearnedInformation(self):
-		"""An instance of the GroupStatBucketLearnedInformation class.
+    @property
+    def GroupStatBucketLearnedInformation(self):
+        """An instance of the GroupStatBucketLearnedInformation class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_7b24adbf4d231474c1a82b3fc095fc63.GroupStatBucketLearnedInformation)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_7b24adbf4d231474c1a82b3fc095fc63.GroupStatBucketLearnedInformation)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_7b24adbf4d231474c1a82b3fc095fc63 import GroupStatBucketLearnedInformation
-		return GroupStatBucketLearnedInformation(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_7b24adbf4d231474c1a82b3fc095fc63 import GroupStatBucketLearnedInformation
+        return GroupStatBucketLearnedInformation(self)
 
-	@property
-	def ByteCount(self):
-		"""NOT DEFINED
+    @property
+    def ByteCount(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('byteCount')
+        Returns:
+            str
+        """
+        return self._get_attribute('byteCount')
 
-	@property
-	def DataPathId(self):
-		"""NOT DEFINED
+    @property
+    def DataPathId(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathId')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathId')
 
-	@property
-	def DataPathIdAsHex(self):
-		"""NOT DEFINED
+    @property
+    def DataPathIdAsHex(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('dataPathIdAsHex')
+        Returns:
+            str
+        """
+        return self._get_attribute('dataPathIdAsHex')
 
-	@property
-	def DurationInNSec(self):
-		"""NOT DEFINED
+    @property
+    def DurationInNSec(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('durationInNSec')
+        Returns:
+            str
+        """
+        return self._get_attribute('durationInNSec')
 
-	@property
-	def DurationInSec(self):
-		"""NOT DEFINED
+    @property
+    def DurationInSec(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('durationInSec')
+        Returns:
+            str
+        """
+        return self._get_attribute('durationInSec')
 
-	@property
-	def ErrorCode(self):
-		"""NOT DEFINED
+    @property
+    def ErrorCode(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorCode')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorCode')
 
-	@property
-	def ErrorType(self):
-		"""NOT DEFINED
+    @property
+    def ErrorType(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('errorType')
+        Returns:
+            str
+        """
+        return self._get_attribute('errorType')
 
-	@property
-	def GroupId(self):
-		"""NOT DEFINED
+    @property
+    def GroupId(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('groupId')
+        Returns:
+            str
+        """
+        return self._get_attribute('groupId')
 
-	@property
-	def Latency(self):
-		"""NOT DEFINED
+    @property
+    def Latency(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('latency')
+        Returns:
+            number
+        """
+        return self._get_attribute('latency')
 
-	@property
-	def LocalIp(self):
-		"""NOT DEFINED
+    @property
+    def LocalIp(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('localIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('localIp')
 
-	@property
-	def NegotiatedVersion(self):
-		"""NOT DEFINED
+    @property
+    def NegotiatedVersion(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('negotiatedVersion')
+        Returns:
+            str
+        """
+        return self._get_attribute('negotiatedVersion')
 
-	@property
-	def NumberOfBucketStats(self):
-		"""NOT DEFINED
+    @property
+    def NumberOfBucketStats(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('numberOfBucketStats')
+        Returns:
+            str
+        """
+        return self._get_attribute('numberOfBucketStats')
 
-	@property
-	def PacketCount(self):
-		"""NOT DEFINED
+    @property
+    def PacketCount(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('packetCount')
+        Returns:
+            str
+        """
+        return self._get_attribute('packetCount')
 
-	@property
-	def ReferenceCount(self):
-		"""NOT DEFINED
+    @property
+    def ReferenceCount(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('referenceCount')
+        Returns:
+            str
+        """
+        return self._get_attribute('referenceCount')
 
-	@property
-	def RemoteIp(self):
-		"""NOT DEFINED
+    @property
+    def RemoteIp(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
 
-	@property
-	def ReplyState(self):
-		"""NOT DEFINED
+    @property
+    def ReplyState(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('replyState')
+        Returns:
+            str
+        """
+        return self._get_attribute('replyState')
 
-	def find(self, ByteCount=None, DataPathId=None, DataPathIdAsHex=None, DurationInNSec=None, DurationInSec=None, ErrorCode=None, ErrorType=None, GroupId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, PacketCount=None, ReferenceCount=None, RemoteIp=None, ReplyState=None):
-		"""Finds and retrieves groupStatLearnedInformation data from the server.
+    def find(self, ByteCount=None, DataPathId=None, DataPathIdAsHex=None, DurationInNSec=None, DurationInSec=None, ErrorCode=None, ErrorType=None, GroupId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, PacketCount=None, ReferenceCount=None, RemoteIp=None, ReplyState=None):
+        """Finds and retrieves groupStatLearnedInformation data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve groupStatLearnedInformation data from the server.
-		By default the find method takes no parameters and will retrieve all groupStatLearnedInformation data from the server.
+        All named parameters support regex and can be used to selectively retrieve groupStatLearnedInformation data from the server.
+        By default the find method takes no parameters and will retrieve all groupStatLearnedInformation data from the server.
 
-		Args:
-			ByteCount (str): NOT DEFINED
-			DataPathId (str): NOT DEFINED
-			DataPathIdAsHex (str): NOT DEFINED
-			DurationInNSec (str): NOT DEFINED
-			DurationInSec (str): NOT DEFINED
-			ErrorCode (str): NOT DEFINED
-			ErrorType (str): NOT DEFINED
-			GroupId (str): NOT DEFINED
-			Latency (number): NOT DEFINED
-			LocalIp (str): NOT DEFINED
-			NegotiatedVersion (str): NOT DEFINED
-			NumberOfBucketStats (str): NOT DEFINED
-			PacketCount (str): NOT DEFINED
-			ReferenceCount (str): NOT DEFINED
-			RemoteIp (str): NOT DEFINED
-			ReplyState (str): NOT DEFINED
+        Args:
+            ByteCount (str): NOT DEFINED
+            DataPathId (str): NOT DEFINED
+            DataPathIdAsHex (str): NOT DEFINED
+            DurationInNSec (str): NOT DEFINED
+            DurationInSec (str): NOT DEFINED
+            ErrorCode (str): NOT DEFINED
+            ErrorType (str): NOT DEFINED
+            GroupId (str): NOT DEFINED
+            Latency (number): NOT DEFINED
+            LocalIp (str): NOT DEFINED
+            NegotiatedVersion (str): NOT DEFINED
+            NumberOfBucketStats (str): NOT DEFINED
+            PacketCount (str): NOT DEFINED
+            ReferenceCount (str): NOT DEFINED
+            RemoteIp (str): NOT DEFINED
+            ReplyState (str): NOT DEFINED
 
-		Returns:
-			self: This instance with matching groupStatLearnedInformation data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching groupStatLearnedInformation data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of groupStatLearnedInformation data from the server.
+    def read(self, href):
+        """Retrieves a single instance of groupStatLearnedInformation data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the groupStatLearnedInformation data from the server available through an iterator or index
+        Returns:
+            self: This instance with the groupStatLearnedInformation data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

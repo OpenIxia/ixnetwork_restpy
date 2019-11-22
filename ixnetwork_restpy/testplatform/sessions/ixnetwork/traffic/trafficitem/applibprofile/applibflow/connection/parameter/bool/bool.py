@@ -18,84 +18,84 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Bool(Base):
-	"""This specifies the boolean properties of the parameter.
-	The Bool class encapsulates a list of bool resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Bool.find() method.
-	"""
+    """This specifies the boolean properties of the parameter.
+    The Bool class encapsulates a list of bool resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Bool.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'bool'
+    __slots__ = ()
+    _SDM_NAME = 'bool'
 
-	def __init__(self, parent):
-		super(Bool, self).__init__(parent)
+    def __init__(self, parent):
+        super(Bool, self).__init__(parent)
 
-	@property
-	def Default(self):
-		"""(Read only) Parameter default value.
+    @property
+    def Default(self):
+        """(Read only) Parameter default value.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('default')
+        Returns:
+            bool
+        """
+        return self._get_attribute('default')
 
-	@property
-	def Value(self):
-		"""Parameter bool value.
+    @property
+    def Value(self):
+        """Parameter bool value.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Value=None):
-		"""Updates a child instance of bool on the server.
+    def update(self, Value=None):
+        """Updates a child instance of bool on the server.
 
-		Args:
-			Value (bool): Parameter bool value.
+        Args:
+            Value (bool): Parameter bool value.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, Default=None, Value=None):
-		"""Finds and retrieves bool data from the server.
+    def find(self, Default=None, Value=None):
+        """Finds and retrieves bool data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve bool data from the server.
-		By default the find method takes no parameters and will retrieve all bool data from the server.
+        All named parameters support regex and can be used to selectively retrieve bool data from the server.
+        By default the find method takes no parameters and will retrieve all bool data from the server.
 
-		Args:
-			Default (bool): (Read only) Parameter default value.
-			Value (bool): Parameter bool value.
+        Args:
+            Default (bool): (Read only) Parameter default value.
+            Value (bool): Parameter bool value.
 
-		Returns:
-			self: This instance with matching bool data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching bool data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of bool data from the server.
+    def read(self, href):
+        """Retrieves a single instance of bool data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the bool data from the server available through an iterator or index
+        Returns:
+            self: This instance with the bool data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

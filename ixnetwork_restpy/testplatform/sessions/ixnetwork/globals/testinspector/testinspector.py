@@ -18,68 +18,68 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TestInspector(Base):
-	"""
-	The TestInspector class encapsulates a required testInspector resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The TestInspector class encapsulates a required testInspector resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'testInspector'
+    __slots__ = ()
+    _SDM_NAME = 'testInspector'
 
-	def __init__(self, parent):
-		super(TestInspector, self).__init__(parent)
+    def __init__(self, parent):
+        super(TestInspector, self).__init__(parent)
 
-	@property
-	def Statistic(self):
-		"""An instance of the Statistic class.
+    @property
+    def Statistic(self):
+        """An instance of the Statistic class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
-		return Statistic(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
+        return Statistic(self)
 
-	@property
-	def EnableTestInspector(self):
-		"""Enable/Disable Test Inspector
+    @property
+    def EnableTestInspector(self):
+        """Enable/Disable Test Inspector
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enableTestInspector')
-	@EnableTestInspector.setter
-	def EnableTestInspector(self, value):
-		self._set_attribute('enableTestInspector', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableTestInspector')
+    @EnableTestInspector.setter
+    def EnableTestInspector(self, value):
+        self._set_attribute('enableTestInspector', value)
 
-	@property
-	def PollingInterval(self):
-		"""Polling Interval
+    @property
+    def PollingInterval(self):
+        """Polling Interval
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('pollingInterval')
-	@PollingInterval.setter
-	def PollingInterval(self, value):
-		self._set_attribute('pollingInterval', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('pollingInterval')
+    @PollingInterval.setter
+    def PollingInterval(self, value):
+        self._set_attribute('pollingInterval', value)
 
-	def update(self, EnableTestInspector=None, PollingInterval=None):
-		"""Updates a child instance of testInspector on the server.
+    def update(self, EnableTestInspector=None, PollingInterval=None):
+        """Updates a child instance of testInspector on the server.
 
-		Args:
-			EnableTestInspector (bool): Enable/Disable Test Inspector
-			PollingInterval (number): Polling Interval
+        Args:
+            EnableTestInspector (bool): Enable/Disable Test Inspector
+            PollingInterval (number): Polling Interval
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

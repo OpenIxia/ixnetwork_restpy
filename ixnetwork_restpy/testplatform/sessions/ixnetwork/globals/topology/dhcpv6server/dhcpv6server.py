@@ -18,165 +18,165 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Dhcpv6server(Base):
-	"""Dhcp6Server global and per-port settings
-	The Dhcpv6server class encapsulates a required dhcpv6server resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Dhcp6Server global and per-port settings
+    The Dhcpv6server class encapsulates a required dhcpv6server resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'dhcpv6server'
+    __slots__ = ()
+    _SDM_NAME = 'dhcpv6server'
 
-	def __init__(self, parent):
-		super(Dhcpv6server, self).__init__(parent)
+    def __init__(self, parent):
+        super(Dhcpv6server, self).__init__(parent)
 
-	@property
-	def ReconfigureRate(self):
-		"""An instance of the ReconfigureRate class.
+    @property
+    def ReconfigureRate(self):
+        """An instance of the ReconfigureRate class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6server.reconfigurerate.reconfigurerate.ReconfigureRate)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6server.reconfigurerate.reconfigurerate.ReconfigureRate)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6server.reconfigurerate.reconfigurerate import ReconfigureRate
-		return ReconfigureRate(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6server.reconfigurerate.reconfigurerate import ReconfigureRate
+        return ReconfigureRate(self)._select()
 
-	@property
-	def TlvEditor(self):
-		"""An instance of the TlvEditor class.
+    @property
+    def TlvEditor(self):
+        """An instance of the TlvEditor class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor.TlvEditor)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
-		return TlvEditor(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor import TlvEditor
+        return TlvEditor(self)
 
-	@property
-	def AdvertiseTimeout(self):
-		"""Advertise timeout in seconds
+    @property
+    def AdvertiseTimeout(self):
+        """Advertise timeout in seconds
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('advertiseTimeout')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('advertiseTimeout')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def PingCheck(self):
-		"""When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
+    @property
+    def PingCheck(self):
+        """When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('pingCheck')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('pingCheck')
 
-	@property
-	def PingTimeout(self):
-		"""The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
+    @property
+    def PingTimeout(self):
+        """The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('pingTimeout')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('pingTimeout')
 
-	@property
-	def ReconfigureMaxRc(self):
-		"""RFC 3315 Reconfigure retry attempts
+    @property
+    def ReconfigureMaxRc(self):
+        """RFC 3315 Reconfigure retry attempts
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('reconfigureMaxRc')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('reconfigureMaxRc')
 
-	@property
-	def ReconfigureTimeout(self):
-		"""RFC 3315 Reconfigure timeout in seconds
+    @property
+    def ReconfigureTimeout(self):
+        """RFC 3315 Reconfigure timeout in seconds
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('reconfigureTimeout')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('reconfigureTimeout')
 
-	@property
-	def RowNames(self):
-		"""Name of rows
+    @property
+    def RowNames(self):
+        """Name of rows
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('rowNames')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('rowNames')
 
-	def update(self, Name=None):
-		"""Updates a child instance of dhcpv6server on the server.
+    def update(self, Name=None):
+        """Updates a child instance of dhcpv6server on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, AdvertiseTimeout=None, PingCheck=None, PingTimeout=None, ReconfigureMaxRc=None, ReconfigureTimeout=None):
-		"""Base class infrastructure that gets a list of dhcpv6server device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, AdvertiseTimeout=None, PingCheck=None, PingTimeout=None, ReconfigureMaxRc=None, ReconfigureTimeout=None):
+        """Base class infrastructure that gets a list of dhcpv6server device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			AdvertiseTimeout (str): optional regex of advertiseTimeout
-			PingCheck (str): optional regex of pingCheck
-			PingTimeout (str): optional regex of pingTimeout
-			ReconfigureMaxRc (str): optional regex of reconfigureMaxRc
-			ReconfigureTimeout (str): optional regex of reconfigureTimeout
+        Args:
+            PortNames (str): optional regex of port names
+            AdvertiseTimeout (str): optional regex of advertiseTimeout
+            PingCheck (str): optional regex of pingCheck
+            PingTimeout (str): optional regex of pingTimeout
+            ReconfigureMaxRc (str): optional regex of reconfigureMaxRc
+            ReconfigureTimeout (str): optional regex of reconfigureTimeout
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

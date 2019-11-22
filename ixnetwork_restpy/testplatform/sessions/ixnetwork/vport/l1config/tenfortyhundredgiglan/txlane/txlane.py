@@ -18,138 +18,138 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class TxLane(Base):
-	"""This object contains the TxLane parameters.
-	The TxLane class encapsulates a required txLane resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object contains the TxLane parameters.
+    The TxLane class encapsulates a required txLane resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'txLane'
+    __slots__ = ()
+    _SDM_NAME = 'txLane'
 
-	def __init__(self, parent):
-		super(TxLane, self).__init__(parent)
+    def __init__(self, parent):
+        super(TxLane, self).__init__(parent)
 
-	@property
-	def IsSkewSynchronized(self):
-		"""If true, skew value will apply for all the lanes.
+    @property
+    def IsSkewSynchronized(self):
+        """If true, skew value will apply for all the lanes.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isSkewSynchronized')
-	@IsSkewSynchronized.setter
-	def IsSkewSynchronized(self, value):
-		self._set_attribute('isSkewSynchronized', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('isSkewSynchronized')
+    @IsSkewSynchronized.setter
+    def IsSkewSynchronized(self, value):
+        self._set_attribute('isSkewSynchronized', value)
 
-	@property
-	def LaneMappingType(self):
-		"""Lane Mapping
+    @property
+    def LaneMappingType(self):
+        """Lane Mapping
 
-		Returns:
-			str(custom|decrement|default|increment|random)
-		"""
-		return self._get_attribute('laneMappingType')
-	@LaneMappingType.setter
-	def LaneMappingType(self, value):
-		self._set_attribute('laneMappingType', value)
+        Returns:
+            str(custom|decrement|default|increment|random)
+        """
+        return self._get_attribute('laneMappingType')
+    @LaneMappingType.setter
+    def LaneMappingType(self, value):
+        self._set_attribute('laneMappingType', value)
 
-	@property
-	def MaxSkewVal(self):
-		"""
+    @property
+    def MaxSkewVal(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('maxSkewVal')
+        Returns:
+            number
+        """
+        return self._get_attribute('maxSkewVal')
 
-	@property
-	def MinSkewVal(self):
-		"""
+    @property
+    def MinSkewVal(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('minSkewVal')
+        Returns:
+            number
+        """
+        return self._get_attribute('minSkewVal')
 
-	@property
-	def NoOfLanes(self):
-		"""Number of lanes
+    @property
+    def NoOfLanes(self):
+        """Number of lanes
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('noOfLanes')
+        Returns:
+            number
+        """
+        return self._get_attribute('noOfLanes')
 
-	@property
-	def PcsLane(self):
-		"""Pcs Lane
+    @property
+    def PcsLane(self):
+        """Pcs Lane
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('pcsLane')
-	@PcsLane.setter
-	def PcsLane(self, value):
-		self._set_attribute('pcsLane', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('pcsLane')
+    @PcsLane.setter
+    def PcsLane(self, value):
+        self._set_attribute('pcsLane', value)
 
-	@property
-	def PhysicalLanes(self):
-		"""
+    @property
+    def PhysicalLanes(self):
+        """
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('physicalLanes')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('physicalLanes')
 
-	@property
-	def Resolution(self):
-		"""
+    @property
+    def Resolution(self):
+        """
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('resolution')
+        Returns:
+            number
+        """
+        return self._get_attribute('resolution')
 
-	@property
-	def SkewValues(self):
-		"""Skew Values
+    @property
+    def SkewValues(self):
+        """Skew Values
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('skewValues')
-	@SkewValues.setter
-	def SkewValues(self, value):
-		self._set_attribute('skewValues', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('skewValues')
+    @SkewValues.setter
+    def SkewValues(self, value):
+        self._set_attribute('skewValues', value)
 
-	@property
-	def SynchronizedSkewVal(self):
-		"""Synchronized Skew Values
+    @property
+    def SynchronizedSkewVal(self):
+        """Synchronized Skew Values
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('synchronizedSkewVal')
-	@SynchronizedSkewVal.setter
-	def SynchronizedSkewVal(self, value):
-		self._set_attribute('synchronizedSkewVal', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('synchronizedSkewVal')
+    @SynchronizedSkewVal.setter
+    def SynchronizedSkewVal(self, value):
+        self._set_attribute('synchronizedSkewVal', value)
 
-	def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
-		"""Updates a child instance of txLane on the server.
+    def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
+        """Updates a child instance of txLane on the server.
 
-		Args:
-			IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
-			LaneMappingType (str(custom|decrement|default|increment|random)): Lane Mapping
-			PcsLane (list(number)): Pcs Lane
-			SkewValues (list(number)): Skew Values
-			SynchronizedSkewVal (number): Synchronized Skew Values
+        Args:
+            IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
+            LaneMappingType (str(custom|decrement|default|increment|random)): Lane Mapping
+            PcsLane (list(number)): Pcs Lane
+            SkewValues (list(number)): Skew Values
+            SynchronizedSkewVal (number): Synchronized Skew Values
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

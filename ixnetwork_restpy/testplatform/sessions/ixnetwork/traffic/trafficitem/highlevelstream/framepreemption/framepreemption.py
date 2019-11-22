@@ -18,106 +18,106 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class FramePreemption(Base):
-	"""
-	The FramePreemption class encapsulates a required framePreemption resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """
+    The FramePreemption class encapsulates a required framePreemption resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'framePreemption'
+    __slots__ = ()
+    _SDM_NAME = 'framePreemption'
 
-	def __init__(self, parent):
-		super(FramePreemption, self).__init__(parent)
+    def __init__(self, parent):
+        super(FramePreemption, self).__init__(parent)
 
-	@property
-	def AutoFragmentCount(self):
-		"""Let the fragments be auto counted
+    @property
+    def AutoFragmentCount(self):
+        """Let the fragments be auto counted
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('autoFragmentCount')
-	@AutoFragmentCount.setter
-	def AutoFragmentCount(self, value):
-		self._set_attribute('autoFragmentCount', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('autoFragmentCount')
+    @AutoFragmentCount.setter
+    def AutoFragmentCount(self, value):
+        self._set_attribute('autoFragmentCount', value)
 
-	@property
-	def Enable(self):
-		"""Enable frame preemption on the given stream. Disabled indicates an express frame
+    @property
+    def Enable(self):
+        """Enable frame preemption on the given stream. Disabled indicates an express frame
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enable')
-	@Enable.setter
-	def Enable(self, value):
-		self._set_attribute('enable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enable')
+    @Enable.setter
+    def Enable(self, value):
+        self._set_attribute('enable', value)
 
-	@property
-	def FragmentCount(self):
-		"""Set the fragment count (a value between 0 and 3)
+    @property
+    def FragmentCount(self):
+        """Set the fragment count (a value between 0 and 3)
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('fragmentCount')
-	@FragmentCount.setter
-	def FragmentCount(self, value):
-		self._set_attribute('fragmentCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('fragmentCount')
+    @FragmentCount.setter
+    def FragmentCount(self, value):
+        self._set_attribute('fragmentCount', value)
 
-	@property
-	def FrameType(self):
-		"""Select the frame type
+    @property
+    def FrameType(self):
+        """Select the frame type
 
-		Returns:
-			str(control|fragment|invalid|wholeFrame)
-		"""
-		return self._get_attribute('frameType')
-	@FrameType.setter
-	def FrameType(self, value):
-		self._set_attribute('frameType', value)
+        Returns:
+            str(control|fragment|invalid|wholeFrame)
+        """
+        return self._get_attribute('frameType')
+    @FrameType.setter
+    def FrameType(self, value):
+        self._set_attribute('frameType', value)
 
-	@property
-	def LastFragment(self):
-		"""Indicates if this is the last fragment of the preemptable packet
+    @property
+    def LastFragment(self):
+        """Indicates if this is the last fragment of the preemptable packet
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('lastFragment')
-	@LastFragment.setter
-	def LastFragment(self, value):
-		self._set_attribute('lastFragment', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('lastFragment')
+    @LastFragment.setter
+    def LastFragment(self, value):
+        self._set_attribute('lastFragment', value)
 
-	@property
-	def SmdType(self):
-		"""Select the SMD type
+    @property
+    def SmdType(self):
+        """Select the SMD type
 
-		Returns:
-			str(autoSMDC|autoSMDS|invalidSMD|smdC0|smdC1|smdC2|smdC3|smdE|smdR|smdS0|smdS1|smdS2|smdS3|smdV)
-		"""
-		return self._get_attribute('smdType')
-	@SmdType.setter
-	def SmdType(self, value):
-		self._set_attribute('smdType', value)
+        Returns:
+            str(autoSMDC|autoSMDS|invalidSMD|smdC0|smdC1|smdC2|smdC3|smdE|smdR|smdS0|smdS1|smdS2|smdS3|smdV)
+        """
+        return self._get_attribute('smdType')
+    @SmdType.setter
+    def SmdType(self, value):
+        self._set_attribute('smdType', value)
 
-	def update(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
-		"""Updates a child instance of framePreemption on the server.
+    def update(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        """Updates a child instance of framePreemption on the server.
 
-		Args:
-			AutoFragmentCount (bool): Let the fragments be auto counted
-			Enable (bool): Enable frame preemption on the given stream. Disabled indicates an express frame
-			FragmentCount (number): Set the fragment count (a value between 0 and 3)
-			FrameType (str(control|fragment|invalid|wholeFrame)): Select the frame type
-			LastFragment (bool): Indicates if this is the last fragment of the preemptable packet
-			SmdType (str(autoSMDC|autoSMDS|invalidSMD|smdC0|smdC1|smdC2|smdC3|smdE|smdR|smdS0|smdS1|smdS2|smdS3|smdV)): Select the SMD type
+        Args:
+            AutoFragmentCount (bool): Let the fragments be auto counted
+            Enable (bool): Enable frame preemption on the given stream. Disabled indicates an express frame
+            FragmentCount (number): Set the fragment count (a value between 0 and 3)
+            FrameType (str(control|fragment|invalid|wholeFrame)): Select the frame type
+            LastFragment (bool): Indicates if this is the last fragment of the preemptable packet
+            SmdType (str(autoSMDC|autoSMDS|invalidSMD|smdC0|smdC1|smdC2|smdC3|smdE|smdR|smdS0|smdS1|smdS2|smdS3|smdV)): Select the SMD type
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

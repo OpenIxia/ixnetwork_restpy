@@ -18,80 +18,80 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Reorder(Base):
-	"""Reorder packets.
-	The Reorder class encapsulates a required reorder resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Reorder packets.
+    The Reorder class encapsulates a required reorder resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'reorder'
+    __slots__ = ()
+    _SDM_NAME = 'reorder'
 
-	def __init__(self, parent):
-		super(Reorder, self).__init__(parent)
+    def __init__(self, parent):
+        super(Reorder, self).__init__(parent)
 
-	@property
-	def ClusterSize(self):
-		"""Number of packets to reorder on each occurrence.
+    @property
+    def ClusterSize(self):
+        """Number of packets to reorder on each occurrence.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('clusterSize')
-	@ClusterSize.setter
-	def ClusterSize(self, value):
-		self._set_attribute('clusterSize', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('clusterSize')
+    @ClusterSize.setter
+    def ClusterSize(self, value):
+        self._set_attribute('clusterSize', value)
 
-	@property
-	def Enabled(self):
-		"""If true, periodically reorder received packets.
+    @property
+    def Enabled(self):
+        """If true, periodically reorder received packets.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def PercentRate(self):
-		"""How often to reorder packets.
+    @property
+    def PercentRate(self):
+        """How often to reorder packets.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('percentRate')
-	@PercentRate.setter
-	def PercentRate(self, value):
-		self._set_attribute('percentRate', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('percentRate')
+    @PercentRate.setter
+    def PercentRate(self, value):
+        self._set_attribute('percentRate', value)
 
-	@property
-	def SkipCount(self):
-		"""How many packets to skip before sending the reordered packets.
+    @property
+    def SkipCount(self):
+        """How many packets to skip before sending the reordered packets.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('skipCount')
-	@SkipCount.setter
-	def SkipCount(self, value):
-		self._set_attribute('skipCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('skipCount')
+    @SkipCount.setter
+    def SkipCount(self, value):
+        self._set_attribute('skipCount', value)
 
-	def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
-		"""Updates a child instance of reorder on the server.
+    def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
+        """Updates a child instance of reorder on the server.
 
-		Args:
-			ClusterSize (number): Number of packets to reorder on each occurrence.
-			Enabled (bool): If true, periodically reorder received packets.
-			PercentRate (number): How often to reorder packets.
-			SkipCount (number): How many packets to skip before sending the reordered packets.
+        Args:
+            ClusterSize (number): Number of packets to reorder on each occurrence.
+            Enabled (bool): If true, periodically reorder received packets.
+            PercentRate (number): How often to reorder packets.
+            SkipCount (number): How many packets to skip before sending the reordered packets.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

@@ -18,132 +18,132 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Experimenter(Base):
-	"""NOT DEFINED
-	The Experimenter class encapsulates a required experimenter resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The Experimenter class encapsulates a required experimenter resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'experimenter'
+    __slots__ = ()
+    _SDM_NAME = 'experimenter'
 
-	def __init__(self, parent):
-		super(Experimenter, self).__init__(parent)
+    def __init__(self, parent):
+        super(Experimenter, self).__init__(parent)
 
-	@property
-	def ExperimenterData(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterData(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterData')
-	@ExperimenterData.setter
-	def ExperimenterData(self, value):
-		self._set_attribute('experimenterData', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterData')
+    @ExperimenterData.setter
+    def ExperimenterData(self, value):
+        self._set_attribute('experimenterData', value)
 
-	@property
-	def ExperimenterDataLength(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataLength(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLength')
-	@ExperimenterDataLength.setter
-	def ExperimenterDataLength(self, value):
-		self._set_attribute('experimenterDataLength', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLength')
+    @ExperimenterDataLength.setter
+    def ExperimenterDataLength(self, value):
+        self._set_attribute('experimenterDataLength', value)
 
-	@property
-	def ExperimenterDataLengthMiss(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataLengthMiss(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLengthMiss')
-	@ExperimenterDataLengthMiss.setter
-	def ExperimenterDataLengthMiss(self, value):
-		self._set_attribute('experimenterDataLengthMiss', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLengthMiss')
+    @ExperimenterDataLengthMiss.setter
+    def ExperimenterDataLengthMiss(self, value):
+        self._set_attribute('experimenterDataLengthMiss', value)
 
-	@property
-	def ExperimenterDataMiss(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataMiss(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterDataMiss')
-	@ExperimenterDataMiss.setter
-	def ExperimenterDataMiss(self, value):
-		self._set_attribute('experimenterDataMiss', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterDataMiss')
+    @ExperimenterDataMiss.setter
+    def ExperimenterDataMiss(self, value):
+        self._set_attribute('experimenterDataMiss', value)
 
-	@property
-	def ExperimenterField(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterField(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterField')
-	@ExperimenterField.setter
-	def ExperimenterField(self, value):
-		self._set_attribute('experimenterField', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterField')
+    @ExperimenterField.setter
+    def ExperimenterField(self, value):
+        self._set_attribute('experimenterField', value)
 
-	@property
-	def ExperimenterFieldMiss(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterFieldMiss(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterFieldMiss')
-	@ExperimenterFieldMiss.setter
-	def ExperimenterFieldMiss(self, value):
-		self._set_attribute('experimenterFieldMiss', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterFieldMiss')
+    @ExperimenterFieldMiss.setter
+    def ExperimenterFieldMiss(self, value):
+        self._set_attribute('experimenterFieldMiss', value)
 
-	@property
-	def ExperimenterId(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterId(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterId')
-	@ExperimenterId.setter
-	def ExperimenterId(self, value):
-		self._set_attribute('experimenterId', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterId')
+    @ExperimenterId.setter
+    def ExperimenterId(self, value):
+        self._set_attribute('experimenterId', value)
 
-	@property
-	def ExperimenterIdMiss(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterIdMiss(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterIdMiss')
-	@ExperimenterIdMiss.setter
-	def ExperimenterIdMiss(self, value):
-		self._set_attribute('experimenterIdMiss', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterIdMiss')
+    @ExperimenterIdMiss.setter
+    def ExperimenterIdMiss(self, value):
+        self._set_attribute('experimenterIdMiss', value)
 
-	def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
-		"""Updates a child instance of experimenter on the server.
+    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+        """Updates a child instance of experimenter on the server.
 
-		Args:
-			ExperimenterData (str): NOT DEFINED
-			ExperimenterDataLength (number): NOT DEFINED
-			ExperimenterDataLengthMiss (number): NOT DEFINED
-			ExperimenterDataMiss (str): NOT DEFINED
-			ExperimenterField (number): NOT DEFINED
-			ExperimenterFieldMiss (number): NOT DEFINED
-			ExperimenterId (number): NOT DEFINED
-			ExperimenterIdMiss (number): NOT DEFINED
+        Args:
+            ExperimenterData (str): NOT DEFINED
+            ExperimenterDataLength (number): NOT DEFINED
+            ExperimenterDataLengthMiss (number): NOT DEFINED
+            ExperimenterDataMiss (str): NOT DEFINED
+            ExperimenterField (number): NOT DEFINED
+            ExperimenterFieldMiss (number): NOT DEFINED
+            ExperimenterId (number): NOT DEFINED
+            ExperimenterIdMiss (number): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

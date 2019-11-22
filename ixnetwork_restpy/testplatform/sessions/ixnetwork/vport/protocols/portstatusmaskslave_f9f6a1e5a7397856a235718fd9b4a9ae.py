@@ -18,67 +18,67 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class PortStatusMaskSlave(Base):
-	"""As ports are added, modified, and removed from the datapath, the controller needs to be informed. But it may get no response from the Controller based on what the asynchronous message contains.
-	The PortStatusMaskSlave class encapsulates a required portStatusMaskSlave resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """As ports are added, modified, and removed from the datapath, the controller needs to be informed. But it may get no response from the Controller based on what the asynchronous message contains.
+    The PortStatusMaskSlave class encapsulates a required portStatusMaskSlave resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'portStatusMaskSlave'
+    __slots__ = ()
+    _SDM_NAME = 'portStatusMaskSlave'
 
-	def __init__(self, parent):
-		super(PortStatusMaskSlave, self).__init__(parent)
+    def __init__(self, parent):
+        super(PortStatusMaskSlave, self).__init__(parent)
 
-	@property
-	def PortAdd(self):
-		"""This indicates that a port is added.
+    @property
+    def PortAdd(self):
+        """This indicates that a port is added.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('portAdd')
-	@PortAdd.setter
-	def PortAdd(self, value):
-		self._set_attribute('portAdd', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('portAdd')
+    @PortAdd.setter
+    def PortAdd(self, value):
+        self._set_attribute('portAdd', value)
 
-	@property
-	def PortDelete(self):
-		"""This indicates that a port is removed.
+    @property
+    def PortDelete(self):
+        """This indicates that a port is removed.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('portDelete')
-	@PortDelete.setter
-	def PortDelete(self, value):
-		self._set_attribute('portDelete', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('portDelete')
+    @PortDelete.setter
+    def PortDelete(self, value):
+        self._set_attribute('portDelete', value)
 
-	@property
-	def PortModify(self):
-		"""This indicates that some attributes of the port is changed.
+    @property
+    def PortModify(self):
+        """This indicates that some attributes of the port is changed.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('portModify')
-	@PortModify.setter
-	def PortModify(self, value):
-		self._set_attribute('portModify', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('portModify')
+    @PortModify.setter
+    def PortModify(self, value):
+        self._set_attribute('portModify', value)
 
-	def update(self, PortAdd=None, PortDelete=None, PortModify=None):
-		"""Updates a child instance of portStatusMaskSlave on the server.
+    def update(self, PortAdd=None, PortDelete=None, PortModify=None):
+        """Updates a child instance of portStatusMaskSlave on the server.
 
-		Args:
-			PortAdd (bool): This indicates that a port is added.
-			PortDelete (bool): This indicates that a port is removed.
-			PortModify (bool): This indicates that some attributes of the port is changed.
+        Args:
+            PortAdd (bool): This indicates that a port is added.
+            PortDelete (bool): This indicates that a port is removed.
+            PortModify (bool): This indicates that some attributes of the port is changed.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

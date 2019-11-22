@@ -18,214 +18,214 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Range(Base):
-	"""
-	The Range class encapsulates a list of range resources that is be managed by the user.
-	A list of resources can be retrieved from the server using the Range.find() method.
-	The list can be managed by the user by using the Range.add() and Range.remove() methods.
-	"""
+    """
+    The Range class encapsulates a list of range resources that is be managed by the user.
+    A list of resources can be retrieved from the server using the Range.find() method.
+    The list can be managed by the user by using the Range.add() and Range.remove() methods.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'range'
+    __slots__ = ()
+    _SDM_NAME = 'range'
 
-	def __init__(self, parent):
-		super(Range, self).__init__(parent)
+    def __init__(self, parent):
+        super(Range, self).__init__(parent)
 
-	@property
-	def Dot1xRange(self):
-		"""An instance of the Dot1xRange class.
+    @property
+    def Dot1xRange(self):
+        """An instance of the Dot1xRange class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_bfdc4736a2be399c8127e4a09fa15f75.Dot1xRange)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_bfdc4736a2be399c8127e4a09fa15f75.Dot1xRange)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_bfdc4736a2be399c8127e4a09fa15f75 import Dot1xRange
-		return Dot1xRange(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_bfdc4736a2be399c8127e4a09fa15f75 import Dot1xRange
+        return Dot1xRange(self)
 
-	@property
-	def EsmcRange(self):
-		"""An instance of the EsmcRange class.
+    @property
+    def EsmcRange(self):
+        """An instance of the EsmcRange class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_3fc4e35bde7f163dbeb0444f80513662.EsmcRange)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_3fc4e35bde7f163dbeb0444f80513662.EsmcRange)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_3fc4e35bde7f163dbeb0444f80513662 import EsmcRange
-		return EsmcRange(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_3fc4e35bde7f163dbeb0444f80513662 import EsmcRange
+        return EsmcRange(self)
 
-	@property
-	def MacRange(self):
-		"""An instance of the MacRange class.
+    @property
+    def MacRange(self):
+        """An instance of the MacRange class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_d6b790a857f1f69ef89afa0944bb5a15.MacRange)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_d6b790a857f1f69ef89afa0944bb5a15.MacRange)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_d6b790a857f1f69ef89afa0944bb5a15 import MacRange
-		return MacRange(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_d6b790a857f1f69ef89afa0944bb5a15 import MacRange
+        return MacRange(self)._select()
 
-	@property
-	def PtpRangeOverMac(self):
-		"""An instance of the PtpRangeOverMac class.
+    @property
+    def PtpRangeOverMac(self):
+        """An instance of the PtpRangeOverMac class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_8b67c6e721c83f454c869c1c96b7ca0f.PtpRangeOverMac)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_8b67c6e721c83f454c869c1c96b7ca0f.PtpRangeOverMac)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_8b67c6e721c83f454c869c1c96b7ca0f import PtpRangeOverMac
-		return PtpRangeOverMac(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_8b67c6e721c83f454c869c1c96b7ca0f import PtpRangeOverMac
+        return PtpRangeOverMac(self)
 
-	@property
-	def VicClientRange(self):
-		"""An instance of the VicClientRange class.
+    @property
+    def VicClientRange(self):
+        """An instance of the VicClientRange class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_b56443d0107830b2359fcb1676477de0.VicClientRange)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_b56443d0107830b2359fcb1676477de0.VicClientRange)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_b56443d0107830b2359fcb1676477de0 import VicClientRange
-		return VicClientRange(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_b56443d0107830b2359fcb1676477de0 import VicClientRange
+        return VicClientRange(self)
 
-	@property
-	def VlanRange(self):
-		"""An instance of the VlanRange class.
+    @property
+    def VlanRange(self):
+        """An instance of the VlanRange class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_070ebd9d6e23c987646a23df0ee9e276.VlanRange)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_070ebd9d6e23c987646a23df0ee9e276.VlanRange)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_070ebd9d6e23c987646a23df0ee9e276 import VlanRange
-		return VlanRange(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_070ebd9d6e23c987646a23df0ee9e276 import VlanRange
+        return VlanRange(self)._select()
 
-	def add(self):
-		"""Adds a new range node on the server and retrieves it in this instance.
+    def add(self):
+        """Adds a new range node on the server and retrieves it in this instance.
 
-		Returns:
-			self: This instance with all currently retrieved range data using find and the newly added range data available through an iterator or index
+        Returns:
+            self: This instance with all currently retrieved range data using find and the newly added range data available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._create(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(locals())
 
-	def remove(self):
-		"""Deletes all the range data in this instance from server.
+    def remove(self):
+        """Deletes all the range data in this instance from server.
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._delete()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
-	def find(self):
-		"""Finds and retrieves range data from the server.
+    def find(self):
+        """Finds and retrieves range data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve range data from the server.
-		By default the find method takes no parameters and will retrieve all range data from the server.
+        All named parameters support regex and can be used to selectively retrieve range data from the server.
+        By default the find method takes no parameters and will retrieve all range data from the server.
 
-		Returns:
-			self: This instance with matching range data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching range data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of range data from the server.
+    def read(self, href):
+        """Retrieves a single instance of range data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the range data from the server available through an iterator or index
+        Returns:
+            self: This instance with the range data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def CustomProtocolStack(self, *args, **kwargs):
-		"""Executes the customProtocolStack operation on the server.
+    def CustomProtocolStack(self, *args, **kwargs):
+        """Executes the customProtocolStack operation on the server.
 
-		Create custom protocol stack under /vport/protocolStack
+        Create custom protocol stack under /vport/protocolStack
 
-		customProtocolStack(Arg2:list, Arg3:enum)
-			Args:
-				args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
-				args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
+        customProtocolStack(Arg2:list, Arg3:enum)
+            Args:
+                args[0] is Arg2 (list(str)): List of plugin types to be added in the new custom stack
+                args[1] is Arg3 (str(kAppend|kMerge|kOverwrite)): Append, merge or overwrite existing protocol stack
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('customProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
-	def DisableProtocolStack(self, *args, **kwargs):
-		"""Executes the disableProtocolStack operation on the server.
+    def DisableProtocolStack(self, *args, **kwargs):
+        """Executes the disableProtocolStack operation on the server.
 
-		Disable a protocol under protocolStack using the class name
+        Disable a protocol under protocolStack using the class name
 
-		disableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to disable
+        disableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to disable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
-	def EnableProtocolStack(self, *args, **kwargs):
-		"""Executes the enableProtocolStack operation on the server.
+    def EnableProtocolStack(self, *args, **kwargs):
+        """Executes the enableProtocolStack operation on the server.
 
-		Enable a protocol under protocolStack using the class name
+        Enable a protocol under protocolStack using the class name
 
-		enableProtocolStack(Arg2:string)string
-			Args:
-				args[0] is Arg2 (str): Protocol class name to enable
+        enableProtocolStack(Arg2:string)string
+            Args:
+                args[0] is Arg2 (str): Protocol class name to enable
 
-			Returns:
-				str: Status of the exec
+            Returns:
+                str: Status of the exec
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self.href }
-		for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-		for item in kwargs.items(): payload[item[0]] = item[1]
-		return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('enableProtocolStack', payload=payload, response_object=None)

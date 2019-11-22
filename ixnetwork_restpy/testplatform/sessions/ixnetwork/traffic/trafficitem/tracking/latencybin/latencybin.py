@@ -18,67 +18,67 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LatencyBin(Base):
-	"""This object provides different options for Latency Bin Tracking.
-	The LatencyBin class encapsulates a required latencyBin resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object provides different options for Latency Bin Tracking.
+    The LatencyBin class encapsulates a required latencyBin resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'latencyBin'
+    __slots__ = ()
+    _SDM_NAME = 'latencyBin'
 
-	def __init__(self, parent):
-		super(LatencyBin, self).__init__(parent)
+    def __init__(self, parent):
+        super(LatencyBin, self).__init__(parent)
 
-	@property
-	def BinLimits(self):
-		"""Specifies the upper limit of each Time Bins for Latency Bin Tracking.
+    @property
+    def BinLimits(self):
+        """Specifies the upper limit of each Time Bins for Latency Bin Tracking.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('binLimits')
-	@BinLimits.setter
-	def BinLimits(self, value):
-		self._set_attribute('binLimits', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('binLimits')
+    @BinLimits.setter
+    def BinLimits(self, value):
+        self._set_attribute('binLimits', value)
 
-	@property
-	def Enabled(self):
-		"""If true, Latency Bin Tracking is enabled.
+    @property
+    def Enabled(self):
+        """If true, Latency Bin Tracking is enabled.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enabled')
-	@Enabled.setter
-	def Enabled(self, value):
-		self._set_attribute('enabled', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enabled')
+    @Enabled.setter
+    def Enabled(self, value):
+        self._set_attribute('enabled', value)
 
-	@property
-	def NumberOfBins(self):
-		"""Specifies the number of Time Bins for Latency Bin Tracking.
+    @property
+    def NumberOfBins(self):
+        """Specifies the number of Time Bins for Latency Bin Tracking.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('numberOfBins')
-	@NumberOfBins.setter
-	def NumberOfBins(self, value):
-		self._set_attribute('numberOfBins', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('numberOfBins')
+    @NumberOfBins.setter
+    def NumberOfBins(self, value):
+        self._set_attribute('numberOfBins', value)
 
-	def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
-		"""Updates a child instance of latencyBin on the server.
+    def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
+        """Updates a child instance of latencyBin on the server.
 
-		Args:
-			BinLimits (list(number)): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
-			Enabled (bool): If true, Latency Bin Tracking is enabled.
-			NumberOfBins (number): Specifies the number of Time Bins for Latency Bin Tracking.
+        Args:
+            BinLimits (list(number)): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
+            Enabled (bool): If true, Latency Bin Tracking is enabled.
+            NumberOfBins (number): Specifies the number of Time Bins for Latency Bin Tracking.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

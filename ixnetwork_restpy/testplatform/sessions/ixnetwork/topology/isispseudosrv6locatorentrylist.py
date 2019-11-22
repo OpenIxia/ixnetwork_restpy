@@ -18,259 +18,259 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class IsisPseudoSRv6LocatorEntryList(Base):
-	"""ISIS SRv6 Locator Entry
-	The IsisPseudoSRv6LocatorEntryList class encapsulates a required isisPseudoSRv6LocatorEntryList resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """ISIS SRv6 Locator Entry
+    The IsisPseudoSRv6LocatorEntryList class encapsulates a required isisPseudoSRv6LocatorEntryList resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'isisPseudoSRv6LocatorEntryList'
+    __slots__ = ()
+    _SDM_NAME = 'isisPseudoSRv6LocatorEntryList'
 
-	def __init__(self, parent):
-		super(IsisPseudoSRv6LocatorEntryList, self).__init__(parent)
+    def __init__(self, parent):
+        super(IsisPseudoSRv6LocatorEntryList, self).__init__(parent)
 
-	@property
-	def IsisPseudoSRv6EndSIDList(self):
-		"""An instance of the IsisPseudoSRv6EndSIDList class.
+    @property
+    def IsisPseudoSRv6EndSIDList(self):
+        """An instance of the IsisPseudoSRv6EndSIDList class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist.IsisPseudoSRv6EndSIDList)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist.IsisPseudoSRv6EndSIDList)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist import IsisPseudoSRv6EndSIDList
-		return IsisPseudoSRv6EndSIDList(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist import IsisPseudoSRv6EndSIDList
+        return IsisPseudoSRv6EndSIDList(self)._select()
 
-	@property
-	def Active(self):
-		"""Activate/Deactivate Configuration
+    @property
+    def Active(self):
+        """Activate/Deactivate Configuration
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('active')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('active')
 
-	@property
-	def AdvertiseLocatorAsPrefix(self):
-		"""Advertise Locator as Prefix
+    @property
+    def AdvertiseLocatorAsPrefix(self):
+        """Advertise Locator as Prefix
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('advertiseLocatorAsPrefix')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('advertiseLocatorAsPrefix')
 
-	@property
-	def Algorithm(self):
-		"""Algorithm
+    @property
+    def Algorithm(self):
+        """Algorithm
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('algorithm')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('algorithm')
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DBit(self):
-		"""D Bit
+    @property
+    def DBit(self):
+        """D Bit
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('dBit')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('dBit')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Locator(self):
-		"""Locator
+    @property
+    def Locator(self):
+        """Locator
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('locator')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('locator')
 
-	@property
-	def LocatorName(self):
-		"""Locator Name
+    @property
+    def LocatorName(self):
+        """Locator Name
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('locatorName')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('locatorName')
 
-	@property
-	def LocatorSize(self):
-		"""Locator Size
+    @property
+    def LocatorSize(self):
+        """Locator Size
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('locatorSize')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('locatorSize')
 
-	@property
-	def Metric(self):
-		"""Metric
+    @property
+    def Metric(self):
+        """Metric
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('metric')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('metric')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def PrefixLength(self):
-		"""Prefix Length
+    @property
+    def PrefixLength(self):
+        """Prefix Length
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('prefixLength')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('prefixLength')
 
-	@property
-	def Redistribution(self):
-		"""Redistribution
+    @property
+    def Redistribution(self):
+        """Redistribution
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('redistribution')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('redistribution')
 
-	@property
-	def ReservedFlags(self):
-		"""Reserved (Flags)
+    @property
+    def ReservedFlags(self):
+        """Reserved (Flags)
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('reservedFlags')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('reservedFlags')
 
-	@property
-	def RouteMetric(self):
-		"""Route Metric
+    @property
+    def RouteMetric(self):
+        """Route Metric
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('routeMetric')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('routeMetric')
 
-	@property
-	def RouteOrigin(self):
-		"""Route Origin
+    @property
+    def RouteOrigin(self):
+        """Route Origin
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('routeOrigin')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('routeOrigin')
 
-	@property
-	def SidCount(self):
-		"""SID Count
+    @property
+    def SidCount(self):
+        """SID Count
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('sidCount')
-	@SidCount.setter
-	def SidCount(self, value):
-		self._set_attribute('sidCount', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('sidCount')
+    @SidCount.setter
+    def SidCount(self, value):
+        self._set_attribute('sidCount', value)
 
-	def update(self, Name=None, SidCount=None):
-		"""Updates a child instance of isisPseudoSRv6LocatorEntryList on the server.
+    def update(self, Name=None, SidCount=None):
+        """Updates a child instance of isisPseudoSRv6LocatorEntryList on the server.
 
-		This method has some named parameters with a type: obj (Multivalue).
-		The Multivalue class has documentation that details the possible values for those named parameters.
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-			SidCount (number): SID Count
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+            SidCount (number): SID Count
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
-		"""Base class infrastructure that gets a list of isisPseudoSRv6LocatorEntryList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
+        """Base class infrastructure that gets a list of isisPseudoSRv6LocatorEntryList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			Active (str): optional regex of active
-			AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
-			Algorithm (str): optional regex of algorithm
-			DBit (str): optional regex of dBit
-			Locator (str): optional regex of locator
-			LocatorName (str): optional regex of locatorName
-			LocatorSize (str): optional regex of locatorSize
-			Metric (str): optional regex of metric
-			PrefixLength (str): optional regex of prefixLength
-			Redistribution (str): optional regex of redistribution
-			ReservedFlags (str): optional regex of reservedFlags
-			RouteMetric (str): optional regex of routeMetric
-			RouteOrigin (str): optional regex of routeOrigin
+        Args:
+            PortNames (str): optional regex of port names
+            Active (str): optional regex of active
+            AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
+            Algorithm (str): optional regex of algorithm
+            DBit (str): optional regex of dBit
+            Locator (str): optional regex of locator
+            LocatorName (str): optional regex of locatorName
+            LocatorSize (str): optional regex of locatorSize
+            Metric (str): optional regex of metric
+            PrefixLength (str): optional regex of prefixLength
+            Redistribution (str): optional regex of redistribution
+            ReservedFlags (str): optional regex of reservedFlags
+            RouteMetric (str): optional regex of routeMetric
+            RouteOrigin (str): optional regex of routeOrigin
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())
 
-	def Start(self):
-		"""Executes the start operation on the server.
+    def Start(self):
+        """Executes the start operation on the server.
 
-		Start CPF control plane (equals to promote to negotiated state).
+        Start CPF control plane (equals to promote to negotiated state).
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self }
-		return self._execute('start', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('start', payload=payload, response_object=None)
 
-	def Stop(self):
-		"""Executes the stop operation on the server.
+    def Stop(self):
+        """Executes the stop operation on the server.
 
-		Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		payload = { "Arg1": self }
-		return self._execute('stop', payload=payload, response_object=None)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('stop', payload=payload, response_object=None)

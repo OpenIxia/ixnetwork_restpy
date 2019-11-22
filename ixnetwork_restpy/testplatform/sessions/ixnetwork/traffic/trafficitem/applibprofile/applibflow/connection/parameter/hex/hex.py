@@ -18,84 +18,84 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Hex(Base):
-	"""This specifies the hexadecimal properties related to the parameter.
-	The Hex class encapsulates a list of hex resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Hex.find() method.
-	"""
+    """This specifies the hexadecimal properties related to the parameter.
+    The Hex class encapsulates a list of hex resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Hex.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'hex'
+    __slots__ = ()
+    _SDM_NAME = 'hex'
 
-	def __init__(self, parent):
-		super(Hex, self).__init__(parent)
+    def __init__(self, parent):
+        super(Hex, self).__init__(parent)
 
-	@property
-	def Default(self):
-		"""(Read only) Parameter default value.
+    @property
+    def Default(self):
+        """(Read only) Parameter default value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('default')
+        Returns:
+            str
+        """
+        return self._get_attribute('default')
 
-	@property
-	def Value(self):
-		"""Parameter hex value.
+    @property
+    def Value(self):
+        """Parameter hex value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Value=None):
-		"""Updates a child instance of hex on the server.
+    def update(self, Value=None):
+        """Updates a child instance of hex on the server.
 
-		Args:
-			Value (str): Parameter hex value.
+        Args:
+            Value (str): Parameter hex value.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, Default=None, Value=None):
-		"""Finds and retrieves hex data from the server.
+    def find(self, Default=None, Value=None):
+        """Finds and retrieves hex data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve hex data from the server.
-		By default the find method takes no parameters and will retrieve all hex data from the server.
+        All named parameters support regex and can be used to selectively retrieve hex data from the server.
+        By default the find method takes no parameters and will retrieve all hex data from the server.
 
-		Args:
-			Default (str): (Read only) Parameter default value.
-			Value (str): Parameter hex value.
+        Args:
+            Default (str): (Read only) Parameter default value.
+            Value (str): Parameter hex value.
 
-		Returns:
-			self: This instance with matching hex data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching hex data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of hex data from the server.
+    def read(self, href):
+        """Retrieves a single instance of hex data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the hex data from the server available through an iterator or index
+        Returns:
+            self: This instance with the hex data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

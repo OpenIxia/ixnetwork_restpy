@@ -18,95 +18,95 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Dhcp6LearnedInfo(Base):
-	"""DHCPv6 Client Learned Info.
-	The Dhcp6LearnedInfo class encapsulates a required dhcp6LearnedInfo resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """DHCPv6 Client Learned Info.
+    The Dhcp6LearnedInfo class encapsulates a required dhcp6LearnedInfo resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'dhcp6LearnedInfo'
+    __slots__ = ()
+    _SDM_NAME = 'dhcp6LearnedInfo'
 
-	def __init__(self, parent):
-		super(Dhcp6LearnedInfo, self).__init__(parent)
+    def __init__(self, parent):
+        super(Dhcp6LearnedInfo, self).__init__(parent)
 
-	@property
-	def Count(self):
-		"""Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+    @property
+    def Count(self):
+        """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('count')
+        Returns:
+            number
+        """
+        return self._get_attribute('count')
 
-	@property
-	def DescriptiveName(self):
-		"""Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+    @property
+    def DescriptiveName(self):
+        """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('descriptiveName')
+        Returns:
+            str
+        """
+        return self._get_attribute('descriptiveName')
 
-	@property
-	def Name(self):
-		"""Name of NGPF element, guaranteed to be unique in Scenario
+    @property
+    def Name(self):
+        """Name of NGPF element, guaranteed to be unique in Scenario
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	@property
-	def TabbedDiscoveredAddresses(self):
-		"""The discovered IPv6 addresses.
+    @property
+    def TabbedDiscoveredAddresses(self):
+        """The discovered IPv6 addresses.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('tabbedDiscoveredAddresses')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('tabbedDiscoveredAddresses')
 
-	@property
-	def TabbedDiscoveredGateways(self):
-		"""The discovered gateway IPv6 addresses.
+    @property
+    def TabbedDiscoveredGateways(self):
+        """The discovered gateway IPv6 addresses.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('tabbedDiscoveredGateways')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('tabbedDiscoveredGateways')
 
-	@property
-	def TabbedDiscoveredPrefix(self):
-		"""The discovered IPv6 prefix.
+    @property
+    def TabbedDiscoveredPrefix(self):
+        """The discovered IPv6 prefix.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('tabbedDiscoveredPrefix')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('tabbedDiscoveredPrefix')
 
-	@property
-	def TabbedDiscoveredPrefixLength(self):
-		"""The length of the discovered IPv6 prefix.
+    @property
+    def TabbedDiscoveredPrefixLength(self):
+        """The length of the discovered IPv6 prefix.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('tabbedDiscoveredPrefixLength')
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('tabbedDiscoveredPrefixLength')
 
-	def update(self, Name=None):
-		"""Updates a child instance of dhcp6LearnedInfo on the server.
+    def update(self, Name=None):
+        """Updates a child instance of dhcp6LearnedInfo on the server.
 
-		Args:
-			Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        Args:
+            Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

@@ -18,224 +18,224 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class OfChannelSessionPeersLearnedInformation(Base):
-	"""NOT DEFINED
-	The OfChannelSessionPeersLearnedInformation class encapsulates a list of ofChannelSessionPeersLearnedInformation resources that is managed by the system.
-	A list of resources can be retrieved from the server using the OfChannelSessionPeersLearnedInformation.find() method.
-	"""
+    """NOT DEFINED
+    The OfChannelSessionPeersLearnedInformation class encapsulates a list of ofChannelSessionPeersLearnedInformation resources that is managed by the system.
+    A list of resources can be retrieved from the server using the OfChannelSessionPeersLearnedInformation.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ofChannelSessionPeersLearnedInformation'
+    __slots__ = ()
+    _SDM_NAME = 'ofChannelSessionPeersLearnedInformation'
 
-	def __init__(self, parent):
-		super(OfChannelSessionPeersLearnedInformation, self).__init__(parent)
+    def __init__(self, parent):
+        super(OfChannelSessionPeersLearnedInformation, self).__init__(parent)
 
-	@property
-	def SwitchAuxiliaryConnectionLearnedInfo(self):
-		"""An instance of the SwitchAuxiliaryConnectionLearnedInfo class.
+    @property
+    def SwitchAuxiliaryConnectionLearnedInfo(self):
+        """An instance of the SwitchAuxiliaryConnectionLearnedInfo class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_9896a916dfbfce51554defd814c54f57.SwitchAuxiliaryConnectionLearnedInfo)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_9896a916dfbfce51554defd814c54f57.SwitchAuxiliaryConnectionLearnedInfo)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_9896a916dfbfce51554defd814c54f57 import SwitchAuxiliaryConnectionLearnedInfo
-		return SwitchAuxiliaryConnectionLearnedInfo(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_9896a916dfbfce51554defd814c54f57 import SwitchAuxiliaryConnectionLearnedInfo
+        return SwitchAuxiliaryConnectionLearnedInfo(self)
 
-	@property
-	def AveragePacketInReplyDelay(self):
-		"""NOT DEFINED
+    @property
+    def AveragePacketInReplyDelay(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('averagePacketInReplyDelay')
+        Returns:
+            str
+        """
+        return self._get_attribute('averagePacketInReplyDelay')
 
-	@property
-	def ConfiguredPacketInReplyCount(self):
-		"""NOT DEFINED
+    @property
+    def ConfiguredPacketInReplyCount(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('configuredPacketInReplyCount')
+        Returns:
+            str
+        """
+        return self._get_attribute('configuredPacketInReplyCount')
 
-	@property
-	def ConfiguredPacketInSentCount(self):
-		"""NOT DEFINED
+    @property
+    def ConfiguredPacketInSentCount(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('configuredPacketInSentCount')
+        Returns:
+            str
+        """
+        return self._get_attribute('configuredPacketInSentCount')
 
-	@property
-	def LocalPortNumber(self):
-		"""NOT DEFINED
+    @property
+    def LocalPortNumber(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('localPortNumber')
+        Returns:
+            number
+        """
+        return self._get_attribute('localPortNumber')
 
-	@property
-	def MasterFlowRemovedMask(self):
-		"""NOT DEFINED
+    @property
+    def MasterFlowRemovedMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('masterFlowRemovedMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('masterFlowRemovedMask')
 
-	@property
-	def MasterPacketInMask(self):
-		"""NOT DEFINED
+    @property
+    def MasterPacketInMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('masterPacketInMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('masterPacketInMask')
 
-	@property
-	def MasterPortStatusMask(self):
-		"""NOT DEFINED
+    @property
+    def MasterPortStatusMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('masterPortStatusMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('masterPortStatusMask')
 
-	@property
-	def PacketInTxRate(self):
-		"""Per second transmission rate of PacketIn messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
+    @property
+    def PacketInTxRate(self):
+        """Per second transmission rate of PacketIn messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('packetInTxRate')
+        Returns:
+            number
+        """
+        return self._get_attribute('packetInTxRate')
 
-	@property
-	def PacketOutRxRate(self):
-		"""Per second reception rate of PacketOut messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
+    @property
+    def PacketOutRxRate(self):
+        """Per second reception rate of PacketOut messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('packetOutRxRate')
+        Returns:
+            number
+        """
+        return self._get_attribute('packetOutRxRate')
 
-	@property
-	def RemoteIp(self):
-		"""NOT DEFINED
+    @property
+    def RemoteIp(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('remoteIp')
+        Returns:
+            str
+        """
+        return self._get_attribute('remoteIp')
 
-	@property
-	def RemotePortNumber(self):
-		"""NOT DEFINED
+    @property
+    def RemotePortNumber(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('remotePortNumber')
+        Returns:
+            number
+        """
+        return self._get_attribute('remotePortNumber')
 
-	@property
-	def ReplyState(self):
-		"""NOT DEFINED
+    @property
+    def ReplyState(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('replyState')
+        Returns:
+            str
+        """
+        return self._get_attribute('replyState')
 
-	@property
-	def Role(self):
-		"""NOT DEFINED
+    @property
+    def Role(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('role')
+        Returns:
+            str
+        """
+        return self._get_attribute('role')
 
-	@property
-	def SlaveFlowRemovedMask(self):
-		"""NOT DEFINED
+    @property
+    def SlaveFlowRemovedMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('slaveFlowRemovedMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('slaveFlowRemovedMask')
 
-	@property
-	def SlavePacketInMask(self):
-		"""NOT DEFINED
+    @property
+    def SlavePacketInMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('slavePacketInMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('slavePacketInMask')
 
-	@property
-	def SlavePortStatusMask(self):
-		"""NOT DEFINED
+    @property
+    def SlavePortStatusMask(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('slavePortStatusMask')
+        Returns:
+            number
+        """
+        return self._get_attribute('slavePortStatusMask')
 
-	def find(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, LocalPortNumber=None, MasterFlowRemovedMask=None, MasterPacketInMask=None, MasterPortStatusMask=None, PacketInTxRate=None, PacketOutRxRate=None, RemoteIp=None, RemotePortNumber=None, ReplyState=None, Role=None, SlaveFlowRemovedMask=None, SlavePacketInMask=None, SlavePortStatusMask=None):
-		"""Finds and retrieves ofChannelSessionPeersLearnedInformation data from the server.
+    def find(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, LocalPortNumber=None, MasterFlowRemovedMask=None, MasterPacketInMask=None, MasterPortStatusMask=None, PacketInTxRate=None, PacketOutRxRate=None, RemoteIp=None, RemotePortNumber=None, ReplyState=None, Role=None, SlaveFlowRemovedMask=None, SlavePacketInMask=None, SlavePortStatusMask=None):
+        """Finds and retrieves ofChannelSessionPeersLearnedInformation data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve ofChannelSessionPeersLearnedInformation data from the server.
-		By default the find method takes no parameters and will retrieve all ofChannelSessionPeersLearnedInformation data from the server.
+        All named parameters support regex and can be used to selectively retrieve ofChannelSessionPeersLearnedInformation data from the server.
+        By default the find method takes no parameters and will retrieve all ofChannelSessionPeersLearnedInformation data from the server.
 
-		Args:
-			AveragePacketInReplyDelay (str): NOT DEFINED
-			ConfiguredPacketInReplyCount (str): NOT DEFINED
-			ConfiguredPacketInSentCount (str): NOT DEFINED
-			LocalPortNumber (number): NOT DEFINED
-			MasterFlowRemovedMask (number): NOT DEFINED
-			MasterPacketInMask (number): NOT DEFINED
-			MasterPortStatusMask (number): NOT DEFINED
-			PacketInTxRate (number): Per second transmission rate of PacketIn messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
-			PacketOutRxRate (number): Per second reception rate of PacketOut messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
-			RemoteIp (str): NOT DEFINED
-			RemotePortNumber (number): NOT DEFINED
-			ReplyState (str): NOT DEFINED
-			Role (str): NOT DEFINED
-			SlaveFlowRemovedMask (number): NOT DEFINED
-			SlavePacketInMask (number): NOT DEFINED
-			SlavePortStatusMask (number): NOT DEFINED
+        Args:
+            AveragePacketInReplyDelay (str): NOT DEFINED
+            ConfiguredPacketInReplyCount (str): NOT DEFINED
+            ConfiguredPacketInSentCount (str): NOT DEFINED
+            LocalPortNumber (number): NOT DEFINED
+            MasterFlowRemovedMask (number): NOT DEFINED
+            MasterPacketInMask (number): NOT DEFINED
+            MasterPortStatusMask (number): NOT DEFINED
+            PacketInTxRate (number): Per second transmission rate of PacketIn messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
+            PacketOutRxRate (number): Per second reception rate of PacketOut messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
+            RemoteIp (str): NOT DEFINED
+            RemotePortNumber (number): NOT DEFINED
+            ReplyState (str): NOT DEFINED
+            Role (str): NOT DEFINED
+            SlaveFlowRemovedMask (number): NOT DEFINED
+            SlavePacketInMask (number): NOT DEFINED
+            SlavePortStatusMask (number): NOT DEFINED
 
-		Returns:
-			self: This instance with matching ofChannelSessionPeersLearnedInformation data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching ofChannelSessionPeersLearnedInformation data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of ofChannelSessionPeersLearnedInformation data from the server.
+    def read(self, href):
+        """Retrieves a single instance of ofChannelSessionPeersLearnedInformation data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the ofChannelSessionPeersLearnedInformation data from the server available through an iterator or index
+        Returns:
+            self: This instance with the ofChannelSessionPeersLearnedInformation data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

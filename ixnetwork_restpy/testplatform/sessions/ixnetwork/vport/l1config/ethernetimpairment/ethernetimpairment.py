@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class EthernetImpairment(Base):
-	"""Layer 1 (physical) parameters for an Ethernet Impairment port.
-	The EthernetImpairment class encapsulates a required ethernetImpairment resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Layer 1 (physical) parameters for an Ethernet Impairment port.
+    The EthernetImpairment class encapsulates a required ethernetImpairment resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'ethernetImpairment'
+    __slots__ = ()
+    _SDM_NAME = 'ethernetImpairment'
 
-	def __init__(self, parent):
-		super(EthernetImpairment, self).__init__(parent)
+    def __init__(self, parent):
+        super(EthernetImpairment, self).__init__(parent)
 
-	@property
-	def EnablePPM(self):
-		"""If true, enables the portsppm.
+    @property
+    def EnablePPM(self):
+        """If true, enables the portsppm.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('enablePPM')
-	@EnablePPM.setter
-	def EnablePPM(self, value):
-		self._set_attribute('enablePPM', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePPM')
+    @EnablePPM.setter
+    def EnablePPM(self, value):
+        self._set_attribute('enablePPM', value)
 
-	@property
-	def Ppm(self):
-		"""Indicates the value that needs to be adjusted for the line transmit frequency.
+    @property
+    def Ppm(self):
+        """Indicates the value that needs to be adjusted for the line transmit frequency.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('ppm')
-	@Ppm.setter
-	def Ppm(self, value):
-		self._set_attribute('ppm', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('ppm')
+    @Ppm.setter
+    def Ppm(self, value):
+        self._set_attribute('ppm', value)
 
-	def update(self, EnablePPM=None, Ppm=None):
-		"""Updates a child instance of ethernetImpairment on the server.
+    def update(self, EnablePPM=None, Ppm=None):
+        """Updates a child instance of ethernetImpairment on the server.
 
-		Args:
-			EnablePPM (bool): If true, enables the portsppm.
-			Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        Args:
+            EnablePPM (bool): If true, enables the portsppm.
+            Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

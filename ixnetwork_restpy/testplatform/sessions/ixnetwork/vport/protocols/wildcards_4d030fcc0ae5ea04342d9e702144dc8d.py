@@ -18,107 +18,107 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Wildcards(Base):
-	"""NOT DEFINED
-	The Wildcards class encapsulates a required wildcards resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The Wildcards class encapsulates a required wildcards resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'wildcards'
+    __slots__ = ()
+    _SDM_NAME = 'wildcards'
 
-	def __init__(self, parent):
-		super(Wildcards, self).__init__(parent)
+    def __init__(self, parent):
+        super(Wildcards, self).__init__(parent)
 
-	@property
-	def WildcardsFields(self):
-		"""An instance of the WildcardsFields class.
+    @property
+    def WildcardsFields(self):
+        """An instance of the WildcardsFields class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_c002e807e553389d35071b82f5ca2d39.WildcardsFields)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_c002e807e553389d35071b82f5ca2d39.WildcardsFields)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_c002e807e553389d35071b82f5ca2d39 import WildcardsFields
-		return WildcardsFields(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_c002e807e553389d35071b82f5ca2d39 import WildcardsFields
+        return WildcardsFields(self)._select()
 
-	@property
-	def ExperimenterData(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterData(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('experimenterData')
-	@ExperimenterData.setter
-	def ExperimenterData(self, value):
-		self._set_attribute('experimenterData', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('experimenterData')
+    @ExperimenterData.setter
+    def ExperimenterData(self, value):
+        self._set_attribute('experimenterData', value)
 
-	@property
-	def ExperimenterDataLength(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterDataLength(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterDataLength')
-	@ExperimenterDataLength.setter
-	def ExperimenterDataLength(self, value):
-		self._set_attribute('experimenterDataLength', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterDataLength')
+    @ExperimenterDataLength.setter
+    def ExperimenterDataLength(self, value):
+        self._set_attribute('experimenterDataLength', value)
 
-	@property
-	def ExperimenterField(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterField(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterField')
-	@ExperimenterField.setter
-	def ExperimenterField(self, value):
-		self._set_attribute('experimenterField', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterField')
+    @ExperimenterField.setter
+    def ExperimenterField(self, value):
+        self._set_attribute('experimenterField', value)
 
-	@property
-	def ExperimenterHasMask(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterHasMask(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('experimenterHasMask')
-	@ExperimenterHasMask.setter
-	def ExperimenterHasMask(self, value):
-		self._set_attribute('experimenterHasMask', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('experimenterHasMask')
+    @ExperimenterHasMask.setter
+    def ExperimenterHasMask(self, value):
+        self._set_attribute('experimenterHasMask', value)
 
-	@property
-	def ExperimenterId(self):
-		"""NOT DEFINED
+    @property
+    def ExperimenterId(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('experimenterId')
-	@ExperimenterId.setter
-	def ExperimenterId(self, value):
-		self._set_attribute('experimenterId', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('experimenterId')
+    @ExperimenterId.setter
+    def ExperimenterId(self, value):
+        self._set_attribute('experimenterId', value)
 
-	def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
-		"""Updates a child instance of wildcards on the server.
+    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+        """Updates a child instance of wildcards on the server.
 
-		Args:
-			ExperimenterData (str): NOT DEFINED
-			ExperimenterDataLength (number): NOT DEFINED
-			ExperimenterField (number): NOT DEFINED
-			ExperimenterHasMask (bool): NOT DEFINED
-			ExperimenterId (number): NOT DEFINED
+        Args:
+            ExperimenterData (str): NOT DEFINED
+            ExperimenterDataLength (number): NOT DEFINED
+            ExperimenterField (number): NOT DEFINED
+            ExperimenterHasMask (bool): NOT DEFINED
+            ExperimenterId (number): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

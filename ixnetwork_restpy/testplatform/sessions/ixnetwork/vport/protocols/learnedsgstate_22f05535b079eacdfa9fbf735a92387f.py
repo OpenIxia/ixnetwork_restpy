@@ -18,70 +18,70 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class LearnedSgState(Base):
-	"""The number of Source Groups for which information has been learned.
-	The LearnedSgState class encapsulates a list of learnedSgState resources that is managed by the system.
-	A list of resources can be retrieved from the server using the LearnedSgState.find() method.
-	"""
+    """The number of Source Groups for which information has been learned.
+    The LearnedSgState class encapsulates a list of learnedSgState resources that is managed by the system.
+    A list of resources can be retrieved from the server using the LearnedSgState.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'learnedSgState'
+    __slots__ = ()
+    _SDM_NAME = 'learnedSgState'
 
-	def __init__(self, parent):
-		super(LearnedSgState, self).__init__(parent)
+    def __init__(self, parent):
+        super(LearnedSgState, self).__init__(parent)
 
-	@property
-	def Group(self):
-		"""The first IPv4 multicast group address in the range of group addresses included in the Register message. (default = 255.0.0.0)
+    @property
+    def Group(self):
+        """The first IPv4 multicast group address in the range of group addresses included in the Register message. (default = 255.0.0.0)
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('group')
+        Returns:
+            str
+        """
+        return self._get_attribute('group')
 
-	@property
-	def Source(self):
-		"""The first source address to be included in the Register messages. (default = 0.0.0.1)
+    @property
+    def Source(self):
+        """The first source address to be included in the Register messages. (default = 0.0.0.1)
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('source')
+        Returns:
+            str
+        """
+        return self._get_attribute('source')
 
-	def find(self, Group=None, Source=None):
-		"""Finds and retrieves learnedSgState data from the server.
+    def find(self, Group=None, Source=None):
+        """Finds and retrieves learnedSgState data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve learnedSgState data from the server.
-		By default the find method takes no parameters and will retrieve all learnedSgState data from the server.
+        All named parameters support regex and can be used to selectively retrieve learnedSgState data from the server.
+        By default the find method takes no parameters and will retrieve all learnedSgState data from the server.
 
-		Args:
-			Group (str): The first IPv4 multicast group address in the range of group addresses included in the Register message. (default = 255.0.0.0)
-			Source (str): The first source address to be included in the Register messages. (default = 0.0.0.1)
+        Args:
+            Group (str): The first IPv4 multicast group address in the range of group addresses included in the Register message. (default = 255.0.0.0)
+            Source (str): The first source address to be included in the Register messages. (default = 0.0.0.1)
 
-		Returns:
-			self: This instance with matching learnedSgState data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching learnedSgState data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of learnedSgState data from the server.
+    def read(self, href):
+        """Retrieves a single instance of learnedSgState data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the learnedSgState data from the server available through an iterator or index
+        Returns:
+            self: This instance with the learnedSgState data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

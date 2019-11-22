@@ -18,228 +18,228 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Statistics(Base):
-	"""This object fetches all the traffic statistics.
-	The Statistics class encapsulates a required statistics resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object fetches all the traffic statistics.
+    The Statistics class encapsulates a required statistics resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'statistics'
+    __slots__ = ()
+    _SDM_NAME = 'statistics'
 
-	def __init__(self, parent):
-		super(Statistics, self).__init__(parent)
+    def __init__(self, parent):
+        super(Statistics, self).__init__(parent)
 
-	@property
-	def AdvancedSequenceChecking(self):
-		"""An instance of the AdvancedSequenceChecking class.
+    @property
+    def AdvancedSequenceChecking(self):
+        """An instance of the AdvancedSequenceChecking class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking.AdvancedSequenceChecking)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking.AdvancedSequenceChecking)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking import AdvancedSequenceChecking
-		return AdvancedSequenceChecking(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking import AdvancedSequenceChecking
+        return AdvancedSequenceChecking(self)._select()
 
-	@property
-	def CpdpConvergence(self):
-		"""An instance of the CpdpConvergence class.
+    @property
+    def CpdpConvergence(self):
+        """An instance of the CpdpConvergence class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence.CpdpConvergence)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence.CpdpConvergence)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence import CpdpConvergence
-		return CpdpConvergence(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence import CpdpConvergence
+        return CpdpConvergence(self)._select()
 
-	@property
-	def DataIntegrity(self):
-		"""An instance of the DataIntegrity class.
+    @property
+    def DataIntegrity(self):
+        """An instance of the DataIntegrity class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity.DataIntegrity)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity.DataIntegrity)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity import DataIntegrity
-		return DataIntegrity(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity import DataIntegrity
+        return DataIntegrity(self)._select()
 
-	@property
-	def DelayVariation(self):
-		"""An instance of the DelayVariation class.
+    @property
+    def DelayVariation(self):
+        """An instance of the DelayVariation class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation.DelayVariation)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation.DelayVariation)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation import DelayVariation
-		return DelayVariation(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation import DelayVariation
+        return DelayVariation(self)._select()
 
-	@property
-	def ErrorStats(self):
-		"""An instance of the ErrorStats class.
+    @property
+    def ErrorStats(self):
+        """An instance of the ErrorStats class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats.ErrorStats)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats.ErrorStats)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats import ErrorStats
-		return ErrorStats(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats import ErrorStats
+        return ErrorStats(self)._select()
 
-	@property
-	def InterArrivalTimeRate(self):
-		"""An instance of the InterArrivalTimeRate class.
+    @property
+    def InterArrivalTimeRate(self):
+        """An instance of the InterArrivalTimeRate class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate.InterArrivalTimeRate)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate.InterArrivalTimeRate)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate import InterArrivalTimeRate
-		return InterArrivalTimeRate(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate import InterArrivalTimeRate
+        return InterArrivalTimeRate(self)._select()
 
-	@property
-	def Iptv(self):
-		"""An instance of the Iptv class.
+    @property
+    def Iptv(self):
+        """An instance of the Iptv class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.iptv.iptv.Iptv)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.iptv.iptv.Iptv)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.iptv.iptv import Iptv
-		return Iptv(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.iptv.iptv import Iptv
+        return Iptv(self)._select()
 
-	@property
-	def L1Rates(self):
-		"""An instance of the L1Rates class.
+    @property
+    def L1Rates(self):
+        """An instance of the L1Rates class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates.L1Rates)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates.L1Rates)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates import L1Rates
-		return L1Rates(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates import L1Rates
+        return L1Rates(self)._select()
 
-	@property
-	def Latency(self):
-		"""An instance of the Latency class.
+    @property
+    def Latency(self):
+        """An instance of the Latency class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency.Latency)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency.Latency)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency import Latency
-		return Latency(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency import Latency
+        return Latency(self)._select()
 
-	@property
-	def MisdirectedPerFlow(self):
-		"""An instance of the MisdirectedPerFlow class.
+    @property
+    def MisdirectedPerFlow(self):
+        """An instance of the MisdirectedPerFlow class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.misdirectedperflow.misdirectedperflow.MisdirectedPerFlow)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.misdirectedperflow.misdirectedperflow.MisdirectedPerFlow)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.misdirectedperflow.misdirectedperflow import MisdirectedPerFlow
-		return MisdirectedPerFlow(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.misdirectedperflow.misdirectedperflow import MisdirectedPerFlow
+        return MisdirectedPerFlow(self)._select()
 
-	@property
-	def MultipleJoinLeaveLatency(self):
-		"""An instance of the MultipleJoinLeaveLatency class.
+    @property
+    def MultipleJoinLeaveLatency(self):
+        """An instance of the MultipleJoinLeaveLatency class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.multiplejoinleavelatency.multiplejoinleavelatency.MultipleJoinLeaveLatency)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.multiplejoinleavelatency.multiplejoinleavelatency.MultipleJoinLeaveLatency)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.multiplejoinleavelatency.multiplejoinleavelatency import MultipleJoinLeaveLatency
-		return MultipleJoinLeaveLatency(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.multiplejoinleavelatency.multiplejoinleavelatency import MultipleJoinLeaveLatency
+        return MultipleJoinLeaveLatency(self)._select()
 
-	@property
-	def OneTimeJoinLeaveLatency(self):
-		"""An instance of the OneTimeJoinLeaveLatency class.
+    @property
+    def OneTimeJoinLeaveLatency(self):
+        """An instance of the OneTimeJoinLeaveLatency class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.onetimejoinleavelatency.onetimejoinleavelatency.OneTimeJoinLeaveLatency)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.onetimejoinleavelatency.onetimejoinleavelatency.OneTimeJoinLeaveLatency)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.onetimejoinleavelatency.onetimejoinleavelatency import OneTimeJoinLeaveLatency
-		return OneTimeJoinLeaveLatency(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.onetimejoinleavelatency.onetimejoinleavelatency import OneTimeJoinLeaveLatency
+        return OneTimeJoinLeaveLatency(self)._select()
 
-	@property
-	def PacketLossDuration(self):
-		"""An instance of the PacketLossDuration class.
+    @property
+    def PacketLossDuration(self):
+        """An instance of the PacketLossDuration class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration.PacketLossDuration)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration.PacketLossDuration)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration import PacketLossDuration
-		return PacketLossDuration(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration import PacketLossDuration
+        return PacketLossDuration(self)._select()
 
-	@property
-	def Prbs(self):
-		"""An instance of the Prbs class.
+    @property
+    def Prbs(self):
+        """An instance of the Prbs class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.prbs.prbs.Prbs)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.prbs.prbs.Prbs)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.prbs.prbs import Prbs
-		return Prbs(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.prbs.prbs import Prbs
+        return Prbs(self)._select()
 
-	@property
-	def SequenceChecking(self):
-		"""An instance of the SequenceChecking class.
+    @property
+    def SequenceChecking(self):
+        """An instance of the SequenceChecking class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.sequencechecking.sequencechecking.SequenceChecking)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.sequencechecking.sequencechecking.SequenceChecking)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.sequencechecking.sequencechecking import SequenceChecking
-		return SequenceChecking(self)._select()
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.sequencechecking.sequencechecking import SequenceChecking
+        return SequenceChecking(self)._select()

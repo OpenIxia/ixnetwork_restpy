@@ -18,274 +18,274 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class PceUpdateSrEroSubObjectList(Base):
-	"""
-	The PceUpdateSrEroSubObjectList class encapsulates a list of pceUpdateSrEroSubObjectList resources that is managed by the system.
-	A list of resources can be retrieved from the server using the PceUpdateSrEroSubObjectList.find() method.
-	"""
+    """
+    The PceUpdateSrEroSubObjectList class encapsulates a list of pceUpdateSrEroSubObjectList resources that is managed by the system.
+    A list of resources can be retrieved from the server using the PceUpdateSrEroSubObjectList.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'pceUpdateSrEroSubObjectList'
+    __slots__ = ()
+    _SDM_NAME = 'pceUpdateSrEroSubObjectList'
 
-	def __init__(self, parent):
-		super(PceUpdateSrEroSubObjectList, self).__init__(parent)
+    def __init__(self, parent):
+        super(PceUpdateSrEroSubObjectList, self).__init__(parent)
 
-	@property
-	def ActiveThisEro(self):
-		"""Controls whether the ERO sub-object will be sent in the PCInitiate message.
+    @property
+    def ActiveThisEro(self):
+        """Controls whether the ERO sub-object will be sent in the PCInitiate message.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('activeThisEro')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('activeThisEro')
 
-	@property
-	def Bos(self):
-		"""This bit is set to true for the last entry in the label stack i.e., for the bottom of the stack, and false for all other label stack entries. This control will be editable only if SID Type is MPLS Label 32bit.
+    @property
+    def Bos(self):
+        """This bit is set to true for the last entry in the label stack i.e., for the bottom of the stack, and false for all other label stack entries. This control will be editable only if SID Type is MPLS Label 32bit.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('bos')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('bos')
 
-	@property
-	def FBit(self):
-		"""A Flag which is used to carry additional information pertaining to SID. When this bit is set, the NAI value in the subobject body is null.
+    @property
+    def FBit(self):
+        """A Flag which is used to carry additional information pertaining to SID. When this bit is set, the NAI value in the subobject body is null.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('fBit')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('fBit')
 
-	@property
-	def Ipv4NodeId(self):
-		"""IPv4 Node ID is specified as an IPv4 address. This control can be configured if NAI Type is set to IPv4 Node ID and F bit is disabled.
+    @property
+    def Ipv4NodeId(self):
+        """IPv4 Node ID is specified as an IPv4 address. This control can be configured if NAI Type is set to IPv4 Node ID and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ipv4NodeId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ipv4NodeId')
 
-	@property
-	def Ipv6NodeId(self):
-		"""IPv6 Node ID is specified as an IPv6 address. This control can be configured if NAI Type is set to IPv6 Node ID and F bit is disabled.
+    @property
+    def Ipv6NodeId(self):
+        """IPv6 Node ID is specified as an IPv6 address. This control can be configured if NAI Type is set to IPv6 Node ID and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ipv6NodeId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ipv6NodeId')
 
-	@property
-	def LocalInterfaceId(self):
-		"""This is the Local Interface ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
+    @property
+    def LocalInterfaceId(self):
+        """This is the Local Interface ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('localInterfaceId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('localInterfaceId')
 
-	@property
-	def LocalIpv4Address(self):
-		"""This Control can be configured if NAI Type is set to IPv4 Adjacency and F bit is disabled.
+    @property
+    def LocalIpv4Address(self):
+        """This Control can be configured if NAI Type is set to IPv4 Adjacency and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('localIpv4Address')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('localIpv4Address')
 
-	@property
-	def LocalIpv6Address(self):
-		"""This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
+    @property
+    def LocalIpv6Address(self):
+        """This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('localIpv6Address')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('localIpv6Address')
 
-	@property
-	def LocalNodeId(self):
-		"""This is the Local Node ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
+    @property
+    def LocalNodeId(self):
+        """This is the Local Node ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('localNodeId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('localNodeId')
 
-	@property
-	def LooseHop(self):
-		"""Indicates if user wants to represent a loose-hop sub object in the LSP
+    @property
+    def LooseHop(self):
+        """Indicates if user wants to represent a loose-hop sub object in the LSP
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('looseHop')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('looseHop')
 
-	@property
-	def MplsLabel(self):
-		"""This control will be editable if the SID Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
+    @property
+    def MplsLabel(self):
+        """This control will be editable if the SID Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('mplsLabel')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mplsLabel')
 
-	@property
-	def MplsLabel32(self):
-		"""MPLS Label 32 Bit
+    @property
+    def MplsLabel32(self):
+        """MPLS Label 32 Bit
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('mplsLabel32')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mplsLabel32')
 
-	@property
-	def NaiType(self):
-		"""NAI (Node or Adjacency Identifier) contains the NAI associated with the SID. Depending on the value of SID Type, the NAI can have different formats such as, Not Applicable IPv4 Node ID IPv6 Node ID IPv4 Adjacency IPv6 Adjacency Unnumbered Adjacency with IPv4 NodeIDs
+    @property
+    def NaiType(self):
+        """NAI (Node or Adjacency Identifier) contains the NAI associated with the SID. Depending on the value of SID Type, the NAI can have different formats such as, Not Applicable IPv4 Node ID IPv6 Node ID IPv4 Adjacency IPv6 Adjacency Unnumbered Adjacency with IPv4 NodeIDs
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('naiType')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('naiType')
 
-	@property
-	def RemoteInterfaceId(self):
-		"""This is the Remote Interface ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
+    @property
+    def RemoteInterfaceId(self):
+        """This is the Remote Interface ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('remoteInterfaceId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('remoteInterfaceId')
 
-	@property
-	def RemoteIpv4Address(self):
-		"""This Control can be configured if NAI Type is set to IPv4 Adjacency and F bit is disabled.
+    @property
+    def RemoteIpv4Address(self):
+        """This Control can be configured if NAI Type is set to IPv4 Adjacency and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('remoteIpv4Address')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('remoteIpv4Address')
 
-	@property
-	def RemoteIpv6Address(self):
-		"""This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
+    @property
+    def RemoteIpv6Address(self):
+        """This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('remoteIpv6Address')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('remoteIpv6Address')
 
-	@property
-	def RemoteNodeId(self):
-		"""This is the Remote Node ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
+    @property
+    def RemoteNodeId(self):
+        """This is the Remote Node ID of the Unnumbered Adjacency with IPv4 NodeIDs which is specified as a pair of Node ID / Interface ID tuples. This Control can be configured if NAI Type is set to Unnumbered Adjacency with IPv4 NodeIDs and F bit is disabled.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('remoteNodeId')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('remoteNodeId')
 
-	@property
-	def Sid(self):
-		"""SID is the Segment Identifier
+    @property
+    def Sid(self):
+        """SID is the Segment Identifier
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('sid')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('sid')
 
-	@property
-	def SidType(self):
-		"""Using the Segment Identifier Type control user can configure whether to include SID or not and if included what is its type. Types are as follows: Null SID 20bit MPLS Label 32bit MPLS Label. If it is Null then S bit is set in the packet. Default value is 20bit MPLS Label.
+    @property
+    def SidType(self):
+        """Using the Segment Identifier Type control user can configure whether to include SID or not and if included what is its type. Types are as follows: Null SID 20bit MPLS Label 32bit MPLS Label. If it is Null then S bit is set in the packet. Default value is 20bit MPLS Label.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('sidType')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('sidType')
 
-	@property
-	def Tc(self):
-		"""This field is used to carry traffic class information. This control will be editable only if SID Type is MPLS Label 32bit.
+    @property
+    def Tc(self):
+        """This field is used to carry traffic class information. This control will be editable only if SID Type is MPLS Label 32bit.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('tc')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('tc')
 
-	@property
-	def Ttl(self):
-		"""This field is used to encode a time-to-live value. This control will be editable only if SID Type is MPLS Label 32bit.
+    @property
+    def Ttl(self):
+        """This field is used to encode a time-to-live value. This control will be editable only if SID Type is MPLS Label 32bit.
 
-		Returns:
-			obj(ixnetwork_restpy.multivalue.Multivalue)
-		"""
-		return self._get_attribute('ttl')
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('ttl')
 
-	def find(self):
-		"""Finds and retrieves pceUpdateSrEroSubObjectList data from the server.
+    def find(self):
+        """Finds and retrieves pceUpdateSrEroSubObjectList data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve pceUpdateSrEroSubObjectList data from the server.
-		By default the find method takes no parameters and will retrieve all pceUpdateSrEroSubObjectList data from the server.
+        All named parameters support regex and can be used to selectively retrieve pceUpdateSrEroSubObjectList data from the server.
+        By default the find method takes no parameters and will retrieve all pceUpdateSrEroSubObjectList data from the server.
 
-		Returns:
-			self: This instance with matching pceUpdateSrEroSubObjectList data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching pceUpdateSrEroSubObjectList data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of pceUpdateSrEroSubObjectList data from the server.
+    def read(self, href):
+        """Retrieves a single instance of pceUpdateSrEroSubObjectList data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the pceUpdateSrEroSubObjectList data from the server available through an iterator or index
+        Returns:
+            self: This instance with the pceUpdateSrEroSubObjectList data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
-	def get_device_ids(self, PortNames=None, ActiveThisEro=None, Bos=None, FBit=None, Ipv4NodeId=None, Ipv6NodeId=None, LocalInterfaceId=None, LocalIpv4Address=None, LocalIpv6Address=None, LocalNodeId=None, LooseHop=None, MplsLabel=None, MplsLabel32=None, NaiType=None, RemoteInterfaceId=None, RemoteIpv4Address=None, RemoteIpv6Address=None, RemoteNodeId=None, Sid=None, SidType=None, Tc=None, Ttl=None):
-		"""Base class infrastructure that gets a list of pceUpdateSrEroSubObjectList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, ActiveThisEro=None, Bos=None, FBit=None, Ipv4NodeId=None, Ipv6NodeId=None, LocalInterfaceId=None, LocalIpv4Address=None, LocalIpv6Address=None, LocalNodeId=None, LooseHop=None, MplsLabel=None, MplsLabel32=None, NaiType=None, RemoteInterfaceId=None, RemoteIpv4Address=None, RemoteIpv6Address=None, RemoteNodeId=None, Sid=None, SidType=None, Tc=None, Ttl=None):
+        """Base class infrastructure that gets a list of pceUpdateSrEroSubObjectList device ids encapsulated by this object.
 
-		Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
-		Args:
-			PortNames (str): optional regex of port names
-			ActiveThisEro (str): optional regex of activeThisEro
-			Bos (str): optional regex of bos
-			FBit (str): optional regex of fBit
-			Ipv4NodeId (str): optional regex of ipv4NodeId
-			Ipv6NodeId (str): optional regex of ipv6NodeId
-			LocalInterfaceId (str): optional regex of localInterfaceId
-			LocalIpv4Address (str): optional regex of localIpv4Address
-			LocalIpv6Address (str): optional regex of localIpv6Address
-			LocalNodeId (str): optional regex of localNodeId
-			LooseHop (str): optional regex of looseHop
-			MplsLabel (str): optional regex of mplsLabel
-			MplsLabel32 (str): optional regex of mplsLabel32
-			NaiType (str): optional regex of naiType
-			RemoteInterfaceId (str): optional regex of remoteInterfaceId
-			RemoteIpv4Address (str): optional regex of remoteIpv4Address
-			RemoteIpv6Address (str): optional regex of remoteIpv6Address
-			RemoteNodeId (str): optional regex of remoteNodeId
-			Sid (str): optional regex of sid
-			SidType (str): optional regex of sidType
-			Tc (str): optional regex of tc
-			Ttl (str): optional regex of ttl
+        Args:
+            PortNames (str): optional regex of port names
+            ActiveThisEro (str): optional regex of activeThisEro
+            Bos (str): optional regex of bos
+            FBit (str): optional regex of fBit
+            Ipv4NodeId (str): optional regex of ipv4NodeId
+            Ipv6NodeId (str): optional regex of ipv6NodeId
+            LocalInterfaceId (str): optional regex of localInterfaceId
+            LocalIpv4Address (str): optional regex of localIpv4Address
+            LocalIpv6Address (str): optional regex of localIpv6Address
+            LocalNodeId (str): optional regex of localNodeId
+            LooseHop (str): optional regex of looseHop
+            MplsLabel (str): optional regex of mplsLabel
+            MplsLabel32 (str): optional regex of mplsLabel32
+            NaiType (str): optional regex of naiType
+            RemoteInterfaceId (str): optional regex of remoteInterfaceId
+            RemoteIpv4Address (str): optional regex of remoteIpv4Address
+            RemoteIpv6Address (str): optional regex of remoteIpv6Address
+            RemoteNodeId (str): optional regex of remoteNodeId
+            Sid (str): optional regex of sid
+            SidType (str): optional regex of sidType
+            Tc (str): optional regex of tc
+            Ttl (str): optional regex of ttl
 
-		Returns:
-			list(int): A list of device ids that meets the regex criteria provided in the method parameters
+        Returns:
+            list(int): A list of device ids that meets the regex criteria provided in the method parameters
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._get_ngpf_device_ids(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

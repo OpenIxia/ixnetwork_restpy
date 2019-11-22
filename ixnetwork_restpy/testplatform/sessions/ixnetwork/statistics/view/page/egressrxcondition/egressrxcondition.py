@@ -18,54 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class EgressRxCondition(Base):
-	"""Condition for egress row display in SV. (there is only one so it applies to all egress rows).
-	The EgressRxCondition class encapsulates a required egressRxCondition resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Condition for egress row display in SV. (there is only one so it applies to all egress rows).
+    The EgressRxCondition class encapsulates a required egressRxCondition resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'egressRxCondition'
+    __slots__ = ()
+    _SDM_NAME = 'egressRxCondition'
 
-	def __init__(self, parent):
-		super(EgressRxCondition, self).__init__(parent)
+    def __init__(self, parent):
+        super(EgressRxCondition, self).__init__(parent)
 
-	@property
-	def Operator(self):
-		"""The logical operation to be performed.
+    @property
+    def Operator(self):
+        """The logical operation to be performed.
 
-		Returns:
-			str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)
-		"""
-		return self._get_attribute('operator')
-	@Operator.setter
-	def Operator(self, value):
-		self._set_attribute('operator', value)
+        Returns:
+            str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)
+        """
+        return self._get_attribute('operator')
+    @Operator.setter
+    def Operator(self, value):
+        self._set_attribute('operator', value)
 
-	@property
-	def Values(self):
-		"""Value to be matched for the condition.
+    @property
+    def Values(self):
+        """Value to be matched for the condition.
 
-		Returns:
-			list(number)
-		"""
-		return self._get_attribute('values')
-	@Values.setter
-	def Values(self, value):
-		self._set_attribute('values', value)
+        Returns:
+            list(number)
+        """
+        return self._get_attribute('values')
+    @Values.setter
+    def Values(self, value):
+        self._set_attribute('values', value)
 
-	def update(self, Operator=None, Values=None):
-		"""Updates a child instance of egressRxCondition on the server.
+    def update(self, Operator=None, Values=None):
+        """Updates a child instance of egressRxCondition on the server.
 
-		Args:
-			Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
-			Values (list(number)): Value to be matched for the condition.
+        Args:
+            Operator (str(isBetween|isDifferent|isEqual|isEqualOrGreater|isEqualOrSmaller|isGreater|isSmaller)): The logical operation to be performed.
+            Values (list(number)): Value to be matched for the condition.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

@@ -18,210 +18,210 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
-	"""NOT DEFINED
-	The SwitchHostRangeLearnedInfoTriggerAttributes class encapsulates a required switchHostRangeLearnedInfoTriggerAttributes resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """NOT DEFINED
+    The SwitchHostRangeLearnedInfoTriggerAttributes class encapsulates a required switchHostRangeLearnedInfoTriggerAttributes resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'switchHostRangeLearnedInfoTriggerAttributes'
+    __slots__ = ()
+    _SDM_NAME = 'switchHostRangeLearnedInfoTriggerAttributes'
 
-	def __init__(self, parent):
-		super(SwitchHostRangeLearnedInfoTriggerAttributes, self).__init__(parent)
+    def __init__(self, parent):
+        super(SwitchHostRangeLearnedInfoTriggerAttributes, self).__init__(parent)
 
-	@property
-	def CustomPacket(self):
-		"""NOT DEFINED
+    @property
+    def CustomPacket(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('customPacket')
-	@CustomPacket.setter
-	def CustomPacket(self, value):
-		self._set_attribute('customPacket', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('customPacket')
+    @CustomPacket.setter
+    def CustomPacket(self, value):
+        self._set_attribute('customPacket', value)
 
-	@property
-	def DestinationCustom(self):
-		"""NOT DEFINED
+    @property
+    def DestinationCustom(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('destinationCustom')
-	@DestinationCustom.setter
-	def DestinationCustom(self, value):
-		self._set_attribute('destinationCustom', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('destinationCustom')
+    @DestinationCustom.setter
+    def DestinationCustom(self, value):
+        self._set_attribute('destinationCustom', value)
 
-	@property
-	def DestinationCustomIpv4Address(self):
-		"""NOT DEFINED
+    @property
+    def DestinationCustomIpv4Address(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('destinationCustomIpv4Address')
-	@DestinationCustomIpv4Address.setter
-	def DestinationCustomIpv4Address(self, value):
-		self._set_attribute('destinationCustomIpv4Address', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('destinationCustomIpv4Address')
+    @DestinationCustomIpv4Address.setter
+    def DestinationCustomIpv4Address(self, value):
+        self._set_attribute('destinationCustomIpv4Address', value)
 
-	@property
-	def DestinationCustomIpv4AddressStep(self):
-		"""NOT DEFINED
+    @property
+    def DestinationCustomIpv4AddressStep(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('destinationCustomIpv4AddressStep')
-	@DestinationCustomIpv4AddressStep.setter
-	def DestinationCustomIpv4AddressStep(self, value):
-		self._set_attribute('destinationCustomIpv4AddressStep', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('destinationCustomIpv4AddressStep')
+    @DestinationCustomIpv4AddressStep.setter
+    def DestinationCustomIpv4AddressStep(self, value):
+        self._set_attribute('destinationCustomIpv4AddressStep', value)
 
-	@property
-	def DestinationCustomMacAddress(self):
-		"""NOT DEFINED
+    @property
+    def DestinationCustomMacAddress(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('destinationCustomMacAddress')
-	@DestinationCustomMacAddress.setter
-	def DestinationCustomMacAddress(self, value):
-		self._set_attribute('destinationCustomMacAddress', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('destinationCustomMacAddress')
+    @DestinationCustomMacAddress.setter
+    def DestinationCustomMacAddress(self, value):
+        self._set_attribute('destinationCustomMacAddress', value)
 
-	@property
-	def DestinationCustomMacAddressStep(self):
-		"""NOT DEFINED
+    @property
+    def DestinationCustomMacAddressStep(self):
+        """NOT DEFINED
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('destinationCustomMacAddressStep')
-	@DestinationCustomMacAddressStep.setter
-	def DestinationCustomMacAddressStep(self, value):
-		self._set_attribute('destinationCustomMacAddressStep', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('destinationCustomMacAddressStep')
+    @DestinationCustomMacAddressStep.setter
+    def DestinationCustomMacAddressStep(self, value):
+        self._set_attribute('destinationCustomMacAddressStep', value)
 
-	@property
-	def DestinationHostList(self):
-		"""NOT DEFINED
+    @property
+    def DestinationHostList(self):
+        """NOT DEFINED
 
-		Returns:
-			list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
-		"""
-		return self._get_attribute('destinationHostList')
-	@DestinationHostList.setter
-	def DestinationHostList(self, value):
-		self._set_attribute('destinationHostList', value)
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
+        """
+        return self._get_attribute('destinationHostList')
+    @DestinationHostList.setter
+    def DestinationHostList(self, value):
+        self._set_attribute('destinationHostList', value)
 
-	@property
-	def MeshingType(self):
-		"""NOT DEFINED
+    @property
+    def MeshingType(self):
+        """NOT DEFINED
 
-		Returns:
-			str(fullyMesh)
-		"""
-		return self._get_attribute('meshingType')
-	@MeshingType.setter
-	def MeshingType(self, value):
-		self._set_attribute('meshingType', value)
+        Returns:
+            str(fullyMesh)
+        """
+        return self._get_attribute('meshingType')
+    @MeshingType.setter
+    def MeshingType(self, value):
+        self._set_attribute('meshingType', value)
 
-	@property
-	def PacketType(self):
-		"""NOT DEFINED
+    @property
+    def PacketType(self):
+        """NOT DEFINED
 
-		Returns:
-			str(arp|ping|custom)
-		"""
-		return self._get_attribute('packetType')
-	@PacketType.setter
-	def PacketType(self, value):
-		self._set_attribute('packetType', value)
+        Returns:
+            str(arp|ping|custom)
+        """
+        return self._get_attribute('packetType')
+    @PacketType.setter
+    def PacketType(self, value):
+        self._set_attribute('packetType', value)
 
-	@property
-	def PeriodIntervalInMs(self):
-		"""NOT DEFINED
+    @property
+    def PeriodIntervalInMs(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('periodIntervalInMs')
-	@PeriodIntervalInMs.setter
-	def PeriodIntervalInMs(self, value):
-		self._set_attribute('periodIntervalInMs', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('periodIntervalInMs')
+    @PeriodIntervalInMs.setter
+    def PeriodIntervalInMs(self, value):
+        self._set_attribute('periodIntervalInMs', value)
 
-	@property
-	def Periodic(self):
-		"""NOT DEFINED
+    @property
+    def Periodic(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('periodic')
-	@Periodic.setter
-	def Periodic(self, value):
-		self._set_attribute('periodic', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('periodic')
+    @Periodic.setter
+    def Periodic(self, value):
+        self._set_attribute('periodic', value)
 
-	@property
-	def PeriodicIterationNumber(self):
-		"""NOT DEFINED
+    @property
+    def PeriodicIterationNumber(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('periodicIterationNumber')
-	@PeriodicIterationNumber.setter
-	def PeriodicIterationNumber(self, value):
-		self._set_attribute('periodicIterationNumber', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('periodicIterationNumber')
+    @PeriodicIterationNumber.setter
+    def PeriodicIterationNumber(self, value):
+        self._set_attribute('periodicIterationNumber', value)
 
-	@property
-	def ResponseTimeout(self):
-		"""NOT DEFINED
+    @property
+    def ResponseTimeout(self):
+        """NOT DEFINED
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('responseTimeout')
-	@ResponseTimeout.setter
-	def ResponseTimeout(self, value):
-		self._set_attribute('responseTimeout', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('responseTimeout')
+    @ResponseTimeout.setter
+    def ResponseTimeout(self, value):
+        self._set_attribute('responseTimeout', value)
 
-	@property
-	def SourceHostList(self):
-		"""NOT DEFINED
+    @property
+    def SourceHostList(self):
+        """NOT DEFINED
 
-		Returns:
-			list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
-		"""
-		return self._get_attribute('sourceHostList')
-	@SourceHostList.setter
-	def SourceHostList(self, value):
-		self._set_attribute('sourceHostList', value)
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])
+        """
+        return self._get_attribute('sourceHostList')
+    @SourceHostList.setter
+    def SourceHostList(self, value):
+        self._set_attribute('sourceHostList', value)
 
-	def update(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
-		"""Updates a child instance of switchHostRangeLearnedInfoTriggerAttributes on the server.
+    def update(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
+        """Updates a child instance of switchHostRangeLearnedInfoTriggerAttributes on the server.
 
-		Args:
-			CustomPacket (str): NOT DEFINED
-			DestinationCustom (bool): NOT DEFINED
-			DestinationCustomIpv4Address (str): NOT DEFINED
-			DestinationCustomIpv4AddressStep (str): NOT DEFINED
-			DestinationCustomMacAddress (str): NOT DEFINED
-			DestinationCustomMacAddressStep (str): NOT DEFINED
-			DestinationHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
-			MeshingType (str(fullyMesh)): NOT DEFINED
-			PacketType (str(arp|ping|custom)): NOT DEFINED
-			PeriodIntervalInMs (number): NOT DEFINED
-			Periodic (bool): NOT DEFINED
-			PeriodicIterationNumber (number): NOT DEFINED
-			ResponseTimeout (number): NOT DEFINED
-			SourceHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
+        Args:
+            CustomPacket (str): NOT DEFINED
+            DestinationCustom (bool): NOT DEFINED
+            DestinationCustomIpv4Address (str): NOT DEFINED
+            DestinationCustomIpv4AddressStep (str): NOT DEFINED
+            DestinationCustomMacAddress (str): NOT DEFINED
+            DestinationCustomMacAddressStep (str): NOT DEFINED
+            DestinationHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
+            MeshingType (str(fullyMesh)): NOT DEFINED
+            PacketType (str(arp|ping|custom)): NOT DEFINED
+            PeriodIntervalInMs (number): NOT DEFINED
+            Periodic (bool): NOT DEFINED
+            PeriodicIterationNumber (number): NOT DEFINED
+            ResponseTimeout (number): NOT DEFINED
+            SourceHostList (list(str[None|/api/v1/sessions/1/ixnetwork/vport?deepchild=switchHostRanges])): NOT DEFINED
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

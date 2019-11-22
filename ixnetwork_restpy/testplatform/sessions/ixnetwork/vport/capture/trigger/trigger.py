@@ -18,145 +18,145 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Trigger(Base):
-	"""This object specifies the field properties.
-	The Trigger class encapsulates a required trigger resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """This object specifies the field properties.
+    The Trigger class encapsulates a required trigger resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'trigger'
+    __slots__ = ()
+    _SDM_NAME = 'trigger'
 
-	def __init__(self, parent):
-		super(Trigger, self).__init__(parent)
+    def __init__(self, parent):
+        super(Trigger, self).__init__(parent)
 
-	@property
-	def CaptureTriggerDA(self):
-		"""One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
+    @property
+    def CaptureTriggerDA(self):
+        """One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
 
-		Returns:
-			str(addr1|addr2|anyAddr|notAddr1|notAddr2)
-		"""
-		return self._get_attribute('captureTriggerDA')
-	@CaptureTriggerDA.setter
-	def CaptureTriggerDA(self, value):
-		self._set_attribute('captureTriggerDA', value)
+        Returns:
+            str(addr1|addr2|anyAddr|notAddr1|notAddr2)
+        """
+        return self._get_attribute('captureTriggerDA')
+    @CaptureTriggerDA.setter
+    def CaptureTriggerDA(self, value):
+        self._set_attribute('captureTriggerDA', value)
 
-	@property
-	def CaptureTriggerEnable(self):
-		"""Enables or disables the capture trigger.
+    @property
+    def CaptureTriggerEnable(self):
+        """Enables or disables the capture trigger.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('captureTriggerEnable')
-	@CaptureTriggerEnable.setter
-	def CaptureTriggerEnable(self, value):
-		self._set_attribute('captureTriggerEnable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('captureTriggerEnable')
+    @CaptureTriggerEnable.setter
+    def CaptureTriggerEnable(self, value):
+        self._set_attribute('captureTriggerEnable', value)
 
-	@property
-	def CaptureTriggerError(self):
-		"""Applicable only when captureTriggerEnable is set to true.
+    @property
+    def CaptureTriggerError(self):
+        """Applicable only when captureTriggerEnable is set to true.
 
-		Returns:
-			str(errAnyFrame|errAnyIpTcpUdpChecksumError|errAnySequencekError|errBadCRC|errBadFrame|errBigSequenceError|errDataIntegrityError|errGoodFrame|errInvalidFcoeFrame|errReverseSequenceError|errSmallSequenceError)
-		"""
-		return self._get_attribute('captureTriggerError')
-	@CaptureTriggerError.setter
-	def CaptureTriggerError(self, value):
-		self._set_attribute('captureTriggerError', value)
+        Returns:
+            str(errAnyFrame|errAnyIpTcpUdpChecksumError|errAnySequencekError|errBadCRC|errBadFrame|errBigSequenceError|errDataIntegrityError|errGoodFrame|errInvalidFcoeFrame|errReverseSequenceError|errSmallSequenceError)
+        """
+        return self._get_attribute('captureTriggerError')
+    @CaptureTriggerError.setter
+    def CaptureTriggerError(self, value):
+        self._set_attribute('captureTriggerError', value)
 
-	@property
-	def CaptureTriggerExpressionString(self):
-		"""String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
+    @property
+    def CaptureTriggerExpressionString(self):
+        """String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('captureTriggerExpressionString')
-	@CaptureTriggerExpressionString.setter
-	def CaptureTriggerExpressionString(self, value):
-		self._set_attribute('captureTriggerExpressionString', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('captureTriggerExpressionString')
+    @CaptureTriggerExpressionString.setter
+    def CaptureTriggerExpressionString(self, value):
+        self._set_attribute('captureTriggerExpressionString', value)
 
-	@property
-	def CaptureTriggerFrameSizeEnable(self):
-		"""Enables or disables the frame size constraint which specifies a range of frame.
+    @property
+    def CaptureTriggerFrameSizeEnable(self):
+        """Enables or disables the frame size constraint which specifies a range of frame.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('captureTriggerFrameSizeEnable')
-	@CaptureTriggerFrameSizeEnable.setter
-	def CaptureTriggerFrameSizeEnable(self, value):
-		self._set_attribute('captureTriggerFrameSizeEnable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('captureTriggerFrameSizeEnable')
+    @CaptureTriggerFrameSizeEnable.setter
+    def CaptureTriggerFrameSizeEnable(self, value):
+        self._set_attribute('captureTriggerFrameSizeEnable', value)
 
-	@property
-	def CaptureTriggerFrameSizeFrom(self):
-		"""Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
+    @property
+    def CaptureTriggerFrameSizeFrom(self):
+        """Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('captureTriggerFrameSizeFrom')
-	@CaptureTriggerFrameSizeFrom.setter
-	def CaptureTriggerFrameSizeFrom(self, value):
-		self._set_attribute('captureTriggerFrameSizeFrom', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('captureTriggerFrameSizeFrom')
+    @CaptureTriggerFrameSizeFrom.setter
+    def CaptureTriggerFrameSizeFrom(self, value):
+        self._set_attribute('captureTriggerFrameSizeFrom', value)
 
-	@property
-	def CaptureTriggerFrameSizeTo(self):
-		"""Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+    @property
+    def CaptureTriggerFrameSizeTo(self):
+        """Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
 
-		Returns:
-			number
-		"""
-		return self._get_attribute('captureTriggerFrameSizeTo')
-	@CaptureTriggerFrameSizeTo.setter
-	def CaptureTriggerFrameSizeTo(self, value):
-		self._set_attribute('captureTriggerFrameSizeTo', value)
+        Returns:
+            number
+        """
+        return self._get_attribute('captureTriggerFrameSizeTo')
+    @CaptureTriggerFrameSizeTo.setter
+    def CaptureTriggerFrameSizeTo(self, value):
+        self._set_attribute('captureTriggerFrameSizeTo', value)
 
-	@property
-	def CaptureTriggerPattern(self):
-		"""Applicable only when captureTriggerEnable is set to true.
+    @property
+    def CaptureTriggerPattern(self):
+        """Applicable only when captureTriggerEnable is set to true.
 
-		Returns:
-			str(anyPattern|notPattern1|notPattern2|pattern1|pattern1AndPattern2|pattern2)
-		"""
-		return self._get_attribute('captureTriggerPattern')
-	@CaptureTriggerPattern.setter
-	def CaptureTriggerPattern(self, value):
-		self._set_attribute('captureTriggerPattern', value)
+        Returns:
+            str(anyPattern|notPattern1|notPattern2|pattern1|pattern1AndPattern2|pattern2)
+        """
+        return self._get_attribute('captureTriggerPattern')
+    @CaptureTriggerPattern.setter
+    def CaptureTriggerPattern(self, value):
+        self._set_attribute('captureTriggerPattern', value)
 
-	@property
-	def CaptureTriggerSA(self):
-		"""Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+    @property
+    def CaptureTriggerSA(self):
+        """Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
 
-		Returns:
-			str(addr1|addr2|anyAddr|notAddr1|notAddr2)
-		"""
-		return self._get_attribute('captureTriggerSA')
-	@CaptureTriggerSA.setter
-	def CaptureTriggerSA(self, value):
-		self._set_attribute('captureTriggerSA', value)
+        Returns:
+            str(addr1|addr2|anyAddr|notAddr1|notAddr2)
+        """
+        return self._get_attribute('captureTriggerSA')
+    @CaptureTriggerSA.setter
+    def CaptureTriggerSA(self, value):
+        self._set_attribute('captureTriggerSA', value)
 
-	def update(self, CaptureTriggerDA=None, CaptureTriggerEnable=None, CaptureTriggerError=None, CaptureTriggerExpressionString=None, CaptureTriggerFrameSizeEnable=None, CaptureTriggerFrameSizeFrom=None, CaptureTriggerFrameSizeTo=None, CaptureTriggerPattern=None, CaptureTriggerSA=None):
-		"""Updates a child instance of trigger on the server.
+    def update(self, CaptureTriggerDA=None, CaptureTriggerEnable=None, CaptureTriggerError=None, CaptureTriggerExpressionString=None, CaptureTriggerFrameSizeEnable=None, CaptureTriggerFrameSizeFrom=None, CaptureTriggerFrameSizeTo=None, CaptureTriggerPattern=None, CaptureTriggerSA=None):
+        """Updates a child instance of trigger on the server.
 
-		Args:
-			CaptureTriggerDA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
-			CaptureTriggerEnable (bool): Enables or disables the capture trigger.
-			CaptureTriggerError (str(errAnyFrame|errAnyIpTcpUdpChecksumError|errAnySequencekError|errBadCRC|errBadFrame|errBigSequenceError|errDataIntegrityError|errGoodFrame|errInvalidFcoeFrame|errReverseSequenceError|errSmallSequenceError)): Applicable only when captureTriggerEnable is set to true.
-			CaptureTriggerExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
-			CaptureTriggerFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
-			CaptureTriggerFrameSizeFrom (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
-			CaptureTriggerFrameSizeTo (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
-			CaptureTriggerPattern (str(anyPattern|notPattern1|notPattern2|pattern1|pattern1AndPattern2|pattern2)): Applicable only when captureTriggerEnable is set to true.
-			CaptureTriggerSA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+        Args:
+            CaptureTriggerDA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
+            CaptureTriggerEnable (bool): Enables or disables the capture trigger.
+            CaptureTriggerError (str(errAnyFrame|errAnyIpTcpUdpChecksumError|errAnySequencekError|errBadCRC|errBadFrame|errBigSequenceError|errDataIntegrityError|errGoodFrame|errInvalidFcoeFrame|errReverseSequenceError|errSmallSequenceError)): Applicable only when captureTriggerEnable is set to true.
+            CaptureTriggerExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
+            CaptureTriggerFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
+            CaptureTriggerFrameSizeFrom (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
+            CaptureTriggerFrameSizeTo (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
+            CaptureTriggerPattern (str(anyPattern|notPattern1|notPattern2|pattern1|pattern1AndPattern2|pattern2)): Applicable only when captureTriggerEnable is set to true.
+            CaptureTriggerSA (str(addr1|addr2|anyAddr|notAddr1|notAddr2)): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

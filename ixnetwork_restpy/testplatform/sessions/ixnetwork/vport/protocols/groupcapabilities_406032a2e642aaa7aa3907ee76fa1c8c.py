@@ -18,80 +18,80 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class GroupCapabilities(Base):
-	"""Specify the group capabilities supported by Switch.
-	The GroupCapabilities class encapsulates a required groupCapabilities resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Specify the group capabilities supported by Switch.
+    The GroupCapabilities class encapsulates a required groupCapabilities resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'groupCapabilities'
+    __slots__ = ()
+    _SDM_NAME = 'groupCapabilities'
 
-	def __init__(self, parent):
-		super(GroupCapabilities, self).__init__(parent)
+    def __init__(self, parent):
+        super(GroupCapabilities, self).__init__(parent)
 
-	@property
-	def Chaining(self):
-		"""Chaining groups.
+    @property
+    def Chaining(self):
+        """Chaining groups.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('chaining')
-	@Chaining.setter
-	def Chaining(self, value):
-		self._set_attribute('chaining', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('chaining')
+    @Chaining.setter
+    def Chaining(self, value):
+        self._set_attribute('chaining', value)
 
-	@property
-	def ChainingChecks(self):
-		"""NOT DEFINED
+    @property
+    def ChainingChecks(self):
+        """NOT DEFINED
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('chainingChecks')
-	@ChainingChecks.setter
-	def ChainingChecks(self, value):
-		self._set_attribute('chainingChecks', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('chainingChecks')
+    @ChainingChecks.setter
+    def ChainingChecks(self, value):
+        self._set_attribute('chainingChecks', value)
 
-	@property
-	def SelectLiveness(self):
-		"""Liveness for select groups.
+    @property
+    def SelectLiveness(self):
+        """Liveness for select groups.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('selectLiveness')
-	@SelectLiveness.setter
-	def SelectLiveness(self, value):
-		self._set_attribute('selectLiveness', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('selectLiveness')
+    @SelectLiveness.setter
+    def SelectLiveness(self, value):
+        self._set_attribute('selectLiveness', value)
 
-	@property
-	def SelectWeight(self):
-		"""Weight for select groups.
+    @property
+    def SelectWeight(self):
+        """Weight for select groups.
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('selectWeight')
-	@SelectWeight.setter
-	def SelectWeight(self, value):
-		self._set_attribute('selectWeight', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('selectWeight')
+    @SelectWeight.setter
+    def SelectWeight(self, value):
+        self._set_attribute('selectWeight', value)
 
-	def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
-		"""Updates a child instance of groupCapabilities on the server.
+    def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
+        """Updates a child instance of groupCapabilities on the server.
 
-		Args:
-			Chaining (bool): Chaining groups.
-			ChainingChecks (bool): NOT DEFINED
-			SelectLiveness (bool): Liveness for select groups.
-			SelectWeight (bool): Weight for select groups.
+        Args:
+            Chaining (bool): Chaining groups.
+            ChainingChecks (bool): NOT DEFINED
+            SelectLiveness (bool): Liveness for select groups.
+            SelectWeight (bool): Weight for select groups.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

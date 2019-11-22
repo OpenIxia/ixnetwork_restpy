@@ -18,81 +18,81 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Type(Base):
-	"""Tlv type container
-	The Type class encapsulates a required type resource which will be retrieved from the server every time the property is accessed.
-	"""
+    """Tlv type container
+    The Type class encapsulates a required type resource which will be retrieved from the server every time the property is accessed.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'type'
+    __slots__ = ()
+    _SDM_NAME = 'type'
 
-	def __init__(self, parent):
-		super(Type, self).__init__(parent)
+    def __init__(self, parent):
+        super(Type, self).__init__(parent)
 
-	@property
-	def Object(self):
-		"""An instance of the Object class.
+    @property
+    def Object(self):
+        """An instance of the Object class.
 
-		Returns:
-			obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object)
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object.Object)
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object import Object
-		return Object(self)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object import Object
+        return Object(self)
 
-	@property
-	def IsEditable(self):
-		"""Indicates whether this is editable or not
+    @property
+    def IsEditable(self):
+        """Indicates whether this is editable or not
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isEditable')
-	@IsEditable.setter
-	def IsEditable(self, value):
-		self._set_attribute('isEditable', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('isEditable')
+    @IsEditable.setter
+    def IsEditable(self, value):
+        self._set_attribute('isEditable', value)
 
-	@property
-	def IsRequired(self):
-		"""Indicates whether this is required or not
+    @property
+    def IsRequired(self):
+        """Indicates whether this is required or not
 
-		Returns:
-			bool
-		"""
-		return self._get_attribute('isRequired')
-	@IsRequired.setter
-	def IsRequired(self, value):
-		self._set_attribute('isRequired', value)
+        Returns:
+            bool
+        """
+        return self._get_attribute('isRequired')
+    @IsRequired.setter
+    def IsRequired(self, value):
+        self._set_attribute('isRequired', value)
 
-	@property
-	def Name(self):
-		"""Name of the node
+    @property
+    def Name(self):
+        """Name of the node
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('name')
-	@Name.setter
-	def Name(self, value):
-		self._set_attribute('name', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('name')
+    @Name.setter
+    def Name(self, value):
+        self._set_attribute('name', value)
 
-	def update(self, IsEditable=None, IsRequired=None, Name=None):
-		"""Updates a child instance of type on the server.
+    def update(self, IsEditable=None, IsRequired=None, Name=None):
+        """Updates a child instance of type on the server.
 
-		Args:
-			IsEditable (bool): Indicates whether this is editable or not
-			IsRequired (bool): Indicates whether this is required or not
-			Name (str): Name of the node
+        Args:
+            IsEditable (bool): Indicates whether this is editable or not
+            IsRequired (bool): Indicates whether this is required or not
+            Name (str): Name of the node
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())

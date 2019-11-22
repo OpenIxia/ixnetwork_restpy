@@ -18,94 +18,94 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
 class Choice(Base):
-	"""This specifies the particular choice related properties for the parameter.
-	The Choice class encapsulates a list of choice resources that is managed by the system.
-	A list of resources can be retrieved from the server using the Choice.find() method.
-	"""
+    """This specifies the particular choice related properties for the parameter.
+    The Choice class encapsulates a list of choice resources that is managed by the system.
+    A list of resources can be retrieved from the server using the Choice.find() method.
+    """
 
-	__slots__ = ()
-	_SDM_NAME = 'choice'
+    __slots__ = ()
+    _SDM_NAME = 'choice'
 
-	def __init__(self, parent):
-		super(Choice, self).__init__(parent)
+    def __init__(self, parent):
+        super(Choice, self).__init__(parent)
 
-	@property
-	def Default(self):
-		"""(Read only) Parameter choice default value.
+    @property
+    def Default(self):
+        """(Read only) Parameter choice default value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('default')
+        Returns:
+            str
+        """
+        return self._get_attribute('default')
 
-	@property
-	def SupportedValues(self):
-		"""(Read only) Parameter supported choice values.
+    @property
+    def SupportedValues(self):
+        """(Read only) Parameter supported choice values.
 
-		Returns:
-			list(str)
-		"""
-		return self._get_attribute('supportedValues')
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('supportedValues')
 
-	@property
-	def Value(self):
-		"""Parameter choice selected value.
+    @property
+    def Value(self):
+        """Parameter choice selected value.
 
-		Returns:
-			str
-		"""
-		return self._get_attribute('value')
-	@Value.setter
-	def Value(self, value):
-		self._set_attribute('value', value)
+        Returns:
+            str
+        """
+        return self._get_attribute('value')
+    @Value.setter
+    def Value(self, value):
+        self._set_attribute('value', value)
 
-	def update(self, Value=None):
-		"""Updates a child instance of choice on the server.
+    def update(self, Value=None):
+        """Updates a child instance of choice on the server.
 
-		Args:
-			Value (str): Parameter choice selected value.
+        Args:
+            Value (str): Parameter choice selected value.
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		self._update(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
 
-	def find(self, Default=None, SupportedValues=None, Value=None):
-		"""Finds and retrieves choice data from the server.
+    def find(self, Default=None, SupportedValues=None, Value=None):
+        """Finds and retrieves choice data from the server.
 
-		All named parameters support regex and can be used to selectively retrieve choice data from the server.
-		By default the find method takes no parameters and will retrieve all choice data from the server.
+        All named parameters support regex and can be used to selectively retrieve choice data from the server.
+        By default the find method takes no parameters and will retrieve all choice data from the server.
 
-		Args:
-			Default (str): (Read only) Parameter choice default value.
-			SupportedValues (list(str)): (Read only) Parameter supported choice values.
-			Value (str): Parameter choice selected value.
+        Args:
+            Default (str): (Read only) Parameter choice default value.
+            SupportedValues (list(str)): (Read only) Parameter supported choice values.
+            Value (str): Parameter choice selected value.
 
-		Returns:
-			self: This instance with matching choice data retrieved from the server available through an iterator or index
+        Returns:
+            self: This instance with matching choice data retrieved from the server available through an iterator or index
 
-		Raises:
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._select(locals())
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(locals())
 
-	def read(self, href):
-		"""Retrieves a single instance of choice data from the server.
+    def read(self, href):
+        """Retrieves a single instance of choice data from the server.
 
-		Args:
-			href (str): An href to the instance to be retrieved
+        Args:
+            href (str): An href to the instance to be retrieved
 
-		Returns:
-			self: This instance with the choice data from the server available through an iterator or index
+        Returns:
+            self: This instance with the choice data from the server available through an iterator or index
 
-		Raises:
-			NotFoundError: The requested resource does not exist on the server
-			ServerError: The server has encountered an uncategorized error condition
-		"""
-		return self._read(href)
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
