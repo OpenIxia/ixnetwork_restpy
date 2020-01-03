@@ -79,8 +79,14 @@ print(StatViewAssistant(ixnetwork, 'Flow Statistics'))
 ixnetwork.Traffic.StopStatelessTrafficBlocking()
 ```
 
+## Supported Server Versions
+This client package supports versions 8.52 and up of the following servers:
+* Linux IxNetwork API Server
+* Windows IxNetwork GUI
+* Windows IxNetwork Connection Manager
+
 ## Documentation
-Documentation is available using the following methods:
+Documentation is available using the following methods:
 * [Online web based documentation](https://openixia.github.io/ixnetwork_restpy/#/overview)
   * [Samples](https://openixia.github.io/ixnetwork_restpy/#/samples)
   * [API Reference](https://openixia.github.io/ixnetwork_restpy/#/reference)
@@ -93,16 +99,19 @@ Documentation is available using the following methods:
   ```
 
 ## Additional Samples
-Visit the [OpenIxia ixnetwork-restpy sample site maintained by solution architects](https://github.com/OpenIxia/IxNetwork/tree/master/RestPy) for in depth end-to-end samples that demonstrate the following:
-* building a configuration
-  * from scratch
-  * from an existing IxNetwork configuration
-* running the configuration
-  * connecting ports to hardware
-  * starting protocols
-  * starting traffic
-* getting statistics
-  * port stats
-  * traffic stats
+Visit the [OpenIxia ixnetwork-restpy sample site maintained by solution architects](https://github.com/OpenIxia/IxNetwork/tree/master/RestPy) for in-depth end-to-end samples that demonstrate the following:
+* building a configuration
+  * from scratch
+  * from an existing IxNetwork configuration
+* running the configuration
+  * connecting ports to hardware
+  * starting protocols
+  * starting traffic
+* getting statistics
+  * port stats
+  * traffic stats
 
+## Contributing
+The purpose of this repository is to allow users to clone the auto generated code. We do not accept pull requests in this repository.
 
+Feedback such as bugs/enhancements/questions regarding the ixnetwork-restpy package is welcomed by opening a [GitHub issue](https://github.com/OpenIxia/ixnetwork_restpy/issues).

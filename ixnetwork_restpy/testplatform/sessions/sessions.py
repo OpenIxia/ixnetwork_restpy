@@ -1,3 +1,24 @@
+# MIT LICENSE
+#
+# Copyright 1997 - 2019 by IXIA Keysight
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.errors import IxNetworkError
 
@@ -177,6 +198,12 @@ class Sessions(Base):
         return self
 
     def update(self, Name=None):
+        """Updates the current encapsulated sessions resource on the server.
+
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
         self.Name = Name
         return self
         
@@ -187,15 +214,17 @@ class Sessions(Base):
             NotFoundError: The requested resource does not exist on the server
             ServerError: The server has encountered an uncategorized error condition
         """
-        try:
-            for properties in self._object_properties:
+        exceptions = ''
+        for properties in self._object_properties:
+            try:
                 self._connection._execute('%s/operations/stop' % properties['href'], payload=None)
-            self._delete()
-        except IxNetworkError as e:
-            if e._status_code not in [404, 405]:
-                raise e
-        finally:
-            self._clear()
+                self._connection._delete(properties['href'])
+            except IxNetworkError as e:
+                if e._status_code not in [400, 404, 405]:
+                    exceptions += '%s\n' % e.message
+        self._clear()
+        if len(exceptions) > 0:
+            raise exceptions
     
     def GetObjectFromHref(self, href):
         """Given an href get the corresponding object

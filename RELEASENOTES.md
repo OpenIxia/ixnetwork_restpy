@@ -1,8 +1,12 @@
 # Release Notes
 
+### Jan 2020
+* 1.0.48
+  * support ipv6 address with no square brackets in TestPlatform init
+  * MultiValue.Steps.find() support 
 ### Nov 2019
 * 1.0.47
-  * fixed class generation, invalid property names, docstrings, normalized line endings
+  * fixed class generation for invalid property names, invalid docstrings and normalized line endings
   * RELEASENOTES.md included in distributions
 * 1.0.46
   * QuickTest TestConfig classes are now supported

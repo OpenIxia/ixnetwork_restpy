@@ -88,6 +88,15 @@ class Ospfv3RouteProperty(Base):
         return self._get_attribute('active')
 
     @property
+    def Algorithm(self):
+        """Algorithm
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('algorithm')
+
+    @property
     def AllowPropagate(self):
         """Allow Propagate
 
@@ -104,6 +113,15 @@ class Ospfv3RouteProperty(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('autoSelectForwardingAddress')
+
+    @property
+    def ConfigureSIDIndexLabel(self):
+        """Lets the corresponding router send Prefix SID. By default, it is selected
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('configureSIDIndexLabel')
 
     @property
     def Count(self):
@@ -124,6 +142,15 @@ class Ospfv3RouteProperty(Base):
         return self._get_attribute('descriptiveName')
 
     @property
+    def EFlag(self):
+        """E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('eFlag')
+
+    @property
     def ForwardingAddress(self):
         """Forwarding addresses of the Type-7 LSA
 
@@ -131,6 +158,24 @@ class Ospfv3RouteProperty(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('forwardingAddress')
+
+    @property
+    def LFlag(self):
+        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('lFlag')
+
+    @property
+    def MFlag(self):
+        """M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('mFlag')
 
     @property
     def Metric(self):
@@ -154,6 +199,15 @@ class Ospfv3RouteProperty(Base):
         self._set_attribute('name', value)
 
     @property
+    def NpFlag(self):
+        """NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('npFlag')
+
+    @property
     def RouteOrigin(self):
         """Route Origin
 
@@ -161,6 +215,24 @@ class Ospfv3RouteProperty(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('routeOrigin')
+
+    @property
+    def SidIndexLabel(self):
+        """SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('sidIndexLabel')
+
+    @property
+    def VFlag(self):
+        """V-Flag: Value flag. If set, then the SID carries an absolute value label value
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('vFlag')
 
     def update(self, Name=None):
         """Updates a child instance of ospfv3RouteProperty on the server.
@@ -233,7 +305,7 @@ class Ospfv3RouteProperty(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AllowPropagate=None, AutoSelectForwardingAddress=None, ForwardingAddress=None, Metric=None, RouteOrigin=None):
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, AllowPropagate=None, AutoSelectForwardingAddress=None, ConfigureSIDIndexLabel=None, EFlag=None, ForwardingAddress=None, LFlag=None, MFlag=None, Metric=None, NpFlag=None, RouteOrigin=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv3RouteProperty device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -241,11 +313,19 @@ class Ospfv3RouteProperty(Base):
         Args:
             PortNames (str): optional regex of port names
             Active (str): optional regex of active
+            Algorithm (str): optional regex of algorithm
             AllowPropagate (str): optional regex of allowPropagate
             AutoSelectForwardingAddress (str): optional regex of autoSelectForwardingAddress
+            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+            EFlag (str): optional regex of eFlag
             ForwardingAddress (str): optional regex of forwardingAddress
+            LFlag (str): optional regex of lFlag
+            MFlag (str): optional regex of mFlag
             Metric (str): optional regex of metric
+            NpFlag (str): optional regex of npFlag
             RouteOrigin (str): optional regex of routeOrigin
+            SidIndexLabel (str): optional regex of sidIndexLabel
+            VFlag (str): optional regex of vFlag
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters

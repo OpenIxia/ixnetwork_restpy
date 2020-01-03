@@ -64,6 +64,20 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         return PceUpdateRsvpMetricSubObjectList(self)
 
     @property
+    def PceUpdateXroSubObjectList(self):
+        """An instance of the PceUpdateXroSubObjectList class.
+
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist.PceUpdateXroSubObjectList)
+
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist import PceUpdateXroSubObjectList
+        return PceUpdateXroSubObjectList(self)
+
+    @property
     def Bandwidth(self):
         """Bandwidth (bps)
 
@@ -199,6 +213,15 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         return self._get_attribute('includeTEPathBindingTLV')
 
     @property
+    def IncludeXro(self):
+        """Indicates whether XRO object will be included in a PcUpdate message. All other attributes in sub-tab Update XRO would be editable only if this checkbox is enabled.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('includeXro')
+
+    @property
     def LocalProtection(self):
         """Local Protection
 
@@ -241,6 +264,27 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         self._set_attribute('numberOfMetricSubObjects', value)
 
     @property
+    def NumberOfXroSubObjects(self):
+        """Value that indicates the number of XRO Sub Objects to be configured.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('numberOfXroSubObjects')
+    @NumberOfXroSubObjects.setter
+    def NumberOfXroSubObjects(self, value):
+        self._set_attribute('numberOfXroSubObjects', value)
+
+    @property
+    def OverridePLSPID(self):
+        """Allows the user to Send PcUpdate with an unknown PLSP-ID
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('overridePLSPID')
+
+    @property
     def OverrideSrpId(self):
         """Indicates whether SRP object will be included in a PCUpdate trigger parameters. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
 
@@ -257,6 +301,15 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('pceTriggersChoiceList')
+
+    @property
+    def PlspIdTriggerParam(self):
+        """The value of PLSP-ID that should be put in the PcUpdate Message
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('plspIdTriggerParam')
 
     @property
     def SendEmptyTLV(self):
@@ -303,7 +356,16 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         """
         return self._get_attribute('ttl')
 
-    def update(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None):
+    @property
+    def XroFailBit(self):
+        """XRO Fail bit
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('xroFailBit')
+
+    def update(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
         """Updates a child instance of pceBasicRsvpSyncLspUpdateParams on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -312,13 +374,14 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         Args:
             NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
             NumberOfMetricSubObjects (number): Value that indicates the number of Metric Objects to be configured.
+            NumberOfXroSubObjects (number): Value that indicates the number of XRO Sub Objects to be configured.
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
         """
         self._update(locals())
 
-    def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None):
+    def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
         """Finds and retrieves pceBasicRsvpSyncLspUpdateParams data from the server.
 
         All named parameters support regex and can be used to selectively retrieve pceBasicRsvpSyncLspUpdateParams data from the server.
@@ -327,6 +390,7 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         Args:
             NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
             NumberOfMetricSubObjects (number): Value that indicates the number of Metric Objects to be configured.
+            NumberOfXroSubObjects (number): Value that indicates the number of XRO Sub Objects to be configured.
 
         Returns:
             self: This instance with matching pceBasicRsvpSyncLspUpdateParams data retrieved from the server available through an iterator or index
@@ -351,7 +415,7 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Bandwidth=None, BindingType=None, Bos=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeSrp=None, IncludeSymbolicPathName=None, IncludeTEPathBindingTLV=None, LocalProtection=None, MplsLabel=None, OverrideSrpId=None, PceTriggersChoiceList=None, SendEmptyTLV=None, SetupPriority=None, SrpId=None, Tc=None, Ttl=None):
+    def get_device_ids(self, PortNames=None, Bandwidth=None, BindingType=None, Bos=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeSrp=None, IncludeSymbolicPathName=None, IncludeTEPathBindingTLV=None, IncludeXro=None, LocalProtection=None, MplsLabel=None, OverridePLSPID=None, OverrideSrpId=None, PceTriggersChoiceList=None, PlspIdTriggerParam=None, SendEmptyTLV=None, SetupPriority=None, SrpId=None, Tc=None, Ttl=None, XroFailBit=None):
         """Base class infrastructure that gets a list of pceBasicRsvpSyncLspUpdateParams device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -373,15 +437,19 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
             IncludeSrp (str): optional regex of includeSrp
             IncludeSymbolicPathName (str): optional regex of includeSymbolicPathName
             IncludeTEPathBindingTLV (str): optional regex of includeTEPathBindingTLV
+            IncludeXro (str): optional regex of includeXro
             LocalProtection (str): optional regex of localProtection
             MplsLabel (str): optional regex of mplsLabel
+            OverridePLSPID (str): optional regex of overridePLSPID
             OverrideSrpId (str): optional regex of overrideSrpId
             PceTriggersChoiceList (str): optional regex of pceTriggersChoiceList
+            PlspIdTriggerParam (str): optional regex of plspIdTriggerParam
             SendEmptyTLV (str): optional regex of sendEmptyTLV
             SetupPriority (str): optional regex of setupPriority
             SrpId (str): optional regex of srpId
             Tc (str): optional regex of tc
             Ttl (str): optional regex of ttl
+            XroFailBit (str): optional regex of xroFailBit
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters
@@ -411,3 +479,24 @@ class PceBasicRsvpSyncLspUpdateParams(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendPcUpdate', payload=payload, response_object=None)
+
+    def SendReturnDelegation(self, *args, **kwargs):
+        """Executes the sendReturnDelegation operation on the server.
+
+        Counts property changes created by the user.
+
+        sendReturnDelegation(Arg2:list)list
+            Args:
+                args[0] is Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+
+            Returns:
+                list(str): ID to associate each async action invocation
+
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendReturnDelegation', payload=payload, response_object=None)

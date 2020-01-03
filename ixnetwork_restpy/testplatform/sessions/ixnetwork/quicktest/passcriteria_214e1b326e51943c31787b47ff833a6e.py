@@ -34,42 +34,6 @@ class PassCriteria(Base):
     def __init__(self, parent):
         super(PassCriteria, self).__init__(parent)
 
-    @property
-    def EnablePassFail(self):
-        """If true, the pass fail criteria is set.
-
-        Returns:
-            bool
-        """
-        return self._get_attribute('enablePassFail')
-    @EnablePassFail.setter
-    def EnablePassFail(self, value):
-        self._set_attribute('enablePassFail', value)
-
-    @property
-    def PassFailFrequency(self):
-        """NOT DEFINED
-
-        Returns:
-            str(framesizes|trials)
-        """
-        return self._get_attribute('passFailFrequency')
-    @PassFailFrequency.setter
-    def PassFailFrequency(self, value):
-        self._set_attribute('passFailFrequency', value)
-
-    def update(self, EnablePassFail=None, PassFailFrequency=None):
-        """Updates a child instance of passCriteria on the server.
-
-        Args:
-            EnablePassFail (bool): If true, the pass fail criteria is set.
-            PassFailFrequency (str(framesizes|trials)): NOT DEFINED
-
-        Raises:
-            ServerError: The server has encountered an uncategorized error condition
-        """
-        self._update(locals())
-
     def Apply(self):
         """Executes the apply operation on the server.
 

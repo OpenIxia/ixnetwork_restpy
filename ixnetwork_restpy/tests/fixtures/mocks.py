@@ -1,5 +1,6 @@
 """Mocks all request/responses needed for unit tests
 """
+import re
 
 class Mocks(object):
     PLATFORMS =  {
@@ -35,7 +36,11 @@ class Mocks(object):
                 'status_code': 200
             },
             'POST': {
-                'data': None,
+                'data': {
+                    'apiKey': '0000000000000000',
+                    'trace': 'request_response',
+                    'userName': 'admin'
+                },
                 'status_code': 200
             }
         },
@@ -57,10 +62,325 @@ class Mocks(object):
                                 "href": "/api/v1/sessions/1/ixnetwork/vport/1",
                                 "id": 1,
                                 "name": "Ethernet - 001",
+                            },
+                            {
+                                "href": "/api/v1/sessions/1/ixnetwork/vport/2",
+                                "id": 2,
+                                "name": "Ethernet - 002",
+                            }
+                        ],
+                        "statistics": [
+                            {
+                                "href": "/api/v1/sessions/1/ixnetwork/statistics",
+                                "pollInterval": "2",
+                            }
+                        ]
+                    },
+                    {
+                        "href": "/api/v1/sessions/1/ixnetwork/statistics",
+                        "view": [
+                            {
+                                "href":"/api/v1/sessions/1/ixnetwork/statistics/view/1",
+                                "id":1,
+                                "caption":"Port Statistics"
+                            },
+                            {
+                                "href":"/api/v1/sessions/1/ixnetwork/statistics/view/2",
+                                "id":2,
+                                "caption":"Tx-Rx Frame Rate Statistics"
+                            },
+                            {
+                                "href":"/api/v1/sessions/1/ixnetwork/statistics/view/3",
+                                "id":3,
+                                "caption":"PCS Lane Statistics"
+                            }    
+                        ]
+                    },
+                    {
+                        "executionTimeMs":4.0,
+                        "id":"",
+                        "state":"SUCCESS",
+                        "progress":100,
+                        "message":"null",
+                        "url":"",
+                        "resultUrl":"",
+                        "result":[
+                            {
+                                "href":"/api/v1/sessions/1/ixnetwork/statistics/view/1",
+                                "id":1,
+                                "data":{
+                                    "href":"/api/v1/sessions/1/ixnetwork/statistics/view/1/data",
+                                    "allowPaging":False,
+                                    "pageValues":[
+                                        [
+                                            [
+                                                "10.39.35.12/Card02/Port01",
+                                                "Port1",
+                                                "Full",
+                                                "1000 Mbps",
+                                                "Link Up",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        ],
+                                        [
+                                            [
+                                                "10.39.35.12/Card02/Port02",
+                                                "Port2",
+                                                "Full",
+                                                "1000 Mbps",
+                                                "Link Up",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        ]
+                                    ],
+                                    "columnCaptions":[
+                                        "Stat Name",
+                                        "Port Name",
+                                        "Duplex Mode",
+                                        "Line Speed",
+                                        "Link State",
+                                        "Frames Tx.",
+                                        "Valid Frames Rx.",
+                                        "Frames Tx. Rate",
+                                        "Valid Frames Rx. Rate",
+                                        "Data Integrity Frames Rx.",
+                                        "Data Integrity Errors",
+                                        "Bytes Tx.",
+                                        "Bytes Rx.",
+                                        "Bits Sent",
+                                        "Bits Received",
+                                        "Bytes Tx. Rate",
+                                        "Tx. Rate (bps)",
+                                        "Tx. Rate (Kbps)",
+                                        "Tx. Rate (Mbps)",
+                                        "Bytes Rx. Rate",
+                                        "Rx. Rate (bps)",
+                                        "Rx. Rate (Kbps)",
+                                        "Rx. Rate (Mbps)",
+                                        "Scheduled Frames Tx.",
+                                        "Scheduled Frames Tx. Rate",
+                                        "Collisions",
+                                        "Control Frames Tx",
+                                        "Control Frames Rx",
+                                        "Ethernet OAM Information PDUs Sent",
+                                        "Ethernet OAM Information PDUs Received",
+                                        "Ethernet OAM Event Notification PDUs Received",
+                                        "Ethernet OAM Loopback Control PDUs Received",
+                                        "Ethernet OAM Organisation PDUs Received",
+                                        "Ethernet OAM Variable Request PDUs Received",
+                                        "Ethernet OAM Variable Response Received",
+                                        "Ethernet OAM Unsupported PDUs Received",
+                                        "Rx Pause Priority Group 0 Frames",
+                                        "Rx Pause Priority Group 1 Frames",
+                                        "Rx Pause Priority Group 2 Frames",
+                                        "Rx Pause Priority Group 3 Frames",
+                                        "Rx Pause Priority Group 4 Frames",
+                                        "Rx Pause Priority Group 5 Frames",
+                                        "Rx Pause Priority Group 6 Frames",
+                                        "Rx Pause Priority Group 7 Frames",
+                                        "Misdirected Packet Count",
+                                        "CRC Errors"
+                                        ],
+                                    "pageSize":0,
+                                    "egressMode":"conditional",
+                                    "rowValues":
+                                    {
+                                        "arg1":[
+                                            [
+                                                "10.39.35.12/Card02/Port01",
+                                                "Port1",
+                                                "Full",
+                                                "1000 Mbps",
+                                                "Link Up",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        ],
+                                        "arg2":[
+                                            [
+                                                "10.39.35.12/Card02/Port02",
+                                                "Port2",
+                                                "Full",
+                                                "1000 Mbps",
+                                                "Link Up",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0",
+                                                "0"
+                                            ]
+                                        ]
+                                    },
+                                    "egressPageSize":8,
+                                    "isReady":True,
+                                    "columnCount":46,
+                                    "totalPages":1,
+                                    "totalRows":0,
+                                    "currentPage":1,
+                                    "timestamp":256994000,
+                                    "isBlocked":False,
+                                    "rowCount":2
+                                }
                             }
                         ]
                     }
-                ],
+              
+            ],
                 'status_code': 200
             }
         },
@@ -115,6 +435,80 @@ class Mocks(object):
                 ],
                 'status_code': 200
             }
+        },
+        'api/v1/sessions/1/ixnetwork/vport': {
+            'POST' : {
+                'data' : {
+                            'links':
+                            [
+                                {
+                                'rel':'self',
+                                'method':'GET',
+                                'href':'/api/v1/sessions/1/ixnetwork/vport/1'
+                                }
+                            ]
+                },
+                'status_code': 201
+            }
+        },
+        'api/v1/sessions/1/ixnetwork/vport/1' : {
+            'GET' : {
+                'data' : {
+                        'href':'/api/v1/sessions/1/ixnetwork/vport/1',
+                        'id':'1',
+                        'useGlobalSettings':'false',
+                        'isMapped':'false',
+                        'connectedTo':'null',
+                        'internalId':'1',
+                        'name':'Ethernet - 001'
+                },
+                'status_code': 200
+            }
+        },
+        'api/v1/sessions/1/ixnetwork/operations/assignports' : {
+            'POST' : {
+                'data' : {
+                        "executionTimeMs":5000.0,
+                        "id":"1",
+                        "state":"SUCCESS",
+                        "progress":100,
+                        "message":'null',
+                        "url":"/api/v1/sessions/1/ixnetwork/operations/assignports/1",
+                        "resultUrl":"",
+                        "result":['/api/v1/sessions/1/ixnetwork/vport/1','/api/v1/sessions/1/ixnetwork/vport/2']
+                },
+                'status_code' : 202
+            }
+        },
+        'api/v1/sessions/1/ixnetwork/files' : {
+            'GET' : {
+                'data' : {
+                    "absolute":"C:/Users/dandelwa/AppData/Local/Ixia/sdmStreamManager/common",
+                    "files":
+                    [
+                        {
+                            "name":"ixnetwork.restpy.Port-Statistics.csv",
+                            "length":1400,
+                            "modifiedUnixTime":1573053161,
+                            "createdUnixTime":1573052497
+                        },
+                        {
+                            "name":"ixnetwork.restpy.Port-Statistics.csv.columns",
+                            "length":1697,
+                            "modifiedUnixTime":1573053161,
+                            "createdUnixTime":1573052498
+                        },
+                        {
+                            "name":"two_vports.json",
+                            "length":211399,
+                            "modifiedUnixTime":1569511205,
+                            "createdUnixTime":1569511204
+                        }
+                    ],
+                    "directories":[]
+                },
+                'status_code' : 200
+            }
         }
     }
 
@@ -155,10 +549,51 @@ class Mocks(object):
                 return MockResponse({"data": None, "status_code": 204})
             else:
                 request = kwargs['url'][start:]
-                request_response = Mocks.REQUEST_RESPONSE[request]
+                mockInstance = Mocks()               
+                request_response = mockInstance.REQUEST_RESPONSE[request]                
+                #request_response = filterResponseIfAny(kwargs, request_response, method)                
                 return MockResponse(request_response[method])
         except Exception as e:
+            print(e)
             return MockResponseError(request, e)
 
     def __init__(self):
         pass
+
+
+# def filterResponseIfAny(kwargs, req, method):
+#     if 'data' in kwargs.keys():
+#         if (type(kwargs['data']) != str):
+#             return req
+#         try:
+#             dataAsDict = eval(kwargs['data']) 
+#         except:
+#             return req
+        
+#         if 'selects' in dataAsDict.keys():
+#             if 'children' in dataAsDict['selects'][0].keys():
+#                 if 'filters' in dataAsDict['selects'][0]['children'][0].keys():
+#                     if (len(dataAsDict['selects'][0]['children'][0]['filters']) > 0):
+#                         child = dataAsDict['selects'][0]['children'][0]['child']
+                        
+#                         if  child == 'view':
+#                             property_ = dataAsDict['selects'][0]['children'][0]['filters'][0]['property']
+#                             regex = dataAsDict['selects'][0]['children'][0]['filters'][0]['regex']
+                        
+#                             views = req[method]['data'][1]['view']
+#                             foundFlag = 0
+#                             for view in views:                                
+#                                 if re.match(regex,view[property_]):
+#                                     req[method]['data'][1]['view'] = view     
+#                                     foundFlag = 1
+#                             if foundFlag == 0:
+#                                 req[method]['data'][1]['view'] = []
+#                     else:
+#                          child = dataAsDict['selects'][0]['children'][0]['child']
+#                          if child == 'data':
+#                              if dataAsDict['selects'][0]['from'] == '/api/v1/sessions/1/ixnetwork/statistics/view/1':
+#                                  req[method]['data'] = req[method]['data'][2]
+#                                  req[method]['status_code'] = 202     
+#     else:
+#         return req
+#     return req

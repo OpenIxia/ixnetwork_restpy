@@ -77,7 +77,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration
+        """Activate/Deactivate Configuration.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)

@@ -1,4 +1,6 @@
-# Copyright 1997 - 2018 by IXIA Keysight
+# MIT LICENSE
+#
+# Copyright 1997 - 2019 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -16,8 +18,7 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
+# THE SOFTWARE. 
 import sys
 import os
 import ssl
@@ -234,16 +235,18 @@ class Connection(object):
         logging.getLogger(__name__).info(message)
 
     def _warn(self, message):
-        logging.getLogger(__name__).warn(message)
+        logging.getLogger(__name__).warning(message)
 
     def _debug(self, message):
         logging.getLogger(__name__).debug(message)
 
     def _normalize_url(self, url):
-        connection = '%s://%s:%s' % (self._scheme, self._hostname, self._rest_port)
+        hostname = self._hostname
+        if ':' in hostname and '[' not in hostname:
+            hostname = '[%s]' % hostname
+        connection = '%s://%s:%s' % (self._scheme, hostname, self._rest_port)
         if url.startswith(self._scheme) == False:
             url = '%s/%s' % (connection, url.strip('/'))
-
         path_start = url.find('://') + 3
         url = '%s%s' % (url[0:path_start], url[path_start:].replace('//', '/'))
         return (connection, url)

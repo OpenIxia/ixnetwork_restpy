@@ -74,6 +74,15 @@ class Ospfv3(Base):
         return self._get_attribute('active')
 
     @property
+    def AdjSID(self):
+        """An Adjacency Segment Identifier (Adj-SID) represents a router adjacency in Segment Routing
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('adjSID')
+
+    @property
     def AreaId(self):
         """OSPFv3 Area ID for a non-connected interface, displayed in Interger format
 
@@ -99,6 +108,15 @@ class Ospfv3(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('authAlgo')
+
+    @property
+    def BFlag(self):
+        """B Flag: Backup Flag: If set, the Adj-SID refers to an adjacency that is eligible for protection
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('bFlag')
 
     @property
     def ConnectedVia(self):
@@ -147,6 +165,15 @@ class Ospfv3(Base):
             str
         """
         return self._get_attribute('descriptiveName')
+
+    @property
+    def EnableAdjSID(self):
+        """Makes the Adjacency Segment Identifier (Adj-SID) available
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('enableAdjSID')
 
     @property
     def EnableAuthentication(self):
@@ -203,6 +230,15 @@ class Ospfv3(Base):
         return self._get_attribute('externalCapability')
 
     @property
+    def GFlag(self):
+        """G-Flag: Group Flag: If set, the G-Flag indicates that the Adj-SID refers to a group of adjacencies where it may be assigned
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('gFlag')
+
+    @property
     def HelloInterval(self):
         """Hello Interval
 
@@ -237,6 +273,15 @@ class Ospfv3(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('key')
+
+    @property
+    def LFlag(self):
+        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('lFlag')
 
     @property
     def LinkMetric(self):
@@ -315,6 +360,15 @@ class Ospfv3(Base):
             list(str[attempt|down|exchange|exStart|full|init|loading|multiNeighbor|none|twoWay])
         """
         return self._get_attribute('ospfv3NeighborState')
+
+    @property
+    def PFlag(self):
+        """P-Flag:Persistent Flag: If set, the SID is persistently allocated. The SID value remains consistent across router restart and session/interface flap
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('pFlag')
 
     @property
     def Priority(self):
@@ -409,6 +463,24 @@ class Ospfv3(Base):
         """
         return self._get_attribute('v6')
 
+    @property
+    def VFlag(self):
+        """V-Flag: Value flag. If set, then the SID carries an absolute value label value
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('vFlag')
+
+    @property
+    def Weight(self):
+        """Weight of the SID for the purpose of load balancing
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('weight')
+
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         """Updates a child instance of ospfv3 on the server.
 
@@ -497,7 +569,7 @@ class Ospfv3(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AreaId=None, AreaIdIp=None, AuthAlgo=None, DeadInterval=None, DemandCircuit=None, EnableAuthentication=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, ExternalCapability=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, Key=None, LinkMetric=None, NetworkType=None, NssaCapability=None, Priority=None, Router=None, SaId=None, TypeAreaId=None, V6=None):
+    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AreaId=None, AreaIdIp=None, AuthAlgo=None, BFlag=None, DeadInterval=None, DemandCircuit=None, EnableAdjSID=None, EnableAuthentication=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, ExternalCapability=None, GFlag=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, Key=None, LFlag=None, LinkMetric=None, NetworkType=None, NssaCapability=None, PFlag=None, Priority=None, Router=None, SaId=None, TypeAreaId=None, V6=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of ospfv3 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -505,28 +577,36 @@ class Ospfv3(Base):
         Args:
             PortNames (str): optional regex of port names
             Active (str): optional regex of active
+            AdjSID (str): optional regex of adjSID
             AreaId (str): optional regex of areaId
             AreaIdIp (str): optional regex of areaIdIp
             AuthAlgo (str): optional regex of authAlgo
+            BFlag (str): optional regex of bFlag
             DeadInterval (str): optional regex of deadInterval
             DemandCircuit (str): optional regex of demandCircuit
+            EnableAdjSID (str): optional regex of enableAdjSID
             EnableAuthentication (str): optional regex of enableAuthentication
             EnableBfdRegistration (str): optional regex of enableBfdRegistration
             EnableFastHello (str): optional regex of enableFastHello
             EnableIgnoreDbDescMtu (str): optional regex of enableIgnoreDbDescMtu
             ExternalCapability (str): optional regex of externalCapability
+            GFlag (str): optional regex of gFlag
             HelloInterval (str): optional regex of helloInterval
             HelloMultiplier (str): optional regex of helloMultiplier
             InstanceId (str): optional regex of instanceId
             Key (str): optional regex of key
+            LFlag (str): optional regex of lFlag
             LinkMetric (str): optional regex of linkMetric
             NetworkType (str): optional regex of networkType
             NssaCapability (str): optional regex of nssaCapability
+            PFlag (str): optional regex of pFlag
             Priority (str): optional regex of priority
             Router (str): optional regex of router
             SaId (str): optional regex of saId
             TypeAreaId (str): optional regex of typeAreaId
             V6 (str): optional regex of v6
+            VFlag (str): optional regex of vFlag
+            Weight (str): optional regex of weight
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters
