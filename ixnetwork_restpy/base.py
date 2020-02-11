@@ -437,6 +437,34 @@ class Base(object):
 
         return [x for x in device_ids if x != 0]
 
+    def find_exact(self, **kwargs):
+        """Get instances with the given values, using exact match instead of regex."""
+        new_kwargs = {}
+        for key, value in kwargs.items():
+            if isinstance(value, str):
+                new_kwargs[key] = f'^{re.escape(value)}$'
+            else:
+                new_kwargs[key] = value
+        return self.find(**new_kwargs)
+
+    def get(self, **kwargs):
+        """Get a single instance with exact match, raise an error if there is none or more than one."""
+        result = self.find_exact(**kwargs)
+        if len(result) == 0:
+            raise ValueError(f"No instance found with {kwargs}")
+        if len(result) > 1:
+            raise ValueError(f"More than one instance matches {kwargs}")
+        return result[0]
+
+    def get_regex(self, **kwargs):
+        """Get a single instance with regex match, raise an error if there is none or more than one."""
+        result = self.find(**kwargs)
+        if len(result) == 0:
+            raise ValueError(f"No instance found with {kwargs}")
+        if len(result) > 1:
+            raise ValueError(f"More than one instance matches {kwargs}")
+        return result[0]
+
     def info(self, message):
         """Add an INFO level message to the logger handlers
         """
