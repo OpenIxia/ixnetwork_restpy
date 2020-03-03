@@ -45,24 +45,6 @@ class LinkLsaRoutes(Base):
         return self._get_attribute('active')
 
     @property
-    def Algorithm(self):
-        """Algorithm
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('algorithm')
-
-    @property
-    def ConfigureSIDIndexLabel(self):
-        """Lets the corresponding router send Prefix SID. By default, it is selected
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('configureSIDIndexLabel')
-
-    @property
     def Count(self):
         """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
@@ -99,15 +81,6 @@ class LinkLsaRoutes(Base):
         return self._get_attribute('eBit')
 
     @property
-    def EFlag(self):
-        """E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('eFlag')
-
-    @property
     def LABit(self):
         """Options-LA Bit(Local Address)
 
@@ -115,15 +88,6 @@ class LinkLsaRoutes(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('lABit')
-
-    @property
-    def LFlag(self):
-        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('lFlag')
 
     @property
     def LinkLocalAddress(self):
@@ -160,15 +124,6 @@ class LinkLsaRoutes(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('mCBit')
-
-    @property
-    def MFlag(self):
-        """M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('mFlag')
 
     @property
     def Metric(self):
@@ -217,15 +172,6 @@ class LinkLsaRoutes(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('networkAddress')
-
-    @property
-    def NpFlag(self):
-        """NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('npFlag')
 
     @property
     def PBit(self):
@@ -291,15 +237,6 @@ class LinkLsaRoutes(Base):
         return self._get_attribute('routerPriority')
 
     @property
-    def SidIndexLabel(self):
-        """SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('sidIndexLabel')
-
-    @property
     def UnusedBit4(self):
         """Options-(4)Unused
 
@@ -343,15 +280,6 @@ class LinkLsaRoutes(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('v6Bit')
-
-    @property
-    def VFlag(self):
-        """V-Flag: Value flag. If set, then the SID carries an absolute value label value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('vFlag')
 
     @property
     def XBit(self):
@@ -410,7 +338,7 @@ class LinkLsaRoutes(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, DCBit=None, EBit=None, EFlag=None, LABit=None, LFlag=None, LinkLocalAddress=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, MFlag=None, Metric=None, NBit=None, NUBit=None, NetworkAddress=None, NpFlag=None, PBit=None, Prefix=None, RBit=None, RangeSize=None, ReservedBit6=None, ReservedBit7=None, RouterPriority=None, SidIndexLabel=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None, V6Bit=None, VFlag=None, XBit=None):
+    def get_device_ids(self, PortNames=None, Active=None, DCBit=None, EBit=None, LABit=None, LinkLocalAddress=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, Metric=None, NBit=None, NUBit=None, NetworkAddress=None, PBit=None, Prefix=None, RBit=None, RangeSize=None, ReservedBit6=None, ReservedBit7=None, RouterPriority=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None, V6Bit=None, XBit=None):
         """Base class infrastructure that gets a list of linkLsaRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -418,23 +346,17 @@ class LinkLsaRoutes(Base):
         Args:
             PortNames (str): optional regex of port names
             Active (str): optional regex of active
-            Algorithm (str): optional regex of algorithm
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
             DCBit (str): optional regex of dCBit
             EBit (str): optional regex of eBit
-            EFlag (str): optional regex of eFlag
             LABit (str): optional regex of lABit
-            LFlag (str): optional regex of lFlag
             LinkLocalAddress (str): optional regex of linkLocalAddress
             LinkStateId (str): optional regex of linkStateId
             LinkStateIdStep (str): optional regex of linkStateIdStep
             MCBit (str): optional regex of mCBit
-            MFlag (str): optional regex of mFlag
             Metric (str): optional regex of metric
             NBit (str): optional regex of nBit
             NUBit (str): optional regex of nUBit
             NetworkAddress (str): optional regex of networkAddress
-            NpFlag (str): optional regex of npFlag
             PBit (str): optional regex of pBit
             Prefix (str): optional regex of prefix
             RBit (str): optional regex of rBit
@@ -442,13 +364,11 @@ class LinkLsaRoutes(Base):
             ReservedBit6 (str): optional regex of reservedBit6
             ReservedBit7 (str): optional regex of reservedBit7
             RouterPriority (str): optional regex of routerPriority
-            SidIndexLabel (str): optional regex of sidIndexLabel
             UnusedBit4 (str): optional regex of unusedBit4
             UnusedBit5 (str): optional regex of unusedBit5
             UnusedBit6 (str): optional regex of unusedBit6
             UnusedBit7 (str): optional regex of unusedBit7
             V6Bit (str): optional regex of v6Bit
-            VFlag (str): optional regex of vFlag
             XBit (str): optional regex of xBit
 
         Returns:

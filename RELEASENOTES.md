@@ -1,5 +1,17 @@
 # Release Notes
 
+### Mar 2020
+* 1.0.49
+  * New SessionAssistant class
+    * combines TestPlatform, Session, logging, authentication and NewConfig functionality into constructor
+    * reduces number of import statements and complexity
+      * from ixnetwork_restpy import SessionAssistant
+    * access other assistants from the SessionAssistant
+    * see the getting_started.py for usage
+  * PortMapAssistant has enhanced Map method
+    * see examples in the class documentation
+  * proxy bypass fix
+  * package generated from IxNetwork build 9.01.1911.7 
 ### Jan 2020
 * 1.0.48
   * support ipv6 address with no square brackets in TestPlatform init
@@ -26,7 +38,7 @@
     * connect all mapped ports in one call without having to specify a complex payload
     * for usage details see the ixnetwork_restpy.samples.assistants.port_map_assistant.py
 * 1.0.45
-  *   StackManager is now supported under TestPlatform.Sessions.Ixnetwork.Vport.ProtocolStack...
+  * StackManager is now supported under TestPlatform.Sessions.Ixnetwork.Vport.ProtocolStack...
 
 ### Sep 2019
 * 1.0.41

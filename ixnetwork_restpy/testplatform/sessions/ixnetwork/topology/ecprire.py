@@ -186,7 +186,7 @@ class ECpriRe(Base):
 
     @property
     def EventType(self):
-        """Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values are from 0x06 to 0xFF are Reserved.
+        """Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -252,7 +252,7 @@ class ECpriRe(Base):
 
     @property
     def RemoteResetId(self):
-        """Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. How to allocate values to Reset ID is vendor specific.
+        """Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -270,7 +270,7 @@ class ECpriRe(Base):
 
     @property
     def ReservedEventType(self):
-        """Reserved Event Type values are from 0x06 to 0xFF are Reserved.
+        """Reserved Event Type values from 0x06 to 0xFF are Reserved.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -288,7 +288,7 @@ class ECpriRe(Base):
 
     @property
     def ResetCodeOp(self):
-        """The Reset Code Op is a 1-byte value. Values 0x00 Reserved, 0x01 Remote reset request, 0x02 Remote reset response, 0x03 to 0xFF Reserved.
+        """The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -306,7 +306,7 @@ class ECpriRe(Base):
 
     @property
     def RmaDataLength(self):
-        """Number of bytes(0 to 255) to be read or write from or to remote node.
+        """Number of bytes(0 to 255) to read or write from or to remote node.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -324,7 +324,7 @@ class ECpriRe(Base):
 
     @property
     def SequenceId(self):
-        """An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. How to allocate values to SEQ_ID is vendor specific.
+        """An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)

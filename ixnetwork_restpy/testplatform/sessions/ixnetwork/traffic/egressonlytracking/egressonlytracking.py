@@ -73,6 +73,30 @@ class EgressOnlyTracking(Base):
         self._set_attribute('port', value)
 
     @property
+    def SignatureLengthType(self):
+        """
+
+        Returns:
+            str(fourByte|twelveByte)
+        """
+        return self._get_attribute('signatureLengthType')
+    @SignatureLengthType.setter
+    def SignatureLengthType(self, value):
+        self._set_attribute('signatureLengthType', value)
+
+    @property
+    def SignatureMask(self):
+        """Signature maks to be placed inside the packet.
+
+        Returns:
+            str
+        """
+        return self._get_attribute('signatureMask')
+    @SignatureMask.setter
+    def SignatureMask(self, value):
+        self._set_attribute('signatureMask', value)
+
+    @property
     def SignatureOffset(self):
         """Offset where the signature value will be placed in the packet.
 
@@ -96,13 +120,15 @@ class EgressOnlyTracking(Base):
     def SignatureValue(self, value):
         self._set_attribute('signatureValue', value)
 
-    def update(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def update(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Updates a child instance of egressOnlyTracking on the server.
 
         Args:
             Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
             Enabled (bool): Enables the egress only tracking for the given port.
             Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
+            SignatureLengthType (str(fourByte|twelveByte)): 
+            SignatureMask (str): Signature maks to be placed inside the packet.
             SignatureOffset (number): Offset where the signature value will be placed in the packet.
             SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -111,13 +137,15 @@ class EgressOnlyTracking(Base):
         """
         self._update(locals())
 
-    def add(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def add(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Adds a new egressOnlyTracking node on the server and retrieves it in this instance.
 
         Args:
             Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
             Enabled (bool): Enables the egress only tracking for the given port.
             Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
+            SignatureLengthType (str(fourByte|twelveByte)): 
+            SignatureMask (str): Signature maks to be placed inside the packet.
             SignatureOffset (number): Offset where the signature value will be placed in the packet.
             SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -138,7 +166,7 @@ class EgressOnlyTracking(Base):
         """
         self._delete()
 
-    def find(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def find(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Finds and retrieves egressOnlyTracking data from the server.
 
         All named parameters support regex and can be used to selectively retrieve egressOnlyTracking data from the server.
@@ -148,6 +176,8 @@ class EgressOnlyTracking(Base):
             Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
             Enabled (bool): Enables the egress only tracking for the given port.
             Port (str(None|/api/v1/sessions/1/ixnetwork/lag|/api/v1/sessions/1/ixnetwork/vport)): 
+            SignatureLengthType (str(fourByte|twelveByte)): 
+            SignatureMask (str): Signature maks to be placed inside the packet.
             SignatureOffset (number): Offset where the signature value will be placed in the packet.
             SignatureValue (str): Signature value to be placed inside the packet.
 

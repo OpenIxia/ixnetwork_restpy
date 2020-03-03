@@ -36,7 +36,7 @@ class SbfdResponder(Base):
 
     @property
     def Active(self):
-        """Activate/Deactivate Configuration.
+        """Activate/Deactivate Configuration
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -62,17 +62,8 @@ class SbfdResponder(Base):
         return self._get_attribute('descriptiveName')
 
     @property
-    def EnableLearnedInformation(self):
-        """If enabled, the Responder will store all S-BFD sessions responded to based on requests from remote Initiators. Selected sessions can be paused and resumed by user. Enabling this will reduce supported scale by some amount.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('enableLearnedInformation')
-
-    @property
     def MinRxInterval(self):
-        """Minimum Rx Interval in ms supported by the Responder.
+        """Minimum Rx Interval in ms supported by the Responder
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -93,7 +84,7 @@ class SbfdResponder(Base):
 
     @property
     def SBFDDiscriminator(self):
-        """Configures the local S-BFD discriminator.
+        """Configures the local S-BFD discriminator
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -102,7 +93,7 @@ class SbfdResponder(Base):
 
     @property
     def SBFDState(self):
-        """Configures the S-BFD session state to be sent in Response Packets.
+        """Configures the S-BFD session state to be sent in Response Packets
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
@@ -123,7 +114,7 @@ class SbfdResponder(Base):
         """
         self._update(locals())
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableLearnedInformation=None, MinRxInterval=None, SBFDDiscriminator=None, SBFDState=None):
+    def get_device_ids(self, PortNames=None, Active=None, MinRxInterval=None, SBFDDiscriminator=None, SBFDState=None):
         """Base class infrastructure that gets a list of sbfdResponder device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -131,7 +122,6 @@ class SbfdResponder(Base):
         Args:
             PortNames (str): optional regex of port names
             Active (str): optional regex of active
-            EnableLearnedInformation (str): optional regex of enableLearnedInformation
             MinRxInterval (str): optional regex of minRxInterval
             SBFDDiscriminator (str): optional regex of sBFDDiscriminator
             SBFDState (str): optional regex of sBFDState
@@ -143,39 +133,3 @@ class SbfdResponder(Base):
             ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ClearSbfdResponderLearnedInfo(self):
-        """Executes the clearSbfdResponderLearnedInfo operation on the server.
-
-        Clears SBFD Responder Learned Information.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('clearSbfdResponderLearnedInfo', payload=payload, response_object=None)
-
-    def GetSbfdResponderLearnedInfo(self, *args, **kwargs):
-        """Executes the getSbfdResponderLearnedInfo operation on the server.
-
-        Get SBFD Responder Learned Information. Pause/Resume can be done on SBFD LSPs in this learned information.
-
-        getSbfdResponderLearnedInfo(Arg2:list)list
-            Args:
-                args[0] is Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-
-            Returns:
-                list(str): ID to associate each async action invocation
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSbfdResponderLearnedInfo', payload=payload, response_object=None)

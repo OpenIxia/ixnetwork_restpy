@@ -23,34 +23,16 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class BgpCustomAfiSafiv6(Base):
-    """
-    The BgpCustomAfiSafiv6 class encapsulates a required bgpCustomAfiSafiv6 resource which will be retrieved from the server every time the property is accessed.
+class RxSakPool(Base):
+    """Static Rx Channels configuration.
+    The RxSakPool class encapsulates a required rxSakPool resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpCustomAfiSafiv6'
+    _SDM_NAME = 'rxSakPool'
 
     def __init__(self, parent):
-        super(BgpCustomAfiSafiv6, self).__init__(parent)
-
-    @property
-    def Active(self):
-        """Activate/Deactivate Configuration
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('active')
-
-    @property
-    def AfiValue(self):
-        """User Defined AFI value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('afiValue')
+        super(RxSakPool, self).__init__(parent)
 
     @property
     def Count(self):
@@ -62,15 +44,6 @@ class BgpCustomAfiSafiv6(Base):
         return self._get_attribute('count')
 
     @property
-    def DataValue(self):
-        """Hex Dump to be used in NLRI field of MP_REACH_NLRI of update packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('dataValue')
-
-    @property
     def DescriptiveName(self):
         """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
@@ -78,15 +51,6 @@ class BgpCustomAfiSafiv6(Base):
             str
         """
         return self._get_attribute('descriptiveName')
-
-    @property
-    def LengthOfData(self):
-        """Length (in Bytes) of NLRI corresponding to AFI,SAFI configured
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('lengthOfData')
 
     @property
     def Name(self):
@@ -101,16 +65,25 @@ class BgpCustomAfiSafiv6(Base):
         self._set_attribute('name', value)
 
     @property
-    def SafiValue(self):
-        """User Defined SAFI value
+    def RxSak128(self):
+        """128 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('safiValue')
+        return self._get_attribute('rxSak128')
+
+    @property
+    def RxSak256(self):
+        """256 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('rxSak256')
 
     def update(self, Name=None):
-        """Updates a child instance of bgpCustomAfiSafiv6 on the server.
+        """Updates a child instance of rxSakPool on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -123,18 +96,15 @@ class BgpCustomAfiSafiv6(Base):
         """
         self._update(locals())
 
-    def get_device_ids(self, PortNames=None, Active=None, AfiValue=None, DataValue=None, LengthOfData=None, SafiValue=None):
-        """Base class infrastructure that gets a list of bgpCustomAfiSafiv6 device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, RxSak128=None, RxSak256=None):
+        """Base class infrastructure that gets a list of rxSakPool device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args:
             PortNames (str): optional regex of port names
-            Active (str): optional regex of active
-            AfiValue (str): optional regex of afiValue
-            DataValue (str): optional regex of dataValue
-            LengthOfData (str): optional regex of lengthOfData
-            SafiValue (str): optional regex of safiValue
+            RxSak128 (str): optional regex of rxSak128
+            RxSak256 (str): optional regex of rxSak256
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters

@@ -23,16 +23,34 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class AtoiTLVList(Base):
-    """PTP IEEE ATOI TLV related configuration
-    The AtoiTLVList class encapsulates a required atoiTLVList resource which will be retrieved from the server every time the property is accessed.
+class TxSakPool(Base):
+    """Tx SAKs configuration.
+    The TxSakPool class encapsulates a required txSakPool resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atoiTLVList'
+    _SDM_NAME = 'txSakPool'
 
     def __init__(self, parent):
-        super(AtoiTLVList, self).__init__(parent)
+        super(TxSakPool, self).__init__(parent)
+
+    @property
+    def ActiveSak(self):
+        """Points to the SAK value with which packets are currently getting encrypted.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('activeSak')
+
+    @property
+    def AnInUse(self):
+        """Shows the current AN value in use.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('anInUse')
 
     @property
     def Count(self):
@@ -44,15 +62,6 @@ class AtoiTLVList(Base):
         return self._get_attribute('count')
 
     @property
-    def CurrentOffset(self):
-        """'Current Offset' shall be the current offset of the local time, in seconds.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('currentOffset')
-
-    @property
     def DescriptiveName(self):
         """Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
 
@@ -60,42 +69,6 @@ class AtoiTLVList(Base):
             str
         """
         return self._get_attribute('descriptiveName')
-
-    @property
-    def DisplayName(self):
-        """'Display Name' shall be the text name of the alternate timescale.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('displayName')
-
-    @property
-    def JumpSeconds(self):
-        """'Jump Seconds' shall be 0 when the local time does not use Daylight Saving Time (DST), else shall be Nx900 with N, an integer greater or less than 0.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('jumpSeconds')
-
-    @property
-    def KeyField(self):
-        """keyField shall be >0 when the offset is valid, else 0.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('keyField')
-
-    @property
-    def MvActive(self):
-        """Activate/Deactivate Configuration.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('mvActive')
 
     @property
     def Name(self):
@@ -110,16 +83,25 @@ class AtoiTLVList(Base):
         self._set_attribute('name', value)
 
     @property
-    def TimeOfNextJump(self):
-        """When not zero, 'Time Of Next Jump' shall be the second portion of the PTP time at the next DST event, OR the next leap second.
+    def TxSak128(self):
+        """128 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('timeOfNextJump')
+        return self._get_attribute('txSak128')
+
+    @property
+    def TxSak256(self):
+        """256 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('txSak256')
 
     def update(self, Name=None):
-        """Updates a child instance of atoiTLVList on the server.
+        """Updates a child instance of txSakPool on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -132,19 +114,17 @@ class AtoiTLVList(Base):
         """
         self._update(locals())
 
-    def get_device_ids(self, PortNames=None, CurrentOffset=None, DisplayName=None, JumpSeconds=None, KeyField=None, MvActive=None, TimeOfNextJump=None):
-        """Base class infrastructure that gets a list of atoiTLVList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, ActiveSak=None, AnInUse=None, TxSak128=None, TxSak256=None):
+        """Base class infrastructure that gets a list of txSakPool device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args:
             PortNames (str): optional regex of port names
-            CurrentOffset (str): optional regex of currentOffset
-            DisplayName (str): optional regex of displayName
-            JumpSeconds (str): optional regex of jumpSeconds
-            KeyField (str): optional regex of keyField
-            MvActive (str): optional regex of mvActive
-            TimeOfNextJump (str): optional regex of timeOfNextJump
+            ActiveSak (str): optional regex of activeSak
+            AnInUse (str): optional regex of anInUse
+            TxSak128 (str): optional regex of txSak128
+            TxSak256 (str): optional regex of txSak256
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters

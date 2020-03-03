@@ -56,7 +56,7 @@ class Connection(object):
         'Microsoft-HTTPAPI/2.0': 'connection_manager'
     }
 
-    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace='none'):
+    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace='none', script_watch=True):
         """ Set the connection parameters to a rest server
 
         Args:
@@ -66,6 +66,7 @@ class Connection(object):
             log_file_name (str):
             ignore_env_proxy (bool):
             verify_cert (bool): 
+            script_watch (bool):
         """
         self.trace = trace
         if len(logging.getLogger(__name__).handlers) == 0:
@@ -92,19 +93,19 @@ class Connection(object):
                 import urllib3
                 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self._headers = {
-            Connection.X_API_KEY: None
+            Connection.X_API_KEY: None,
+            'User-Agent': 'ixnetwork-restpy'
         }
+        if script_watch is False:
+            self._headers['SDMAPI'] = 'GUIREQUEST'
+        if ignore_env_proxy is True:
+            os.environ['no_proxy'] = '*' 
         self._hostname = hostname
         self._rest_port = rest_port
         self._scheme = 'https'
         self._log_file_name = log_file_name
         self._session = Session()
         self._scheme = self._determine_test_tool_platform(platform)
-        if ignore_env_proxy is True:
-            self._session.proxies.update({
-                'http': None,
-                'https': None
-            })
 
     def _determine_test_tool_platform(self, platform):
         self._info('The package will automatically determine the test tool platform and rest_port using the %s address.' % self._hostname)
@@ -119,7 +120,8 @@ class Connection(object):
                 try:
                     url = '%s://%s:%s/api/v1/auth/session' % (scheme, self._hostname, rest_port)
                     payload = json.dumps({'username': '', 'password': ''})
-                    headers = {'content-type': 'application/json'}
+                    headers = self._headers
+                    headers['content-type'] = 'application/json'
                     response = self._request(method='POST', url=url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
                     if response.status_code in [401, 403, 200]:
                         if 'server' not in response.headers:
@@ -276,6 +278,7 @@ class Connection(object):
 
     def _put_file(self, url, local_filename, remote_filename=None):
         headers = self._headers
+        headers['Content-Type'] = 'application/octet-stream'
         if remote_filename is None:
             remote_filename = os.path.basename(local_filename)
         url = '%s/files?filename=%s' % (url, remote_filename)
@@ -337,7 +340,6 @@ class Connection(object):
 
     def _send_recv(self, method, url, payload=None):
         headers = self._headers
-        headers['Content-Type'] = 'application/octet-stream'
         connection, url = self._normalize_url(url)
 
         data = payload

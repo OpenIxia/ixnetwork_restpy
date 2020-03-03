@@ -36,24 +36,6 @@ class Ospfv3PseudoInterface(Base):
         super(Ospfv3PseudoInterface, self).__init__(parent)
 
     @property
-    def AdjSID(self):
-        """An Adjacency Segment Identifier (Adj-SID) represents a router adjacency in Segment Routing
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('adjSID')
-
-    @property
-    def BFlag(self):
-        """B Flag: Backup Flag: If set, the Adj-SID refers to an adjacency that is eligible for protection
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('bFlag')
-
-    @property
     def Count(self):
         """Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
 
@@ -70,33 +52,6 @@ class Ospfv3PseudoInterface(Base):
             str
         """
         return self._get_attribute('descriptiveName')
-
-    @property
-    def EnableAdjSID(self):
-        """Makes the Adjacency Segment Identifier (Adj-SID) available
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('enableAdjSID')
-
-    @property
-    def GFlag(self):
-        """G-Flag: Group Flag: If set, the G-Flag indicates that the Adj-SID refers to a group of adjacencies where it may be assigned
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('gFlag')
-
-    @property
-    def LFlag(self):
-        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('lFlag')
 
     @property
     def Metric(self):
@@ -118,33 +73,6 @@ class Ospfv3PseudoInterface(Base):
     @Name.setter
     def Name(self, value):
         self._set_attribute('name', value)
-
-    @property
-    def PFlag(self):
-        """P-Flag:Persistent Flag: If set, the SID is persistently allocated. The SID value remains consistent across router restart and session/interface flap
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('pFlag')
-
-    @property
-    def VFlag(self):
-        """V-Flag: Value flag. If set, then the SID carries an absolute value label value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('vFlag')
-
-    @property
-    def Weight(self):
-        """Weight of the SID for the purpose of load balancing
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('weight')
 
     def update(self, Name=None):
         """Updates a child instance of ospfv3PseudoInterface on the server.
@@ -194,22 +122,14 @@ class Ospfv3PseudoInterface(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AdjSID=None, BFlag=None, EnableAdjSID=None, GFlag=None, LFlag=None, Metric=None, PFlag=None, VFlag=None, Weight=None):
+    def get_device_ids(self, PortNames=None, Metric=None):
         """Base class infrastructure that gets a list of ospfv3PseudoInterface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args:
             PortNames (str): optional regex of port names
-            AdjSID (str): optional regex of adjSID
-            BFlag (str): optional regex of bFlag
-            EnableAdjSID (str): optional regex of enableAdjSID
-            GFlag (str): optional regex of gFlag
-            LFlag (str): optional regex of lFlag
             Metric (str): optional regex of metric
-            PFlag (str): optional regex of pFlag
-            VFlag (str): optional regex of vFlag
-            Weight (str): optional regex of weight
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters

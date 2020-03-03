@@ -51,20 +51,6 @@ class MplsOam(Base):
         return LearnedInfo(self)
 
     @property
-    def LearnedInfoUpdate(self):
-        """An instance of the LearnedInfoUpdate class.
-
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate.LearnedInfoUpdate)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate import LearnedInfoUpdate
-        return LearnedInfoUpdate(self)
-
-    @property
     def SbfdInitiator(self):
         """An instance of the SbfdInitiator class.
 

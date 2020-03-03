@@ -197,6 +197,18 @@ class TrafficItem(Base):
         self._set_attribute('enableDynamicMplsLabelValues', value)
 
     @property
+    def EnableMacsecEgressOnlyAutoConfig(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableMacsecEgressOnlyAutoConfig')
+    @EnableMacsecEgressOnlyAutoConfig.setter
+    def EnableMacsecEgressOnlyAutoConfig(self, value):
+        self._set_attribute('enableMacsecEgressOnlyAutoConfig', value)
+
+    @property
     def Enabled(self):
         """If true, this enables the selected traffic item.
 
@@ -520,7 +532,7 @@ class TrafficItem(Base):
         """
         return self._get_attribute('warnings')
 
-    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Updates a child instance of trafficItem on the server.
 
         Args:
@@ -528,6 +540,7 @@ class TrafficItem(Base):
             BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
             EgressEnabled (bool): Enables the egress.
             EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+            EnableMacsecEgressOnlyAutoConfig (bool): 
             Enabled (bool): If true, this enables the selected traffic item.
             FrerDuplicateElimination (bool): 
             HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
@@ -558,7 +571,7 @@ class TrafficItem(Base):
         """
         self._update(locals())
 
-    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Adds a new trafficItem node on the server and retrieves it in this instance.
 
         Args:
@@ -566,6 +579,7 @@ class TrafficItem(Base):
             BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
             EgressEnabled (bool): Enables the egress.
             EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+            EnableMacsecEgressOnlyAutoConfig (bool): 
             Enabled (bool): If true, this enables the selected traffic item.
             FrerDuplicateElimination (bool): 
             HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
@@ -608,7 +622,7 @@ class TrafficItem(Base):
         """
         self._delete()
 
-    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
+    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
         """Finds and retrieves trafficItem data from the server.
 
         All named parameters support regex and can be used to selectively retrieve trafficItem data from the server.
@@ -619,6 +633,7 @@ class TrafficItem(Base):
             BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
             EgressEnabled (bool): Enables the egress.
             EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+            EnableMacsecEgressOnlyAutoConfig (bool): 
             Enabled (bool): If true, this enables the selected traffic item.
             Errors (list(str)): Displays the errors.
             FlowGroupCount (number): Indicates the number of flow groups.

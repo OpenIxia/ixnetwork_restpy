@@ -550,8 +550,7 @@ class Mocks(object):
             else:
                 request = kwargs['url'][start:]
                 mockInstance = Mocks()               
-                request_response = mockInstance.REQUEST_RESPONSE[request]                
-                #request_response = filterResponseIfAny(kwargs, request_response, method)                
+                request_response = mockInstance.REQUEST_RESPONSE[request]
                 return MockResponse(request_response[method])
         except Exception as e:
             print(e)
@@ -559,41 +558,3 @@ class Mocks(object):
 
     def __init__(self):
         pass
-
-
-# def filterResponseIfAny(kwargs, req, method):
-#     if 'data' in kwargs.keys():
-#         if (type(kwargs['data']) != str):
-#             return req
-#         try:
-#             dataAsDict = eval(kwargs['data']) 
-#         except:
-#             return req
-        
-#         if 'selects' in dataAsDict.keys():
-#             if 'children' in dataAsDict['selects'][0].keys():
-#                 if 'filters' in dataAsDict['selects'][0]['children'][0].keys():
-#                     if (len(dataAsDict['selects'][0]['children'][0]['filters']) > 0):
-#                         child = dataAsDict['selects'][0]['children'][0]['child']
-                        
-#                         if  child == 'view':
-#                             property_ = dataAsDict['selects'][0]['children'][0]['filters'][0]['property']
-#                             regex = dataAsDict['selects'][0]['children'][0]['filters'][0]['regex']
-                        
-#                             views = req[method]['data'][1]['view']
-#                             foundFlag = 0
-#                             for view in views:                                
-#                                 if re.match(regex,view[property_]):
-#                                     req[method]['data'][1]['view'] = view     
-#                                     foundFlag = 1
-#                             if foundFlag == 0:
-#                                 req[method]['data'][1]['view'] = []
-#                     else:
-#                          child = dataAsDict['selects'][0]['children'][0]['child']
-#                          if child == 'data':
-#                              if dataAsDict['selects'][0]['from'] == '/api/v1/sessions/1/ixnetwork/statistics/view/1':
-#                                  req[method]['data'] = req[method]['data'][2]
-#                                  req[method]['status_code'] = 202     
-#     else:
-#         return req
-#     return req

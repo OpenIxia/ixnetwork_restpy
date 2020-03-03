@@ -277,6 +277,18 @@ class Traffic(Base):
         self._set_attribute('displayMplsCurrentLabelValue', value)
 
     @property
+    def EgressOnlyTrafficItemName(self):
+        """Traffic Item name for egress only flows in statistics.
+
+        Returns:
+            str
+        """
+        return self._get_attribute('egressOnlyTrafficItemName')
+    @EgressOnlyTrafficItemName.setter
+    def EgressOnlyTrafficItemName(self, value):
+        self._set_attribute('egressOnlyTrafficItemName', value)
+
+    @property
     def ElapsedTransmitTime(self):
         """Specifies the amount of time traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
 
@@ -311,7 +323,7 @@ class Traffic(Base):
 
     @property
     def EnableEgressOnlyTracking(self):
-        """This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
+        """This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
 
         Returns:
             bool
@@ -320,6 +332,18 @@ class Traffic(Base):
     @EnableEgressOnlyTracking.setter
     def EnableEgressOnlyTracking(self, value):
         self._set_attribute('enableEgressOnlyTracking', value)
+
+    @property
+    def EnableEgressOnlyTxStats(self):
+        """This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableEgressOnlyTxStats')
+    @EnableEgressOnlyTxStats.setter
+    def EnableEgressOnlyTxStats(self, value):
+        self._set_attribute('enableEgressOnlyTxStats', value)
 
     @property
     def EnableInstantaneousStatsSupport(self):
@@ -693,7 +717,7 @@ class Traffic(Base):
     def WaitTime(self, value):
         self._set_attribute('waitTime', value)
 
-    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EgressOnlyTrafficItemName=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableEgressOnlyTxStats=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
         """Updates a child instance of traffic on the server.
 
         Args:
@@ -709,9 +733,11 @@ class Traffic(Base):
             DetectMisdirectedOnAllPorts (bool): 
             DisablePortLevelMisdirected (bool): 
             DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
+            EgressOnlyTrafficItemName (str): Traffic Item name for egress only flows in statistics.
             EnableDataIntegrityCheck (bool): If true, enable data integrity check.
             EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
-            EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
+            EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
+            EnableEgressOnlyTxStats (bool): This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
             EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
             EnableLagAutoRate (bool): 
             EnableLagFlowBalancing (bool): 

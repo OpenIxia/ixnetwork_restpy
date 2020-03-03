@@ -227,15 +227,6 @@ class PccGroup(Base):
         return self._get_attribute('maxInitiatedLspPerInterval')
 
     @property
-    def MaxLspPerPcUpdate(self):
-        """Controls the maximum number of LSPs that can be present in a PcUpdate message.
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('maxLspPerPcUpdate')
-
-    @property
     def MaxLspsPerPcInitiate(self):
         """Controls the maximum number of LSPs that can be present in a PCInitiate message.
 
@@ -475,7 +466,7 @@ class PccGroup(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, KeepaliveInterval=None, LspInstantiationCapability=None, LspUpdateCapability=None, MD5Key=None, MaxInitiatedLspPerInterval=None, MaxLspPerPcUpdate=None, MaxLspsPerPcInitiate=None, PccIpv4Address=None, PcePpagTLVType=None, RateControl=None, SrPceCapability=None, Srv6PceCapability=None, StatefulPceCapability=None):
+    def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, KeepaliveInterval=None, LspInstantiationCapability=None, LspUpdateCapability=None, MD5Key=None, MaxInitiatedLspPerInterval=None, MaxLspsPerPcInitiate=None, PccIpv4Address=None, PcePpagTLVType=None, RateControl=None, SrPceCapability=None, Srv6PceCapability=None, StatefulPceCapability=None):
         """Base class infrastructure that gets a list of pccGroup device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -491,7 +482,6 @@ class PccGroup(Base):
             LspUpdateCapability (str): optional regex of lspUpdateCapability
             MD5Key (str): optional regex of mD5Key
             MaxInitiatedLspPerInterval (str): optional regex of maxInitiatedLspPerInterval
-            MaxLspPerPcUpdate (str): optional regex of maxLspPerPcUpdate
             MaxLspsPerPcInitiate (str): optional regex of maxLspsPerPcInitiate
             PccIpv4Address (str): optional regex of pccIpv4Address
             PcePpagTLVType (str): optional regex of pcePpagTLVType

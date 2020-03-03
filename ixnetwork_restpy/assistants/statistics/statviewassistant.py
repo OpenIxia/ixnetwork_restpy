@@ -34,7 +34,7 @@ class StatViewAssistant(object):
         Args:
             IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
             ViewName (str): The name of a statistics view, supports regex
-            Timeoout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
+            Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
             LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. The path must exist and will not be created.
         """
         assert(isinstance(IxNetwork, Ixnetwork))
@@ -108,7 +108,7 @@ class StatViewAssistant(object):
                                     break
                             else:
                                 try:
-                                    expression = '%s %s %s' % (row[column_index], comparator, filter_value)
+                                    expression = '"%s" %s "%s"' % (row[column_index], comparator, filter_value)
                                     if eval(expression) is False:
                                         match = False
                                         break

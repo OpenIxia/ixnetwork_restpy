@@ -1,40 +1,31 @@
 """This script demonstrates how to get started with ixnetwork_restpy scripting.
 
 The script demonstrates the following:
-    - connect to an IxNetwork test platform and authenticate
-    - add a new session
-    - clear any existing configuration
-    - create 1 tx port and 2 rx ports
-    - create traffic from the tx port to the rx ports
+    - connect to an IxNetwork test platform, authenticate, add a new session and clear the config
+    - create 1 tx port and 1 rx port
+    - create traffic from the tx port to the rx port
     - start traffic
     - print statistics
     - stop traffic
 """
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
-from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
+from ixnetwork_restpy import SessionAssistant
 
 
-# connect to a test tool platform
-test_platform = TestPlatform('127.0.0.1')
-test_platform.Authenticate('admin', 'admin')
-sessions = test_platform.Sessions.add()
-ixnetwork = sessions.Ixnetwork
-ixnetwork.NewConfig()
+# create a test tool session
+session = SessionAssistant(IpAddress='127.0.0.1', Username='admin', Password='admin', ClearConfig=True)
 
-# create one tx port and two rx port resources
-port_map = PortMapAssistant(ixnetwork)
+# create tx and rx port resources
+port_map = session.PortMapAssistant()
 port_map.Map('10.36.74.26', 2, 13, Name='Tx')
-port_map.Map('10.36.74.26', 2, 14, Name='Rx1')
-port_map.Map('10.36.74.26', 2, 15, Name='Rx2')
+port_map.Map('10.36.74.26', 2, 14, Name='Rx')
 
 # create a TrafficItem resource
 # TrafficItem acts a a high level container for ConfigElement resources
 # ConfigElement is a high level container for individual HighLevelStream resources
-traffic_item = ixnetwork.Traffic.TrafficItem.add(Name='Traffic Test', TrafficType='raw')
+traffic_item = session.Ixnetwork.Traffic.TrafficItem.add(Name='Traffic Test', TrafficType='raw')
 traffic_item.EndpointSet.add(
-    Sources=ixnetwork.Vport.find(Name='^Tx').Protocols.find(), 
-    Destinations=ixnetwork.Vport.find(Name='^Rx').Protocols.find())
+    Sources=session.Ixnetwork.Vport.find(Name='^Tx').Protocols.find(), 
+    Destinations=session.Ixnetwork.Vport.find(Name='^Rx').Protocols.find())
 
 # using the traffic ConfigElement resource
 # update the frame rate
@@ -54,13 +45,13 @@ traffic_item.Generate()
 # apply traffic to hardware
 # start traffic
 port_map.Connect(ForceOwnership=True)
-ixnetwork.Traffic.Apply()
-ixnetwork.Traffic.StartStatelessTrafficBlocking()
+session.Ixnetwork.Traffic.Apply()
+session.Ixnetwork.Traffic.StartStatelessTrafficBlocking()
 
 # print statistics
-print(StatViewAssistant(ixnetwork, 'Port Statistics'))
-print(StatViewAssistant(ixnetwork, 'Traffic Item Statistics'))
-print(StatViewAssistant(ixnetwork, 'Flow Statistics'))
+print(session.StatViewAssistant('Port Statistics'))
+print(session.StatViewAssistant('Traffic Item Statistics'))
+print(session.StatViewAssistant('Flow Statistics'))
 
 # stop traffic
-ixnetwork.Traffic.StopStatelessTrafficBlocking()
+session.Ixnetwork.Traffic.StopStatelessTrafficBlocking()

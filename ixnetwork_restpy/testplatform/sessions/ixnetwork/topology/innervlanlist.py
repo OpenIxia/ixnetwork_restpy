@@ -23,17 +23,17 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class Ospfv3SRGBRangeSubObjectsList(Base):
-    """Ospfv3 SRGB Range Sub Objects
-    The Ospfv3SRGBRangeSubObjectsList class encapsulates a list of ospfv3SRGBRangeSubObjectsList resources that is managed by the system.
-    A list of resources can be retrieved from the server using the Ospfv3SRGBRangeSubObjectsList.find() method.
+class InnerVlanList(Base):
+    """Inner VLAN
+    The InnerVlanList class encapsulates a list of innerVlanList resources that is managed by the system.
+    A list of resources can be retrieved from the server using the InnerVlanList.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3SRGBRangeSubObjectsList'
+    _SDM_NAME = 'innerVlanList'
 
     def __init__(self, parent):
-        super(Ospfv3SRGBRangeSubObjectsList, self).__init__(parent)
+        super(InnerVlanList, self).__init__(parent)
 
     @property
     def Count(self):
@@ -66,25 +66,34 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
         self._set_attribute('name', value)
 
     @property
-    def SidCount(self):
-        """SID Count
+    def Priority(self):
+        """3-bit user priority field in the VLAN tag.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('sidCount')
+        return self._get_attribute('priority')
 
     @property
-    def StartSIDLabel(self):
-        """Start SID/Label
+    def Tpid(self):
+        """16-bit Tag Protocol Identifier (TPID) or EtherType in the VLAN tag.
 
         Returns:
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
-        return self._get_attribute('startSIDLabel')
+        return self._get_attribute('tpid')
+
+    @property
+    def VlanId(self):
+        """12-bit VLAN ID in the VLAN tag.
+
+        Returns:
+            obj(ixnetwork_restpy.multivalue.Multivalue)
+        """
+        return self._get_attribute('vlanId')
 
     def update(self, Name=None):
-        """Updates a child instance of ospfv3SRGBRangeSubObjectsList on the server.
+        """Updates a child instance of innerVlanList on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -98,10 +107,10 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
         self._update(locals())
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        """Finds and retrieves ospfv3SRGBRangeSubObjectsList data from the server.
+        """Finds and retrieves innerVlanList data from the server.
 
-        All named parameters support regex and can be used to selectively retrieve ospfv3SRGBRangeSubObjectsList data from the server.
-        By default the find method takes no parameters and will retrieve all ospfv3SRGBRangeSubObjectsList data from the server.
+        All named parameters support regex and can be used to selectively retrieve innerVlanList data from the server.
+        By default the find method takes no parameters and will retrieve all innerVlanList data from the server.
 
         Args:
             Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
@@ -109,7 +118,7 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
             Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
         Returns:
-            self: This instance with matching ospfv3SRGBRangeSubObjectsList data retrieved from the server available through an iterator or index
+            self: This instance with matching innerVlanList data retrieved from the server available through an iterator or index
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
@@ -117,13 +126,13 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
         return self._select(locals())
 
     def read(self, href):
-        """Retrieves a single instance of ospfv3SRGBRangeSubObjectsList data from the server.
+        """Retrieves a single instance of innerVlanList data from the server.
 
         Args:
             href (str): An href to the instance to be retrieved
 
         Returns:
-            self: This instance with the ospfv3SRGBRangeSubObjectsList data from the server available through an iterator or index
+            self: This instance with the innerVlanList data from the server available through an iterator or index
 
         Raises:
             NotFoundError: The requested resource does not exist on the server
@@ -131,15 +140,16 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, SidCount=None, StartSIDLabel=None):
-        """Base class infrastructure that gets a list of ospfv3SRGBRangeSubObjectsList device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Priority=None, Tpid=None, VlanId=None):
+        """Base class infrastructure that gets a list of innerVlanList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args:
             PortNames (str): optional regex of port names
-            SidCount (str): optional regex of sidCount
-            StartSIDLabel (str): optional regex of startSIDLabel
+            Priority (str): optional regex of priority
+            Tpid (str): optional regex of tpid
+            VlanId (str): optional regex of vlanId
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters

@@ -471,6 +471,20 @@ class Ethernet(Base):
         return StaticLag(self)
 
     @property
+    def StaticMacsec(self):
+        """An instance of the StaticMacsec class.
+
+        Returns:
+            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec.StaticMacsec)
+
+        Raises:
+            NotFoundError: The requested resource does not exist on the server
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec import StaticMacsec
+        return StaticMacsec(self)
+
+    @property
     def Streams(self):
         """An instance of the Streams class.
 

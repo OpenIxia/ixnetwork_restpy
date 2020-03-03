@@ -37,20 +37,6 @@ class Ospfv3Router(Base):
         super(Ospfv3Router, self).__init__(parent)
 
     @property
-    def Ospfv3SRGBRangeSubObjectsList(self):
-        """An instance of the Ospfv3SRGBRangeSubObjectsList class.
-
-        Returns:
-            obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist.Ospfv3SRGBRangeSubObjectsList)
-
-        Raises:
-            NotFoundError: The requested resource does not exist on the server
-            ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist import Ospfv3SRGBRangeSubObjectsList
-        return Ospfv3SRGBRangeSubObjectsList(self)
-
-    @property
     def Active(self):
         """Activate/Deactivate Configuration
 
@@ -60,15 +46,6 @@ class Ospfv3Router(Base):
         return self._get_attribute('active')
 
     @property
-    def Algorithm(self):
-        """Algorithm for the Node SID/Label
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('algorithm')
-
-    @property
     def BBit(self):
         """Router-LSA B-Bit
 
@@ -76,15 +53,6 @@ class Ospfv3Router(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('bBit')
-
-    @property
-    def ConfigureSIDIndexLabel(self):
-        """Lets the corresponding router send Prefix SID. By default, it is selected
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('configureSIDIndexLabel')
 
     @property
     def Count(self):
@@ -141,15 +109,6 @@ class Ospfv3Router(Base):
         return self._get_attribute('eBit')
 
     @property
-    def EFlag(self):
-        """E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6)before forwarding the packet
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('eFlag')
-
-    @property
     def EnableGracefulRestartHelperMode(self):
         """Enable Graceful Restart helper Mode,if enabled Discard Learned LSAs should be disabled in order to learn the LSAs
 
@@ -157,18 +116,6 @@ class Ospfv3Router(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('enableGracefulRestartHelperMode')
-
-    @property
-    def EnableSrMpls(self):
-        """Makes the Segment Routing configuration enabled
-
-        Returns:
-            bool
-        """
-        return self._get_attribute('enableSrMpls')
-    @EnableSrMpls.setter
-    def EnableSrMpls(self, value):
-        self._set_attribute('enableSrMpls', value)
 
     @property
     def EnableStrictLsaChecking(self):
@@ -225,15 +172,6 @@ class Ospfv3Router(Base):
         return self._get_attribute('errors')
 
     @property
-    def LFlag(self):
-        """L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('lFlag')
-
-    @property
     def LocalRouterId(self):
         """Router ID
 
@@ -241,15 +179,6 @@ class Ospfv3Router(Base):
             list(str)
         """
         return self._get_attribute('localRouterId')
-
-    @property
-    def LoopbackAddress(self):
-        """The IPv6 loopback prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('loopbackAddress')
 
     @property
     def LsaRefreshTime(self):
@@ -268,15 +197,6 @@ class Ospfv3Router(Base):
             obj(ixnetwork_restpy.multivalue.Multivalue)
         """
         return self._get_attribute('lsaRetransmitTime')
-
-    @property
-    def MFlag(self):
-        """M-Flag: Mapping Server Flag: If set, the SID was advertised bya Segment Routing Mapping Server
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('mFlag')
 
     @property
     def MaxNumLsaPerSecond(self):
@@ -300,15 +220,6 @@ class Ospfv3Router(Base):
         self._set_attribute('name', value)
 
     @property
-    def NpFlag(self):
-        """NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop thePrefix-SID before delivering the packet to the node that advertised the Prefix-SID
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('npFlag')
-
-    @property
     def SessionInfo(self):
         """Logs additional information about the session Information
 
@@ -325,27 +236,6 @@ class Ospfv3Router(Base):
             list(str[down|notStarted|up])
         """
         return self._get_attribute('sessionStatus')
-
-    @property
-    def SidIndexLabel(self):
-        """SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('sidIndexLabel')
-
-    @property
-    def SrgbRangeCount(self):
-        """count of the configurable list of SRGB
-
-        Returns:
-            number
-        """
-        return self._get_attribute('srgbRangeCount')
-    @SrgbRangeCount.setter
-    def SrgbRangeCount(self, value):
-        self._set_attribute('srgbRangeCount', value)
 
     @property
     def StateCounts(self):
@@ -365,38 +255,25 @@ class Ospfv3Router(Base):
         """
         return self._get_attribute('status')
 
-    @property
-    def VFlag(self):
-        """V-Flag: Value flag. If set, then the SID carries an absolute value label value
-
-        Returns:
-            obj(ixnetwork_restpy.multivalue.Multivalue)
-        """
-        return self._get_attribute('vFlag')
-
-    def update(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+    def update(self, Name=None):
         """Updates a child instance of ospfv3Router on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
         Args:
-            EnableSrMpls (bool): Makes the Segment Routing configuration enabled
             Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SrgbRangeCount (number): count of the configurable list of SRGB
 
         Raises:
             ServerError: The server has encountered an uncategorized error condition
         """
         self._update(locals())
 
-    def add(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+    def add(self, Name=None):
         """Adds a new ospfv3Router node on the server and retrieves it in this instance.
 
         Args:
-            EnableSrMpls (bool): Makes the Segment Routing configuration enabled
             Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-            SrgbRangeCount (number): count of the configurable list of SRGB
 
         Returns:
             self: This instance with all currently retrieved ospfv3Router data using find and the newly added ospfv3Router data available through an iterator or index
@@ -415,7 +292,7 @@ class Ospfv3Router(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, EnableSrMpls=None, Errors=None, LocalRouterId=None, Name=None, SessionInfo=None, SessionStatus=None, SrgbRangeCount=None, StateCounts=None, Status=None):
+    def find(self, Count=None, DescriptiveName=None, Errors=None, LocalRouterId=None, Name=None, SessionInfo=None, SessionStatus=None, StateCounts=None, Status=None):
         """Finds and retrieves ospfv3Router data from the server.
 
         All named parameters support regex and can be used to selectively retrieve ospfv3Router data from the server.
@@ -424,13 +301,11 @@ class Ospfv3Router(Base):
         Args:
             Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
             DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
-            EnableSrMpls (bool): Makes the Segment Routing configuration enabled
             Errors (list(dict(arg1:str[None|/api/v1/sessions/1/ixnetwork/?deepchild=*],arg2:list[str]))): A list of errors that have occurred
             LocalRouterId (list(str)): Router ID
             Name (str): Name of NGPF element, guaranteed to be unique in Scenario
             SessionInfo (list(str[noIfaceUp|up])): Logs additional information about the session Information
             SessionStatus (list(str[down|notStarted|up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-            SrgbRangeCount (number): count of the configurable list of SRGB
             StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
             Status (str(configured|error|mixed|notStarted|started|starting|stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -457,7 +332,7 @@ class Ospfv3Router(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EBit=None, EFlag=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, LFlag=None, LoopbackAddress=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxNumLsaPerSecond=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, Active=None, BBit=None, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EBit=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxNumLsaPerSecond=None):
         """Base class infrastructure that gets a list of ospfv3Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -465,29 +340,20 @@ class Ospfv3Router(Base):
         Args:
             PortNames (str): optional regex of port names
             Active (str): optional regex of active
-            Algorithm (str): optional regex of algorithm
             BBit (str): optional regex of bBit
-            ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
             DisableAutoGenerateLinkLsa (str): optional regex of disableAutoGenerateLinkLsa
             DisableAutoGenerateRouterLsa (str): optional regex of disableAutoGenerateRouterLsa
             DiscardLearnedLsa (str): optional regex of discardLearnedLsa
             EBit (str): optional regex of eBit
-            EFlag (str): optional regex of eFlag
             EnableGracefulRestartHelperMode (str): optional regex of enableGracefulRestartHelperMode
             EnableStrictLsaChecking (str): optional regex of enableStrictLsaChecking
             EnableSupportReasonSwReloadUpgrade (str): optional regex of enableSupportReasonSwReloadUpgrade
             EnableSupportReasonSwRestart (str): optional regex of enableSupportReasonSwRestart
             EnableSupportReasonSwitchToRedundantControlProcessor (str): optional regex of enableSupportReasonSwitchToRedundantControlProcessor
             EnableSupportReasonUnknown (str): optional regex of enableSupportReasonUnknown
-            LFlag (str): optional regex of lFlag
-            LoopbackAddress (str): optional regex of loopbackAddress
             LsaRefreshTime (str): optional regex of lsaRefreshTime
             LsaRetransmitTime (str): optional regex of lsaRetransmitTime
-            MFlag (str): optional regex of mFlag
             MaxNumLsaPerSecond (str): optional regex of maxNumLsaPerSecond
-            NpFlag (str): optional regex of npFlag
-            SidIndexLabel (str): optional regex of sidIndexLabel
-            VFlag (str): optional regex of vFlag
 
         Returns:
             list(int): A list of device ids that meets the regex criteria provided in the method parameters
