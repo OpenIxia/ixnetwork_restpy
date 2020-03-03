@@ -34,6 +34,42 @@ class TestConfig(Base):
     def __init__(self, parent):
         super(TestConfig, self).__init__(parent)
 
+    @property
+    def NumTrials(self):
+        """Defines how many times each frame size will be tested.
+
+        Returns:
+            str
+        """
+        return self._get_attribute('numTrials')
+    @NumTrials.setter
+    def NumTrials(self, value):
+        self._set_attribute('numTrials', value)
+
+    @property
+    def ProtocolItem(self):
+        """Protocol Items
+
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        return self._get_attribute('protocolItem')
+    @ProtocolItem.setter
+    def ProtocolItem(self, value):
+        self._set_attribute('protocolItem', value)
+
+    def update(self, NumTrials=None, ProtocolItem=None):
+        """Updates a child instance of testConfig on the server.
+
+        Args:
+            NumTrials (str): Defines how many times each frame size will be tested.
+            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

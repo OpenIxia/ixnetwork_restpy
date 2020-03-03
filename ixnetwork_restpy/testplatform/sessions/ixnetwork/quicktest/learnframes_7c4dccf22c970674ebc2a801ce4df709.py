@@ -34,6 +34,172 @@ class LearnFrames(Base):
     def __init__(self, parent):
         super(LearnFrames, self).__init__(parent)
 
+    @property
+    def FastPathEnable(self):
+        """If true, the fast path is enabled.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('fastPathEnable')
+    @FastPathEnable.setter
+    def FastPathEnable(self, value):
+        self._set_attribute('fastPathEnable', value)
+
+    @property
+    def FastPathLearnFrameSize(self):
+        """Specifies the size of the learning frames in the fast path.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathLearnFrameSize')
+    @FastPathLearnFrameSize.setter
+    def FastPathLearnFrameSize(self, value):
+        self._set_attribute('fastPathLearnFrameSize', value)
+
+    @property
+    def FastPathNumFrames(self):
+        """Specifies the number of learn frames that IxNetwork sends through fast path.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathNumFrames')
+    @FastPathNumFrames.setter
+    def FastPathNumFrames(self, value):
+        self._set_attribute('fastPathNumFrames', value)
+
+    @property
+    def FastPathRate(self):
+        """The learnt information on the rate the data is to be transferred.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathRate')
+    @FastPathRate.setter
+    def FastPathRate(self, value):
+        self._set_attribute('fastPathRate', value)
+
+    @property
+    def LearnFrameSize(self):
+        """Specifies the size of the learning frames.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnFrameSize')
+    @LearnFrameSize.setter
+    def LearnFrameSize(self, value):
+        self._set_attribute('learnFrameSize', value)
+
+    @property
+    def LearnFrequency(self):
+        """Allows to choose how frequently IxNetwork sends learning frames during the test.
+
+        Returns:
+            str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)
+        """
+        return self._get_attribute('learnFrequency')
+    @LearnFrequency.setter
+    def LearnFrequency(self, value):
+        self._set_attribute('learnFrequency', value)
+
+    @property
+    def LearnNumFrames(self):
+        """Specifies the number of learning frames that IxNetwork sends for each address.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnNumFrames')
+    @LearnNumFrames.setter
+    def LearnNumFrames(self, value):
+        self._set_attribute('learnNumFrames', value)
+
+    @property
+    def LearnRate(self):
+        """Specifies the rate at which IxNetwork sends learn frames to the DUT.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnRate')
+    @LearnRate.setter
+    def LearnRate(self, value):
+        self._set_attribute('learnRate', value)
+
+    @property
+    def LearnSendMacOnly(self):
+        """The learnt information on the MAC address sent.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendMacOnly')
+    @LearnSendMacOnly.setter
+    def LearnSendMacOnly(self, value):
+        self._set_attribute('learnSendMacOnly', value)
+
+    @property
+    def LearnSendRouterSolicitation(self):
+        """The learnt information on the router sent solicitation.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendRouterSolicitation')
+    @LearnSendRouterSolicitation.setter
+    def LearnSendRouterSolicitation(self, value):
+        self._set_attribute('learnSendRouterSolicitation', value)
+
+    @property
+    def LearnWaitTime(self):
+        """Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTime')
+    @LearnWaitTime.setter
+    def LearnWaitTime(self, value):
+        self._set_attribute('learnWaitTime', value)
+
+    @property
+    def LearnWaitTimeBeforeTransmit(self):
+        """The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTimeBeforeTransmit')
+    @LearnWaitTimeBeforeTransmit.setter
+    def LearnWaitTimeBeforeTransmit(self, value):
+        self._set_attribute('learnWaitTimeBeforeTransmit', value)
+
+    def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
+        """Updates a child instance of learnFrames on the server.
+
+        Args:
+            FastPathEnable (bool): If true, the fast path is enabled.
+            FastPathLearnFrameSize (number): Specifies the size of the learning frames in the fast path.
+            FastPathNumFrames (number): Specifies the number of learn frames that IxNetwork sends through fast path.
+            FastPathRate (number): The learnt information on the rate the data is to be transferred.
+            LearnFrameSize (number): Specifies the size of the learning frames.
+            LearnFrequency (str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+            LearnNumFrames (number): Specifies the number of learning frames that IxNetwork sends for each address.
+            LearnRate (number): Specifies the rate at which IxNetwork sends learn frames to the DUT.
+            LearnSendMacOnly (bool): The learnt information on the MAC address sent.
+            LearnSendRouterSolicitation (bool): The learnt information on the router sent solicitation.
+            LearnWaitTime (number): Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
+            LearnWaitTimeBeforeTransmit (number): The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

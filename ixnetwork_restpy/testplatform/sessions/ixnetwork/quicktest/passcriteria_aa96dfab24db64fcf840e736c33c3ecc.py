@@ -34,6 +34,159 @@ class PassCriteria(Base):
     def __init__(self, parent):
         super(PassCriteria, self).__init__(parent)
 
+    @property
+    def EnableLatencyPassFail(self):
+        """If true, the latency pass fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLatencyPassFail')
+    @EnableLatencyPassFail.setter
+    def EnableLatencyPassFail(self, value):
+        self._set_attribute('enableLatencyPassFail', value)
+
+    @property
+    def EnablePassFail(self):
+        """If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePassFail')
+    @EnablePassFail.setter
+    def EnablePassFail(self, value):
+        self._set_attribute('enablePassFail', value)
+
+    @property
+    def EnableRatePassFail(self):
+        """If true, the rate of pass and fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableRatePassFail')
+    @EnableRatePassFail.setter
+    def EnableRatePassFail(self, value):
+        self._set_attribute('enableRatePassFail', value)
+
+    @property
+    def EnableStandardDeviationPassFail(self):
+        """If true, Standard Deviation for the Pass/Fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableStandardDeviationPassFail')
+    @EnableStandardDeviationPassFail.setter
+    def EnableStandardDeviationPassFail(self, value):
+        self._set_attribute('enableStandardDeviationPassFail', value)
+
+    @property
+    def LatencyThresholdMode(self):
+        """The threshold mode for the latency.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyThresholdMode')
+    @LatencyThresholdMode.setter
+    def LatencyThresholdMode(self, value):
+        self._set_attribute('latencyThresholdMode', value)
+
+    @property
+    def LatencyThresholdScale(self):
+        """The scale by which the latency threshold is measured.
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyThresholdScale')
+    @LatencyThresholdScale.setter
+    def LatencyThresholdScale(self, value):
+        self._set_attribute('latencyThresholdScale', value)
+
+    @property
+    def LatencyVarThresholdMode(self):
+        """The latency variation threshold mode.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyVarThresholdMode')
+    @LatencyVarThresholdMode.setter
+    def LatencyVarThresholdMode(self, value):
+        self._set_attribute('latencyVarThresholdMode', value)
+
+    @property
+    def LatencyVariationThresholdScale(self):
+        """The scale by which the latency variation threshold is measured.
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyVariationThresholdScale')
+    @LatencyVariationThresholdScale.setter
+    def LatencyVariationThresholdScale(self, value):
+        self._set_attribute('latencyVariationThresholdScale', value)
+
+    @property
+    def PassCriteriaLoadRateMode(self):
+        """The pass critria set for the load rate mode.
+
+        Returns:
+            str(average|minimum)
+        """
+        return self._get_attribute('passCriteriaLoadRateMode')
+    @PassCriteriaLoadRateMode.setter
+    def PassCriteriaLoadRateMode(self, value):
+        self._set_attribute('passCriteriaLoadRateMode', value)
+
+    @property
+    def PassCriteriaLoadRateScale(self):
+        """The pass criteria scale in which the load rateis to be measured.
+
+        Returns:
+            str(fps|gbps|kbps|mbps|percent)
+        """
+        return self._get_attribute('passCriteriaLoadRateScale')
+    @PassCriteriaLoadRateScale.setter
+    def PassCriteriaLoadRateScale(self, value):
+        self._set_attribute('passCriteriaLoadRateScale', value)
+
+    @property
+    def PassFailLatencyUnit(self):
+        """If true, the pass fail latency unit is set.
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('passFailLatencyUnit')
+    @PassFailLatencyUnit.setter
+    def PassFailLatencyUnit(self, value):
+        self._set_attribute('passFailLatencyUnit', value)
+
+    def update(self, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassFailLatencyUnit=None):
+        """Updates a child instance of passCriteria on the server.
+
+        Args:
+            EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+            EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+            EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+            EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
+            LatencyThresholdMode (str(average|maximum)): The threshold mode for the latency.
+            LatencyThresholdScale (str(ms|ns|us)): The scale by which the latency threshold is measured.
+            LatencyVarThresholdMode (str(average|maximum)): The latency variation threshold mode.
+            LatencyVariationThresholdScale (str(ms|ns|us)): The scale by which the latency variation threshold is measured.
+            PassCriteriaLoadRateMode (str(average|minimum)): The pass critria set for the load rate mode.
+            PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The pass criteria scale in which the load rateis to be measured.
+            PassFailLatencyUnit (str(ms|ns|us)): If true, the pass fail latency unit is set.
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

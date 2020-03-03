@@ -34,6 +34,185 @@ class TestConfig(Base):
     def __init__(self, parent):
         super(TestConfig, self).__init__(parent)
 
+    @property
+    def AlgorithmType(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('algorithmType')
+    @AlgorithmType.setter
+    def AlgorithmType(self, value):
+        self._set_attribute('algorithmType', value)
+
+    @property
+    def Duration(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('duration')
+    @Duration.setter
+    def Duration(self, value):
+        self._set_attribute('duration', value)
+
+    @property
+    def InitialStepIntegerValues(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('initialStepIntegerValues')
+    @InitialStepIntegerValues.setter
+    def InitialStepIntegerValues(self, value):
+        self._set_attribute('initialStepIntegerValues', value)
+
+    @property
+    def LeaveSessionsUp(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('leaveSessionsUp')
+    @LeaveSessionsUp.setter
+    def LeaveSessionsUp(self, value):
+        self._set_attribute('leaveSessionsUp', value)
+
+    @property
+    def LoadRateList(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('loadRateList')
+    @LoadRateList.setter
+    def LoadRateList(self, value):
+        self._set_attribute('loadRateList', value)
+
+    @property
+    def MaxOutstandingRequests(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('maxOutstandingRequests')
+    @MaxOutstandingRequests.setter
+    def MaxOutstandingRequests(self, value):
+        self._set_attribute('maxOutstandingRequests', value)
+
+    @property
+    def MaxStepIntegerValues(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('maxStepIntegerValues')
+    @MaxStepIntegerValues.setter
+    def MaxStepIntegerValues(self, value):
+        self._set_attribute('maxStepIntegerValues', value)
+
+    @property
+    def Numtrials(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('numtrials')
+    @Numtrials.setter
+    def Numtrials(self, value):
+        self._set_attribute('numtrials', value)
+
+    @property
+    def ProtocolItem(self):
+        """Protocol Items
+
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        return self._get_attribute('protocolItem')
+    @ProtocolItem.setter
+    def ProtocolItem(self, value):
+        self._set_attribute('protocolItem', value)
+
+    @property
+    def RequestRate(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('requestRate')
+    @RequestRate.setter
+    def RequestRate(self, value):
+        self._set_attribute('requestRate', value)
+
+    @property
+    def StepStepIntegerValues(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('stepStepIntegerValues')
+    @StepStepIntegerValues.setter
+    def StepStepIntegerValues(self, value):
+        self._set_attribute('stepStepIntegerValues', value)
+
+    @property
+    def Step_failedsession_enableAccLoss(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('step_failedsession_enableAccLoss')
+    @Step_failedsession_enableAccLoss.setter
+    def Step_failedsession_enableAccLoss(self, value):
+        self._set_attribute('step_failedsession_enableAccLoss', value)
+
+    @property
+    def Step_failedsession_thresholdAccLoss(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('step_failedsession_thresholdAccLoss')
+    @Step_failedsession_thresholdAccLoss.setter
+    def Step_failedsession_thresholdAccLoss(self, value):
+        self._set_attribute('step_failedsession_thresholdAccLoss', value)
+
+    def update(self, AlgorithmType=None, Duration=None, InitialStepIntegerValues=None, LeaveSessionsUp=None, LoadRateList=None, MaxOutstandingRequests=None, MaxStepIntegerValues=None, Numtrials=None, ProtocolItem=None, RequestRate=None, StepStepIntegerValues=None, Step_failedsession_enableAccLoss=None, Step_failedsession_thresholdAccLoss=None):
+        """Updates a child instance of testConfig on the server.
+
+        Args:
+            AlgorithmType (str): 
+            Duration (number): 
+            InitialStepIntegerValues (number): 
+            LeaveSessionsUp (bool): 
+            LoadRateList (str): 
+            MaxOutstandingRequests (number): 
+            MaxStepIntegerValues (number): 
+            Numtrials (number): 
+            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+            RequestRate (number): 
+            StepStepIntegerValues (number): 
+            Step_failedsession_enableAccLoss (bool): 
+            Step_failedsession_thresholdAccLoss (number): 
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

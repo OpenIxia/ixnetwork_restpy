@@ -34,6 +34,146 @@ class LearnFrames(Base):
     def __init__(self, parent):
         super(LearnFrames, self).__init__(parent)
 
+    @property
+    def FastPathEnable(self):
+        """If true, the fast path is enabled.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('fastPathEnable')
+    @FastPathEnable.setter
+    def FastPathEnable(self, value):
+        self._set_attribute('fastPathEnable', value)
+
+    @property
+    def FastPathLearnFrameSize(self):
+        """The path in which the learnt frame sizes are saved.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathLearnFrameSize')
+    @FastPathLearnFrameSize.setter
+    def FastPathLearnFrameSize(self, value):
+        self._set_attribute('fastPathLearnFrameSize', value)
+
+    @property
+    def FastPathNumFrames(self):
+        """The learnt information on the number of frames to be tramsferred.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathNumFrames')
+    @FastPathNumFrames.setter
+    def FastPathNumFrames(self, value):
+        self._set_attribute('fastPathNumFrames', value)
+
+    @property
+    def FastPathRate(self):
+        """The learnt inofrmation on the rate the data is to be transferred.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathRate')
+    @FastPathRate.setter
+    def FastPathRate(self, value):
+        self._set_attribute('fastPathRate', value)
+
+    @property
+    def LearnFrequency(self):
+        """Allows to choose how frequently IxNetwork sends learning frames during the test.
+
+        Returns:
+            str(onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)
+        """
+        return self._get_attribute('learnFrequency')
+    @LearnFrequency.setter
+    def LearnFrequency(self, value):
+        self._set_attribute('learnFrequency', value)
+
+    @property
+    def LearnNumFrames(self):
+        """The frequency at which number of frames are to be learnt.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnNumFrames')
+    @LearnNumFrames.setter
+    def LearnNumFrames(self, value):
+        self._set_attribute('learnNumFrames', value)
+
+    @property
+    def LearnSendMacOnly(self):
+        """Sends learning frames to MAC address only.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendMacOnly')
+    @LearnSendMacOnly.setter
+    def LearnSendMacOnly(self, value):
+        self._set_attribute('learnSendMacOnly', value)
+
+    @property
+    def LearnSendRouterSolicitation(self):
+        """Sends router solicitation messages.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendRouterSolicitation')
+    @LearnSendRouterSolicitation.setter
+    def LearnSendRouterSolicitation(self, value):
+        self._set_attribute('learnSendRouterSolicitation', value)
+
+    @property
+    def LearnWaitTime(self):
+        """The learnt information on the wait time.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTime')
+    @LearnWaitTime.setter
+    def LearnWaitTime(self, value):
+        self._set_attribute('learnWaitTime', value)
+
+    @property
+    def SendArp(self):
+        """If true, sends ARP message.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('sendArp')
+    @SendArp.setter
+    def SendArp(self, value):
+        self._set_attribute('sendArp', value)
+
+    def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, SendArp=None):
+        """Updates a child instance of learnFrames on the server.
+
+        Args:
+            FastPathEnable (bool): If true, the fast path is enabled.
+            FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+            FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+            FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+            LearnFrequency (str(onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+            LearnNumFrames (number): The frequency at which number of frames are to be learnt.
+            LearnSendMacOnly (bool): Sends learning frames to MAC address only.
+            LearnSendRouterSolicitation (bool): Sends router solicitation messages.
+            LearnWaitTime (number): The learnt information on the wait time.
+            SendArp (bool): If true, sends ARP message.
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

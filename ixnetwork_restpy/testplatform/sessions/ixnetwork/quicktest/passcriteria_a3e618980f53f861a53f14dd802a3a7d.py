@@ -34,6 +34,120 @@ class PassCriteria(Base):
     def __init__(self, parent):
         super(PassCriteria, self).__init__(parent)
 
+    @property
+    def CpDpConvergenceFactorScale(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('cpDpConvergenceFactorScale')
+    @CpDpConvergenceFactorScale.setter
+    def CpDpConvergenceFactorScale(self, value):
+        self._set_attribute('cpDpConvergenceFactorScale', value)
+
+    @property
+    def CpDpConvergenceTime(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('cpDpConvergenceTime')
+    @CpDpConvergenceTime.setter
+    def CpDpConvergenceTime(self, value):
+        self._set_attribute('cpDpConvergenceTime', value)
+
+    @property
+    def EnableCpDpPassFail(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableCpDpPassFail')
+    @EnableCpDpPassFail.setter
+    def EnableCpDpPassFail(self, value):
+        self._set_attribute('enableCpDpPassFail', value)
+
+    @property
+    def EnablePacketLossDurationPassFail(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePacketLossDurationPassFail')
+    @EnablePacketLossDurationPassFail.setter
+    def EnablePacketLossDurationPassFail(self, value):
+        self._set_attribute('enablePacketLossDurationPassFail', value)
+
+    @property
+    def EnablePassFail(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePassFail')
+    @EnablePassFail.setter
+    def EnablePassFail(self, value):
+        self._set_attribute('enablePassFail', value)
+
+    @property
+    def PacketLossDurationConvergenceTime(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('packetLossDurationConvergenceTime')
+    @PacketLossDurationConvergenceTime.setter
+    def PacketLossDurationConvergenceTime(self, value):
+        self._set_attribute('packetLossDurationConvergenceTime', value)
+
+    @property
+    def PacketLossDurationFactorScale(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('packetLossDurationFactorScale')
+    @PacketLossDurationFactorScale.setter
+    def PacketLossDurationFactorScale(self, value):
+        self._set_attribute('packetLossDurationFactorScale', value)
+
+    @property
+    def PassFailFrequency(self):
+        """
+
+        Returns:
+            str(iteration)
+        """
+        return self._get_attribute('passFailFrequency')
+    @PassFailFrequency.setter
+    def PassFailFrequency(self, value):
+        self._set_attribute('passFailFrequency', value)
+
+    def update(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, EnableCpDpPassFail=None, EnablePacketLossDurationPassFail=None, EnablePassFail=None, PacketLossDurationConvergenceTime=None, PacketLossDurationFactorScale=None, PassFailFrequency=None):
+        """Updates a child instance of passCriteria on the server.
+
+        Args:
+            CpDpConvergenceFactorScale (str): 
+            CpDpConvergenceTime (number): 
+            EnableCpDpPassFail (bool): 
+            EnablePacketLossDurationPassFail (bool): 
+            EnablePassFail (bool): 
+            PacketLossDurationConvergenceTime (number): 
+            PacketLossDurationFactorScale (str): 
+            PassFailFrequency (str(iteration)): 
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

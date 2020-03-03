@@ -34,6 +34,250 @@ class TestConfig(Base):
     def __init__(self, parent):
         super(TestConfig, self).__init__(parent)
 
+    @property
+    def Duration(self):
+        """The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+
+        Returns:
+            number
+        """
+        return self._get_attribute('duration')
+    @Duration.setter
+    def Duration(self, value):
+        self._set_attribute('duration', value)
+
+    @property
+    def EnableAllSlavesStatus(self):
+        """Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('enableAllSlavesStatus')
+    @EnableAllSlavesStatus.setter
+    def EnableAllSlavesStatus(self, value):
+        self._set_attribute('enableAllSlavesStatus', value)
+
+    @property
+    def EnableExpectedGrandMasterStatus(self):
+        """Status of the clock configured as Expected Master is Grand Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('enableExpectedGrandMasterStatus')
+    @EnableExpectedGrandMasterStatus.setter
+    def EnableExpectedGrandMasterStatus(self, value):
+        self._set_attribute('enableExpectedGrandMasterStatus', value)
+
+    @property
+    def EnableNonExpectedMasterStatus(self):
+        """Status of clocks configured as Master is not Grand Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('enableNonExpectedMasterStatus')
+    @EnableNonExpectedMasterStatus.setter
+    def EnableNonExpectedMasterStatus(self, value):
+        self._set_attribute('enableNonExpectedMasterStatus', value)
+
+    @property
+    def ExpectedMasterClockId(self):
+        """ID of the Expected Master Clock
+
+        Returns:
+            str
+        """
+        return self._get_attribute('expectedMasterClockId')
+    @ExpectedMasterClockId.setter
+    def ExpectedMasterClockId(self, value):
+        self._set_attribute('expectedMasterClockId', value)
+
+    @property
+    def ExpectedMasterPort(self):
+        """Port selected as Expected Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('expectedMasterPort')
+    @ExpectedMasterPort.setter
+    def ExpectedMasterPort(self, value):
+        self._set_attribute('expectedMasterPort', value)
+
+    @property
+    def GrandMasterStatus(self):
+        """Port selected as Grand Master Clock
+
+        Returns:
+            str
+        """
+        return self._get_attribute('grandMasterStatus')
+    @GrandMasterStatus.setter
+    def GrandMasterStatus(self, value):
+        self._set_attribute('grandMasterStatus', value)
+
+    @property
+    def MasterPorts(self):
+        """Ports selected as Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('masterPorts')
+    @MasterPorts.setter
+    def MasterPorts(self, value):
+        self._set_attribute('masterPorts', value)
+
+    @property
+    def MaxOutstanding(self):
+        """Maximum number of connection requests or tear down requests that can be pending at any one time
+
+        Returns:
+            number
+        """
+        return self._get_attribute('maxOutstanding')
+    @MaxOutstanding.setter
+    def MaxOutstanding(self, value):
+        self._set_attribute('maxOutstanding', value)
+
+    @property
+    def NonExpectedMasterStatus(self):
+        """Clocks configured as Master are not Grand Master
+
+        Returns:
+            str
+        """
+        return self._get_attribute('nonExpectedMasterStatus')
+    @NonExpectedMasterStatus.setter
+    def NonExpectedMasterStatus(self, value):
+        self._set_attribute('nonExpectedMasterStatus', value)
+
+    @property
+    def Numtrials(self):
+        """Number of trials that can be run
+
+        Returns:
+            number
+        """
+        return self._get_attribute('numtrials')
+    @Numtrials.setter
+    def Numtrials(self, value):
+        self._set_attribute('numtrials', value)
+
+    @property
+    def ProtocolItem(self):
+        """Protocol Items
+
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        return self._get_attribute('protocolItem')
+    @ProtocolItem.setter
+    def ProtocolItem(self, value):
+        self._set_attribute('protocolItem', value)
+
+    @property
+    def Runmode(self):
+        """Running mode used
+
+        Returns:
+            str(duration|noframes)
+        """
+        return self._get_attribute('runmode')
+    @Runmode.setter
+    def Runmode(self, value):
+        self._set_attribute('runmode', value)
+
+    @property
+    def SetupRate(self):
+        """The number of PTP connections to be initiated per second
+
+        Returns:
+            number
+        """
+        return self._get_attribute('setupRate')
+    @SetupRate.setter
+    def SetupRate(self, value):
+        self._set_attribute('setupRate', value)
+
+    @property
+    def SlavePorts(self):
+        """The ports selected as slaves
+
+        Returns:
+            str
+        """
+        return self._get_attribute('slavePorts')
+    @SlavePorts.setter
+    def SlavePorts(self, value):
+        self._set_attribute('slavePorts', value)
+
+    @property
+    def StartTraffic(self):
+        """All traffic configured in IxNetwork is initiated on running this test
+
+        Returns:
+            str
+        """
+        return self._get_attribute('startTraffic')
+    @StartTraffic.setter
+    def StartTraffic(self, value):
+        self._set_attribute('startTraffic', value)
+
+    @property
+    def TeardownRate(self):
+        """The number of PTP connections to tear down per second
+
+        Returns:
+            number
+        """
+        return self._get_attribute('teardownRate')
+    @TeardownRate.setter
+    def TeardownRate(self, value):
+        self._set_attribute('teardownRate', value)
+
+    @property
+    def UseExistingSetupRate(self):
+        """Currently set Setup Rate value is used
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('useExistingSetupRate')
+    @UseExistingSetupRate.setter
+    def UseExistingSetupRate(self, value):
+        self._set_attribute('useExistingSetupRate', value)
+
+    def update(self, Duration=None, EnableAllSlavesStatus=None, EnableExpectedGrandMasterStatus=None, EnableNonExpectedMasterStatus=None, ExpectedMasterClockId=None, ExpectedMasterPort=None, GrandMasterStatus=None, MasterPorts=None, MaxOutstanding=None, NonExpectedMasterStatus=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, SlavePorts=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
+        """Updates a child instance of testConfig on the server.
+
+        Args:
+            Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+            EnableAllSlavesStatus (str): Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
+            EnableExpectedGrandMasterStatus (str): Status of the clock configured as Expected Master is Grand Master
+            EnableNonExpectedMasterStatus (str): Status of clocks configured as Master is not Grand Master
+            ExpectedMasterClockId (str): ID of the Expected Master Clock
+            ExpectedMasterPort (str): Port selected as Expected Master
+            GrandMasterStatus (str): Port selected as Grand Master Clock
+            MasterPorts (str): Ports selected as Master
+            MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+            NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
+            Numtrials (number): Number of trials that can be run
+            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+            Runmode (str(duration|noframes)): Running mode used
+            SetupRate (number): The number of PTP connections to be initiated per second
+            SlavePorts (str): The ports selected as slaves
+            StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+            TeardownRate (number): The number of PTP connections to tear down per second
+            UseExistingSetupRate (bool): Currently set Setup Rate value is used
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

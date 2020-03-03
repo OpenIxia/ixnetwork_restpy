@@ -34,6 +34,172 @@ class LearnFrames(Base):
     def __init__(self, parent):
         super(LearnFrames, self).__init__(parent)
 
+    @property
+    def FastPathEnable(self):
+        """If true, the fast path is enabled.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('fastPathEnable')
+    @FastPathEnable.setter
+    def FastPathEnable(self, value):
+        self._set_attribute('fastPathEnable', value)
+
+    @property
+    def FastPathLearnFrameSize(self):
+        """The path in which the learnt frame sizes are saved.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathLearnFrameSize')
+    @FastPathLearnFrameSize.setter
+    def FastPathLearnFrameSize(self, value):
+        self._set_attribute('fastPathLearnFrameSize', value)
+
+    @property
+    def FastPathNumFrames(self):
+        """The learnt information on the number of frames to be tramsferred.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathNumFrames')
+    @FastPathNumFrames.setter
+    def FastPathNumFrames(self, value):
+        self._set_attribute('fastPathNumFrames', value)
+
+    @property
+    def FastPathRate(self):
+        """The learnt inofrmation on the rate the data is to be transferred.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathRate')
+    @FastPathRate.setter
+    def FastPathRate(self, value):
+        self._set_attribute('fastPathRate', value)
+
+    @property
+    def LearnFrameSize(self):
+        """The learnt information on frame size.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnFrameSize')
+    @LearnFrameSize.setter
+    def LearnFrameSize(self, value):
+        self._set_attribute('learnFrameSize', value)
+
+    @property
+    def LearnFrequency(self):
+        """Allows to choose how frequently IxNetwork sends learning frames during the test.
+
+        Returns:
+            str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)
+        """
+        return self._get_attribute('learnFrequency')
+    @LearnFrequency.setter
+    def LearnFrequency(self, value):
+        self._set_attribute('learnFrequency', value)
+
+    @property
+    def LearnNumFrames(self):
+        """The frequency at which number of frames are to be learnt.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnNumFrames')
+    @LearnNumFrames.setter
+    def LearnNumFrames(self, value):
+        self._set_attribute('learnNumFrames', value)
+
+    @property
+    def LearnRate(self):
+        """The rate at which the data is to be learnt.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnRate')
+    @LearnRate.setter
+    def LearnRate(self, value):
+        self._set_attribute('learnRate', value)
+
+    @property
+    def LearnSendMacOnly(self):
+        """The learnt information on the MAC address sent.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendMacOnly')
+    @LearnSendMacOnly.setter
+    def LearnSendMacOnly(self, value):
+        self._set_attribute('learnSendMacOnly', value)
+
+    @property
+    def LearnSendRouterSolicitation(self):
+        """The learnt information on the router sent solicitation.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendRouterSolicitation')
+    @LearnSendRouterSolicitation.setter
+    def LearnSendRouterSolicitation(self, value):
+        self._set_attribute('learnSendRouterSolicitation', value)
+
+    @property
+    def LearnWaitTime(self):
+        """The learnt information on the wait time.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTime')
+    @LearnWaitTime.setter
+    def LearnWaitTime(self, value):
+        self._set_attribute('learnWaitTime', value)
+
+    @property
+    def LearnWaitTimeBeforeTransmit(self):
+        """The learnt wait time before transmitting.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTimeBeforeTransmit')
+    @LearnWaitTimeBeforeTransmit.setter
+    def LearnWaitTimeBeforeTransmit(self, value):
+        self._set_attribute('learnWaitTimeBeforeTransmit', value)
+
+    def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
+        """Updates a child instance of learnFrames on the server.
+
+        Args:
+            FastPathEnable (bool): If true, the fast path is enabled.
+            FastPathLearnFrameSize (number): The path in which the learnt frame sizes are saved.
+            FastPathNumFrames (number): The learnt information on the number of frames to be tramsferred.
+            FastPathRate (number): The learnt inofrmation on the rate the data is to be transferred.
+            LearnFrameSize (number): The learnt information on frame size.
+            LearnFrequency (str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): Allows to choose how frequently IxNetwork sends learning frames during the test.
+            LearnNumFrames (number): The frequency at which number of frames are to be learnt.
+            LearnRate (number): The rate at which the data is to be learnt.
+            LearnSendMacOnly (bool): The learnt information on the MAC address sent.
+            LearnSendRouterSolicitation (bool): The learnt information on the router sent solicitation.
+            LearnWaitTime (number): The learnt information on the wait time.
+            LearnWaitTimeBeforeTransmit (number): The learnt wait time before transmitting.
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

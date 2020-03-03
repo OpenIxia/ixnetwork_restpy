@@ -34,6 +34,432 @@ class TestConfig(Base):
     def __init__(self, parent):
         super(TestConfig, self).__init__(parent)
 
+    @property
+    def CustomLoadUnit(self):
+        """
+
+        Returns:
+            str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)
+        """
+        return self._get_attribute('customLoadUnit')
+    @CustomLoadUnit.setter
+    def CustomLoadUnit(self, value):
+        self._set_attribute('customLoadUnit', value)
+
+    @property
+    def DataPlaneJitterWindow(self):
+        """
+
+        Returns:
+            str(k_10485760|k_1310720|k_167772160|k_20971520|k_2621440|k_335544320|k_41943040|k_5242880|k_671088640|k_83886080)
+        """
+        return self._get_attribute('dataPlaneJitterWindow')
+    @DataPlaneJitterWindow.setter
+    def DataPlaneJitterWindow(self, value):
+        self._set_attribute('dataPlaneJitterWindow', value)
+
+    @property
+    def Duration(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('duration')
+    @Duration.setter
+    def Duration(self, value):
+        self._set_attribute('duration', value)
+
+    @property
+    def EnableBFD(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableBFD')
+    @EnableBFD.setter
+    def EnableBFD(self, value):
+        self._set_attribute('enableBFD', value)
+
+    @property
+    def EnableTolerance(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableTolerance')
+    @EnableTolerance.setter
+    def EnableTolerance(self, value):
+        self._set_attribute('enableTolerance', value)
+
+    @property
+    def FixedFrameSize(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fixedFrameSize')
+    @FixedFrameSize.setter
+    def FixedFrameSize(self, value):
+        self._set_attribute('fixedFrameSize', value)
+
+    @property
+    def ForceContinuosTraffic(self):
+        """
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('forceContinuosTraffic')
+    @ForceContinuosTraffic.setter
+    def ForceContinuosTraffic(self, value):
+        self._set_attribute('forceContinuosTraffic', value)
+
+    @property
+    def FrameSizeMode(self):
+        """
+
+        Returns:
+            str(fixed)
+        """
+        return self._get_attribute('frameSizeMode')
+    @FrameSizeMode.setter
+    def FrameSizeMode(self, value):
+        self._set_attribute('frameSizeMode', value)
+
+    @property
+    def Framesize(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('framesize')
+    @Framesize.setter
+    def Framesize(self, value):
+        self._set_attribute('framesize', value)
+
+    @property
+    def HoldDownTimer(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('holdDownTimer')
+    @HoldDownTimer.setter
+    def HoldDownTimer(self, value):
+        self._set_attribute('holdDownTimer', value)
+
+    @property
+    def IpRatioMode(self):
+        """
+
+        Returns:
+            str(custom|fixed|increment|random)
+        """
+        return self._get_attribute('ipRatioMode')
+    @IpRatioMode.setter
+    def IpRatioMode(self, value):
+        self._set_attribute('ipRatioMode', value)
+
+    @property
+    def Ipv4rate(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('ipv4rate')
+    @Ipv4rate.setter
+    def Ipv4rate(self, value):
+        self._set_attribute('ipv4rate', value)
+
+    @property
+    def Ipv6rate(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('ipv6rate')
+    @Ipv6rate.setter
+    def Ipv6rate(self, value):
+        self._set_attribute('ipv6rate', value)
+
+    @property
+    def LoadRateValue(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('loadRateValue')
+    @LoadRateValue.setter
+    def LoadRateValue(self, value):
+        self._set_attribute('loadRateValue', value)
+
+    @property
+    def LoadType(self):
+        """
+
+        Returns:
+            str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)
+        """
+        return self._get_attribute('loadType')
+    @LoadType.setter
+    def LoadType(self, value):
+        self._set_attribute('loadType', value)
+
+    @property
+    def NetworkGroupRoutesType(self):
+        """
+
+        Returns:
+            str(ipv4|ipv4/ipv6|ipv6)
+        """
+        return self._get_attribute('networkGroupRoutesType')
+    @NetworkGroupRoutesType.setter
+    def NetworkGroupRoutesType(self, value):
+        self._set_attribute('networkGroupRoutesType', value)
+
+    @property
+    def NetworkGroupSizeListIpv4(self):
+        """
+
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('networkGroupSizeListIpv4')
+    @NetworkGroupSizeListIpv4.setter
+    def NetworkGroupSizeListIpv4(self, value):
+        self._set_attribute('networkGroupSizeListIpv4', value)
+
+    @property
+    def NetworkGroupSizeListIpv6(self):
+        """
+
+        Returns:
+            list(str)
+        """
+        return self._get_attribute('networkGroupSizeListIpv6')
+    @NetworkGroupSizeListIpv6.setter
+    def NetworkGroupSizeListIpv6(self, value):
+        self._set_attribute('networkGroupSizeListIpv6', value)
+
+    @property
+    def NetworkGroupSizeModeIpv4(self):
+        """
+
+        Returns:
+            str(custom)
+        """
+        return self._get_attribute('networkGroupSizeModeIpv4')
+    @NetworkGroupSizeModeIpv4.setter
+    def NetworkGroupSizeModeIpv4(self, value):
+        self._set_attribute('networkGroupSizeModeIpv4', value)
+
+    @property
+    def NetworkGroupSizeModeIpv6(self):
+        """
+
+        Returns:
+            str(custom)
+        """
+        return self._get_attribute('networkGroupSizeModeIpv6')
+    @NetworkGroupSizeModeIpv6.setter
+    def NetworkGroupSizeModeIpv6(self, value):
+        self._set_attribute('networkGroupSizeModeIpv6', value)
+
+    @property
+    def NumberOfIterations(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('numberOfIterations')
+    @NumberOfIterations.setter
+    def NumberOfIterations(self, value):
+        self._set_attribute('numberOfIterations', value)
+
+    @property
+    def Numtrials(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('numtrials')
+    @Numtrials.setter
+    def Numtrials(self, value):
+        self._set_attribute('numtrials', value)
+
+    @property
+    def ProtocolItem(self):
+        """Protocol Items
+
+        Returns:
+            list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])
+        """
+        return self._get_attribute('protocolItem')
+    @ProtocolItem.setter
+    def ProtocolItem(self, value):
+        self._set_attribute('protocolItem', value)
+
+    @property
+    def ReportConvergenceUnit(self):
+        """
+
+        Returns:
+            str(ms|s|us)
+        """
+        return self._get_attribute('reportConvergenceUnit')
+    @ReportConvergenceUnit.setter
+    def ReportConvergenceUnit(self, value):
+        self._set_attribute('reportConvergenceUnit', value)
+
+    @property
+    def ReportTputRateUnit(self):
+        """
+
+        Returns:
+            str(gbps|gBps|kbps|kBps|mbps|mBps)
+        """
+        return self._get_attribute('reportTputRateUnit')
+    @ReportTputRateUnit.setter
+    def ReportTputRateUnit(self, value):
+        self._set_attribute('reportTputRateUnit', value)
+
+    @property
+    def RoutesDistribution(self):
+        """
+
+        Returns:
+            str(distributedAcrossPorts|equalCostOnEachPort)
+        """
+        return self._get_attribute('routesDistribution')
+    @RoutesDistribution.setter
+    def RoutesDistribution(self, value):
+        self._set_attribute('routesDistribution', value)
+
+    @property
+    def TestTrafficType(self):
+        """
+
+        Returns:
+            str
+        """
+        return self._get_attribute('testTrafficType')
+    @TestTrafficType.setter
+    def TestTrafficType(self, value):
+        self._set_attribute('testTrafficType', value)
+
+    @property
+    def Threshold(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('threshold')
+    @Threshold.setter
+    def Threshold(self, value):
+        self._set_attribute('threshold', value)
+
+    @property
+    def Tolerance(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('tolerance')
+    @Tolerance.setter
+    def Tolerance(self, value):
+        self._set_attribute('tolerance', value)
+
+    @property
+    def TrafficType(self):
+        """
+
+        Returns:
+            str(burstyLoading|constantLoading)
+        """
+        return self._get_attribute('trafficType')
+    @TrafficType.setter
+    def TrafficType(self, value):
+        self._set_attribute('trafficType', value)
+
+    @property
+    def WaitAfterThresholdReached(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('waitAfterThresholdReached')
+    @WaitAfterThresholdReached.setter
+    def WaitAfterThresholdReached(self, value):
+        self._set_attribute('waitAfterThresholdReached', value)
+
+    @property
+    def WaitBeforeAdvertise(self):
+        """
+
+        Returns:
+            number
+        """
+        return self._get_attribute('waitBeforeAdvertise')
+    @WaitBeforeAdvertise.setter
+    def WaitBeforeAdvertise(self, value):
+        self._set_attribute('waitBeforeAdvertise', value)
+
+    def update(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
+        """Updates a child instance of testConfig on the server.
+
+        Args:
+            CustomLoadUnit (str(bpsRate|fpsRate|gbpsRate|gBpsRate|kbpsRate|kBpsRate|mbpsRate|mBpsRate|percentMaxRate)): 
+            DataPlaneJitterWindow (str(k_10485760|k_1310720|k_167772160|k_20971520|k_2621440|k_335544320|k_41943040|k_5242880|k_671088640|k_83886080)): 
+            Duration (number): 
+            EnableBFD (bool): 
+            EnableTolerance (bool): 
+            FixedFrameSize (number): 
+            ForceContinuosTraffic (bool): 
+            FrameSizeMode (str(fixed)): 
+            Framesize (str): 
+            HoldDownTimer (number): 
+            IpRatioMode (str(custom|fixed|increment|random)): 
+            Ipv4rate (number): 
+            Ipv6rate (number): 
+            LoadRateValue (number): 
+            LoadType (str(binary|combo|custom|fixed|increment|quickSearch|random|step|unchanged)): 
+            NetworkGroupRoutesType (str(ipv4|ipv4/ipv6|ipv6)): 
+            NetworkGroupSizeListIpv4 (list(str)): 
+            NetworkGroupSizeListIpv6 (list(str)): 
+            NetworkGroupSizeModeIpv4 (str(custom)): 
+            NetworkGroupSizeModeIpv6 (str(custom)): 
+            NumberOfIterations (number): 
+            Numtrials (number): 
+            ProtocolItem (list(str[None|/api/v1/sessions/1/ixnetwork/vport|/api/v1/sessions/1/ixnetwork/vport?deepchild=lan])): Protocol Items
+            ReportConvergenceUnit (str(ms|s|us)): 
+            ReportTputRateUnit (str(gbps|gBps|kbps|kBps|mbps|mBps)): 
+            RoutesDistribution (str(distributedAcrossPorts|equalCostOnEachPort)): 
+            TestTrafficType (str): 
+            Threshold (number): 
+            Tolerance (number): 
+            TrafficType (str(burstyLoading|constantLoading)): 
+            WaitAfterThresholdReached (number): 
+            WaitBeforeAdvertise (number): 
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

@@ -34,6 +34,276 @@ class PassCriteria(Base):
     def __init__(self, parent):
         super(PassCriteria, self).__init__(parent)
 
+    @property
+    def DataErrorThresholdMode(self):
+        """NOT DEFINED
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('dataErrorThresholdMode')
+    @DataErrorThresholdMode.setter
+    def DataErrorThresholdMode(self, value):
+        self._set_attribute('dataErrorThresholdMode', value)
+
+    @property
+    def DataErrorThresholdValue(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('dataErrorThresholdValue')
+    @DataErrorThresholdValue.setter
+    def DataErrorThresholdValue(self, value):
+        self._set_attribute('dataErrorThresholdValue', value)
+
+    @property
+    def EnableDataIntegrityPassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableDataIntegrityPassFail')
+    @EnableDataIntegrityPassFail.setter
+    def EnableDataIntegrityPassFail(self, value):
+        self._set_attribute('enableDataIntegrityPassFail', value)
+
+    @property
+    def EnableLatencyPassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLatencyPassFail')
+    @EnableLatencyPassFail.setter
+    def EnableLatencyPassFail(self, value):
+        self._set_attribute('enableLatencyPassFail', value)
+
+    @property
+    def EnablePassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePassFail')
+    @EnablePassFail.setter
+    def EnablePassFail(self, value):
+        self._set_attribute('enablePassFail', value)
+
+    @property
+    def EnableRatePassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableRatePassFail')
+    @EnableRatePassFail.setter
+    def EnableRatePassFail(self, value):
+        self._set_attribute('enableRatePassFail', value)
+
+    @property
+    def EnableSequenceErrorsPassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableSequenceErrorsPassFail')
+    @EnableSequenceErrorsPassFail.setter
+    def EnableSequenceErrorsPassFail(self, value):
+        self._set_attribute('enableSequenceErrorsPassFail', value)
+
+    @property
+    def EnableStandardDeviationPassFail(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableStandardDeviationPassFail')
+    @EnableStandardDeviationPassFail.setter
+    def EnableStandardDeviationPassFail(self, value):
+        self._set_attribute('enableStandardDeviationPassFail', value)
+
+    @property
+    def LatencyThresholdMode(self):
+        """NOT DEFINED
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyThresholdMode')
+    @LatencyThresholdMode.setter
+    def LatencyThresholdMode(self, value):
+        self._set_attribute('latencyThresholdMode', value)
+
+    @property
+    def LatencyThresholdScale(self):
+        """NOT DEFINED
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyThresholdScale')
+    @LatencyThresholdScale.setter
+    def LatencyThresholdScale(self, value):
+        self._set_attribute('latencyThresholdScale', value)
+
+    @property
+    def LatencyThresholdValue(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('latencyThresholdValue')
+    @LatencyThresholdValue.setter
+    def LatencyThresholdValue(self, value):
+        self._set_attribute('latencyThresholdValue', value)
+
+    @property
+    def LatencyVarThresholdMode(self):
+        """NOT DEFINED
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyVarThresholdMode')
+    @LatencyVarThresholdMode.setter
+    def LatencyVarThresholdMode(self, value):
+        self._set_attribute('latencyVarThresholdMode', value)
+
+    @property
+    def LatencyVariationThresholdScale(self):
+        """NOT DEFINED
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyVariationThresholdScale')
+    @LatencyVariationThresholdScale.setter
+    def LatencyVariationThresholdScale(self, value):
+        self._set_attribute('latencyVariationThresholdScale', value)
+
+    @property
+    def LatencyVariationThresholdValue(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('latencyVariationThresholdValue')
+    @LatencyVariationThresholdValue.setter
+    def LatencyVariationThresholdValue(self, value):
+        self._set_attribute('latencyVariationThresholdValue', value)
+
+    @property
+    def PassCriteriaLoadRateMode(self):
+        """NOT DEFINED
+
+        Returns:
+            str(average|minimum)
+        """
+        return self._get_attribute('passCriteriaLoadRateMode')
+    @PassCriteriaLoadRateMode.setter
+    def PassCriteriaLoadRateMode(self, value):
+        self._set_attribute('passCriteriaLoadRateMode', value)
+
+    @property
+    def PassCriteriaLoadRateScale(self):
+        """NOT DEFINED
+
+        Returns:
+            str(fps|gbps|kbps|mbps|percent)
+        """
+        return self._get_attribute('passCriteriaLoadRateScale')
+    @PassCriteriaLoadRateScale.setter
+    def PassCriteriaLoadRateScale(self, value):
+        self._set_attribute('passCriteriaLoadRateScale', value)
+
+    @property
+    def PassCriteriaLoadRateValue(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('passCriteriaLoadRateValue')
+    @PassCriteriaLoadRateValue.setter
+    def PassCriteriaLoadRateValue(self, value):
+        self._set_attribute('passCriteriaLoadRateValue', value)
+
+    @property
+    def PassFailFrequency(self):
+        """NOT DEFINED
+
+        Returns:
+            str(framesizes|trials)
+        """
+        return self._get_attribute('passFailFrequency')
+    @PassFailFrequency.setter
+    def PassFailFrequency(self, value):
+        self._set_attribute('passFailFrequency', value)
+
+    @property
+    def SeqErrorsThresholdMode(self):
+        """NOT DEFINED
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('seqErrorsThresholdMode')
+    @SeqErrorsThresholdMode.setter
+    def SeqErrorsThresholdMode(self, value):
+        self._set_attribute('seqErrorsThresholdMode', value)
+
+    @property
+    def SeqErrorsThresholdValue(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('seqErrorsThresholdValue')
+    @SeqErrorsThresholdValue.setter
+    def SeqErrorsThresholdValue(self, value):
+        self._set_attribute('seqErrorsThresholdValue', value)
+
+    def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+        """Updates a child instance of passCriteria on the server.
+
+        Args:
+            DataErrorThresholdMode (str(average|maximum)): NOT DEFINED
+            DataErrorThresholdValue (number): NOT DEFINED
+            EnableDataIntegrityPassFail (bool): NOT DEFINED
+            EnableLatencyPassFail (bool): NOT DEFINED
+            EnablePassFail (bool): NOT DEFINED
+            EnableRatePassFail (bool): NOT DEFINED
+            EnableSequenceErrorsPassFail (bool): NOT DEFINED
+            EnableStandardDeviationPassFail (bool): NOT DEFINED
+            LatencyThresholdMode (str(average|maximum)): NOT DEFINED
+            LatencyThresholdScale (str(ms|ns|us)): NOT DEFINED
+            LatencyThresholdValue (number): NOT DEFINED
+            LatencyVarThresholdMode (str(average|maximum)): NOT DEFINED
+            LatencyVariationThresholdScale (str(ms|ns|us)): NOT DEFINED
+            LatencyVariationThresholdValue (number): NOT DEFINED
+            PassCriteriaLoadRateMode (str(average|minimum)): NOT DEFINED
+            PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): NOT DEFINED
+            PassCriteriaLoadRateValue (number): NOT DEFINED
+            PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+            SeqErrorsThresholdMode (str(average|maximum)): NOT DEFINED
+            SeqErrorsThresholdValue (number): NOT DEFINED
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

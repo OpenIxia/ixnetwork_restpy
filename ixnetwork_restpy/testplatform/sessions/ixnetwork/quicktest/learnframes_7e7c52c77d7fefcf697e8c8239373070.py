@@ -34,6 +34,172 @@ class LearnFrames(Base):
     def __init__(self, parent):
         super(LearnFrames, self).__init__(parent)
 
+    @property
+    def FastPathEnable(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('fastPathEnable')
+    @FastPathEnable.setter
+    def FastPathEnable(self, value):
+        self._set_attribute('fastPathEnable', value)
+
+    @property
+    def FastPathLearnFrameSize(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathLearnFrameSize')
+    @FastPathLearnFrameSize.setter
+    def FastPathLearnFrameSize(self, value):
+        self._set_attribute('fastPathLearnFrameSize', value)
+
+    @property
+    def FastPathNumFrames(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathNumFrames')
+    @FastPathNumFrames.setter
+    def FastPathNumFrames(self, value):
+        self._set_attribute('fastPathNumFrames', value)
+
+    @property
+    def FastPathRate(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('fastPathRate')
+    @FastPathRate.setter
+    def FastPathRate(self, value):
+        self._set_attribute('fastPathRate', value)
+
+    @property
+    def LearnFrameSize(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnFrameSize')
+    @LearnFrameSize.setter
+    def LearnFrameSize(self, value):
+        self._set_attribute('learnFrameSize', value)
+
+    @property
+    def LearnFrequency(self):
+        """NOT DEFINED
+
+        Returns:
+            str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)
+        """
+        return self._get_attribute('learnFrequency')
+    @LearnFrequency.setter
+    def LearnFrequency(self, value):
+        self._set_attribute('learnFrequency', value)
+
+    @property
+    def LearnNumFrames(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnNumFrames')
+    @LearnNumFrames.setter
+    def LearnNumFrames(self, value):
+        self._set_attribute('learnNumFrames', value)
+
+    @property
+    def LearnRate(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnRate')
+    @LearnRate.setter
+    def LearnRate(self, value):
+        self._set_attribute('learnRate', value)
+
+    @property
+    def LearnSendMacOnly(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendMacOnly')
+    @LearnSendMacOnly.setter
+    def LearnSendMacOnly(self, value):
+        self._set_attribute('learnSendMacOnly', value)
+
+    @property
+    def LearnSendRouterSolicitation(self):
+        """NOT DEFINED
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('learnSendRouterSolicitation')
+    @LearnSendRouterSolicitation.setter
+    def LearnSendRouterSolicitation(self, value):
+        self._set_attribute('learnSendRouterSolicitation', value)
+
+    @property
+    def LearnWaitTime(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTime')
+    @LearnWaitTime.setter
+    def LearnWaitTime(self, value):
+        self._set_attribute('learnWaitTime', value)
+
+    @property
+    def LearnWaitTimeBeforeTransmit(self):
+        """NOT DEFINED
+
+        Returns:
+            number
+        """
+        return self._get_attribute('learnWaitTimeBeforeTransmit')
+    @LearnWaitTimeBeforeTransmit.setter
+    def LearnWaitTimeBeforeTransmit(self, value):
+        self._set_attribute('learnWaitTimeBeforeTransmit', value)
+
+    def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrameSize=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendMacOnly=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None):
+        """Updates a child instance of learnFrames on the server.
+
+        Args:
+            FastPathEnable (bool): NOT DEFINED
+            FastPathLearnFrameSize (number): NOT DEFINED
+            FastPathNumFrames (number): NOT DEFINED
+            FastPathRate (number): NOT DEFINED
+            LearnFrameSize (number): NOT DEFINED
+            LearnFrequency (str(never|onBinaryIteration|oncePerFramesize|oncePerTest|onTrial)): NOT DEFINED
+            LearnNumFrames (number): NOT DEFINED
+            LearnRate (number): NOT DEFINED
+            LearnSendMacOnly (bool): NOT DEFINED
+            LearnSendRouterSolicitation (bool): NOT DEFINED
+            LearnWaitTime (number): NOT DEFINED
+            LearnWaitTimeBeforeTransmit (number): NOT DEFINED
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 

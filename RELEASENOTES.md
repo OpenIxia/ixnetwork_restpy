@@ -1,7 +1,7 @@
 # Release Notes
 
 ### Mar 2020
-* 1.0.49
+* 1.0.50
   * New SessionAssistant class
     * combines TestPlatform, Session, logging, authentication and NewConfig functionality into constructor
     * reduces number of import statements and complexity
@@ -11,6 +11,7 @@
   * PortMapAssistant has enhanced Map method
     * see examples in the class documentation
   * proxy bypass fix
+  * generated quickTest...testConfig attributes
   * package generated from IxNetwork build 9.01.1911.7 
 ### Jan 2020
 * 1.0.48

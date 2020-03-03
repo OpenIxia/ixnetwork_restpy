@@ -34,6 +34,315 @@ class PassCriteria(Base):
     def __init__(self, parent):
         super(PassCriteria, self).__init__(parent)
 
+    @property
+    def DataErrorThresholdMode(self):
+        """The data error calculated for the threshold mode.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('dataErrorThresholdMode')
+    @DataErrorThresholdMode.setter
+    def DataErrorThresholdMode(self, value):
+        self._set_attribute('dataErrorThresholdMode', value)
+
+    @property
+    def DataErrorThresholdValue(self):
+        """The interger value for the threshold data error.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('dataErrorThresholdValue')
+    @DataErrorThresholdValue.setter
+    def DataErrorThresholdValue(self, value):
+        self._set_attribute('dataErrorThresholdValue', value)
+
+    @property
+    def EnableDataIntegrityPassFail(self):
+        """If true, the data integrity pass /fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableDataIntegrityPassFail')
+    @EnableDataIntegrityPassFail.setter
+    def EnableDataIntegrityPassFail(self, value):
+        self._set_attribute('enableDataIntegrityPassFail', value)
+
+    @property
+    def EnableFrameLossPassFail(self):
+        """If true, the frame loss pass fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableFrameLossPassFail')
+    @EnableFrameLossPassFail.setter
+    def EnableFrameLossPassFail(self, value):
+        self._set_attribute('enableFrameLossPassFail', value)
+
+    @property
+    def EnableLatencyPassFail(self):
+        """If true, enables latency at which trails pass or fail.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableLatencyPassFail')
+    @EnableLatencyPassFail.setter
+    def EnableLatencyPassFail(self, value):
+        self._set_attribute('enableLatencyPassFail', value)
+
+    @property
+    def EnablePassFail(self):
+        """If true, IxNetwork applies the Pass Criteria to each trial in the test and determines whether the trial passed or failed.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enablePassFail')
+    @EnablePassFail.setter
+    def EnablePassFail(self, value):
+        self._set_attribute('enablePassFail', value)
+
+    @property
+    def EnableRatePassFail(self):
+        """If true, enables the rate of pass or failure of the trial.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableRatePassFail')
+    @EnableRatePassFail.setter
+    def EnableRatePassFail(self, value):
+        self._set_attribute('enableRatePassFail', value)
+
+    @property
+    def EnableSequenceErrorsPassFail(self):
+        """If true, the sequence errors for the pass and fail criteria is set.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableSequenceErrorsPassFail')
+    @EnableSequenceErrorsPassFail.setter
+    def EnableSequenceErrorsPassFail(self, value):
+        self._set_attribute('enableSequenceErrorsPassFail', value)
+
+    @property
+    def EnableStandardDeviationPassFail(self):
+        """If true, enables standard deviation in the pass or failure of the trial.
+
+        Returns:
+            bool
+        """
+        return self._get_attribute('enableStandardDeviationPassFail')
+    @EnableStandardDeviationPassFail.setter
+    def EnableStandardDeviationPassFail(self, value):
+        self._set_attribute('enableStandardDeviationPassFail', value)
+
+    @property
+    def LatencyThresholdMode(self):
+        """The threshold mode for the latency.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyThresholdMode')
+    @LatencyThresholdMode.setter
+    def LatencyThresholdMode(self, value):
+        self._set_attribute('latencyThresholdMode', value)
+
+    @property
+    def LatencyThresholdScale(self):
+        """The latency threshold scale value.
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyThresholdScale')
+    @LatencyThresholdScale.setter
+    def LatencyThresholdScale(self, value):
+        self._set_attribute('latencyThresholdScale', value)
+
+    @property
+    def LatencyThresholdValue(self):
+        """The latency threshold value of the test.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('latencyThresholdValue')
+    @LatencyThresholdValue.setter
+    def LatencyThresholdValue(self, value):
+        self._set_attribute('latencyThresholdValue', value)
+
+    @property
+    def LatencyVarThresholdMode(self):
+        """The latency variation threshold mode.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('latencyVarThresholdMode')
+    @LatencyVarThresholdMode.setter
+    def LatencyVarThresholdMode(self, value):
+        self._set_attribute('latencyVarThresholdMode', value)
+
+    @property
+    def LatencyVariationThresholdScale(self):
+        """The scale by which the latency variation threshold is measured.
+
+        Returns:
+            str(ms|ns|us)
+        """
+        return self._get_attribute('latencyVariationThresholdScale')
+    @LatencyVariationThresholdScale.setter
+    def LatencyVariationThresholdScale(self, value):
+        self._set_attribute('latencyVariationThresholdScale', value)
+
+    @property
+    def LatencyVariationThresholdValue(self):
+        """The value by which the variation in latency threshold is measured.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('latencyVariationThresholdValue')
+    @LatencyVariationThresholdValue.setter
+    def LatencyVariationThresholdValue(self, value):
+        self._set_attribute('latencyVariationThresholdValue', value)
+
+    @property
+    def LossThresholdMode(self):
+        """The loss threshold mode.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('lossThresholdMode')
+    @LossThresholdMode.setter
+    def LossThresholdMode(self, value):
+        self._set_attribute('lossThresholdMode', value)
+
+    @property
+    def LossThresholdValue(self):
+        """The threshold value by which loss can be determined.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('lossThresholdValue')
+    @LossThresholdValue.setter
+    def LossThresholdValue(self, value):
+        self._set_attribute('lossThresholdValue', value)
+
+    @property
+    def PassCriteriaLoadRateMode(self):
+        """The Pass Criteria per trial rate at which the DUT should be able to transmit and receive, expressed as a percentage of the maximum theoretical line speed or in terms of frames per second.
+
+        Returns:
+            str(average|minimum)
+        """
+        return self._get_attribute('passCriteriaLoadRateMode')
+    @PassCriteriaLoadRateMode.setter
+    def PassCriteriaLoadRateMode(self, value):
+        self._set_attribute('passCriteriaLoadRateMode', value)
+
+    @property
+    def PassCriteriaLoadRateScale(self):
+        """The load rate scale for the Pass Criteria per trial.
+
+        Returns:
+            str(fps|gbps|kbps|mbps|percent)
+        """
+        return self._get_attribute('passCriteriaLoadRateScale')
+    @PassCriteriaLoadRateScale.setter
+    def PassCriteriaLoadRateScale(self, value):
+        self._set_attribute('passCriteriaLoadRateScale', value)
+
+    @property
+    def PassCriteriaLoadRateValue(self):
+        """The load rate value for the Pass Criteria per trial.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('passCriteriaLoadRateValue')
+    @PassCriteriaLoadRateValue.setter
+    def PassCriteriaLoadRateValue(self, value):
+        self._set_attribute('passCriteriaLoadRateValue', value)
+
+    @property
+    def PassFailFrequency(self):
+        """NOT DEFINED
+
+        Returns:
+            str(framesizes|trials)
+        """
+        return self._get_attribute('passFailFrequency')
+    @PassFailFrequency.setter
+    def PassFailFrequency(self, value):
+        self._set_attribute('passFailFrequency', value)
+
+    @property
+    def SeqErrorsThresholdMode(self):
+        """The recorded sequence error in the threshold mode.
+
+        Returns:
+            str(average|maximum)
+        """
+        return self._get_attribute('seqErrorsThresholdMode')
+    @SeqErrorsThresholdMode.setter
+    def SeqErrorsThresholdMode(self, value):
+        self._set_attribute('seqErrorsThresholdMode', value)
+
+    @property
+    def SeqErrorsThresholdValue(self):
+        """The threshold value of the sequence errors.
+
+        Returns:
+            number
+        """
+        return self._get_attribute('seqErrorsThresholdValue')
+    @SeqErrorsThresholdValue.setter
+    def SeqErrorsThresholdValue(self, value):
+        self._set_attribute('seqErrorsThresholdValue', value)
+
+    def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+        """Updates a child instance of passCriteria on the server.
+
+        Args:
+            DataErrorThresholdMode (str(average|maximum)): The data error calculated for the threshold mode.
+            DataErrorThresholdValue (number): The interger value for the threshold data error.
+            EnableDataIntegrityPassFail (bool): If true, the data integrity pass /fail criteria is set.
+            EnableFrameLossPassFail (bool): If true, the frame loss pass fail criteria is set.
+            EnableLatencyPassFail (bool): If true, enables latency at which trails pass or fail.
+            EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determines whether the trial passed or failed.
+            EnableRatePassFail (bool): If true, enables the rate of pass or failure of the trial.
+            EnableSequenceErrorsPassFail (bool): If true, the sequence errors for the pass and fail criteria is set.
+            EnableStandardDeviationPassFail (bool): If true, enables standard deviation in the pass or failure of the trial.
+            LatencyThresholdMode (str(average|maximum)): The threshold mode for the latency.
+            LatencyThresholdScale (str(ms|ns|us)): The latency threshold scale value.
+            LatencyThresholdValue (number): The latency threshold value of the test.
+            LatencyVarThresholdMode (str(average|maximum)): The latency variation threshold mode.
+            LatencyVariationThresholdScale (str(ms|ns|us)): The scale by which the latency variation threshold is measured.
+            LatencyVariationThresholdValue (number): The value by which the variation in latency threshold is measured.
+            LossThresholdMode (str(average|maximum)): The loss threshold mode.
+            LossThresholdValue (number): The threshold value by which loss can be determined.
+            PassCriteriaLoadRateMode (str(average|minimum)): The Pass Criteria per trial rate at which the DUT should be able to transmit and receive, expressed as a percentage of the maximum theoretical line speed or in terms of frames per second.
+            PassCriteriaLoadRateScale (str(fps|gbps|kbps|mbps|percent)): The load rate scale for the Pass Criteria per trial.
+            PassCriteriaLoadRateValue (number): The load rate value for the Pass Criteria per trial.
+            PassFailFrequency (str(framesizes|trials)): NOT DEFINED
+            SeqErrorsThresholdMode (str(average|maximum)): The recorded sequence error in the threshold mode.
+            SeqErrorsThresholdValue (number): The threshold value of the sequence errors.
+
+        Raises:
+            ServerError: The server has encountered an uncategorized error condition
+        """
+        self._update(locals())
+
     def Apply(self):
         """Executes the apply operation on the server.
 
