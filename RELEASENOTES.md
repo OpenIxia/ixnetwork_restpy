@@ -1,7 +1,7 @@
 # Release Notes
 
 ### Mar 2020
-* 1.0.50
+* 1.0.51
   * New SessionAssistant class
     * combines TestPlatform, Session, logging, authentication and NewConfig functionality into constructor
     * reduces number of import statements and complexity
